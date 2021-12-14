@@ -20,28 +20,32 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"hugfeature.github.io","root":"/Echo/","images":"/Echo/images","scheme":"Gemini","darkmode":false,"version":"8.8.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":{"gittalk":{"order":-2}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/Echo/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Echo/js/config.js"></script>
-<meta name="description" content="kafka是一个事件流平台 什么事件流？，事件流是从事件源实时捕获数据的做法 如数据库、传感器、移动设备、云服务和流形式的软件应用程序 事件； 持久地存储这些事件流以供以后检索； 操作、处理和反应 实时和可追溯​​的事件流； 并将事件流路由到不同的 根据需要使用目标技术。 事件流因此确保了连续的流和解释 数据，以便正确的信息在正确的时间出现在正确的位置。  kafka的功能？  要 发布 （写）和">
+<meta name="description" content="在本文中，将熟悉JMeter 的所有组件，以及如何在测试计划中使用它们来覆盖所有可能的性能测试场景来测试 AUT（被测应用程序）。 JMeter的组件请参考以下的流程图来了解每个组件及其与JMeter特定模块的关系。  测试计划–TEST PLAN测试计划中包含的所有内容都是按从上到下的顺序或者测试计划中定义的顺序执行。测试计划可以尽可能简单，担忧线程组、采样器、监听器，可以添加更多的元素如配置元">
 <meta property="og:type" content="article">
-<meta property="og:title" content="大数据组件kafka测试">
-<meta property="og:url" content="https://hugfeature.github.io/Echo/2021/11/24/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%BB%84%E4%BB%B6kafka%E6%B5%8B%E8%AF%95/index.html">
+<meta property="og:title" content="JMeter组件介绍">
+<meta property="og:url" content="https://hugfeature.github.io/Echo/2021/12/12/JMeter%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D/index.html">
 <meta property="og:site_name" content="贤の博客">
-<meta property="og:description" content="kafka是一个事件流平台 什么事件流？，事件流是从事件源实时捕获数据的做法 如数据库、传感器、移动设备、云服务和流形式的软件应用程序 事件； 持久地存储这些事件流以供以后检索； 操作、处理和反应 实时和可追溯​​的事件流； 并将事件流路由到不同的 根据需要使用目标技术。 事件流因此确保了连续的流和解释 数据，以便正确的信息在正确的时间出现在正确的位置。  kafka的功能？  要 发布 （写）和">
+<meta property="og:description" content="在本文中，将熟悉JMeter 的所有组件，以及如何在测试计划中使用它们来覆盖所有可能的性能测试场景来测试 AUT（被测应用程序）。 JMeter的组件请参考以下的流程图来了解每个组件及其与JMeter特定模块的关系。  测试计划–TEST PLAN测试计划中包含的所有内容都是按从上到下的顺序或者测试计划中定义的顺序执行。测试计划可以尽可能简单，担忧线程组、采样器、监听器，可以添加更多的元素如配置元">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-11-24T07:19:11.000Z">
-<meta property="article:modified_time" content="2021-11-24T07:19:11.000Z">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/2021/12/12/JMeter%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D/JmeterFlowDiagram.jpg">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/2021/12/12/JMeter%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D/image-20211213103617620.png">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/2021/12/12/JMeter%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D/image-20211213111816981.png">
+<meta property="article:published_time" content="2021-12-12T00:40:24.000Z">
+<meta property="article:modified_time" content="2021-12-12T00:40:24.000Z">
 <meta property="article:author" content="丑牛">
-<meta property="article:tag" content="kafka，大数据">
+<meta property="article:tag" content="性能测试，JMeter">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hugfeature.github.io/Echo/2021/12/12/JMeter%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D/JmeterFlowDiagram.jpg">
 
 
-<link rel="canonical" href="https://hugfeature.github.io/Echo/2021/11/24/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%BB%84%E4%BB%B6kafka%E6%B5%8B%E8%AF%95/">
+<link rel="canonical" href="https://hugfeature.github.io/Echo/2021/12/12/JMeter%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://hugfeature.github.io/Echo/2021/11/24/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%BB%84%E4%BB%B6kafka%E6%B5%8B%E8%AF%95/","path":"2021/11/24/大数据组件kafka测试/","title":"大数据组件kafka测试"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://hugfeature.github.io/Echo/2021/12/12/JMeter%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D/","path":"2021/12/12/JMeter组件介绍/","title":"JMeter组件介绍"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>大数据组件kafka测试 | 贤の博客</title>
+<title>JMeter组件介绍 | 贤の博客</title>
   
 
 
@@ -146,7 +150,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#kafka%E6%98%AF%E4%B8%80%E4%B8%AA%E4%BA%8B%E4%BB%B6%E6%B5%81%E5%B9%B3%E5%8F%B0"><span class="nav-text">kafka是一个事件流平台</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#kafka%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%BA%86%E8%A7%A3"><span class="nav-text">kafka基本概念了解</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#kafka%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95-%E5%A6%82%E4%BD%95%E9%AA%8C%E8%AF%81%E6%95%B0%E6%8D%AE%E7%9A%84%E4%B8%80%E8%87%B4%E6%80%A7%E5%92%8C%E6%9C%89%E5%BA%8F%E6%80%A7"><span class="nav-text">kafka功能测试-如何验证数据的一致性和有序性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#kafka%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95"><span class="nav-text">kafka性能测试</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#JMeter%E7%9A%84%E7%BB%84%E4%BB%B6"><span class="nav-text">JMeter的组件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E8%AE%A1%E5%88%92%E2%80%93TEST-PLAN"><span class="nav-text">测试计划–TEST PLAN</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E7%BB%84%E2%80%93THREAD-GROUP"><span class="nav-text">线程组–THREAD GROUP</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#HTTP%E8%AF%B7%E6%B1%82%E7%A4%BA%E4%BE%8B"><span class="nav-text">HTTP请求示例</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%9B%91%E5%90%AC%E5%99%A8-Listener"><span class="nav-text">监听器-Listener</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -192,7 +196,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/2021/11/24/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%BB%84%E4%BB%B6kafka%E6%B5%8B%E8%AF%95/">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/2021/12/12/JMeter%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/Echo/images/avatar.gif">
@@ -205,7 +209,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          大数据组件kafka测试
+          JMeter组件介绍
         </h1>
 
         <div class="post-meta-container">
@@ -216,7 +220,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2021-11-24 15:19:11" itemprop="dateCreated datePublished" datetime="2021-11-24T15:19:11+08:00">2021-11-24</time>
+      <time title="创建时间：2021-12-12 08:40:24" itemprop="dateCreated datePublished" datetime="2021-12-12T08:40:24+08:00">2021-12-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -224,7 +228,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Echo/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a>
+          <a href="/Echo/categories/JMeter/" itemprop="url" rel="index"><span itemprop="name">JMeter</span></a>
         </span>
     </span>
 
@@ -245,46 +249,38 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h5 id="kafka是一个事件流平台"><a href="#kafka是一个事件流平台" class="headerlink" title="kafka是一个事件流平台"></a>kafka是一个事件流平台</h5><ul>
-<li><p>什么事件流？，事件流是从事件源实时捕获数据的做法 如数据库、传感器、移动设备、云服务和流形式的软件应用程序 事件； 持久地存储这些事件流以供以后检索； 操作、处理和反应 实时和可追溯​​的事件流； 并将事件流路由到不同的 根据需要使用目标技术。 事件流因此确保了连续的流和解释 数据，以便正确的信息在正确的时间出现在正确的位置。</p>
-</li>
-<li><p>kafka的功能？</p>
-<ol>
-<li><p>要 发布 （写）和 订阅 （读取）的事件流，包括连续的导入/导出 您来自其他系统的数据。</p>
-</li>
-<li><p>持久并可靠存储你想要的事件流</p>
-</li>
-<li><p><strong>处理</strong> 事件发生时或追溯性 事件流。</p>
-</li>
-</ol>
-<h5 id="kafka基本概念了解"><a href="#kafka基本概念了解" class="headerlink" title="kafka基本概念了解"></a>kafka基本概念了解</h5></li>
-<li><p>生产者：<strong>生产者</strong> 是那些向 Kafka 发布（写入）事件的客户端应用程序</p>
-</li>
-<li><p>消费者：订阅（读取和处理）这些事件的</p>
-</li>
-<li><p>主题：主题类似于文件系统中的文件夹，事件就是该文件夹中的文件</p>
-</li>
-<li><p>分区：主题是 <strong>分区的</strong> ，一个主题可以分布在位于不同 Kafka 代理的多个“桶”上。</p>
-</li>
-<li><p>broker：一个 Kafka 服务器也称为 Broker，它接受生产者发送的消息并存入磁盘；Broker 同时服务消费者拉取分区消息的请求，返回目前已经提交的消息一个 Kafka 服务器也称为 Broker，它接受生产者发送的消息并存入磁盘；Broker 同时服务消费者拉取分区消息的请求，返回目前已经提交的消息</p>
-</li>
-</ul>
-<h5 id="kafka功能测试-如何验证数据的一致性和有序性"><a href="#kafka功能测试-如何验证数据的一致性和有序性" class="headerlink" title="kafka功能测试-如何验证数据的一致性和有序性"></a>kafka功能测试-如何验证数据的一致性和有序性</h5><p>可以创建一个单分区的Topic，然后自己写一个生产者程序，程序发送的事件流可以从设定值从1到N自增长；写一个消费者程序，单线程消费，将消费到的数据写进文件中，观测有序性；还可以对kafka服务进程直接杀死，进行故障模拟。</p>
-<h5 id="kafka性能测试"><a href="#kafka性能测试" class="headerlink" title="kafka性能测试"></a>kafka性能测试</h5><p>性能压测是系统性问题，需要考量对整体业务的掌握程序，以及对kafka的熟悉程度。压测过程中涉及压测工具选取，监测kafka，压测结果分析。</p>
+        <p>在本文中，将熟悉<strong>JMeter 的所有组件，以及如何在测试计划中使用它们</strong>来覆盖所有可能的性能测试场景来测试 AUT（被测应用程序）。</p>
+<h4 id="JMeter的组件"><a href="#JMeter的组件" class="headerlink" title="JMeter的组件"></a>JMeter的组件</h4><p>请参考以下的流程图来了解每个组件及其与JMeter特定模块的关系。</p>
+<p><img src="JmeterFlowDiagram.jpg" alt="Jmeter流程图"></p>
+<h5 id="测试计划–TEST-PLAN"><a href="#测试计划–TEST-PLAN" class="headerlink" title="测试计划–TEST PLAN"></a>测试计划–TEST PLAN</h5><p>测试计划中包含的所有内容都是按从上到下的顺序或者测试计划中定义的顺序执行。测试计划可以尽可能简单，担忧线程组、采样器、监听器，可以添加更多的元素如配置元素、预处理器、控制器或前置/后置处理器。</p>
+<p>JMeter是通过虚拟用户或线程来衡量性能，这些虚拟用户或者线程会连接被测服务器，就像真实用户向服务器发送请求一样。因此，每个测试计划都应该有我们JMeter中所称的虚拟用户或者线程组–THREAD GROUP。</p>
+<p>测试计划的要点：</p>
 <ul>
-<li><p>明确压测场景：明确要压测的场景</p>
-</li>
-<li><p>测试环境准备：在服务器选择，kafka版本，kafka架构以及相关配置参数、业务数据等尽可能与线上环境保持一致</p>
-</li>
-<li><p>压测工具选取：生产者压测使用kafka自带的测试工具kafka-producer-perf-test.sh来进行测试，发送数据推荐使用线上数据导出到本地文件，随机读取进行</p>
-</li>
-<li><p>压测过程观测：首先开启kafka的JMX端口，①可以使用滴滴的Logikm(但是需要自己搭建部署)；②自己通过JMX端口以及官方原生API获取相关指标，CPU、内存、网络等监测可以使用nomn或者top命令来监测</p>
-</li>
-<li><p>压测结果分析：理想状态是系统资源使用达到瓶颈，如未达到则寻找软件资源瓶颈，配合堆栈分析，发现线程阻塞点。</p>
-</li>
-<li><p>压测报告呈现：一般有测试环境说明、测试场景说明、测试过程说明、测试结论（在当前场景下的最佳资源使用以及配置）。</p>
-</li>
+<li>运行前应保存测试计划</li>
+<li>JMeter文件或者测试计划以JMX文件的格式保存</li>
+<li>还可以将测试计划保存为不同方式，可以在其他测试场景中使用</li>
 </ul>
+<h5 id="线程组–THREAD-GROUP"><a href="#线程组–THREAD-GROUP" class="headerlink" title="线程组–THREAD GROUP"></a>线程组–THREAD GROUP</h5><p>线程组是一组用户，他们将同时以定义好的顺序访问被测服务器。可以通过右键单击测试计划将线程组添加到测试计划中。</p>
+<p><img src="image-20211213103617620.png" alt="线程组"></p>
+<p>1、你可以重命名线程组名称</p>
+<ul>
+<li><strong>Number of Thread(Users)</strong> ：它定义了虚拟用户的数量。出于测试目的，我们应该只生成有限的负载，因为一次生成大量负载意味着消耗大量线程，最终会导致 CPU 使用率高。</li>
+<li><strong>Ramp Up Period</strong> ：该字段在控制负载生成方面非常重要。加速周期定义了产生总负载的时间量。</li>
+<li><strong>Loop COUNT</strong>：定义了线程组将执行的次数。如果您选中 Forever 复选框，您的测试将永远运行，除非您手动停止它。这可用于测试诸如“如果您的服务器在持续加载几分钟内没有崩溃”之类的内容。</li>
+</ul>
+<p>取样器–Sample</p>
+<p>JMeter如何知道发送到服务器的请求类型是什么？</p>
+<p>是通过取样器。取样器是必须要添加到测试计划中的，因为只有它可以让JMeter知道需要发送那种类型的请求到那个服务器上以及需要携带什么样的参数。请求是HTTP、websocket、FTP、TCP、SMTP等。</p>
+<p>采样器只能添加到线程组，而不是直接在测试计划下，因为线程组需要使用采样器向被测服务器 URL 发送请求。采样器可以通过路径Thread Group -&gt; Sampler -&gt; HTTP Request 添加。</p>
+<h6 id="HTTP请求示例"><a href="#HTTP请求示例" class="headerlink" title="HTTP请求示例"></a>HTTP请求示例</h6><p><img src="image-20211213111816981.png" alt="HTTP示例"></p>
+<ul>
+<li>server name or ip ：输入服务的IP或者域名</li>
+<li>path： 请求的路径</li>
+<li>method：请求方式，常见的有post、get、put、delete等</li>
+<li>parameter：请求参数，如需要可以添加，还可以在config Element中添加httpcookie、请求头配置等</li>
+<li>body data：请求体</li>
+</ul>
+<h5 id="监听器-Listener"><a href="#监听器-Listener" class="headerlink" title="监听器-Listener"></a>监听器-Listener</h5><p>截止到这里，我们已经看到了取样器向服务器发送请求，但是还没有分析响应。性能测试就是分析各种形式的服务器响应，然后将呈现给客户端。监听器</p>
 
     </div>
 
@@ -294,21 +290,18 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/Echo/tags/kafka%EF%BC%8C%E5%A4%A7%E6%95%B0%E6%8D%AE/" rel="tag"># kafka，大数据</a>
+              <a href="/Echo/tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%EF%BC%8CJMeter/" rel="tag"># 性能测试，JMeter</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/Echo/2021/11/20/JMeter%E4%BB%8B%E7%BB%8D/" rel="prev" title="JMeter介绍">
-                  <i class="fa fa-chevron-left"></i> JMeter介绍
+                <a href="/Echo/2021/11/24/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%BB%84%E4%BB%B6kafka%E6%B5%8B%E8%AF%95/" rel="prev" title="大数据组件kafka测试">
+                  <i class="fa fa-chevron-left"></i> 大数据组件kafka测试
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/Echo/2021/12/12/JMeter%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D/" rel="next" title="JMeter组件介绍">
-                  JMeter组件介绍 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -378,7 +371,7 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"hugfeature","repo":"myBlogTalk","client_id":"1ebacc2566eeabb2c1c5","client_secret":"079b29343ee807bb13b54237e9dc477abfcbae20","admin_user":"hugfeature","distraction_free_mode":true,"language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"6cde1604712a13fd3bf4c37e26958b2c"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"hugfeature","repo":"myBlogTalk","client_id":"1ebacc2566eeabb2c1c5","client_secret":"079b29343ee807bb13b54237e9dc477abfcbae20","admin_user":"hugfeature","distraction_free_mode":true,"language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"dcbe68679883c34371721d65d0cbfa71"}</script>
 <script src="/Echo/js/third-party/comments/gitalk.js"></script>
 
 </body>
