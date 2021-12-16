@@ -828,6 +828,59 @@
       </tags>
   </entry>
   <entry>
+    <title>GitHub搜索技巧</title>
+    <url>/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/</url>
+    <content><![CDATA[<p>github是世界知名的代码托管平台，千万程序员的圣地。作为一个常逛github的程序员，你在github上搜索代码时，是怎样操作的呢？</p>
+<p>大家是不是也会像我一样搜索框直接输入关键字</p>
+<p><img src="image-20211117104623233.png" alt="image-20211117104623233"></p>
+<p>然后改变 一下列表oder排序方式</p>
+<p><img src="image-20211117104649103.png" alt="image-20211117104649103"></p>
+<p>但是找到了接近21万相关的开源项目，这时候的你是不是一脸懵呢！</p>
+<p>接下来我们一块掌握几个精确查找项目的方式（均以springboot为例）</p>
+<h6 id="1-项目名搜索"><a href="#1-项目名搜索" class="headerlink" title="1.项目名搜索"></a>1.项目名搜索</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:name 项目关键字</span><br></pre></td></tr></table></figure>
+
+<p><img src="image-20211117104831270.png" alt="image-20211117104831270"></p>
+<p>这时发现项目数据量已经少了一些，搜索到了16.5万个项目</p>
+<h6 id="2-项目描述搜索"><a href="#2-项目描述搜索" class="headerlink" title="2.项目描述搜索"></a>2.项目描述搜索</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:description 关键字</span><br></pre></td></tr></table></figure>
+
+<p><img src="image-20211117105101855.png" alt="image-20211117105101855"></p>
+<p>此时项目数量已经下降到了6.9万个</p>
+<h6 id="3-项目readMe搜索"><a href="#3-项目readMe搜索" class="headerlink" title="3.项目readMe搜索"></a>3.项目readMe搜索</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:readme 关键字</span><br></pre></td></tr></table></figure>
+
+<p><img src="image-20211117105323314.png" alt="image-20211117105323314"></p>
+<p>此时项目数量为12.6万个</p>
+<h6 id="4-关键字搜索，然后限制stars或者forks-数"><a href="#4-关键字搜索，然后限制stars或者forks-数" class="headerlink" title="4.关键字搜索，然后限制stars或者forks 数"></a>4.关键字搜索，然后限制stars或者forks 数</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:name 或者 description 或者 readme 关键字 stars:&gt;数字 forks:&gt;数字</span><br></pre></td></tr></table></figure>
+
+<p>stars 和 forks既可以单独使用，也可以组合使用</p>
+<p><img src="image-20211117113707201.png" alt="image-20211117113707201"></p>
+<p>当增加上stars 数量大于10000时，项目数为23个</p>
+<h6 id="5-限制项目更新时间"><a href="#5-限制项目更新时间" class="headerlink" title="5.限制项目更新时间"></a>5.限制项目更新时间</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:name或description或readme 关键字  pushed:&gt;2021-02-01</span><br></pre></td></tr></table></figure>
+
+<p><img src="image-20211117113931148.png" alt="image-20211117113931148"></p>
+<p>此时项目数为4.4万个。这里还可以和stars或者forks组合使用</p>
+<h6 id="6-限制项目的语言"><a href="#6-限制项目的语言" class="headerlink" title="6.限制项目的语言"></a>6.限制项目的语言</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:name或description或readme 关键字  language:javascript</span><br></pre></td></tr></table></figure>
+
+<p><img src="image-20211117114146576.png" alt="image-20211117114146576"></p>
+<p>项目数为8.5万个。</p>
+<h6 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h6><p>如何高效的从GitHub上搜索开源项目，有下面的小技巧：</p>
+<ul>
+<li>项目名搜索: in:name 关键字</li>
+<li>项目描述搜索： in:description 关键字</li>
+<li>项目详细描述搜索： in: readme 关键字</li>
+<li>限制项目的火热程度： stars:&gt;数字 或者 forks:&gt;数字</li>
+<li>限制项目的更新时间：pushed:&gt; 时间</li>
+<li>限制项目的语言：language:语言</li>
+</ul>
+<p>所以以上github搜索的小技巧。你学废了了吗？</p>
+]]></content>
+      <categories>
+        <category>github</category>
+      </categories>
+      <tags>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JMeter介绍</title>
     <url>/Echo/2021/11/20/JMeter%E4%BB%8B%E7%BB%8D/</url>
     <content><![CDATA[<p>在本文中我们将了解什么是性能测试、为什么选择 JMeter、JMeter 与 HP LoadRunner。</p>
@@ -920,59 +973,6 @@
       </categories>
       <tags>
         <tag>性能测试，JMeter</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>GitHub搜索技巧</title>
-    <url>/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/</url>
-    <content><![CDATA[<p>github是世界知名的代码托管平台，千万程序员的圣地。作为一个常逛github的程序员，你在github上搜索代码时，是怎样操作的呢？</p>
-<p>大家是不是也会像我一样搜索框直接输入关键字</p>
-<p><img src="image-20211117104623233.png" alt="image-20211117104623233"></p>
-<p>然后改变 一下列表oder排序方式</p>
-<p><img src="image-20211117104649103.png" alt="image-20211117104649103"></p>
-<p>但是找到了接近21万相关的开源项目，这时候的你是不是一脸懵呢！</p>
-<p>接下来我们一块掌握几个精确查找项目的方式（均以springboot为例）</p>
-<h6 id="1-项目名搜索"><a href="#1-项目名搜索" class="headerlink" title="1.项目名搜索"></a>1.项目名搜索</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:name 项目关键字</span><br></pre></td></tr></table></figure>
-
-<p><img src="image-20211117104831270.png" alt="image-20211117104831270"></p>
-<p>这时发现项目数据量已经少了一些，搜索到了16.5万个项目</p>
-<h6 id="2-项目描述搜索"><a href="#2-项目描述搜索" class="headerlink" title="2.项目描述搜索"></a>2.项目描述搜索</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:description 关键字</span><br></pre></td></tr></table></figure>
-
-<p><img src="image-20211117105101855.png" alt="image-20211117105101855"></p>
-<p>此时项目数量已经下降到了6.9万个</p>
-<h6 id="3-项目readMe搜索"><a href="#3-项目readMe搜索" class="headerlink" title="3.项目readMe搜索"></a>3.项目readMe搜索</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:readme 关键字</span><br></pre></td></tr></table></figure>
-
-<p><img src="image-20211117105323314.png" alt="image-20211117105323314"></p>
-<p>此时项目数量为12.6万个</p>
-<h6 id="4-关键字搜索，然后限制stars或者forks-数"><a href="#4-关键字搜索，然后限制stars或者forks-数" class="headerlink" title="4.关键字搜索，然后限制stars或者forks 数"></a>4.关键字搜索，然后限制stars或者forks 数</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:name 或者 description 或者 readme 关键字 stars:&gt;数字 forks:&gt;数字</span><br></pre></td></tr></table></figure>
-
-<p>stars 和 forks既可以单独使用，也可以组合使用</p>
-<p><img src="image-20211117113707201.png" alt="image-20211117113707201"></p>
-<p>当增加上stars 数量大于10000时，项目数为23个</p>
-<h6 id="5-限制项目更新时间"><a href="#5-限制项目更新时间" class="headerlink" title="5.限制项目更新时间"></a>5.限制项目更新时间</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:name或description或readme 关键字  pushed:&gt;2021-02-01</span><br></pre></td></tr></table></figure>
-
-<p><img src="image-20211117113931148.png" alt="image-20211117113931148"></p>
-<p>此时项目数为4.4万个。这里还可以和stars或者forks组合使用</p>
-<h6 id="6-限制项目的语言"><a href="#6-限制项目的语言" class="headerlink" title="6.限制项目的语言"></a>6.限制项目的语言</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:name或description或readme 关键字  language:javascript</span><br></pre></td></tr></table></figure>
-
-<p><img src="image-20211117114146576.png" alt="image-20211117114146576"></p>
-<p>项目数为8.5万个。</p>
-<h6 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h6><p>如何高效的从GitHub上搜索开源项目，有下面的小技巧：</p>
-<ul>
-<li>项目名搜索: in:name 关键字</li>
-<li>项目描述搜索： in:description 关键字</li>
-<li>项目详细描述搜索： in: readme 关键字</li>
-<li>限制项目的火热程度： stars:&gt;数字 或者 forks:&gt;数字</li>
-<li>限制项目的更新时间：pushed:&gt; 时间</li>
-<li>限制项目的语言：language:语言</li>
-</ul>
-<p>所以以上github搜索的小技巧。你学废了了吗？</p>
-]]></content>
-      <categories>
-        <category>github</category>
-      </categories>
-      <tags>
-        <tag>github</tag>
       </tags>
   </entry>
   <entry>
@@ -1244,86 +1244,6 @@
       <tags>
         <tag>大数据</tag>
         <tag>HBase</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>jekins环境搭建</title>
-    <url>/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
-    <content><![CDATA[<table>
-<thead>
-<tr>
-<th>环境</th>
-<th>版本</th>
-<th>包</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>JDK</td>
-<td>11.0.2</td>
-<td>jdk-11.0.2_linux-x64_bin.tar.gz</td>
-</tr>
-<tr>
-<td>Maven</td>
-<td>3.8.1</td>
-<td>apache-maven-3.8.1-bin.tar.gz</td>
-</tr>
-<tr>
-<td>Git</td>
-<td>2.9.5</td>
-<td>git-2.9.5.tar.gz</td>
-</tr>
-<tr>
-<td>Jenkins</td>
-<td>2.303.1 LTS</td>
-<td>jenkins.war</td>
-</tr>
-</tbody></table>
-<p>注：Jenkins的中英文系统跟随操作系统保持一致，如果想使用中文Jenkins，操作系统需要设置中文：<strong>zh_CN.UTF-8</strong></p>
-<h1 id="1-JDK安装部署"><a href="#1-JDK安装部署" class="headerlink" title="1.JDK安装部署"></a>1.JDK安装部署</h1><h2 id="1-1-旧JDK卸载"><a href="#1-1-旧JDK卸载" class="headerlink" title="1.1 旧JDK卸载"></a>1.1 旧JDK卸载</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">rpm -qa | grep -i java | xargs -n1 sudo rpm -e --nodeps</span><br><span class="line">rpm -qa：表示查询所有已经安装的软件包</span><br><span class="line">grep -i：表示过滤时不区分大小写</span><br><span class="line">xargs -n1：表示一次获取上次执行结果的一个值</span><br><span class="line">rpm -e --nodeps：表示卸载软件</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="1-2-安装指定JDK"><a href="#1-2-安装指定JDK" class="headerlink" title="1.2 安装指定JDK"></a>1.2 安装指定JDK</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 创建节点安装服务目录</span><br><span class="line">mkdir /opt/software</span><br><span class="line"># 解压JDK</span><br><span class="line">tar -zxvf jdk-11.0.2_linux-x64_bin.tar.gz -C /opt/software/</span><br><span class="line"># 配置环境变量</span><br><span class="line">vim /etc/profile</span><br><span class="line">export JAVA_HOME=/opt/software/jdk-11.0.2</span><br><span class="line">export PATH=$PATH:$JAVA_HOME/bin</span><br><span class="line">source /etc/profile</span><br><span class="line"># 验证JDK安装</span><br><span class="line">java -version</span><br></pre></td></tr></table></figure>
-
-<h1 id="2-关闭防火墙"><a href="#2-关闭防火墙" class="headerlink" title="2.关闭防火墙"></a>2.关闭防火墙</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl status firewalld		# 查看防火墙的状态</span><br><span class="line">systemctl stop firewalld		# 关闭防火墙</span><br><span class="line">systemctl disable firewalld		# 设置开机不启动</span><br><span class="line">systemctl is-enabled firewalld	# 查看防火墙服务是否设置开机启动</span><br></pre></td></tr></table></figure>
-
-<h1 id="3-安装Maven"><a href="#3-安装Maven" class="headerlink" title="3.安装Maven"></a>3.安装Maven</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 解压maven</span><br><span class="line">tar -zxvf apache-maven-3.8.1-bin.tar.gz -C /opt/software/</span><br><span class="line"># 配置环境变量</span><br><span class="line">vim /etc/profile</span><br><span class="line">export JAVA_HOME=/opt/software/jdk-11.0.2</span><br><span class="line">export MAVNE_HOME=/opt/software/apache-maven-3.8.1</span><br><span class="line">export PATH=$PATH:$JAVA_HOME/bin:$MAVNE_HOME/bin</span><br><span class="line">source /etc/profile</span><br><span class="line"># 检查maven安装</span><br><span class="line">mvn -version</span><br></pre></td></tr></table></figure>
-
-<h1 id="4-安装Git"><a href="#4-安装Git" class="headerlink" title="4.安装Git"></a>4.安装Git</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 1.安装编译 git 时需要的包</span><br><span class="line">yum install -y curl-devel expat-devel gettext-devel openssl-devel zlib-devel</span><br><span class="line">yum install -y gcc perl-ExtUtils-MakeMaker</span><br><span class="line"># 2.删除已有的 git</span><br><span class="line">yum remove -y git</span><br><span class="line"># 3.Git 官网下载 Git 最新版 tar 包，解压到/opt/software目录下</span><br><span class="line">tar -zxvf git-2.9.5.tar.gz -C /opt/software/</span><br><span class="line"># 4.编译安装</span><br><span class="line">cd /opt/software/git-2.9.5/</span><br><span class="line">make prefix=/usr/local/git all</span><br><span class="line">make prefix=/usr/local/git install</span><br><span class="line">echo &quot;export PATH=$PATH:/usr/local/git/bin&quot; &gt;&gt; /etc/bashrc</span><br><span class="line">source /etc/bashrc</span><br><span class="line"># 5.检查一下版本号</span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
-
-<h1 id="5-搭建Jenkins"><a href="#5-搭建Jenkins" class="headerlink" title="5.搭建Jenkins"></a>5.搭建Jenkins</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yum install -y fontconfig</span><br><span class="line"># Jenkins可以直接运行</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">nohup /usr/bin/java -jar /root/jenkins.war  --logfile=/var/<span class="built_in">log</span>/jenkins_server.log --httpPort=8088 &gt;  /root/jenkins_server.log 2&gt;&amp; 1 &amp;**</span><br></pre></td></tr></table></figure>
-
-<p>设置开机启动<br> vim /etc/rc.local</p>
-<h2 id="5-1-访问jekins"><a href="#5-1-访问jekins" class="headerlink" title="5.1 访问jekins"></a>5.1 访问jekins</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://yellow.bigdata:8088</span><br></pre></td></tr></table></figure>
-
-<h2 id="5-2-解锁Jenkins"><a href="#5-2-解锁Jenkins" class="headerlink" title="5.2 解锁Jenkins"></a>5.2 解锁Jenkins</h2><p>依据提示，查看/root/.jenkins/secrets/initialAdminPassword文件中内容，填入文本框，这里填写的密码，也是admin账号的密码</p>
-<p><img src="image-20211113151335779.png" alt="image-20211113151335779"></p>
-<h2 id="5-3-选择插件安装模式"><a href="#5-3-选择插件安装模式" class="headerlink" title="5.3 选择插件安装模式"></a>5.3 选择插件安装模式</h2><p>选择哪种插件的安装方式都可以，对后续操作没有太大影响，若后面有需要可以有针对性的安装插件，本次选择 “<strong>安装推荐的插件</strong>”，此时安装插件节点必须能够联网。</p>
-<p><img src="image-20211113153312956.png" alt="image-20211113153312956"></p>
-<p><img src="image-20211113153332209.png" alt="image-20211113153332209"></p>
-<p>打×的插件是由于网络传输导致的安装失败，后面再重新安装即可</p>
-<h2 id="5-4-新建账号或以管理员身份继续"><a href="#5-4-新建账号或以管理员身份继续" class="headerlink" title="5.4 新建账号或以管理员身份继续"></a>5.4 新建账号或以管理员身份继续</h2><p>可以选择使用admin账户继续，后面仍然有机会注册新账户</p>
-<p><img src="image-20211113153358671.png" alt="image-20211113153358671"></p>
-<h2 id="5-5-实例配置"><a href="#5-5-实例配置" class="headerlink" title="5.5 实例配置"></a>5.5 实例配置</h2><p><img src="image-20211113153424306.png" alt="image-20211113153424306"></p>
-<h2 id="5-6-开始使用Jenkins"><a href="#5-6-开始使用Jenkins" class="headerlink" title="5.6 开始使用Jenkins"></a>5.6 开始使用Jenkins</h2><p><img src="image-20211113153454866.png" alt="image-20211113153454866"></p>
-<p><img src="image-20211113153524832.png" alt="image-20211113153524832"></p>
-<h2 id="5-7-Jenkins设置中文"><a href="#5-7-Jenkins设置中文" class="headerlink" title="5.7 Jenkins设置中文"></a>5.7 Jenkins设置中文</h2><p>安装插件 Locale plugin , Localization: Chinese (Simplified) , Localization Support Plugin，如果失败就再安装一次</p>
-<p><img src="image-20211113153552830.png" alt="image-20211113153552830"></p>
-<p>重启：<a href="http://yellow.bigdata:8088/restart">http://yellow.bigdata:8088/restart</a><br> 如果出现部分汉化，部分没有汉化，则卸载插件，重新安装插件<br> 如果还是存在部分汉化，部分没有汉化的现象，则如下操作：<br> 1.先设置Default Language：zh_US（含义：英文）<br> 2.重启Jenkins<br> 3.再设置Default Language：zh_CN（含义：中文）<br> 4.刷新即可</p>
-<h1 id="6-Jenkins系统管理初始化设置"><a href="#6-Jenkins系统管理初始化设置" class="headerlink" title="6.Jenkins系统管理初始化设置"></a>6.Jenkins系统管理初始化设置</h1><h2 id="6-1-全局工具配置"><a href="#6-1-全局工具配置" class="headerlink" title="6.1 全局工具配置"></a>6.1 全局工具配置</h2><p><img src="image-20211113153642733.png" alt="image-20211113153642733"></p>
-<p>JDK</p>
-<p><img src="image-20211113153701355.png" alt="image-20211113153701355"></p>
-<p>Git</p>
-<p><img src="image-20211113153722363.png" alt="image-20211113153722363"></p>
-<p>Maven</p>
-<p><img src="image-20211113153742157.png" alt="image-20211113153742157"></p>
-]]></content>
-      <categories>
-        <category>CI/Cd</category>
-      </categories>
-      <tags>
-        <tag>jekins</tag>
-        <tag>CI/CD</tag>
       </tags>
   </entry>
   <entry>
@@ -2076,6 +1996,86 @@
       </tags>
   </entry>
   <entry>
+    <title>jekins环境搭建</title>
+    <url>/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr>
+<th>环境</th>
+<th>版本</th>
+<th>包</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>JDK</td>
+<td>11.0.2</td>
+<td>jdk-11.0.2_linux-x64_bin.tar.gz</td>
+</tr>
+<tr>
+<td>Maven</td>
+<td>3.8.1</td>
+<td>apache-maven-3.8.1-bin.tar.gz</td>
+</tr>
+<tr>
+<td>Git</td>
+<td>2.9.5</td>
+<td>git-2.9.5.tar.gz</td>
+</tr>
+<tr>
+<td>Jenkins</td>
+<td>2.303.1 LTS</td>
+<td>jenkins.war</td>
+</tr>
+</tbody></table>
+<p>注：Jenkins的中英文系统跟随操作系统保持一致，如果想使用中文Jenkins，操作系统需要设置中文：<strong>zh_CN.UTF-8</strong></p>
+<h1 id="1-JDK安装部署"><a href="#1-JDK安装部署" class="headerlink" title="1.JDK安装部署"></a>1.JDK安装部署</h1><h2 id="1-1-旧JDK卸载"><a href="#1-1-旧JDK卸载" class="headerlink" title="1.1 旧JDK卸载"></a>1.1 旧JDK卸载</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">rpm -qa | grep -i java | xargs -n1 sudo rpm -e --nodeps</span><br><span class="line">rpm -qa：表示查询所有已经安装的软件包</span><br><span class="line">grep -i：表示过滤时不区分大小写</span><br><span class="line">xargs -n1：表示一次获取上次执行结果的一个值</span><br><span class="line">rpm -e --nodeps：表示卸载软件</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="1-2-安装指定JDK"><a href="#1-2-安装指定JDK" class="headerlink" title="1.2 安装指定JDK"></a>1.2 安装指定JDK</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 创建节点安装服务目录</span><br><span class="line">mkdir /opt/software</span><br><span class="line"># 解压JDK</span><br><span class="line">tar -zxvf jdk-11.0.2_linux-x64_bin.tar.gz -C /opt/software/</span><br><span class="line"># 配置环境变量</span><br><span class="line">vim /etc/profile</span><br><span class="line">export JAVA_HOME=/opt/software/jdk-11.0.2</span><br><span class="line">export PATH=$PATH:$JAVA_HOME/bin</span><br><span class="line">source /etc/profile</span><br><span class="line"># 验证JDK安装</span><br><span class="line">java -version</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-关闭防火墙"><a href="#2-关闭防火墙" class="headerlink" title="2.关闭防火墙"></a>2.关闭防火墙</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl status firewalld		# 查看防火墙的状态</span><br><span class="line">systemctl stop firewalld		# 关闭防火墙</span><br><span class="line">systemctl disable firewalld		# 设置开机不启动</span><br><span class="line">systemctl is-enabled firewalld	# 查看防火墙服务是否设置开机启动</span><br></pre></td></tr></table></figure>
+
+<h1 id="3-安装Maven"><a href="#3-安装Maven" class="headerlink" title="3.安装Maven"></a>3.安装Maven</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 解压maven</span><br><span class="line">tar -zxvf apache-maven-3.8.1-bin.tar.gz -C /opt/software/</span><br><span class="line"># 配置环境变量</span><br><span class="line">vim /etc/profile</span><br><span class="line">export JAVA_HOME=/opt/software/jdk-11.0.2</span><br><span class="line">export MAVNE_HOME=/opt/software/apache-maven-3.8.1</span><br><span class="line">export PATH=$PATH:$JAVA_HOME/bin:$MAVNE_HOME/bin</span><br><span class="line">source /etc/profile</span><br><span class="line"># 检查maven安装</span><br><span class="line">mvn -version</span><br></pre></td></tr></table></figure>
+
+<h1 id="4-安装Git"><a href="#4-安装Git" class="headerlink" title="4.安装Git"></a>4.安装Git</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 1.安装编译 git 时需要的包</span><br><span class="line">yum install -y curl-devel expat-devel gettext-devel openssl-devel zlib-devel</span><br><span class="line">yum install -y gcc perl-ExtUtils-MakeMaker</span><br><span class="line"># 2.删除已有的 git</span><br><span class="line">yum remove -y git</span><br><span class="line"># 3.Git 官网下载 Git 最新版 tar 包，解压到/opt/software目录下</span><br><span class="line">tar -zxvf git-2.9.5.tar.gz -C /opt/software/</span><br><span class="line"># 4.编译安装</span><br><span class="line">cd /opt/software/git-2.9.5/</span><br><span class="line">make prefix=/usr/local/git all</span><br><span class="line">make prefix=/usr/local/git install</span><br><span class="line">echo &quot;export PATH=$PATH:/usr/local/git/bin&quot; &gt;&gt; /etc/bashrc</span><br><span class="line">source /etc/bashrc</span><br><span class="line"># 5.检查一下版本号</span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
+
+<h1 id="5-搭建Jenkins"><a href="#5-搭建Jenkins" class="headerlink" title="5.搭建Jenkins"></a>5.搭建Jenkins</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yum install -y fontconfig</span><br><span class="line"># Jenkins可以直接运行</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">nohup /usr/bin/java -jar /root/jenkins.war  --logfile=/var/<span class="built_in">log</span>/jenkins_server.log --httpPort=8088 &gt;  /root/jenkins_server.log 2&gt;&amp; 1 &amp;**</span><br></pre></td></tr></table></figure>
+
+<p>设置开机启动<br> vim /etc/rc.local</p>
+<h2 id="5-1-访问jekins"><a href="#5-1-访问jekins" class="headerlink" title="5.1 访问jekins"></a>5.1 访问jekins</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://yellow.bigdata:8088</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-2-解锁Jenkins"><a href="#5-2-解锁Jenkins" class="headerlink" title="5.2 解锁Jenkins"></a>5.2 解锁Jenkins</h2><p>依据提示，查看/root/.jenkins/secrets/initialAdminPassword文件中内容，填入文本框，这里填写的密码，也是admin账号的密码</p>
+<p><img src="image-20211113151335779.png" alt="image-20211113151335779"></p>
+<h2 id="5-3-选择插件安装模式"><a href="#5-3-选择插件安装模式" class="headerlink" title="5.3 选择插件安装模式"></a>5.3 选择插件安装模式</h2><p>选择哪种插件的安装方式都可以，对后续操作没有太大影响，若后面有需要可以有针对性的安装插件，本次选择 “<strong>安装推荐的插件</strong>”，此时安装插件节点必须能够联网。</p>
+<p><img src="image-20211113153312956.png" alt="image-20211113153312956"></p>
+<p><img src="image-20211113153332209.png" alt="image-20211113153332209"></p>
+<p>打×的插件是由于网络传输导致的安装失败，后面再重新安装即可</p>
+<h2 id="5-4-新建账号或以管理员身份继续"><a href="#5-4-新建账号或以管理员身份继续" class="headerlink" title="5.4 新建账号或以管理员身份继续"></a>5.4 新建账号或以管理员身份继续</h2><p>可以选择使用admin账户继续，后面仍然有机会注册新账户</p>
+<p><img src="image-20211113153358671.png" alt="image-20211113153358671"></p>
+<h2 id="5-5-实例配置"><a href="#5-5-实例配置" class="headerlink" title="5.5 实例配置"></a>5.5 实例配置</h2><p><img src="image-20211113153424306.png" alt="image-20211113153424306"></p>
+<h2 id="5-6-开始使用Jenkins"><a href="#5-6-开始使用Jenkins" class="headerlink" title="5.6 开始使用Jenkins"></a>5.6 开始使用Jenkins</h2><p><img src="image-20211113153454866.png" alt="image-20211113153454866"></p>
+<p><img src="image-20211113153524832.png" alt="image-20211113153524832"></p>
+<h2 id="5-7-Jenkins设置中文"><a href="#5-7-Jenkins设置中文" class="headerlink" title="5.7 Jenkins设置中文"></a>5.7 Jenkins设置中文</h2><p>安装插件 Locale plugin , Localization: Chinese (Simplified) , Localization Support Plugin，如果失败就再安装一次</p>
+<p><img src="image-20211113153552830.png" alt="image-20211113153552830"></p>
+<p>重启：<a href="http://yellow.bigdata:8088/restart">http://yellow.bigdata:8088/restart</a><br> 如果出现部分汉化，部分没有汉化，则卸载插件，重新安装插件<br> 如果还是存在部分汉化，部分没有汉化的现象，则如下操作：<br> 1.先设置Default Language：zh_US（含义：英文）<br> 2.重启Jenkins<br> 3.再设置Default Language：zh_CN（含义：中文）<br> 4.刷新即可</p>
+<h1 id="6-Jenkins系统管理初始化设置"><a href="#6-Jenkins系统管理初始化设置" class="headerlink" title="6.Jenkins系统管理初始化设置"></a>6.Jenkins系统管理初始化设置</h1><h2 id="6-1-全局工具配置"><a href="#6-1-全局工具配置" class="headerlink" title="6.1 全局工具配置"></a>6.1 全局工具配置</h2><p><img src="image-20211113153642733.png" alt="image-20211113153642733"></p>
+<p>JDK</p>
+<p><img src="image-20211113153701355.png" alt="image-20211113153701355"></p>
+<p>Git</p>
+<p><img src="image-20211113153722363.png" alt="image-20211113153722363"></p>
+<p>Maven</p>
+<p><img src="image-20211113153742157.png" alt="image-20211113153742157"></p>
+]]></content>
+      <categories>
+        <category>CI/Cd</category>
+      </categories>
+      <tags>
+        <tag>jekins</tag>
+        <tag>CI/CD</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>springboot整合shiro和JWT使用指北</title>
     <url>/Echo/2021/11/09/springboot%E6%95%B4%E5%90%88shiro%E5%92%8CJWT%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8C%97/</url>
     <content><![CDATA[<h3 id="shiro是什么？"><a href="#shiro是什么？" class="headerlink" title="shiro是什么？"></a>shiro是什么？</h3><p><code>Shiro</code> 是一个强大的简单易用的 <code>Java</code> 安全框架，主要用来更便捷的 <code>认证，授权，加密，会话管理</code>。<code>Shiro</code> 首要的和最重要的目标就是容易使用并且容易理解，通过 <code>Shiro</code> 易于理解的<code>API</code>，您可以快速、轻松地获得任何应用程序——从最小的移动应用程序最大的网络和企业应用程序。</p>
@@ -2154,88 +2154,6 @@
       </categories>
       <tags>
         <tag>个人成长</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>拥有未来的能力——“自学”</title>
-    <url>/Echo/2021/11/09/%E8%87%AA%E5%AD%A6/</url>
-    <content><![CDATA[<h2 id="为什么一定要掌握自学能力？"><a href="#为什么一定要掌握自学能力？" class="headerlink" title="为什么一定要掌握自学能力？"></a>为什么一定要掌握自学能力？</h2><p>最近一直在讨论延长退休年龄，我们的父辈在五十岁就退休了。再过去的几十年里，人类的平均寿命预期增长的十分惊人！拿中国地区做例子，1949年，中国人均预期寿命不足35岁。 2021年，这个数字达到77.3岁。  72年，人均预期寿命长一倍还多。所以，各位，我们的未来还有很长。曾经有一家机构做过这样一个调查，人们的职业与自己大学所学专业的相符的比例不足20%。因为这世界变化太快了，因为大多数教育机构与世界发展脱钩的程度越来越严重。你的未来日子还有很长，这世界进步的这么快，你有让自己有在未来安身立命的一技之长吗？自学能力是唯一值得被不断磨练的长技，没有自学能力的人是没有未来的，这样我们才能在很长的未来中不被世界所抛弃。</p>
-<h2 id="自学需要的元素"><a href="#自学需要的元素" class="headerlink" title="自学需要的元素"></a>自学需要的元素</h2><p>自学过程我们要经历以下四个阶段：学、练、用、造。</p>
-<ul>
-<li>学：重复学，多次重复学，特别是面对“过早引用”的知识结构时；反复学，锻炼我们归纳总结的能力。</li>
-<li>练：在接触用的过程中，我们就开始接触练。无论你之前学了多少遍，一旦开始练，我们就会遇到各种各样的问题。每次自学时，我们都要放空自己，保持空杯的心态。</li>
-<li>用：只要有时间或者只要有需求我们就要用我们自学的知识，重复反复大量的用，在用的过程中练习；</li>
-<li>造：这个阶段我目前还没达到</li>
-</ul>
-<h3 id="耐心"><a href="#耐心" class="headerlink" title="耐心"></a>耐心</h3><p>在开始一门新知识的自学之前，我们要有足够的心理预期建设。我们要明白两点：</p>
-<p>1、这个时间要比你想象的长的多</p>
-<p>2、自学过程中，什么都要重复很多遍，学，练，用都需要大量的重复过程</p>
-<p>大多数人缺乏耐心的根源是“没有准备这么多的时间和精力”。这就需要我们有预算观念。</p>
-<p>预算观念——这个观念存在与否，成熟与否，基本决定了一个人未来的盈利能力。</p>
-<p>我们恪守一个原则，未来就很有可能超过大多数人：绝对不做预算不够的事。</p>
-<p>在自学的过程中，我们学的时候比别人重复的多，练的时候比别人重复的多，到最后用得比别人多。再开始自学的过程中，我总是觉得时间不够用，后来我越来越淡定了，因为早已习惯投入大量时间换取新的技能。</p>
-<h3 id="刻意练习"><a href="#刻意练习" class="headerlink" title="刻意练习"></a>刻意练习</h3><p>在自学的过程中，有一些部分是要刻意练习的。好比小时候我们学写字，老师为什么总是让我们写很多遍？还有卖油翁的故事大家还记得吗？手艺这个是需要刻意反复练习，主要是靠时间。在这过程中也需要我们刻意练习，如果卖油翁总是很随意，油撒的很多，想必他很快干不下去了。需要刻意练习的地方，是因人而异的，那就是对于自己来说很难比较容易出错的地方。经过大量的重复的联系，最终我们达到无他，唯手熟尔！</p>
-<h3 id="琢磨"><a href="#琢磨" class="headerlink" title="琢磨"></a>琢磨</h3><p>论语中有这样一句话“学而不思则罔”在学习的过程中我们要多思考。琢磨就是刻意的去思考!在我们的学习过程中最有价值的琢磨就是“这个东西刻意用在哪里？”</p>
-<h2 id="自学过程要打破的几个幻觉"><a href="#自学过程要打破的几个幻觉" class="headerlink" title="自学过程要打破的几个幻觉"></a>自学过程要打破的几个幻觉</h2><p>感觉总是我们人生中最大的坑。每次考试完是不是总感觉自己考的不错，学习过程也总感觉自己学会了，其实带最后发现自己啥也不会。很多人的自学能力都是被“自己的感觉”给耽误了。</p>
-<h3 id="刚需幻觉"><a href="#刚需幻觉" class="headerlink" title="刚需幻觉"></a>刚需幻觉</h3><p>“刚需幻觉”的根本原因就是感觉，你不会的东西对你来说感觉很难。18岁时你感觉英语很难，22岁有个外企机会，你没把握住；16岁时你感觉游泳很难，18岁时，心中的女神约你去游泳你只能说自己没时间！一项技能在你没有学会它的时候，你不可能觉得那是个刚需（就像房子，你不结婚，永远不会觉得这是刚需）。所以我们在开始学习一个新技能时，这么告诉自己不要问学它有什么用，学就是了。如何客服刚需幻觉？这要我们学习一个策略，让自己成为一个自驱动的人！自驱动说起来很简单就是“找活干”。</p>
-<h3 id="时间幻觉"><a href="#时间幻觉" class="headerlink" title="时间幻觉"></a>时间幻觉</h3><p>我们很多时候都受时间幻觉的拖累。玩游戏时你总是觉得时间很短，然后一整天就过去了；我在写这篇文章时总感觉时间还有很多，然后这周就过到周五了。时间从来都是匀速的，每个人的时间都是24小时的。在学习一个技能时，最大幻觉就是总是以为“时间不够了”。回头看看，回头想一想，五年前，十年前的自己在做什么？有没有一转眼时间就过去了。每年的毕业季是否总是有人很多人感叹，自己怎么就毕业了辣么久了！如何客服时间幻觉呢？只管坚持着做，坚持着学。时间会给你答案的。</p>
-<h3 id="困难幻觉"><a href="#困难幻觉" class="headerlink" title="困难幻觉"></a>困难幻觉</h3><p>无论做什么都是有难点的，有瓶颈期。当我们客服难点后，发现原来不过如此–这就是困难幻觉。古人早就有总结：“世上无难事，只怕有心人”。把一件事当成手艺看，就像开车一样，你开的多就会了，这样带来的好处之一就是心态平和。因为我们知道这事和天分智商关系不大，它靠的是不混时间（你如何对待时间的，时间也将如何对待你）、琢磨（刻意思考）、刻意练习。阅读难点在于起初的时候它是非常枯燥的。刚识字、刚上学的时候，由于理解能力有限，又由于年龄的关系于是耐心有限，所以，那时需要老师耐心陪伴、悉心引导。这就好像小朋友刚出生的时候，没有牙齿，所以只能喝奶差不多…… 然而，到了一定程度之后一定要断奶，是不是？可绝大多数人的实际情况却是，小学的时候爱上了  “奶嘴”（有人带着阅读），而后一生没有奶嘴就吃不下任何东西。</p>
-<p>他们必须去 “上课”，需要有人给他们讲书。不仅如此，讲得 “不生动”、“不幽默”  还不行；就算那职业提供奶嘴的人（这是非常令人遗憾的真相：很多的时候，所谓的 “老师” 本质上只不过就是奶妈而已）帅气漂亮、生动幽默、尽职尽力…… 最终还是一样的结果 —— 绝大多数人依然没有完整掌握所有应该掌握的细节。</p>
-<h2 id="自学过程需要的几项技能"><a href="#自学过程需要的几项技能" class="headerlink" title="自学过程需要的几项技能"></a>自学过程需要的几项技能</h2><h3 id="拆解"><a href="#拆解" class="headerlink" title="拆解"></a>拆解</h3><p>在自学的过程中遇到难点，复杂的。我们不妨拆解他们，拆解成一个一个的小问题予以突破。把那些很难的任务无限拆分——直到每个子任务都很小，小到我们可以唾手可得为止。当我们习惯了这么做之后，就会发现一切任务（不仅有自学还有别的）其实都是不难的，只是复杂繁琐而已。很多人失败的原因是什么，就是不懂拆分任务，要么就是怕麻烦！有句话不知道大家听过没——人活着，其实就挺麻烦的。。。。</p>
-<h3 id="专注"><a href="#专注" class="headerlink" title="专注"></a>专注</h3><p>现在这个网络时代，大家有没有发现自己的注意力经常莫名的就被转移了。比如，你本来只不过就想着去 Google  一个编程错误信息的解读，结果不知道怎么就 “注意到” 了另外一个东西，比如，“某编辑器的皮肤”，然后你就 “顺手” 把它下载下来，然后  “很自然地顺手把它装上”，而后又看了看，觉得有点必要于是 “顺手做了点定制”…… 然后欣赏了一会儿，并自我得意一番之后 “突然发现”  自己还没有解决两小时之前要解决的问题！好奇心越重的人，越是容易被注意力漂移所拖累。</p>
-<p>好奇心是好东西，而且是必须认真呵护的东西 —— 几乎最重要、最强劲的自学动力，都混合着好奇心出现并持续。</p>
-<p>如何专注，我们列一个清单。把我们首要做的事情放在第一位，并牢牢地记住它。一旦发现自己的注意力没有集中在这上面的关键之时，一旦发现自己的注意力已经漂移到其它当前并不重要的事项上，就马上纠正。</p>
-<h3 id="沟通"><a href="#沟通" class="headerlink" title="沟通"></a>沟通</h3><p>普遍认为，手艺人的特征是缺乏沟通能力，或者沟通能力差 —— 也许是因为平时把所有的时间精力都投入到磨练手艺上去了罢。</p>
-<p><strong>教是最好的学习方法</strong></p>
-<p>讲课、写教程，甚至写书 —— 这是最高效的提升沟通能力的刻意练习手段。</p>
-<p>沟通要注意以下几点</p>
-<h4 id="内容第一"><a href="#内容第一" class="headerlink" title="内容第一"></a>内容第一</h4><p>无论是平日里讲话、还是台上讲课，抑或是写篇文章、写本书，永远都是内容第一，至于形式，并非不重要，但绝对不能喧宾夺主。</p>
-<p>通常，我们用 “干货” 来描述内容的重要性。第一步就是准备干货，至于修辞啊、笑点啊、酷炫幻灯片啊等等等等，都必须是次要的，否则就是喧宾夺主。干货不够好，其它的做得越多、越好，最终越是容易露怯 —— 这很可怕。</p>
-<h4 id="内容质量"><a href="#内容质量" class="headerlink" title="内容质量"></a>内容质量</h4><h5 id="重点突出"><a href="#重点突出" class="headerlink" title="重点突出"></a>重点突出</h5><p>“重点突出”，是最简单朴素、成本最低的 “优秀结构”。</p>
-<p>既然是沟通，就要了解对方。在绝大多数情况下，对方想要的才是重点。</p>
-<p>可问题在于，我们平日里面对单个人的时候都觉得 “了解对方很困难”，我们又如何判断 “一个群体”  呢？与很多人想象得相反，判断群体远比判断个体容易得多…… 因为你可以用粗暴分类，比如，你把听众或读者划分为 “小白” 和  “专家”，那你就知道了，你面对的群体中，更可能  “大部分是小白，小部分是专家”。于是，你就可以思考，“小白们最想知道的是什么？”，“专家们最重视的是什么？”，于是，你就可以在脑子里对所谓的  “重点” 有应对策略。</p>
-<h5 id="例证生动"><a href="#例证生动" class="headerlink" title="例证生动"></a>例证生动</h5><p>寻找好例子，是需要很多时间精力的事情 —— 从来就没有任何 “信手拈来” 的生动例子。信手拈来，是读者或者听众的感觉而已，对你来说，肯定是举重若轻的 —— 你明明是在举重，却被认为 “如若举轻”。在第一部分，<a href="https://link.juejin.cn/?target=https://render.githubusercontent.com/view/Part.1.E.7.files.ipynb">讲文件的那一章</a>里，我举了个 “我自己费尽心机找好例子” 的例子，相信你读过之后，一定有所感触。</p>
-<h5 id="消除歧义"><a href="#消除歧义" class="headerlink" title="消除歧义"></a>消除歧义</h5><p>消除<strong>一切</strong>歧义。这是真功夫，因为这东西很难把自己关在屋子里自顾自练成。并且，每个人有自己的 “容易引发误解” 的特殊属性，大家各不相同 —— 于是，只能靠自己探索。</p>
-<h2 id="自学者的终点"><a href="#自学者的终点" class="headerlink" title="自学者的终点"></a>自学者的终点</h2><p>必须学会一个没人教、没人带、甚至没有书可以参考技能！尽量只靠阅读获得一项新技能！</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
-<li>你一定要想办法启动自学，否则你没有未来；</li>
-<li>你把自学当作一门手艺，长期反复磨练它；</li>
-<li>你懂得学、练、用、造各个阶段之间的不同，以及针对每个阶段的对应策略；</li>
-<li>面对 “过早引用” 过多的世界，你有你的应对方式；</li>
-<li>你会 “囫囵吞枣”，你会 “重复重复再重复”，你深刻理解 “读书百遍其义自见”；</li>
-<li>以后你最擅长的技能之一就是拆解拆解再拆解；</li>
-<li>你用你的拆解手艺把所有遇到的难点都拆解成能搞定的小任务；</li>
-<li>自学任何一门手艺之前你都不会去问 “有什么用”，而是清楚地知道，无论是什么只要学会了就只能也必然天天去用；</li>
-<li>你没有刚需幻觉，你也没有时间幻觉，你更没有困难幻觉，反正你就是相对更清醒；</li>
-<li>不管你新学什么手艺，你都知道只要假以时日你就肯定能做好，因为所有的手艺精湛，靠的只不过是充足的预算；</li>
-<li>你知道如何不浪费生命，因为只要不是在刻意练习、不是在刻意思考，那就是在 “混时间”；</li>
-<li>你总是在琢磨你能做个什么新作品；</li>
-<li>你刻意地使用你的作品作为有效社交工具，也用作品去过滤无效社交；</li>
-<li>你乐于分享，乐于阅读也更乐于写作 —— 因为这世界怎么帮助你的，你就想着要怎样回报；</li>
-<li>你把全面和完整当作最高衡量标准，也用这个标准去克制、应对自己的注意力漂移；</li>
-<li>你会不断自学新的手艺，因为你越来越理解单一技能的脆弱，越来越理解多项技能的综合威力；</li>
-<li>你越来越依赖互联网，它是你最喜欢的 “书”，而 Google 是你最好的朋友 —— 他总是能帮你找到更好的老师；</li>
-<li>偶尔，你会学会没人教、没人带、甚至没书可参考的手艺，别人都说你 “悟性” 高，可你自己清楚地知道那其实是怎么回事；</li>
-<li>你越来越明白，其实没什么 “秘密”，越简单、越朴素的道理越值得重视；</li>
-<li>你发现你用来思考的时间越来越多 —— 准确地讲，是 “琢磨”…… 只不过是因为你真会琢磨了 —— 你很清楚你应该花时间琢磨的是什么。</li>
-</ul>
-<p><strong>没什么不能自学的，反正都只不过是手艺</strong> —— 只不过，我们每个人都受限于自己的时间精力而已。</p>
-<p>自学不过是一门手艺，而且还是谁都能掌握的。不要 “试试” 而已，而是 “直接开干” —— 这样才好。</p>
-<h3 id="自学过程还需要"><a href="#自学过程还需要" class="headerlink" title="自学过程还需要"></a>自学过程还需要</h3><ul>
-<li><strong>心理建设——没什么可怕的！</strong></li>
-<li><strong>不懂也要硬着头皮读完，然后重复读很多遍</strong></li>
-<li><strong>磨练 “只字不差地阅读” 的能力</strong></li>
-<li><strong>就算不明白也要先记住——“好记性不如烂笔头”，不是记在笔记本上是要记在脑子里</strong></li>
-<li><strong>尽早开始归纳总结</strong></li>
-<li><strong>先用起来，在研究怎么用的</strong></li>
-<li><strong>多听老人言——多听前辈的经验和总结，但不要盲从</strong></li>
-</ul>
-]]></content>
-      <categories>
-        <category>个人</category>
-      </categories>
-      <tags>
-        <tag>成长</tag>
       </tags>
   </entry>
   <entry>
@@ -2346,6 +2264,88 @@
       </categories>
       <tags>
         <tag>个人</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>拥有未来的能力——“自学”</title>
+    <url>/Echo/2021/11/09/%E8%87%AA%E5%AD%A6/</url>
+    <content><![CDATA[<h2 id="为什么一定要掌握自学能力？"><a href="#为什么一定要掌握自学能力？" class="headerlink" title="为什么一定要掌握自学能力？"></a>为什么一定要掌握自学能力？</h2><p>最近一直在讨论延长退休年龄，我们的父辈在五十岁就退休了。再过去的几十年里，人类的平均寿命预期增长的十分惊人！拿中国地区做例子，1949年，中国人均预期寿命不足35岁。 2021年，这个数字达到77.3岁。  72年，人均预期寿命长一倍还多。所以，各位，我们的未来还有很长。曾经有一家机构做过这样一个调查，人们的职业与自己大学所学专业的相符的比例不足20%。因为这世界变化太快了，因为大多数教育机构与世界发展脱钩的程度越来越严重。你的未来日子还有很长，这世界进步的这么快，你有让自己有在未来安身立命的一技之长吗？自学能力是唯一值得被不断磨练的长技，没有自学能力的人是没有未来的，这样我们才能在很长的未来中不被世界所抛弃。</p>
+<h2 id="自学需要的元素"><a href="#自学需要的元素" class="headerlink" title="自学需要的元素"></a>自学需要的元素</h2><p>自学过程我们要经历以下四个阶段：学、练、用、造。</p>
+<ul>
+<li>学：重复学，多次重复学，特别是面对“过早引用”的知识结构时；反复学，锻炼我们归纳总结的能力。</li>
+<li>练：在接触用的过程中，我们就开始接触练。无论你之前学了多少遍，一旦开始练，我们就会遇到各种各样的问题。每次自学时，我们都要放空自己，保持空杯的心态。</li>
+<li>用：只要有时间或者只要有需求我们就要用我们自学的知识，重复反复大量的用，在用的过程中练习；</li>
+<li>造：这个阶段我目前还没达到</li>
+</ul>
+<h3 id="耐心"><a href="#耐心" class="headerlink" title="耐心"></a>耐心</h3><p>在开始一门新知识的自学之前，我们要有足够的心理预期建设。我们要明白两点：</p>
+<p>1、这个时间要比你想象的长的多</p>
+<p>2、自学过程中，什么都要重复很多遍，学，练，用都需要大量的重复过程</p>
+<p>大多数人缺乏耐心的根源是“没有准备这么多的时间和精力”。这就需要我们有预算观念。</p>
+<p>预算观念——这个观念存在与否，成熟与否，基本决定了一个人未来的盈利能力。</p>
+<p>我们恪守一个原则，未来就很有可能超过大多数人：绝对不做预算不够的事。</p>
+<p>在自学的过程中，我们学的时候比别人重复的多，练的时候比别人重复的多，到最后用得比别人多。再开始自学的过程中，我总是觉得时间不够用，后来我越来越淡定了，因为早已习惯投入大量时间换取新的技能。</p>
+<h3 id="刻意练习"><a href="#刻意练习" class="headerlink" title="刻意练习"></a>刻意练习</h3><p>在自学的过程中，有一些部分是要刻意练习的。好比小时候我们学写字，老师为什么总是让我们写很多遍？还有卖油翁的故事大家还记得吗？手艺这个是需要刻意反复练习，主要是靠时间。在这过程中也需要我们刻意练习，如果卖油翁总是很随意，油撒的很多，想必他很快干不下去了。需要刻意练习的地方，是因人而异的，那就是对于自己来说很难比较容易出错的地方。经过大量的重复的联系，最终我们达到无他，唯手熟尔！</p>
+<h3 id="琢磨"><a href="#琢磨" class="headerlink" title="琢磨"></a>琢磨</h3><p>论语中有这样一句话“学而不思则罔”在学习的过程中我们要多思考。琢磨就是刻意的去思考!在我们的学习过程中最有价值的琢磨就是“这个东西刻意用在哪里？”</p>
+<h2 id="自学过程要打破的几个幻觉"><a href="#自学过程要打破的几个幻觉" class="headerlink" title="自学过程要打破的几个幻觉"></a>自学过程要打破的几个幻觉</h2><p>感觉总是我们人生中最大的坑。每次考试完是不是总感觉自己考的不错，学习过程也总感觉自己学会了，其实带最后发现自己啥也不会。很多人的自学能力都是被“自己的感觉”给耽误了。</p>
+<h3 id="刚需幻觉"><a href="#刚需幻觉" class="headerlink" title="刚需幻觉"></a>刚需幻觉</h3><p>“刚需幻觉”的根本原因就是感觉，你不会的东西对你来说感觉很难。18岁时你感觉英语很难，22岁有个外企机会，你没把握住；16岁时你感觉游泳很难，18岁时，心中的女神约你去游泳你只能说自己没时间！一项技能在你没有学会它的时候，你不可能觉得那是个刚需（就像房子，你不结婚，永远不会觉得这是刚需）。所以我们在开始学习一个新技能时，这么告诉自己不要问学它有什么用，学就是了。如何客服刚需幻觉？这要我们学习一个策略，让自己成为一个自驱动的人！自驱动说起来很简单就是“找活干”。</p>
+<h3 id="时间幻觉"><a href="#时间幻觉" class="headerlink" title="时间幻觉"></a>时间幻觉</h3><p>我们很多时候都受时间幻觉的拖累。玩游戏时你总是觉得时间很短，然后一整天就过去了；我在写这篇文章时总感觉时间还有很多，然后这周就过到周五了。时间从来都是匀速的，每个人的时间都是24小时的。在学习一个技能时，最大幻觉就是总是以为“时间不够了”。回头看看，回头想一想，五年前，十年前的自己在做什么？有没有一转眼时间就过去了。每年的毕业季是否总是有人很多人感叹，自己怎么就毕业了辣么久了！如何客服时间幻觉呢？只管坚持着做，坚持着学。时间会给你答案的。</p>
+<h3 id="困难幻觉"><a href="#困难幻觉" class="headerlink" title="困难幻觉"></a>困难幻觉</h3><p>无论做什么都是有难点的，有瓶颈期。当我们客服难点后，发现原来不过如此–这就是困难幻觉。古人早就有总结：“世上无难事，只怕有心人”。把一件事当成手艺看，就像开车一样，你开的多就会了，这样带来的好处之一就是心态平和。因为我们知道这事和天分智商关系不大，它靠的是不混时间（你如何对待时间的，时间也将如何对待你）、琢磨（刻意思考）、刻意练习。阅读难点在于起初的时候它是非常枯燥的。刚识字、刚上学的时候，由于理解能力有限，又由于年龄的关系于是耐心有限，所以，那时需要老师耐心陪伴、悉心引导。这就好像小朋友刚出生的时候，没有牙齿，所以只能喝奶差不多…… 然而，到了一定程度之后一定要断奶，是不是？可绝大多数人的实际情况却是，小学的时候爱上了  “奶嘴”（有人带着阅读），而后一生没有奶嘴就吃不下任何东西。</p>
+<p>他们必须去 “上课”，需要有人给他们讲书。不仅如此，讲得 “不生动”、“不幽默”  还不行；就算那职业提供奶嘴的人（这是非常令人遗憾的真相：很多的时候，所谓的 “老师” 本质上只不过就是奶妈而已）帅气漂亮、生动幽默、尽职尽力…… 最终还是一样的结果 —— 绝大多数人依然没有完整掌握所有应该掌握的细节。</p>
+<h2 id="自学过程需要的几项技能"><a href="#自学过程需要的几项技能" class="headerlink" title="自学过程需要的几项技能"></a>自学过程需要的几项技能</h2><h3 id="拆解"><a href="#拆解" class="headerlink" title="拆解"></a>拆解</h3><p>在自学的过程中遇到难点，复杂的。我们不妨拆解他们，拆解成一个一个的小问题予以突破。把那些很难的任务无限拆分——直到每个子任务都很小，小到我们可以唾手可得为止。当我们习惯了这么做之后，就会发现一切任务（不仅有自学还有别的）其实都是不难的，只是复杂繁琐而已。很多人失败的原因是什么，就是不懂拆分任务，要么就是怕麻烦！有句话不知道大家听过没——人活着，其实就挺麻烦的。。。。</p>
+<h3 id="专注"><a href="#专注" class="headerlink" title="专注"></a>专注</h3><p>现在这个网络时代，大家有没有发现自己的注意力经常莫名的就被转移了。比如，你本来只不过就想着去 Google  一个编程错误信息的解读，结果不知道怎么就 “注意到” 了另外一个东西，比如，“某编辑器的皮肤”，然后你就 “顺手” 把它下载下来，然后  “很自然地顺手把它装上”，而后又看了看，觉得有点必要于是 “顺手做了点定制”…… 然后欣赏了一会儿，并自我得意一番之后 “突然发现”  自己还没有解决两小时之前要解决的问题！好奇心越重的人，越是容易被注意力漂移所拖累。</p>
+<p>好奇心是好东西，而且是必须认真呵护的东西 —— 几乎最重要、最强劲的自学动力，都混合着好奇心出现并持续。</p>
+<p>如何专注，我们列一个清单。把我们首要做的事情放在第一位，并牢牢地记住它。一旦发现自己的注意力没有集中在这上面的关键之时，一旦发现自己的注意力已经漂移到其它当前并不重要的事项上，就马上纠正。</p>
+<h3 id="沟通"><a href="#沟通" class="headerlink" title="沟通"></a>沟通</h3><p>普遍认为，手艺人的特征是缺乏沟通能力，或者沟通能力差 —— 也许是因为平时把所有的时间精力都投入到磨练手艺上去了罢。</p>
+<p><strong>教是最好的学习方法</strong></p>
+<p>讲课、写教程，甚至写书 —— 这是最高效的提升沟通能力的刻意练习手段。</p>
+<p>沟通要注意以下几点</p>
+<h4 id="内容第一"><a href="#内容第一" class="headerlink" title="内容第一"></a>内容第一</h4><p>无论是平日里讲话、还是台上讲课，抑或是写篇文章、写本书，永远都是内容第一，至于形式，并非不重要，但绝对不能喧宾夺主。</p>
+<p>通常，我们用 “干货” 来描述内容的重要性。第一步就是准备干货，至于修辞啊、笑点啊、酷炫幻灯片啊等等等等，都必须是次要的，否则就是喧宾夺主。干货不够好，其它的做得越多、越好，最终越是容易露怯 —— 这很可怕。</p>
+<h4 id="内容质量"><a href="#内容质量" class="headerlink" title="内容质量"></a>内容质量</h4><h5 id="重点突出"><a href="#重点突出" class="headerlink" title="重点突出"></a>重点突出</h5><p>“重点突出”，是最简单朴素、成本最低的 “优秀结构”。</p>
+<p>既然是沟通，就要了解对方。在绝大多数情况下，对方想要的才是重点。</p>
+<p>可问题在于，我们平日里面对单个人的时候都觉得 “了解对方很困难”，我们又如何判断 “一个群体”  呢？与很多人想象得相反，判断群体远比判断个体容易得多…… 因为你可以用粗暴分类，比如，你把听众或读者划分为 “小白” 和  “专家”，那你就知道了，你面对的群体中，更可能  “大部分是小白，小部分是专家”。于是，你就可以思考，“小白们最想知道的是什么？”，“专家们最重视的是什么？”，于是，你就可以在脑子里对所谓的  “重点” 有应对策略。</p>
+<h5 id="例证生动"><a href="#例证生动" class="headerlink" title="例证生动"></a>例证生动</h5><p>寻找好例子，是需要很多时间精力的事情 —— 从来就没有任何 “信手拈来” 的生动例子。信手拈来，是读者或者听众的感觉而已，对你来说，肯定是举重若轻的 —— 你明明是在举重，却被认为 “如若举轻”。在第一部分，<a href="https://link.juejin.cn/?target=https://render.githubusercontent.com/view/Part.1.E.7.files.ipynb">讲文件的那一章</a>里，我举了个 “我自己费尽心机找好例子” 的例子，相信你读过之后，一定有所感触。</p>
+<h5 id="消除歧义"><a href="#消除歧义" class="headerlink" title="消除歧义"></a>消除歧义</h5><p>消除<strong>一切</strong>歧义。这是真功夫，因为这东西很难把自己关在屋子里自顾自练成。并且，每个人有自己的 “容易引发误解” 的特殊属性，大家各不相同 —— 于是，只能靠自己探索。</p>
+<h2 id="自学者的终点"><a href="#自学者的终点" class="headerlink" title="自学者的终点"></a>自学者的终点</h2><p>必须学会一个没人教、没人带、甚至没有书可以参考技能！尽量只靠阅读获得一项新技能！</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>你一定要想办法启动自学，否则你没有未来；</li>
+<li>你把自学当作一门手艺，长期反复磨练它；</li>
+<li>你懂得学、练、用、造各个阶段之间的不同，以及针对每个阶段的对应策略；</li>
+<li>面对 “过早引用” 过多的世界，你有你的应对方式；</li>
+<li>你会 “囫囵吞枣”，你会 “重复重复再重复”，你深刻理解 “读书百遍其义自见”；</li>
+<li>以后你最擅长的技能之一就是拆解拆解再拆解；</li>
+<li>你用你的拆解手艺把所有遇到的难点都拆解成能搞定的小任务；</li>
+<li>自学任何一门手艺之前你都不会去问 “有什么用”，而是清楚地知道，无论是什么只要学会了就只能也必然天天去用；</li>
+<li>你没有刚需幻觉，你也没有时间幻觉，你更没有困难幻觉，反正你就是相对更清醒；</li>
+<li>不管你新学什么手艺，你都知道只要假以时日你就肯定能做好，因为所有的手艺精湛，靠的只不过是充足的预算；</li>
+<li>你知道如何不浪费生命，因为只要不是在刻意练习、不是在刻意思考，那就是在 “混时间”；</li>
+<li>你总是在琢磨你能做个什么新作品；</li>
+<li>你刻意地使用你的作品作为有效社交工具，也用作品去过滤无效社交；</li>
+<li>你乐于分享，乐于阅读也更乐于写作 —— 因为这世界怎么帮助你的，你就想着要怎样回报；</li>
+<li>你把全面和完整当作最高衡量标准，也用这个标准去克制、应对自己的注意力漂移；</li>
+<li>你会不断自学新的手艺，因为你越来越理解单一技能的脆弱，越来越理解多项技能的综合威力；</li>
+<li>你越来越依赖互联网，它是你最喜欢的 “书”，而 Google 是你最好的朋友 —— 他总是能帮你找到更好的老师；</li>
+<li>偶尔，你会学会没人教、没人带、甚至没书可参考的手艺，别人都说你 “悟性” 高，可你自己清楚地知道那其实是怎么回事；</li>
+<li>你越来越明白，其实没什么 “秘密”，越简单、越朴素的道理越值得重视；</li>
+<li>你发现你用来思考的时间越来越多 —— 准确地讲，是 “琢磨”…… 只不过是因为你真会琢磨了 —— 你很清楚你应该花时间琢磨的是什么。</li>
+</ul>
+<p><strong>没什么不能自学的，反正都只不过是手艺</strong> —— 只不过，我们每个人都受限于自己的时间精力而已。</p>
+<p>自学不过是一门手艺，而且还是谁都能掌握的。不要 “试试” 而已，而是 “直接开干” —— 这样才好。</p>
+<h3 id="自学过程还需要"><a href="#自学过程还需要" class="headerlink" title="自学过程还需要"></a>自学过程还需要</h3><ul>
+<li><strong>心理建设——没什么可怕的！</strong></li>
+<li><strong>不懂也要硬着头皮读完，然后重复读很多遍</strong></li>
+<li><strong>磨练 “只字不差地阅读” 的能力</strong></li>
+<li><strong>就算不明白也要先记住——“好记性不如烂笔头”，不是记在笔记本上是要记在脑子里</strong></li>
+<li><strong>尽早开始归纳总结</strong></li>
+<li><strong>先用起来，在研究怎么用的</strong></li>
+<li><strong>多听老人言——多听前辈的经验和总结，但不要盲从</strong></li>
+</ul>
+]]></content>
+      <categories>
+        <category>个人</category>
+      </categories>
+      <tags>
+        <tag>成长</tag>
       </tags>
   </entry>
 </search>
