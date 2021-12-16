@@ -188,6 +188,779 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/2021/04/12/Azkaban-REST-API%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Echo/images/avatar.gif">
+      <meta itemprop="name" content="丑牛">
+      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="贤の博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Echo/2021/04/12/Azkaban-REST-API%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" class="post-title-link" itemprop="url">Azkaban REST API使用指南</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-04-12 21:30:07" itemprop="dateCreated datePublished" datetime="2021-04-12T21:30:07+08:00">2021-04-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Echo/categories/%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/" itemprop="url" rel="index"><span itemprop="name">任务调度</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="API文档"><a href="#API文档" class="headerlink" title="API文档"></a>API文档</h2><p>通常，人们又一种无需使用Web UI即可与Azkaban进行交互的愿望。Azkaban有一些公开的ajax调用，可以通过curl或其他一些HTTP请求客户端进行访问。所有API调用都首先需要正确的身份验证。</p>
+<h3 id="授权"><a href="#授权" class="headerlink" title="授权"></a>授权</h3><ul>
+<li><strong>Method:</strong> POST</li>
+<li><strong>Request URL:</strong> /?action=login</li>
+<li><strong>Parameter Location:</strong> Request Query String</li>
+</ul>
+<p>该API可帮助验证用户身份并提供<code>session.id</code>响应。</p>
+<p><code>session.id</code>返回后，直到会话终止，此ID均可用于在授予适当权限的情况下执行任何API请求。如果您注销，更改计算机，浏览器或位置，重新启动Azkaban或会话过期，则会话过期。默认会话超时为24小时（一天）。您可以重新登录会话是否已过期。对于同一用户，新会话将始终覆盖旧会话。</p>
+<p><strong>重要的</strong> <code>session.id</code>是，几乎所有API调用都应提供（身份验证除外）。<code>session.id</code>可以简单地附加为请求参数之一，也可以通过cookie：设置 <code>azkaban.browser.session.id</code>。以下两个HTTP请求是等效的：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># a) Provide session.id parameter directly</span></span><br><span class="line">curl -k --get --data <span class="string">&quot;session.id=bca1d75d-6bae-4163-a5b0-378a7d7b5a91&amp;ajax=fetchflowgraph&amp;project=azkaban-test-project&amp;flow=test&quot;</span> https://localhost:8443/manager</span><br><span class="line"></span><br><span class="line"><span class="comment"># b) Provide azkaban.browser.session.id cookie</span></span><br><span class="line">curl -k --get -b <span class="string">&quot;azkaban.browser.session.id=bca1d75d-6bae-4163-a5b0-378a7d7b5a91&quot;</span> --data <span class="string">&quot;ajax=fetchflowgraph&amp;project=azkaban-test-project&amp;flow=test&quot;</span> https://localhost:8443/manager</span><br></pre></td></tr></table></figure>
+
+<p>请求参数</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>action=login</td>
+<td>指示登录操作的固定参数。</td>
+</tr>
+<tr>
+<td>username</td>
+<td>Azkaban用户名。</td>
+</tr>
+<tr>
+<td>password</td>
+<td>对应的密码。</td>
+</tr>
+</tbody></table>
+<p>返回数据</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>error</td>
+<td>如果登录尝试失败，则返回错误消息。</td>
+</tr>
+<tr>
+<td>session.id</td>
+<td>如果登录尝试成功，则返回会话ID。</td>
+</tr>
+</tbody></table>
+<p>通过curl进行的示例调用：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -k -X POST --data &quot;action=login&amp;username=azkaban&amp;password=azkaban&quot; https://localhost:8443</span><br></pre></td></tr></table></figure>
+
+<p>返回数据举例</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;status&quot;</span> : <span class="string">&quot;success&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;session.id&quot;</span> : <span class="string">&quot;c001aba5-a90f-4daf-8f11-62330d034c0a&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><p>用于创建新项目的ajax API。</p>
+<p><strong>注意：</strong>在上传任何项目zip文件之前，应首先通过此API创建项目。</p>
+<ul>
+<li><strong>Method:</strong> POST</li>
+<li><strong>Request URL:</strong> /manager?action=create</li>
+<li><strong>Parameter Location:</strong> Request Query</li>
+</ul>
+<p>请求参数</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>session.id</td>
+<td>用户会话ID。</td>
+</tr>
+<tr>
+<td>action=create</td>
+<td>指示创建项目动作的固定参数。</td>
+</tr>
+<tr>
+<td>name</td>
+<td>要上传的项目名称。</td>
+</tr>
+<tr>
+<td>description</td>
+<td>项目的描述。该字段不能为空。</td>
+</tr>
+</tbody></table>
+<p>返回数据（如果请求成功）</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>status</td>
+<td>创建尝试的状态。</td>
+</tr>
+<tr>
+<td>path</td>
+<td>重定向的URL路径</td>
+</tr>
+<tr>
+<td>action</td>
+<td>建议前端执行的操作。（这是为使用Azkaban前端javascript而设计的，外部用户可以忽略此字段。）</td>
+</tr>
+</tbody></table>
+<p>返回数据（如果请求失败）</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>message</td>
+<td>错误消息。</td>
+</tr>
+<tr>
+<td>error</td>
+<td>错误名称。</td>
+</tr>
+</tbody></table>
+<p>返回数据样例</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;status&quot;</span>:<span class="string">&quot;success&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;path&quot;</span>:<span class="string">&quot;manager?project=aaaa&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;action&quot;</span>:<span class="string">&quot;redirect&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除项目"><a href="#删除项目" class="headerlink" title="删除项目"></a>删除项目</h3><p>用于删除现有项目的ajax API。</p>
+<p><strong>注意：</strong>目前，删除操作完成后，将不会返回任何响应消息。</p>
+<ul>
+<li><strong>Method:</strong> GET</li>
+<li><strong>Request URL:</strong> /manager?delete=true</li>
+<li><strong>Parameter Location:</strong> Request Query</li>
+</ul>
+<p>请求参数</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>session.id</td>
+<td>用户会话ID。</td>
+</tr>
+<tr>
+<td>delete=true</td>
+<td>指示删除项目操作的固定参数。</td>
+</tr>
+<tr>
+<td>project</td>
+<td>要删除的项目名称。</td>
+</tr>
+</tbody></table>
+<p>返回数据：无</p>
+<h3 id="上传项目Zip文件"><a href="#上传项目Zip文件" class="headerlink" title="上传项目Zip文件"></a>上传项目Zip文件</h3><p>ajax调用以上传项目zip文件。zip文件结构应遵循“<a target="_blank" rel="noopener" href="https://azkaban.readthedocs.io/docs/2.5/#upload-projects">上传项目”中</a>所述的要求。</p>
+<p><strong>注意：</strong>成功创建项目后，应调用此API</p>
+<ul>
+<li><strong>Method:</strong> POST</li>
+<li><strong>Content-Type:</strong> multipart/mixed</li>
+<li><strong>Request URL:</strong> /manager?ajax=upload</li>
+<li><strong>Parameter Location:</strong> Request Body</li>
+</ul>
+<p>请求参数</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>session.id</td>
+<td>用户会话ID。</td>
+</tr>
+<tr>
+<td>ajax=upload</td>
+<td>上传操作的固定参数。</td>
+</tr>
+<tr>
+<td>project</td>
+<td>要上传的项目名称。</td>
+</tr>
+<tr>
+<td>file</td>
+<td>项目zip文件。类型应设置为 <code>application/zip</code>或 <code>application/x-zip-compressed</code>。</td>
+</tr>
+</tbody></table>
+<p>返回数据</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>error</td>
+<td>如果上传尝试失败，将显示错误消息。</td>
+</tr>
+<tr>
+<td>projectId</td>
+<td>项目的ID</td>
+</tr>
+<tr>
+<td>version</td>
+<td>上传的版本号</td>
+</tr>
+</tbody></table>
+<p>返回数据</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;error&quot;</span> : <span class="string">&quot;Installation Failed.\nError unzipping file.&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;projectId&quot;</span> : <span class="string">&quot;192&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;version&quot;</span> : <span class="string">&quot;1&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取项目流程"><a href="#获取项目流程" class="headerlink" title="获取项目流程"></a>获取项目流程</h3><p>给定项目名称后，此API调用将获取该项目的所有流ID。</p>
+<ul>
+<li><strong>Method:</strong> GET</li>
+<li><strong>Request URL:</strong> /manager?ajax=fetchprojectflows</li>
+<li><strong>Parameter Location:</strong> Request Query String</li>
+</ul>
+<p>请求参数</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>session.id</td>
+<td>用户会话ID。</td>
+</tr>
+<tr>
+<td>ajax=fetchprojectflows</td>
+<td>指示fetchProjectFlows操作的固定参数。</td>
+</tr>
+<tr>
+<td>project</td>
+<td>要获取的项目名称。</td>
+</tr>
+</tbody></table>
+<p>返回数据</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>project</td>
+<td>项目名称。</td>
+</tr>
+<tr>
+<td>projectId</td>
+<td>项目的数字ID。</td>
+</tr>
+<tr>
+<td>flows</td>
+<td>流ID的列表。 <strong>值示例：</strong> [{“ flowId”：“ aaa”}，{“ flowId”：“ bbb”}]</td>
+</tr>
+</tbody></table>
+<p>返回数据样例</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;project&quot;</span> : <span class="string">&quot;test-azkaban&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;projectId&quot;</span> : <span class="number">192</span>,</span><br><span class="line">  <span class="attr">&quot;flows&quot;</span> : [ &#123;</span><br><span class="line">    <span class="attr">&quot;flowId&quot;</span> : <span class="string">&quot;test&quot;</span></span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    <span class="attr">&quot;flowId&quot;</span> : <span class="string">&quot;test2&quot;</span></span><br><span class="line">  &#125; ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="提取流程作业"><a href="#提取流程作业" class="headerlink" title="提取流程作业"></a>提取流程作业</h3><p>对于给定的项目和流ID，此API调用将获取属于该流的所有作业。它还返回那些作业的相应图形结构。</p>
+<ul>
+<li><strong>Method:</strong> GET</li>
+<li><strong>Request URL:</strong> /manager?ajax=fetchflowgraph</li>
+<li><strong>Parameter Location:</strong> Request Query String</li>
+</ul>
+<p>请求参数</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>session.id</td>
+<td>用户会话ID。</td>
+</tr>
+<tr>
+<td>ajax=fetchflowgraph</td>
+<td>指示fetchProjectFlows操作的固定参数。</td>
+</tr>
+<tr>
+<td>project</td>
+<td>要获取的项目名称。</td>
+</tr>
+<tr>
+<td>flow</td>
+<td>要获取的项目ID。</td>
+</tr>
+</tbody></table>
+<p>返回参数</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>project</td>
+<td>项目名称。</td>
+</tr>
+<tr>
+<td>projectId</td>
+<td>项目的数字ID。</td>
+</tr>
+<tr>
+<td>flow</td>
+<td>流程ID已提取。</td>
+</tr>
+<tr>
+<td>nodes</td>
+<td>属于此流的作业节点列表。 <strong>结构：</strong> <strong>值的示例：</strong> [{“ id”：“ first_job”，“ type”：“ java”}，{“ id”：“ second_job”，“ type”：“ command”，“ in”：[“ first_job”]}]</td>
+</tr>
+</tbody></table>
+<p>返回数据</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;project&quot;</span> : <span class="string">&quot;azkaban-test-project&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;nodes&quot;</span> : [ &#123;</span><br><span class="line">    <span class="attr">&quot;id&quot;</span> : <span class="string">&quot;test-final&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;type&quot;</span> : <span class="string">&quot;command&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;in&quot;</span> : [ <span class="string">&quot;test-job-3&quot;</span> ]</span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    <span class="attr">&quot;id&quot;</span> : <span class="string">&quot;test-job-start&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;type&quot;</span> : <span class="string">&quot;java&quot;</span></span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    <span class="attr">&quot;id&quot;</span> : <span class="string">&quot;test-job-3&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;type&quot;</span> : <span class="string">&quot;java&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;in&quot;</span> : [ <span class="string">&quot;test-job-2&quot;</span> ]</span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    <span class="attr">&quot;id&quot;</span> : <span class="string">&quot;test-job-2&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;type&quot;</span> : <span class="string">&quot;java&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;in&quot;</span> : [ <span class="string">&quot;test-job-start&quot;</span> ]</span><br><span class="line">  &#125; ],</span><br><span class="line">  <span class="attr">&quot;flow&quot;</span> : <span class="string">&quot;test&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;projectId&quot;</span> : <span class="number">192</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取流的执行列表"><a href="#获取流的执行列表" class="headerlink" title="获取流的执行列表"></a>获取流的执行列表</h3><p>给定项目名称和特定流程，此API调用将提供相应执行的列表。这些执行按后代提交时间顺序排序。另外，还希望参数指定开始索引和列表的长度。这最初用于处理分页。</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>session.id</td>
+<td>用户会话ID。</td>
+</tr>
+<tr>
+<td>ajax=fetchFlowExecutions</td>
+<td>指示fetchFlowExecutions操作的固定参数。</td>
+</tr>
+<tr>
+<td>project</td>
+<td>要获取的项目名称。</td>
+</tr>
+<tr>
+<td>flow</td>
+<td>要获取的流ID。</td>
+</tr>
+<tr>
+<td>start</td>
+<td>返回列表的起始索引（含）。</td>
+</tr>
+<tr>
+<td>length</td>
+<td>返回列表的最大长度。例如，如果起始索引为2，长度为10，则返回的列表将包含索引的执行：[2、3、4、5、6、7、8、9、10、11]。</td>
+</tr>
+</tbody></table>
+<p>返回数据样例</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;executions&quot;</span> : [ &#123;</span><br><span class="line">    <span class="attr">&quot;startTime&quot;</span> : <span class="number">1407779928865</span>,</span><br><span class="line">    <span class="attr">&quot;submitUser&quot;</span> : <span class="string">&quot;1&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;status&quot;</span> : <span class="string">&quot;FAILED&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;submitTime&quot;</span> : <span class="number">1407779928829</span>,</span><br><span class="line">    <span class="attr">&quot;execId&quot;</span> : <span class="number">306</span>,</span><br><span class="line">    <span class="attr">&quot;projectId&quot;</span> : <span class="number">192</span>,</span><br><span class="line">    <span class="attr">&quot;endTime&quot;</span> : <span class="number">1407779950602</span>,</span><br><span class="line">    <span class="attr">&quot;flowId&quot;</span> : <span class="string">&quot;test&quot;</span></span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    <span class="attr">&quot;startTime&quot;</span> : <span class="number">1407779877807</span>,</span><br><span class="line">    <span class="attr">&quot;submitUser&quot;</span> : <span class="string">&quot;1&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;status&quot;</span> : <span class="string">&quot;FAILED&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;submitTime&quot;</span> : <span class="number">1407779877779</span>,</span><br><span class="line">    <span class="attr">&quot;execId&quot;</span> : <span class="number">305</span>,</span><br><span class="line">    <span class="attr">&quot;projectId&quot;</span> : <span class="number">192</span>,</span><br><span class="line">    <span class="attr">&quot;endTime&quot;</span> : <span class="number">1407779899599</span>,</span><br><span class="line">    <span class="attr">&quot;flowId&quot;</span> : <span class="string">&quot;test&quot;</span></span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    <span class="attr">&quot;startTime&quot;</span> : <span class="number">1407779473354</span>,</span><br><span class="line">    <span class="attr">&quot;submitUser&quot;</span> : <span class="string">&quot;1&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;status&quot;</span> : <span class="string">&quot;FAILED&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;submitTime&quot;</span> : <span class="number">1407779473318</span>,</span><br><span class="line">    <span class="attr">&quot;execId&quot;</span> : <span class="number">304</span>,</span><br><span class="line">    <span class="attr">&quot;projectId&quot;</span> : <span class="number">192</span>,</span><br><span class="line">    <span class="attr">&quot;endTime&quot;</span> : <span class="number">1407779495093</span>,</span><br><span class="line">    <span class="attr">&quot;flowId&quot;</span> : <span class="string">&quot;test&quot;</span></span><br><span class="line">  &#125; ],</span><br><span class="line">  <span class="attr">&quot;total&quot;</span> : <span class="number">16</span>,</span><br><span class="line">  <span class="attr">&quot;project&quot;</span> : <span class="string">&quot;azkaban-test-project&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;length&quot;</span> : <span class="number">3</span>,</span><br><span class="line">  <span class="attr">&quot;from&quot;</span> : <span class="number">0</span>,</span><br><span class="line">  <span class="attr">&quot;flow&quot;</span> : <span class="string">&quot;test&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;projectId&quot;</span> : <span class="number">192</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取流正在执行的列表"><a href="#获取流正在执行的列表" class="headerlink" title="获取流正在执行的列表"></a>获取流正在执行的列表</h3><p>给定项目名称和流程ID，此API调用仅获取当前正在运行的执行。</p>
+<ul>
+<li><strong>Method:</strong> GET</li>
+<li><strong>Request URL:</strong> /executor?ajax=getRunning</li>
+<li><strong>Parameter Location:</strong> Request Query String</li>
+</ul>
+<p>请求参数</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>session.id</td>
+<td>用户会话ID。</td>
+</tr>
+<tr>
+<td>ajax=getRunning</td>
+<td>指示getRunning动作的固定参数。</td>
+</tr>
+<tr>
+<td>project</td>
+<td>要获取的项目名称。</td>
+</tr>
+<tr>
+<td>flow</td>
+<td>要获取的流ID。</td>
+</tr>
+</tbody></table>
+<p>返回参数</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>execIds</td>
+<td>已获取执行ID的列表。 <strong>值示例：</strong> [301、302、111、999]</td>
+</tr>
+</tbody></table>
+<p>返回数据样例</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;execIds&quot;</span>: [<span class="number">301</span>, <span class="number">302</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="执行流程"><a href="#执行流程" class="headerlink" title="执行流程"></a>执行流程</h3><p>该API通过ajax调用执行流程，支持多种不同选项的选择。通过禁用同一流程中的所有其他作业，也可以通过此API来运行单个作业。</p>
+<p>请求参数</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>session.id</td>
+<td>用户会话ID。</td>
+</tr>
+<tr>
+<td>ajax=executeFlow</td>
+<td>指示executeFlow动作的固定参数。</td>
+</tr>
+<tr>
+<td>project</td>
+<td>要获取的项目名称。</td>
+</tr>
+<tr>
+<td>flow</td>
+<td>要获取的流ID。</td>
+</tr>
+<tr>
+<td>disabled</td>
+<td>不需要执行的jobID列表</td>
+</tr>
+</tbody></table>
+<p>返回数据</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>error</td>
+<td>如果请求失败的错误消息</td>
+</tr>
+<tr>
+<td>flow</td>
+<td>执行的流ID</td>
+</tr>
+<tr>
+<td>execid</td>
+<td>执行ID</td>
+</tr>
+</tbody></table>
+<p>返回数据样例</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  message: <span class="string">&quot;Execution submitted successfully with exec id 295&quot;</span>,</span><br><span class="line">  project: <span class="string">&quot;foo-demo&quot;</span>,</span><br><span class="line">  flow: <span class="string">&quot;test&quot;</span>,</span><br><span class="line">  execid: <span class="number">295</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="取消流程执行"><a href="#取消流程执行" class="headerlink" title="取消流程执行"></a>取消流程执行</h3><p>给定执行ID，此API调用将取消正在运行的流程。如果流未在运行，它将返回错误消息。</p>
+<ul>
+<li><strong>Method:</strong> GET</li>
+<li><strong>Request URL:</strong> /executor?ajax=cancelFlow</li>
+<li><strong>Parameter Location:</strong> Request Query String</li>
+</ul>
+<p>请求参数</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>session.id</td>
+<td>用户会话ID。</td>
+</tr>
+<tr>
+<td>ajax=cancelFlow</td>
+<td>指示当前ajax动作的固定参数是cancelFlow。</td>
+</tr>
+<tr>
+<td>execid</td>
+<td>执行ID。</td>
+</tr>
+</tbody></table>
+<p>成功的返回数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; &#125;</span><br></pre></td></tr></table></figure>
+
+<p>失败的返回数据</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;error&quot;</span> : <span class="string">&quot;Execution 302 of flow test isn&#x27;t running.&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用Cron创建一个调度"><a href="#使用Cron创建一个调度" class="headerlink" title="使用Cron创建一个调度"></a>使用Cron创建一个调度</h3><p>该API调用通过cron表达式调度流程。Cron是已广泛使用了很长时间的UNIX工具，我们使用<a target="_blank" rel="noopener" href="http://www.quartz-scheduler.org/">Quartz库</a>来解析cron表达式。所有cron计划都遵循azkaban Web服务器中定义的时区（时区ID是通过 <em>java.util.TimeZone.getDefault（）。getID（）获得的</em>）。</p>
+<ul>
+<li><strong>Method:</strong> POST</li>
+<li><strong>Request URL:</strong> /schedule?ajax=scheduleCronFlow</li>
+<li><strong>Parameter Location:</strong> Request Query String</li>
+</ul>
+<p>请求参数</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>session.id</td>
+<td>用户会话ID。</td>
+</tr>
+<tr>
+<td>ajax=scheduleCronFlow</td>
+<td>指示操作的固定参数是使用cron计划流。</td>
+</tr>
+<tr>
+<td>projectName</td>
+<td>项目的名称。</td>
+</tr>
+<tr>
+<td>flow</td>
+<td>流的名称。</td>
+</tr>
+<tr>
+<td>cronExpression</td>
+<td>CRON表达式是一个字符串，包含6或7个由空格隔开的字段，这些空格代表一组时间。在azkaban中，我们使用<a target="_blank" rel="noopener" href="http://www.quartz-scheduler.org/documentation/quartz-2.x/tutorials/crontrigger.html">Quartz Cron Format</a>。</td>
+</tr>
+</tbody></table>
+<p>成功的返回数据</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;message&quot;</span> : <span class="string">&quot;PROJECT_NAME.FLOW_NAME scheduled.&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;scheduleId&quot;</span> : SCHEDULE_ID,</span><br><span class="line">  <span class="attr">&quot;status&quot;</span> : <span class="string">&quot;success&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>失败的返回数据</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;message&quot;</span> : <span class="string">&quot;Cron expression must exist.&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;status&quot;</span> : <span class="string">&quot;error&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;message&quot;</span> : <span class="string">&quot;Permission denied. Cannot execute FLOW_NAME&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;status&quot;</span> : <span class="string">&quot;error&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>无效的cron表达式的返回数据</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;message&quot;</span> : <span class="string">&quot;This expression &lt;*****&gt; can not be parsed to quartz cron.&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;status&quot;</span> : <span class="string">&quot;error&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取一个调度"><a href="#获取一个调度" class="headerlink" title="获取一个调度"></a>获取一个调度</h3><p>给定项目ID和流程ID，此API调用将获取一个调度。</p>
+<ul>
+<li><strong>Method:</strong> GET</li>
+<li><strong>Request URL:</strong> /schedule?ajax=fetchSchedule</li>
+<li><strong>Parameter Location:</strong> Request Query String</li>
+</ul>
+<p>请求参数</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>session.id</td>
+<td>用户会话ID。</td>
+</tr>
+<tr>
+<td>ajax=fetchSchedule</td>
+<td>指示计划的固定参数。</td>
+</tr>
+<tr>
+<td>projectId</td>
+<td>项目的ID。</td>
+</tr>
+<tr>
+<td>flowId</td>
+<td>流的名称。</td>
+</tr>
+</tbody></table>
+<p>成功返回数据</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;schedule&quot;</span> : &#123;</span><br><span class="line">    <span class="attr">&quot;cronExpression&quot;</span> : <span class="string">&quot;0 * 9 ? * *&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;nextExecTime&quot;</span> : <span class="string">&quot;2017-04-01 09:00:00&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;period&quot;</span> : <span class="string">&quot;null&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;submitUser&quot;</span> : <span class="string">&quot;azkaban&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;executionOptions&quot;</span> : &#123;</span><br><span class="line">      <span class="attr">&quot;notifyOnFirstFailure&quot;</span> : <span class="literal">false</span>,</span><br><span class="line">      <span class="attr">&quot;notifyOnLastFailure&quot;</span> : <span class="literal">false</span>,</span><br><span class="line">      <span class="attr">&quot;failureEmails&quot;</span> : [ ],</span><br><span class="line">      <span class="attr">&quot;successEmails&quot;</span> : [ ],</span><br><span class="line">      <span class="attr">&quot;pipelineLevel&quot;</span> : <span class="literal">null</span>,</span><br><span class="line">      <span class="attr">&quot;queueLevel&quot;</span> : <span class="number">0</span>,</span><br><span class="line">      <span class="attr">&quot;concurrentOption&quot;</span> : <span class="string">&quot;skip&quot;</span>,</span><br><span class="line">      <span class="attr">&quot;mailCreator&quot;</span> : <span class="string">&quot;default&quot;</span>,</span><br><span class="line">      <span class="attr">&quot;memoryCheck&quot;</span> : <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">&quot;flowParameters&quot;</span> : &#123;</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="attr">&quot;failureAction&quot;</span> : <span class="string">&quot;FINISH_CURRENTLY_RUNNING&quot;</span>,</span><br><span class="line">      <span class="attr">&quot;failureEmailsOverridden&quot;</span> : <span class="literal">false</span>,</span><br><span class="line">      <span class="attr">&quot;successEmailsOverridden&quot;</span> : <span class="literal">false</span>,</span><br><span class="line">      <span class="attr">&quot;pipelineExecutionId&quot;</span> : <span class="literal">null</span>,</span><br><span class="line">      <span class="attr">&quot;disabledJobs&quot;</span> : [ ]</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">&quot;scheduleId&quot;</span> : <span class="string">&quot;3&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;firstSchedTime&quot;</span> : <span class="string">&quot;2017-03-31 11:45:21&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果没有调度，则返回数据为空</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="取消一个调度"><a href="#取消一个调度" class="headerlink" title="取消一个调度"></a>取消一个调度</h3><p>此API调用取消计划流程。</p>
+<ul>
+<li><strong>Method:</strong> POST</li>
+<li><strong>Request URL:</strong> /schedule?action=removeSched</li>
+<li><strong>Parameter Location:</strong> Request Query String</li>
+</ul>
+<p>请求参数</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>session.id</td>
+<td>用户会话ID。</td>
+</tr>
+<tr>
+<td>action=removeSched</td>
+<td>指示操作的固定参数是取消计划流。</td>
+</tr>
+<tr>
+<td>scheduleId</td>
+<td>时间表的ID。您可以在/ schedule页面上的Azkaban UI中找到它。</td>
+</tr>
+</tbody></table>
+<p>成功返回数据</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;message&quot;</span> : <span class="string">&quot;flow FLOW_NAME removed from Schedules.&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;status&quot;</span> : <span class="string">&quot;success&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>失败返回数据</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;message&quot;</span> : <span class="string">&quot;Schedule with ID SCHEDULE_ID does not exist&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;status&quot;</span> : <span class="string">&quot;error&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取流程执行详情"><a href="#获取流程执行详情" class="headerlink" title="获取流程执行详情"></a>获取流程执行详情</h3><p>给定执行ID，此API调用将获取该执行的所有详细信息，包括所有作业执行的列表。</p>
+<ul>
+<li><strong>Method:</strong> GET</li>
+<li><strong>Request URL:</strong> /executor?ajax=fetchexecflow</li>
+<li><strong>Parameter Location:</strong> Request Query String</li>
+</ul>
+<p>请求参数</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>session.id</td>
+<td>用户会话ID。</td>
+</tr>
+<tr>
+<td>ajax=fetchexecflow</td>
+<td>指示fetchexecflow操作的固定参数。</td>
+</tr>
+<tr>
+<td>execid</td>
+<td>要获取的执行ID。</td>
+</tr>
+</tbody></table>
+<p>它返回有关执行的详细信息（请查看下面的示例）。要注意的一件事是该字段<code>nodes[i].in</code>实际上指示此节点的依赖项是什么。</p>
+<p>返回数据</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;attempt&quot;</span> : <span class="number">0</span>,</span><br><span class="line">  <span class="attr">&quot;submitUser&quot;</span> : <span class="string">&quot;1&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;updateTime&quot;</span> : <span class="number">1407779495095</span>,</span><br><span class="line">  <span class="attr">&quot;status&quot;</span> : <span class="string">&quot;FAILED&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;submitTime&quot;</span> : <span class="number">1407779473318</span>,</span><br><span class="line">  <span class="attr">&quot;projectId&quot;</span> : <span class="number">192</span>,</span><br><span class="line">  <span class="attr">&quot;flow&quot;</span> : <span class="string">&quot;test&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;endTime&quot;</span> : <span class="number">1407779495093</span>,</span><br><span class="line">  <span class="attr">&quot;type&quot;</span> : <span class="literal">null</span>,</span><br><span class="line">  <span class="attr">&quot;nestedId&quot;</span> : <span class="string">&quot;test&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;startTime&quot;</span> : <span class="number">1407779473354</span>,</span><br><span class="line">  <span class="attr">&quot;id&quot;</span> : <span class="string">&quot;test&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;project&quot;</span> : <span class="string">&quot;test-azkaban&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;nodes&quot;</span> : [ &#123;</span><br><span class="line">    <span class="attr">&quot;attempt&quot;</span> : <span class="number">0</span>,</span><br><span class="line">    <span class="attr">&quot;startTime&quot;</span> : <span class="number">1407779495077</span>,</span><br><span class="line">    <span class="attr">&quot;id&quot;</span> : <span class="string">&quot;test&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;updateTime&quot;</span> : <span class="number">1407779495077</span>,</span><br><span class="line">    <span class="attr">&quot;status&quot;</span> : <span class="string">&quot;CANCELLED&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;nestedId&quot;</span> : <span class="string">&quot;test&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;type&quot;</span> : <span class="string">&quot;command&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;endTime&quot;</span> : <span class="number">1407779495077</span>,</span><br><span class="line">    <span class="attr">&quot;in&quot;</span> : [ <span class="string">&quot;test-foo&quot;</span> ]</span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    <span class="attr">&quot;attempt&quot;</span> : <span class="number">0</span>,</span><br><span class="line">    <span class="attr">&quot;startTime&quot;</span> : <span class="number">1407779473357</span>,</span><br><span class="line">    <span class="attr">&quot;id&quot;</span> : <span class="string">&quot;test-bar&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;updateTime&quot;</span> : <span class="number">1407779484241</span>,</span><br><span class="line">    <span class="attr">&quot;status&quot;</span> : <span class="string">&quot;SUCCEEDED&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;nestedId&quot;</span> : <span class="string">&quot;test-bar&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;type&quot;</span> : <span class="string">&quot;pig&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;endTime&quot;</span> : <span class="number">1407779484236</span></span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    <span class="attr">&quot;attempt&quot;</span> : <span class="number">0</span>,</span><br><span class="line">    <span class="attr">&quot;startTime&quot;</span> : <span class="number">1407779484240</span>,</span><br><span class="line">    <span class="attr">&quot;id&quot;</span> : <span class="string">&quot;test-foobar&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;updateTime&quot;</span> : <span class="number">1407779495073</span>,</span><br><span class="line">    <span class="attr">&quot;status&quot;</span> : <span class="string">&quot;FAILED&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;nestedId&quot;</span> : <span class="string">&quot;test-foobar&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;type&quot;</span> : <span class="string">&quot;java&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;endTime&quot;</span> : <span class="number">1407779495068</span>,</span><br><span class="line">    <span class="attr">&quot;in&quot;</span> : [ <span class="string">&quot;test-bar&quot;</span> ]</span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    <span class="attr">&quot;attempt&quot;</span> : <span class="number">0</span>,</span><br><span class="line">    <span class="attr">&quot;startTime&quot;</span> : <span class="number">1407779495069</span>,</span><br><span class="line">    <span class="attr">&quot;id&quot;</span> : <span class="string">&quot;test-foo&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;updateTime&quot;</span> : <span class="number">1407779495069</span>,</span><br><span class="line">    <span class="attr">&quot;status&quot;</span> : <span class="string">&quot;CANCELLED&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;nestedId&quot;</span> : <span class="string">&quot;test-foo&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;type&quot;</span> : <span class="string">&quot;java&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;endTime&quot;</span> : <span class="number">1407779495069</span>,</span><br><span class="line">    <span class="attr">&quot;in&quot;</span> : [ <span class="string">&quot;test-foobar&quot;</span> ]</span><br><span class="line">  &#125; ],</span><br><span class="line">  <span class="attr">&quot;flowId&quot;</span> : <span class="string">&quot;test&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;execid&quot;</span> : <span class="number">304</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取执行作业日志"><a href="#获取执行作业日志" class="headerlink" title="获取执行作业日志"></a>获取执行作业日志</h3><p>给定一个执行ID和一个作业ID，此API调用将获取相应的作业日志。有时日志文本可能会很大，因此此API调用也需要参数<code>offset</code>并<code>length</code>要指定。</p>
+<ul>
+<li><strong>Method:</strong> GET</li>
+<li><strong>Request URL:</strong> /executor?ajax=fetchExecJobLogs</li>
+<li><strong>Parameter Location:</strong> Request Query String</li>
+</ul>
+<p>请求参数</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>session.id</td>
+<td>用户会话ID。</td>
+</tr>
+<tr>
+<td>ajax=fetchExecJobLogs</td>
+<td>指示fetchExecJobLogs操作的固定参数。</td>
+</tr>
+<tr>
+<td>execid</td>
+<td>执行的唯一ID。</td>
+</tr>
+<tr>
+<td>jobId</td>
+<td>要获取的作业的唯一ID。</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>日志数据的偏移量。</td>
+</tr>
+<tr>
+<td>length</td>
+<td>日志数据的长度。例如，如果偏移量设置为10，长度为1000，则返回的日志将从第10个字符开始，并且长度为1000（如果剩余对数小于1000，则返回较小的长度）。</td>
+</tr>
+</tbody></table>
+<p>返回数据</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>data</td>
+<td>日志的文本数据。</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>日志数据的偏移量。</td>
+</tr>
+<tr>
+<td>length</td>
+<td>日志数据的长度。</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
