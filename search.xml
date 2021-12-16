@@ -881,98 +881,38 @@
       </tags>
   </entry>
   <entry>
-    <title>JMeter介绍</title>
-    <url>/Echo/2021/11/20/JMeter%E4%BB%8B%E7%BB%8D/</url>
-    <content><![CDATA[<p>在本文中我们将了解什么是性能测试、为什么选择 JMeter、JMeter 与 HP LoadRunner。</p>
-<h5 id="什么是性能测试？"><a href="#什么是性能测试？" class="headerlink" title="什么是性能测试？"></a>什么是性能测试？</h5><p>在我们继续探索 Jmeter 及其安装过程之前，我们需要了解什么是性能测试以及 JMeter 作为工具如何支持性能测试。 </p>
-<p>就像学生需要表现良好才能提升自己的水平一样。 同样，应用程序（移动或 Web 或桌面）需要表现良好，才能在竞争激烈的市场中更上一层楼。 </p>
-<p>性能测试衡量 <strong>您的应用程序在不同工作负载下的性能。</strong> 有许多参数可用于确定负载测试中的服务器是否运行良好，本文稍后将讨论这些参数。 </p>
-<ul>
-<li>举一个简单的例子。  在浏览器中输入“<a href="http://www.facebook.com”,它显示了/">www.facebook.com”，它显示了</a> Facebook 的主页使用时间10秒。 现在假设 1000 人同时输入“<a href="http://www.facebook.com”并点击/">www.facebook.com”并点击</a> Google 主页显示可能超过 10 秒 。</li>
-<li>因此，在不同的工作负载（用户数量）下性能会发生变化。  这种类型的测试非常重要，因为无论您的应用程序有多么好的设计和功能，但如果它的性能很差，那么很有可能失去所有潜在的目标受众 。</li>
-</ul>
-<p>通过下图我们可以清晰看到比较</p>
-<p><img src="FlowDiagram.jpg" alt="FlowDiagram"></p>
-<h6 id="性能测试主要考虑以下参数："><a href="#性能测试主要考虑以下参数：" class="headerlink" title="性能测试主要考虑以下参数："></a>性能测试主要考虑以下参数：</h6><ul>
-<li><strong>吞吐量</strong> - 它被定义为每秒的事务数。 例：假设银行客户服务一次只能处理 30 个呼叫，因此其余呼叫者需要排队。 这意味着吞吐量是 30</li>
-<li><strong>响应时间</strong> ——这个时间是用户从服务器收到响应所用的时间 </li>
-<li><strong>延迟</strong> 是信息的第一个字节到达用户端的时间。例：假设用户点击 HTTP 请求以检索网页。 因此，接收该网页的第一个字节的时间就是该请求的延迟时间 </li>
-<li><strong>可扩展性</strong>  - 它是指应用程序可以承受的最大负载 </li>
-<li>CPU 负载、内存使用和资源使用 </li>
-</ul>
-<h5 id="为什么是JMeter？"><a href="#为什么是JMeter？" class="headerlink" title="为什么是JMeter？"></a>为什么是JMeter？</h5><p>JMeter 最初是由 Apache Software 的  Stefano Mazzocchi 开发的。  基本上，JMeter 是一个基于 Java 的桌面应用程序。  JMeter 使用 Swing  图形 API，不是由特定于平台的编码实现的，只要有JAVA即可。JMeter的安装自己行搜索。</p>
-<p> Jmeter支持以下协议：</p>
-<ul>
-<li>HTTP、HTTPS</li>
-<li>FTP</li>
-<li>JDBC</li>
-<li>SMTP、IMAP</li>
-<li>LDAP</li>
-<li>TCP</li>
-<li>SOAP</li>
-</ul>
-<p>JMeter的优点：</p>
-<ul>
-<li>免费–JMeter是免费的，Apache官网下载即可；</li>
-<li>友好的界面–测试人员可以很容易地熟悉它的大部分组件，工具内提供每个组件的帮助文档</li>
-<li>高度可扩展–用户可以使用 JSR223 创建自己的采样器，并且有许多采样器插件可用，测试人员增加测试能力</li>
-<li>协议支持–JMeter 不仅可用于应用程序性能测试，还支持多种协议</li>
-<li>记录– JMeter 内置了 HTTP(S) 测试脚本记录器，可用于记录来自网站或移动应用程序的所有操作，然后可以模拟负载以测试各种负载条件下的性能。 此外，还有一个 chrome 扩展可用于记录操作，然后可以在 JMeter 中使用相同的脚本来扩展负载</li>
-<li>集成selenium–可以与selenium进行集成测试</li>
-<li>安装简单</li>
-<li>图形化的报告</li>
-</ul>
-<h5 id="HP-LoadRunner-VS-JMeter"><a href="#HP-LoadRunner-VS-JMeter" class="headerlink" title="HP LoadRunner VS JMeter"></a>HP LoadRunner VS JMeter</h5><table>
-<thead>
-<tr>
-<th>JMeter</th>
-<th>Loadrunner</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>开源，免费</td>
-<td>惠普产品，许可证还是很贵的</td>
-</tr>
-<tr>
-<td>协议支持有限</td>
-<td>更多的协议支持</td>
-</tr>
-<tr>
-<td>Jmeter 是一个基于 Java 的产品，使用基于 sprint 的 API，这使得它独立于平台，可以在任何环境下运行，无论是 win、mac、Linux。</td>
-<td>它使用基于 C 的语言、Java、Java Script 和 VB。</td>
-</tr>
-<tr>
-<td>负载生成能力有限。  在具有高 RAM 和处理器的机器上，Jmeter 只能产生 1-2k 用户的负载。  增加负载可能会导致内存不足异常。</td>
-<td>负载生成能力更高。</td>
-</tr>
-<tr>
-<td>Jmeter的技术熟练程度较低。</td>
-<td>LoadRunner 技术精湛。</td>
-</tr>
-<tr>
-<td>Jmeter 在云中运行有很多复杂性。</td>
-<td>Load Runner 也很容易在云环境中运行。</td>
-</tr>
-<tr>
-<td>Jmeter 中的录制功能非常简单，并且也支持可扩展性。  有一些 chrome 插件，可以直接在 Jmeter 中导入脚本。</td>
-<td>与 Jmeter 相比，Load Runner 中的记录功能也不复杂。</td>
-</tr>
-<tr>
-<td>Jmeter 的结果不是实时的。</td>
-<td>LoadRunner 提供相对更实时的结果</td>
-</tr>
-<tr>
-<td>Jmeter 在用于 SAP 等企业产品时效率不高。</td>
-<td>即使使用 SAP、Siebel 等，Load Runner 也能提供高效的结果。</td>
-</tr>
-</tbody></table>
-<h5 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h5><p>JMeter 是市场上用于测试 Web 和移动应用程序的强大工具。  它非常易于使用并且不需要太多编程技能，除非在 JMeter 中编写自己的采样器。 将在接下来的系列文章中详细介绍每个组件，敬请期待！ </p>
+    <title>Kafka常见命令</title>
+    <url>/Echo/2020/09/12/Kafka%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h4 id="kafka-启动命令"><a href="#kafka-启动命令" class="headerlink" title="kafka 启动命令"></a>kafka 启动命令</h4><p>dir：kafka 安装位置</p>
+<p>指定对应的配置文件启动</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kafka-server-start.sh  [dir]config/server.properties</span><br></pre></td></tr></table></figure>
+
+<p>以后台方式启动</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kafka-server-start.sh  -daemon [dir]config/server.properties</span><br></pre></td></tr></table></figure>
+
+<p>指定JMX 端口启动，指定JMX是为了可以方便的监控kafka集群（使用滴滴的logi会用到此端口）</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">JMX_PORT=9991 kafka-server-start.sh  -daemon [dir]config/server.properties</span><br></pre></td></tr></table></figure>
+
+<h4 id="kafka-停止命令"><a href="#kafka-停止命令" class="headerlink" title="kafka 停止命令"></a>kafka 停止命令</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kafka-server-stop.sh</span><br></pre></td></tr></table></figure>
+
+<p>或者</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment">#1 jps 找到kafka的pid</span></span><br><span class="line">jps</span><br><span class="line"><span class="comment">#2 通过kill -9 杀死进行</span></span><br><span class="line"><span class="built_in">kill</span> -9 pid</span><br></pre></td></tr></table></figure>
+
+<h4 id="kafka-topic-相关命令"><a href="#kafka-topic-相关命令" class="headerlink" title="kafka topic 相关命令"></a>kafka topic 相关命令</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment">#1.查看集群下所有topic</span></span><br><span class="line">kafka-topics --zookeeper ZKserverIP:2181 --list</span><br><span class="line"></span><br><span class="line"><span class="comment">#2.具体查看某个topic 默认端口号为2181，应根据自己配置修改</span></span><br><span class="line">kafka-topics --describe --zookeeper ZKserverIP:2181  --topic <span class="built_in">test</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#3.创建topic</span></span><br><span class="line">kafka-topics --create --zookeeper ZKserverIP:2181 --replication-factor 1 --partitions 3 --topic <span class="built_in">test</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#4.删除某个topic</span></span><br><span class="line"><span class="comment">#删除之前需要先将server.properties文件中配置的delete.topic.enable=true更改一下</span></span><br><span class="line">kafka-topics --delete --zookeeper ZKserverIP:2181 --topic <span class="built_in">test</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#5.console创建生产者往topic中写入数据 默认端口号9092，根据自己配置修改端口号</span></span><br><span class="line">kafka-console-producer --broker-list borkerServer:9092 --topic <span class="built_in">test</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#6.console创建消费者消费topic数据</span></span><br><span class="line">kafka-console-consumer --bootstrap-server borkerServer:9092 --topic <span class="built_in">test</span> --from-beginning</span><br><span class="line"></span><br><span class="line"><span class="comment">#7查看topic上面的消息数  --time -1 表示要获取当前topic所有分区当前最大位移， --time -2 表示获取当前最早位移</span></span><br><span class="line">kafka-run-class kafka.tools.GetOffsetShell --broker-list ZKserverIP:9092 --topic <span class="built_in">test</span> --time -1</span><br><span class="line"></span><br><span class="line"><span class="comment">#8修改topic分区数 注意：分区数量只能增加，不能减少</span></span><br><span class="line">kafka-topics --zookeeper ZKserverIP:2181 --alter --topic <span class="built_in">test</span> --partitions 3</span><br><span class="line"></span><br><span class="line"><span class="comment">#9查看消费组信息</span></span><br><span class="line">kafka-consumer-groups --bootstrap-server borkerServer:9092 --describe --group convert1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 10describe有两个参数用于找出有问题的分区 </span></span><br><span class="line"><span class="comment"># --unavailable-partitions：列出所有没有首领的分区，这些分区已经处于离线状态，对于生产者和消费者来说是不可用的</span></span><br><span class="line"><span class="comment"># --under-replicated-partitions：列出所有包含不同步副本的分区。</span></span><br><span class="line">kafka-topics.sh --zookeeper ZKserverIP:2181 --describe --unavailable-partitions</span><br><span class="line">kafka-topics.sh --zookeeper ZKserverIP:2181 --describe --under-replicated-partitions</span><br></pre></td></tr></table></figure>
+
+<h4 id="kafka-生产者"><a href="#kafka-生产者" class="headerlink" title="kafka 生产者"></a>kafka 生产者</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 有多个broker，可以用逗号分隔开都写上</span></span><br><span class="line">kafka-console-producer.sh --broker-list brokerServer:9092 --topic <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="kafka-消费者"><a href="#kafka-消费者" class="headerlink" title="kafka 消费者"></a>kafka 消费者</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看消费者最新消费到的消息</span></span><br><span class="line">kafka-console-consumer.sh --zookeeper ZKserverIP:2181  --topic <span class="built_in">test</span></span><br><span class="line"><span class="comment"># 从第一条信息查看消费者消费到的消息</span></span><br><span class="line">kafka-console-consumer.sh --zookeeper ZKserverIP:2181 --from-beginning --topic <span class="built_in">test</span></span><br><span class="line"><span class="comment"># 列出所有消费者群组</span></span><br><span class="line">kafka-consumer-groups.sh --zookeeper ZKserverIP:2181 --list</span><br><span class="line"><span class="comment"># 列出test_group消费组的详细信息</span></span><br><span class="line">kafka-consumer-groups.sh --zookeeper  ZKserverIP:2181 --describe --group test_group</span><br><span class="line"><span class="comment"># 删除消费者群组</span></span><br><span class="line">kafka-consumer-groups.sh --zookeeper ZKserverIP:2181 --delete --group test_group</span><br><span class="line"><span class="comment"># 删除消费者群组中的topic</span></span><br><span class="line">kafka-consumer-groups.sh --zookeeper ZKserverIP:2181 --delete --group test_group --topic <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="kafka-run-class命令"><a href="#kafka-run-class命令" class="headerlink" title="kafka-run-class命令"></a>kafka-run-class命令</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 导出偏移量</span></span><br><span class="line">kafka-run-class.sh kafka.tools.ExportZkOffsets --zkconnect ZKserverIP:2181 --group testGroup --output-file test_group_offsets</span><br><span class="line"><span class="comment"># 查看test_group_offsets</span></span><br><span class="line">cat test_group_offsets</span><br><span class="line"><span class="comment"># 导入偏移量</span></span><br><span class="line">kafka-run-class.sh kafka.tools.ImportZkOffsets --zkconnect ZKserverIP:2181 --input-file test_group_offsets</span><br><span class="line"><span class="comment"># segment片段信息</span></span><br><span class="line">kafka-run-class.sh kafka.tools.DumpLogSegments --files [dir]/logs/test-1/00000000000000000000.log</span><br><span class="line"><span class="comment"># segment片段信息 -print-data-log</span></span><br><span class="line">kafka-run-class.sh kafka.tools.DumpLogSegments --files [dir]/logs/test-1/00000000000000000000.log -print-data-log</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
-        <category>JMeter</category>
+        <category>大数据</category>
       </categories>
       <tags>
-        <tag>性能测试，JMeter</tag>
+        <tag>kafka</tag>
+        <tag>大数据</tag>
       </tags>
   </entry>
   <entry>
@@ -1071,38 +1011,98 @@
       </tags>
   </entry>
   <entry>
-    <title>Kafka常见命令</title>
-    <url>/Echo/2020/09/12/Kafka%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<h4 id="kafka-启动命令"><a href="#kafka-启动命令" class="headerlink" title="kafka 启动命令"></a>kafka 启动命令</h4><p>dir：kafka 安装位置</p>
-<p>指定对应的配置文件启动</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kafka-server-start.sh  [dir]config/server.properties</span><br></pre></td></tr></table></figure>
-
-<p>以后台方式启动</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kafka-server-start.sh  -daemon [dir]config/server.properties</span><br></pre></td></tr></table></figure>
-
-<p>指定JMX 端口启动，指定JMX是为了可以方便的监控kafka集群（使用滴滴的logi会用到此端口）</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">JMX_PORT=9991 kafka-server-start.sh  -daemon [dir]config/server.properties</span><br></pre></td></tr></table></figure>
-
-<h4 id="kafka-停止命令"><a href="#kafka-停止命令" class="headerlink" title="kafka 停止命令"></a>kafka 停止命令</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kafka-server-stop.sh</span><br></pre></td></tr></table></figure>
-
-<p>或者</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment">#1 jps 找到kafka的pid</span></span><br><span class="line">jps</span><br><span class="line"><span class="comment">#2 通过kill -9 杀死进行</span></span><br><span class="line"><span class="built_in">kill</span> -9 pid</span><br></pre></td></tr></table></figure>
-
-<h4 id="kafka-topic-相关命令"><a href="#kafka-topic-相关命令" class="headerlink" title="kafka topic 相关命令"></a>kafka topic 相关命令</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment">#1.查看集群下所有topic</span></span><br><span class="line">kafka-topics --zookeeper ZKserverIP:2181 --list</span><br><span class="line"></span><br><span class="line"><span class="comment">#2.具体查看某个topic 默认端口号为2181，应根据自己配置修改</span></span><br><span class="line">kafka-topics --describe --zookeeper ZKserverIP:2181  --topic <span class="built_in">test</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#3.创建topic</span></span><br><span class="line">kafka-topics --create --zookeeper ZKserverIP:2181 --replication-factor 1 --partitions 3 --topic <span class="built_in">test</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#4.删除某个topic</span></span><br><span class="line"><span class="comment">#删除之前需要先将server.properties文件中配置的delete.topic.enable=true更改一下</span></span><br><span class="line">kafka-topics --delete --zookeeper ZKserverIP:2181 --topic <span class="built_in">test</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#5.console创建生产者往topic中写入数据 默认端口号9092，根据自己配置修改端口号</span></span><br><span class="line">kafka-console-producer --broker-list borkerServer:9092 --topic <span class="built_in">test</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#6.console创建消费者消费topic数据</span></span><br><span class="line">kafka-console-consumer --bootstrap-server borkerServer:9092 --topic <span class="built_in">test</span> --from-beginning</span><br><span class="line"></span><br><span class="line"><span class="comment">#7查看topic上面的消息数  --time -1 表示要获取当前topic所有分区当前最大位移， --time -2 表示获取当前最早位移</span></span><br><span class="line">kafka-run-class kafka.tools.GetOffsetShell --broker-list ZKserverIP:9092 --topic <span class="built_in">test</span> --time -1</span><br><span class="line"></span><br><span class="line"><span class="comment">#8修改topic分区数 注意：分区数量只能增加，不能减少</span></span><br><span class="line">kafka-topics --zookeeper ZKserverIP:2181 --alter --topic <span class="built_in">test</span> --partitions 3</span><br><span class="line"></span><br><span class="line"><span class="comment">#9查看消费组信息</span></span><br><span class="line">kafka-consumer-groups --bootstrap-server borkerServer:9092 --describe --group convert1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 10describe有两个参数用于找出有问题的分区 </span></span><br><span class="line"><span class="comment"># --unavailable-partitions：列出所有没有首领的分区，这些分区已经处于离线状态，对于生产者和消费者来说是不可用的</span></span><br><span class="line"><span class="comment"># --under-replicated-partitions：列出所有包含不同步副本的分区。</span></span><br><span class="line">kafka-topics.sh --zookeeper ZKserverIP:2181 --describe --unavailable-partitions</span><br><span class="line">kafka-topics.sh --zookeeper ZKserverIP:2181 --describe --under-replicated-partitions</span><br></pre></td></tr></table></figure>
-
-<h4 id="kafka-生产者"><a href="#kafka-生产者" class="headerlink" title="kafka 生产者"></a>kafka 生产者</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 有多个broker，可以用逗号分隔开都写上</span></span><br><span class="line">kafka-console-producer.sh --broker-list brokerServer:9092 --topic <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="kafka-消费者"><a href="#kafka-消费者" class="headerlink" title="kafka 消费者"></a>kafka 消费者</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看消费者最新消费到的消息</span></span><br><span class="line">kafka-console-consumer.sh --zookeeper ZKserverIP:2181  --topic <span class="built_in">test</span></span><br><span class="line"><span class="comment"># 从第一条信息查看消费者消费到的消息</span></span><br><span class="line">kafka-console-consumer.sh --zookeeper ZKserverIP:2181 --from-beginning --topic <span class="built_in">test</span></span><br><span class="line"><span class="comment"># 列出所有消费者群组</span></span><br><span class="line">kafka-consumer-groups.sh --zookeeper ZKserverIP:2181 --list</span><br><span class="line"><span class="comment"># 列出test_group消费组的详细信息</span></span><br><span class="line">kafka-consumer-groups.sh --zookeeper  ZKserverIP:2181 --describe --group test_group</span><br><span class="line"><span class="comment"># 删除消费者群组</span></span><br><span class="line">kafka-consumer-groups.sh --zookeeper ZKserverIP:2181 --delete --group test_group</span><br><span class="line"><span class="comment"># 删除消费者群组中的topic</span></span><br><span class="line">kafka-consumer-groups.sh --zookeeper ZKserverIP:2181 --delete --group test_group --topic <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="kafka-run-class命令"><a href="#kafka-run-class命令" class="headerlink" title="kafka-run-class命令"></a>kafka-run-class命令</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 导出偏移量</span></span><br><span class="line">kafka-run-class.sh kafka.tools.ExportZkOffsets --zkconnect ZKserverIP:2181 --group testGroup --output-file test_group_offsets</span><br><span class="line"><span class="comment"># 查看test_group_offsets</span></span><br><span class="line">cat test_group_offsets</span><br><span class="line"><span class="comment"># 导入偏移量</span></span><br><span class="line">kafka-run-class.sh kafka.tools.ImportZkOffsets --zkconnect ZKserverIP:2181 --input-file test_group_offsets</span><br><span class="line"><span class="comment"># segment片段信息</span></span><br><span class="line">kafka-run-class.sh kafka.tools.DumpLogSegments --files [dir]/logs/test-1/00000000000000000000.log</span><br><span class="line"><span class="comment"># segment片段信息 -print-data-log</span></span><br><span class="line">kafka-run-class.sh kafka.tools.DumpLogSegments --files [dir]/logs/test-1/00000000000000000000.log -print-data-log</span><br></pre></td></tr></table></figure>
-
+    <title>JMeter介绍</title>
+    <url>/Echo/2021/11/20/JMeter%E4%BB%8B%E7%BB%8D/</url>
+    <content><![CDATA[<p>在本文中我们将了解什么是性能测试、为什么选择 JMeter、JMeter 与 HP LoadRunner。</p>
+<h5 id="什么是性能测试？"><a href="#什么是性能测试？" class="headerlink" title="什么是性能测试？"></a>什么是性能测试？</h5><p>在我们继续探索 Jmeter 及其安装过程之前，我们需要了解什么是性能测试以及 JMeter 作为工具如何支持性能测试。 </p>
+<p>就像学生需要表现良好才能提升自己的水平一样。 同样，应用程序（移动或 Web 或桌面）需要表现良好，才能在竞争激烈的市场中更上一层楼。 </p>
+<p>性能测试衡量 <strong>您的应用程序在不同工作负载下的性能。</strong> 有许多参数可用于确定负载测试中的服务器是否运行良好，本文稍后将讨论这些参数。 </p>
+<ul>
+<li>举一个简单的例子。  在浏览器中输入“<a href="http://www.facebook.com”,它显示了/">www.facebook.com”，它显示了</a> Facebook 的主页使用时间10秒。 现在假设 1000 人同时输入“<a href="http://www.facebook.com”并点击/">www.facebook.com”并点击</a> Google 主页显示可能超过 10 秒 。</li>
+<li>因此，在不同的工作负载（用户数量）下性能会发生变化。  这种类型的测试非常重要，因为无论您的应用程序有多么好的设计和功能，但如果它的性能很差，那么很有可能失去所有潜在的目标受众 。</li>
+</ul>
+<p>通过下图我们可以清晰看到比较</p>
+<p><img src="FlowDiagram.jpg" alt="FlowDiagram"></p>
+<h6 id="性能测试主要考虑以下参数："><a href="#性能测试主要考虑以下参数：" class="headerlink" title="性能测试主要考虑以下参数："></a>性能测试主要考虑以下参数：</h6><ul>
+<li><strong>吞吐量</strong> - 它被定义为每秒的事务数。 例：假设银行客户服务一次只能处理 30 个呼叫，因此其余呼叫者需要排队。 这意味着吞吐量是 30</li>
+<li><strong>响应时间</strong> ——这个时间是用户从服务器收到响应所用的时间 </li>
+<li><strong>延迟</strong> 是信息的第一个字节到达用户端的时间。例：假设用户点击 HTTP 请求以检索网页。 因此，接收该网页的第一个字节的时间就是该请求的延迟时间 </li>
+<li><strong>可扩展性</strong>  - 它是指应用程序可以承受的最大负载 </li>
+<li>CPU 负载、内存使用和资源使用 </li>
+</ul>
+<h5 id="为什么是JMeter？"><a href="#为什么是JMeter？" class="headerlink" title="为什么是JMeter？"></a>为什么是JMeter？</h5><p>JMeter 最初是由 Apache Software 的  Stefano Mazzocchi 开发的。  基本上，JMeter 是一个基于 Java 的桌面应用程序。  JMeter 使用 Swing  图形 API，不是由特定于平台的编码实现的，只要有JAVA即可。JMeter的安装自己行搜索。</p>
+<p> Jmeter支持以下协议：</p>
+<ul>
+<li>HTTP、HTTPS</li>
+<li>FTP</li>
+<li>JDBC</li>
+<li>SMTP、IMAP</li>
+<li>LDAP</li>
+<li>TCP</li>
+<li>SOAP</li>
+</ul>
+<p>JMeter的优点：</p>
+<ul>
+<li>免费–JMeter是免费的，Apache官网下载即可；</li>
+<li>友好的界面–测试人员可以很容易地熟悉它的大部分组件，工具内提供每个组件的帮助文档</li>
+<li>高度可扩展–用户可以使用 JSR223 创建自己的采样器，并且有许多采样器插件可用，测试人员增加测试能力</li>
+<li>协议支持–JMeter 不仅可用于应用程序性能测试，还支持多种协议</li>
+<li>记录– JMeter 内置了 HTTP(S) 测试脚本记录器，可用于记录来自网站或移动应用程序的所有操作，然后可以模拟负载以测试各种负载条件下的性能。 此外，还有一个 chrome 扩展可用于记录操作，然后可以在 JMeter 中使用相同的脚本来扩展负载</li>
+<li>集成selenium–可以与selenium进行集成测试</li>
+<li>安装简单</li>
+<li>图形化的报告</li>
+</ul>
+<h5 id="HP-LoadRunner-VS-JMeter"><a href="#HP-LoadRunner-VS-JMeter" class="headerlink" title="HP LoadRunner VS JMeter"></a>HP LoadRunner VS JMeter</h5><table>
+<thead>
+<tr>
+<th>JMeter</th>
+<th>Loadrunner</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>开源，免费</td>
+<td>惠普产品，许可证还是很贵的</td>
+</tr>
+<tr>
+<td>协议支持有限</td>
+<td>更多的协议支持</td>
+</tr>
+<tr>
+<td>Jmeter 是一个基于 Java 的产品，使用基于 sprint 的 API，这使得它独立于平台，可以在任何环境下运行，无论是 win、mac、Linux。</td>
+<td>它使用基于 C 的语言、Java、Java Script 和 VB。</td>
+</tr>
+<tr>
+<td>负载生成能力有限。  在具有高 RAM 和处理器的机器上，Jmeter 只能产生 1-2k 用户的负载。  增加负载可能会导致内存不足异常。</td>
+<td>负载生成能力更高。</td>
+</tr>
+<tr>
+<td>Jmeter的技术熟练程度较低。</td>
+<td>LoadRunner 技术精湛。</td>
+</tr>
+<tr>
+<td>Jmeter 在云中运行有很多复杂性。</td>
+<td>Load Runner 也很容易在云环境中运行。</td>
+</tr>
+<tr>
+<td>Jmeter 中的录制功能非常简单，并且也支持可扩展性。  有一些 chrome 插件，可以直接在 Jmeter 中导入脚本。</td>
+<td>与 Jmeter 相比，Load Runner 中的记录功能也不复杂。</td>
+</tr>
+<tr>
+<td>Jmeter 的结果不是实时的。</td>
+<td>LoadRunner 提供相对更实时的结果</td>
+</tr>
+<tr>
+<td>Jmeter 在用于 SAP 等企业产品时效率不高。</td>
+<td>即使使用 SAP、Siebel 等，Load Runner 也能提供高效的结果。</td>
+</tr>
+</tbody></table>
+<h5 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h5><p>JMeter 是市场上用于测试 Web 和移动应用程序的强大工具。  它非常易于使用并且不需要太多编程技能，除非在 JMeter 中编写自己的采样器。 将在接下来的系列文章中详细介绍每个组件，敬请期待！ </p>
 ]]></content>
       <categories>
-        <category>大数据</category>
+        <category>JMeter</category>
       </categories>
       <tags>
-        <tag>kafka</tag>
-        <tag>大数据</tag>
+        <tag>性能测试，JMeter</tag>
       </tags>
   </entry>
   <entry>
@@ -1963,6 +1963,39 @@
       </tags>
   </entry>
   <entry>
+    <title>HBase shell命令</title>
+    <url>/Echo/2020/03/13/hbase%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h4 id="HBase简介"><a href="#HBase简介" class="headerlink" title="HBase简介"></a>HBase简介</h4><p>HBase 命名的起源是 Hadoop database，Hadoop数据库，是NoSQL数据库，基于列式存储而非行式存储。</p>
+<p>HBase是一个分布式的、面向列的、基于Google Bigtable的开源实现。</p>
+<ul>
+<li>利用Hadoop HDFS作为其文件存储系统</li>
+<li>利用Hadoop MapReduce来处理HBase中的海量数据</li>
+<li>利用Zookeeper作为协同服务</li>
+</ul>
+<h4 id="HBase数据模型"><a href="#HBase数据模型" class="headerlink" title="HBase数据模型"></a>HBase数据模型</h4><p>HBase是一个稀疏、多维度、有序的映射表。表有行和列组成，列划分为若干个列族/列簇(column family)，每个列族/列簇下面可以有多个普通列。</p>
+<p><img src="5-1Z5091305564M.gif" alt="5-1Z5091305564M"></p>
+<h4 id="HBase-shell-命令"><a href="#HBase-shell-命令" class="headerlink" title="HBase shell 命令"></a>HBase shell 命令</h4><h5 id="进入-HBase-shell"><a href="#进入-HBase-shell" class="headerlink" title="进入 HBase shell"></a>进入 HBase shell</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hbase shell</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="HBase版本状态查看"><a href="#HBase版本状态查看" class="headerlink" title="HBase版本状态查看"></a>HBase版本状态查看</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查询状态</span></span><br><span class="line">status</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查询版本</span></span><br><span class="line">version</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看当前操作用户</span></span><br><span class="line">whoami</span><br><span class="line"><span class="meta">#</span><span class="bash"> 帮助命令</span></span><br><span class="line">help</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看hbase支持的工具</span></span><br><span class="line">tools</span><br></pre></td></tr></table></figure>
+
+<h5 id="DDL操作"><a href="#DDL操作" class="headerlink" title="DDL操作"></a>DDL操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建一个表</span></span><br><span class="line">create<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;column_famaly&#x27;</span>,<span class="string">&#x27;column_famaly1&#x27;</span>,<span class="string">&#x27;column_famaly2&#x27;</span></span><br><span class="line"><span class="comment"># 列出所有表</span></span><br><span class="line">list</span><br><span class="line"><span class="comment"># 获取表的描述</span></span><br><span class="line">describe<span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 删除一个列族</span></span><br><span class="line">alter<span class="string">&#x27;table&#x27;</span>,&#123;NAME=&gt;<span class="string">&#x27;column_famaly&#x27;</span>,METHOD=&gt;<span class="string">&#x27;delete&#x27;</span>&#125;</span><br><span class="line"><span class="comment"># 删除一个表</span></span><br><span class="line"><span class="comment"># ① 要删除的表设置为disable</span></span><br><span class="line"><span class="built_in">disable</span><span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># ② 删除表</span></span><br><span class="line">drop <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 查询表是否存在</span></span><br><span class="line">exists<span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 查看表是否可用</span></span><br><span class="line">is_enabled<span class="string">&#x27;table&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="DML操作"><a href="#DML操作" class="headerlink" title="DML操作"></a>DML操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 插入数据</span></span><br><span class="line">put<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span>,<span class="string">&#x27;name&#x27;</span></span><br><span class="line"><span class="comment"># 获取row1所有数据</span></span><br><span class="line">get <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span></span><br><span class="line"><span class="comment"># 获取表row1，col1所有数据</span></span><br><span class="line">get<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1&#x27;</span></span><br><span class="line"><span class="comment"># 更新一条数据</span></span><br><span class="line">put <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span>,<span class="string">&#x27;name1&#x27;</span></span><br><span class="line"><span class="comment"># 通过时间戳获取数据</span></span><br><span class="line">get <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,&#123;COLUMN=&gt;<span class="string">&#x27;col1:name&#x27;</span>,TIMESTAMP=&gt;1463055736277&#125;</span><br><span class="line"><span class="comment"># 扫描整张表（数据量大时不建议此操作）</span></span><br><span class="line">scan <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 删除一列</span></span><br><span class="line">delete <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span></span><br><span class="line"><span class="comment"># 删除行所有的数据</span></span><br><span class="line">deleteall <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span></span><br><span class="line"><span class="comment"># 统计表中的行数</span></span><br><span class="line">count <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 清空整张表（清空表后，表的分区设置会默认为1不建议）</span></span><br><span class="line">truncate <span class="string">&#x27;table&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="退出操作"><a href="#退出操作" class="headerlink" title="退出操作"></a>退出操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 退出</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment"># 关闭hbase集群（危险操作！！！）</span></span><br><span class="line">shutdown</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>大数据</tag>
+        <tag>HBase</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>emqtt_bench安装与压测MQTTbroker</title>
     <url>/Echo/2021/12/15/emqtt-bench%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8E%8B%E6%B5%8BMQTTbroker/</url>
     <content><![CDATA[<h3 id="EMQX消息服务器-amp-emqtt-bench简介"><a href="#EMQX消息服务器-amp-emqtt-bench简介" class="headerlink" title="EMQX消息服务器&amp;emqtt_bench简介"></a>EMQX消息服务器&amp;emqtt_bench简介</h3><h4 id="EMQX"><a href="#EMQX" class="headerlink" title="EMQX"></a>EMQX</h4><p><em>EMQ X</em> (Erlang/Enterprise/Elastic MQTT Broker) 是基于 Erlang/OTP 平台开发的开源物联网 MQTT 消息服务器。</p>
@@ -2170,98 +2203,6 @@
       </tags>
   </entry>
   <entry>
-    <title>HBase shell命令</title>
-    <url>/Echo/2020/03/13/hbase%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<h4 id="HBase简介"><a href="#HBase简介" class="headerlink" title="HBase简介"></a>HBase简介</h4><p>HBase 命名的起源是 Hadoop database，Hadoop数据库，是NoSQL数据库，基于列式存储而非行式存储。</p>
-<p>HBase是一个分布式的、面向列的、基于Google Bigtable的开源实现。</p>
-<ul>
-<li>利用Hadoop HDFS作为其文件存储系统</li>
-<li>利用Hadoop MapReduce来处理HBase中的海量数据</li>
-<li>利用Zookeeper作为协同服务</li>
-</ul>
-<h4 id="HBase数据模型"><a href="#HBase数据模型" class="headerlink" title="HBase数据模型"></a>HBase数据模型</h4><p>HBase是一个稀疏、多维度、有序的映射表。表有行和列组成，列划分为若干个列族/列簇(column family)，每个列族/列簇下面可以有多个普通列。</p>
-<p><img src="5-1Z5091305564M.gif" alt="5-1Z5091305564M"></p>
-<h4 id="HBase-shell-命令"><a href="#HBase-shell-命令" class="headerlink" title="HBase shell 命令"></a>HBase shell 命令</h4><h5 id="进入-HBase-shell"><a href="#进入-HBase-shell" class="headerlink" title="进入 HBase shell"></a>进入 HBase shell</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hbase shell</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="HBase版本状态查看"><a href="#HBase版本状态查看" class="headerlink" title="HBase版本状态查看"></a>HBase版本状态查看</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查询状态</span></span><br><span class="line">status</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查询版本</span></span><br><span class="line">version</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看当前操作用户</span></span><br><span class="line">whoami</span><br><span class="line"><span class="meta">#</span><span class="bash"> 帮助命令</span></span><br><span class="line">help</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看hbase支持的工具</span></span><br><span class="line">tools</span><br></pre></td></tr></table></figure>
-
-<h5 id="DDL操作"><a href="#DDL操作" class="headerlink" title="DDL操作"></a>DDL操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建一个表</span></span><br><span class="line">create<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;column_famaly&#x27;</span>,<span class="string">&#x27;column_famaly1&#x27;</span>,<span class="string">&#x27;column_famaly2&#x27;</span></span><br><span class="line"><span class="comment"># 列出所有表</span></span><br><span class="line">list</span><br><span class="line"><span class="comment"># 获取表的描述</span></span><br><span class="line">describe<span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 删除一个列族</span></span><br><span class="line">alter<span class="string">&#x27;table&#x27;</span>,&#123;NAME=&gt;<span class="string">&#x27;column_famaly&#x27;</span>,METHOD=&gt;<span class="string">&#x27;delete&#x27;</span>&#125;</span><br><span class="line"><span class="comment"># 删除一个表</span></span><br><span class="line"><span class="comment"># ① 要删除的表设置为disable</span></span><br><span class="line"><span class="built_in">disable</span><span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># ② 删除表</span></span><br><span class="line">drop <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 查询表是否存在</span></span><br><span class="line">exists<span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 查看表是否可用</span></span><br><span class="line">is_enabled<span class="string">&#x27;table&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="DML操作"><a href="#DML操作" class="headerlink" title="DML操作"></a>DML操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 插入数据</span></span><br><span class="line">put<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span>,<span class="string">&#x27;name&#x27;</span></span><br><span class="line"><span class="comment"># 获取row1所有数据</span></span><br><span class="line">get <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span></span><br><span class="line"><span class="comment"># 获取表row1，col1所有数据</span></span><br><span class="line">get<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1&#x27;</span></span><br><span class="line"><span class="comment"># 更新一条数据</span></span><br><span class="line">put <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span>,<span class="string">&#x27;name1&#x27;</span></span><br><span class="line"><span class="comment"># 通过时间戳获取数据</span></span><br><span class="line">get <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,&#123;COLUMN=&gt;<span class="string">&#x27;col1:name&#x27;</span>,TIMESTAMP=&gt;1463055736277&#125;</span><br><span class="line"><span class="comment"># 扫描整张表（数据量大时不建议此操作）</span></span><br><span class="line">scan <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 删除一列</span></span><br><span class="line">delete <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span></span><br><span class="line"><span class="comment"># 删除行所有的数据</span></span><br><span class="line">deleteall <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span></span><br><span class="line"><span class="comment"># 统计表中的行数</span></span><br><span class="line">count <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 清空整张表（清空表后，表的分区设置会默认为1不建议）</span></span><br><span class="line">truncate <span class="string">&#x27;table&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="退出操作"><a href="#退出操作" class="headerlink" title="退出操作"></a>退出操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 退出</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment"># 关闭hbase集群（危险操作！！！）</span></span><br><span class="line">shutdown</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>大数据</category>
-      </categories>
-      <tags>
-        <tag>大数据</tag>
-        <tag>HBase</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>springboot整合shiro和JWT使用指北</title>
-    <url>/Echo/2021/11/09/springboot%E6%95%B4%E5%90%88shiro%E5%92%8CJWT%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8C%97/</url>
-    <content><![CDATA[<h3 id="shiro是什么？"><a href="#shiro是什么？" class="headerlink" title="shiro是什么？"></a>shiro是什么？</h3><p><code>Shiro</code> 是一个强大的简单易用的 <code>Java</code> 安全框架，主要用来更便捷的 <code>认证，授权，加密，会话管理</code>。<code>Shiro</code> 首要的和最重要的目标就是容易使用并且容易理解，通过 <code>Shiro</code> 易于理解的<code>API</code>，您可以快速、轻松地获得任何应用程序——从最小的移动应用程序最大的网络和企业应用程序。</p>
-<h3 id="shiro的功能"><a href="#shiro的功能" class="headerlink" title="shiro的功能"></a>shiro的功能</h3><ol>
-<li>Authentication:身份认证、登录，验证用户是不是拥有相应的身份;\</li>
-<li>Authorization:授权，即权限验证，验证某个已认证的用户是否拥有某个权限，即判断用户能否进行什么操作，如:验证某个用户是否拥有某个角色，或者细粒度的验证某个用户对某个资源是否具有某个权限!\</li>
-<li>Session Manager:会话管理，即用户登录后就是第一次会话，在没有退出之前，它的所有信息都在会话中;会话可以是普通的JavaSE环境，也可以是Web环境;\</li>
-<li>Cryptography:加密，保护数据的安全性，如密码加密存储到数据库中，而不是明文存储;\</li>
-<li>Web Support: Web支持，可以非常容易的集成到Web环境;\</li>
-<li>Caching:缓存，比如用户登录后，其用户信息，拥有的角色、权限不必每次去查，这样可以提高效率\</li>
-<li>Concurrency: Shiro支持多线程应用的并发验证，即，如在一个线程中开启另一个线程，能把权限自动的传播过去Testing:提供测试支持;\</li>
-<li>Run As:允许一个用户假装为另一个用户（如果他们允许）的身份进行访问;\</li>
-<li>Remember Me:记住我，这个是非常常见的功能，即一次登录后，下次再来的话不用登录了\</li>
-</ol>
-<h3 id="JWT是什么？"><a href="#JWT是什么？" class="headerlink" title="JWT是什么？"></a>JWT是什么？</h3><p>JWT ：JWT（JSON Web Token）是一种身份认证的方式，JWT 本质上就一段签名的 JSON 格式的数据。由于它是带有签名的，因此接收者便可以验证它的真实性。可以理解为对 token 这一技术提出一套规范，是在 <a href="https://link.juejin.cn/?target=https://tools.ietf.org/html/rfc7519">RFC 7519</a> 中提出的。</p>
-<h3 id="JWT的组成和优缺点"><a href="#JWT的组成和优缺点" class="headerlink" title="JWT的组成和优缺点"></a>JWT的组成和优缺点</h3><p>本文在这里仅简单介绍JWT的组成和优缺点。详细分析可以在相关搜索引擎中搜索。</p>
-<h4 id="JWT的组成"><a href="#JWT的组成" class="headerlink" title="JWT的组成"></a>JWT的组成</h4><p>一个JWT token是一个字符串，它由头部、载荷、与签名中间有.分割组成；</p>
-<p>头部（header）：由令牌的类型和正在使用的签名算法组成；</p>
-<p>载荷（playload）：放置了token的一些基本信息，以帮助接收服务器理解，同时还有用户自定义信息，支持用户信息交换；</p>
-<p>签名（Signature）：主要是将前面的头部和载荷进行加密。</p>
-<h4 id="JWT的优缺点"><a href="#JWT的优缺点" class="headerlink" title="JWT的优缺点"></a>JWT的优缺点</h4><p>JWT的优点：</p>
-<ul>
-<li>防CSRF：CSRF（Cross Site Request Forgery）跨站伪造请求。使用JWT登录成功后，会存放在本地local storage中；\</li>
-<li>适合移动端：使用session需要服务端保存一份信息，使用token不需要只要请求携带token，还可跨语言使用；\</li>
-<li>无状态：token中有身份验证的所有信息，增加了系统的可用性和伸缩性也带了同样的问题（在缺点中会介绍）；\</li>
-<li>单点登录友好：使用session需要我们把所有session信息存在一台电脑上，使用token的话token保存在客户端。\</li>
-</ul>
-<p>JWT的缺点：</p>
-<ul>
-<li>无状态导致在注销、退出登录、修改密码、修改角色||权限等场景下token依旧有效；\</li>
-<li>token续签问题：即token过期后如何动态刷新token。\</li>
-</ul>
-<h4 id="shiro-JWT-使用"><a href="#shiro-JWT-使用" class="headerlink" title="shiro + JWT 使用"></a>shiro + JWT 使用</h4><h5 id="JWTtoken-令牌"><a href="#JWTtoken-令牌" class="headerlink" title="JWTtoken 令牌"></a>JWTtoken 令牌</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.apache.shiro.authc.AuthenticationToken;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JwtToken</span> <span class="keyword">implements</span> <span class="title">AuthenticationToken</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> String token;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">JwtToken</span><span class="params">(String jwt)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">this</span>.token = jwt;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> Object <span class="title">getCredentials</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> token;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> Object <span class="title">getPrincipal</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> token;</span><br><span class="line"></span><br><span class="line"> &#125;  </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="jwtutils-JWT工具类主要是生成token设置过期时间"><a href="#jwtutils-JWT工具类主要是生成token设置过期时间" class="headerlink" title="jwtutils JWT工具类主要是生成token设置过期时间"></a>jwtutils JWT工具类主要是生成token设置过期时间</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.context.properties.ConfigurationProperties;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> io.jsonwebtoken.Claims;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> io.jsonwebtoken.Jwts;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> io.jsonwebtoken.SignatureAlgorithm;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> lombok.Data;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> lombok.extern.slf4j.Slf4j;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@ConfigurationProperties(prefix = &quot;blogspringback.jwt&quot;)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JwtUtils</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String secret;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">long</span> expire;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> String header;</span><br><span class="line"></span><br><span class="line">\</span><br><span class="line"></span><br><span class="line">/</span><br><span class="line"></span><br><span class="line"> <span class="meta">@description</span>: 生成token</span><br><span class="line"></span><br><span class="line">  <span class="meta">@param</span> &#123;<span class="keyword">long</span>&#125; userId</span><br><span class="line"></span><br><span class="line">  <span class="meta">@return</span> &#123;JWT token&#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Author</span>: 丑牛</span><br><span class="line"></span><br><span class="line">/</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">generateToken</span><span class="params">(<span class="keyword">long</span> userId)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 过期时间</span></span><br><span class="line"></span><br><span class="line">  Date dateNow = <span class="keyword">new</span> Date();</span><br><span class="line"></span><br><span class="line">  Date dateExpire =  <span class="keyword">new</span> Date(dateNow.getTime() + expire  <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> Jwts.builder()</span><br><span class="line"></span><br><span class="line">    .setHeaderParam(<span class="string">&quot;type&quot;</span>, <span class="string">&quot;JWT&quot;</span>)</span><br><span class="line"></span><br><span class="line">     .setSubject(userId + <span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line">     .setIssuedAt(dateNow)</span><br><span class="line"></span><br><span class="line">     .setExpiration(dateExpire)</span><br><span class="line"></span><br><span class="line">     .signWith(SignatureAlgorithm.HS512, secret)</span><br><span class="line"></span><br><span class="line">     .compact();</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Claims <span class="title">getClaimsByToken</span><span class="params">(String token)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> Jwts.parser()</span><br><span class="line"></span><br><span class="line">  .setSigningKey(secret)</span><br><span class="line"></span><br><span class="line"> .parseClaimsJws(token)</span><br><span class="line"></span><br><span class="line">.getBody();</span><br><span class="line"></span><br><span class="line">  &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line"></span><br><span class="line">   log.debug(<span class="string">&quot;token error&quot;</span>, e);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">/</span><br><span class="line"></span><br><span class="line"> <span class="meta">@description</span>: 判断token是否过期</span><br><span class="line"></span><br><span class="line">  <span class="meta">@param</span> &#123;Date&#125; expeiration</span><br><span class="line"></span><br><span class="line">  <span class="meta">@return</span> <span class="keyword">true</span>:过期；<span class="keyword">false</span>：未过期</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Author</span>: 丑牛</span><br><span class="line"></span><br><span class="line">/</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isTokenExpired</span><span class="params">(Date expeiration)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> expeiration.before(<span class="keyword">new</span> Date());</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">&#125;`</span><br><span class="line"></span><br><span class="line">##### JWTFilter 拦截请求</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Jwtfilter</span> <span class="keyword">extends</span> <span class="title">AuthenticatingFilter</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Autowired</span></span><br><span class="line"></span><br><span class="line"> JwtUtils jwtUtils;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">protected</span> AuthenticationToken <span class="title">createToken</span><span class="params">(ServletRequest servletRequest, ServletResponse serverResponse)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"></span><br><span class="line">  HttpServletRequest request = (HttpServletRequest) servletRequest;</span><br><span class="line"></span><br><span class="line">  String jwt = request.getHeader(<span class="string">&quot;Authorization&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (ObjectUtils.isEmpty(jwt))&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> JwtToken(jwt);</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">boolean</span> <span class="title">onAccessDenied</span><span class="params">(ServletRequest servletRequest, ServletResponse serverResponse)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"></span><br><span class="line">  HttpServletRequest request = (HttpServletRequest) servletRequest;</span><br><span class="line"></span><br><span class="line">  String jwt = request.getHeader(<span class="string">&quot;Authorization&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (ObjectUtils.isEmpty(jwt)) &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">   Claims claim = JwtUtils.getClaimsByToken(jwt);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (claim == <span class="keyword">null</span> || jwtUtils.isTokenExpired(claim.getExpiration())) &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">throw</span> <span class="keyword">new</span> ExpiredCredentialsException(<span class="string">&quot;token失效，请重新登录&quot;</span>);</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> executeLogin(servletRequest, serverResponse);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">boolean</span> <span class="title">onLoginFailure</span><span class="params">(AuthenticationToken token, AuthenticationException e, ServletRequest request, ServletResponse response)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">  HttpServletResponse httpServletResponse = (HttpServletResponse) response;</span><br><span class="line"></span><br><span class="line">  Throwable throwable = e.getCause() == <span class="keyword">null</span> ? e : e.getCause();</span><br><span class="line"></span><br><span class="line">  Result result = Result.fail(throwable.getMessage());</span><br><span class="line"></span><br><span class="line">  String json = JSONUtil.toJsonStr(result);</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line"></span><br><span class="line">   httpServletResponse.getWriter().print(json);</span><br><span class="line"></span><br><span class="line">  &#125; <span class="keyword">catch</span> (IOException ioException) &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">\</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">boolean</span> <span class="title">preHandle</span><span class="params">(ServletRequest request, ServletResponse response)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"></span><br><span class="line">  HttpServletRequest httpServletRequest = WebUtils.toHttp(request);</span><br><span class="line"></span><br><span class="line">  HttpServletResponse httpServletResponse = WebUtils.toHttp(response);</span><br><span class="line"></span><br><span class="line">  httpServletResponse.setHeader(<span class="string">&quot;Access-control-Allow-Origin&quot;</span>, httpServletRequest.getHeader(<span class="string">&quot;Origin&quot;</span>));</span><br><span class="line"></span><br><span class="line">  httpServletResponse.setHeader(<span class="string">&quot;Access-Control-Allow-Methods&quot;</span>, <span class="string">&quot;GET,POST,OPTIONS,PUT,DELETE&quot;</span>);</span><br><span class="line"></span><br><span class="line">  httpServletResponse.setHeader(<span class="string">&quot;Access-Control-Allow-Headers&quot;</span>,  httpServletRequest.getHeader(<span class="string">&quot;Access-Control-Request-Headers&quot;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 跨域时会首先发送一个OPTIONS请求，这里我们给OPTIONS请求直接返回正常状态</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (httpServletRequest.getMethod().equals(RequestMethod.OPTIONS.name())) &#123;</span><br><span class="line"></span><br><span class="line">   httpServletResponse.setStatus(org.springframework.http.HttpStatus.OK.value());</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">super</span>.preHandle(request, response);</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="shiro-config-设置自定义的filter"><a href="#shiro-config-设置自定义的filter" class="headerlink" title="shiro config 设置自定义的filter"></a>shiro config 设置自定义的filter</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ShiroConfig</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Autowired</span></span><br><span class="line"></span><br><span class="line"> Jwtfilter jwtFilter;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Bean</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> SessionManager <span class="title">sessionManager</span><span class="params">(RedisSessionDAO redisSessionDAO)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  DefaultSessionManager sessionManager = <span class="keyword">new</span> DefaultSessionManager();</span><br><span class="line"></span><br><span class="line">  sessionManager.setSessionDAO(redisSessionDAO);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> sessionManager;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Bean</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> DefaultWebSecurityManager <span class="title">securityManager</span><span class="params">(AccountRealm accountRealm, SessionManager sessionManager,</span></span></span><br><span class="line"><span class="params"><span class="function"></span></span></span><br><span class="line"><span class="params"><span class="function">   RedisCacheManager redisCacheManager)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  DefaultWebSecurityManager securityManager = <span class="keyword">new</span> DefaultWebSecurityManager(accountRealm);</span><br><span class="line"></span><br><span class="line"><span class="comment">// inject sessionManager</span></span><br><span class="line"></span><br><span class="line">  securityManager.setSessionManager(sessionManager);</span><br><span class="line"></span><br><span class="line"><span class="comment">// inject redisCacheManager</span></span><br><span class="line"></span><br><span class="line">  securityManager.setCacheManager(redisCacheManager);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> securityManager;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Bean</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> ShiroFilterChainDefinition <span class="title">shiroFilterChainDefinition</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  DefaultShiroFilterChainDefinition chainDefinition = <span class="keyword">new</span> DefaultShiroFilterChainDefinition();</span><br><span class="line"></span><br><span class="line">  Map &lt; String, String &gt; filterMap = <span class="keyword">new</span> LinkedHashMap &lt;&gt; ();</span><br><span class="line"></span><br><span class="line">  filterMap.put(<span class="string">&quot;/&quot;</span>, <span class="string">&quot;jwt&quot;</span>);</span><br><span class="line"></span><br><span class="line">  chainDefinition.addPathDefinitions(filterMap);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> chainDefinition;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Bean(&quot;shiroFilterFactoryBean&quot;)</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> ShiroFilterFactoryBean <span class="title">shiroFilterFactoryBean</span><span class="params">(org.apache.shiro.mgt.SecurityManager securityManager,</span></span></span><br><span class="line"><span class="params"><span class="function"></span></span></span><br><span class="line"><span class="params"><span class="function">              ShiroFilterChainDefinition shiroFilterChainDefinition)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  ShiroFilterFactoryBean shiroFilter = <span class="keyword">new</span> ShiroFilterFactoryBean();</span><br><span class="line"></span><br><span class="line">  shiroFilter.setSecurityManager(securityManager);</span><br><span class="line"></span><br><span class="line">  Map &lt; String, Filter &gt; filters = <span class="keyword">new</span> HashMap &lt;&gt; ();</span><br><span class="line"></span><br><span class="line">  filters.put(<span class="string">&quot;jwt&quot;</span>, jwtFilter);</span><br><span class="line"></span><br><span class="line">  shiroFilter.setFilters(filters);</span><br><span class="line"></span><br><span class="line">  Map &lt; String, String &gt; filterMap = shiroFilterChainDefinition.getFilterChainMap();</span><br><span class="line"></span><br><span class="line">  shiroFilter.setFilterChainDefinitionMap(filterMap);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> shiroFilter;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="shiro工具类-获取当前用户登录信息"><a href="#shiro工具类-获取当前用户登录信息" class="headerlink" title="shiro工具类 获取当前用户登录信息"></a>shiro工具类 获取当前用户登录信息</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ShiroUtil</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> AccountProfile <span class="title">getProfile</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> (AccountProfile) SecurityUtils.getSubject().getPrincipal();</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="realm类-实现认证与授权"><a href="#realm类-实现认证与授权" class="headerlink" title="realm类 实现认证与授权"></a>realm类 实现认证与授权</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AccountRealm</span> <span class="keyword">extends</span> <span class="title">AuthorizingRealm</span></span>&#123;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Autowired</span></span><br><span class="line"></span><br><span class="line"> JwtUtils jwtUtils;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Autowired</span></span><br><span class="line"></span><br><span class="line"> UserService userService;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">supports</span><span class="params">(AuthenticationToken token)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> token <span class="keyword">instanceof</span> JwtToken;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">protected</span> AuthorizationInfo <span class="title">doGetAuthorizationInfo</span><span class="params">(PrincipalCollection principals)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">protected</span> AuthenticationInfo <span class="title">doGetAuthenticationInfo</span><span class="params">(AuthenticationToken token)</span> <span class="keyword">throws</span> AuthenticationException </span>&#123;</span><br><span class="line"></span><br><span class="line">  JwtToken jwtToken = (JwtToken) token;</span><br><span class="line"></span><br><span class="line">  String userId = JwtUtils.getClaimsByToken((String) jwtToken.getPrincipal()).getSubject();</span><br><span class="line"></span><br><span class="line">  User user = userService.getById(Long.valueOf(userId));</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (user == <span class="keyword">null</span>) &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">throw</span> <span class="keyword">new</span> UnknownAccountException(<span class="string">&quot;账户不存在&quot;</span>);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (user.getStatus() == -<span class="number">1</span>) &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">throw</span> <span class="keyword">new</span> LockedAccountException(<span class="string">&quot;账户已被锁定&quot;</span>);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  AccountProfile profile = <span class="keyword">new</span> AccountProfile();</span><br><span class="line"></span><br><span class="line">  BeanUtil.copyProperties(user, profile);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> SimpleAuthenticationInfo(profile, jwtToken.getCredentials(), getName());</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>PS <a href="https://github.com/hugfeature/spring-example/tree/main/blog-spring-back">demo地址</a></p>
-]]></content>
-      <categories>
-        <category>springboot</category>
-      </categories>
-      <tags>
-        <tag>java</tag>
-        <tag>springboot</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>jekins环境搭建</title>
     <url>/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
     <content><![CDATA[<table>
@@ -2342,52 +2283,62 @@
       </tags>
   </entry>
   <entry>
-    <title>2015-2020工作日志</title>
-    <url>/Echo/2020/04/02/%E4%BA%94%E5%B9%B4%E5%B7%A5%E4%BD%9C%E6%84%9F%E6%82%9F/</url>
-    <content><![CDATA[<h6 id="学校生涯"><a href="#学校生涯" class="headerlink" title="学校生涯"></a>学校生涯</h6><p>​       我自身是河南人，不过有一颗不安分的心。高考志愿填报了大连交通大学，选了软件工程与信息管理与信息系统的双专业学位，学制五年。大三期间参与学校老师ERP沙盘模拟软件的编写工作。在这期间开始真正的接触项目，这时才知道学习与实战的差距。当时主要用的J2EE和java struct。项目做到大四完成。完成第一版之后在学校的校内ERP沙盘大赛和校内实践课程上已经开始运用了。听说现在还在使用中。</p>
-<h5 id="北京-身份转变第一站"><a href="#北京-身份转变第一站" class="headerlink" title="北京-身份转变第一站"></a>北京-身份转变第一站</h5><p>​     因为一心想去一线城市看看，在择业期毫不犹豫的就选择了去北京。因为大学有项目而且大学主修课程有日语，很顺利的面上了北京利达智通。14年11月开始进入公司实习。在实习前三个月是在济南培训。培训这段时间感觉是最充实的。当时公司主要业务是野村证券。使用的大机语言（COBOL，在校也有相关的选修课还有证书可拿），主要是linux系统上进行开发。三个月的培训每天有作业每月有考核，压力大收获也大。在此期间学的linux和养成的编程习惯让我至今仍有受益。</p>
-<h6 id="第一个项目-野村证券MRF"><a href="#第一个项目-野村证券MRF" class="headerlink" title="第一个项目-野村证券MRF"></a>第一个项目-野村证券MRF</h6><p>这个项目主要是为日本野村证券新增一个青少年可以参与基金交易的功能。前一个月由师傅的带领开始正式的面向对象编程，不得不说日本人的式样书真详细。主要负责是功能模块各种数据连接层的处理以及数据库维护等工作。在这工作期间培养了自己的时间观念（某办法日本人特别在意这个）在dead line 前必须完成，好的一点是式样书（详设）写的真详细，不好的一点是没有自己发展的空间。还有个教训让我记忆深刻。在转正后，开始自己独立编写，结对测试的工作模式。由于当时对全角和半角的空格不敏感，这编程过程这个错误反复的犯，差点耽误项目进度。后来就给自己贴了便签，同样的错误绝不能犯第二次。</p>
-<h6 id="第二个项目-青森银行的住贷项目"><a href="#第二个项目-青森银行的住贷项目" class="headerlink" title="第二个项目-青森银行的住贷项目"></a>第二个项目-青森银行的住贷项目</h6><p>这个项目是公司开始转型的开始。主要编程语言为java，使用SSM框架来进行开发。这项目算是一个全新的项目从资料上传、申请、审批、贷后管理这房屋住贷全流程。（不同的有两点一、青森银行的住贷是有授权民间金融借贷来进行，二、放款时本人必须到场身份验证）。之前的项目一直用的COBOL，从2016年12月开始重新捡回java进行面向对象开发。从此开始CURD之路，主要是DAO层使用原生的JDBC连接数据库，然后实现CURD操作。除了承担CURD操作之外同时还承担这项目组的DBA的角色。主要有数据库权限分配与管理，数据表视图的创建，数据库表结构创建与维护等工作。项目大概到5月份就开始进行客户验收了，中间去日本青森县出差过1个月，作为现场技术支持。因为我本身有日语N3证书（目前已经过期，日语也忘得差不多了），同时本身的水平在项目组中还不错。过完十一后就日渐想河南老家。北京节假日回家真的太难了。</p>
-<h5 id="浪潮之旅"><a href="#浪潮之旅" class="headerlink" title="浪潮之旅"></a>浪潮之旅</h5><h6 id="济南-初识测试、自动化测试"><a href="#济南-初识测试、自动化测试" class="headerlink" title="济南-初识测试、自动化测试"></a>济南-初识测试、自动化测试</h6><p>17年10月开始面试，11月收到浪潮的offer。当时面上大厂，心情激动，这个也可以实现回郑州，只不过要先在济南工作一年左右。入职岗位是测试验证部-测试开发。当时浪潮因为自身要搞自动化测试平台的建设，因为有个目标要在19年4月完成5000+自动化脚本库已经自动化平台的建设。入职后开始搞自动化测试。我的任务主要是前台选择完用例后，我后台开始执行相关测试脚本同时获取脚本执行结果以及日志信息。在18年7月ITMS平台搭建完成，同年获得浪潮集团内部创新一等奖。后续开始除了用例撰写人员全部投入脚本编写工作，自此开始认识测试。从需求分析，用例设计，手工测试，自动化测试，bug回归，事后分析总结等全流程，认识了了解了，熟悉了测试以及自动化用例和脚本如何进行对应。</p>
-<h6 id="郑州-挑战与转变"><a href="#郑州-挑战与转变" class="headerlink" title="郑州-挑战与转变"></a>郑州-挑战与转变</h6><p>18年10月因为要在郑州成立大数据产品线。我和我的主管作为河南人，直接安排回到郑州工作。当时的一切都是刚刚开始。</p>
-<p>1、协助团队组建——跟随主管以及主管的主管进行人员面试工作，在19年7月完成20人角色完善的大数据测试团队，同时实验服务器等设备申请组装到位；</p>
-<p>2、自动化任务——①带领四位成员完成1632自动化脚本撰写任务；②优化ITMS平台脚本上传工作，通过rsync由原来的脚本全量同步变更为脚本增量同步，脚本上传时间缩短15%以上；③借鉴BMC WEB自动化框架完成大数据自动化框架搭建，并实现与ITMS平台的对接；</p>
-<p>3、专利负责人——超额完成团队財年指标20%；通过每周的头脑风暴挖掘专利点，共完成发明专利80个。</p>
-<p>在这一时期培养了自己如何提问题，如何回答问题。同时培养自己的owner意识，时不时和领导沟通自己项目进度。在大数据自动化搭建期间领悟到了设计优先原则。因为前期有BMC搭建经验，自然而然想直接引用却忽略了二者之间的不同，导致一个月时间的浪费。后来区分二者的相同和不同之处，针对性的设计并开发。在规定时间内及时完成框架搭建，并接入ITMS平台。</p>
-<h6 id="离开-新的起点"><a href="#离开-新的起点" class="headerlink" title="离开-新的起点"></a>离开-新的起点</h6><p>经过思考再三决定离开，因为在这里已经完成了大数据自动化框架的搭建，并完全适配ITMS平台。后续的工作不能再给个人带来更大的成长。在3月份开始面试，面试过阿里、腾讯、恒生等公司，因为自己在这里骄傲自满，技术与前言的有些脱节，算法几乎是两眼一抹黑。种种不顺利，在3月底，收到华为外包、阿里外包、网易外包、中电金信以及郑煤机的offer。目前纠结选择中。。。未完待续</p>
+    <title>springboot整合shiro和JWT使用指北</title>
+    <url>/Echo/2021/11/09/springboot%E6%95%B4%E5%90%88shiro%E5%92%8CJWT%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8C%97/</url>
+    <content><![CDATA[<h3 id="shiro是什么？"><a href="#shiro是什么？" class="headerlink" title="shiro是什么？"></a>shiro是什么？</h3><p><code>Shiro</code> 是一个强大的简单易用的 <code>Java</code> 安全框架，主要用来更便捷的 <code>认证，授权，加密，会话管理</code>。<code>Shiro</code> 首要的和最重要的目标就是容易使用并且容易理解，通过 <code>Shiro</code> 易于理解的<code>API</code>，您可以快速、轻松地获得任何应用程序——从最小的移动应用程序最大的网络和企业应用程序。</p>
+<h3 id="shiro的功能"><a href="#shiro的功能" class="headerlink" title="shiro的功能"></a>shiro的功能</h3><ol>
+<li>Authentication:身份认证、登录，验证用户是不是拥有相应的身份;\</li>
+<li>Authorization:授权，即权限验证，验证某个已认证的用户是否拥有某个权限，即判断用户能否进行什么操作，如:验证某个用户是否拥有某个角色，或者细粒度的验证某个用户对某个资源是否具有某个权限!\</li>
+<li>Session Manager:会话管理，即用户登录后就是第一次会话，在没有退出之前，它的所有信息都在会话中;会话可以是普通的JavaSE环境，也可以是Web环境;\</li>
+<li>Cryptography:加密，保护数据的安全性，如密码加密存储到数据库中，而不是明文存储;\</li>
+<li>Web Support: Web支持，可以非常容易的集成到Web环境;\</li>
+<li>Caching:缓存，比如用户登录后，其用户信息，拥有的角色、权限不必每次去查，这样可以提高效率\</li>
+<li>Concurrency: Shiro支持多线程应用的并发验证，即，如在一个线程中开启另一个线程，能把权限自动的传播过去Testing:提供测试支持;\</li>
+<li>Run As:允许一个用户假装为另一个用户（如果他们允许）的身份进行访问;\</li>
+<li>Remember Me:记住我，这个是非常常见的功能，即一次登录后，下次再来的话不用登录了\</li>
+</ol>
+<h3 id="JWT是什么？"><a href="#JWT是什么？" class="headerlink" title="JWT是什么？"></a>JWT是什么？</h3><p>JWT ：JWT（JSON Web Token）是一种身份认证的方式，JWT 本质上就一段签名的 JSON 格式的数据。由于它是带有签名的，因此接收者便可以验证它的真实性。可以理解为对 token 这一技术提出一套规范，是在 <a href="https://link.juejin.cn/?target=https://tools.ietf.org/html/rfc7519">RFC 7519</a> 中提出的。</p>
+<h3 id="JWT的组成和优缺点"><a href="#JWT的组成和优缺点" class="headerlink" title="JWT的组成和优缺点"></a>JWT的组成和优缺点</h3><p>本文在这里仅简单介绍JWT的组成和优缺点。详细分析可以在相关搜索引擎中搜索。</p>
+<h4 id="JWT的组成"><a href="#JWT的组成" class="headerlink" title="JWT的组成"></a>JWT的组成</h4><p>一个JWT token是一个字符串，它由头部、载荷、与签名中间有.分割组成；</p>
+<p>头部（header）：由令牌的类型和正在使用的签名算法组成；</p>
+<p>载荷（playload）：放置了token的一些基本信息，以帮助接收服务器理解，同时还有用户自定义信息，支持用户信息交换；</p>
+<p>签名（Signature）：主要是将前面的头部和载荷进行加密。</p>
+<h4 id="JWT的优缺点"><a href="#JWT的优缺点" class="headerlink" title="JWT的优缺点"></a>JWT的优缺点</h4><p>JWT的优点：</p>
+<ul>
+<li>防CSRF：CSRF（Cross Site Request Forgery）跨站伪造请求。使用JWT登录成功后，会存放在本地local storage中；\</li>
+<li>适合移动端：使用session需要服务端保存一份信息，使用token不需要只要请求携带token，还可跨语言使用；\</li>
+<li>无状态：token中有身份验证的所有信息，增加了系统的可用性和伸缩性也带了同样的问题（在缺点中会介绍）；\</li>
+<li>单点登录友好：使用session需要我们把所有session信息存在一台电脑上，使用token的话token保存在客户端。\</li>
+</ul>
+<p>JWT的缺点：</p>
+<ul>
+<li>无状态导致在注销、退出登录、修改密码、修改角色||权限等场景下token依旧有效；\</li>
+<li>token续签问题：即token过期后如何动态刷新token。\</li>
+</ul>
+<h4 id="shiro-JWT-使用"><a href="#shiro-JWT-使用" class="headerlink" title="shiro + JWT 使用"></a>shiro + JWT 使用</h4><h5 id="JWTtoken-令牌"><a href="#JWTtoken-令牌" class="headerlink" title="JWTtoken 令牌"></a>JWTtoken 令牌</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.apache.shiro.authc.AuthenticationToken;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JwtToken</span> <span class="keyword">implements</span> <span class="title">AuthenticationToken</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> String token;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">JwtToken</span><span class="params">(String jwt)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">this</span>.token = jwt;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> Object <span class="title">getCredentials</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> token;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> Object <span class="title">getPrincipal</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> token;</span><br><span class="line"></span><br><span class="line"> &#125;  </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="jwtutils-JWT工具类主要是生成token设置过期时间"><a href="#jwtutils-JWT工具类主要是生成token设置过期时间" class="headerlink" title="jwtutils JWT工具类主要是生成token设置过期时间"></a>jwtutils JWT工具类主要是生成token设置过期时间</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.context.properties.ConfigurationProperties;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> io.jsonwebtoken.Claims;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> io.jsonwebtoken.Jwts;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> io.jsonwebtoken.SignatureAlgorithm;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> lombok.Data;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> lombok.extern.slf4j.Slf4j;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@ConfigurationProperties(prefix = &quot;blogspringback.jwt&quot;)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JwtUtils</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String secret;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">long</span> expire;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> String header;</span><br><span class="line"></span><br><span class="line">\</span><br><span class="line"></span><br><span class="line">/</span><br><span class="line"></span><br><span class="line"> <span class="meta">@description</span>: 生成token</span><br><span class="line"></span><br><span class="line">  <span class="meta">@param</span> &#123;<span class="keyword">long</span>&#125; userId</span><br><span class="line"></span><br><span class="line">  <span class="meta">@return</span> &#123;JWT token&#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Author</span>: 丑牛</span><br><span class="line"></span><br><span class="line">/</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">generateToken</span><span class="params">(<span class="keyword">long</span> userId)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 过期时间</span></span><br><span class="line"></span><br><span class="line">  Date dateNow = <span class="keyword">new</span> Date();</span><br><span class="line"></span><br><span class="line">  Date dateExpire =  <span class="keyword">new</span> Date(dateNow.getTime() + expire  <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> Jwts.builder()</span><br><span class="line"></span><br><span class="line">    .setHeaderParam(<span class="string">&quot;type&quot;</span>, <span class="string">&quot;JWT&quot;</span>)</span><br><span class="line"></span><br><span class="line">     .setSubject(userId + <span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line">     .setIssuedAt(dateNow)</span><br><span class="line"></span><br><span class="line">     .setExpiration(dateExpire)</span><br><span class="line"></span><br><span class="line">     .signWith(SignatureAlgorithm.HS512, secret)</span><br><span class="line"></span><br><span class="line">     .compact();</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Claims <span class="title">getClaimsByToken</span><span class="params">(String token)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> Jwts.parser()</span><br><span class="line"></span><br><span class="line">  .setSigningKey(secret)</span><br><span class="line"></span><br><span class="line"> .parseClaimsJws(token)</span><br><span class="line"></span><br><span class="line">.getBody();</span><br><span class="line"></span><br><span class="line">  &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line"></span><br><span class="line">   log.debug(<span class="string">&quot;token error&quot;</span>, e);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">/</span><br><span class="line"></span><br><span class="line"> <span class="meta">@description</span>: 判断token是否过期</span><br><span class="line"></span><br><span class="line">  <span class="meta">@param</span> &#123;Date&#125; expeiration</span><br><span class="line"></span><br><span class="line">  <span class="meta">@return</span> <span class="keyword">true</span>:过期；<span class="keyword">false</span>：未过期</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Author</span>: 丑牛</span><br><span class="line"></span><br><span class="line">/</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isTokenExpired</span><span class="params">(Date expeiration)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> expeiration.before(<span class="keyword">new</span> Date());</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">&#125;`</span><br><span class="line"></span><br><span class="line">##### JWTFilter 拦截请求</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Jwtfilter</span> <span class="keyword">extends</span> <span class="title">AuthenticatingFilter</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Autowired</span></span><br><span class="line"></span><br><span class="line"> JwtUtils jwtUtils;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">protected</span> AuthenticationToken <span class="title">createToken</span><span class="params">(ServletRequest servletRequest, ServletResponse serverResponse)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"></span><br><span class="line">  HttpServletRequest request = (HttpServletRequest) servletRequest;</span><br><span class="line"></span><br><span class="line">  String jwt = request.getHeader(<span class="string">&quot;Authorization&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (ObjectUtils.isEmpty(jwt))&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> JwtToken(jwt);</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">boolean</span> <span class="title">onAccessDenied</span><span class="params">(ServletRequest servletRequest, ServletResponse serverResponse)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"></span><br><span class="line">  HttpServletRequest request = (HttpServletRequest) servletRequest;</span><br><span class="line"></span><br><span class="line">  String jwt = request.getHeader(<span class="string">&quot;Authorization&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (ObjectUtils.isEmpty(jwt)) &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">   Claims claim = JwtUtils.getClaimsByToken(jwt);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (claim == <span class="keyword">null</span> || jwtUtils.isTokenExpired(claim.getExpiration())) &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">throw</span> <span class="keyword">new</span> ExpiredCredentialsException(<span class="string">&quot;token失效，请重新登录&quot;</span>);</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> executeLogin(servletRequest, serverResponse);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">boolean</span> <span class="title">onLoginFailure</span><span class="params">(AuthenticationToken token, AuthenticationException e, ServletRequest request, ServletResponse response)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">  HttpServletResponse httpServletResponse = (HttpServletResponse) response;</span><br><span class="line"></span><br><span class="line">  Throwable throwable = e.getCause() == <span class="keyword">null</span> ? e : e.getCause();</span><br><span class="line"></span><br><span class="line">  Result result = Result.fail(throwable.getMessage());</span><br><span class="line"></span><br><span class="line">  String json = JSONUtil.toJsonStr(result);</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line"></span><br><span class="line">   httpServletResponse.getWriter().print(json);</span><br><span class="line"></span><br><span class="line">  &#125; <span class="keyword">catch</span> (IOException ioException) &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">\</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">boolean</span> <span class="title">preHandle</span><span class="params">(ServletRequest request, ServletResponse response)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"></span><br><span class="line">  HttpServletRequest httpServletRequest = WebUtils.toHttp(request);</span><br><span class="line"></span><br><span class="line">  HttpServletResponse httpServletResponse = WebUtils.toHttp(response);</span><br><span class="line"></span><br><span class="line">  httpServletResponse.setHeader(<span class="string">&quot;Access-control-Allow-Origin&quot;</span>, httpServletRequest.getHeader(<span class="string">&quot;Origin&quot;</span>));</span><br><span class="line"></span><br><span class="line">  httpServletResponse.setHeader(<span class="string">&quot;Access-Control-Allow-Methods&quot;</span>, <span class="string">&quot;GET,POST,OPTIONS,PUT,DELETE&quot;</span>);</span><br><span class="line"></span><br><span class="line">  httpServletResponse.setHeader(<span class="string">&quot;Access-Control-Allow-Headers&quot;</span>,  httpServletRequest.getHeader(<span class="string">&quot;Access-Control-Request-Headers&quot;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 跨域时会首先发送一个OPTIONS请求，这里我们给OPTIONS请求直接返回正常状态</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (httpServletRequest.getMethod().equals(RequestMethod.OPTIONS.name())) &#123;</span><br><span class="line"></span><br><span class="line">   httpServletResponse.setStatus(org.springframework.http.HttpStatus.OK.value());</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">super</span>.preHandle(request, response);</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="shiro-config-设置自定义的filter"><a href="#shiro-config-设置自定义的filter" class="headerlink" title="shiro config 设置自定义的filter"></a>shiro config 设置自定义的filter</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ShiroConfig</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Autowired</span></span><br><span class="line"></span><br><span class="line"> Jwtfilter jwtFilter;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Bean</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> SessionManager <span class="title">sessionManager</span><span class="params">(RedisSessionDAO redisSessionDAO)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  DefaultSessionManager sessionManager = <span class="keyword">new</span> DefaultSessionManager();</span><br><span class="line"></span><br><span class="line">  sessionManager.setSessionDAO(redisSessionDAO);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> sessionManager;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Bean</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> DefaultWebSecurityManager <span class="title">securityManager</span><span class="params">(AccountRealm accountRealm, SessionManager sessionManager,</span></span></span><br><span class="line"><span class="params"><span class="function"></span></span></span><br><span class="line"><span class="params"><span class="function">   RedisCacheManager redisCacheManager)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  DefaultWebSecurityManager securityManager = <span class="keyword">new</span> DefaultWebSecurityManager(accountRealm);</span><br><span class="line"></span><br><span class="line"><span class="comment">// inject sessionManager</span></span><br><span class="line"></span><br><span class="line">  securityManager.setSessionManager(sessionManager);</span><br><span class="line"></span><br><span class="line"><span class="comment">// inject redisCacheManager</span></span><br><span class="line"></span><br><span class="line">  securityManager.setCacheManager(redisCacheManager);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> securityManager;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Bean</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> ShiroFilterChainDefinition <span class="title">shiroFilterChainDefinition</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  DefaultShiroFilterChainDefinition chainDefinition = <span class="keyword">new</span> DefaultShiroFilterChainDefinition();</span><br><span class="line"></span><br><span class="line">  Map &lt; String, String &gt; filterMap = <span class="keyword">new</span> LinkedHashMap &lt;&gt; ();</span><br><span class="line"></span><br><span class="line">  filterMap.put(<span class="string">&quot;/&quot;</span>, <span class="string">&quot;jwt&quot;</span>);</span><br><span class="line"></span><br><span class="line">  chainDefinition.addPathDefinitions(filterMap);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> chainDefinition;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Bean(&quot;shiroFilterFactoryBean&quot;)</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> ShiroFilterFactoryBean <span class="title">shiroFilterFactoryBean</span><span class="params">(org.apache.shiro.mgt.SecurityManager securityManager,</span></span></span><br><span class="line"><span class="params"><span class="function"></span></span></span><br><span class="line"><span class="params"><span class="function">              ShiroFilterChainDefinition shiroFilterChainDefinition)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  ShiroFilterFactoryBean shiroFilter = <span class="keyword">new</span> ShiroFilterFactoryBean();</span><br><span class="line"></span><br><span class="line">  shiroFilter.setSecurityManager(securityManager);</span><br><span class="line"></span><br><span class="line">  Map &lt; String, Filter &gt; filters = <span class="keyword">new</span> HashMap &lt;&gt; ();</span><br><span class="line"></span><br><span class="line">  filters.put(<span class="string">&quot;jwt&quot;</span>, jwtFilter);</span><br><span class="line"></span><br><span class="line">  shiroFilter.setFilters(filters);</span><br><span class="line"></span><br><span class="line">  Map &lt; String, String &gt; filterMap = shiroFilterChainDefinition.getFilterChainMap();</span><br><span class="line"></span><br><span class="line">  shiroFilter.setFilterChainDefinitionMap(filterMap);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> shiroFilter;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="shiro工具类-获取当前用户登录信息"><a href="#shiro工具类-获取当前用户登录信息" class="headerlink" title="shiro工具类 获取当前用户登录信息"></a>shiro工具类 获取当前用户登录信息</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ShiroUtil</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> AccountProfile <span class="title">getProfile</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> (AccountProfile) SecurityUtils.getSubject().getPrincipal();</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="realm类-实现认证与授权"><a href="#realm类-实现认证与授权" class="headerlink" title="realm类 实现认证与授权"></a>realm类 实现认证与授权</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AccountRealm</span> <span class="keyword">extends</span> <span class="title">AuthorizingRealm</span></span>&#123;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Autowired</span></span><br><span class="line"></span><br><span class="line"> JwtUtils jwtUtils;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Autowired</span></span><br><span class="line"></span><br><span class="line"> UserService userService;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">supports</span><span class="params">(AuthenticationToken token)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> token <span class="keyword">instanceof</span> JwtToken;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">protected</span> AuthorizationInfo <span class="title">doGetAuthorizationInfo</span><span class="params">(PrincipalCollection principals)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">protected</span> AuthenticationInfo <span class="title">doGetAuthenticationInfo</span><span class="params">(AuthenticationToken token)</span> <span class="keyword">throws</span> AuthenticationException </span>&#123;</span><br><span class="line"></span><br><span class="line">  JwtToken jwtToken = (JwtToken) token;</span><br><span class="line"></span><br><span class="line">  String userId = JwtUtils.getClaimsByToken((String) jwtToken.getPrincipal()).getSubject();</span><br><span class="line"></span><br><span class="line">  User user = userService.getById(Long.valueOf(userId));</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (user == <span class="keyword">null</span>) &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">throw</span> <span class="keyword">new</span> UnknownAccountException(<span class="string">&quot;账户不存在&quot;</span>);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (user.getStatus() == -<span class="number">1</span>) &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">throw</span> <span class="keyword">new</span> LockedAccountException(<span class="string">&quot;账户已被锁定&quot;</span>);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  AccountProfile profile = <span class="keyword">new</span> AccountProfile();</span><br><span class="line"></span><br><span class="line">  BeanUtil.copyProperties(user, profile);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> SimpleAuthenticationInfo(profile, jwtToken.getCredentials(), getName());</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>PS <a href="https://github.com/hugfeature/spring-example/tree/main/blog-spring-back">demo地址</a></p>
 ]]></content>
       <categories>
-        <category>个人</category>
+        <category>springboot</category>
       </categories>
       <tags>
-        <tag>个人成长</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>卸载centos自带的openjdk和MySQL</title>
-    <url>/Echo/2020/01/01/%E5%8D%B8%E8%BD%BDcentos%E8%87%AA%E5%B8%A6%E7%9A%84openjdk%E5%92%8CMySQL/</url>
-    <content><![CDATA[<h2 id="卸载openjdk"><a href="#卸载openjdk" class="headerlink" title="卸载openjdk"></a>卸载openjdk</h2><p>1.查看已经安装的jdk</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">rpm –qa|grep jdk</span><br><span class="line"></span><br><span class="line">java-1.7.0-openjdk-1.7.0.141-2.6.10.5.el7.x86_64</span><br><span class="line"></span><br><span class="line">java-1.8.0-openjdk-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">java-1.8.0-openjdk-headless-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">java-1.7.0-openjdk-headless-1.7.0.141-2.6.10.5.el7.x86_64</span><br><span class="line"></span><br><span class="line">ldap-4.19-1.el7.noarch</span><br><span class="line"></span><br><span class="line">copy-jdk-configs-2.2-3.el7.noarch</span><br></pre></td></tr></table></figure>
-
-<p>2.卸载命令</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum -y remove java-1.7.0-openjdk-1.7.0.141-2.6.10.5.el7.x86_64</span><br><span class="line"></span><br><span class="line">yum -y remove java-1.8.0-openjdk-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">yum -y remove java-1.8.0-openjdk-headless-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">yum -y remove java-1.7.0-openjdk-headless-1.7.0.141-2.6.10.5.el7.x86_64</span><br></pre></td></tr></table></figure>
-
-<p>.noarch文件不用</p>
-<p>3.用Java –version查看</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">提示如下： No such file or directoy</span><br></pre></td></tr></table></figure>
-
-<p>  卸载完成</p>
-<h2 id="卸载mysql"><a href="#卸载mysql" class="headerlink" title="卸载mysql"></a>卸载mysql</h2><p>执行命令</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum remove mariadb-libs</span><br></pre></td></tr></table></figure>
-
-<p>即可。</p>
-]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>JDK</tag>
+        <tag>java</tag>
+        <tag>springboot</tag>
       </tags>
   </entry>
   <entry>
@@ -2439,6 +2390,55 @@
       </categories>
       <tags>
         <tag>kafka，大数据</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>卸载centos自带的openjdk和MySQL</title>
+    <url>/Echo/2020/01/01/%E5%8D%B8%E8%BD%BDcentos%E8%87%AA%E5%B8%A6%E7%9A%84openjdk%E5%92%8CMySQL/</url>
+    <content><![CDATA[<h2 id="卸载openjdk"><a href="#卸载openjdk" class="headerlink" title="卸载openjdk"></a>卸载openjdk</h2><p>1.查看已经安装的jdk</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">rpm –qa|grep jdk</span><br><span class="line"></span><br><span class="line">java-1.7.0-openjdk-1.7.0.141-2.6.10.5.el7.x86_64</span><br><span class="line"></span><br><span class="line">java-1.8.0-openjdk-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">java-1.8.0-openjdk-headless-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">java-1.7.0-openjdk-headless-1.7.0.141-2.6.10.5.el7.x86_64</span><br><span class="line"></span><br><span class="line">ldap-4.19-1.el7.noarch</span><br><span class="line"></span><br><span class="line">copy-jdk-configs-2.2-3.el7.noarch</span><br></pre></td></tr></table></figure>
+
+<p>2.卸载命令</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum -y remove java-1.7.0-openjdk-1.7.0.141-2.6.10.5.el7.x86_64</span><br><span class="line"></span><br><span class="line">yum -y remove java-1.8.0-openjdk-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">yum -y remove java-1.8.0-openjdk-headless-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">yum -y remove java-1.7.0-openjdk-headless-1.7.0.141-2.6.10.5.el7.x86_64</span><br></pre></td></tr></table></figure>
+
+<p>.noarch文件不用</p>
+<p>3.用Java –version查看</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">提示如下： No such file or directoy</span><br></pre></td></tr></table></figure>
+
+<p>  卸载完成</p>
+<h2 id="卸载mysql"><a href="#卸载mysql" class="headerlink" title="卸载mysql"></a>卸载mysql</h2><p>执行命令</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum remove mariadb-libs</span><br></pre></td></tr></table></figure>
+
+<p>即可。</p>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>JDK</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2015-2020工作日志</title>
+    <url>/Echo/2020/04/02/%E4%BA%94%E5%B9%B4%E5%B7%A5%E4%BD%9C%E6%84%9F%E6%82%9F/</url>
+    <content><![CDATA[<h6 id="学校生涯"><a href="#学校生涯" class="headerlink" title="学校生涯"></a>学校生涯</h6><p>​       我自身是河南人，不过有一颗不安分的心。高考志愿填报了大连交通大学，选了软件工程与信息管理与信息系统的双专业学位，学制五年。大三期间参与学校老师ERP沙盘模拟软件的编写工作。在这期间开始真正的接触项目，这时才知道学习与实战的差距。当时主要用的J2EE和java struct。项目做到大四完成。完成第一版之后在学校的校内ERP沙盘大赛和校内实践课程上已经开始运用了。听说现在还在使用中。</p>
+<h5 id="北京-身份转变第一站"><a href="#北京-身份转变第一站" class="headerlink" title="北京-身份转变第一站"></a>北京-身份转变第一站</h5><p>​     因为一心想去一线城市看看，在择业期毫不犹豫的就选择了去北京。因为大学有项目而且大学主修课程有日语，很顺利的面上了北京利达智通。14年11月开始进入公司实习。在实习前三个月是在济南培训。培训这段时间感觉是最充实的。当时公司主要业务是野村证券。使用的大机语言（COBOL，在校也有相关的选修课还有证书可拿），主要是linux系统上进行开发。三个月的培训每天有作业每月有考核，压力大收获也大。在此期间学的linux和养成的编程习惯让我至今仍有受益。</p>
+<h6 id="第一个项目-野村证券MRF"><a href="#第一个项目-野村证券MRF" class="headerlink" title="第一个项目-野村证券MRF"></a>第一个项目-野村证券MRF</h6><p>这个项目主要是为日本野村证券新增一个青少年可以参与基金交易的功能。前一个月由师傅的带领开始正式的面向对象编程，不得不说日本人的式样书真详细。主要负责是功能模块各种数据连接层的处理以及数据库维护等工作。在这工作期间培养了自己的时间观念（某办法日本人特别在意这个）在dead line 前必须完成，好的一点是式样书（详设）写的真详细，不好的一点是没有自己发展的空间。还有个教训让我记忆深刻。在转正后，开始自己独立编写，结对测试的工作模式。由于当时对全角和半角的空格不敏感，这编程过程这个错误反复的犯，差点耽误项目进度。后来就给自己贴了便签，同样的错误绝不能犯第二次。</p>
+<h6 id="第二个项目-青森银行的住贷项目"><a href="#第二个项目-青森银行的住贷项目" class="headerlink" title="第二个项目-青森银行的住贷项目"></a>第二个项目-青森银行的住贷项目</h6><p>这个项目是公司开始转型的开始。主要编程语言为java，使用SSM框架来进行开发。这项目算是一个全新的项目从资料上传、申请、审批、贷后管理这房屋住贷全流程。（不同的有两点一、青森银行的住贷是有授权民间金融借贷来进行，二、放款时本人必须到场身份验证）。之前的项目一直用的COBOL，从2016年12月开始重新捡回java进行面向对象开发。从此开始CURD之路，主要是DAO层使用原生的JDBC连接数据库，然后实现CURD操作。除了承担CURD操作之外同时还承担这项目组的DBA的角色。主要有数据库权限分配与管理，数据表视图的创建，数据库表结构创建与维护等工作。项目大概到5月份就开始进行客户验收了，中间去日本青森县出差过1个月，作为现场技术支持。因为我本身有日语N3证书（目前已经过期，日语也忘得差不多了），同时本身的水平在项目组中还不错。过完十一后就日渐想河南老家。北京节假日回家真的太难了。</p>
+<h5 id="浪潮之旅"><a href="#浪潮之旅" class="headerlink" title="浪潮之旅"></a>浪潮之旅</h5><h6 id="济南-初识测试、自动化测试"><a href="#济南-初识测试、自动化测试" class="headerlink" title="济南-初识测试、自动化测试"></a>济南-初识测试、自动化测试</h6><p>17年10月开始面试，11月收到浪潮的offer。当时面上大厂，心情激动，这个也可以实现回郑州，只不过要先在济南工作一年左右。入职岗位是测试验证部-测试开发。当时浪潮因为自身要搞自动化测试平台的建设，因为有个目标要在19年4月完成5000+自动化脚本库已经自动化平台的建设。入职后开始搞自动化测试。我的任务主要是前台选择完用例后，我后台开始执行相关测试脚本同时获取脚本执行结果以及日志信息。在18年7月ITMS平台搭建完成，同年获得浪潮集团内部创新一等奖。后续开始除了用例撰写人员全部投入脚本编写工作，自此开始认识测试。从需求分析，用例设计，手工测试，自动化测试，bug回归，事后分析总结等全流程，认识了了解了，熟悉了测试以及自动化用例和脚本如何进行对应。</p>
+<h6 id="郑州-挑战与转变"><a href="#郑州-挑战与转变" class="headerlink" title="郑州-挑战与转变"></a>郑州-挑战与转变</h6><p>18年10月因为要在郑州成立大数据产品线。我和我的主管作为河南人，直接安排回到郑州工作。当时的一切都是刚刚开始。</p>
+<p>1、协助团队组建——跟随主管以及主管的主管进行人员面试工作，在19年7月完成20人角色完善的大数据测试团队，同时实验服务器等设备申请组装到位；</p>
+<p>2、自动化任务——①带领四位成员完成1632自动化脚本撰写任务；②优化ITMS平台脚本上传工作，通过rsync由原来的脚本全量同步变更为脚本增量同步，脚本上传时间缩短15%以上；③借鉴BMC WEB自动化框架完成大数据自动化框架搭建，并实现与ITMS平台的对接；</p>
+<p>3、专利负责人——超额完成团队財年指标20%；通过每周的头脑风暴挖掘专利点，共完成发明专利80个。</p>
+<p>在这一时期培养了自己如何提问题，如何回答问题。同时培养自己的owner意识，时不时和领导沟通自己项目进度。在大数据自动化搭建期间领悟到了设计优先原则。因为前期有BMC搭建经验，自然而然想直接引用却忽略了二者之间的不同，导致一个月时间的浪费。后来区分二者的相同和不同之处，针对性的设计并开发。在规定时间内及时完成框架搭建，并接入ITMS平台。</p>
+<h6 id="离开-新的起点"><a href="#离开-新的起点" class="headerlink" title="离开-新的起点"></a>离开-新的起点</h6><p>经过思考再三决定离开，因为在这里已经完成了大数据自动化框架的搭建，并完全适配ITMS平台。后续的工作不能再给个人带来更大的成长。在3月份开始面试，面试过阿里、腾讯、恒生等公司，因为自己在这里骄傲自满，技术与前言的有些脱节，算法几乎是两眼一抹黑。种种不顺利，在3月底，收到华为外包、阿里外包、网易外包、中电金信以及郑煤机的offer。目前纠结选择中。。。未完待续</p>
+]]></content>
+      <categories>
+        <category>个人</category>
+      </categories>
+      <tags>
+        <tag>个人成长</tag>
       </tags>
   </entry>
   <entry>
