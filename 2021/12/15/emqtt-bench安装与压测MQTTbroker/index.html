@@ -20,12 +20,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"hugfeature.github.io","root":"/Echo/","images":"/Echo/images","scheme":"Gemini","darkmode":false,"version":"8.8.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":{"gittalk":{"order":-2}}},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/Echo/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Echo/js/config.js"></script>
-<meta name="description" content="EMQX消息服务器&amp;emqtt_bench简介EMQXEMQ X (Erlang&#x2F;Enterprise&#x2F;Elastic MQTT Broker) 是基于 Erlang&#x2F;OTP 平台开发的开源物联网 MQTT 消息服务器。 Erlang&#x2F;OTP是出色的软实时 (Soft-Realtime)、低延时 (Low-Latency)、分布式 (Distributed)的语言平台。 MQTT 是轻量的">
+<meta name="description" content="EMQXEMQ X (Erlang&#x2F;Enterprise&#x2F;Elastic MQTT Broker) 是基于 Erlang&#x2F;OTP 平台开发的开源物联网 MQTT 消息服务器。 Erlang&#x2F;OTP是出色的软实时 (Soft-Realtime)、低延时 (Low-Latency)、分布式 (Distributed)的语言平台。 MQTT 是轻量的 (Lightweight)、发布订阅模式 (PubS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="emqtt_bench安装与压测MQTTbroker">
 <meta property="og:url" content="https://hugfeature.github.io/Echo/2021/12/15/emqtt-bench%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8E%8B%E6%B5%8BMQTTbroker/index.html">
 <meta property="og:site_name" content="贤の博客">
-<meta property="og:description" content="EMQX消息服务器&amp;emqtt_bench简介EMQXEMQ X (Erlang&#x2F;Enterprise&#x2F;Elastic MQTT Broker) 是基于 Erlang&#x2F;OTP 平台开发的开源物联网 MQTT 消息服务器。 Erlang&#x2F;OTP是出色的软实时 (Soft-Realtime)、低延时 (Low-Latency)、分布式 (Distributed)的语言平台。 MQTT 是轻量的">
+<meta property="og:description" content="EMQXEMQ X (Erlang&#x2F;Enterprise&#x2F;Elastic MQTT Broker) 是基于 Erlang&#x2F;OTP 平台开发的开源物联网 MQTT 消息服务器。 Erlang&#x2F;OTP是出色的软实时 (Soft-Realtime)、低延时 (Low-Latency)、分布式 (Distributed)的语言平台。 MQTT 是轻量的 (Lightweight)、发布订阅模式 (PubS">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://hugfeature.github.io/Echo/2021/12/15/emqtt-bench%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8E%8B%E6%B5%8BMQTTbroker/image-20211216170648216.png">
 <meta property="og:image" content="https://hugfeature.github.io/Echo/2021/12/15/emqtt-bench%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8E%8B%E6%B5%8BMQTTbroker/image-20211216171321403.png">
@@ -150,7 +150,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#EMQX%E6%B6%88%E6%81%AF%E6%9C%8D%E5%8A%A1%E5%99%A8-amp-emqtt-bench%E7%AE%80%E4%BB%8B"><span class="nav-text">EMQX消息服务器&amp;emqtt_bench简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#EMQX"><span class="nav-text">EMQX</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#emqtt-bench"><span class="nav-text">emqtt_bench</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#EMQX%E5%AE%89%E8%A3%85"><span class="nav-text">EMQX安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#emqtt-bench%E5%AE%89%E8%A3%85"><span class="nav-text">emqtt_bench安装</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-%E5%89%8D%E6%8F%90%E5%87%86%E5%A4%87"><span class="nav-text">1.前提准备</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-%E5%AE%89%E8%A3%85Erlang-22-3"><span class="nav-text">2.安装Erlang 22.3</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-%E5%AE%89%E8%A3%85%E6%96%B0%E7%89%88git%EF%BC%88%E5%9B%A0%E5%90%8E%E7%BB%AD%E5%9C%A8emqtt-bench-make%E6%97%B6centos7%E8%87%AA%E5%B8%A6git%E7%89%88%E6%9C%AC%E8%BE%83%E4%BD%8E%E5%AF%BC%E8%87%B4%E9%97%AE%E9%A2%98%EF%BC%89"><span class="nav-text">3.安装新版git（因后续在emqtt_bench make时centos7自带git版本较低导致问题）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-make%E5%A4%B1%E8%B4%A5%EF%BC%88%E6%8A%A5%E9%94%99GUN%E7%89%88%E6%9C%AC%EF%BC%89"><span class="nav-text">1.make失败（报错GUN版本）</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-%E6%9C%89%E9%83%A8%E5%88%86git%E8%B5%84%E6%BA%90%E4%B8%8B%E8%BD%BD%E5%A4%B1%E8%B4%A5"><span class="nav-text">2.有部分git资源下载失败</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-text">使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%9E%E5%90%90%E9%87%8F%E6%80%A7%E8%83%BD%E5%8E%8B%E6%B5%8B"><span class="nav-text">吞吐量性能压测</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#EMQX"><span class="nav-text">EMQX</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#emqtt-bench"><span class="nav-text">emqtt_bench</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#EMQX%E5%AE%89%E8%A3%85"><span class="nav-text">EMQX安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#emqtt-bench%E5%AE%89%E8%A3%85"><span class="nav-text">emqtt_bench安装</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-%E5%89%8D%E6%8F%90%E5%87%86%E5%A4%87"><span class="nav-text">1.前提准备</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-%E5%AE%89%E8%A3%85Erlang-22-3"><span class="nav-text">2.安装Erlang 22.3</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-%E5%AE%89%E8%A3%85%E6%96%B0%E7%89%88git%EF%BC%88%E5%9B%A0%E5%90%8E%E7%BB%AD%E5%9C%A8emqtt-bench-make%E6%97%B6centos7%E8%87%AA%E5%B8%A6git%E7%89%88%E6%9C%AC%E8%BE%83%E4%BD%8E%E5%AF%BC%E8%87%B4%E9%97%AE%E9%A2%98%EF%BC%89"><span class="nav-text">3.安装新版git（因后续在emqtt_bench make时centos7自带git版本较低导致问题）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-make%E5%A4%B1%E8%B4%A5%EF%BC%88%E6%8A%A5%E9%94%99GUN%E7%89%88%E6%9C%AC%EF%BC%89"><span class="nav-text">1.make失败（报错GUN版本）</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-%E6%9C%89%E9%83%A8%E5%88%86git%E8%B5%84%E6%BA%90%E4%B8%8B%E8%BD%BD%E5%A4%B1%E8%B4%A5"><span class="nav-text">2.有部分git资源下载失败</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-text">使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%9E%E5%90%90%E9%87%8F%E6%80%A7%E8%83%BD%E5%8E%8B%E6%B5%8B"><span class="nav-text">吞吐量性能压测</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -249,7 +249,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h3 id="EMQX消息服务器-amp-emqtt-bench简介"><a href="#EMQX消息服务器-amp-emqtt-bench简介" class="headerlink" title="EMQX消息服务器&amp;emqtt_bench简介"></a>EMQX消息服务器&amp;emqtt_bench简介</h3><h4 id="EMQX"><a href="#EMQX" class="headerlink" title="EMQX"></a>EMQX</h4><p><em>EMQ X</em> (Erlang/Enterprise/Elastic MQTT Broker) 是基于 Erlang/OTP 平台开发的开源物联网 MQTT 消息服务器。</p>
+        <h4 id="EMQX"><a href="#EMQX" class="headerlink" title="EMQX"></a>EMQX</h4><p><em>EMQ X</em> (Erlang/Enterprise/Elastic MQTT Broker) 是基于 Erlang/OTP 平台开发的开源物联网 MQTT 消息服务器。</p>
 <p>Erlang/OTP是出色的软实时 (Soft-Realtime)、低延时 (Low-Latency)、分布式 (Distributed)的语言平台。</p>
 <p>MQTT 是轻量的 (Lightweight)、发布订阅模式 (PubSub) 的物联网消息协议。</p>
 <p>EMQ X 设计目标是实现高可靠，并支持承载海量物联网终端的MQTT连接，支持在海量物联网设备间低延时消息路由:</p>
@@ -260,7 +260,7 @@
 <li>完整物联网协议支持，MQTT、MQTT-SN、CoAP、LwM2M、WebSocket 或私有协议支持。</li>
 </ol>
 <h4 id="emqtt-bench"><a href="#emqtt-bench" class="headerlink" title="emqtt_bench"></a>emqtt_bench</h4><p><a target="_blank" rel="noopener" href="https://github.com/emqx/emqtt_bench">emqtt_bench (opens new window)</a>是基于 Erlang 编写的，一个简洁强大的 MQTT 协议性能测试工具。</p>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><h4 id="EMQX安装"><a href="#EMQX安装" class="headerlink" title="EMQX安装"></a>EMQX安装</h4><p>emqx安装比较简单，可以参照<a target="_blank" rel="noopener" href="https://docs.emqx.cn/broker/v4.3/getting-started/install.html">安装 | EMQ Docs (emqx.cn)</a>进行。</p>
+<h4 id="EMQX安装"><a href="#EMQX安装" class="headerlink" title="EMQX安装"></a>EMQX安装</h4><p>emqx安装比较简单，可以参照<a target="_blank" rel="noopener" href="https://docs.emqx.cn/broker/v4.3/getting-started/install.html">安装 | EMQ Docs (emqx.cn)</a>进行。</p>
 <h4 id="emqtt-bench安装"><a href="#emqtt-bench安装" class="headerlink" title="emqtt_bench安装"></a>emqtt_bench安装</h4><p>结合官网介绍需要 Erlang/OTP 22.3+以上，但是经过尝试最新版的Erlang不太兼容，所以还是老老实实用22.3了。</p>
 <h6 id="1-前提准备"><a href="#1-前提准备" class="headerlink" title="1.前提准备"></a>1.前提准备</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 各种依赖，缺乏可能会导致意外问题</span></span><br><span class="line">yum -y install ncurses-devel openssl-devel unixODBC-devel gcc-c++ perl</span><br></pre></td></tr></table></figure>
 
@@ -278,7 +278,7 @@
 <h6 id="2-有部分git资源下载失败"><a href="#2-有部分git资源下载失败" class="headerlink" title="2.有部分git资源下载失败"></a>2.有部分git资源下载失败</h6><p><img src="image-20211216171321403.png" alt="image-20211216171321403"></p>
 <p><strong>cd /opt/emqtt-bench/_build/default/lib/quicer/msquic/submodules</strong></p>
 <p><strong>git clone git://github.com/google/googletest</strong></p>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p><code>emqtt_bench</code> 共三个子命令：</p>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p><code>emqtt_bench</code> 共三个子命令：</p>
 <ol>
 <li><code>pub</code>：用于创建大量客户端执行发布消息的操作。</li>
 <li><code>sub</code>：用于创建大量客户端执行订阅主题，并接受消息的操作。</li>
@@ -436,7 +436,7 @@
 <td align="left">指定客户端连接使用的本地网卡</td>
 </tr>
 </tbody></table>
-<h3 id="吞吐量性能压测"><a href="#吞吐量性能压测" class="headerlink" title="吞吐量性能压测"></a>吞吐量性能压测</h3><p>bench1上执行</p>
+<h4 id="吞吐量性能压测"><a href="#吞吐量性能压测" class="headerlink" title="吞吐量性能压测"></a>吞吐量性能压测</h4><p>bench1上执行</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./emqtt_bench sub -t t -h EMQQserverIP -c 500</span><br></pre></td></tr></table></figure>
 
 <p>bench2 上执行</p>
@@ -466,6 +466,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/" rel="next" title="JMeter处理器和控制器">
+                  JMeter处理器和控制器 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
