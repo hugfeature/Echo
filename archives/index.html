@@ -188,6 +188,152 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/2022/01/02/HDFS%E7%AE%80%E4%BB%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Echo/images/avatar.gif">
+      <meta itemprop="name" content="丑牛">
+      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="贤の博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Echo/2022/01/02/HDFS%E7%AE%80%E4%BB%8B/" class="post-title-link" itemprop="url">HDFS简介</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-01-02 08:45:39" itemprop="dateCreated datePublished" datetime="2022-01-02T08:45:39+08:00">2022-01-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Echo/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h4 id="Hadoop-分布式文件系统"><a href="#Hadoop-分布式文件系统" class="headerlink" title="Hadoop 分布式文件系统"></a>Hadoop 分布式文件系统</h4><p><strong>HDFS</strong>解决了大数据的存储问题，<strong>Map Reduce</strong>解决了与处理部分大数据相关的问题。</p>
+<h4 id="Hadoop的组件"><a href="#Hadoop的组件" class="headerlink" title="Hadoop的组件"></a>Hadoop的组件</h4><p>HDFS有两个主要组件来解决大数据问题：</p>
+<ul>
+<li>用于存储大数据的HDFS</li>
+<li>用于处理大数据的MapReduce</li>
+</ul>
+<p><img src="Hadoop-Component-1.jpg" alt="Hadoop-Component-1"></p>
+<p>如图所示，Hadoop的架构，一个是HDFS，Hadoop的文件存储系统，一个是YARN和MapReduce，大数据处理部分。</p>
+<p>使用HDFS，Hadoop使我们能够存储大数据，使用YARN和Map Reduce，Hadoop使我们能够处理存储在HDFS中的相同大数据。</p>
+<p><img src="Hadoop-Core-Components.jpg" alt="Hadoop-Core-Components"></p>
+<p>正如您在上图中看到的，HDFS有两个主要的守护进程，或者您可以将它们称为进程或线程，它们只不过是JAVA进程，即在JVM中运行 - NameNode和DataNode。</p>
+<p>NameNode是一个在Master Machine上运行的主守护程序，即本质上是高端机器，DataNode是在商用硬件上运行的从机。可以有更多的DataNode，因为从机不仅仅是主机。</p>
+<p>因此，我们总是在从属机器上运行一个NameNode和多个DataNode。</p>
+<p>同样，我们在另一端有YARN，它又有两个守护进程，一个是运行在主计算机上的资源管理器，另一个是运行在从机上的节点管理器，就像DataNode一样。因此，每台从属机器都有两个守护进程 - 一个是DataNode，另一个是Node Manager。</p>
+<p>主计算机正在运行 NameNode 并运行资源管理器。NameNode 负责管理 Hadoop 分布式文件系统上的数据，资源管理器负责对此存储的数据执行处理任务。</p>
+<h4 id="name-node-和data-node"><a href="#name-node-和data-node" class="headerlink" title="name node 和data node"></a>name node 和data node</h4><h5 id="name-node"><a href="#name-node" class="headerlink" title="name node"></a>name node</h5><ul>
+<li>主守护进程。</li>
+<li>管理和维护数据节点。</li>
+<li>记录元数据。</li>
+<li>接收来自所有 DataNode 的检测信号和阻止报告。</li>
+</ul>
+<p>data node</p>
+<ul>
+<li>守护进程。</li>
+<li>实际数据存储在此处。</li>
+<li>为来自客户端的读取和写入请求提供服务。</li>
+</ul>
+<p><img src="NameNode-DataNode.jpg" alt="NameNode-DataNode"></p>
+<p>有一个集中式机器名称节点，它控制着各种DataNode，即商用硬件。因此，Name Node只不过是维护所有DataNode的主守护进程。</p>
+<p>这些名称节点具有有关存储在 DataNode 中的数据的所有信息。DataNode顾名思义，用于存储Hadoop集群中存在的数据。</p>
+<p>NameNode仅包含有关哪些数据存储在哪个DataNode上的信息。因此，我们可以说的是NameNode存储存储在DataNodes上的数据的元数据。</p>
+<p>DataNode还执行另一项任务，即它定期将检测信号发送回NameNode。心跳实际上告诉NameNode这个DataNode仍然活着。</p>
+<p>DataNodes将检测信号发送回NameNode，这样NameNode就可以知道这些数据节点是活跃的，因此NameNode可以使用这些数据节点来存储更多数据或从这些数据节点读取数据。</p>
+<p>现在我们来看看DataNode，DataNode只不过是从属守护进程，它实际上存储着发送到Hadoop集群的数据。这些数据节点是实际为客户端发出的读取和写入请求提供服务的节点。</p>
+<p>如果有人想从Hadoop集群中读取数据，那么这些请求实际上由数据所在的DataNodes处理。</p>
+<h4 id="Hadoop-集群架构"><a href="#Hadoop-集群架构" class="headerlink" title="Hadoop 集群架构"></a>Hadoop 集群架构</h4><p><img src="Hadoop-Cluster.jpg" alt="Hadoop-Cluster"></p>
+<p>如图所示，Hadoop 集群r只不过是一个主从拓扑，其中有一个主机器，正如你在顶部看到的那样，即Hadoop 集群。在此主计算机中，有一个 NameNode 和正在运行的资源管理器，即主守护程序。</p>
+<p>主机使用核心交换机连接到所有从机，这是因为这些数据节点实际上存储在各种机架中，因此您可以看到计算机1，计算机2，计算机3直到计算机N。这只不过是从属机器或DataNodes，它们都存在于一个机架中。</p>
+<h5 id="HDFS将如何存取数据？"><a href="#HDFS将如何存取数据？" class="headerlink" title="HDFS将如何存取数据？"></a>HDFS将如何存取数据？</h5><p>将文件存储在HDFS中时，数据被存储为HDFS中的块。整个文件不存储在HDFS中，这是因为如您所知，Hadoop是一个分布式文件系统。</p>
+<p>因此，如果您的文件大小可能为1 PB（Peta Byte），那么这种存储就不会存在于单台计算机中，因为Hadoop集群是使用商用硬件制作的。一台计算机中的硬件大约为 1 TB 或 2 TB。</p>
+<p>因此，整个文件需要分解为称为HDFS块的数据块。</p>
+<ul>
+<li>每个文件都作为块存储在HDFS上。</li>
+<li>在Apache Hadoop 2.x中，每个块的默认大小约为128 MB（在以前的版本，即Apache Hadoop 1.x中为64mb）。</li>
+<li>有一个工具可以使用Hadoop软件包附带的配置文件（即hdfssite.xml）来增加或减少块的文件大小。</li>
+</ul>
+<p>让我们在这里考虑一个248 MB的文件，现在如果我们打破这个文件，或者如果我们把这个文件移动到Hadoop Cluster（即2.x）中，那么这个文件将被分解成一个块，即128 MB的块A和另一个120 MB的块B。</p>
+<p>如您所见，第一个块为128 MB，即第一个板块在那里削减，这就是为什么另一个块为120 MB而不是128 MB，即如果剩余的文件大小小于默认块大小，则不会浪费任何空间。</p>
+<p><img src="Example-Diagram.jpg" alt="Example-Diagram"></p>
+<p>现在我们面前还有另一个问题，即每个块的单个副本是否安全？</p>
+<p>答案是否定的，因为系统可能会失败，而它只是商品硬件，因此我们可能会遇到大麻烦。为了克服这个问题，Hadoop HDFS有一个很好的解决方案，即**”块的复制”。**</p>
+<h5 id="Hadoop-架构块复制"><a href="#Hadoop-架构块复制" class="headerlink" title="Hadoop 架构块复制"></a>Hadoop 架构块复制</h5><p>Hadoop创建存储到Hadoop分布式文件系统中的每个块的副本，这就是Hadoop作为容错系统的方式，即即使您的系统出现故障或DataNode失败或副本丢失，您也会在其他DataNode或其他服务器中存在多个其他副本，以便您始终可以从那里选择这些副本。</p>
+<p><img src="Block-Replication.jpg" alt="Block-Replication"></p>
+<p>如图所表示块复制，文件有五个不同的块，即块 1、2、3、4、5。让我们先检查一下块 1，您将在节点 1、节点 2 和节点 4 中找到块 1 的副本。</p>
+<p>同样，块 2 也有三个副本，即节点 2、节点 3 和节点 4，因此在各自的节点中，块 3、4 和 5 也是如此。</p>
+<p>因此，除了创建的副本之外，每个块都被复制了三次，即Hadoop遵循默认的复制因子为3，这意味着您复制到Hadoop分发文件系统中的任何文件都会被复制三次。</p>
+<p>换句话说，如果您将1 GB的文件复制到Hadoop分发文件系统中，它实际上将3 GB的文件存储在HDFS中。好的部分是，通过更改Hadoop的配置文件，默认复制因子是可以更改的。</p>
+<p>*<strong>Hadoop 如何决定存储副本的位置？*</strong></p>
+<p>Hadoop实际上遵循Rack Awareness的概念来决定在哪里存储Block的副本。如图所示机架感知算法图表。</p>
+<p><img src="Rack-Awareness-Algorithm.jpg" alt="Rack-Awareness-Algorithm"></p>
+<p>Rack-1有四个DataNodes，Rack-2和Rack-3也是如此，因此整个Hadoop集群总共将由所有三个机架组成，并且将有12个DataNode。</p>
+<p>假设块 A 在 Rack-1 的 DataNode 1 上复制，根据 Rack Aware 的概念，块 A 的副本不能在同一机架中创建，并且需要在 Rack-1 之外的任何其他机架中创建，因为主文件已经存在于 Rack-1 中。</p>
+<p>如果我们在同一机架-1中创建块A的副本，并且如果整个Rack-1发生故障，那么我们肯定会丢失数据，因此副本必须存储在任何其他机架中，而不是存储在Rack-1中。</p>
+<p>因此，将在 Rack-2 的 DataNode 6 和 8 中创建副本。同样，对于块 B 和块 C，副本将在不同的机架中创建，如上图所示。</p>
+<h4 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h4><ul>
+<li>Hadoop HDFS解决了大数据的存储问题。</li>
+<li>Hadoop Map Reduce解决了与大数据处理相关的问题。</li>
+<li>NameNode 是一个主守护进程，用于管理和维护 DataNode。</li>
+<li>DataNode是一个从属守护进程，实际数据存储在这里。它用于读取和写入来自客户端的请求。</li>
+<li>在Hadoop Cluster中，机架实际上是一组物理上存在于一个特定位置并相互连接的机器。</li>
+<li>每个文件都作为块存储在HDFS上。</li>
+<li>在Apache Hadoop 2.x中，每个块的默认大小约为128 MB（在以前的版本，即Apache Hadoop 1.x中为64 MB）。</li>
+<li>有一个工具可以使用Hadoop软件包附带的配置文件（即hdfssite.xml）来增加或减少块的文件大小。</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/2021/12/27/%E4%BB%80%E4%B9%88%E6%98%AFhadoop%EF%BC%9F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -934,7 +1080,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Echo/categories/JMeter/" itemprop="url" rel="index"><span itemprop="name">JMeter</span></a>
+          <a href="/Echo/categories/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">性能测试</span></a>
         </span>
     </span>
 
@@ -1071,7 +1217,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/Echo/2021/11/24/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%BB%84%E4%BB%B6kafka%E6%B5%8B%E8%AF%95/" class="post-title-link" itemprop="url">大数据组件kafka测试</a>
+          <a href="/Echo/2021/11/24/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%BB%84%E4%BB%B6kafka%E6%B5%8B%E8%AF%95/" class="post-title-link" itemprop="url">kafka测试</a>
         </h2>
 
         <div class="post-meta-container">
@@ -1202,7 +1348,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Echo/categories/JMeter/" itemprop="url" rel="index"><span itemprop="name">JMeter</span></a>
+          <a href="/Echo/categories/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">性能测试</span></a>
         </span>
     </span>
 
@@ -1358,7 +1504,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Echo/categories/%E6%97%A5%E5%BF%97%E6%94%B6%E9%9B%86/" itemprop="url" rel="index"><span itemprop="name">日志收集</span></a>
+          <a href="/Echo/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
         </span>
     </span>
 
@@ -1446,7 +1592,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Echo/categories/%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/" itemprop="url" rel="index"><span itemprop="name">任务调度</span></a>
+          <a href="/Echo/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a>
         </span>
     </span>
 
@@ -2216,125 +2362,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/2021/11/09/springboot%E6%95%B4%E5%90%88shiro%E5%92%8CJWT%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8C%97/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Echo/images/avatar.gif">
-      <meta itemprop="name" content="丑牛">
-      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="贤の博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Echo/2021/11/09/springboot%E6%95%B4%E5%90%88shiro%E5%92%8CJWT%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8C%97/" class="post-title-link" itemprop="url">springboot整合shiro和JWT使用指北</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-11-09 17:22:56" itemprop="dateCreated datePublished" datetime="2021-11-09T17:22:56+08:00">2021-11-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Echo/categories/springboot/" itemprop="url" rel="index"><span itemprop="name">springboot</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="shiro是什么？"><a href="#shiro是什么？" class="headerlink" title="shiro是什么？"></a>shiro是什么？</h3><p><code>Shiro</code> 是一个强大的简单易用的 <code>Java</code> 安全框架，主要用来更便捷的 <code>认证，授权，加密，会话管理</code>。<code>Shiro</code> 首要的和最重要的目标就是容易使用并且容易理解，通过 <code>Shiro</code> 易于理解的<code>API</code>，您可以快速、轻松地获得任何应用程序——从最小的移动应用程序最大的网络和企业应用程序。</p>
-<h3 id="shiro的功能"><a href="#shiro的功能" class="headerlink" title="shiro的功能"></a>shiro的功能</h3><ol>
-<li>Authentication:身份认证、登录，验证用户是不是拥有相应的身份;\</li>
-<li>Authorization:授权，即权限验证，验证某个已认证的用户是否拥有某个权限，即判断用户能否进行什么操作，如:验证某个用户是否拥有某个角色，或者细粒度的验证某个用户对某个资源是否具有某个权限!\</li>
-<li>Session Manager:会话管理，即用户登录后就是第一次会话，在没有退出之前，它的所有信息都在会话中;会话可以是普通的JavaSE环境，也可以是Web环境;\</li>
-<li>Cryptography:加密，保护数据的安全性，如密码加密存储到数据库中，而不是明文存储;\</li>
-<li>Web Support: Web支持，可以非常容易的集成到Web环境;\</li>
-<li>Caching:缓存，比如用户登录后，其用户信息，拥有的角色、权限不必每次去查，这样可以提高效率\</li>
-<li>Concurrency: Shiro支持多线程应用的并发验证，即，如在一个线程中开启另一个线程，能把权限自动的传播过去Testing:提供测试支持;\</li>
-<li>Run As:允许一个用户假装为另一个用户（如果他们允许）的身份进行访问;\</li>
-<li>Remember Me:记住我，这个是非常常见的功能，即一次登录后，下次再来的话不用登录了\</li>
-</ol>
-<h3 id="JWT是什么？"><a href="#JWT是什么？" class="headerlink" title="JWT是什么？"></a>JWT是什么？</h3><p>JWT ：JWT（JSON Web Token）是一种身份认证的方式，JWT 本质上就一段签名的 JSON 格式的数据。由于它是带有签名的，因此接收者便可以验证它的真实性。可以理解为对 token 这一技术提出一套规范，是在 <a href="https://link.juejin.cn/?target=https://tools.ietf.org/html/rfc7519">RFC 7519</a> 中提出的。</p>
-<h3 id="JWT的组成和优缺点"><a href="#JWT的组成和优缺点" class="headerlink" title="JWT的组成和优缺点"></a>JWT的组成和优缺点</h3><p>本文在这里仅简单介绍JWT的组成和优缺点。详细分析可以在相关搜索引擎中搜索。</p>
-<h4 id="JWT的组成"><a href="#JWT的组成" class="headerlink" title="JWT的组成"></a>JWT的组成</h4><p>一个JWT token是一个字符串，它由头部、载荷、与签名中间有.分割组成；</p>
-<p>头部（header）：由令牌的类型和正在使用的签名算法组成；</p>
-<p>载荷（playload）：放置了token的一些基本信息，以帮助接收服务器理解，同时还有用户自定义信息，支持用户信息交换；</p>
-<p>签名（Signature）：主要是将前面的头部和载荷进行加密。</p>
-<h4 id="JWT的优缺点"><a href="#JWT的优缺点" class="headerlink" title="JWT的优缺点"></a>JWT的优缺点</h4><p>JWT的优点：</p>
-<ul>
-<li>防CSRF：CSRF（Cross Site Request Forgery）跨站伪造请求。使用JWT登录成功后，会存放在本地local storage中；\</li>
-<li>适合移动端：使用session需要服务端保存一份信息，使用token不需要只要请求携带token，还可跨语言使用；\</li>
-<li>无状态：token中有身份验证的所有信息，增加了系统的可用性和伸缩性也带了同样的问题（在缺点中会介绍）；\</li>
-<li>单点登录友好：使用session需要我们把所有session信息存在一台电脑上，使用token的话token保存在客户端。\</li>
-</ul>
-<p>JWT的缺点：</p>
-<ul>
-<li>无状态导致在注销、退出登录、修改密码、修改角色||权限等场景下token依旧有效；\</li>
-<li>token续签问题：即token过期后如何动态刷新token。\</li>
-</ul>
-<h4 id="shiro-JWT-使用"><a href="#shiro-JWT-使用" class="headerlink" title="shiro + JWT 使用"></a>shiro + JWT 使用</h4><h5 id="JWTtoken-令牌"><a href="#JWTtoken-令牌" class="headerlink" title="JWTtoken 令牌"></a>JWTtoken 令牌</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.apache.shiro.authc.AuthenticationToken;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JwtToken</span> <span class="keyword">implements</span> <span class="title">AuthenticationToken</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> String token;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">JwtToken</span><span class="params">(String jwt)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">this</span>.token = jwt;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> Object <span class="title">getCredentials</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> token;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> Object <span class="title">getPrincipal</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> token;</span><br><span class="line"></span><br><span class="line"> &#125;  </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="jwtutils-JWT工具类主要是生成token设置过期时间"><a href="#jwtutils-JWT工具类主要是生成token设置过期时间" class="headerlink" title="jwtutils JWT工具类主要是生成token设置过期时间"></a>jwtutils JWT工具类主要是生成token设置过期时间</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.context.properties.ConfigurationProperties;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> io.jsonwebtoken.Claims;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> io.jsonwebtoken.Jwts;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> io.jsonwebtoken.SignatureAlgorithm;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> lombok.Data;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> lombok.extern.slf4j.Slf4j;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@ConfigurationProperties(prefix = &quot;blogspringback.jwt&quot;)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JwtUtils</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String secret;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">long</span> expire;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> String header;</span><br><span class="line"></span><br><span class="line">\</span><br><span class="line"></span><br><span class="line">/</span><br><span class="line"></span><br><span class="line"> <span class="meta">@description</span>: 生成token</span><br><span class="line"></span><br><span class="line">  <span class="meta">@param</span> &#123;<span class="keyword">long</span>&#125; userId</span><br><span class="line"></span><br><span class="line">  <span class="meta">@return</span> &#123;JWT token&#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Author</span>: 丑牛</span><br><span class="line"></span><br><span class="line">/</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">generateToken</span><span class="params">(<span class="keyword">long</span> userId)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 过期时间</span></span><br><span class="line"></span><br><span class="line">  Date dateNow = <span class="keyword">new</span> Date();</span><br><span class="line"></span><br><span class="line">  Date dateExpire =  <span class="keyword">new</span> Date(dateNow.getTime() + expire  <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> Jwts.builder()</span><br><span class="line"></span><br><span class="line">    .setHeaderParam(<span class="string">&quot;type&quot;</span>, <span class="string">&quot;JWT&quot;</span>)</span><br><span class="line"></span><br><span class="line">     .setSubject(userId + <span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line">     .setIssuedAt(dateNow)</span><br><span class="line"></span><br><span class="line">     .setExpiration(dateExpire)</span><br><span class="line"></span><br><span class="line">     .signWith(SignatureAlgorithm.HS512, secret)</span><br><span class="line"></span><br><span class="line">     .compact();</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Claims <span class="title">getClaimsByToken</span><span class="params">(String token)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> Jwts.parser()</span><br><span class="line"></span><br><span class="line">  .setSigningKey(secret)</span><br><span class="line"></span><br><span class="line"> .parseClaimsJws(token)</span><br><span class="line"></span><br><span class="line">.getBody();</span><br><span class="line"></span><br><span class="line">  &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line"></span><br><span class="line">   log.debug(<span class="string">&quot;token error&quot;</span>, e);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">/</span><br><span class="line"></span><br><span class="line"> <span class="meta">@description</span>: 判断token是否过期</span><br><span class="line"></span><br><span class="line">  <span class="meta">@param</span> &#123;Date&#125; expeiration</span><br><span class="line"></span><br><span class="line">  <span class="meta">@return</span> <span class="keyword">true</span>:过期；<span class="keyword">false</span>：未过期</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Author</span>: 丑牛</span><br><span class="line"></span><br><span class="line">/</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isTokenExpired</span><span class="params">(Date expeiration)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> expeiration.before(<span class="keyword">new</span> Date());</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">&#125;`</span><br><span class="line"></span><br><span class="line">##### JWTFilter 拦截请求</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Jwtfilter</span> <span class="keyword">extends</span> <span class="title">AuthenticatingFilter</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Autowired</span></span><br><span class="line"></span><br><span class="line"> JwtUtils jwtUtils;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">protected</span> AuthenticationToken <span class="title">createToken</span><span class="params">(ServletRequest servletRequest, ServletResponse serverResponse)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"></span><br><span class="line">  HttpServletRequest request = (HttpServletRequest) servletRequest;</span><br><span class="line"></span><br><span class="line">  String jwt = request.getHeader(<span class="string">&quot;Authorization&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (ObjectUtils.isEmpty(jwt))&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> JwtToken(jwt);</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">boolean</span> <span class="title">onAccessDenied</span><span class="params">(ServletRequest servletRequest, ServletResponse serverResponse)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"></span><br><span class="line">  HttpServletRequest request = (HttpServletRequest) servletRequest;</span><br><span class="line"></span><br><span class="line">  String jwt = request.getHeader(<span class="string">&quot;Authorization&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (ObjectUtils.isEmpty(jwt)) &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">   Claims claim = JwtUtils.getClaimsByToken(jwt);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (claim == <span class="keyword">null</span> || jwtUtils.isTokenExpired(claim.getExpiration())) &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">throw</span> <span class="keyword">new</span> ExpiredCredentialsException(<span class="string">&quot;token失效，请重新登录&quot;</span>);</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> executeLogin(servletRequest, serverResponse);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">boolean</span> <span class="title">onLoginFailure</span><span class="params">(AuthenticationToken token, AuthenticationException e, ServletRequest request, ServletResponse response)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">  HttpServletResponse httpServletResponse = (HttpServletResponse) response;</span><br><span class="line"></span><br><span class="line">  Throwable throwable = e.getCause() == <span class="keyword">null</span> ? e : e.getCause();</span><br><span class="line"></span><br><span class="line">  Result result = Result.fail(throwable.getMessage());</span><br><span class="line"></span><br><span class="line">  String json = JSONUtil.toJsonStr(result);</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line"></span><br><span class="line">   httpServletResponse.getWriter().print(json);</span><br><span class="line"></span><br><span class="line">  &#125; <span class="keyword">catch</span> (IOException ioException) &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">\</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">boolean</span> <span class="title">preHandle</span><span class="params">(ServletRequest request, ServletResponse response)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"></span><br><span class="line">  HttpServletRequest httpServletRequest = WebUtils.toHttp(request);</span><br><span class="line"></span><br><span class="line">  HttpServletResponse httpServletResponse = WebUtils.toHttp(response);</span><br><span class="line"></span><br><span class="line">  httpServletResponse.setHeader(<span class="string">&quot;Access-control-Allow-Origin&quot;</span>, httpServletRequest.getHeader(<span class="string">&quot;Origin&quot;</span>));</span><br><span class="line"></span><br><span class="line">  httpServletResponse.setHeader(<span class="string">&quot;Access-Control-Allow-Methods&quot;</span>, <span class="string">&quot;GET,POST,OPTIONS,PUT,DELETE&quot;</span>);</span><br><span class="line"></span><br><span class="line">  httpServletResponse.setHeader(<span class="string">&quot;Access-Control-Allow-Headers&quot;</span>,  httpServletRequest.getHeader(<span class="string">&quot;Access-Control-Request-Headers&quot;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 跨域时会首先发送一个OPTIONS请求，这里我们给OPTIONS请求直接返回正常状态</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (httpServletRequest.getMethod().equals(RequestMethod.OPTIONS.name())) &#123;</span><br><span class="line"></span><br><span class="line">   httpServletResponse.setStatus(org.springframework.http.HttpStatus.OK.value());</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">super</span>.preHandle(request, response);</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="shiro-config-设置自定义的filter"><a href="#shiro-config-设置自定义的filter" class="headerlink" title="shiro config 设置自定义的filter"></a>shiro config 设置自定义的filter</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ShiroConfig</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Autowired</span></span><br><span class="line"></span><br><span class="line"> Jwtfilter jwtFilter;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Bean</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> SessionManager <span class="title">sessionManager</span><span class="params">(RedisSessionDAO redisSessionDAO)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  DefaultSessionManager sessionManager = <span class="keyword">new</span> DefaultSessionManager();</span><br><span class="line"></span><br><span class="line">  sessionManager.setSessionDAO(redisSessionDAO);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> sessionManager;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Bean</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> DefaultWebSecurityManager <span class="title">securityManager</span><span class="params">(AccountRealm accountRealm, SessionManager sessionManager,</span></span></span><br><span class="line"><span class="params"><span class="function"></span></span></span><br><span class="line"><span class="params"><span class="function">   RedisCacheManager redisCacheManager)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  DefaultWebSecurityManager securityManager = <span class="keyword">new</span> DefaultWebSecurityManager(accountRealm);</span><br><span class="line"></span><br><span class="line"><span class="comment">// inject sessionManager</span></span><br><span class="line"></span><br><span class="line">  securityManager.setSessionManager(sessionManager);</span><br><span class="line"></span><br><span class="line"><span class="comment">// inject redisCacheManager</span></span><br><span class="line"></span><br><span class="line">  securityManager.setCacheManager(redisCacheManager);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> securityManager;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Bean</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> ShiroFilterChainDefinition <span class="title">shiroFilterChainDefinition</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  DefaultShiroFilterChainDefinition chainDefinition = <span class="keyword">new</span> DefaultShiroFilterChainDefinition();</span><br><span class="line"></span><br><span class="line">  Map &lt; String, String &gt; filterMap = <span class="keyword">new</span> LinkedHashMap &lt;&gt; ();</span><br><span class="line"></span><br><span class="line">  filterMap.put(<span class="string">&quot;/&quot;</span>, <span class="string">&quot;jwt&quot;</span>);</span><br><span class="line"></span><br><span class="line">  chainDefinition.addPathDefinitions(filterMap);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> chainDefinition;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Bean(&quot;shiroFilterFactoryBean&quot;)</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> ShiroFilterFactoryBean <span class="title">shiroFilterFactoryBean</span><span class="params">(org.apache.shiro.mgt.SecurityManager securityManager,</span></span></span><br><span class="line"><span class="params"><span class="function"></span></span></span><br><span class="line"><span class="params"><span class="function">              ShiroFilterChainDefinition shiroFilterChainDefinition)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  ShiroFilterFactoryBean shiroFilter = <span class="keyword">new</span> ShiroFilterFactoryBean();</span><br><span class="line"></span><br><span class="line">  shiroFilter.setSecurityManager(securityManager);</span><br><span class="line"></span><br><span class="line">  Map &lt; String, Filter &gt; filters = <span class="keyword">new</span> HashMap &lt;&gt; ();</span><br><span class="line"></span><br><span class="line">  filters.put(<span class="string">&quot;jwt&quot;</span>, jwtFilter);</span><br><span class="line"></span><br><span class="line">  shiroFilter.setFilters(filters);</span><br><span class="line"></span><br><span class="line">  Map &lt; String, String &gt; filterMap = shiroFilterChainDefinition.getFilterChainMap();</span><br><span class="line"></span><br><span class="line">  shiroFilter.setFilterChainDefinitionMap(filterMap);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> shiroFilter;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="shiro工具类-获取当前用户登录信息"><a href="#shiro工具类-获取当前用户登录信息" class="headerlink" title="shiro工具类 获取当前用户登录信息"></a>shiro工具类 获取当前用户登录信息</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ShiroUtil</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> AccountProfile <span class="title">getProfile</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> (AccountProfile) SecurityUtils.getSubject().getPrincipal();</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="realm类-实现认证与授权"><a href="#realm类-实现认证与授权" class="headerlink" title="realm类 实现认证与授权"></a>realm类 实现认证与授权</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AccountRealm</span> <span class="keyword">extends</span> <span class="title">AuthorizingRealm</span></span>&#123;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Autowired</span></span><br><span class="line"></span><br><span class="line"> JwtUtils jwtUtils;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Autowired</span></span><br><span class="line"></span><br><span class="line"> UserService userService;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">supports</span><span class="params">(AuthenticationToken token)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> token <span class="keyword">instanceof</span> JwtToken;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">protected</span> AuthorizationInfo <span class="title">doGetAuthorizationInfo</span><span class="params">(PrincipalCollection principals)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">protected</span> AuthenticationInfo <span class="title">doGetAuthenticationInfo</span><span class="params">(AuthenticationToken token)</span> <span class="keyword">throws</span> AuthenticationException </span>&#123;</span><br><span class="line"></span><br><span class="line">  JwtToken jwtToken = (JwtToken) token;</span><br><span class="line"></span><br><span class="line">  String userId = JwtUtils.getClaimsByToken((String) jwtToken.getPrincipal()).getSubject();</span><br><span class="line"></span><br><span class="line">  User user = userService.getById(Long.valueOf(userId));</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (user == <span class="keyword">null</span>) &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">throw</span> <span class="keyword">new</span> UnknownAccountException(<span class="string">&quot;账户不存在&quot;</span>);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (user.getStatus() == -<span class="number">1</span>) &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">throw</span> <span class="keyword">new</span> LockedAccountException(<span class="string">&quot;账户已被锁定&quot;</span>);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  AccountProfile profile = <span class="keyword">new</span> AccountProfile();</span><br><span class="line"></span><br><span class="line">  BeanUtil.copyProperties(user, profile);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> SimpleAuthenticationInfo(profile, jwtToken.getCredentials(), getName());</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>PS <a target="_blank" rel="noopener" href="https://github.com/hugfeature/spring-example/tree/main/blog-spring-back">demo地址</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/Echo/archives/page/2/">2</a><a class="page-number" href="/Echo/archives/page/3/">3</a><a class="extend next" rel="next" href="/Echo/archives/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
@@ -2348,7 +2375,7 @@
 
 <div class="copyright">
   &copy; 2020 – 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
