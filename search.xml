@@ -1378,56 +1378,6 @@
       </tags>
   </entry>
   <entry>
-    <title>cetnos 7.7单节点安装部署k8s（v1.18.2）</title>
-    <url>/Echo/2020/05/13/cetnos-7-7%E5%8D%95%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2k8s%EF%BC%88v1-18-2%EF%BC%89/</url>
-    <content><![CDATA[<h4 id="1-配置hosts文件"><a href="#1-配置hosts文件" class="headerlink" title="1.配置hosts文件"></a>1.配置hosts文件</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/hosts</span><br></pre></td></tr></table></figure>
-
-<p>本机ip  本机hostname 本机hostname</p>
-<h4 id="2-关闭防火墙-sawp等"><a href="#2-关闭防火墙-sawp等" class="headerlink" title="2.关闭防火墙, sawp等"></a>2.关闭防火墙, sawp等</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl <span class="built_in">disable</span> firewalld</span><br><span class="line">swapoff -a <span class="comment">#此处为临时关闭</span></span><br></pre></td></tr></table></figure>
-
-<p>#注释掉 /etc/fstab 里面这一行 /dev/mapper/centos-swap swap                    swap    defaults        0 0</p>
-<h4 id="3-禁用selinux"><a href="#3-禁用selinux" class="headerlink" title="3.禁用selinux"></a>3.禁用selinux</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br><span class="line">SELINUX=disabled</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-修改iptables参数-RHEL-CentOS-7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题"><a href="#4-修改iptables参数-RHEL-CentOS-7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题" class="headerlink" title="4.修改iptables参数 :: RHEL / CentOS 7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题"></a>4.修改iptables参数 :: RHEL / CentOS 7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">cat &lt;&lt;<span class="string">EOF &gt;  /etc/sysctl.d/k8s.conf</span></span><br><span class="line"><span class="string">vm.swappiness = 0</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-ip6tables = 1</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-iptables = 1</span></span><br><span class="line"><span class="string">net.ipv4.ip_forward = 1</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"><span class="comment">#使配置生效</span></span><br><span class="line">modprobe br_netfilter</span><br><span class="line">sysctl -p /etc/sysctl.d/k8s.conf</span><br></pre></td></tr></table></figure>
-
-<h4 id="5-安装docker-使用阿里镜像"><a href="#5-安装docker-使用阿里镜像" class="headerlink" title="5.安装docker(使用阿里镜像)"></a>5.安装docker(使用阿里镜像)</h4><h5 id="step-1-安装必要的一些系统工具"><a href="#step-1-安装必要的一些系统工具" class="headerlink" title="step 1: 安装必要的一些系统工具"></a>step 1: 安装必要的一些系统工具</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-2-添加软件源信息"><a href="#Step-2-添加软件源信息" class="headerlink" title="Step 2: 添加软件源信息"></a>Step 2: 添加软件源信息</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-3-更新并安装Docker-CE"><a href="#Step-3-更新并安装Docker-CE" class="headerlink" title="Step 3: 更新并安装Docker-CE"></a>Step 3: 更新并安装Docker-CE</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum makecache fast</span><br><span class="line">sudo yum -y install docker-ce</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-4-开启Docker服务"><a href="#Step-4-开启Docker服务" class="headerlink" title="Step 4: 开启Docker服务"></a>Step 4: 开启Docker服务</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-5-修改cgroupdriver-和镜像地址"><a href="#Step-5-修改cgroupdriver-和镜像地址" class="headerlink" title="Step 5: 修改cgroupdriver 和镜像地址"></a>Step 5: 修改cgroupdriver 和镜像地址</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/docker/daemon.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;exec-opts&quot;</span>: [<span class="string">&quot;native.cgroupdriver=systemd&quot;</span>],</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://e7l8pkuq.mirror.aliyuncs.com&quot;</span>,<span class="string">&quot;https://hub-mirror.c.163.com/&quot;</span>,<span class="string">&quot;https://reg-mirror.qiniu.com&quot;</span>]</span><br><span class="line">&#125;</span><br><span class="line"> <span class="comment"># 安装校验 docker version</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-6-安装kubernetes"><a href="#Step-6-安装kubernetes" class="headerlink" title="Step  6.安装kubernetes"></a>Step  6.安装kubernetes</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">cat &lt;&lt;<span class="string">EOF &gt; /etc/yum.repos.d/kubernetes.repo</span></span><br><span class="line"><span class="string">[kubernetes]</span></span><br><span class="line"><span class="string">name=Kubernetes</span></span><br><span class="line"><span class="string">baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64/</span></span><br><span class="line"><span class="string">enabled=1</span></span><br><span class="line"><span class="string">gpgcheck=1</span></span><br><span class="line"><span class="string">repo_gpgcheck=1</span></span><br><span class="line"><span class="string">gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line">setenforce 0</span><br><span class="line">yum install -y kubelet kubeadm kubectl</span><br><span class="line">systemctl <span class="built_in">enable</span> kubelet &amp;&amp; systemctl start kubelet</span><br><span class="line"> <span class="comment"># 出现索引lgpg检查失败时，请用yum install -y --nogpgcheck kubelet kubeadm kubectl</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="step-7-kubeadm初始化安装"><a href="#step-7-kubeadm初始化安装" class="headerlink" title="step 7.kubeadm初始化安装"></a>step 7.kubeadm初始化安装</h5><p>kubeadm init –apiserver-advertise-address=本机IP –image-repository registry.aliyuncs.com/google_containers –kubernetes-version 版本号 –pod-network-cidr=10.244.0.0/16</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubeadm init --apiserver-advertise-address=192.168.94.129 --image-repository registry.aliyuncs.com/google_containers --kubernetes-version 1.18.2 --pod-network-cidr=10.244.0.0/16</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-8-初始化安装成功后进行配置"><a href="#step-8-初始化安装成功后进行配置" class="headerlink" title="step 8.初始化安装成功后进行配置"></a>step 8.初始化安装成功后进行配置</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mkdir -p <span class="variable">$HOME</span>/.kube</span><br><span class="line">sudo cp -i /etc/kubernetes/admin.conf <span class="variable">$HOME</span>/.kube/config</span><br><span class="line">sudo chown $(id -u):$(id -g) <span class="variable">$HOME</span>/.kube/config</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-9-查看kubelet状态"><a href="#step-9-查看kubelet状态" class="headerlink" title="step 9.查看kubelet状态"></a>step 9.查看kubelet状态</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl status kubelet.service</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-10-确认每个组件的状态"><a href="#step-10-确认每个组件的状态" class="headerlink" title="step 10.确认每个组件的状态"></a>step 10.确认每个组件的状态</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl get cs</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-11-查看node状态，此时会发现处于NoReady"><a href="#step-11-查看node状态，此时会发现处于NoReady" class="headerlink" title="step 11.查看node状态，此时会发现处于NoReady"></a>step 11.查看node状态，此时会发现处于NoReady</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl get node</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-12-安装port-Network-flannel-k8s-cluster-工作-须安装pod网络，否则pod之间无法通信，k8s支持多种方案"><a href="#step-12-安装port-Network-flannel-k8s-cluster-工作-须安装pod网络，否则pod之间无法通信，k8s支持多种方案" class="headerlink" title="step 12.安装port Network( flannel )  : k8s cluster 工作 须安装pod网络，否则pod之间无法通信，k8s支持多种方案"></a>step 12.安装port Network( flannel )  : k8s cluster 工作 须安装pod网络，否则pod之间无法通信，k8s支持多种方案</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml</span><br></pre></td></tr></table></figure>
-
-<p>建议将kube-fannle文件拷贝至本地，将其中所需的镜像进行替换。</p>
-<h5 id="step-13-检查pod-确保每个pod都是running"><a href="#step-13-检查pod-确保每个pod都是running" class="headerlink" title="step 13.检查pod,确保每个pod都是running"></a>step 13.检查pod,确保每个pod都是running</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl get pod --all-namespaces -o wide</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>环境安装</category>
-      </categories>
-      <tags>
-        <tag>K8S</tag>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Yarn REST API 使用指南</title>
     <url>/Echo/2021/11/13/Yarn-ResourceManager-REST-API-%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
     <content><![CDATA[<p>Yarn作为一款优秀的开源集群管理工具，可以用它来运行Hadoop，Spark，Flink等大数据处理任务。所有的分布式计算框架，都是主从模式，ResourceManager作为集群的管理员，是任务提交的入口。一般企业的大数据处理平台会在Yarn的基础中做进一步的封装，以web应用的形式提供更高级的大数据处理平台。如果web应用通过shell的方式提交任务将显得太重，而且不利于任务状态的监控。幸好Yarn提供了ResourceManager的REST API，可以很方便的向集群提交、杀死任务或者监控任务的状态，本文将简要介绍ResourceManager REST API的使用方法。</p>
@@ -2177,6 +2127,56 @@
       </tags>
   </entry>
   <entry>
+    <title>cetnos 7.7单节点安装部署k8s（v1.18.2）</title>
+    <url>/Echo/2020/05/13/cetnos-7-7%E5%8D%95%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2k8s%EF%BC%88v1-18-2%EF%BC%89/</url>
+    <content><![CDATA[<h4 id="1-配置hosts文件"><a href="#1-配置hosts文件" class="headerlink" title="1.配置hosts文件"></a>1.配置hosts文件</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/hosts</span><br></pre></td></tr></table></figure>
+
+<p>本机ip  本机hostname 本机hostname</p>
+<h4 id="2-关闭防火墙-sawp等"><a href="#2-关闭防火墙-sawp等" class="headerlink" title="2.关闭防火墙, sawp等"></a>2.关闭防火墙, sawp等</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl <span class="built_in">disable</span> firewalld</span><br><span class="line">swapoff -a <span class="comment">#此处为临时关闭</span></span><br></pre></td></tr></table></figure>
+
+<p>#注释掉 /etc/fstab 里面这一行 /dev/mapper/centos-swap swap                    swap    defaults        0 0</p>
+<h4 id="3-禁用selinux"><a href="#3-禁用selinux" class="headerlink" title="3.禁用selinux"></a>3.禁用selinux</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br><span class="line">SELINUX=disabled</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-修改iptables参数-RHEL-CentOS-7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题"><a href="#4-修改iptables参数-RHEL-CentOS-7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题" class="headerlink" title="4.修改iptables参数 :: RHEL / CentOS 7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题"></a>4.修改iptables参数 :: RHEL / CentOS 7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">cat &lt;&lt;<span class="string">EOF &gt;  /etc/sysctl.d/k8s.conf</span></span><br><span class="line"><span class="string">vm.swappiness = 0</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-ip6tables = 1</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-iptables = 1</span></span><br><span class="line"><span class="string">net.ipv4.ip_forward = 1</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"><span class="comment">#使配置生效</span></span><br><span class="line">modprobe br_netfilter</span><br><span class="line">sysctl -p /etc/sysctl.d/k8s.conf</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-安装docker-使用阿里镜像"><a href="#5-安装docker-使用阿里镜像" class="headerlink" title="5.安装docker(使用阿里镜像)"></a>5.安装docker(使用阿里镜像)</h4><h5 id="step-1-安装必要的一些系统工具"><a href="#step-1-安装必要的一些系统工具" class="headerlink" title="step 1: 安装必要的一些系统工具"></a>step 1: 安装必要的一些系统工具</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-2-添加软件源信息"><a href="#Step-2-添加软件源信息" class="headerlink" title="Step 2: 添加软件源信息"></a>Step 2: 添加软件源信息</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-3-更新并安装Docker-CE"><a href="#Step-3-更新并安装Docker-CE" class="headerlink" title="Step 3: 更新并安装Docker-CE"></a>Step 3: 更新并安装Docker-CE</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum makecache fast</span><br><span class="line">sudo yum -y install docker-ce</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-4-开启Docker服务"><a href="#Step-4-开启Docker服务" class="headerlink" title="Step 4: 开启Docker服务"></a>Step 4: 开启Docker服务</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-5-修改cgroupdriver-和镜像地址"><a href="#Step-5-修改cgroupdriver-和镜像地址" class="headerlink" title="Step 5: 修改cgroupdriver 和镜像地址"></a>Step 5: 修改cgroupdriver 和镜像地址</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/docker/daemon.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;exec-opts&quot;</span>: [<span class="string">&quot;native.cgroupdriver=systemd&quot;</span>],</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://e7l8pkuq.mirror.aliyuncs.com&quot;</span>,<span class="string">&quot;https://hub-mirror.c.163.com/&quot;</span>,<span class="string">&quot;https://reg-mirror.qiniu.com&quot;</span>]</span><br><span class="line">&#125;</span><br><span class="line"> <span class="comment"># 安装校验 docker version</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-6-安装kubernetes"><a href="#Step-6-安装kubernetes" class="headerlink" title="Step  6.安装kubernetes"></a>Step  6.安装kubernetes</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">cat &lt;&lt;<span class="string">EOF &gt; /etc/yum.repos.d/kubernetes.repo</span></span><br><span class="line"><span class="string">[kubernetes]</span></span><br><span class="line"><span class="string">name=Kubernetes</span></span><br><span class="line"><span class="string">baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64/</span></span><br><span class="line"><span class="string">enabled=1</span></span><br><span class="line"><span class="string">gpgcheck=1</span></span><br><span class="line"><span class="string">repo_gpgcheck=1</span></span><br><span class="line"><span class="string">gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line">setenforce 0</span><br><span class="line">yum install -y kubelet kubeadm kubectl</span><br><span class="line">systemctl <span class="built_in">enable</span> kubelet &amp;&amp; systemctl start kubelet</span><br><span class="line"> <span class="comment"># 出现索引lgpg检查失败时，请用yum install -y --nogpgcheck kubelet kubeadm kubectl</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="step-7-kubeadm初始化安装"><a href="#step-7-kubeadm初始化安装" class="headerlink" title="step 7.kubeadm初始化安装"></a>step 7.kubeadm初始化安装</h5><p>kubeadm init –apiserver-advertise-address=本机IP –image-repository registry.aliyuncs.com/google_containers –kubernetes-version 版本号 –pod-network-cidr=10.244.0.0/16</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubeadm init --apiserver-advertise-address=192.168.94.129 --image-repository registry.aliyuncs.com/google_containers --kubernetes-version 1.18.2 --pod-network-cidr=10.244.0.0/16</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-8-初始化安装成功后进行配置"><a href="#step-8-初始化安装成功后进行配置" class="headerlink" title="step 8.初始化安装成功后进行配置"></a>step 8.初始化安装成功后进行配置</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mkdir -p <span class="variable">$HOME</span>/.kube</span><br><span class="line">sudo cp -i /etc/kubernetes/admin.conf <span class="variable">$HOME</span>/.kube/config</span><br><span class="line">sudo chown $(id -u):$(id -g) <span class="variable">$HOME</span>/.kube/config</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-9-查看kubelet状态"><a href="#step-9-查看kubelet状态" class="headerlink" title="step 9.查看kubelet状态"></a>step 9.查看kubelet状态</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl status kubelet.service</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-10-确认每个组件的状态"><a href="#step-10-确认每个组件的状态" class="headerlink" title="step 10.确认每个组件的状态"></a>step 10.确认每个组件的状态</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl get cs</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-11-查看node状态，此时会发现处于NoReady"><a href="#step-11-查看node状态，此时会发现处于NoReady" class="headerlink" title="step 11.查看node状态，此时会发现处于NoReady"></a>step 11.查看node状态，此时会发现处于NoReady</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl get node</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-12-安装port-Network-flannel-k8s-cluster-工作-须安装pod网络，否则pod之间无法通信，k8s支持多种方案"><a href="#step-12-安装port-Network-flannel-k8s-cluster-工作-须安装pod网络，否则pod之间无法通信，k8s支持多种方案" class="headerlink" title="step 12.安装port Network( flannel )  : k8s cluster 工作 须安装pod网络，否则pod之间无法通信，k8s支持多种方案"></a>step 12.安装port Network( flannel )  : k8s cluster 工作 须安装pod网络，否则pod之间无法通信，k8s支持多种方案</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml</span><br></pre></td></tr></table></figure>
+
+<p>建议将kube-fannle文件拷贝至本地，将其中所需的镜像进行替换。</p>
+<h5 id="step-13-检查pod-确保每个pod都是running"><a href="#step-13-检查pod-确保每个pod都是running" class="headerlink" title="step 13.检查pod,确保每个pod都是running"></a>step 13.检查pod,确保每个pod都是running</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl get pod --all-namespaces -o wide</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>环境安装</category>
+      </categories>
+      <tags>
+        <tag>K8S</tag>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>cetnos 8.2单节点安装部署k8s（v1.18.2）</title>
     <url>/Echo/2020/08/10/cetnos-8-2%E5%8D%95%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2k8s%EF%BC%88v1-18-2%EF%BC%89/</url>
     <content><![CDATA[<h4 id="1-配置hosts文件"><a href="#1-配置hosts文件" class="headerlink" title="1.配置hosts文件"></a>1.配置hosts文件</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/hosts</span><br></pre></td></tr></table></figure>
@@ -2636,6 +2636,81 @@
       </tags>
   </entry>
   <entry>
+    <title>什么是MapReduce</title>
+    <url>/Echo/2022/01/03/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/</url>
+    <content><![CDATA[<h4 id="为什么需要MapReduce？"><a href="#为什么需要MapReduce？" class="headerlink" title="为什么需要MapReduce？"></a>为什么需要MapReduce？</h4><p><img src="Map-Reduce.jpg" alt="Map-Reduce"></p>
+<p>MapReduce是**”处理单元”，**使用此组件，我们可以处理存储在Hadoop HDFS上的大数据。</p>
+<p>但确切的要求是为什么我们需要Hadoop的这个组件？</p>
+<p>存储在Hadoop HDFS上的大数据和传统存储不一样。数据被划分为存储在各个DataNodes中的数据块。因此，整个数据不会存储在一个集中的位置。</p>
+<p>因此，像Java这样的本机客户端应用程序或任何此类应用程序无法以当前格式处理数据，我们需要一个特殊的框架来处理存储在各个DataNodes中的碎片化数据块。</p>
+<p>处理是使用Hadoop MapReduce处理完成的。</p>
+<h4 id="MapReduce简述"><a href="#MapReduce简述" class="headerlink" title="MapReduce简述"></a>MapReduce简述</h4><p><img src="NutShell-MapReduce.jpg" alt="NutShell-MapReduce"></p>
+<p>如图所示显示了MapReduce的功能和用途。</p>
+<p>让我们从MapReduce的应用程序开始及如何应用。它用于分类器，索引和搜索，以及在电子商务网站（Flipkart，Amazon等）上创建推荐引擎。它也被几家公司用作分析。</p>
+<p>当我们从功能的角度来看，它是一个编程模型，可以用于像Hadoop HDFS这样的大规模分布式模型，并且具有并行编程的功能，使其非常有用。</p>
+<p>当我们在Map Reduce中看到函数时，会执行两个函数，即Map Function和Reduce函数。</p>
+<p>这项技术已经由谷歌，雅虎，Facebook等主要组织实施，也被Apache Hadoop采用，如HDFS，PIG，HIVE，并使用HBase存储数据或执行和处理大数据，也称为No-SQL。</p>
+<h5 id="MapReduce的优点"><a href="#MapReduce的优点" class="headerlink" title="MapReduce的优点"></a>MapReduce的优点</h5><p>1、并行处理</p>
+<p><img src="Advantage.jpg" alt="Advantage"></p>
+<p>整个数据块被Hadoop HDFS分成HDFS块，MapReduce并行处理这些数据块，因此处理变得很快。</p>
+<p>2、数据局部性</p>
+<p>这是Hadoop MapReduce给出的一个多功能的东西，即我们可以在它所在的位置处理数据。</p>
+<p><em><strong>这是什么意思？</strong></em></p>
+<p>在之前的HDFS教程中，我们了解到我们移动到Hadoop Cluster中的数据被划分为HDFS块，这些块被保存到SlaveMachines或DataNodes中。Map-Reduce将处理和逻辑感知到数据驻留在HDFS块中的相应从节点或DataNodes。</p>
+<p>处理在多个位置的较小数据块上并行执行。这节省了大量时间以及将大数据从一个位置移动到另一个位置所需的网络带宽。</p>
+<p>请记住，我们正在处理的数据是分解成块的大数据，如果我们开始将大数据直接通过分配的网络通道移动到集中式计算机中并对其进行处理，那么它将不会给我们带来任何优势，因为我们将消耗整个带宽将数据移动到集中式服务器。</p>
+<p>因此，使用Hadoop MapReduce，我们不只是在进行”并行处理”，我们还将数据处理到存在数据块的相应从节点或DataNodes上，因此我们也”节省了大量网络带宽”，这是非常有益的。</p>
+<p>最后，SlaveMachines完成了对存储在SlaveMachines的数据的处理，它们将结果发送回主机器，因为结果不如SlaveMachines上存储的块大。因此，它不会占用大量带宽。</p>
+<p>从属计算机将结果发送回主计算机，这些结果将聚合在一起，最终结果将发送回提交作业的客户端计算机。</p>
+<p><em><strong>如何决定哪些数据应该在哪个DataNode上处理？</strong></em></p>
+<p>客户端将作业提交给资源管理器，资源管理器是提供在数据所在的相应 DataNode 上执行作业的方向的资源管理器，它根据最近的可用 DataNode 做出决定，以便不会使用大量网络带宽。</p>
+<h4 id="传统方式VSMapReduce方式"><a href="#传统方式VSMapReduce方式" class="headerlink" title="传统方式VSMapReduce方式"></a>传统方式VSMapReduce方式</h4><p>假设有五个保险公司分支机构，人们来申请人寿保险单。现在，还有一家保险公司的总部，该总部拥有有关可用和所在分支机构的所有信息。</p>
+<p>但是，当人们来各自的分行A，B，C，D，E申请人寿保险时，保单申请保留在各自的分行本身，并且该信息不会与保险公司总部共享。</p>
+<p>1、传统方式</p>
+<p>传统为了上解决这个问题，所有申请将被转移到保险公司总部，然后申请过程将开始。</p>
+<p>在这种情况下，我们需要将所有申请转移到保险公司总部，这是一件代价高昂的事情，即必须从保险公司分支机构收集所有申请并将其带到保险公司总部。</p>
+<p>这就是成本以及进行此活动的巨大努力的方式。</p>
+<p><img src="Traditional-way-1.jpg" alt="Traditional-way-1"></p>
+<p><img src="Traditional-way-2.jpg" alt="Traditional-way-2"></p>
+<p>另一个方面是保险公司总部负担过重，因为它必须处理人民在各自分支机构申请保单的所有申请。</p>
+<p>由于保险公司正在处理所有分支机构都适用的申请，因此需要很长时间。最后，这个过程效果不是很好。</p>
+<p>2、MapReduce方式</p>
+<p>MapReduce遵循Data Locality，即它不会将所有应用程序带到保险公司总部，而是并行处理各个分支机构本身的应用程序。</p>
+<p><img src="MapReduce-Way.jpg" alt="MapReduce-Way"></p>
+<p>一旦应用于每个分支机构的申请得到处理，他们就会将处理后的详细信息发回保险公司总部。</p>
+<p>现在，保险公司总部只需要汇总从各自分支机构发送的已处理申请的数量，并将详细信息保存在各自的数据库或存储中心。</p>
+<p>通过这种方式，处理将非常容易和快速，保单持有人可以立即获得福利。</p>
+<h4 id="MapReduce运行原理"><a href="#MapReduce运行原理" class="headerlink" title="MapReduce运行原理"></a>MapReduce运行原理</h4><p>在前面的示例中，我们有一个分布在各个分支之间的输入（应用程序），每个输入都由相应的 Map 函数处理。</p>
+<p>我们知道MapReduce有两个函数，即Map Function和Reduce Function。</p>
+<p>在各个分支上完成的处理部分由 Map 函数完成。因此，每个分支机构中的每个输入（应用程序）都使用Map函数进行处理，之后处理后的详细信息被发送到保险公司总部，聚合部分由Reduce功能完成。</p>
+<p>聚合的已处理应用程序详细信息作为输出提供。</p>
+<p><img src="MapReduce-in-Detail.jpg" alt="MapReduce-in-Detail"></p>
+<p>这就是我们前面的例子中发生的事情。整个过程分为map任务和reduce任务。</p>
+<p>映射任务获取输入，映射任务的输出作为输入提供给 Reduce 任务，此 Reduce 任务最终将输出提供给客户端。</p>
+<p>为了更好地理解它，让我们来了解一下MapReduce的解剖结构。</p>
+<p><img src="Anatomy-of-MapReduce.jpg" alt="Anatomy-of-MapReduce"></p>
+<p>MapReduce任务在键值对上工作，因此当我们谈论Map时，Map将输入作为键值，并将输出作为键值列表给出。此键值列表将经历随机播放阶段，键的输入和值列表将转到化简器。</p>
+<p>最后，Reducer 为我们提供了键值对的列表。</p>
+<h4 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h4><ul>
+<li>Hadoop Map Reduce是Hadoop的”处理单元”。</li>
+<li>为了处理Hadoop HDFS存储的大数据，我们使用Hadoop Map Reduce。</li>
+<li>它用于搜索和索引，分类，推荐和分析。</li>
+<li>它具有编程模型，并行编程和大规模分布式模型等功能。</li>
+<li>MapReduce的设计模式是：汇总，热门记录的分类，排序和分析，如连接和选择。</li>
+<li>它只有两个功能，即mapper功能和reducer功能。</li>
+<li>并行处理和数据局部性是Hadoop MapReduce的良好优势。</li>
+<li>MapReduce的过程分为六个阶段，即输入，拆分，映射，洗牌，减少和最终结果</li>
+</ul>
+]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>大数据</tag>
+        <tag>MapReduce</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>什么是hadoop？</title>
     <url>/Echo/2021/12/27/%E4%BB%80%E4%B9%88%E6%98%AFhadoop%EF%BC%9F/</url>
     <content><![CDATA[<p>Apache Hadoop是一个开源框架，用于管理所有类型的数据（结构化，非结构化和半结构化）。</p>
@@ -2924,6 +2999,38 @@
       </tags>
   </entry>
   <entry>
+    <title>技术人如何申请专利</title>
+    <url>/Echo/2020/03/01/%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%A6%82%E4%BD%95%E7%94%B3%E8%AF%B7%E4%B8%93%E5%88%A9/</url>
+    <content><![CDATA[<h4 id="什么是专利？"><a href="#什么是专利？" class="headerlink" title="什么是专利？"></a>什么是专利？</h4><p>专利一般是由政府机关或者代表若干国家的区域性组织根据申请而颁发的一种文件，这种文件记载了发明创造的内容，并且在一定时期内产生这样一种法律状态，即获得专利的发明创造在一般情况下他人只有经专利权人许可才能予以实施。在我国，专利分为发明、实用新型和外观设计三种类型。</p>
+<h4 id="有什么好处？"><a href="#有什么好处？" class="headerlink" title="有什么好处？"></a>有什么好处？</h4><p>专利权人可以提高自身资质、获得收益、提高竞争力； 发明人可以获得收益、提高个人竞争力、获得成就感。</p>
+<h4 id="专利说明书长啥样？"><a href="#专利说明书长啥样？" class="headerlink" title="专利说明书长啥样？"></a>专利说明书长啥样？</h4><p><img src="%E5%8F%91%E6%98%8E%E4%B8%93%E5%88%A9%E8%AF%B4%E6%98%8E%E4%B9%A6.png" alt="发明专利说明书"></p>
+<h5 id="扉页"><a href="#扉页" class="headerlink" title="扉页"></a>扉页</h5><p>专利说明书中的扉页是揭示每件专利的基本信息的文件部分。扉页揭示的基本专利信息包括：专利申请的时间、申请的号码、申请人或专利权人、发明人、发明创造名称、发明创造简要介绍及主图（机械图、电路图、化学结构式等）、发明所属技术领域分类号、公布或授权的时间、文献号、出版专利文件的国家机构等。</p>
+<h5 id="权利要求书"><a href="#权利要求书" class="headerlink" title="权利要求书"></a>权利要求书</h5><p>权利要求书是专利文件中限定专利保护范围的文件部分。权利要求书中至少有一项独立权利要求，还可以有从属权利要求。</p>
+<h5 id="说明书"><a href="#说明书" class="headerlink" title="说明书"></a>说明书</h5><p>说明书是清楚完整地描述发明创造的技术内容的文件部分，附图则用于对说明书文字部分的补充。各国对说明书中发明描述的规定大体相同，以中国专利说明书为例，说明书部分包括：技术领域，背景技术，发明内容，附图说明，实施条例等。</p>
+<h5 id="检索报告"><a href="#检索报告" class="headerlink" title="检索报告"></a>检索报告</h5><p>有些机构出版的专利说明书还附有检索报告。检索报告是专利审查员通过对专利申请所涉及的发明创造进行现有技术检索，找到可进行专利性对比的文件，向专利申请人及公众展示检索结果的一种文件。附有检索报告的专利文件均为申请公布说明书，即未经审查尚未授予专利权的专利文件。检索报告以表格式报告书的形式出版。</p>
+<h4 id="专利申请的要求？"><a href="#专利申请的要求？" class="headerlink" title="专利申请的要求？"></a>专利申请的要求？</h4><p>1、新颖性：是指在申请日以前没有同样的发明或者实用新型在国内外出版物上公开发表过，没有在国内公开使用过或者以其他方式为公众所知，也没有同样的发明或者实用新型由他人向国家专利行政部门提出过申请并且记载在申请日以后公布的专利申请文件中。</p>
+<p>2、创造性：是指同申请日以前已有的技术相比，该实用新型有实质性特点和进步。</p>
+<p>3、实用性：是指该实用新型能够制造或者使用，并且能够产生积极效果。</p>
+<p>4、非智力活动或者规则</p>
+<h4 id="写专利前要想清楚的？"><a href="#写专利前要想清楚的？" class="headerlink" title="写专利前要想清楚的？"></a>写专利前要想清楚的？</h4><p>专利的背景：当前市场上有什么技术，当前技术存在的难点与痛点。（非常重要） 核心创新与收益：你的创新点在哪里，就是牛在哪里？创造的收益如何的。（最好能与专利背景中的难点与痛点互相匹配起来）； 流程：文字+流程图描述最为合适（专利接口人可能并无此方面专业知识</p>
+<h4 id="背景和现有技术怎么写？"><a href="#背景和现有技术怎么写？" class="headerlink" title="背景和现有技术怎么写？"></a>背景和现有技术怎么写？</h4><p>目的 — 说明此专利存在的意义</p>
+<ol>
+<li>关键术语定义：公知术语（如 Java 反射）的定义，多列一些，每个给链接；</li>
+<li>背景技术：泛泛介绍大背景和大前提（实践场景），以助理解为宜，不用过多着墨；</li>
+<li>现有技术：找出最具代表的进行客观的简述，说清缺陷。可提供链接；</li>
+<li>发明目的：针对上述缺陷，可用什么手段来解决它。简述；</li>
+<li>收益：实施本发明（解决问题）后能带来什么收益（指标、效果等）。</li>
+</ol>
+<h4 id="技术关键点和保护点"><a href="#技术关键点和保护点" class="headerlink" title="技术关键点和保护点"></a>技术关键点和保护点</h4><p>1.关键技术点罗列； 2.具体实施过程–说清楚“技术关键点”的具体实现 ① 实现步骤&amp;流程：总流程→细化→再细化 ② 总分结构：类、接口、方法及关系→各方法的描述、总结构→细化 （尽量用图来展示）</p>
+]]></content>
+      <categories>
+        <category>个人</category>
+      </categories>
+      <tags>
+        <tag>个人</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>拥有未来的能力——“自学”</title>
     <url>/Echo/2021/11/09/%E8%87%AA%E5%AD%A6/</url>
     <content><![CDATA[<h2 id="为什么一定要掌握自学能力？"><a href="#为什么一定要掌握自学能力？" class="headerlink" title="为什么一定要掌握自学能力？"></a>为什么一定要掌握自学能力？</h2><p>最近一直在讨论延长退休年龄，我们的父辈在五十岁就退休了。再过去的几十年里，人类的平均寿命预期增长的十分惊人！拿中国地区做例子，1949年，中国人均预期寿命不足35岁。 2021年，这个数字达到77.3岁。  72年，人均预期寿命长一倍还多。所以，各位，我们的未来还有很长。曾经有一家机构做过这样一个调查，人们的职业与自己大学所学专业的相符的比例不足20%。因为这世界变化太快了，因为大多数教育机构与世界发展脱钩的程度越来越严重。你的未来日子还有很长，这世界进步的这么快，你有让自己有在未来安身立命的一技之长吗？自学能力是唯一值得被不断磨练的长技，没有自学能力的人是没有未来的，这样我们才能在很长的未来中不被世界所抛弃。</p>
@@ -3003,38 +3110,6 @@
       </categories>
       <tags>
         <tag>成长</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>技术人如何申请专利</title>
-    <url>/Echo/2020/03/01/%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%A6%82%E4%BD%95%E7%94%B3%E8%AF%B7%E4%B8%93%E5%88%A9/</url>
-    <content><![CDATA[<h4 id="什么是专利？"><a href="#什么是专利？" class="headerlink" title="什么是专利？"></a>什么是专利？</h4><p>专利一般是由政府机关或者代表若干国家的区域性组织根据申请而颁发的一种文件，这种文件记载了发明创造的内容，并且在一定时期内产生这样一种法律状态，即获得专利的发明创造在一般情况下他人只有经专利权人许可才能予以实施。在我国，专利分为发明、实用新型和外观设计三种类型。</p>
-<h4 id="有什么好处？"><a href="#有什么好处？" class="headerlink" title="有什么好处？"></a>有什么好处？</h4><p>专利权人可以提高自身资质、获得收益、提高竞争力； 发明人可以获得收益、提高个人竞争力、获得成就感。</p>
-<h4 id="专利说明书长啥样？"><a href="#专利说明书长啥样？" class="headerlink" title="专利说明书长啥样？"></a>专利说明书长啥样？</h4><p><img src="%E5%8F%91%E6%98%8E%E4%B8%93%E5%88%A9%E8%AF%B4%E6%98%8E%E4%B9%A6.png" alt="发明专利说明书"></p>
-<h5 id="扉页"><a href="#扉页" class="headerlink" title="扉页"></a>扉页</h5><p>专利说明书中的扉页是揭示每件专利的基本信息的文件部分。扉页揭示的基本专利信息包括：专利申请的时间、申请的号码、申请人或专利权人、发明人、发明创造名称、发明创造简要介绍及主图（机械图、电路图、化学结构式等）、发明所属技术领域分类号、公布或授权的时间、文献号、出版专利文件的国家机构等。</p>
-<h5 id="权利要求书"><a href="#权利要求书" class="headerlink" title="权利要求书"></a>权利要求书</h5><p>权利要求书是专利文件中限定专利保护范围的文件部分。权利要求书中至少有一项独立权利要求，还可以有从属权利要求。</p>
-<h5 id="说明书"><a href="#说明书" class="headerlink" title="说明书"></a>说明书</h5><p>说明书是清楚完整地描述发明创造的技术内容的文件部分，附图则用于对说明书文字部分的补充。各国对说明书中发明描述的规定大体相同，以中国专利说明书为例，说明书部分包括：技术领域，背景技术，发明内容，附图说明，实施条例等。</p>
-<h5 id="检索报告"><a href="#检索报告" class="headerlink" title="检索报告"></a>检索报告</h5><p>有些机构出版的专利说明书还附有检索报告。检索报告是专利审查员通过对专利申请所涉及的发明创造进行现有技术检索，找到可进行专利性对比的文件，向专利申请人及公众展示检索结果的一种文件。附有检索报告的专利文件均为申请公布说明书，即未经审查尚未授予专利权的专利文件。检索报告以表格式报告书的形式出版。</p>
-<h4 id="专利申请的要求？"><a href="#专利申请的要求？" class="headerlink" title="专利申请的要求？"></a>专利申请的要求？</h4><p>1、新颖性：是指在申请日以前没有同样的发明或者实用新型在国内外出版物上公开发表过，没有在国内公开使用过或者以其他方式为公众所知，也没有同样的发明或者实用新型由他人向国家专利行政部门提出过申请并且记载在申请日以后公布的专利申请文件中。</p>
-<p>2、创造性：是指同申请日以前已有的技术相比，该实用新型有实质性特点和进步。</p>
-<p>3、实用性：是指该实用新型能够制造或者使用，并且能够产生积极效果。</p>
-<p>4、非智力活动或者规则</p>
-<h4 id="写专利前要想清楚的？"><a href="#写专利前要想清楚的？" class="headerlink" title="写专利前要想清楚的？"></a>写专利前要想清楚的？</h4><p>专利的背景：当前市场上有什么技术，当前技术存在的难点与痛点。（非常重要） 核心创新与收益：你的创新点在哪里，就是牛在哪里？创造的收益如何的。（最好能与专利背景中的难点与痛点互相匹配起来）； 流程：文字+流程图描述最为合适（专利接口人可能并无此方面专业知识</p>
-<h4 id="背景和现有技术怎么写？"><a href="#背景和现有技术怎么写？" class="headerlink" title="背景和现有技术怎么写？"></a>背景和现有技术怎么写？</h4><p>目的 — 说明此专利存在的意义</p>
-<ol>
-<li>关键术语定义：公知术语（如 Java 反射）的定义，多列一些，每个给链接；</li>
-<li>背景技术：泛泛介绍大背景和大前提（实践场景），以助理解为宜，不用过多着墨；</li>
-<li>现有技术：找出最具代表的进行客观的简述，说清缺陷。可提供链接；</li>
-<li>发明目的：针对上述缺陷，可用什么手段来解决它。简述；</li>
-<li>收益：实施本发明（解决问题）后能带来什么收益（指标、效果等）。</li>
-</ol>
-<h4 id="技术关键点和保护点"><a href="#技术关键点和保护点" class="headerlink" title="技术关键点和保护点"></a>技术关键点和保护点</h4><p>1.关键技术点罗列； 2.具体实施过程–说清楚“技术关键点”的具体实现 ① 实现步骤&amp;流程：总流程→细化→再细化 ② 总分结构：类、接口、方法及关系→各方法的描述、总结构→细化 （尽量用图来展示）</p>
-]]></content>
-      <categories>
-        <category>个人</category>
-      </categories>
-      <tags>
-        <tag>个人</tag>
       </tags>
   </entry>
 </search>
