@@ -38,6 +38,83 @@
       </tags>
   </entry>
   <entry>
+    <title>BMCweb解释</title>
+    <url>/Echo/2020/01/17/BMCweb%E8%A7%A3%E9%87%8A/</url>
+    <content><![CDATA[<p><strong>UID****：</strong>定位作用，控制定位灯是否亮起，便于寻找机器</p>
+<p><strong>循环开机</strong>：服务器先关机再开机</p>
+<p><strong>重启</strong>：不关闭电源（热开机）的情况下重新启动系统</p>
+<p>**软关机:**先执行操作系统的关机再关闭系统</p>
+<p><strong>CPU****速率</strong>：cup主频，即CPU<a href="https://baike.baidu.com/item/%E5%86%85%E6%A0%B8">内核</a>工作的<a href="https://baike.baidu.com/item/%E6%97%B6%E9%92%9F%E9%A2%91%E7%8E%87/103708">时钟频率</a>。CPU的主频表示在CPU内数字<a href="https://baike.baidu.com/item/%E8%84%89%E5%86%B2">脉冲</a>信号震荡的速度，主频和实际的<a href="https://baike.baidu.com/item/%E8%BF%90%E7%AE%97%E9%80%9F%E5%BA%A6">运算速度</a>存在一定的关系，但没有一个定量，因为CPU的运算速度还要看CPU的流水线的各方面的性能指标（<a href="https://baike.baidu.com/item/%E7%BC%93%E5%AD%98">缓存</a>、<a href="https://baike.baidu.com/item/%E6%8C%87%E4%BB%A4%E9%9B%86">指令集</a>，CPU的<a href="https://baike.baidu.com/item/%E4%BD%8D%E6%95%B0">位数</a>等等）。</p>
+<p><strong>核心</strong>（Die）又称为内核，是CPU最重要的组成部分。CPU中心那块隆起的芯片就是核心， CPU所有的计算、接受/存储命令、处理数据都由核心执行。各种CPU核心都具有固定的逻辑结构，一级缓存、二级缓存、执行单元、指令级单元和总线接口等逻辑单元都会有科学的布局。</p>
+<p><strong>CPU****的核心数</strong>是指物理上，也就是硬件上存在着几个核心。比如，双核就是包括2个相对独立的CPU核心单元组，四核就包含4个相对独立的CPU核心单元组。</p>
+<p><strong>TDP</strong>： Thermal Design Power——散热设计功耗</p>
+<p>大小：一级缓存&lt;二级缓存&lt;三级缓存</p>
+<p>速度：一级缓存&gt;二级缓存&gt;三级缓存</p>
+<p>当CPU需要写入内存的时候通常只更新<a href="http://www.baidu.com/s?wd=%E4%B8%89%E7%BA%A7%E7%BC%93%E5%AD%98&tn=SE_PcZhidaonwhc_ngpagmjz&rsv_dl=gh_pc_zhidao">三级缓存</a>，如果数据写入频繁将会更新到二级乃至一级缓存</p>
+<p><strong>网络控制器</strong>:网卡，又称<a href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E9%80%82%E9%85%8D%E5%99%A8/214428">网络适配器</a>或网络接口卡（NIC），英文名为Network Interface Card。</p>
+<p><strong>带宽</strong>：单位时间内能传输的数据量</p>
+<p><strong>硬盘：</strong>硬盘是集精密机械、微电子电路、电磁转换为一体的电脑存储设备，它存储着电脑系统资源和重要的信息及数据</p>
+<p><strong>额定功率</strong>：正常工作下的功率</p>
+<p><strong>错峰上电</strong>：设定一个时间让服务器随机开机</p>
+<p><strong>PIN</strong>：输入功率</p>
+<p><strong>POUT</strong>:输出功率</p>
+<p><strong>Iin</strong>：电源输入电流</p>
+<p><strong>Iout</strong>:电源电流输出</p>
+<p><strong>Vin</strong>:电源输入电压</p>
+<p><strong>Vout</strong>:电源输出电压</p>
+<p><strong>传感器</strong>（<a href="https://baike.baidu.com/item/%E8%8B%B1%E6%96%87">英文</a>名称：transducer/sensor）是一种检测装置，能感受到被测量的信息，并能将感受到的信息，按一定规律变换成为电信号或其他所需形式的信息输出，以满足信息的传输、处理、存储、显示、记录和控制等要求。</p>
+<p><strong>KVM</strong>：就是Keyboard Video Mouse的缩写。KVM <a href="https://baike.baidu.com/item/%E4%BA%A4%E6%8D%A2%E6%9C%BA/103532">交换机</a>通过直接连接键盘、视频和鼠标 (KVM) 端口，让您能够访问和控制计算机。</p>
+<p>**VLAN(**Virtual LAN)， “虚拟局域网”，LAN是网络，VLAN所指的LAN特指使用路由器分割的网络——也就是广播域。</p>
+<p><strong>广播域</strong>，指的是广播帧(目标MAC地址全部为1)所能传递到的范围，亦即能够直接通信的范围。</p>
+<p><strong>域名</strong>：（Domain Name）网域，是由一串用点分隔的名字组成的<a href="https://baike.baidu.com/item/Internet">Internet</a>上某一台<a href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA/140338">计算机</a>或计算机组的名称，用于在数据传输时标识计算机的电子方位（有时也指地理位置）。</p>
+<p><strong>双工模式</strong>：1、全双工： 指可以同时（瞬时）进行信号的双向传输（A→B且B→A）。</p>
+<p>2、半双工：指一个时间内只有一个方向的信号传输（A→B或B→A）。</p>
+<p><strong>端口：</strong>分为逻辑端口和物理端口。物理端口指的是物理存在的端口，如ADSL Modem、<a href="https://baike.baidu.com/item/%E9%9B%86%E7%BA%BF%E5%99%A8">集线器</a>、<a href="https://baike.baidu.com/item/%E4%BA%A4%E6%8D%A2%E6%9C%BA">交换机</a>、<a href="https://baike.baidu.com/item/%E8%B7%AF%E7%94%B1%E5%99%A8">路由器</a>上用 于连接其他<a href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87">网络设备</a>的接口，如<a href="https://baike.baidu.com/item/RJ-45%E7%AB%AF%E5%8F%A3">RJ-45端口</a>、SC端口等等。逻辑端口是指逻辑意义上用于区分服务的端口，如<a href="https://baike.baidu.com/item/TCP%2FIP%E5%8D%8F%E8%AE%AE">TCP/IP协议</a>中的服务端口，端口号的范围从0到65535，比如用于浏览网页服务的80端口，用于FTP服务的21端口等。端口号就是端口的编号。</p>
+<p><strong>NTP****服务器：</strong>【Network Time Protocol（NTP）】是用来使计算机<a href="https://baike.baidu.com/item/%E6%97%B6%E9%97%B4%E5%90%8C%E6%AD%A5">时间同步</a>化的一种协议，它可以使计算机对其服务器或时钟源（如石英钟，GPS等等)做同步化，它可以提供高精准度的时间校正，且可介由加密确认的方式来防止恶毒的协议攻击。</p>
+<p><strong>SMTP****：</strong>（Simple Mail Transfer Protocol）即<a href="https://baike.baidu.com/item/%E7%AE%80%E5%8D%95%E9%82%AE%E4%BB%B6%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE">简单邮件传输协议</a>,它是一组用于由源地址到目的地址传送<a href="https://baike.baidu.com/item/%E9%82%AE%E4%BB%B6">邮件</a>的规则，由它来控制信件的中转方式。<a href="https://baike.baidu.com/item/SMTP%E5%8D%8F%E8%AE%AE">SMTP协议</a>属于<a href="https://baike.baidu.com/item/TCP%2FIP%E5%8D%8F%E8%AE%AE%E7%B0%87">TCP/IP协议簇</a>，它帮助每台<a href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA/140338">计算机</a>在发送或中转信件时找到下一个目的地。通过SMTP协议所指定的<a href="https://baike.baidu.com/item/%E6%9C%8D%E5%8A%A1%E5%99%A8">服务器</a>,就可以把E-mail寄到收信人的服务器上了，整个过程只要几分钟。SMTP<a href="https://baike.baidu.com/item/%E6%9C%8D%E5%8A%A1%E5%99%A8/100571">服务器</a>则是遵循SMTP协议的发送<a href="https://baike.baidu.com/item/%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8">邮件服务器</a>，用来发送或中转发出的<a href="https://baike.baidu.com/item/%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6/111106">电子邮件</a>。</p>
+<p><strong>网卡：</strong>是工作在链路层的网络组件，是局域网中连接计算机和传输介质的接口，不仅能实现与局域网传输介质之间的物理连接和电信号匹配，还涉及帧的发送与接收、帧的封装与拆封、介质访问控制、数据的编码与解码以及数据缓存的功能等。</p>
+<p><strong>LDAP****：</strong>是轻量<a href="https://baike.baidu.com/item/%E7%9B%AE%E5%BD%95%E8%AE%BF%E9%97%AE%E5%8D%8F%E8%AE%AE">目录访问协议</a>，以树状的层次结构来存储数据。</p>
+<p><strong>SSL</strong>(Secure Sockets Layer <a href="https://baike.baidu.com/item/%E5%AE%89%E5%85%A8%E5%A5%97%E6%8E%A5%E5%B1%82">安全套接层</a>),及其继任者<a href="https://baike.baidu.com/item/%E4%BC%A0%E8%BE%93%E5%B1%82%E5%AE%89%E5%85%A8">传输层安全</a>（Transport Layer Security，TLS）是为<a href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/9636548">网络通信</a>提供安全及<a href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7/110071">数据完整性</a>的一种安全协议。SSL通过互相认证、使用数字签名确保完整性、使用加密确保私密性，以实现客户端和服务器之间的安全通讯。该协议由两层组成：SSL记录协议和SSL握手协议。</p>
+<p><strong>TLS</strong>：(Transport Layer Security，传输层安全协议)，用于两个应用程序之间提供保密性和数据完整性。该协议由两层组成：TLS记录协议和TLS握手协议。</p>
+<p><strong>TLS****与SSL</strong>在<a href="https://baike.baidu.com/item/%E4%BC%A0%E8%BE%93%E5%B1%82/4329536">传输层</a>对网络连接进行加密。　位于可靠的面向连接的网络层协议和应用层协议之间的一种协议层。</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>BMC</tag>
+        <tag>服务器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Flume日志采集框架学习</title>
+    <url>/Echo/2021/11/14/Flume%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h4 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h4><ul>
+<li>Flume 是一个<code>分布式</code>、<code>可靠</code>、<code>高可用</code>的海量<code>日志采集</code>、<code>聚合</code>和<code>传输</code>的系统；</li>
+<li>Flume 可以采集文件、socket数据包、文件、目录、Kafka等<code>各种形式数据源</code>，又可以将采集到的数据（下沉 sink）输出到 HDFS、HBase、Hive、Kafka等<code>众多外部存储系统</code>中；</li>
+<li>一般的采集需求，通过对 Flume 的简单配置即可实现；</li>
+<li>Flume 针对特殊场景也具备良好的自定义扩展能力，因此，Flume 适用于大部分的日常数据采集场景；</li>
+</ul>
+<h4 id="2-运行机制"><a href="#2-运行机制" class="headerlink" title="2. 运行机制"></a>2. 运行机制</h4><p>Flume 分布式系统中最<code>核心的角色是 agent</code>，Flume 采集系统就是由一个个 agent 所连接起来形成的；</p>
+<p><img src="image-20211114152336278.png" alt="image-20211114152336278"></p>
+<p> 每一个 agent 相当于一个数据传递员，内部有三个组件：</p>
+<ul>
+<li> Source：` 采集组件，用于与众多数据源对接，以获取数据；</li>
+<li>  Channel：` 传输通道组件，用于从 Source 将数据传递到 Sink；</li>
+<li>  Sink：` 下沉组件，用于往下一级 agent 传递数据 或者 往最终存储系统传递数据；</li>
+</ul>
+<h4 id="3-单个agent采集数据"><a href="#3-单个agent采集数据" class="headerlink" title="3.单个agent采集数据"></a>3.单个agent采集数据</h4><p><img src="image-20211114152023931.png" alt="image-20211114152023931"></p>
+<h4 id="4-多个agent采集数据"><a href="#4-多个agent采集数据" class="headerlink" title="4.多个agent采集数据"></a>4.多个agent采集数据</h4><p><img src="image-20211114152057458.png" alt="image-20211114152057458"></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>日志</tag>
+        <tag>flume</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Azkaban REST API使用指南</title>
     <url>/Echo/2021/04/12/Azkaban-REST-API%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
     <content><![CDATA[<h2 id="API文档"><a href="#API文档" class="headerlink" title="API文档"></a>API文档</h2><p>通常，人们又一种无需使用Web UI即可与Azkaban进行交互的愿望。Azkaban有一些公开的ajax调用，可以通过curl或其他一些HTTP请求客户端进行访问。所有API调用都首先需要正确的身份验证。</p>
@@ -751,83 +828,6 @@
       </tags>
   </entry>
   <entry>
-    <title>BMCweb解释</title>
-    <url>/Echo/2020/01/17/BMCweb%E8%A7%A3%E9%87%8A/</url>
-    <content><![CDATA[<p><strong>UID****：</strong>定位作用，控制定位灯是否亮起，便于寻找机器</p>
-<p><strong>循环开机</strong>：服务器先关机再开机</p>
-<p><strong>重启</strong>：不关闭电源（热开机）的情况下重新启动系统</p>
-<p>**软关机:**先执行操作系统的关机再关闭系统</p>
-<p><strong>CPU****速率</strong>：cup主频，即CPU<a href="https://baike.baidu.com/item/%E5%86%85%E6%A0%B8">内核</a>工作的<a href="https://baike.baidu.com/item/%E6%97%B6%E9%92%9F%E9%A2%91%E7%8E%87/103708">时钟频率</a>。CPU的主频表示在CPU内数字<a href="https://baike.baidu.com/item/%E8%84%89%E5%86%B2">脉冲</a>信号震荡的速度，主频和实际的<a href="https://baike.baidu.com/item/%E8%BF%90%E7%AE%97%E9%80%9F%E5%BA%A6">运算速度</a>存在一定的关系，但没有一个定量，因为CPU的运算速度还要看CPU的流水线的各方面的性能指标（<a href="https://baike.baidu.com/item/%E7%BC%93%E5%AD%98">缓存</a>、<a href="https://baike.baidu.com/item/%E6%8C%87%E4%BB%A4%E9%9B%86">指令集</a>，CPU的<a href="https://baike.baidu.com/item/%E4%BD%8D%E6%95%B0">位数</a>等等）。</p>
-<p><strong>核心</strong>（Die）又称为内核，是CPU最重要的组成部分。CPU中心那块隆起的芯片就是核心， CPU所有的计算、接受/存储命令、处理数据都由核心执行。各种CPU核心都具有固定的逻辑结构，一级缓存、二级缓存、执行单元、指令级单元和总线接口等逻辑单元都会有科学的布局。</p>
-<p><strong>CPU****的核心数</strong>是指物理上，也就是硬件上存在着几个核心。比如，双核就是包括2个相对独立的CPU核心单元组，四核就包含4个相对独立的CPU核心单元组。</p>
-<p><strong>TDP</strong>： Thermal Design Power——散热设计功耗</p>
-<p>大小：一级缓存&lt;二级缓存&lt;三级缓存</p>
-<p>速度：一级缓存&gt;二级缓存&gt;三级缓存</p>
-<p>当CPU需要写入内存的时候通常只更新<a href="http://www.baidu.com/s?wd=%E4%B8%89%E7%BA%A7%E7%BC%93%E5%AD%98&tn=SE_PcZhidaonwhc_ngpagmjz&rsv_dl=gh_pc_zhidao">三级缓存</a>，如果数据写入频繁将会更新到二级乃至一级缓存</p>
-<p><strong>网络控制器</strong>:网卡，又称<a href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E9%80%82%E9%85%8D%E5%99%A8/214428">网络适配器</a>或网络接口卡（NIC），英文名为Network Interface Card。</p>
-<p><strong>带宽</strong>：单位时间内能传输的数据量</p>
-<p><strong>硬盘：</strong>硬盘是集精密机械、微电子电路、电磁转换为一体的电脑存储设备，它存储着电脑系统资源和重要的信息及数据</p>
-<p><strong>额定功率</strong>：正常工作下的功率</p>
-<p><strong>错峰上电</strong>：设定一个时间让服务器随机开机</p>
-<p><strong>PIN</strong>：输入功率</p>
-<p><strong>POUT</strong>:输出功率</p>
-<p><strong>Iin</strong>：电源输入电流</p>
-<p><strong>Iout</strong>:电源电流输出</p>
-<p><strong>Vin</strong>:电源输入电压</p>
-<p><strong>Vout</strong>:电源输出电压</p>
-<p><strong>传感器</strong>（<a href="https://baike.baidu.com/item/%E8%8B%B1%E6%96%87">英文</a>名称：transducer/sensor）是一种检测装置，能感受到被测量的信息，并能将感受到的信息，按一定规律变换成为电信号或其他所需形式的信息输出，以满足信息的传输、处理、存储、显示、记录和控制等要求。</p>
-<p><strong>KVM</strong>：就是Keyboard Video Mouse的缩写。KVM <a href="https://baike.baidu.com/item/%E4%BA%A4%E6%8D%A2%E6%9C%BA/103532">交换机</a>通过直接连接键盘、视频和鼠标 (KVM) 端口，让您能够访问和控制计算机。</p>
-<p>**VLAN(**Virtual LAN)， “虚拟局域网”，LAN是网络，VLAN所指的LAN特指使用路由器分割的网络——也就是广播域。</p>
-<p><strong>广播域</strong>，指的是广播帧(目标MAC地址全部为1)所能传递到的范围，亦即能够直接通信的范围。</p>
-<p><strong>域名</strong>：（Domain Name）网域，是由一串用点分隔的名字组成的<a href="https://baike.baidu.com/item/Internet">Internet</a>上某一台<a href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA/140338">计算机</a>或计算机组的名称，用于在数据传输时标识计算机的电子方位（有时也指地理位置）。</p>
-<p><strong>双工模式</strong>：1、全双工： 指可以同时（瞬时）进行信号的双向传输（A→B且B→A）。</p>
-<p>2、半双工：指一个时间内只有一个方向的信号传输（A→B或B→A）。</p>
-<p><strong>端口：</strong>分为逻辑端口和物理端口。物理端口指的是物理存在的端口，如ADSL Modem、<a href="https://baike.baidu.com/item/%E9%9B%86%E7%BA%BF%E5%99%A8">集线器</a>、<a href="https://baike.baidu.com/item/%E4%BA%A4%E6%8D%A2%E6%9C%BA">交换机</a>、<a href="https://baike.baidu.com/item/%E8%B7%AF%E7%94%B1%E5%99%A8">路由器</a>上用 于连接其他<a href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87">网络设备</a>的接口，如<a href="https://baike.baidu.com/item/RJ-45%E7%AB%AF%E5%8F%A3">RJ-45端口</a>、SC端口等等。逻辑端口是指逻辑意义上用于区分服务的端口，如<a href="https://baike.baidu.com/item/TCP%2FIP%E5%8D%8F%E8%AE%AE">TCP/IP协议</a>中的服务端口，端口号的范围从0到65535，比如用于浏览网页服务的80端口，用于FTP服务的21端口等。端口号就是端口的编号。</p>
-<p><strong>NTP****服务器：</strong>【Network Time Protocol（NTP）】是用来使计算机<a href="https://baike.baidu.com/item/%E6%97%B6%E9%97%B4%E5%90%8C%E6%AD%A5">时间同步</a>化的一种协议，它可以使计算机对其服务器或时钟源（如石英钟，GPS等等)做同步化，它可以提供高精准度的时间校正，且可介由加密确认的方式来防止恶毒的协议攻击。</p>
-<p><strong>SMTP****：</strong>（Simple Mail Transfer Protocol）即<a href="https://baike.baidu.com/item/%E7%AE%80%E5%8D%95%E9%82%AE%E4%BB%B6%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE">简单邮件传输协议</a>,它是一组用于由源地址到目的地址传送<a href="https://baike.baidu.com/item/%E9%82%AE%E4%BB%B6">邮件</a>的规则，由它来控制信件的中转方式。<a href="https://baike.baidu.com/item/SMTP%E5%8D%8F%E8%AE%AE">SMTP协议</a>属于<a href="https://baike.baidu.com/item/TCP%2FIP%E5%8D%8F%E8%AE%AE%E7%B0%87">TCP/IP协议簇</a>，它帮助每台<a href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA/140338">计算机</a>在发送或中转信件时找到下一个目的地。通过SMTP协议所指定的<a href="https://baike.baidu.com/item/%E6%9C%8D%E5%8A%A1%E5%99%A8">服务器</a>,就可以把E-mail寄到收信人的服务器上了，整个过程只要几分钟。SMTP<a href="https://baike.baidu.com/item/%E6%9C%8D%E5%8A%A1%E5%99%A8/100571">服务器</a>则是遵循SMTP协议的发送<a href="https://baike.baidu.com/item/%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8">邮件服务器</a>，用来发送或中转发出的<a href="https://baike.baidu.com/item/%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6/111106">电子邮件</a>。</p>
-<p><strong>网卡：</strong>是工作在链路层的网络组件，是局域网中连接计算机和传输介质的接口，不仅能实现与局域网传输介质之间的物理连接和电信号匹配，还涉及帧的发送与接收、帧的封装与拆封、介质访问控制、数据的编码与解码以及数据缓存的功能等。</p>
-<p><strong>LDAP****：</strong>是轻量<a href="https://baike.baidu.com/item/%E7%9B%AE%E5%BD%95%E8%AE%BF%E9%97%AE%E5%8D%8F%E8%AE%AE">目录访问协议</a>，以树状的层次结构来存储数据。</p>
-<p><strong>SSL</strong>(Secure Sockets Layer <a href="https://baike.baidu.com/item/%E5%AE%89%E5%85%A8%E5%A5%97%E6%8E%A5%E5%B1%82">安全套接层</a>),及其继任者<a href="https://baike.baidu.com/item/%E4%BC%A0%E8%BE%93%E5%B1%82%E5%AE%89%E5%85%A8">传输层安全</a>（Transport Layer Security，TLS）是为<a href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/9636548">网络通信</a>提供安全及<a href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7/110071">数据完整性</a>的一种安全协议。SSL通过互相认证、使用数字签名确保完整性、使用加密确保私密性，以实现客户端和服务器之间的安全通讯。该协议由两层组成：SSL记录协议和SSL握手协议。</p>
-<p><strong>TLS</strong>：(Transport Layer Security，传输层安全协议)，用于两个应用程序之间提供保密性和数据完整性。该协议由两层组成：TLS记录协议和TLS握手协议。</p>
-<p><strong>TLS****与SSL</strong>在<a href="https://baike.baidu.com/item/%E4%BC%A0%E8%BE%93%E5%B1%82/4329536">传输层</a>对网络连接进行加密。　位于可靠的面向连接的网络层协议和应用层协议之间的一种协议层。</p>
-]]></content>
-      <categories>
-        <category>学习</category>
-      </categories>
-      <tags>
-        <tag>BMC</tag>
-        <tag>服务器</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Flume日志采集框架学习</title>
-    <url>/Echo/2021/11/14/Flume%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<h4 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h4><ul>
-<li>Flume 是一个<code>分布式</code>、<code>可靠</code>、<code>高可用</code>的海量<code>日志采集</code>、<code>聚合</code>和<code>传输</code>的系统；</li>
-<li>Flume 可以采集文件、socket数据包、文件、目录、Kafka等<code>各种形式数据源</code>，又可以将采集到的数据（下沉 sink）输出到 HDFS、HBase、Hive、Kafka等<code>众多外部存储系统</code>中；</li>
-<li>一般的采集需求，通过对 Flume 的简单配置即可实现；</li>
-<li>Flume 针对特殊场景也具备良好的自定义扩展能力，因此，Flume 适用于大部分的日常数据采集场景；</li>
-</ul>
-<h4 id="2-运行机制"><a href="#2-运行机制" class="headerlink" title="2. 运行机制"></a>2. 运行机制</h4><p>Flume 分布式系统中最<code>核心的角色是 agent</code>，Flume 采集系统就是由一个个 agent 所连接起来形成的；</p>
-<p><img src="image-20211114152336278.png" alt="image-20211114152336278"></p>
-<p> 每一个 agent 相当于一个数据传递员，内部有三个组件：</p>
-<ul>
-<li> Source：` 采集组件，用于与众多数据源对接，以获取数据；</li>
-<li>  Channel：` 传输通道组件，用于从 Source 将数据传递到 Sink；</li>
-<li>  Sink：` 下沉组件，用于往下一级 agent 传递数据 或者 往最终存储系统传递数据；</li>
-</ul>
-<h4 id="3-单个agent采集数据"><a href="#3-单个agent采集数据" class="headerlink" title="3.单个agent采集数据"></a>3.单个agent采集数据</h4><p><img src="image-20211114152023931.png" alt="image-20211114152023931"></p>
-<h4 id="4-多个agent采集数据"><a href="#4-多个agent采集数据" class="headerlink" title="4.多个agent采集数据"></a>4.多个agent采集数据</h4><p><img src="image-20211114152057458.png" alt="image-20211114152057458"></p>
-]]></content>
-      <categories>
-        <category>学习</category>
-      </categories>
-      <tags>
-        <tag>日志</tag>
-        <tag>flume</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>GitHub搜索技巧</title>
     <url>/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/</url>
     <content><![CDATA[<p>github是世界知名的代码托管平台，千万程序员的圣地。作为一个常逛github的程序员，你在github上搜索代码时，是怎样操作的呢？</p>
@@ -1011,92 +1011,6 @@
       </tags>
   </entry>
   <entry>
-    <title>HDFS简介</title>
-    <url>/Echo/2022/01/02/HDFS%E7%AE%80%E4%BB%8B/</url>
-    <content><![CDATA[<h4 id="Hadoop-分布式文件系统"><a href="#Hadoop-分布式文件系统" class="headerlink" title="Hadoop 分布式文件系统"></a>Hadoop 分布式文件系统</h4><p><strong>HDFS</strong>解决了大数据的存储问题，<strong>Map Reduce</strong>解决了与处理部分大数据相关的问题。</p>
-<h4 id="Hadoop的组件"><a href="#Hadoop的组件" class="headerlink" title="Hadoop的组件"></a>Hadoop的组件</h4><p>HDFS有两个主要组件来解决大数据问题：</p>
-<ul>
-<li>用于存储大数据的HDFS</li>
-<li>用于处理大数据的MapReduce</li>
-</ul>
-<p><img src="Hadoop-Component-1.jpg" alt="Hadoop-Component-1"></p>
-<p>如图所示，Hadoop的架构，一个是HDFS，Hadoop的文件存储系统，一个是YARN和MapReduce，大数据处理部分。</p>
-<p>使用HDFS，Hadoop使我们能够存储大数据，使用YARN和Map Reduce，Hadoop使我们能够处理存储在HDFS中的相同大数据。</p>
-<p><img src="Hadoop-Core-Components.jpg" alt="Hadoop-Core-Components"></p>
-<p>正如您在上图中看到的，HDFS有两个主要的守护进程，或者您可以将它们称为进程或线程，它们只不过是JAVA进程，即在JVM中运行 - NameNode和DataNode。</p>
-<p>NameNode是一个在Master Machine上运行的主守护程序，即本质上是高端机器，DataNode是在商用硬件上运行的从机。可以有更多的DataNode，因为从机不仅仅是主机。</p>
-<p>因此，我们总是在从属机器上运行一个NameNode和多个DataNode。</p>
-<p>同样，我们在另一端有YARN，它又有两个守护进程，一个是运行在主计算机上的资源管理器，另一个是运行在从机上的节点管理器，就像DataNode一样。因此，每台从属机器都有两个守护进程 - 一个是DataNode，另一个是Node Manager。</p>
-<p>主计算机正在运行 NameNode 并运行资源管理器。NameNode 负责管理 Hadoop 分布式文件系统上的数据，资源管理器负责对此存储的数据执行处理任务。</p>
-<h4 id="name-node-和data-node"><a href="#name-node-和data-node" class="headerlink" title="name node 和data node"></a>name node 和data node</h4><h5 id="name-node"><a href="#name-node" class="headerlink" title="name node"></a>name node</h5><ul>
-<li>主守护进程。</li>
-<li>管理和维护数据节点。</li>
-<li>记录元数据。</li>
-<li>接收来自所有 DataNode 的检测信号和阻止报告。</li>
-</ul>
-<p>data node</p>
-<ul>
-<li>守护进程。</li>
-<li>实际数据存储在此处。</li>
-<li>为来自客户端的读取和写入请求提供服务。</li>
-</ul>
-<p><img src="NameNode-DataNode.jpg" alt="NameNode-DataNode"></p>
-<p>有一个集中式机器名称节点，它控制着各种DataNode，即商用硬件。因此，Name Node只不过是维护所有DataNode的主守护进程。</p>
-<p>这些名称节点具有有关存储在 DataNode 中的数据的所有信息。DataNode顾名思义，用于存储Hadoop集群中存在的数据。</p>
-<p>NameNode仅包含有关哪些数据存储在哪个DataNode上的信息。因此，我们可以说的是NameNode存储存储在DataNodes上的数据的元数据。</p>
-<p>DataNode还执行另一项任务，即它定期将检测信号发送回NameNode。心跳实际上告诉NameNode这个DataNode仍然活着。</p>
-<p>DataNodes将检测信号发送回NameNode，这样NameNode就可以知道这些数据节点是活跃的，因此NameNode可以使用这些数据节点来存储更多数据或从这些数据节点读取数据。</p>
-<p>现在我们来看看DataNode，DataNode只不过是从属守护进程，它实际上存储着发送到Hadoop集群的数据。这些数据节点是实际为客户端发出的读取和写入请求提供服务的节点。</p>
-<p>如果有人想从Hadoop集群中读取数据，那么这些请求实际上由数据所在的DataNodes处理。</p>
-<h4 id="Hadoop-集群架构"><a href="#Hadoop-集群架构" class="headerlink" title="Hadoop 集群架构"></a>Hadoop 集群架构</h4><p><img src="Hadoop-Cluster.jpg" alt="Hadoop-Cluster"></p>
-<p>如图所示，Hadoop 集群r只不过是一个主从拓扑，其中有一个主机器，正如你在顶部看到的那样，即Hadoop 集群。在此主计算机中，有一个 NameNode 和正在运行的资源管理器，即主守护程序。</p>
-<p>主机使用核心交换机连接到所有从机，这是因为这些数据节点实际上存储在各种机架中，因此您可以看到计算机1，计算机2，计算机3直到计算机N。这只不过是从属机器或DataNodes，它们都存在于一个机架中。</p>
-<h5 id="HDFS将如何存取数据？"><a href="#HDFS将如何存取数据？" class="headerlink" title="HDFS将如何存取数据？"></a>HDFS将如何存取数据？</h5><p>将文件存储在HDFS中时，数据被存储为HDFS中的块。整个文件不存储在HDFS中，这是因为如您所知，Hadoop是一个分布式文件系统。</p>
-<p>因此，如果您的文件大小可能为1 PB（Peta Byte），那么这种存储就不会存在于单台计算机中，因为Hadoop集群是使用商用硬件制作的。一台计算机中的硬件大约为 1 TB 或 2 TB。</p>
-<p>因此，整个文件需要分解为称为HDFS块的数据块。</p>
-<ul>
-<li>每个文件都作为块存储在HDFS上。</li>
-<li>在Apache Hadoop 2.x中，每个块的默认大小约为128 MB（在以前的版本，即Apache Hadoop 1.x中为64mb）。</li>
-<li>有一个工具可以使用Hadoop软件包附带的配置文件（即hdfssite.xml）来增加或减少块的文件大小。</li>
-</ul>
-<p>让我们在这里考虑一个248 MB的文件，现在如果我们打破这个文件，或者如果我们把这个文件移动到Hadoop Cluster（即2.x）中，那么这个文件将被分解成一个块，即128 MB的块A和另一个120 MB的块B。</p>
-<p>如您所见，第一个块为128 MB，即第一个板块在那里削减，这就是为什么另一个块为120 MB而不是128 MB，即如果剩余的文件大小小于默认块大小，则不会浪费任何空间。</p>
-<p><img src="Example-Diagram.jpg" alt="Example-Diagram"></p>
-<p>现在我们面前还有另一个问题，即每个块的单个副本是否安全？</p>
-<p>答案是否定的，因为系统可能会失败，而它只是商品硬件，因此我们可能会遇到大麻烦。为了克服这个问题，Hadoop HDFS有一个很好的解决方案，即**”块的复制”。**</p>
-<h5 id="Hadoop-架构块复制"><a href="#Hadoop-架构块复制" class="headerlink" title="Hadoop 架构块复制"></a>Hadoop 架构块复制</h5><p>Hadoop创建存储到Hadoop分布式文件系统中的每个块的副本，这就是Hadoop作为容错系统的方式，即即使您的系统出现故障或DataNode失败或副本丢失，您也会在其他DataNode或其他服务器中存在多个其他副本，以便您始终可以从那里选择这些副本。</p>
-<p><img src="Block-Replication.jpg" alt="Block-Replication"></p>
-<p>如图所表示块复制，文件有五个不同的块，即块 1、2、3、4、5。让我们先检查一下块 1，您将在节点 1、节点 2 和节点 4 中找到块 1 的副本。</p>
-<p>同样，块 2 也有三个副本，即节点 2、节点 3 和节点 4，因此在各自的节点中，块 3、4 和 5 也是如此。</p>
-<p>因此，除了创建的副本之外，每个块都被复制了三次，即Hadoop遵循默认的复制因子为3，这意味着您复制到Hadoop分发文件系统中的任何文件都会被复制三次。</p>
-<p>换句话说，如果您将1 GB的文件复制到Hadoop分发文件系统中，它实际上将3 GB的文件存储在HDFS中。好的部分是，通过更改Hadoop的配置文件，默认复制因子是可以更改的。</p>
-<p>*<strong>Hadoop 如何决定存储副本的位置？*</strong></p>
-<p>Hadoop实际上遵循Rack Awareness的概念来决定在哪里存储Block的副本。如图所示机架感知算法图表。</p>
-<p><img src="Rack-Awareness-Algorithm.jpg" alt="Rack-Awareness-Algorithm"></p>
-<p>Rack-1有四个DataNodes，Rack-2和Rack-3也是如此，因此整个Hadoop集群总共将由所有三个机架组成，并且将有12个DataNode。</p>
-<p>假设块 A 在 Rack-1 的 DataNode 1 上复制，根据 Rack Aware 的概念，块 A 的副本不能在同一机架中创建，并且需要在 Rack-1 之外的任何其他机架中创建，因为主文件已经存在于 Rack-1 中。</p>
-<p>如果我们在同一机架-1中创建块A的副本，并且如果整个Rack-1发生故障，那么我们肯定会丢失数据，因此副本必须存储在任何其他机架中，而不是存储在Rack-1中。</p>
-<p>因此，将在 Rack-2 的 DataNode 6 和 8 中创建副本。同样，对于块 B 和块 C，副本将在不同的机架中创建，如上图所示。</p>
-<h4 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h4><ul>
-<li>Hadoop HDFS解决了大数据的存储问题。</li>
-<li>Hadoop Map Reduce解决了与大数据处理相关的问题。</li>
-<li>NameNode 是一个主守护进程，用于管理和维护 DataNode。</li>
-<li>DataNode是一个从属守护进程，实际数据存储在这里。它用于读取和写入来自客户端的请求。</li>
-<li>在Hadoop Cluster中，机架实际上是一组物理上存在于一个特定位置并相互连接的机器。</li>
-<li>每个文件都作为块存储在HDFS上。</li>
-<li>在Apache Hadoop 2.x中，每个块的默认大小约为128 MB（在以前的版本，即Apache Hadoop 1.x中为64 MB）。</li>
-<li>有一个工具可以使用Hadoop软件包附带的配置文件（即hdfssite.xml）来增加或减少块的文件大小。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>大数据</category>
-      </categories>
-      <tags>
-        <tag>HDFS</tag>
-        <tag>大数据</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JMeter介绍</title>
     <url>/Echo/2021/11/20/JMeter%E4%BB%8B%E7%BB%8D/</url>
     <content><![CDATA[<p>在本文中我们将了解什么是性能测试、为什么选择 JMeter、JMeter 与 HP LoadRunner。</p>
@@ -1192,6 +1106,92 @@
       </tags>
   </entry>
   <entry>
+    <title>HDFS简介</title>
+    <url>/Echo/2022/01/02/HDFS%E7%AE%80%E4%BB%8B/</url>
+    <content><![CDATA[<h4 id="Hadoop-分布式文件系统"><a href="#Hadoop-分布式文件系统" class="headerlink" title="Hadoop 分布式文件系统"></a>Hadoop 分布式文件系统</h4><p><strong>HDFS</strong>解决了大数据的存储问题，<strong>Map Reduce</strong>解决了与处理部分大数据相关的问题。</p>
+<h4 id="Hadoop的组件"><a href="#Hadoop的组件" class="headerlink" title="Hadoop的组件"></a>Hadoop的组件</h4><p>HDFS有两个主要组件来解决大数据问题：</p>
+<ul>
+<li>用于存储大数据的HDFS</li>
+<li>用于处理大数据的MapReduce</li>
+</ul>
+<p><img src="Hadoop-Component-1.jpg" alt="Hadoop-Component-1"></p>
+<p>如图所示，Hadoop的架构，一个是HDFS，Hadoop的文件存储系统，一个是YARN和MapReduce，大数据处理部分。</p>
+<p>使用HDFS，Hadoop使我们能够存储大数据，使用YARN和Map Reduce，Hadoop使我们能够处理存储在HDFS中的相同大数据。</p>
+<p><img src="Hadoop-Core-Components.jpg" alt="Hadoop-Core-Components"></p>
+<p>正如您在上图中看到的，HDFS有两个主要的守护进程，或者您可以将它们称为进程或线程，它们只不过是JAVA进程，即在JVM中运行 - NameNode和DataNode。</p>
+<p>NameNode是一个在Master Machine上运行的主守护程序，即本质上是高端机器，DataNode是在商用硬件上运行的从机。可以有更多的DataNode，因为从机不仅仅是主机。</p>
+<p>因此，我们总是在从属机器上运行一个NameNode和多个DataNode。</p>
+<p>同样，我们在另一端有YARN，它又有两个守护进程，一个是运行在主计算机上的资源管理器，另一个是运行在从机上的节点管理器，就像DataNode一样。因此，每台从属机器都有两个守护进程 - 一个是DataNode，另一个是Node Manager。</p>
+<p>主计算机正在运行 NameNode 并运行资源管理器。NameNode 负责管理 Hadoop 分布式文件系统上的数据，资源管理器负责对此存储的数据执行处理任务。</p>
+<h4 id="name-node-和data-node"><a href="#name-node-和data-node" class="headerlink" title="name node 和data node"></a>name node 和data node</h4><h5 id="name-node"><a href="#name-node" class="headerlink" title="name node"></a>name node</h5><ul>
+<li>主守护进程。</li>
+<li>管理和维护数据节点。</li>
+<li>记录元数据。</li>
+<li>接收来自所有 DataNode 的检测信号和阻止报告。</li>
+</ul>
+<p>data node</p>
+<ul>
+<li>守护进程。</li>
+<li>实际数据存储在此处。</li>
+<li>为来自客户端的读取和写入请求提供服务。</li>
+</ul>
+<p><img src="NameNode-DataNode.jpg" alt="NameNode-DataNode"></p>
+<p>有一个集中式机器名称节点，它控制着各种DataNode，即商用硬件。因此，Name Node只不过是维护所有DataNode的主守护进程。</p>
+<p>这些名称节点具有有关存储在 DataNode 中的数据的所有信息。DataNode顾名思义，用于存储Hadoop集群中存在的数据。</p>
+<p>NameNode仅包含有关哪些数据存储在哪个DataNode上的信息。因此，我们可以说的是NameNode存储存储在DataNodes上的数据的元数据。</p>
+<p>DataNode还执行另一项任务，即它定期将检测信号发送回NameNode。心跳实际上告诉NameNode这个DataNode仍然活着。</p>
+<p>DataNodes将检测信号发送回NameNode，这样NameNode就可以知道这些数据节点是活跃的，因此NameNode可以使用这些数据节点来存储更多数据或从这些数据节点读取数据。</p>
+<p>现在我们来看看DataNode，DataNode只不过是从属守护进程，它实际上存储着发送到Hadoop集群的数据。这些数据节点是实际为客户端发出的读取和写入请求提供服务的节点。</p>
+<p>如果有人想从Hadoop集群中读取数据，那么这些请求实际上由数据所在的DataNodes处理。</p>
+<h4 id="Hadoop-集群架构"><a href="#Hadoop-集群架构" class="headerlink" title="Hadoop 集群架构"></a>Hadoop 集群架构</h4><p><img src="Hadoop-Cluster.jpg" alt="Hadoop-Cluster"></p>
+<p>如图所示，Hadoop 集群r只不过是一个主从拓扑，其中有一个主机器，正如你在顶部看到的那样，即Hadoop 集群。在此主计算机中，有一个 NameNode 和正在运行的资源管理器，即主守护程序。</p>
+<p>主机使用核心交换机连接到所有从机，这是因为这些数据节点实际上存储在各种机架中，因此您可以看到计算机1，计算机2，计算机3直到计算机N。这只不过是从属机器或DataNodes，它们都存在于一个机架中。</p>
+<h5 id="HDFS将如何存取数据？"><a href="#HDFS将如何存取数据？" class="headerlink" title="HDFS将如何存取数据？"></a>HDFS将如何存取数据？</h5><p>将文件存储在HDFS中时，数据被存储为HDFS中的块。整个文件不存储在HDFS中，这是因为如您所知，Hadoop是一个分布式文件系统。</p>
+<p>因此，如果您的文件大小可能为1 PB（Peta Byte），那么这种存储就不会存在于单台计算机中，因为Hadoop集群是使用商用硬件制作的。一台计算机中的硬件大约为 1 TB 或 2 TB。</p>
+<p>因此，整个文件需要分解为称为HDFS块的数据块。</p>
+<ul>
+<li>每个文件都作为块存储在HDFS上。</li>
+<li>在Apache Hadoop 2.x中，每个块的默认大小约为128 MB（在以前的版本，即Apache Hadoop 1.x中为64mb）。</li>
+<li>有一个工具可以使用Hadoop软件包附带的配置文件（即hdfssite.xml）来增加或减少块的文件大小。</li>
+</ul>
+<p>让我们在这里考虑一个248 MB的文件，现在如果我们打破这个文件，或者如果我们把这个文件移动到Hadoop Cluster（即2.x）中，那么这个文件将被分解成一个块，即128 MB的块A和另一个120 MB的块B。</p>
+<p>如您所见，第一个块为128 MB，即第一个板块在那里削减，这就是为什么另一个块为120 MB而不是128 MB，即如果剩余的文件大小小于默认块大小，则不会浪费任何空间。</p>
+<p><img src="Example-Diagram.jpg" alt="Example-Diagram"></p>
+<p>现在我们面前还有另一个问题，即每个块的单个副本是否安全？</p>
+<p>答案是否定的，因为系统可能会失败，而它只是商品硬件，因此我们可能会遇到大麻烦。为了克服这个问题，Hadoop HDFS有一个很好的解决方案，即**”块的复制”。**</p>
+<h5 id="Hadoop-架构块复制"><a href="#Hadoop-架构块复制" class="headerlink" title="Hadoop 架构块复制"></a>Hadoop 架构块复制</h5><p>Hadoop创建存储到Hadoop分布式文件系统中的每个块的副本，这就是Hadoop作为容错系统的方式，即即使您的系统出现故障或DataNode失败或副本丢失，您也会在其他DataNode或其他服务器中存在多个其他副本，以便您始终可以从那里选择这些副本。</p>
+<p><img src="Block-Replication.jpg" alt="Block-Replication"></p>
+<p>如图所表示块复制，文件有五个不同的块，即块 1、2、3、4、5。让我们先检查一下块 1，您将在节点 1、节点 2 和节点 4 中找到块 1 的副本。</p>
+<p>同样，块 2 也有三个副本，即节点 2、节点 3 和节点 4，因此在各自的节点中，块 3、4 和 5 也是如此。</p>
+<p>因此，除了创建的副本之外，每个块都被复制了三次，即Hadoop遵循默认的复制因子为3，这意味着您复制到Hadoop分发文件系统中的任何文件都会被复制三次。</p>
+<p>换句话说，如果您将1 GB的文件复制到Hadoop分发文件系统中，它实际上将3 GB的文件存储在HDFS中。好的部分是，通过更改Hadoop的配置文件，默认复制因子是可以更改的。</p>
+<p>*<strong>Hadoop 如何决定存储副本的位置？*</strong></p>
+<p>Hadoop实际上遵循Rack Awareness的概念来决定在哪里存储Block的副本。如图所示机架感知算法图表。</p>
+<p><img src="Rack-Awareness-Algorithm.jpg" alt="Rack-Awareness-Algorithm"></p>
+<p>Rack-1有四个DataNodes，Rack-2和Rack-3也是如此，因此整个Hadoop集群总共将由所有三个机架组成，并且将有12个DataNode。</p>
+<p>假设块 A 在 Rack-1 的 DataNode 1 上复制，根据 Rack Aware 的概念，块 A 的副本不能在同一机架中创建，并且需要在 Rack-1 之外的任何其他机架中创建，因为主文件已经存在于 Rack-1 中。</p>
+<p>如果我们在同一机架-1中创建块A的副本，并且如果整个Rack-1发生故障，那么我们肯定会丢失数据，因此副本必须存储在任何其他机架中，而不是存储在Rack-1中。</p>
+<p>因此，将在 Rack-2 的 DataNode 6 和 8 中创建副本。同样，对于块 B 和块 C，副本将在不同的机架中创建，如上图所示。</p>
+<h4 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h4><ul>
+<li>Hadoop HDFS解决了大数据的存储问题。</li>
+<li>Hadoop Map Reduce解决了与大数据处理相关的问题。</li>
+<li>NameNode 是一个主守护进程，用于管理和维护 DataNode。</li>
+<li>DataNode是一个从属守护进程，实际数据存储在这里。它用于读取和写入来自客户端的请求。</li>
+<li>在Hadoop Cluster中，机架实际上是一组物理上存在于一个特定位置并相互连接的机器。</li>
+<li>每个文件都作为块存储在HDFS上。</li>
+<li>在Apache Hadoop 2.x中，每个块的默认大小约为128 MB（在以前的版本，即Apache Hadoop 1.x中为64 MB）。</li>
+<li>有一个工具可以使用Hadoop软件包附带的配置文件（即hdfssite.xml）来增加或减少块的文件大小。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>HDFS</tag>
+        <tag>大数据</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JMeter处理器和控制器</title>
     <url>/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/</url>
     <content><![CDATA[<h5 id="预处理器–pre-processor"><a href="#预处理器–pre-processor" class="headerlink" title="预处理器–pre processor"></a>预处理器–pre processor</h5><p>执行采样器之前执行的元素。您可以将预处理器与要在请求中进行一些更改的采样器连接在一起。</p>
@@ -1245,6 +1245,101 @@
       <tags>
         <tag>性能测试</tag>
         <tag>JMeter</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JMeter组件介绍</title>
+    <url>/Echo/2021/12/12/JMeter%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D/</url>
+    <content><![CDATA[<p>在本文中，将熟悉<strong>JMeter 的所有组件，以及如何在测试计划中使用它们</strong>来覆盖所有可能的性能测试场景来测试 AUT（被测应用程序）。</p>
+<h4 id="JMeter的组件"><a href="#JMeter的组件" class="headerlink" title="JMeter的组件"></a>JMeter的组件</h4><p>请参考以下的流程图来了解每个组件及其与JMeter特定模块的关系。</p>
+<p><img src="JmeterFlowDiagram.jpg" alt="Jmeter流程图"></p>
+<h5 id="测试计划–TEST-PLAN"><a href="#测试计划–TEST-PLAN" class="headerlink" title="测试计划–TEST PLAN"></a>测试计划–TEST PLAN</h5><p>测试计划中包含的所有内容都是按从上到下的顺序或者测试计划中定义的顺序执行。测试计划可以尽可能简单，担忧线程组、采样器、监听器，可以添加更多的元素如配置元素、预处理器、控制器或前置/后置处理器。</p>
+<p>JMeter是通过虚拟用户或线程来衡量性能，这些虚拟用户或者线程会连接被测服务器，就像真实用户向服务器发送请求一样。因此，每个测试计划都应该有我们JMeter中所称的虚拟用户或者线程组–THREAD GROUP。</p>
+<p>测试计划的要点：</p>
+<ul>
+<li>运行前应保存测试计划</li>
+<li>JMeter文件或者测试计划以JMX文件的格式保存</li>
+<li>还可以将测试计划保存为不同方式，可以在其他测试场景中使用</li>
+</ul>
+<h5 id="线程组–THREAD-GROUP"><a href="#线程组–THREAD-GROUP" class="headerlink" title="线程组–THREAD GROUP"></a>线程组–THREAD GROUP</h5><p>线程组是一组用户，他们将同时以定义好的顺序访问被测服务器。可以通过右键单击测试计划将线程组添加到测试计划中。</p>
+<p><img src="image-20211213103617620.png" alt="线程组"></p>
+<p>1、你可以重命名线程组名称</p>
+<ul>
+<li><strong>Number of Thread(Users)</strong> ：它定义了虚拟用户的数量。出于测试目的，我们应该只生成有限的负载，因为一次生成大量负载意味着消耗大量线程，最终会导致 CPU 使用率高。</li>
+<li><strong>Ramp Up Period</strong> ：该字段在控制负载生成方面非常重要。加速周期定义了产生总负载的时间量。</li>
+<li><strong>Loop COUNT</strong>：定义了线程组将执行的次数。如果您选中 Forever 复选框，您的测试将永远运行，除非您手动停止它。这可用于测试诸如“如果您的服务器在持续加载几分钟内没有崩溃”之类的内容。</li>
+</ul>
+<p>取样器–Sample</p>
+<p>JMeter如何知道发送到服务器的请求类型是什么？</p>
+<p>是通过取样器。取样器是必须要添加到测试计划中的，因为只有它可以让JMeter知道需要发送那种类型的请求到那个服务器上以及需要携带什么样的参数。请求是HTTP、websocket、FTP、TCP、SMTP等。</p>
+<p>采样器只能添加到线程组，而不是直接在测试计划下，因为线程组需要使用采样器向被测服务器 URL 发送请求。采样器可以通过路径Thread Group -&gt; Sampler -&gt; HTTP Request 添加。</p>
+<h6 id="HTTP请求示例"><a href="#HTTP请求示例" class="headerlink" title="HTTP请求示例"></a>HTTP请求示例</h6><p><img src="image-20211213111816981.png" alt="HTTP示例"></p>
+<ul>
+<li>server name or ip ：输入服务的IP或者域名</li>
+<li>path： 请求的路径</li>
+<li>method：请求方式，常见的有post、get、put、delete等</li>
+<li>parameter：请求参数，如需要可以添加，还可以在config Element中添加httpcookie、请求头配置等</li>
+<li>body data：请求体</li>
+</ul>
+<h5 id="监听器-Listener"><a href="#监听器-Listener" class="headerlink" title="监听器-Listener"></a>监听器-Listener</h5><p>截止到这里，我们已经看到了取样器向服务器发送请求，但是还没有分析响应。性能测试就是分析各种形式的服务器响应，然后将呈现给客户端。监听器用于显示测试执行的结果，以便测试人员了解统计信息。在JMeter中大约有15种监听器，但是常用的是table、tree和graph。</p>
+<p>监听器可以直接在测试计划下或取样器下添加。不同之处在于，当您在取样器下添加侦听器时，它只会显示该取样器的结果。如果我们直接在测试计划下添加取样器，它会显示层次结构中所有取样器的结果。</p>
+<p>会看到如下结果：</p>
+<p><img src="image-20211214162144747.png" alt="image-20211214162144747"></p>
+<ul>
+<li>Label：一般展示为采样器名称</li>
+<li>samples：请求的总数量</li>
+<li>average：总请求平均耗时</li>
+<li>median:总请求耗时中位数</li>
+<li>90%Line：总请求中90%请求耗时</li>
+<li>95%Line：总请求中95%请求耗时</li>
+<li>99%Line：总请求中99%请求耗时</li>
+<li>min：所有请求中最小耗时</li>
+<li>max：所有请求中最大耗时</li>
+<li>Error：所有请求发生的错误率（一般有错误产生可以认为已经到达瓶颈）</li>
+<li>throughput:即QPS</li>
+<li>rec/sent:发送和接受的网速</li>
+</ul>
+<h5 id="断言–Assertions"><a href="#断言–Assertions" class="headerlink" title="断言–Assertions"></a>断言–Assertions</h5><p>我们已经介绍了JMeter如何击中服务器以及如何通过侦听器显示响应。为了确保收到的响应是正确的，并且符合预期，我们需要添加断言。断言只是我们需要放在响应上以比较结果的验证。有以下断言类型</p>
+<ul>
+<li>响应断言</li>
+<li>持续时间断言</li>
+<li>大小断言</li>
+<li>XML断言</li>
+<li>HTML断言</li>
+</ul>
+<h6 id="响应时间断言"><a href="#响应时间断言" class="headerlink" title="响应时间断言"></a>响应时间断言</h6><p>在响应断言中，我们可以添加自己的模式字符串，然后将它们与从服务器收到的响应进行比较。<em>例如，</em>当任何请求成功返回某些响应时，您都知道响应代码为 200。因此，如果我们添加模式字符串”响应代码 = 202”，则测试用例应该失败。</p>
+<p><img src="image-20211214195434442.png" alt="image-20211214195434442"></p>
+<h6 id="持续时间断言"><a href="#持续时间断言" class="headerlink" title="持续时间断言"></a>持续时间断言</h6><p>持续时间断言非常重要，可验证服务器是否在给定的时间内进行了响应。这可用于我们需要对 100 个请求进行采样并确保每次收到响应都在基准限制范围内的情况。</p>
+<p><img src="image-20211214202706648.png" alt="image-20211214202706648"></p>
+<p>XML 断言验证响应数据中是否包含正确的 XML 文档，HTML 断言验证从服务器收到的响应的 HTML 语法。</p>
+<h5 id="元素配置–config-ELements"><a href="#元素配置–config-ELements" class="headerlink" title="元素配置–config ELements"></a>元素配置–config ELements</h5><p>发送到服务器的请求可以使用一些在实际请求之前执行的配置元素进一步参数化。一个简单的示例可能是从使用 CSV 数据集配置的 CSV 文件中读取变量的值。常用的配置元素有如下这些：</p>
+<ul>
+<li>CSV数据集配置</li>
+<li>用户定义的参数</li>
+<li>HTTPS请求默认</li>
+<li>HTTPS缓存管理器</li>
+<li>HTTPS COOKIE MANAGER</li>
+</ul>
+<h6 id="csv数据集配置"><a href="#csv数据集配置" class="headerlink" title="csv数据集配置"></a>csv数据集配置</h6><p>CSV数据集配置可帮助Jmeter从CSV文件中选取某些参数的值，而不是在每个单独的请求中传递不同的参数。<em>例如，</em>如果我们需要使用一组不同的用户和密码来测试登录功能，那么我们可以在CSV文件中创建两列并在那里输入值，以便JMeter可以为发送到服务器的每个请求选择一个。</p>
+<p><img src="image-20211216160753990.png" alt="image-20211216160753990"></p>
+<h6 id="用户定义的变量-User-Defined-Variables"><a href="#用户定义的变量-User-Defined-Variables" class="headerlink" title="用户定义的变量-User Defined Variables"></a>用户定义的变量-User Defined Variables</h6><p>它可以帮助Jmeter从预定义的变量中选取值。<em>例如，</em>支持您需要创建一个测试计划，您需要在同一URL上添加许多HTTP请求，并且可能存在客户端计划稍后将其迁移到某些不同 URL.So 的情况，以避免在每个请求中更新URL，我们可以告诉JMeter从UDV（用户定义的变量）中选取URL，该UDV可以在以后更新以处理对更新的URL的所有请求。</p>
+<p>因此，为了避免在每个请求中更新URL，我们可以告诉JMeter从UDV（用户定义的变量）中选择URL，该UDV可以在以后更新以处理对更新URL的所有请求。</p>
+<p><img src="image-20211216161303245.png" alt="image-20211216161303245"></p>
+<h6 id="HTTP-请求默认值"><a href="#HTTP-请求默认值" class="headerlink" title="HTTP 请求默认值"></a>HTTP 请求默认值</h6><p>此配置元素对于指定 https 请求的默认值非常有用。为了指导您更多，请举个例子，我们需要在Google服务器上命中50个不同的请求。在这种情况下，如果我们添加HTTP请求默认值，则无需指定服务器名称，路径或任何其他属性，如端口号，连接超时属性。在 HTTP 请求默认配置元素中指定的任何内容都将由所有 HTTP 请求继承。</p>
+<p>在这种情况下，如果我们添加HTTP请求默认值，则无需指定服务器名称，路径或任何其他属性，如端口号，连接超时属性。在 HTTP 请求默认配置元素中指定的任何内容都将由所有 HTTP 请求继承。</p>
+<p><img src="image-20211216161420935.png" alt="image-20211216161420935"></p>
+<p><strong>HTTP Cache Manager</strong>和<strong>HTTP Cookie Manager</strong>用于使 JMeter 充当实时浏览器。HTTP缓存管理器可以在每个请求后清除缓存，而另一个可以管理cookie设置。</p>
+<h5 id="逻辑控制器和定时器"><a href="#逻辑控制器和定时器" class="headerlink" title="逻辑控制器和定时器"></a>逻辑控制器和定时器</h5><p>逻辑控制器和定时器帮助Jmeter控制交易流。如果需要测试任何服务器，计时器可确保每个线程中的延迟。<em>例如，</em>如果我们需要FTP请求在HTTP请求完成后等待5秒，我们可以在那里添加计时器。</p>
+<p>逻辑控制器用于定义发送到服务器的请求流。它还可以让您分别存储每个模块的请求，例如登录和注销。</p>
+<p><img src="image-20211216161518560.png" alt="image-20211216161518560"></p>
+<h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><p>到目前为止，一定都熟悉了JMeter的组件，并尝试过使用它，并且一定面临一些问题。在下一篇文章中，将介绍一些涵盖移动领域的实时性能测试场景，以便大家获得更多关于JMeter的实践知识。</p>
+<p><strong>敬请期待！下一篇文章将帮助管理请求，分析结果并与性能测试的基准进行比较。</strong></p>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>性能测试，JMeter</tag>
       </tags>
   </entry>
   <entry>
@@ -1388,6 +1483,246 @@
       <tags>
         <tag>K8S</tag>
         <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>emqtt_bench安装与压测MQTTbroker</title>
+    <url>/Echo/2021/12/15/emqtt-bench%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8E%8B%E6%B5%8BMQTTbroker/</url>
+    <content><![CDATA[<h4 id="EMQX"><a href="#EMQX" class="headerlink" title="EMQX"></a>EMQX</h4><p><em>EMQ X</em> (Erlang/Enterprise/Elastic MQTT Broker) 是基于 Erlang/OTP 平台开发的开源物联网 MQTT 消息服务器。</p>
+<p>Erlang/OTP是出色的软实时 (Soft-Realtime)、低延时 (Low-Latency)、分布式 (Distributed)的语言平台。</p>
+<p>MQTT 是轻量的 (Lightweight)、发布订阅模式 (PubSub) 的物联网消息协议。</p>
+<p>EMQ X 设计目标是实现高可靠，并支持承载海量物联网终端的MQTT连接，支持在海量物联网设备间低延时消息路由:</p>
+<ol>
+<li>稳定承载大规模的 MQTT 客户端连接，单服务器节点支持50万到100万连接。</li>
+<li>分布式节点集群，快速低延时的消息路由，单集群支持1000万规模的路由。</li>
+<li>消息服务器内扩展，支持定制多种认证方式、高效存储消息到后端数据库。</li>
+<li>完整物联网协议支持，MQTT、MQTT-SN、CoAP、LwM2M、WebSocket 或私有协议支持。</li>
+</ol>
+<h4 id="emqtt-bench"><a href="#emqtt-bench" class="headerlink" title="emqtt_bench"></a>emqtt_bench</h4><p><a href="https://github.com/emqx/emqtt_bench">emqtt_bench (opens new window)</a>是基于 Erlang 编写的，一个简洁强大的 MQTT 协议性能测试工具。</p>
+<h4 id="EMQX安装"><a href="#EMQX安装" class="headerlink" title="EMQX安装"></a>EMQX安装</h4><p>emqx安装比较简单，可以参照<a href="https://docs.emqx.cn/broker/v4.3/getting-started/install.html">安装 | EMQ Docs (emqx.cn)</a>进行。</p>
+<h4 id="emqtt-bench安装"><a href="#emqtt-bench安装" class="headerlink" title="emqtt_bench安装"></a>emqtt_bench安装</h4><p>结合官网介绍需要 Erlang/OTP 22.3+以上，但是经过尝试最新版的Erlang不太兼容，所以还是老老实实用22.3了。</p>
+<h6 id="1-前提准备"><a href="#1-前提准备" class="headerlink" title="1.前提准备"></a>1.前提准备</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 各种依赖，缺乏可能会导致意外问题</span></span><br><span class="line">yum -y install ncurses-devel openssl-devel unixODBC-devel gcc-c++ perl</span><br></pre></td></tr></table></figure>
+
+<h6 id="2-安装Erlang-22-3"><a href="#2-安装Erlang-22-3" class="headerlink" title="2.安装Erlang 22.3"></a>2.安装Erlang 22.3</h6><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 切换到安装目录此处建议用opt文件夹</span></span><br><span class="line"><span class="built_in">cd</span> /opt</span><br><span class="line"><span class="comment"># 下载Erlang</span></span><br><span class="line">wget http://erlang.org/download/otp_src_22.3.tar.gz</span><br><span class="line"><span class="comment"># 解压</span></span><br><span class="line">tar -zxvf otp_src_22.3</span><br><span class="line">.tar.gz</span><br><span class="line"><span class="comment"># 切换到解压后的erlang安装包</span></span><br><span class="line"><span class="built_in">cd</span> otp_src_22.3</span><br><span class="line"><span class="comment"># 开始安装</span></span><br><span class="line">./configure &amp; make &amp; make install</span><br><span class="line"><span class="comment"># 查看版本</span></span><br><span class="line">erl</span><br></pre></td></tr></table></figure>
+
+<p><img src="image-20211216170648216.png" alt="image-20211216170648216"></p>
+<h6 id="3-安装新版git（因后续在emqtt-bench-make时centos7自带git版本较低导致问题）"><a href="#3-安装新版git（因后续在emqtt-bench-make时centos7自带git版本较低导致问题）" class="headerlink" title="3.安装新版git（因后续在emqtt_bench make时centos7自带git版本较低导致问题）"></a>3.安装新版git（因后续在emqtt_bench make时centos7自带git版本较低导致问题）</h6><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 更新系统资源包</span></span><br><span class="line">yum install http://opensource.wandisco.com/centos/7/git/x86_64/wandisco-git-release-7-2.noarch.rpm</span><br><span class="line"><span class="comment"># 安装git</span></span><br><span class="line">yum install -y git</span><br><span class="line"><span class="comment"># 查看git版本</span></span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
+
+<p>4.安装emqtt_bench</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装依赖</span></span><br><span class="line">yum install -y libatomic</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装</span></span><br><span class="line">git clone https://github.com/emqx/emqtt-bench</span><br><span class="line">cd emqtt-bench</span><br><span class="line"><span class="meta">#</span><span class="bash"> 因为QUIC目前不稳定所以选择禁用QUIC</span></span><br><span class="line">BUILD_WITHOUT_QUIC=1 make</span><br><span class="line"><span class="meta">#</span><span class="bash"> 验证</span></span><br><span class="line">./emqtt_bench</span><br></pre></td></tr></table></figure>
+
+<p>输出Usage: emqtt_bench pub | sub | conn [–help]即为安装成功</p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>安装中遇到的问题有以下两个</p>
+<h6 id="1-make失败（报错GUN版本）"><a href="#1-make失败（报错GUN版本）" class="headerlink" title="1.make失败（报错GUN版本）"></a>1.make失败（报错GUN版本）</h6><p>经排查此问题为QUIC功能不能使用导致，使用禁用模式make即可</p>
+<h6 id="2-有部分git资源下载失败"><a href="#2-有部分git资源下载失败" class="headerlink" title="2.有部分git资源下载失败"></a>2.有部分git资源下载失败</h6><p><img src="image-20211216171321403.png" alt="image-20211216171321403"></p>
+<p><strong>cd /opt/emqtt-bench/_build/default/lib/quicer/msquic/submodules</strong></p>
+<p><strong>git clone git://github.com/google/googletest</strong></p>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p><code>emqtt_bench</code> 共三个子命令：</p>
+<ol>
+<li><code>pub</code>：用于创建大量客户端执行发布消息的操作。</li>
+<li><code>sub</code>：用于创建大量客户端执行订阅主题，并接受消息的操作。</li>
+<li><code>conn</code>：用于创建大量的连接</li>
+</ol>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>简写</th>
+<th>可选值</th>
+<th>默认值</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">–host</td>
+<td>-h</td>
+<td>-</td>
+<td>localhost</td>
+<td align="left">要连接的 MQTT 服务器地址</td>
+</tr>
+<tr>
+<td align="left">–port</td>
+<td>-p</td>
+<td>-</td>
+<td>1883</td>
+<td align="left">MQTT 服务端口</td>
+</tr>
+<tr>
+<td align="left">–version</td>
+<td>-V</td>
+<td>3 4 5</td>
+<td>5</td>
+<td align="left">使用的 MQTT 协议版本</td>
+</tr>
+<tr>
+<td align="left">–count</td>
+<td>-c</td>
+<td>-</td>
+<td>200</td>
+<td align="left">客户端总数</td>
+</tr>
+<tr>
+<td align="left">–startnumber</td>
+<td>-n</td>
+<td>-</td>
+<td>0</td>
+<td align="left">客户端数量起始值</td>
+</tr>
+<tr>
+<td align="left">–interval</td>
+<td>-i</td>
+<td>-</td>
+<td>10</td>
+<td align="left">每间隔多少时间创建一个客户端；单位：毫秒</td>
+</tr>
+<tr>
+<td align="left">–interval_of_msg</td>
+<td>-I</td>
+<td>-</td>
+<td>1000</td>
+<td align="left">每间隔多少时间发送一个消息</td>
+</tr>
+<tr>
+<td align="left">–username</td>
+<td>-u</td>
+<td>-</td>
+<td>无；非必选</td>
+<td align="left">客户端用户名</td>
+</tr>
+<tr>
+<td align="left">–password</td>
+<td>-P</td>
+<td>-</td>
+<td>无；非必选</td>
+<td align="left">客户端密码</td>
+</tr>
+<tr>
+<td align="left">–topic</td>
+<td>-t</td>
+<td>-</td>
+<td>无；必选</td>
+<td align="left">发布的主题；支持站位符： <code>%c</code>：表示 ClientId <code>%u</code>：表示 Username <code>%i</code>：表示客户端的序列数</td>
+</tr>
+<tr>
+<td align="left">–szie</td>
+<td>-s</td>
+<td>-</td>
+<td>256</td>
+<td align="left">消息 Payload 的大小；单位：字节</td>
+</tr>
+<tr>
+<td align="left">–qos</td>
+<td>-q</td>
+<td>-</td>
+<td>0</td>
+<td align="left">Qos 等级</td>
+</tr>
+<tr>
+<td align="left">–retain</td>
+<td>-r</td>
+<td>true false</td>
+<td>false</td>
+<td align="left">消息是否设置 Retain 标志</td>
+</tr>
+<tr>
+<td align="left">–keepalive</td>
+<td>-k</td>
+<td>-</td>
+<td>300</td>
+<td align="left">客户端心跳时间</td>
+</tr>
+<tr>
+<td align="left">–clean</td>
+<td>-C</td>
+<td>true false</td>
+<td>true</td>
+<td align="left">是否以清除会话的方式建立连接</td>
+</tr>
+<tr>
+<td align="left">–ssl</td>
+<td>-S</td>
+<td>true false</td>
+<td>false</td>
+<td align="left">是否启用 SSL</td>
+</tr>
+<tr>
+<td align="left">–certfile</td>
+<td>-</td>
+<td>-</td>
+<td>无</td>
+<td align="left">客户端 SSL 证书</td>
+</tr>
+<tr>
+<td align="left">–keyfile</td>
+<td>-</td>
+<td>-</td>
+<td>无</td>
+<td align="left">客户端 SSL 秘钥文件</td>
+</tr>
+<tr>
+<td align="left">–ws</td>
+<td>-</td>
+<td>true false</td>
+<td>false</td>
+<td align="left">是否以 Websocket 的方式建立连接</td>
+</tr>
+<tr>
+<td align="left">–ifaddr</td>
+<td>-</td>
+<td>-</td>
+<td>无</td>
+<td align="left">指定客户端连接使用的本地网卡</td>
+</tr>
+</tbody></table>
+<h4 id="吞吐量性能压测"><a href="#吞吐量性能压测" class="headerlink" title="吞吐量性能压测"></a>吞吐量性能压测</h4><p>bench1上执行</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">./emqtt_bench sub -t t -h EMQQserverIP -c 500</span><br></pre></td></tr></table></figure>
+
+<p>bench2 上执行</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">./emqtt_bench pub -t t -h EMQQserverIP -c 20 -I 100</span><br></pre></td></tr></table></figure>
+
+<p>在bench1上可以观察到</p>
+<p><strong>ecv(28006): total=2102563, rate=99725(msg/sec）</strong></p>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>性能测试</tag>
+        <tag>mqtt</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HBase shell命令</title>
+    <url>/Echo/2020/03/13/hbase%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h4 id="HBase简介"><a href="#HBase简介" class="headerlink" title="HBase简介"></a>HBase简介</h4><p>HBase 命名的起源是 Hadoop database，Hadoop数据库，是NoSQL数据库，基于列式存储而非行式存储。</p>
+<p>HBase是一个分布式的、面向列的、基于Google Bigtable的开源实现。</p>
+<ul>
+<li>利用Hadoop HDFS作为其文件存储系统</li>
+<li>利用Hadoop MapReduce来处理HBase中的海量数据</li>
+<li>利用Zookeeper作为协同服务</li>
+</ul>
+<h4 id="HBase数据模型"><a href="#HBase数据模型" class="headerlink" title="HBase数据模型"></a>HBase数据模型</h4><p>HBase是一个稀疏、多维度、有序的映射表。表有行和列组成，列划分为若干个列族/列簇(column family)，每个列族/列簇下面可以有多个普通列。</p>
+<p><img src="5-1Z5091305564M.gif" alt="5-1Z5091305564M"></p>
+<h4 id="HBase-shell-命令"><a href="#HBase-shell-命令" class="headerlink" title="HBase shell 命令"></a>HBase shell 命令</h4><h5 id="进入-HBase-shell"><a href="#进入-HBase-shell" class="headerlink" title="进入 HBase shell"></a>进入 HBase shell</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hbase shell</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="HBase版本状态查看"><a href="#HBase版本状态查看" class="headerlink" title="HBase版本状态查看"></a>HBase版本状态查看</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查询状态</span></span><br><span class="line">status</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查询版本</span></span><br><span class="line">version</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看当前操作用户</span></span><br><span class="line">whoami</span><br><span class="line"><span class="meta">#</span><span class="bash"> 帮助命令</span></span><br><span class="line">help</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看hbase支持的工具</span></span><br><span class="line">tools</span><br></pre></td></tr></table></figure>
+
+<h5 id="DDL操作"><a href="#DDL操作" class="headerlink" title="DDL操作"></a>DDL操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建一个表</span></span><br><span class="line">create<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;column_famaly&#x27;</span>,<span class="string">&#x27;column_famaly1&#x27;</span>,<span class="string">&#x27;column_famaly2&#x27;</span></span><br><span class="line"><span class="comment"># 列出所有表</span></span><br><span class="line">list</span><br><span class="line"><span class="comment"># 获取表的描述</span></span><br><span class="line">describe<span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 删除一个列族</span></span><br><span class="line">alter<span class="string">&#x27;table&#x27;</span>,&#123;NAME=&gt;<span class="string">&#x27;column_famaly&#x27;</span>,METHOD=&gt;<span class="string">&#x27;delete&#x27;</span>&#125;</span><br><span class="line"><span class="comment"># 删除一个表</span></span><br><span class="line"><span class="comment"># ① 要删除的表设置为disable</span></span><br><span class="line"><span class="built_in">disable</span><span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># ② 删除表</span></span><br><span class="line">drop <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 查询表是否存在</span></span><br><span class="line">exists<span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 查看表是否可用</span></span><br><span class="line">is_enabled<span class="string">&#x27;table&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="DML操作"><a href="#DML操作" class="headerlink" title="DML操作"></a>DML操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 插入数据</span></span><br><span class="line">put<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span>,<span class="string">&#x27;name&#x27;</span></span><br><span class="line"><span class="comment"># 获取row1所有数据</span></span><br><span class="line">get <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span></span><br><span class="line"><span class="comment"># 获取表row1，col1所有数据</span></span><br><span class="line">get<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1&#x27;</span></span><br><span class="line"><span class="comment"># 更新一条数据</span></span><br><span class="line">put <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span>,<span class="string">&#x27;name1&#x27;</span></span><br><span class="line"><span class="comment"># 通过时间戳获取数据</span></span><br><span class="line">get <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,&#123;COLUMN=&gt;<span class="string">&#x27;col1:name&#x27;</span>,TIMESTAMP=&gt;1463055736277&#125;</span><br><span class="line"><span class="comment"># 扫描整张表（数据量大时不建议此操作）</span></span><br><span class="line">scan <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 删除一列</span></span><br><span class="line">delete <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span></span><br><span class="line"><span class="comment"># 删除行所有的数据</span></span><br><span class="line">deleteall <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span></span><br><span class="line"><span class="comment"># 统计表中的行数</span></span><br><span class="line">count <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 清空整张表（清空表后，表的分区设置会默认为1不建议）</span></span><br><span class="line">truncate <span class="string">&#x27;table&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="退出操作"><a href="#退出操作" class="headerlink" title="退出操作"></a>退出操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 退出</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment"># 关闭hbase集群（危险操作！！！）</span></span><br><span class="line">shutdown</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>大数据</tag>
+        <tag>HBase</tag>
       </tags>
   </entry>
   <entry>
@@ -2140,213 +2475,6 @@
       </tags>
   </entry>
   <entry>
-    <title>emqtt_bench安装与压测MQTTbroker</title>
-    <url>/Echo/2021/12/15/emqtt-bench%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8E%8B%E6%B5%8BMQTTbroker/</url>
-    <content><![CDATA[<h4 id="EMQX"><a href="#EMQX" class="headerlink" title="EMQX"></a>EMQX</h4><p><em>EMQ X</em> (Erlang/Enterprise/Elastic MQTT Broker) 是基于 Erlang/OTP 平台开发的开源物联网 MQTT 消息服务器。</p>
-<p>Erlang/OTP是出色的软实时 (Soft-Realtime)、低延时 (Low-Latency)、分布式 (Distributed)的语言平台。</p>
-<p>MQTT 是轻量的 (Lightweight)、发布订阅模式 (PubSub) 的物联网消息协议。</p>
-<p>EMQ X 设计目标是实现高可靠，并支持承载海量物联网终端的MQTT连接，支持在海量物联网设备间低延时消息路由:</p>
-<ol>
-<li>稳定承载大规模的 MQTT 客户端连接，单服务器节点支持50万到100万连接。</li>
-<li>分布式节点集群，快速低延时的消息路由，单集群支持1000万规模的路由。</li>
-<li>消息服务器内扩展，支持定制多种认证方式、高效存储消息到后端数据库。</li>
-<li>完整物联网协议支持，MQTT、MQTT-SN、CoAP、LwM2M、WebSocket 或私有协议支持。</li>
-</ol>
-<h4 id="emqtt-bench"><a href="#emqtt-bench" class="headerlink" title="emqtt_bench"></a>emqtt_bench</h4><p><a href="https://github.com/emqx/emqtt_bench">emqtt_bench (opens new window)</a>是基于 Erlang 编写的，一个简洁强大的 MQTT 协议性能测试工具。</p>
-<h4 id="EMQX安装"><a href="#EMQX安装" class="headerlink" title="EMQX安装"></a>EMQX安装</h4><p>emqx安装比较简单，可以参照<a href="https://docs.emqx.cn/broker/v4.3/getting-started/install.html">安装 | EMQ Docs (emqx.cn)</a>进行。</p>
-<h4 id="emqtt-bench安装"><a href="#emqtt-bench安装" class="headerlink" title="emqtt_bench安装"></a>emqtt_bench安装</h4><p>结合官网介绍需要 Erlang/OTP 22.3+以上，但是经过尝试最新版的Erlang不太兼容，所以还是老老实实用22.3了。</p>
-<h6 id="1-前提准备"><a href="#1-前提准备" class="headerlink" title="1.前提准备"></a>1.前提准备</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 各种依赖，缺乏可能会导致意外问题</span></span><br><span class="line">yum -y install ncurses-devel openssl-devel unixODBC-devel gcc-c++ perl</span><br></pre></td></tr></table></figure>
-
-<h6 id="2-安装Erlang-22-3"><a href="#2-安装Erlang-22-3" class="headerlink" title="2.安装Erlang 22.3"></a>2.安装Erlang 22.3</h6><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 切换到安装目录此处建议用opt文件夹</span></span><br><span class="line"><span class="built_in">cd</span> /opt</span><br><span class="line"><span class="comment"># 下载Erlang</span></span><br><span class="line">wget http://erlang.org/download/otp_src_22.3.tar.gz</span><br><span class="line"><span class="comment"># 解压</span></span><br><span class="line">tar -zxvf otp_src_22.3</span><br><span class="line">.tar.gz</span><br><span class="line"><span class="comment"># 切换到解压后的erlang安装包</span></span><br><span class="line"><span class="built_in">cd</span> otp_src_22.3</span><br><span class="line"><span class="comment"># 开始安装</span></span><br><span class="line">./configure &amp; make &amp; make install</span><br><span class="line"><span class="comment"># 查看版本</span></span><br><span class="line">erl</span><br></pre></td></tr></table></figure>
-
-<p><img src="image-20211216170648216.png" alt="image-20211216170648216"></p>
-<h6 id="3-安装新版git（因后续在emqtt-bench-make时centos7自带git版本较低导致问题）"><a href="#3-安装新版git（因后续在emqtt-bench-make时centos7自带git版本较低导致问题）" class="headerlink" title="3.安装新版git（因后续在emqtt_bench make时centos7自带git版本较低导致问题）"></a>3.安装新版git（因后续在emqtt_bench make时centos7自带git版本较低导致问题）</h6><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 更新系统资源包</span></span><br><span class="line">yum install http://opensource.wandisco.com/centos/7/git/x86_64/wandisco-git-release-7-2.noarch.rpm</span><br><span class="line"><span class="comment"># 安装git</span></span><br><span class="line">yum install -y git</span><br><span class="line"><span class="comment"># 查看git版本</span></span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
-
-<p>4.安装emqtt_bench</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装依赖</span></span><br><span class="line">yum install -y libatomic</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装</span></span><br><span class="line">git clone https://github.com/emqx/emqtt-bench</span><br><span class="line">cd emqtt-bench</span><br><span class="line"><span class="meta">#</span><span class="bash"> 因为QUIC目前不稳定所以选择禁用QUIC</span></span><br><span class="line">BUILD_WITHOUT_QUIC=1 make</span><br><span class="line"><span class="meta">#</span><span class="bash"> 验证</span></span><br><span class="line">./emqtt_bench</span><br></pre></td></tr></table></figure>
-
-<p>输出Usage: emqtt_bench pub | sub | conn [–help]即为安装成功</p>
-<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>安装中遇到的问题有以下两个</p>
-<h6 id="1-make失败（报错GUN版本）"><a href="#1-make失败（报错GUN版本）" class="headerlink" title="1.make失败（报错GUN版本）"></a>1.make失败（报错GUN版本）</h6><p>经排查此问题为QUIC功能不能使用导致，使用禁用模式make即可</p>
-<h6 id="2-有部分git资源下载失败"><a href="#2-有部分git资源下载失败" class="headerlink" title="2.有部分git资源下载失败"></a>2.有部分git资源下载失败</h6><p><img src="image-20211216171321403.png" alt="image-20211216171321403"></p>
-<p><strong>cd /opt/emqtt-bench/_build/default/lib/quicer/msquic/submodules</strong></p>
-<p><strong>git clone git://github.com/google/googletest</strong></p>
-<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p><code>emqtt_bench</code> 共三个子命令：</p>
-<ol>
-<li><code>pub</code>：用于创建大量客户端执行发布消息的操作。</li>
-<li><code>sub</code>：用于创建大量客户端执行订阅主题，并接受消息的操作。</li>
-<li><code>conn</code>：用于创建大量的连接</li>
-</ol>
-<p>参数</p>
-<table>
-<thead>
-<tr>
-<th align="left">参数</th>
-<th>简写</th>
-<th>可选值</th>
-<th>默认值</th>
-<th align="left">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">–host</td>
-<td>-h</td>
-<td>-</td>
-<td>localhost</td>
-<td align="left">要连接的 MQTT 服务器地址</td>
-</tr>
-<tr>
-<td align="left">–port</td>
-<td>-p</td>
-<td>-</td>
-<td>1883</td>
-<td align="left">MQTT 服务端口</td>
-</tr>
-<tr>
-<td align="left">–version</td>
-<td>-V</td>
-<td>3 4 5</td>
-<td>5</td>
-<td align="left">使用的 MQTT 协议版本</td>
-</tr>
-<tr>
-<td align="left">–count</td>
-<td>-c</td>
-<td>-</td>
-<td>200</td>
-<td align="left">客户端总数</td>
-</tr>
-<tr>
-<td align="left">–startnumber</td>
-<td>-n</td>
-<td>-</td>
-<td>0</td>
-<td align="left">客户端数量起始值</td>
-</tr>
-<tr>
-<td align="left">–interval</td>
-<td>-i</td>
-<td>-</td>
-<td>10</td>
-<td align="left">每间隔多少时间创建一个客户端；单位：毫秒</td>
-</tr>
-<tr>
-<td align="left">–interval_of_msg</td>
-<td>-I</td>
-<td>-</td>
-<td>1000</td>
-<td align="left">每间隔多少时间发送一个消息</td>
-</tr>
-<tr>
-<td align="left">–username</td>
-<td>-u</td>
-<td>-</td>
-<td>无；非必选</td>
-<td align="left">客户端用户名</td>
-</tr>
-<tr>
-<td align="left">–password</td>
-<td>-P</td>
-<td>-</td>
-<td>无；非必选</td>
-<td align="left">客户端密码</td>
-</tr>
-<tr>
-<td align="left">–topic</td>
-<td>-t</td>
-<td>-</td>
-<td>无；必选</td>
-<td align="left">发布的主题；支持站位符： <code>%c</code>：表示 ClientId <code>%u</code>：表示 Username <code>%i</code>：表示客户端的序列数</td>
-</tr>
-<tr>
-<td align="left">–szie</td>
-<td>-s</td>
-<td>-</td>
-<td>256</td>
-<td align="left">消息 Payload 的大小；单位：字节</td>
-</tr>
-<tr>
-<td align="left">–qos</td>
-<td>-q</td>
-<td>-</td>
-<td>0</td>
-<td align="left">Qos 等级</td>
-</tr>
-<tr>
-<td align="left">–retain</td>
-<td>-r</td>
-<td>true false</td>
-<td>false</td>
-<td align="left">消息是否设置 Retain 标志</td>
-</tr>
-<tr>
-<td align="left">–keepalive</td>
-<td>-k</td>
-<td>-</td>
-<td>300</td>
-<td align="left">客户端心跳时间</td>
-</tr>
-<tr>
-<td align="left">–clean</td>
-<td>-C</td>
-<td>true false</td>
-<td>true</td>
-<td align="left">是否以清除会话的方式建立连接</td>
-</tr>
-<tr>
-<td align="left">–ssl</td>
-<td>-S</td>
-<td>true false</td>
-<td>false</td>
-<td align="left">是否启用 SSL</td>
-</tr>
-<tr>
-<td align="left">–certfile</td>
-<td>-</td>
-<td>-</td>
-<td>无</td>
-<td align="left">客户端 SSL 证书</td>
-</tr>
-<tr>
-<td align="left">–keyfile</td>
-<td>-</td>
-<td>-</td>
-<td>无</td>
-<td align="left">客户端 SSL 秘钥文件</td>
-</tr>
-<tr>
-<td align="left">–ws</td>
-<td>-</td>
-<td>true false</td>
-<td>false</td>
-<td align="left">是否以 Websocket 的方式建立连接</td>
-</tr>
-<tr>
-<td align="left">–ifaddr</td>
-<td>-</td>
-<td>-</td>
-<td>无</td>
-<td align="left">指定客户端连接使用的本地网卡</td>
-</tr>
-</tbody></table>
-<h4 id="吞吐量性能压测"><a href="#吞吐量性能压测" class="headerlink" title="吞吐量性能压测"></a>吞吐量性能压测</h4><p>bench1上执行</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">./emqtt_bench sub -t t -h EMQQserverIP -c 500</span><br></pre></td></tr></table></figure>
-
-<p>bench2 上执行</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">./emqtt_bench pub -t t -h EMQQserverIP -c 20 -I 100</span><br></pre></td></tr></table></figure>
-
-<p>在bench1上可以观察到</p>
-<p><strong>ecv(28006): total=2102563, rate=99725(msg/sec）</strong></p>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>性能测试</tag>
-        <tag>mqtt</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>jekins环境搭建</title>
     <url>/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
     <content><![CDATA[<table>
@@ -2505,6 +2633,81 @@
       </categories>
       <tags>
         <tag>个人成长</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>什么是MapReduce</title>
+    <url>/Echo/2022/01/03/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/</url>
+    <content><![CDATA[<h4 id="为什么需要MapReduce？"><a href="#为什么需要MapReduce？" class="headerlink" title="为什么需要MapReduce？"></a>为什么需要MapReduce？</h4><p><img src="Map-Reduce.jpg" alt="Map-Reduce"></p>
+<p>MapReduce是**”处理单元”，**使用此组件，我们可以处理存储在Hadoop HDFS上的大数据。</p>
+<p>但确切的要求是为什么我们需要Hadoop的这个组件？</p>
+<p>存储在Hadoop HDFS上的大数据和传统存储不一样。数据被划分为存储在各个DataNodes中的数据块。因此，整个数据不会存储在一个集中的位置。</p>
+<p>因此，像Java这样的本机客户端应用程序或任何此类应用程序无法以当前格式处理数据，我们需要一个特殊的框架来处理存储在各个DataNodes中的碎片化数据块。</p>
+<p>处理是使用Hadoop MapReduce处理完成的。</p>
+<h4 id="MapReduce简述"><a href="#MapReduce简述" class="headerlink" title="MapReduce简述"></a>MapReduce简述</h4><p><img src="NutShell-MapReduce.jpg" alt="NutShell-MapReduce"></p>
+<p>如图所示显示了MapReduce的功能和用途。</p>
+<p>让我们从MapReduce的应用程序开始及如何应用。它用于分类器，索引和搜索，以及在电子商务网站（Flipkart，Amazon等）上创建推荐引擎。它也被几家公司用作分析。</p>
+<p>当我们从功能的角度来看，它是一个编程模型，可以用于像Hadoop HDFS这样的大规模分布式模型，并且具有并行编程的功能，使其非常有用。</p>
+<p>当我们在Map Reduce中看到函数时，会执行两个函数，即Map Function和Reduce函数。</p>
+<p>这项技术已经由谷歌，雅虎，Facebook等主要组织实施，也被Apache Hadoop采用，如HDFS，PIG，HIVE，并使用HBase存储数据或执行和处理大数据，也称为No-SQL。</p>
+<h5 id="MapReduce的优点"><a href="#MapReduce的优点" class="headerlink" title="MapReduce的优点"></a>MapReduce的优点</h5><p>1、并行处理</p>
+<p><img src="Advantage.jpg" alt="Advantage"></p>
+<p>整个数据块被Hadoop HDFS分成HDFS块，MapReduce并行处理这些数据块，因此处理变得很快。</p>
+<p>2、数据局部性</p>
+<p>这是Hadoop MapReduce给出的一个多功能的东西，即我们可以在它所在的位置处理数据。</p>
+<p><em><strong>这是什么意思？</strong></em></p>
+<p>在之前的HDFS教程中，我们了解到我们移动到Hadoop Cluster中的数据被划分为HDFS块，这些块被保存到SlaveMachines或DataNodes中。Map-Reduce将处理和逻辑感知到数据驻留在HDFS块中的相应从节点或DataNodes。</p>
+<p>处理在多个位置的较小数据块上并行执行。这节省了大量时间以及将大数据从一个位置移动到另一个位置所需的网络带宽。</p>
+<p>请记住，我们正在处理的数据是分解成块的大数据，如果我们开始将大数据直接通过分配的网络通道移动到集中式计算机中并对其进行处理，那么它将不会给我们带来任何优势，因为我们将消耗整个带宽将数据移动到集中式服务器。</p>
+<p>因此，使用Hadoop MapReduce，我们不只是在进行”并行处理”，我们还将数据处理到存在数据块的相应从节点或DataNodes上，因此我们也”节省了大量网络带宽”，这是非常有益的。</p>
+<p>最后，SlaveMachines完成了对存储在SlaveMachines的数据的处理，它们将结果发送回主机器，因为结果不如SlaveMachines上存储的块大。因此，它不会占用大量带宽。</p>
+<p>从属计算机将结果发送回主计算机，这些结果将聚合在一起，最终结果将发送回提交作业的客户端计算机。</p>
+<p><em><strong>如何决定哪些数据应该在哪个DataNode上处理？</strong></em></p>
+<p>客户端将作业提交给资源管理器，资源管理器是提供在数据所在的相应 DataNode 上执行作业的方向的资源管理器，它根据最近的可用 DataNode 做出决定，以便不会使用大量网络带宽。</p>
+<h4 id="传统方式VSMapReduce方式"><a href="#传统方式VSMapReduce方式" class="headerlink" title="传统方式VSMapReduce方式"></a>传统方式VSMapReduce方式</h4><p>假设有五个保险公司分支机构，人们来申请人寿保险单。现在，还有一家保险公司的总部，该总部拥有有关可用和所在分支机构的所有信息。</p>
+<p>但是，当人们来各自的分行A，B，C，D，E申请人寿保险时，保单申请保留在各自的分行本身，并且该信息不会与保险公司总部共享。</p>
+<p>1、传统方式</p>
+<p>传统为了上解决这个问题，所有申请将被转移到保险公司总部，然后申请过程将开始。</p>
+<p>在这种情况下，我们需要将所有申请转移到保险公司总部，这是一件代价高昂的事情，即必须从保险公司分支机构收集所有申请并将其带到保险公司总部。</p>
+<p>这就是成本以及进行此活动的巨大努力的方式。</p>
+<p><img src="Traditional-way-1.jpg" alt="Traditional-way-1"></p>
+<p><img src="Traditional-way-2.jpg" alt="Traditional-way-2"></p>
+<p>另一个方面是保险公司总部负担过重，因为它必须处理人民在各自分支机构申请保单的所有申请。</p>
+<p>由于保险公司正在处理所有分支机构都适用的申请，因此需要很长时间。最后，这个过程效果不是很好。</p>
+<p>2、MapReduce方式</p>
+<p>MapReduce遵循Data Locality，即它不会将所有应用程序带到保险公司总部，而是并行处理各个分支机构本身的应用程序。</p>
+<p><img src="MapReduce-Way.jpg" alt="MapReduce-Way"></p>
+<p>一旦应用于每个分支机构的申请得到处理，他们就会将处理后的详细信息发回保险公司总部。</p>
+<p>现在，保险公司总部只需要汇总从各自分支机构发送的已处理申请的数量，并将详细信息保存在各自的数据库或存储中心。</p>
+<p>通过这种方式，处理将非常容易和快速，保单持有人可以立即获得福利。</p>
+<h4 id="MapReduce运行原理"><a href="#MapReduce运行原理" class="headerlink" title="MapReduce运行原理"></a>MapReduce运行原理</h4><p>在前面的示例中，我们有一个分布在各个分支之间的输入（应用程序），每个输入都由相应的 Map 函数处理。</p>
+<p>我们知道MapReduce有两个函数，即Map Function和Reduce Function。</p>
+<p>在各个分支上完成的处理部分由 Map 函数完成。因此，每个分支机构中的每个输入（应用程序）都使用Map函数进行处理，之后处理后的详细信息被发送到保险公司总部，聚合部分由Reduce功能完成。</p>
+<p>聚合的已处理应用程序详细信息作为输出提供。</p>
+<p><img src="MapReduce-in-Detail.jpg" alt="MapReduce-in-Detail"></p>
+<p>这就是我们前面的例子中发生的事情。整个过程分为map任务和reduce任务。</p>
+<p>映射任务获取输入，映射任务的输出作为输入提供给 Reduce 任务，此 Reduce 任务最终将输出提供给客户端。</p>
+<p>为了更好地理解它，让我们来了解一下MapReduce的解剖结构。</p>
+<p><img src="Anatomy-of-MapReduce.jpg" alt="Anatomy-of-MapReduce"></p>
+<p>MapReduce任务在键值对上工作，因此当我们谈论Map时，Map将输入作为键值，并将输出作为键值列表给出。此键值列表将经历随机播放阶段，键的输入和值列表将转到化简器。</p>
+<p>最后，Reducer 为我们提供了键值对的列表。</p>
+<h4 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h4><ul>
+<li>Hadoop Map Reduce是Hadoop的”处理单元”。</li>
+<li>为了处理Hadoop HDFS存储的大数据，我们使用Hadoop Map Reduce。</li>
+<li>它用于搜索和索引，分类，推荐和分析。</li>
+<li>它具有编程模型，并行编程和大规模分布式模型等功能。</li>
+<li>MapReduce的设计模式是：汇总，热门记录的分类，排序和分析，如连接和选择。</li>
+<li>它只有两个功能，即mapper功能和reducer功能。</li>
+<li>并行处理和数据局部性是Hadoop MapReduce的良好优势。</li>
+<li>MapReduce的过程分为六个阶段，即输入，拆分，映射，洗牌，减少和最终结果</li>
+</ul>
+]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>大数据</tag>
+        <tag>MapReduce</tag>
       </tags>
   </entry>
   <entry>
@@ -2791,36 +2994,54 @@
       </tags>
   </entry>
   <entry>
-    <title>HBase shell命令</title>
-    <url>/Echo/2020/03/13/hbase%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<h4 id="HBase简介"><a href="#HBase简介" class="headerlink" title="HBase简介"></a>HBase简介</h4><p>HBase 命名的起源是 Hadoop database，Hadoop数据库，是NoSQL数据库，基于列式存储而非行式存储。</p>
-<p>HBase是一个分布式的、面向列的、基于Google Bigtable的开源实现。</p>
-<ul>
-<li>利用Hadoop HDFS作为其文件存储系统</li>
-<li>利用Hadoop MapReduce来处理HBase中的海量数据</li>
-<li>利用Zookeeper作为协同服务</li>
+    <title>kafka测试</title>
+    <url>/Echo/2021/11/24/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%BB%84%E4%BB%B6kafka%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<h5 id="kafka是一个事件流平台"><a href="#kafka是一个事件流平台" class="headerlink" title="kafka是一个事件流平台"></a>kafka是一个事件流平台</h5><ul>
+<li><p>什么事件流？，事件流是从事件源实时捕获数据的做法 如数据库、传感器、移动设备、云服务和流形式的软件应用程序 事件； 持久地存储这些事件流以供以后检索； 操作、处理和反应 实时和可追溯​​的事件流； 并将事件流路由到不同的 根据需要使用目标技术。 事件流因此确保了连续的流和解释 数据，以便正确的信息在正确的时间出现在正确的位置。</p>
+</li>
+<li><p>kafka的功能？</p>
+<ol>
+<li><p>要 发布 （写）和 订阅 （读取）的事件流，包括连续的导入/导出 您来自其他系统的数据。</p>
+</li>
+<li><p>持久并可靠存储你想要的事件流</p>
+</li>
+<li><p><strong>处理</strong> 事件发生时或追溯性 事件流。</p>
+</li>
+</ol>
+<h5 id="kafka基本概念了解"><a href="#kafka基本概念了解" class="headerlink" title="kafka基本概念了解"></a>kafka基本概念了解</h5></li>
+<li><p>生产者：<strong>生产者</strong> 是那些向 Kafka 发布（写入）事件的客户端应用程序</p>
+</li>
+<li><p>消费者：订阅（读取和处理）这些事件的</p>
+</li>
+<li><p>主题：主题类似于文件系统中的文件夹，事件就是该文件夹中的文件</p>
+</li>
+<li><p>分区：主题是 <strong>分区的</strong> ，一个主题可以分布在位于不同 Kafka 代理的多个“桶”上。</p>
+</li>
+<li><p>broker：一个 Kafka 服务器也称为 Broker，它接受生产者发送的消息并存入磁盘；Broker 同时服务消费者拉取分区消息的请求，返回目前已经提交的消息一个 Kafka 服务器也称为 Broker，它接受生产者发送的消息并存入磁盘；Broker 同时服务消费者拉取分区消息的请求，返回目前已经提交的消息</p>
+</li>
 </ul>
-<h4 id="HBase数据模型"><a href="#HBase数据模型" class="headerlink" title="HBase数据模型"></a>HBase数据模型</h4><p>HBase是一个稀疏、多维度、有序的映射表。表有行和列组成，列划分为若干个列族/列簇(column family)，每个列族/列簇下面可以有多个普通列。</p>
-<p><img src="5-1Z5091305564M.gif" alt="5-1Z5091305564M"></p>
-<h4 id="HBase-shell-命令"><a href="#HBase-shell-命令" class="headerlink" title="HBase shell 命令"></a>HBase shell 命令</h4><h5 id="进入-HBase-shell"><a href="#进入-HBase-shell" class="headerlink" title="进入 HBase shell"></a>进入 HBase shell</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hbase shell</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="HBase版本状态查看"><a href="#HBase版本状态查看" class="headerlink" title="HBase版本状态查看"></a>HBase版本状态查看</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查询状态</span></span><br><span class="line">status</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查询版本</span></span><br><span class="line">version</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看当前操作用户</span></span><br><span class="line">whoami</span><br><span class="line"><span class="meta">#</span><span class="bash"> 帮助命令</span></span><br><span class="line">help</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看hbase支持的工具</span></span><br><span class="line">tools</span><br></pre></td></tr></table></figure>
-
-<h5 id="DDL操作"><a href="#DDL操作" class="headerlink" title="DDL操作"></a>DDL操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建一个表</span></span><br><span class="line">create<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;column_famaly&#x27;</span>,<span class="string">&#x27;column_famaly1&#x27;</span>,<span class="string">&#x27;column_famaly2&#x27;</span></span><br><span class="line"><span class="comment"># 列出所有表</span></span><br><span class="line">list</span><br><span class="line"><span class="comment"># 获取表的描述</span></span><br><span class="line">describe<span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 删除一个列族</span></span><br><span class="line">alter<span class="string">&#x27;table&#x27;</span>,&#123;NAME=&gt;<span class="string">&#x27;column_famaly&#x27;</span>,METHOD=&gt;<span class="string">&#x27;delete&#x27;</span>&#125;</span><br><span class="line"><span class="comment"># 删除一个表</span></span><br><span class="line"><span class="comment"># ① 要删除的表设置为disable</span></span><br><span class="line"><span class="built_in">disable</span><span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># ② 删除表</span></span><br><span class="line">drop <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 查询表是否存在</span></span><br><span class="line">exists<span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 查看表是否可用</span></span><br><span class="line">is_enabled<span class="string">&#x27;table&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="DML操作"><a href="#DML操作" class="headerlink" title="DML操作"></a>DML操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 插入数据</span></span><br><span class="line">put<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span>,<span class="string">&#x27;name&#x27;</span></span><br><span class="line"><span class="comment"># 获取row1所有数据</span></span><br><span class="line">get <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span></span><br><span class="line"><span class="comment"># 获取表row1，col1所有数据</span></span><br><span class="line">get<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1&#x27;</span></span><br><span class="line"><span class="comment"># 更新一条数据</span></span><br><span class="line">put <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span>,<span class="string">&#x27;name1&#x27;</span></span><br><span class="line"><span class="comment"># 通过时间戳获取数据</span></span><br><span class="line">get <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,&#123;COLUMN=&gt;<span class="string">&#x27;col1:name&#x27;</span>,TIMESTAMP=&gt;1463055736277&#125;</span><br><span class="line"><span class="comment"># 扫描整张表（数据量大时不建议此操作）</span></span><br><span class="line">scan <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 删除一列</span></span><br><span class="line">delete <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span></span><br><span class="line"><span class="comment"># 删除行所有的数据</span></span><br><span class="line">deleteall <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span></span><br><span class="line"><span class="comment"># 统计表中的行数</span></span><br><span class="line">count <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 清空整张表（清空表后，表的分区设置会默认为1不建议）</span></span><br><span class="line">truncate <span class="string">&#x27;table&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="退出操作"><a href="#退出操作" class="headerlink" title="退出操作"></a>退出操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 退出</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment"># 关闭hbase集群（危险操作！！！）</span></span><br><span class="line">shutdown</span><br></pre></td></tr></table></figure>
-
+<h5 id="kafka功能测试-如何验证数据的一致性和有序性"><a href="#kafka功能测试-如何验证数据的一致性和有序性" class="headerlink" title="kafka功能测试-如何验证数据的一致性和有序性"></a>kafka功能测试-如何验证数据的一致性和有序性</h5><p>可以创建一个单分区的Topic，然后自己写一个生产者程序，程序发送的事件流可以从设定值从1到N自增长；写一个消费者程序，单线程消费，将消费到的数据写进文件中，观测有序性；还可以对kafka服务进程直接杀死，进行故障模拟。</p>
+<h5 id="kafka性能测试"><a href="#kafka性能测试" class="headerlink" title="kafka性能测试"></a>kafka性能测试</h5><p>性能压测是系统性问题，需要考量对整体业务的掌握程序，以及对kafka的熟悉程度。压测过程中涉及压测工具选取，监测kafka，压测结果分析。</p>
+<ul>
+<li><p>明确压测场景：明确要压测的场景</p>
+</li>
+<li><p>测试环境准备：在服务器选择，kafka版本，kafka架构以及相关配置参数、业务数据等尽可能与线上环境保持一致</p>
+</li>
+<li><p>压测工具选取：生产者压测使用kafka自带的测试工具kafka-producer-perf-test.sh来进行测试，发送数据推荐使用线上数据导出到本地文件，随机读取进行</p>
+</li>
+<li><p>压测过程观测：首先开启kafka的JMX端口，①可以使用滴滴的Logikm(但是需要自己搭建部署)；②自己通过JMX端口以及官方原生API获取相关指标，CPU、内存、网络等监测可以使用nomn或者top命令来监测</p>
+</li>
+<li><p>压测结果分析：理想状态是系统资源使用达到瓶颈，如未达到则寻找软件资源瓶颈，配合堆栈分析，发现线程阻塞点。</p>
+</li>
+<li><p>压测报告呈现：一般有测试环境说明、测试场景说明、测试过程说明、测试结论（在当前场景下的最佳资源使用以及配置）。</p>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>大数据</category>
       </categories>
       <tags>
-        <tag>大数据</tag>
-        <tag>HBase</tag>
+        <tag>kafka，大数据</tag>
       </tags>
   </entry>
   <entry>
@@ -2935,227 +3156,6 @@
       </categories>
       <tags>
         <tag>成长</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JMeter组件介绍</title>
-    <url>/Echo/2021/12/12/JMeter%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D/</url>
-    <content><![CDATA[<p>在本文中，将熟悉<strong>JMeter 的所有组件，以及如何在测试计划中使用它们</strong>来覆盖所有可能的性能测试场景来测试 AUT（被测应用程序）。</p>
-<h4 id="JMeter的组件"><a href="#JMeter的组件" class="headerlink" title="JMeter的组件"></a>JMeter的组件</h4><p>请参考以下的流程图来了解每个组件及其与JMeter特定模块的关系。</p>
-<p><img src="JmeterFlowDiagram.jpg" alt="Jmeter流程图"></p>
-<h5 id="测试计划–TEST-PLAN"><a href="#测试计划–TEST-PLAN" class="headerlink" title="测试计划–TEST PLAN"></a>测试计划–TEST PLAN</h5><p>测试计划中包含的所有内容都是按从上到下的顺序或者测试计划中定义的顺序执行。测试计划可以尽可能简单，担忧线程组、采样器、监听器，可以添加更多的元素如配置元素、预处理器、控制器或前置/后置处理器。</p>
-<p>JMeter是通过虚拟用户或线程来衡量性能，这些虚拟用户或者线程会连接被测服务器，就像真实用户向服务器发送请求一样。因此，每个测试计划都应该有我们JMeter中所称的虚拟用户或者线程组–THREAD GROUP。</p>
-<p>测试计划的要点：</p>
-<ul>
-<li>运行前应保存测试计划</li>
-<li>JMeter文件或者测试计划以JMX文件的格式保存</li>
-<li>还可以将测试计划保存为不同方式，可以在其他测试场景中使用</li>
-</ul>
-<h5 id="线程组–THREAD-GROUP"><a href="#线程组–THREAD-GROUP" class="headerlink" title="线程组–THREAD GROUP"></a>线程组–THREAD GROUP</h5><p>线程组是一组用户，他们将同时以定义好的顺序访问被测服务器。可以通过右键单击测试计划将线程组添加到测试计划中。</p>
-<p><img src="image-20211213103617620.png" alt="线程组"></p>
-<p>1、你可以重命名线程组名称</p>
-<ul>
-<li><strong>Number of Thread(Users)</strong> ：它定义了虚拟用户的数量。出于测试目的，我们应该只生成有限的负载，因为一次生成大量负载意味着消耗大量线程，最终会导致 CPU 使用率高。</li>
-<li><strong>Ramp Up Period</strong> ：该字段在控制负载生成方面非常重要。加速周期定义了产生总负载的时间量。</li>
-<li><strong>Loop COUNT</strong>：定义了线程组将执行的次数。如果您选中 Forever 复选框，您的测试将永远运行，除非您手动停止它。这可用于测试诸如“如果您的服务器在持续加载几分钟内没有崩溃”之类的内容。</li>
-</ul>
-<p>取样器–Sample</p>
-<p>JMeter如何知道发送到服务器的请求类型是什么？</p>
-<p>是通过取样器。取样器是必须要添加到测试计划中的，因为只有它可以让JMeter知道需要发送那种类型的请求到那个服务器上以及需要携带什么样的参数。请求是HTTP、websocket、FTP、TCP、SMTP等。</p>
-<p>采样器只能添加到线程组，而不是直接在测试计划下，因为线程组需要使用采样器向被测服务器 URL 发送请求。采样器可以通过路径Thread Group -&gt; Sampler -&gt; HTTP Request 添加。</p>
-<h6 id="HTTP请求示例"><a href="#HTTP请求示例" class="headerlink" title="HTTP请求示例"></a>HTTP请求示例</h6><p><img src="image-20211213111816981.png" alt="HTTP示例"></p>
-<ul>
-<li>server name or ip ：输入服务的IP或者域名</li>
-<li>path： 请求的路径</li>
-<li>method：请求方式，常见的有post、get、put、delete等</li>
-<li>parameter：请求参数，如需要可以添加，还可以在config Element中添加httpcookie、请求头配置等</li>
-<li>body data：请求体</li>
-</ul>
-<h5 id="监听器-Listener"><a href="#监听器-Listener" class="headerlink" title="监听器-Listener"></a>监听器-Listener</h5><p>截止到这里，我们已经看到了取样器向服务器发送请求，但是还没有分析响应。性能测试就是分析各种形式的服务器响应，然后将呈现给客户端。监听器用于显示测试执行的结果，以便测试人员了解统计信息。在JMeter中大约有15种监听器，但是常用的是table、tree和graph。</p>
-<p>监听器可以直接在测试计划下或取样器下添加。不同之处在于，当您在取样器下添加侦听器时，它只会显示该取样器的结果。如果我们直接在测试计划下添加取样器，它会显示层次结构中所有取样器的结果。</p>
-<p>会看到如下结果：</p>
-<p><img src="image-20211214162144747.png" alt="image-20211214162144747"></p>
-<ul>
-<li>Label：一般展示为采样器名称</li>
-<li>samples：请求的总数量</li>
-<li>average：总请求平均耗时</li>
-<li>median:总请求耗时中位数</li>
-<li>90%Line：总请求中90%请求耗时</li>
-<li>95%Line：总请求中95%请求耗时</li>
-<li>99%Line：总请求中99%请求耗时</li>
-<li>min：所有请求中最小耗时</li>
-<li>max：所有请求中最大耗时</li>
-<li>Error：所有请求发生的错误率（一般有错误产生可以认为已经到达瓶颈）</li>
-<li>throughput:即QPS</li>
-<li>rec/sent:发送和接受的网速</li>
-</ul>
-<h5 id="断言–Assertions"><a href="#断言–Assertions" class="headerlink" title="断言–Assertions"></a>断言–Assertions</h5><p>我们已经介绍了JMeter如何击中服务器以及如何通过侦听器显示响应。为了确保收到的响应是正确的，并且符合预期，我们需要添加断言。断言只是我们需要放在响应上以比较结果的验证。有以下断言类型</p>
-<ul>
-<li>响应断言</li>
-<li>持续时间断言</li>
-<li>大小断言</li>
-<li>XML断言</li>
-<li>HTML断言</li>
-</ul>
-<h6 id="响应时间断言"><a href="#响应时间断言" class="headerlink" title="响应时间断言"></a>响应时间断言</h6><p>在响应断言中，我们可以添加自己的模式字符串，然后将它们与从服务器收到的响应进行比较。<em>例如，</em>当任何请求成功返回某些响应时，您都知道响应代码为 200。因此，如果我们添加模式字符串”响应代码 = 202”，则测试用例应该失败。</p>
-<p><img src="image-20211214195434442.png" alt="image-20211214195434442"></p>
-<h6 id="持续时间断言"><a href="#持续时间断言" class="headerlink" title="持续时间断言"></a>持续时间断言</h6><p>持续时间断言非常重要，可验证服务器是否在给定的时间内进行了响应。这可用于我们需要对 100 个请求进行采样并确保每次收到响应都在基准限制范围内的情况。</p>
-<p><img src="image-20211214202706648.png" alt="image-20211214202706648"></p>
-<p>XML 断言验证响应数据中是否包含正确的 XML 文档，HTML 断言验证从服务器收到的响应的 HTML 语法。</p>
-<h5 id="元素配置–config-ELements"><a href="#元素配置–config-ELements" class="headerlink" title="元素配置–config ELements"></a>元素配置–config ELements</h5><p>发送到服务器的请求可以使用一些在实际请求之前执行的配置元素进一步参数化。一个简单的示例可能是从使用 CSV 数据集配置的 CSV 文件中读取变量的值。常用的配置元素有如下这些：</p>
-<ul>
-<li>CSV数据集配置</li>
-<li>用户定义的参数</li>
-<li>HTTPS请求默认</li>
-<li>HTTPS缓存管理器</li>
-<li>HTTPS COOKIE MANAGER</li>
-</ul>
-<h6 id="csv数据集配置"><a href="#csv数据集配置" class="headerlink" title="csv数据集配置"></a>csv数据集配置</h6><p>CSV数据集配置可帮助Jmeter从CSV文件中选取某些参数的值，而不是在每个单独的请求中传递不同的参数。<em>例如，</em>如果我们需要使用一组不同的用户和密码来测试登录功能，那么我们可以在CSV文件中创建两列并在那里输入值，以便JMeter可以为发送到服务器的每个请求选择一个。</p>
-<p><img src="image-20211216160753990.png" alt="image-20211216160753990"></p>
-<h6 id="用户定义的变量-User-Defined-Variables"><a href="#用户定义的变量-User-Defined-Variables" class="headerlink" title="用户定义的变量-User Defined Variables"></a>用户定义的变量-User Defined Variables</h6><p>它可以帮助Jmeter从预定义的变量中选取值。<em>例如，</em>支持您需要创建一个测试计划，您需要在同一URL上添加许多HTTP请求，并且可能存在客户端计划稍后将其迁移到某些不同 URL.So 的情况，以避免在每个请求中更新URL，我们可以告诉JMeter从UDV（用户定义的变量）中选取URL，该UDV可以在以后更新以处理对更新的URL的所有请求。</p>
-<p>因此，为了避免在每个请求中更新URL，我们可以告诉JMeter从UDV（用户定义的变量）中选择URL，该UDV可以在以后更新以处理对更新URL的所有请求。</p>
-<p><img src="image-20211216161303245.png" alt="image-20211216161303245"></p>
-<h6 id="HTTP-请求默认值"><a href="#HTTP-请求默认值" class="headerlink" title="HTTP 请求默认值"></a>HTTP 请求默认值</h6><p>此配置元素对于指定 https 请求的默认值非常有用。为了指导您更多，请举个例子，我们需要在Google服务器上命中50个不同的请求。在这种情况下，如果我们添加HTTP请求默认值，则无需指定服务器名称，路径或任何其他属性，如端口号，连接超时属性。在 HTTP 请求默认配置元素中指定的任何内容都将由所有 HTTP 请求继承。</p>
-<p>在这种情况下，如果我们添加HTTP请求默认值，则无需指定服务器名称，路径或任何其他属性，如端口号，连接超时属性。在 HTTP 请求默认配置元素中指定的任何内容都将由所有 HTTP 请求继承。</p>
-<p><img src="image-20211216161420935.png" alt="image-20211216161420935"></p>
-<p><strong>HTTP Cache Manager</strong>和<strong>HTTP Cookie Manager</strong>用于使 JMeter 充当实时浏览器。HTTP缓存管理器可以在每个请求后清除缓存，而另一个可以管理cookie设置。</p>
-<h5 id="逻辑控制器和定时器"><a href="#逻辑控制器和定时器" class="headerlink" title="逻辑控制器和定时器"></a>逻辑控制器和定时器</h5><p>逻辑控制器和定时器帮助Jmeter控制交易流。如果需要测试任何服务器，计时器可确保每个线程中的延迟。<em>例如，</em>如果我们需要FTP请求在HTTP请求完成后等待5秒，我们可以在那里添加计时器。</p>
-<p>逻辑控制器用于定义发送到服务器的请求流。它还可以让您分别存储每个模块的请求，例如登录和注销。</p>
-<p><img src="image-20211216161518560.png" alt="image-20211216161518560"></p>
-<h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><p>到目前为止，一定都熟悉了JMeter的组件，并尝试过使用它，并且一定面临一些问题。在下一篇文章中，将介绍一些涵盖移动领域的实时性能测试场景，以便大家获得更多关于JMeter的实践知识。</p>
-<p><strong>敬请期待！下一篇文章将帮助管理请求，分析结果并与性能测试的基准进行比较。</strong></p>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>性能测试，JMeter</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>kafka测试</title>
-    <url>/Echo/2021/11/24/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%BB%84%E4%BB%B6kafka%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<h5 id="kafka是一个事件流平台"><a href="#kafka是一个事件流平台" class="headerlink" title="kafka是一个事件流平台"></a>kafka是一个事件流平台</h5><ul>
-<li><p>什么事件流？，事件流是从事件源实时捕获数据的做法 如数据库、传感器、移动设备、云服务和流形式的软件应用程序 事件； 持久地存储这些事件流以供以后检索； 操作、处理和反应 实时和可追溯​​的事件流； 并将事件流路由到不同的 根据需要使用目标技术。 事件流因此确保了连续的流和解释 数据，以便正确的信息在正确的时间出现在正确的位置。</p>
-</li>
-<li><p>kafka的功能？</p>
-<ol>
-<li><p>要 发布 （写）和 订阅 （读取）的事件流，包括连续的导入/导出 您来自其他系统的数据。</p>
-</li>
-<li><p>持久并可靠存储你想要的事件流</p>
-</li>
-<li><p><strong>处理</strong> 事件发生时或追溯性 事件流。</p>
-</li>
-</ol>
-<h5 id="kafka基本概念了解"><a href="#kafka基本概念了解" class="headerlink" title="kafka基本概念了解"></a>kafka基本概念了解</h5></li>
-<li><p>生产者：<strong>生产者</strong> 是那些向 Kafka 发布（写入）事件的客户端应用程序</p>
-</li>
-<li><p>消费者：订阅（读取和处理）这些事件的</p>
-</li>
-<li><p>主题：主题类似于文件系统中的文件夹，事件就是该文件夹中的文件</p>
-</li>
-<li><p>分区：主题是 <strong>分区的</strong> ，一个主题可以分布在位于不同 Kafka 代理的多个“桶”上。</p>
-</li>
-<li><p>broker：一个 Kafka 服务器也称为 Broker，它接受生产者发送的消息并存入磁盘；Broker 同时服务消费者拉取分区消息的请求，返回目前已经提交的消息一个 Kafka 服务器也称为 Broker，它接受生产者发送的消息并存入磁盘；Broker 同时服务消费者拉取分区消息的请求，返回目前已经提交的消息</p>
-</li>
-</ul>
-<h5 id="kafka功能测试-如何验证数据的一致性和有序性"><a href="#kafka功能测试-如何验证数据的一致性和有序性" class="headerlink" title="kafka功能测试-如何验证数据的一致性和有序性"></a>kafka功能测试-如何验证数据的一致性和有序性</h5><p>可以创建一个单分区的Topic，然后自己写一个生产者程序，程序发送的事件流可以从设定值从1到N自增长；写一个消费者程序，单线程消费，将消费到的数据写进文件中，观测有序性；还可以对kafka服务进程直接杀死，进行故障模拟。</p>
-<h5 id="kafka性能测试"><a href="#kafka性能测试" class="headerlink" title="kafka性能测试"></a>kafka性能测试</h5><p>性能压测是系统性问题，需要考量对整体业务的掌握程序，以及对kafka的熟悉程度。压测过程中涉及压测工具选取，监测kafka，压测结果分析。</p>
-<ul>
-<li><p>明确压测场景：明确要压测的场景</p>
-</li>
-<li><p>测试环境准备：在服务器选择，kafka版本，kafka架构以及相关配置参数、业务数据等尽可能与线上环境保持一致</p>
-</li>
-<li><p>压测工具选取：生产者压测使用kafka自带的测试工具kafka-producer-perf-test.sh来进行测试，发送数据推荐使用线上数据导出到本地文件，随机读取进行</p>
-</li>
-<li><p>压测过程观测：首先开启kafka的JMX端口，①可以使用滴滴的Logikm(但是需要自己搭建部署)；②自己通过JMX端口以及官方原生API获取相关指标，CPU、内存、网络等监测可以使用nomn或者top命令来监测</p>
-</li>
-<li><p>压测结果分析：理想状态是系统资源使用达到瓶颈，如未达到则寻找软件资源瓶颈，配合堆栈分析，发现线程阻塞点。</p>
-</li>
-<li><p>压测报告呈现：一般有测试环境说明、测试场景说明、测试过程说明、测试结论（在当前场景下的最佳资源使用以及配置）。</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>大数据</category>
-      </categories>
-      <tags>
-        <tag>kafka，大数据</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>什么是MapReduce</title>
-    <url>/Echo/2022/01/03/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/</url>
-    <content><![CDATA[<h4 id="为什么需要MapReduce？"><a href="#为什么需要MapReduce？" class="headerlink" title="为什么需要MapReduce？"></a>为什么需要MapReduce？</h4><p><img src="Map-Reduce.jpg" alt="Map-Reduce"></p>
-<p>MapReduce是**”处理单元”，**使用此组件，我们可以处理存储在Hadoop HDFS上的大数据。</p>
-<p>但确切的要求是为什么我们需要Hadoop的这个组件？</p>
-<p>存储在Hadoop HDFS上的大数据和传统存储不一样。数据被划分为存储在各个DataNodes中的数据块。因此，整个数据不会存储在一个集中的位置。</p>
-<p>因此，像Java这样的本机客户端应用程序或任何此类应用程序无法以当前格式处理数据，我们需要一个特殊的框架来处理存储在各个DataNodes中的碎片化数据块。</p>
-<p>处理是使用Hadoop MapReduce处理完成的。</p>
-<h4 id="MapReduce简述"><a href="#MapReduce简述" class="headerlink" title="MapReduce简述"></a>MapReduce简述</h4><p><img src="NutShell-MapReduce.jpg" alt="NutShell-MapReduce"></p>
-<p>如图所示显示了MapReduce的功能和用途。</p>
-<p>让我们从MapReduce的应用程序开始及如何应用。它用于分类器，索引和搜索，以及在电子商务网站（Flipkart，Amazon等）上创建推荐引擎。它也被几家公司用作分析。</p>
-<p>当我们从功能的角度来看，它是一个编程模型，可以用于像Hadoop HDFS这样的大规模分布式模型，并且具有并行编程的功能，使其非常有用。</p>
-<p>当我们在Map Reduce中看到函数时，会执行两个函数，即Map Function和Reduce函数。</p>
-<p>这项技术已经由谷歌，雅虎，Facebook等主要组织实施，也被Apache Hadoop采用，如HDFS，PIG，HIVE，并使用HBase存储数据或执行和处理大数据，也称为No-SQL。</p>
-<h5 id="MapReduce的优点"><a href="#MapReduce的优点" class="headerlink" title="MapReduce的优点"></a>MapReduce的优点</h5><p>1、并行处理</p>
-<p><img src="Advantage.jpg" alt="Advantage"></p>
-<p>整个数据块被Hadoop HDFS分成HDFS块，MapReduce并行处理这些数据块，因此处理变得很快。</p>
-<p>2、数据局部性</p>
-<p>这是Hadoop MapReduce给出的一个多功能的东西，即我们可以在它所在的位置处理数据。</p>
-<p><em><strong>这是什么意思？</strong></em></p>
-<p>在之前的HDFS教程中，我们了解到我们移动到Hadoop Cluster中的数据被划分为HDFS块，这些块被保存到SlaveMachines或DataNodes中。Map-Reduce将处理和逻辑感知到数据驻留在HDFS块中的相应从节点或DataNodes。</p>
-<p>处理在多个位置的较小数据块上并行执行。这节省了大量时间以及将大数据从一个位置移动到另一个位置所需的网络带宽。</p>
-<p>请记住，我们正在处理的数据是分解成块的大数据，如果我们开始将大数据直接通过分配的网络通道移动到集中式计算机中并对其进行处理，那么它将不会给我们带来任何优势，因为我们将消耗整个带宽将数据移动到集中式服务器。</p>
-<p>因此，使用Hadoop MapReduce，我们不只是在进行”并行处理”，我们还将数据处理到存在数据块的相应从节点或DataNodes上，因此我们也”节省了大量网络带宽”，这是非常有益的。</p>
-<p>最后，SlaveMachines完成了对存储在SlaveMachines的数据的处理，它们将结果发送回主机器，因为结果不如SlaveMachines上存储的块大。因此，它不会占用大量带宽。</p>
-<p>从属计算机将结果发送回主计算机，这些结果将聚合在一起，最终结果将发送回提交作业的客户端计算机。</p>
-<p><em><strong>如何决定哪些数据应该在哪个DataNode上处理？</strong></em></p>
-<p>客户端将作业提交给资源管理器，资源管理器是提供在数据所在的相应 DataNode 上执行作业的方向的资源管理器，它根据最近的可用 DataNode 做出决定，以便不会使用大量网络带宽。</p>
-<h4 id="传统方式VSMapReduce方式"><a href="#传统方式VSMapReduce方式" class="headerlink" title="传统方式VSMapReduce方式"></a>传统方式VSMapReduce方式</h4><p>假设有五个保险公司分支机构，人们来申请人寿保险单。现在，还有一家保险公司的总部，该总部拥有有关可用和所在分支机构的所有信息。</p>
-<p>但是，当人们来各自的分行A，B，C，D，E申请人寿保险时，保单申请保留在各自的分行本身，并且该信息不会与保险公司总部共享。</p>
-<p>1、传统方式</p>
-<p>传统为了上解决这个问题，所有申请将被转移到保险公司总部，然后申请过程将开始。</p>
-<p>在这种情况下，我们需要将所有申请转移到保险公司总部，这是一件代价高昂的事情，即必须从保险公司分支机构收集所有申请并将其带到保险公司总部。</p>
-<p>这就是成本以及进行此活动的巨大努力的方式。</p>
-<p><img src="Traditional-way-1.jpg" alt="Traditional-way-1"></p>
-<p><img src="Traditional-way-2.jpg" alt="Traditional-way-2"></p>
-<p>另一个方面是保险公司总部负担过重，因为它必须处理人民在各自分支机构申请保单的所有申请。</p>
-<p>由于保险公司正在处理所有分支机构都适用的申请，因此需要很长时间。最后，这个过程效果不是很好。</p>
-<p>2、MapReduce方式</p>
-<p>MapReduce遵循Data Locality，即它不会将所有应用程序带到保险公司总部，而是并行处理各个分支机构本身的应用程序。</p>
-<p><img src="MapReduce-Way.jpg" alt="MapReduce-Way"></p>
-<p>一旦应用于每个分支机构的申请得到处理，他们就会将处理后的详细信息发回保险公司总部。</p>
-<p>现在，保险公司总部只需要汇总从各自分支机构发送的已处理申请的数量，并将详细信息保存在各自的数据库或存储中心。</p>
-<p>通过这种方式，处理将非常容易和快速，保单持有人可以立即获得福利。</p>
-<h4 id="MapReduce运行原理"><a href="#MapReduce运行原理" class="headerlink" title="MapReduce运行原理"></a>MapReduce运行原理</h4><p>在前面的示例中，我们有一个分布在各个分支之间的输入（应用程序），每个输入都由相应的 Map 函数处理。</p>
-<p>我们知道MapReduce有两个函数，即Map Function和Reduce Function。</p>
-<p>在各个分支上完成的处理部分由 Map 函数完成。因此，每个分支机构中的每个输入（应用程序）都使用Map函数进行处理，之后处理后的详细信息被发送到保险公司总部，聚合部分由Reduce功能完成。</p>
-<p>聚合的已处理应用程序详细信息作为输出提供。</p>
-<p><img src="MapReduce-in-Detail.jpg" alt="MapReduce-in-Detail"></p>
-<p>这就是我们前面的例子中发生的事情。整个过程分为map任务和reduce任务。</p>
-<p>映射任务获取输入，映射任务的输出作为输入提供给 Reduce 任务，此 Reduce 任务最终将输出提供给客户端。</p>
-<p>为了更好地理解它，让我们来了解一下MapReduce的解剖结构。</p>
-<p><img src="Anatomy-of-MapReduce.jpg" alt="Anatomy-of-MapReduce"></p>
-<p>MapReduce任务在键值对上工作，因此当我们谈论Map时，Map将输入作为键值，并将输出作为键值列表给出。此键值列表将经历随机播放阶段，键的输入和值列表将转到化简器。</p>
-<p>最后，Reducer 为我们提供了键值对的列表。</p>
-<h4 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h4><ul>
-<li>Hadoop Map Reduce是Hadoop的”处理单元”。</li>
-<li>为了处理Hadoop HDFS存储的大数据，我们使用Hadoop Map Reduce。</li>
-<li>它用于搜索和索引，分类，推荐和分析。</li>
-<li>它具有编程模型，并行编程和大规模分布式模型等功能。</li>
-<li>MapReduce的设计模式是：汇总，热门记录的分类，排序和分析，如连接和选择。</li>
-<li>它只有两个功能，即mapper功能和reducer功能。</li>
-<li>并行处理和数据局部性是Hadoop MapReduce的良好优势。</li>
-<li>MapReduce的过程分为六个阶段，即输入，拆分，映射，洗牌，减少和最终结果</li>
-</ul>
-]]></content>
-      <categories>
-        <category>大数据</category>
-      </categories>
-      <tags>
-        <tag>大数据</tag>
-        <tag>MapReduce</tag>
       </tags>
   </entry>
 </search>
