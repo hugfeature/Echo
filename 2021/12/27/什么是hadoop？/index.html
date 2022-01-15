@@ -22,7 +22,7 @@
 <script class="next-config" data-name="main" type="application/json">{"hostname":"hugfeature.github.io","root":"/Echo/","images":"/Echo/images","scheme":"Gemini","darkmode":false,"version":"8.8.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":{"gittalk":{"order":-2}}},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/Echo/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Echo/js/config.js"></script>
 <meta name="description" content="Apache Hadoop是一个开源框架，用于管理所有类型的数据（结构化，非结构化和半结构化）。 众所周知，如果我们想处理，存储和管理我们的数据，那么RDBMS是最好的解决方案。但是，数据应采用结构化格式，以便使用 RDBMS 进行处理。此外，如果数据大小增加，则RDBMS无法处理它，我们需要定期执行数据库清理。 这可能会导致历史数据丢失，并且无法在某些行业（如天气预报，银行，保险，销售等）中生成">
 <meta property="og:type" content="article">
-<meta property="og:title" content="什么是hadoop？">
+<meta property="og:title" content="hadoop是什么？">
 <meta property="og:url" content="https://hugfeature.github.io/Echo/2021/12/27/%E4%BB%80%E4%B9%88%E6%98%AFhadoop%EF%BC%9F/index.html">
 <meta property="og:site_name" content="贤の博客">
 <meta property="og:description" content="Apache Hadoop是一个开源框架，用于管理所有类型的数据（结构化，非结构化和半结构化）。 众所周知，如果我们想处理，存储和管理我们的数据，那么RDBMS是最好的解决方案。但是，数据应采用结构化格式，以便使用 RDBMS 进行处理。此外，如果数据大小增加，则RDBMS无法处理它，我们需要定期执行数据库清理。 这可能会导致历史数据丢失，并且无法在某些行业（如天气预报，银行，保险，销售等）中生成">
@@ -42,10 +42,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://hugfeature.github.io/Echo/2021/12/27/%E4%BB%80%E4%B9%88%E6%98%AFhadoop%EF%BC%9F/","path":"2021/12/27/什么是hadoop？/","title":"什么是hadoop？"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://hugfeature.github.io/Echo/2021/12/27/%E4%BB%80%E4%B9%88%E6%98%AFhadoop%EF%BC%9F/","path":"2021/12/27/什么是hadoop？/","title":"hadoop是什么？"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>什么是hadoop？ | 贤の博客</title>
+<title>hadoop是什么？ | 贤の博客</title>
   
 
 
@@ -151,7 +151,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#hadoop-PK-RDMBS"><span class="nav-text">hadoop PK RDMBS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hadoop-%E5%8A%9F%E8%83%BD"><span class="nav-text">hadoop 功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hadoop-%E6%9E%B6%E6%9E%84"><span class="nav-text">Hadoop 架构</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#hadoop-VS-RDMBS"><span class="nav-text">hadoop VS RDMBS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hadoop-%E5%8A%9F%E8%83%BD"><span class="nav-text">hadoop 功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hadoop-%E6%9E%B6%E6%9E%84"><span class="nav-text">Hadoop 架构</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -210,7 +210,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          什么是hadoop？
+          hadoop是什么？
         </h1>
 
         <div class="post-meta-container">
@@ -258,7 +258,7 @@
 <p>Hadoop是一个基于Java的开源编程框架，支持在分布式计算环境中存储和处理大型数据集。</p>
 <p>Hadoop基于使用商用硬件的集群概念。它不需要任何复杂的配置，我们可以用更便宜，简单和轻量级的配置硬件建立Hadoop环境。</p>
 <p>简而言之，群集概念是以复制格式存储在多台计算机上的数据，因此，当数据所在的某个位置发生任何问题或灾难时，必须在另一个位置上安全地提供该数据的重复副本。</p>
-<h4 id="hadoop-PK-RDMBS"><a href="#hadoop-PK-RDMBS" class="headerlink" title="hadoop PK RDMBS"></a>hadoop PK RDMBS</h4><table>
+<h4 id="hadoop-VS-RDMBS"><a href="#hadoop-VS-RDMBS" class="headerlink" title="hadoop VS RDMBS"></a>hadoop VS RDMBS</h4><table>
 <thead>
 <tr>
 <th>Feature</th>
@@ -372,8 +372,8 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/Echo/2021/12/19/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%A7%E6%95%B0%E6%8D%AE/" rel="prev" title="什么是大数据">
-                  <i class="fa fa-chevron-left"></i> 什么是大数据
+                <a href="/Echo/2021/12/19/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%A7%E6%95%B0%E6%8D%AE/" rel="prev" title="大数据是什么？">
+                  <i class="fa fa-chevron-left"></i> 大数据是什么？
                 </a>
             </div>
             <div class="post-nav-item">
