@@ -1,40 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>20个实用软件测试技巧</title>
-    <url>/Echo/2021/05/01/20%E4%B8%AA%E5%AE%9E%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%8A%80%E5%B7%A7/</url>
-    <content><![CDATA[<p>以下是个人总结的20个软件测试过程中的技巧</p>
-<p>1、学会彻底分析测试结果。不要忽略任何测试结果。最终测试结果可能是”pass”或”fail”，但如果对”fail”的根本原因进行故障分析并提供问题的解决方案。如果测试人员不仅记录错误，而且还提供解决方案，那么待遇可想而知。</p>
-<p>2、了解如何在每次测试应用程序时最大限度地提高测试覆盖率。100%的测试覆盖率可能是不可能的，但是，总是可以尝试接近它。</p>
-<p>3、为了确保最大的测试覆盖率，请将被测应用程序 分解为较小的功能模块。在单个单元模块上编写测试用例。此外，如果可以的话，将这些模块分解成更小的部分，拆分到不能拆分为止。</p>
-<p>假设我们已将网站应用程序划分为多个模块，并且”添加用户信息”是其中一个模块。可以将此用户信息页面分解为较小的部分，用于编写测试用例：UI测试、安全测试、用户信息表单的功能测试等部分。在输入字段中应用所有形式的字段类型和大小测试、否定和验证测试，并编写所有此类测试用例以获得最大覆盖率。</p>
-<p>4、在编写测试用例时，我们必须首先为预期的功能编写测试用例，就是根据需求为正向条件编写测试用例。然后为反向或者无效条件编写测试用例。这些将涵盖受测应用程序的预期和意外行为。</p>
-<p>5、积极思考。开始测试应用程序，目的是查找bug/错误。不要事先认为应用程序中不会有任何错误。如果以查找错误为目的测试应用程序，那么一定会成功找到这些微妙的bug。</p>
-<p>6、在需求分析和设计阶段编写测试用例。通过这种方式，您可以确保所有要求都是可测试的。</p>
-<p>7、在编写代码之前，使测试用例可供开发人员使用。不要一直等待获得最终的应用程序版本才开始编写测试用例进行测试，认为这样可以记录更多错误。让开发人员彻底分析测试用例，以开发高质量的应用程序。这也将节省返工时间。</p>
-<p>8、如果可以，对测试用例进行分组用以进行回归测试，将确保快速有效的手动回归测试。</p>
-<p>9、需要关键响应时间的应用程序应进行全面的性能测试。性能测试是许多应用程序的关键部分。对于手动测试测试人员来说这是最忽略的部分，因为在性能测试中缺乏所需的大量数据。寻找测试应用程序性能的方法。如果无法手动创建测试数据，请编写一些脚本来创建用于性能测试的测试数据，或要求开发人员为您编写一个。</p>
-<p>10、程序员不应该测试自己的代码。开发应用程序的基本单元测试应该足以让开发人员为测试人员发布应用程序。但是测试人员不应强迫开发人员发布产品进行测试。从测试领导到测试经理，每个人都知道模块/更新何时发布进行测试，他们可以相应地估计测试时间。这在敏捷项目环境中是常见的。</p>
-<p>11、超越需求测试。测试应用程序不应执行的操作。</p>
-<p>12、在进行回归测试时，请使用 Bug 图（bug管理工具生成）。 bug 图可用于预测应用程序中最可能出现 bug 部分。</p>
-<p>13、记下在测试时学到的新术语和概念。在测试任何应用程序时保持文本文件处于打开状态。记录其中的测试进度和观察结果。在准备最终测试发布报告时使用记录的观察结果。这个习惯将帮助我们提供完整明确的测试报告和发布详细信息。</p>
-<p>14、很多时候，测试人员或开发人员会对受测应用程序的代码库进行更改。这是开发或测试环境中的必要步骤，避免像在银行项目中那样执行实时交易处理。记下为测试目的所做的所有此类代码更改，并在最终发布时确保已从最终的客户端部署文件资源中删除了所有这些更改。</p>
-<p>15、使开发人员远离测试环境。这是检测发布或部署文档中缺少的任何配置更改的必需步骤。有时，开发人员会进行一些系统或应用程序配置更改，但忘记在部署步骤中提及这些更改。如果开发人员无法访问测试环境，他们就不会意外地在测试环境中进行此类更改，以及如何在正确位置捕获的缺失内容。</p>
-<p>16、从软件需求和设计阶段开始让测试人员参与进来是一种很好的做法。通过这种方式，测试人员可以获得有关应用程序准确的信息，从而获得详细的测试覆盖率。如果您没有被要求参与此开发周期，那么您可以向您的主管或经理提出请求，让您的测试团队参与所有决策过程或会议。</p>
-<p>17、测试团队应与其组织中的其他团队分享最佳测试实践和经验。</p>
-<p>18、增加与开发人员的沟通，以了解有关产品的更多信息。尽可能进行面对面的沟通，以快速解决争议并避免任何误解。但是，当您了解要求或解决任何争议时，请确保以与电子邮件相同的覆盖通信方式进行沟通。不要相信任何口头内容。（这个要自己悟）</p>
-<p>19、不要没有时间去做优先级高的测试任务。将测试工作的优先级从高到低排序，并相应地规划您的工作。分析所有相关风险，确定工作的优先级。</p>
-<p>20、写一份清晰，描述性和明确的错误报告。不仅要提供详细bug描述和发现步骤，还要提供bug的影响和所有可能的解决方案。</p>
-<p>永远不要忘记，测试是一项创造性和具有挑战性的任务。这写完全取决于您如何处理这个挑战的技能和经验。</p>
-<p><strong>交给您：</strong></p>
-<p>在下面的评论中分享您自己的测试经验、想法或测试秘诀肯定会使本文更加有趣和有用！</p>
+    <title>BMCweb解释</title>
+    <url>/Echo/2020/01/17/BMCweb%E8%A7%A3%E9%87%8A/</url>
+    <content><![CDATA[<p><strong>UID****：</strong>定位作用，控制定位灯是否亮起，便于寻找机器</p>
+<p><strong>循环开机</strong>：服务器先关机再开机</p>
+<p><strong>重启</strong>：不关闭电源（热开机）的情况下重新启动系统</p>
+<p>**软关机:**先执行操作系统的关机再关闭系统</p>
+<p><strong>CPU****速率</strong>：cup主频，即CPU<a href="https://baike.baidu.com/item/%E5%86%85%E6%A0%B8">内核</a>工作的<a href="https://baike.baidu.com/item/%E6%97%B6%E9%92%9F%E9%A2%91%E7%8E%87/103708">时钟频率</a>。CPU的主频表示在CPU内数字<a href="https://baike.baidu.com/item/%E8%84%89%E5%86%B2">脉冲</a>信号震荡的速度，主频和实际的<a href="https://baike.baidu.com/item/%E8%BF%90%E7%AE%97%E9%80%9F%E5%BA%A6">运算速度</a>存在一定的关系，但没有一个定量，因为CPU的运算速度还要看CPU的流水线的各方面的性能指标（<a href="https://baike.baidu.com/item/%E7%BC%93%E5%AD%98">缓存</a>、<a href="https://baike.baidu.com/item/%E6%8C%87%E4%BB%A4%E9%9B%86">指令集</a>，CPU的<a href="https://baike.baidu.com/item/%E4%BD%8D%E6%95%B0">位数</a>等等）。</p>
+<p><strong>核心</strong>（Die）又称为内核，是CPU最重要的组成部分。CPU中心那块隆起的芯片就是核心， CPU所有的计算、接受/存储命令、处理数据都由核心执行。各种CPU核心都具有固定的逻辑结构，一级缓存、二级缓存、执行单元、指令级单元和总线接口等逻辑单元都会有科学的布局。</p>
+<p><strong>CPU****的核心数</strong>是指物理上，也就是硬件上存在着几个核心。比如，双核就是包括2个相对独立的CPU核心单元组，四核就包含4个相对独立的CPU核心单元组。</p>
+<p><strong>TDP</strong>： Thermal Design Power——散热设计功耗</p>
+<p>大小：一级缓存&lt;二级缓存&lt;三级缓存</p>
+<p>速度：一级缓存&gt;二级缓存&gt;三级缓存</p>
+<p>当CPU需要写入内存的时候通常只更新<a href="http://www.baidu.com/s?wd=%E4%B8%89%E7%BA%A7%E7%BC%93%E5%AD%98&tn=SE_PcZhidaonwhc_ngpagmjz&rsv_dl=gh_pc_zhidao">三级缓存</a>，如果数据写入频繁将会更新到二级乃至一级缓存</p>
+<p><strong>网络控制器</strong>:网卡，又称<a href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E9%80%82%E9%85%8D%E5%99%A8/214428">网络适配器</a>或网络接口卡（NIC），英文名为Network Interface Card。</p>
+<p><strong>带宽</strong>：单位时间内能传输的数据量</p>
+<p><strong>硬盘：</strong>硬盘是集精密机械、微电子电路、电磁转换为一体的电脑存储设备，它存储着电脑系统资源和重要的信息及数据</p>
+<p><strong>额定功率</strong>：正常工作下的功率</p>
+<p><strong>错峰上电</strong>：设定一个时间让服务器随机开机</p>
+<p><strong>PIN</strong>：输入功率</p>
+<p><strong>POUT</strong>:输出功率</p>
+<p><strong>Iin</strong>：电源输入电流</p>
+<p><strong>Iout</strong>:电源电流输出</p>
+<p><strong>Vin</strong>:电源输入电压</p>
+<p><strong>Vout</strong>:电源输出电压</p>
+<p><strong>传感器</strong>（<a href="https://baike.baidu.com/item/%E8%8B%B1%E6%96%87">英文</a>名称：transducer/sensor）是一种检测装置，能感受到被测量的信息，并能将感受到的信息，按一定规律变换成为电信号或其他所需形式的信息输出，以满足信息的传输、处理、存储、显示、记录和控制等要求。</p>
+<p><strong>KVM</strong>：就是Keyboard Video Mouse的缩写。KVM <a href="https://baike.baidu.com/item/%E4%BA%A4%E6%8D%A2%E6%9C%BA/103532">交换机</a>通过直接连接键盘、视频和鼠标 (KVM) 端口，让您能够访问和控制计算机。</p>
+<p>**VLAN(**Virtual LAN)， “虚拟局域网”，LAN是网络，VLAN所指的LAN特指使用路由器分割的网络——也就是广播域。</p>
+<p><strong>广播域</strong>，指的是广播帧(目标MAC地址全部为1)所能传递到的范围，亦即能够直接通信的范围。</p>
+<p><strong>域名</strong>：（Domain Name）网域，是由一串用点分隔的名字组成的<a href="https://baike.baidu.com/item/Internet">Internet</a>上某一台<a href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA/140338">计算机</a>或计算机组的名称，用于在数据传输时标识计算机的电子方位（有时也指地理位置）。</p>
+<p><strong>双工模式</strong>：1、全双工： 指可以同时（瞬时）进行信号的双向传输（A→B且B→A）。</p>
+<p>2、半双工：指一个时间内只有一个方向的信号传输（A→B或B→A）。</p>
+<p><strong>端口：</strong>分为逻辑端口和物理端口。物理端口指的是物理存在的端口，如ADSL Modem、<a href="https://baike.baidu.com/item/%E9%9B%86%E7%BA%BF%E5%99%A8">集线器</a>、<a href="https://baike.baidu.com/item/%E4%BA%A4%E6%8D%A2%E6%9C%BA">交换机</a>、<a href="https://baike.baidu.com/item/%E8%B7%AF%E7%94%B1%E5%99%A8">路由器</a>上用 于连接其他<a href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87">网络设备</a>的接口，如<a href="https://baike.baidu.com/item/RJ-45%E7%AB%AF%E5%8F%A3">RJ-45端口</a>、SC端口等等。逻辑端口是指逻辑意义上用于区分服务的端口，如<a href="https://baike.baidu.com/item/TCP%2FIP%E5%8D%8F%E8%AE%AE">TCP/IP协议</a>中的服务端口，端口号的范围从0到65535，比如用于浏览网页服务的80端口，用于FTP服务的21端口等。端口号就是端口的编号。</p>
+<p><strong>NTP****服务器：</strong>【Network Time Protocol（NTP）】是用来使计算机<a href="https://baike.baidu.com/item/%E6%97%B6%E9%97%B4%E5%90%8C%E6%AD%A5">时间同步</a>化的一种协议，它可以使计算机对其服务器或时钟源（如石英钟，GPS等等)做同步化，它可以提供高精准度的时间校正，且可介由加密确认的方式来防止恶毒的协议攻击。</p>
+<p><strong>SMTP****：</strong>（Simple Mail Transfer Protocol）即<a href="https://baike.baidu.com/item/%E7%AE%80%E5%8D%95%E9%82%AE%E4%BB%B6%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE">简单邮件传输协议</a>,它是一组用于由源地址到目的地址传送<a href="https://baike.baidu.com/item/%E9%82%AE%E4%BB%B6">邮件</a>的规则，由它来控制信件的中转方式。<a href="https://baike.baidu.com/item/SMTP%E5%8D%8F%E8%AE%AE">SMTP协议</a>属于<a href="https://baike.baidu.com/item/TCP%2FIP%E5%8D%8F%E8%AE%AE%E7%B0%87">TCP/IP协议簇</a>，它帮助每台<a href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA/140338">计算机</a>在发送或中转信件时找到下一个目的地。通过SMTP协议所指定的<a href="https://baike.baidu.com/item/%E6%9C%8D%E5%8A%A1%E5%99%A8">服务器</a>,就可以把E-mail寄到收信人的服务器上了，整个过程只要几分钟。SMTP<a href="https://baike.baidu.com/item/%E6%9C%8D%E5%8A%A1%E5%99%A8/100571">服务器</a>则是遵循SMTP协议的发送<a href="https://baike.baidu.com/item/%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8">邮件服务器</a>，用来发送或中转发出的<a href="https://baike.baidu.com/item/%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6/111106">电子邮件</a>。</p>
+<p><strong>网卡：</strong>是工作在链路层的网络组件，是局域网中连接计算机和传输介质的接口，不仅能实现与局域网传输介质之间的物理连接和电信号匹配，还涉及帧的发送与接收、帧的封装与拆封、介质访问控制、数据的编码与解码以及数据缓存的功能等。</p>
+<p><strong>LDAP****：</strong>是轻量<a href="https://baike.baidu.com/item/%E7%9B%AE%E5%BD%95%E8%AE%BF%E9%97%AE%E5%8D%8F%E8%AE%AE">目录访问协议</a>，以树状的层次结构来存储数据。</p>
+<p><strong>SSL</strong>(Secure Sockets Layer <a href="https://baike.baidu.com/item/%E5%AE%89%E5%85%A8%E5%A5%97%E6%8E%A5%E5%B1%82">安全套接层</a>),及其继任者<a href="https://baike.baidu.com/item/%E4%BC%A0%E8%BE%93%E5%B1%82%E5%AE%89%E5%85%A8">传输层安全</a>（Transport Layer Security，TLS）是为<a href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/9636548">网络通信</a>提供安全及<a href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7/110071">数据完整性</a>的一种安全协议。SSL通过互相认证、使用数字签名确保完整性、使用加密确保私密性，以实现客户端和服务器之间的安全通讯。该协议由两层组成：SSL记录协议和SSL握手协议。</p>
+<p><strong>TLS</strong>：(Transport Layer Security，传输层安全协议)，用于两个应用程序之间提供保密性和数据完整性。该协议由两层组成：TLS记录协议和TLS握手协议。</p>
+<p><strong>TLS****与SSL</strong>在<a href="https://baike.baidu.com/item/%E4%BC%A0%E8%BE%93%E5%B1%82/4329536">传输层</a>对网络连接进行加密。　位于可靠的面向连接的网络层协议和应用层协议之间的一种协议层。</p>
 ]]></content>
       <categories>
-        <category>测试</category>
+        <category>学习</category>
       </categories>
       <tags>
-        <tag>测试技巧</tag>
-        <tag>测试经验</tag>
+        <tag>BMC</tag>
+        <tag>服务器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Flume日志采集框架学习</title>
+    <url>/Echo/2021/11/14/Flume%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h4 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h4><ul>
+<li>Flume 是一个<code>分布式</code>、<code>可靠</code>、<code>高可用</code>的海量<code>日志采集</code>、<code>聚合</code>和<code>传输</code>的系统；</li>
+<li>Flume 可以采集文件、socket数据包、文件、目录、Kafka等<code>各种形式数据源</code>，又可以将采集到的数据（下沉 sink）输出到 HDFS、HBase、Hive、Kafka等<code>众多外部存储系统</code>中；</li>
+<li>一般的采集需求，通过对 Flume 的简单配置即可实现；</li>
+<li>Flume 针对特殊场景也具备良好的自定义扩展能力，因此，Flume 适用于大部分的日常数据采集场景；</li>
+</ul>
+<h4 id="2-运行机制"><a href="#2-运行机制" class="headerlink" title="2. 运行机制"></a>2. 运行机制</h4><p>Flume 分布式系统中最<code>核心的角色是 agent</code>，Flume 采集系统就是由一个个 agent 所连接起来形成的；</p>
+<p><img src="image-20211114152336278.png" alt="image-20211114152336278"></p>
+<p> 每一个 agent 相当于一个数据传递员，内部有三个组件：</p>
+<ul>
+<li> Source：` 采集组件，用于与众多数据源对接，以获取数据；</li>
+<li>  Channel：` 传输通道组件，用于从 Source 将数据传递到 Sink；</li>
+<li>  Sink：` 下沉组件，用于往下一级 agent 传递数据 或者 往最终存储系统传递数据；</li>
+</ul>
+<h4 id="3-单个agent采集数据"><a href="#3-单个agent采集数据" class="headerlink" title="3.单个agent采集数据"></a>3.单个agent采集数据</h4><p><img src="image-20211114152023931.png" alt="image-20211114152023931"></p>
+<h4 id="4-多个agent采集数据"><a href="#4-多个agent采集数据" class="headerlink" title="4.多个agent采集数据"></a>4.多个agent采集数据</h4><p><img src="image-20211114152057458.png" alt="image-20211114152057458"></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>日志</tag>
+        <tag>flume</tag>
       </tags>
   </entry>
   <entry>
@@ -751,80 +791,40 @@
       </tags>
   </entry>
   <entry>
-    <title>BMCweb解释</title>
-    <url>/Echo/2020/01/17/BMCweb%E8%A7%A3%E9%87%8A/</url>
-    <content><![CDATA[<p><strong>UID****：</strong>定位作用，控制定位灯是否亮起，便于寻找机器</p>
-<p><strong>循环开机</strong>：服务器先关机再开机</p>
-<p><strong>重启</strong>：不关闭电源（热开机）的情况下重新启动系统</p>
-<p>**软关机:**先执行操作系统的关机再关闭系统</p>
-<p><strong>CPU****速率</strong>：cup主频，即CPU<a href="https://baike.baidu.com/item/%E5%86%85%E6%A0%B8">内核</a>工作的<a href="https://baike.baidu.com/item/%E6%97%B6%E9%92%9F%E9%A2%91%E7%8E%87/103708">时钟频率</a>。CPU的主频表示在CPU内数字<a href="https://baike.baidu.com/item/%E8%84%89%E5%86%B2">脉冲</a>信号震荡的速度，主频和实际的<a href="https://baike.baidu.com/item/%E8%BF%90%E7%AE%97%E9%80%9F%E5%BA%A6">运算速度</a>存在一定的关系，但没有一个定量，因为CPU的运算速度还要看CPU的流水线的各方面的性能指标（<a href="https://baike.baidu.com/item/%E7%BC%93%E5%AD%98">缓存</a>、<a href="https://baike.baidu.com/item/%E6%8C%87%E4%BB%A4%E9%9B%86">指令集</a>，CPU的<a href="https://baike.baidu.com/item/%E4%BD%8D%E6%95%B0">位数</a>等等）。</p>
-<p><strong>核心</strong>（Die）又称为内核，是CPU最重要的组成部分。CPU中心那块隆起的芯片就是核心， CPU所有的计算、接受/存储命令、处理数据都由核心执行。各种CPU核心都具有固定的逻辑结构，一级缓存、二级缓存、执行单元、指令级单元和总线接口等逻辑单元都会有科学的布局。</p>
-<p><strong>CPU****的核心数</strong>是指物理上，也就是硬件上存在着几个核心。比如，双核就是包括2个相对独立的CPU核心单元组，四核就包含4个相对独立的CPU核心单元组。</p>
-<p><strong>TDP</strong>： Thermal Design Power——散热设计功耗</p>
-<p>大小：一级缓存&lt;二级缓存&lt;三级缓存</p>
-<p>速度：一级缓存&gt;二级缓存&gt;三级缓存</p>
-<p>当CPU需要写入内存的时候通常只更新<a href="http://www.baidu.com/s?wd=%E4%B8%89%E7%BA%A7%E7%BC%93%E5%AD%98&tn=SE_PcZhidaonwhc_ngpagmjz&rsv_dl=gh_pc_zhidao">三级缓存</a>，如果数据写入频繁将会更新到二级乃至一级缓存</p>
-<p><strong>网络控制器</strong>:网卡，又称<a href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E9%80%82%E9%85%8D%E5%99%A8/214428">网络适配器</a>或网络接口卡（NIC），英文名为Network Interface Card。</p>
-<p><strong>带宽</strong>：单位时间内能传输的数据量</p>
-<p><strong>硬盘：</strong>硬盘是集精密机械、微电子电路、电磁转换为一体的电脑存储设备，它存储着电脑系统资源和重要的信息及数据</p>
-<p><strong>额定功率</strong>：正常工作下的功率</p>
-<p><strong>错峰上电</strong>：设定一个时间让服务器随机开机</p>
-<p><strong>PIN</strong>：输入功率</p>
-<p><strong>POUT</strong>:输出功率</p>
-<p><strong>Iin</strong>：电源输入电流</p>
-<p><strong>Iout</strong>:电源电流输出</p>
-<p><strong>Vin</strong>:电源输入电压</p>
-<p><strong>Vout</strong>:电源输出电压</p>
-<p><strong>传感器</strong>（<a href="https://baike.baidu.com/item/%E8%8B%B1%E6%96%87">英文</a>名称：transducer/sensor）是一种检测装置，能感受到被测量的信息，并能将感受到的信息，按一定规律变换成为电信号或其他所需形式的信息输出，以满足信息的传输、处理、存储、显示、记录和控制等要求。</p>
-<p><strong>KVM</strong>：就是Keyboard Video Mouse的缩写。KVM <a href="https://baike.baidu.com/item/%E4%BA%A4%E6%8D%A2%E6%9C%BA/103532">交换机</a>通过直接连接键盘、视频和鼠标 (KVM) 端口，让您能够访问和控制计算机。</p>
-<p>**VLAN(**Virtual LAN)， “虚拟局域网”，LAN是网络，VLAN所指的LAN特指使用路由器分割的网络——也就是广播域。</p>
-<p><strong>广播域</strong>，指的是广播帧(目标MAC地址全部为1)所能传递到的范围，亦即能够直接通信的范围。</p>
-<p><strong>域名</strong>：（Domain Name）网域，是由一串用点分隔的名字组成的<a href="https://baike.baidu.com/item/Internet">Internet</a>上某一台<a href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA/140338">计算机</a>或计算机组的名称，用于在数据传输时标识计算机的电子方位（有时也指地理位置）。</p>
-<p><strong>双工模式</strong>：1、全双工： 指可以同时（瞬时）进行信号的双向传输（A→B且B→A）。</p>
-<p>2、半双工：指一个时间内只有一个方向的信号传输（A→B或B→A）。</p>
-<p><strong>端口：</strong>分为逻辑端口和物理端口。物理端口指的是物理存在的端口，如ADSL Modem、<a href="https://baike.baidu.com/item/%E9%9B%86%E7%BA%BF%E5%99%A8">集线器</a>、<a href="https://baike.baidu.com/item/%E4%BA%A4%E6%8D%A2%E6%9C%BA">交换机</a>、<a href="https://baike.baidu.com/item/%E8%B7%AF%E7%94%B1%E5%99%A8">路由器</a>上用 于连接其他<a href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87">网络设备</a>的接口，如<a href="https://baike.baidu.com/item/RJ-45%E7%AB%AF%E5%8F%A3">RJ-45端口</a>、SC端口等等。逻辑端口是指逻辑意义上用于区分服务的端口，如<a href="https://baike.baidu.com/item/TCP%2FIP%E5%8D%8F%E8%AE%AE">TCP/IP协议</a>中的服务端口，端口号的范围从0到65535，比如用于浏览网页服务的80端口，用于FTP服务的21端口等。端口号就是端口的编号。</p>
-<p><strong>NTP****服务器：</strong>【Network Time Protocol（NTP）】是用来使计算机<a href="https://baike.baidu.com/item/%E6%97%B6%E9%97%B4%E5%90%8C%E6%AD%A5">时间同步</a>化的一种协议，它可以使计算机对其服务器或时钟源（如石英钟，GPS等等)做同步化，它可以提供高精准度的时间校正，且可介由加密确认的方式来防止恶毒的协议攻击。</p>
-<p><strong>SMTP****：</strong>（Simple Mail Transfer Protocol）即<a href="https://baike.baidu.com/item/%E7%AE%80%E5%8D%95%E9%82%AE%E4%BB%B6%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE">简单邮件传输协议</a>,它是一组用于由源地址到目的地址传送<a href="https://baike.baidu.com/item/%E9%82%AE%E4%BB%B6">邮件</a>的规则，由它来控制信件的中转方式。<a href="https://baike.baidu.com/item/SMTP%E5%8D%8F%E8%AE%AE">SMTP协议</a>属于<a href="https://baike.baidu.com/item/TCP%2FIP%E5%8D%8F%E8%AE%AE%E7%B0%87">TCP/IP协议簇</a>，它帮助每台<a href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA/140338">计算机</a>在发送或中转信件时找到下一个目的地。通过SMTP协议所指定的<a href="https://baike.baidu.com/item/%E6%9C%8D%E5%8A%A1%E5%99%A8">服务器</a>,就可以把E-mail寄到收信人的服务器上了，整个过程只要几分钟。SMTP<a href="https://baike.baidu.com/item/%E6%9C%8D%E5%8A%A1%E5%99%A8/100571">服务器</a>则是遵循SMTP协议的发送<a href="https://baike.baidu.com/item/%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8">邮件服务器</a>，用来发送或中转发出的<a href="https://baike.baidu.com/item/%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6/111106">电子邮件</a>。</p>
-<p><strong>网卡：</strong>是工作在链路层的网络组件，是局域网中连接计算机和传输介质的接口，不仅能实现与局域网传输介质之间的物理连接和电信号匹配，还涉及帧的发送与接收、帧的封装与拆封、介质访问控制、数据的编码与解码以及数据缓存的功能等。</p>
-<p><strong>LDAP****：</strong>是轻量<a href="https://baike.baidu.com/item/%E7%9B%AE%E5%BD%95%E8%AE%BF%E9%97%AE%E5%8D%8F%E8%AE%AE">目录访问协议</a>，以树状的层次结构来存储数据。</p>
-<p><strong>SSL</strong>(Secure Sockets Layer <a href="https://baike.baidu.com/item/%E5%AE%89%E5%85%A8%E5%A5%97%E6%8E%A5%E5%B1%82">安全套接层</a>),及其继任者<a href="https://baike.baidu.com/item/%E4%BC%A0%E8%BE%93%E5%B1%82%E5%AE%89%E5%85%A8">传输层安全</a>（Transport Layer Security，TLS）是为<a href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/9636548">网络通信</a>提供安全及<a href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7/110071">数据完整性</a>的一种安全协议。SSL通过互相认证、使用数字签名确保完整性、使用加密确保私密性，以实现客户端和服务器之间的安全通讯。该协议由两层组成：SSL记录协议和SSL握手协议。</p>
-<p><strong>TLS</strong>：(Transport Layer Security，传输层安全协议)，用于两个应用程序之间提供保密性和数据完整性。该协议由两层组成：TLS记录协议和TLS握手协议。</p>
-<p><strong>TLS****与SSL</strong>在<a href="https://baike.baidu.com/item/%E4%BC%A0%E8%BE%93%E5%B1%82/4329536">传输层</a>对网络连接进行加密。　位于可靠的面向连接的网络层协议和应用层协议之间的一种协议层。</p>
+    <title>20个实用软件测试技巧</title>
+    <url>/Echo/2021/05/01/20%E4%B8%AA%E5%AE%9E%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%8A%80%E5%B7%A7/</url>
+    <content><![CDATA[<p>以下是个人总结的20个软件测试过程中的技巧</p>
+<p>1、学会彻底分析测试结果。不要忽略任何测试结果。最终测试结果可能是”pass”或”fail”，但如果对”fail”的根本原因进行故障分析并提供问题的解决方案。如果测试人员不仅记录错误，而且还提供解决方案，那么待遇可想而知。</p>
+<p>2、了解如何在每次测试应用程序时最大限度地提高测试覆盖率。100%的测试覆盖率可能是不可能的，但是，总是可以尝试接近它。</p>
+<p>3、为了确保最大的测试覆盖率，请将被测应用程序 分解为较小的功能模块。在单个单元模块上编写测试用例。此外，如果可以的话，将这些模块分解成更小的部分，拆分到不能拆分为止。</p>
+<p>假设我们已将网站应用程序划分为多个模块，并且”添加用户信息”是其中一个模块。可以将此用户信息页面分解为较小的部分，用于编写测试用例：UI测试、安全测试、用户信息表单的功能测试等部分。在输入字段中应用所有形式的字段类型和大小测试、否定和验证测试，并编写所有此类测试用例以获得最大覆盖率。</p>
+<p>4、在编写测试用例时，我们必须首先为预期的功能编写测试用例，就是根据需求为正向条件编写测试用例。然后为反向或者无效条件编写测试用例。这些将涵盖受测应用程序的预期和意外行为。</p>
+<p>5、积极思考。开始测试应用程序，目的是查找bug/错误。不要事先认为应用程序中不会有任何错误。如果以查找错误为目的测试应用程序，那么一定会成功找到这些微妙的bug。</p>
+<p>6、在需求分析和设计阶段编写测试用例。通过这种方式，您可以确保所有要求都是可测试的。</p>
+<p>7、在编写代码之前，使测试用例可供开发人员使用。不要一直等待获得最终的应用程序版本才开始编写测试用例进行测试，认为这样可以记录更多错误。让开发人员彻底分析测试用例，以开发高质量的应用程序。这也将节省返工时间。</p>
+<p>8、如果可以，对测试用例进行分组用以进行回归测试，将确保快速有效的手动回归测试。</p>
+<p>9、需要关键响应时间的应用程序应进行全面的性能测试。性能测试是许多应用程序的关键部分。对于手动测试测试人员来说这是最忽略的部分，因为在性能测试中缺乏所需的大量数据。寻找测试应用程序性能的方法。如果无法手动创建测试数据，请编写一些脚本来创建用于性能测试的测试数据，或要求开发人员为您编写一个。</p>
+<p>10、程序员不应该测试自己的代码。开发应用程序的基本单元测试应该足以让开发人员为测试人员发布应用程序。但是测试人员不应强迫开发人员发布产品进行测试。从测试领导到测试经理，每个人都知道模块/更新何时发布进行测试，他们可以相应地估计测试时间。这在敏捷项目环境中是常见的。</p>
+<p>11、超越需求测试。测试应用程序不应执行的操作。</p>
+<p>12、在进行回归测试时，请使用 Bug 图（bug管理工具生成）。 bug 图可用于预测应用程序中最可能出现 bug 部分。</p>
+<p>13、记下在测试时学到的新术语和概念。在测试任何应用程序时保持文本文件处于打开状态。记录其中的测试进度和观察结果。在准备最终测试发布报告时使用记录的观察结果。这个习惯将帮助我们提供完整明确的测试报告和发布详细信息。</p>
+<p>14、很多时候，测试人员或开发人员会对受测应用程序的代码库进行更改。这是开发或测试环境中的必要步骤，避免像在银行项目中那样执行实时交易处理。记下为测试目的所做的所有此类代码更改，并在最终发布时确保已从最终的客户端部署文件资源中删除了所有这些更改。</p>
+<p>15、使开发人员远离测试环境。这是检测发布或部署文档中缺少的任何配置更改的必需步骤。有时，开发人员会进行一些系统或应用程序配置更改，但忘记在部署步骤中提及这些更改。如果开发人员无法访问测试环境，他们就不会意外地在测试环境中进行此类更改，以及如何在正确位置捕获的缺失内容。</p>
+<p>16、从软件需求和设计阶段开始让测试人员参与进来是一种很好的做法。通过这种方式，测试人员可以获得有关应用程序准确的信息，从而获得详细的测试覆盖率。如果您没有被要求参与此开发周期，那么您可以向您的主管或经理提出请求，让您的测试团队参与所有决策过程或会议。</p>
+<p>17、测试团队应与其组织中的其他团队分享最佳测试实践和经验。</p>
+<p>18、增加与开发人员的沟通，以了解有关产品的更多信息。尽可能进行面对面的沟通，以快速解决争议并避免任何误解。但是，当您了解要求或解决任何争议时，请确保以与电子邮件相同的覆盖通信方式进行沟通。不要相信任何口头内容。（这个要自己悟）</p>
+<p>19、不要没有时间去做优先级高的测试任务。将测试工作的优先级从高到低排序，并相应地规划您的工作。分析所有相关风险，确定工作的优先级。</p>
+<p>20、写一份清晰，描述性和明确的错误报告。不仅要提供详细bug描述和发现步骤，还要提供bug的影响和所有可能的解决方案。</p>
+<p>永远不要忘记，测试是一项创造性和具有挑战性的任务。这写完全取决于您如何处理这个挑战的技能和经验。</p>
+<p><strong>交给您：</strong></p>
+<p>在下面的评论中分享您自己的测试经验、想法或测试秘诀肯定会使本文更加有趣和有用！</p>
 ]]></content>
       <categories>
-        <category>学习</category>
+        <category>测试</category>
       </categories>
       <tags>
-        <tag>BMC</tag>
-        <tag>服务器</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Flume日志采集框架学习</title>
-    <url>/Echo/2021/11/14/Flume%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<h4 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h4><ul>
-<li>Flume 是一个<code>分布式</code>、<code>可靠</code>、<code>高可用</code>的海量<code>日志采集</code>、<code>聚合</code>和<code>传输</code>的系统；</li>
-<li>Flume 可以采集文件、socket数据包、文件、目录、Kafka等<code>各种形式数据源</code>，又可以将采集到的数据（下沉 sink）输出到 HDFS、HBase、Hive、Kafka等<code>众多外部存储系统</code>中；</li>
-<li>一般的采集需求，通过对 Flume 的简单配置即可实现；</li>
-<li>Flume 针对特殊场景也具备良好的自定义扩展能力，因此，Flume 适用于大部分的日常数据采集场景；</li>
-</ul>
-<h4 id="2-运行机制"><a href="#2-运行机制" class="headerlink" title="2. 运行机制"></a>2. 运行机制</h4><p>Flume 分布式系统中最<code>核心的角色是 agent</code>，Flume 采集系统就是由一个个 agent 所连接起来形成的；</p>
-<p><img src="image-20211114152336278.png" alt="image-20211114152336278"></p>
-<p> 每一个 agent 相当于一个数据传递员，内部有三个组件：</p>
-<ul>
-<li> Source：` 采集组件，用于与众多数据源对接，以获取数据；</li>
-<li>  Channel：` 传输通道组件，用于从 Source 将数据传递到 Sink；</li>
-<li>  Sink：` 下沉组件，用于往下一级 agent 传递数据 或者 往最终存储系统传递数据；</li>
-</ul>
-<h4 id="3-单个agent采集数据"><a href="#3-单个agent采集数据" class="headerlink" title="3.单个agent采集数据"></a>3.单个agent采集数据</h4><p><img src="image-20211114152023931.png" alt="image-20211114152023931"></p>
-<h4 id="4-多个agent采集数据"><a href="#4-多个agent采集数据" class="headerlink" title="4.多个agent采集数据"></a>4.多个agent采集数据</h4><p><img src="image-20211114152057458.png" alt="image-20211114152057458"></p>
-]]></content>
-      <categories>
-        <category>学习</category>
-      </categories>
-      <tags>
-        <tag>日志</tag>
-        <tag>flume</tag>
+        <tag>测试技巧</tag>
+        <tag>测试经验</tag>
       </tags>
   </entry>
   <entry>
@@ -1011,6 +1011,62 @@
       </tags>
   </entry>
   <entry>
+    <title>JMeter处理器和控制器</title>
+    <url>/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/</url>
+    <content><![CDATA[<h5 id="预处理器–pre-processor"><a href="#预处理器–pre-processor" class="headerlink" title="预处理器–pre processor"></a>预处理器–pre processor</h5><p>执行采样器之前执行的元素。您可以将预处理器与要在请求中进行一些更改的采样器连接在一起。</p>
+<p>最简单的情况可能是在 HTTP 请求中添加”示例超时”预处理器，以便此请求仅运行定义的时间量。它还确保仅对父采样器执行此修改,以下是JMeter中的预处理器：</p>
+<p><img src="image-20211217094257136.png" alt="image-20211217094257136"></p>
+<h6 id="用户参数–-user-parameters"><a href="#用户参数–-user-parameters" class="headerlink" title="用户参数– user parameters"></a>用户参数– user parameters</h6><p>用户参数用于在取样器中使用变量之前定义变量的值。当JMeter执行此预处理器元素时，会将值存储在变量中，这些变量可由同一线程组中的任何取样器使用。</p>
+<p><img src="image-20211217100245301.png" alt="image-20211217100245301"></p>
+<p>示例超时–sample timeout</p>
+<p>用于定义请求的超时持续时间。例：如果将取样时间设置为 400 毫秒，则所有需要时间的请求&gt;400 都将具有失败的响应。请看下面的截图</p>
+<p><img src="image-20211217134259470.png" alt="image-20211217134259470"></p>
+<p><img src="image-20211217134313658.png" alt="image-20211217134313658"></p>
+<h5 id="控制器"><a href="#控制器" class="headerlink" title="控制器"></a>控制器</h5><p>控制器在构建实时JMeter测试计划方面十分重要，用于定义请求发送到服务器的顺序。JMeter中的控制器有以下：</p>
+<p><img src="image-20211217150511568.png" alt="image-20211217150511568"></p>
+<h6 id="简单控制器–simple-controller"><a href="#简单控制器–simple-controller" class="headerlink" title="简单控制器–simple controller"></a>简单控制器–simple controller</h6><p>简单的控制器不执行任何特定功能。它只是一种容器，您可以在其中保留类似的请求，以使测试计划易于理解。</p>
+<p><img src="image-20211217154100877.png" alt="image-20211217154100877"></p>
+<h6 id="循环控制器–Loop-Controller"><a href="#循环控制器–Loop-Controller" class="headerlink" title="循环控制器–Loop Controller"></a>循环控制器–Loop Controller</h6><p>如果希望某些特定请求运行的迭代次数多于”线程组”中指定的迭代次数，则可以将它们放在”循环控制器”下，然后在控制器设置中输入循环计数。</p>
+<p><img src="image-20211217154238730.png" alt="image-20211217154238730"></p>
+<p>图中的每个取样器将执行6次。</p>
+<h6 id="仅一次控制器–once-ONLY-controller"><a href="#仅一次控制器–once-ONLY-controller" class="headerlink" title="仅一次控制器–once ONLY controller"></a>仅一次控制器–once ONLY controller</h6><p>当您只想运行某个特定请求一次时，即使线程组中有多个线程，也会使用此控制器。可以考虑的最简单的例子是”获取网站主页”或”登录到Web应用程序”。实时方案希望它只发生一次，其他请求（如搜索或编辑/删除某些内容）将多次发生。</p>
+<p>仅执行一次的请求可以放在”仅一次控制器”下。截图以供参考。一次 只有控制器设置绕过父线程组设置。</p>
+<p><img src="image-20211217160551520.png" alt="image-20211217160551520"></p>
+<h6 id="录制控制器–HTTP（S）-TEST-Script-Recorder"><a href="#录制控制器–HTTP（S）-TEST-Script-Recorder" class="headerlink" title="录制控制器–HTTP（S） TEST Script Recorder"></a>录制控制器–HTTP（S） TEST Script Recorder</h6><p>就像简单控制器一样，录制控制器不会修改发送到服务器的任何请求序列。它与HTTP（S）脚本记录器一起使用。使用此非测试元素记录的所有请求都保存在记录控制器下。需要指定目标控制器以保存对服务器发出的记录请求。</p>
+<p><img src="image-20211217160800045.png" alt="image-20211217160800045"></p>
+<h6 id="吞吐量控制器–Throughput-controller"><a href="#吞吐量控制器–Throughput-controller" class="headerlink" title="吞吐量控制器–Throughput controller"></a>吞吐量控制器–Throughput controller</h6><p>此控制器还用于控制执行流。如下图所示，该控制器进一步分为两部分：</p>
+<p><img src="image-20211217160905035.png" alt="image-20211217160905035"></p>
+<p>执行百分比–Percent Executions ： 选中后 Jmeter 将仅执行此控制器下采样器总迭代的一定百分比。也可以选中”每用户”复选框以在用户级别进行控制。</p>
+<p>执行总数– total Executions: 将允许用户直接为此控制器下包含的采样器指定迭代次数。</p>
+<h6 id="交错控制器–-interleave-controller"><a href="#交错控制器–-interleave-controller" class="headerlink" title="交错控制器– interleave controller"></a>交错控制器– interleave controller</h6><p>此控制器允许您通过以 n 种方式修改序列来增加性能测试的范围，以便在应用程序以不同的顺序命中请求时测试服务器上的负载。交错控制器在其下方的采样器进行替代选择。</p>
+<p>如果此块下有其他控制器（如 Simple Controller），则交错控制器授予从容器中为每个迭代选择一个采样器的权限。为了进一步解释它，见图</p>
+<p><img src="image-20211217162333245.png" alt="image-20211217162333245"></p>
+<p>Jmeter 将在每次迭代的控制器之间交替迭代。执行顺序为：<em>请求1 -&gt; 请求3 -&gt; 请求 5 – 请求2 -&gt; 请求4 -&gt; 请求6</em></p>
+<h6 id="随机控制器–random-controller"><a href="#随机控制器–random-controller" class="headerlink" title="随机控制器–random controller"></a>随机控制器–random controller</h6><p>顾名思义随机选择子控制器和其中的采样器。工作方式几乎与交错控制器类似，但不按顺序选取采样器。</p>
+<p>条件控制器–If controller</p>
+<p>if 控制器 以类似的方式工作，则以任何编程语言处理 IF 表达式。首先验证条件，然后执行此容器下的组件（如果条件为 TRUE），否则将执行 IF 控制器外部的元素。</p>
+<p><img src="image-20211217165030335.png" alt="image-20211217165030335"></p>
+<p>测试计划设计如下：如果 IF 条件被评估为<strong>False，</strong>则只有 Request3、Request4 和 Request5 将执行。</p>
+<h6 id="while-控制器"><a href="#while-控制器" class="headerlink" title="while 控制器"></a>while 控制器</h6><p>此控制器执行其下的组件，直到条件变为 false。</p>
+<h5 id="JMeter的记录模板"><a href="#JMeter的记录模板" class="headerlink" title="JMeter的记录模板"></a>JMeter的记录模板</h5><p>Jmeter的File目录选择template ，然后切换recording</p>
+<p><img src="image-20211217165849700.png" alt="image-20211217165849700"></p>
+<p>选择此录制模板后，会看到一些组件已添加到测试计划中。</p>
+<ul>
+<li>工作台下的 HTTP 脚本记录器</li>
+<li>HTTP 请求默认值和 HTTP Cookie 管理器</li>
+<li>“线程组”下的记录控制器。</li>
+<li><img src="image-20211217170049709.png" alt="image-20211217170049709"></li>
+</ul>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>性能测试</tag>
+        <tag>JMeter</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>HDFS简介</title>
     <url>/Echo/2022/01/02/HDFS%E7%AE%80%E4%BB%8B/</url>
     <content><![CDATA[<h4 id="Hadoop-分布式文件系统"><a href="#Hadoop-分布式文件系统" class="headerlink" title="Hadoop 分布式文件系统"></a>Hadoop 分布式文件系统</h4><p><strong>HDFS</strong>解决了大数据的存储问题，<strong>Map Reduce</strong>解决了与处理部分大数据相关的问题。</p>
@@ -1192,62 +1248,6 @@
       </tags>
   </entry>
   <entry>
-    <title>JMeter处理器和控制器</title>
-    <url>/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/</url>
-    <content><![CDATA[<h5 id="预处理器–pre-processor"><a href="#预处理器–pre-processor" class="headerlink" title="预处理器–pre processor"></a>预处理器–pre processor</h5><p>执行采样器之前执行的元素。您可以将预处理器与要在请求中进行一些更改的采样器连接在一起。</p>
-<p>最简单的情况可能是在 HTTP 请求中添加”示例超时”预处理器，以便此请求仅运行定义的时间量。它还确保仅对父采样器执行此修改,以下是JMeter中的预处理器：</p>
-<p><img src="image-20211217094257136.png" alt="image-20211217094257136"></p>
-<h6 id="用户参数–-user-parameters"><a href="#用户参数–-user-parameters" class="headerlink" title="用户参数– user parameters"></a>用户参数– user parameters</h6><p>用户参数用于在取样器中使用变量之前定义变量的值。当JMeter执行此预处理器元素时，会将值存储在变量中，这些变量可由同一线程组中的任何取样器使用。</p>
-<p><img src="image-20211217100245301.png" alt="image-20211217100245301"></p>
-<p>示例超时–sample timeout</p>
-<p>用于定义请求的超时持续时间。例：如果将取样时间设置为 400 毫秒，则所有需要时间的请求&gt;400 都将具有失败的响应。请看下面的截图</p>
-<p><img src="image-20211217134259470.png" alt="image-20211217134259470"></p>
-<p><img src="image-20211217134313658.png" alt="image-20211217134313658"></p>
-<h5 id="控制器"><a href="#控制器" class="headerlink" title="控制器"></a>控制器</h5><p>控制器在构建实时JMeter测试计划方面十分重要，用于定义请求发送到服务器的顺序。JMeter中的控制器有以下：</p>
-<p><img src="image-20211217150511568.png" alt="image-20211217150511568"></p>
-<h6 id="简单控制器–simple-controller"><a href="#简单控制器–simple-controller" class="headerlink" title="简单控制器–simple controller"></a>简单控制器–simple controller</h6><p>简单的控制器不执行任何特定功能。它只是一种容器，您可以在其中保留类似的请求，以使测试计划易于理解。</p>
-<p><img src="image-20211217154100877.png" alt="image-20211217154100877"></p>
-<h6 id="循环控制器–Loop-Controller"><a href="#循环控制器–Loop-Controller" class="headerlink" title="循环控制器–Loop Controller"></a>循环控制器–Loop Controller</h6><p>如果希望某些特定请求运行的迭代次数多于”线程组”中指定的迭代次数，则可以将它们放在”循环控制器”下，然后在控制器设置中输入循环计数。</p>
-<p><img src="image-20211217154238730.png" alt="image-20211217154238730"></p>
-<p>图中的每个取样器将执行6次。</p>
-<h6 id="仅一次控制器–once-ONLY-controller"><a href="#仅一次控制器–once-ONLY-controller" class="headerlink" title="仅一次控制器–once ONLY controller"></a>仅一次控制器–once ONLY controller</h6><p>当您只想运行某个特定请求一次时，即使线程组中有多个线程，也会使用此控制器。可以考虑的最简单的例子是”获取网站主页”或”登录到Web应用程序”。实时方案希望它只发生一次，其他请求（如搜索或编辑/删除某些内容）将多次发生。</p>
-<p>仅执行一次的请求可以放在”仅一次控制器”下。截图以供参考。一次 只有控制器设置绕过父线程组设置。</p>
-<p><img src="image-20211217160551520.png" alt="image-20211217160551520"></p>
-<h6 id="录制控制器–HTTP（S）-TEST-Script-Recorder"><a href="#录制控制器–HTTP（S）-TEST-Script-Recorder" class="headerlink" title="录制控制器–HTTP（S） TEST Script Recorder"></a>录制控制器–HTTP（S） TEST Script Recorder</h6><p>就像简单控制器一样，录制控制器不会修改发送到服务器的任何请求序列。它与HTTP（S）脚本记录器一起使用。使用此非测试元素记录的所有请求都保存在记录控制器下。需要指定目标控制器以保存对服务器发出的记录请求。</p>
-<p><img src="image-20211217160800045.png" alt="image-20211217160800045"></p>
-<h6 id="吞吐量控制器–Throughput-controller"><a href="#吞吐量控制器–Throughput-controller" class="headerlink" title="吞吐量控制器–Throughput controller"></a>吞吐量控制器–Throughput controller</h6><p>此控制器还用于控制执行流。如下图所示，该控制器进一步分为两部分：</p>
-<p><img src="image-20211217160905035.png" alt="image-20211217160905035"></p>
-<p>执行百分比–Percent Executions ： 选中后 Jmeter 将仅执行此控制器下采样器总迭代的一定百分比。也可以选中”每用户”复选框以在用户级别进行控制。</p>
-<p>执行总数– total Executions: 将允许用户直接为此控制器下包含的采样器指定迭代次数。</p>
-<h6 id="交错控制器–-interleave-controller"><a href="#交错控制器–-interleave-controller" class="headerlink" title="交错控制器– interleave controller"></a>交错控制器– interleave controller</h6><p>此控制器允许您通过以 n 种方式修改序列来增加性能测试的范围，以便在应用程序以不同的顺序命中请求时测试服务器上的负载。交错控制器在其下方的采样器进行替代选择。</p>
-<p>如果此块下有其他控制器（如 Simple Controller），则交错控制器授予从容器中为每个迭代选择一个采样器的权限。为了进一步解释它，见图</p>
-<p><img src="image-20211217162333245.png" alt="image-20211217162333245"></p>
-<p>Jmeter 将在每次迭代的控制器之间交替迭代。执行顺序为：<em>请求1 -&gt; 请求3 -&gt; 请求 5 – 请求2 -&gt; 请求4 -&gt; 请求6</em></p>
-<h6 id="随机控制器–random-controller"><a href="#随机控制器–random-controller" class="headerlink" title="随机控制器–random controller"></a>随机控制器–random controller</h6><p>顾名思义随机选择子控制器和其中的采样器。工作方式几乎与交错控制器类似，但不按顺序选取采样器。</p>
-<p>条件控制器–If controller</p>
-<p>if 控制器 以类似的方式工作，则以任何编程语言处理 IF 表达式。首先验证条件，然后执行此容器下的组件（如果条件为 TRUE），否则将执行 IF 控制器外部的元素。</p>
-<p><img src="image-20211217165030335.png" alt="image-20211217165030335"></p>
-<p>测试计划设计如下：如果 IF 条件被评估为<strong>False，</strong>则只有 Request3、Request4 和 Request5 将执行。</p>
-<h6 id="while-控制器"><a href="#while-控制器" class="headerlink" title="while 控制器"></a>while 控制器</h6><p>此控制器执行其下的组件，直到条件变为 false。</p>
-<h5 id="JMeter的记录模板"><a href="#JMeter的记录模板" class="headerlink" title="JMeter的记录模板"></a>JMeter的记录模板</h5><p>Jmeter的File目录选择template ，然后切换recording</p>
-<p><img src="image-20211217165849700.png" alt="image-20211217165849700"></p>
-<p>选择此录制模板后，会看到一些组件已添加到测试计划中。</p>
-<ul>
-<li>工作台下的 HTTP 脚本记录器</li>
-<li>HTTP 请求默认值和 HTTP Cookie 管理器</li>
-<li>“线程组”下的记录控制器。</li>
-<li><img src="image-20211217170049709.png" alt="image-20211217170049709"></li>
-</ul>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>性能测试</tag>
-        <tag>JMeter</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JMeter组件介绍</title>
     <url>/Echo/2021/12/12/JMeter%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D/</url>
     <content><![CDATA[<p>在本文中，将熟悉<strong>JMeter 的所有组件，以及如何在测试计划中使用它们</strong>来覆盖所有可能的性能测试场景来测试 AUT（被测应用程序）。</p>
@@ -1340,149 +1340,6 @@
       </categories>
       <tags>
         <tag>性能测试，JMeter</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Kafka常见命令</title>
-    <url>/Echo/2020/09/12/Kafka%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<h4 id="kafka-启动命令"><a href="#kafka-启动命令" class="headerlink" title="kafka 启动命令"></a>kafka 启动命令</h4><p>dir：kafka 安装位置</p>
-<p>指定对应的配置文件启动</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kafka-server-start.sh  [dir]config/server.properties</span><br></pre></td></tr></table></figure>
-
-<p>以后台方式启动</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kafka-server-start.sh  -daemon [dir]config/server.properties</span><br></pre></td></tr></table></figure>
-
-<p>指定JMX 端口启动，指定JMX是为了可以方便的监控kafka集群（使用滴滴的logi会用到此端口）</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">JMX_PORT=9991 kafka-server-start.sh  -daemon [dir]config/server.properties</span><br></pre></td></tr></table></figure>
-
-<h4 id="kafka-停止命令"><a href="#kafka-停止命令" class="headerlink" title="kafka 停止命令"></a>kafka 停止命令</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kafka-server-stop.sh</span><br></pre></td></tr></table></figure>
-
-<p>或者</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment">#1 jps 找到kafka的pid</span></span><br><span class="line">jps</span><br><span class="line"><span class="comment">#2 通过kill -9 杀死进行</span></span><br><span class="line"><span class="built_in">kill</span> -9 pid</span><br></pre></td></tr></table></figure>
-
-<h4 id="kafka-topic-相关命令"><a href="#kafka-topic-相关命令" class="headerlink" title="kafka topic 相关命令"></a>kafka topic 相关命令</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment">#1.查看集群下所有topic</span></span><br><span class="line">kafka-topics --zookeeper ZKserverIP:2181 --list</span><br><span class="line"></span><br><span class="line"><span class="comment">#2.具体查看某个topic 默认端口号为2181，应根据自己配置修改</span></span><br><span class="line">kafka-topics --describe --zookeeper ZKserverIP:2181  --topic <span class="built_in">test</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#3.创建topic</span></span><br><span class="line">kafka-topics --create --zookeeper ZKserverIP:2181 --replication-factor 1 --partitions 3 --topic <span class="built_in">test</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#4.删除某个topic</span></span><br><span class="line"><span class="comment">#删除之前需要先将server.properties文件中配置的delete.topic.enable=true更改一下</span></span><br><span class="line">kafka-topics --delete --zookeeper ZKserverIP:2181 --topic <span class="built_in">test</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#5.console创建生产者往topic中写入数据 默认端口号9092，根据自己配置修改端口号</span></span><br><span class="line">kafka-console-producer --broker-list borkerServer:9092 --topic <span class="built_in">test</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#6.console创建消费者消费topic数据</span></span><br><span class="line">kafka-console-consumer --bootstrap-server borkerServer:9092 --topic <span class="built_in">test</span> --from-beginning</span><br><span class="line"></span><br><span class="line"><span class="comment">#7查看topic上面的消息数  --time -1 表示要获取当前topic所有分区当前最大位移， --time -2 表示获取当前最早位移</span></span><br><span class="line">kafka-run-class kafka.tools.GetOffsetShell --broker-list ZKserverIP:9092 --topic <span class="built_in">test</span> --time -1</span><br><span class="line"></span><br><span class="line"><span class="comment">#8修改topic分区数 注意：分区数量只能增加，不能减少</span></span><br><span class="line">kafka-topics --zookeeper ZKserverIP:2181 --alter --topic <span class="built_in">test</span> --partitions 3</span><br><span class="line"></span><br><span class="line"><span class="comment">#9查看消费组信息</span></span><br><span class="line">kafka-consumer-groups --bootstrap-server borkerServer:9092 --describe --group convert1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 10describe有两个参数用于找出有问题的分区 </span></span><br><span class="line"><span class="comment"># --unavailable-partitions：列出所有没有首领的分区，这些分区已经处于离线状态，对于生产者和消费者来说是不可用的</span></span><br><span class="line"><span class="comment"># --under-replicated-partitions：列出所有包含不同步副本的分区。</span></span><br><span class="line">kafka-topics.sh --zookeeper ZKserverIP:2181 --describe --unavailable-partitions</span><br><span class="line">kafka-topics.sh --zookeeper ZKserverIP:2181 --describe --under-replicated-partitions</span><br></pre></td></tr></table></figure>
-
-<h4 id="kafka-生产者"><a href="#kafka-生产者" class="headerlink" title="kafka 生产者"></a>kafka 生产者</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 有多个broker，可以用逗号分隔开都写上</span></span><br><span class="line">kafka-console-producer.sh --broker-list brokerServer:9092 --topic <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="kafka-消费者"><a href="#kafka-消费者" class="headerlink" title="kafka 消费者"></a>kafka 消费者</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看消费者最新消费到的消息</span></span><br><span class="line">kafka-console-consumer.sh --zookeeper ZKserverIP:2181  --topic <span class="built_in">test</span></span><br><span class="line"><span class="comment"># 从第一条信息查看消费者消费到的消息</span></span><br><span class="line">kafka-console-consumer.sh --zookeeper ZKserverIP:2181 --from-beginning --topic <span class="built_in">test</span></span><br><span class="line"><span class="comment"># 列出所有消费者群组</span></span><br><span class="line">kafka-consumer-groups.sh --zookeeper ZKserverIP:2181 --list</span><br><span class="line"><span class="comment"># 列出test_group消费组的详细信息</span></span><br><span class="line">kafka-consumer-groups.sh --zookeeper  ZKserverIP:2181 --describe --group test_group</span><br><span class="line"><span class="comment"># 删除消费者群组</span></span><br><span class="line">kafka-consumer-groups.sh --zookeeper ZKserverIP:2181 --delete --group test_group</span><br><span class="line"><span class="comment"># 删除消费者群组中的topic</span></span><br><span class="line">kafka-consumer-groups.sh --zookeeper ZKserverIP:2181 --delete --group test_group --topic <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="kafka-run-class命令"><a href="#kafka-run-class命令" class="headerlink" title="kafka-run-class命令"></a>kafka-run-class命令</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 导出偏移量</span></span><br><span class="line">kafka-run-class.sh kafka.tools.ExportZkOffsets --zkconnect ZKserverIP:2181 --group testGroup --output-file test_group_offsets</span><br><span class="line"><span class="comment"># 查看test_group_offsets</span></span><br><span class="line">cat test_group_offsets</span><br><span class="line"><span class="comment"># 导入偏移量</span></span><br><span class="line">kafka-run-class.sh kafka.tools.ImportZkOffsets --zkconnect ZKserverIP:2181 --input-file test_group_offsets</span><br><span class="line"><span class="comment"># segment片段信息</span></span><br><span class="line">kafka-run-class.sh kafka.tools.DumpLogSegments --files [dir]/logs/test-1/00000000000000000000.log</span><br><span class="line"><span class="comment"># segment片段信息 -print-data-log</span></span><br><span class="line">kafka-run-class.sh kafka.tools.DumpLogSegments --files [dir]/logs/test-1/00000000000000000000.log -print-data-log</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>大数据</category>
-      </categories>
-      <tags>
-        <tag>大数据</tag>
-        <tag>kafka</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>cetnos 7.7单节点安装部署k8s（v1.18.2）</title>
-    <url>/Echo/2020/05/13/cetnos-7-7%E5%8D%95%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2k8s%EF%BC%88v1-18-2%EF%BC%89/</url>
-    <content><![CDATA[<h4 id="1-配置hosts文件"><a href="#1-配置hosts文件" class="headerlink" title="1.配置hosts文件"></a>1.配置hosts文件</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/hosts</span><br></pre></td></tr></table></figure>
-
-<p>本机ip  本机hostname 本机hostname</p>
-<h4 id="2-关闭防火墙-sawp等"><a href="#2-关闭防火墙-sawp等" class="headerlink" title="2.关闭防火墙, sawp等"></a>2.关闭防火墙, sawp等</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl <span class="built_in">disable</span> firewalld</span><br><span class="line">swapoff -a <span class="comment">#此处为临时关闭</span></span><br></pre></td></tr></table></figure>
-
-<p>#注释掉 /etc/fstab 里面这一行 /dev/mapper/centos-swap swap                    swap    defaults        0 0</p>
-<h4 id="3-禁用selinux"><a href="#3-禁用selinux" class="headerlink" title="3.禁用selinux"></a>3.禁用selinux</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br><span class="line">SELINUX=disabled</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-修改iptables参数-RHEL-CentOS-7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题"><a href="#4-修改iptables参数-RHEL-CentOS-7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题" class="headerlink" title="4.修改iptables参数 :: RHEL / CentOS 7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题"></a>4.修改iptables参数 :: RHEL / CentOS 7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">cat &lt;&lt;<span class="string">EOF &gt;  /etc/sysctl.d/k8s.conf</span></span><br><span class="line"><span class="string">vm.swappiness = 0</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-ip6tables = 1</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-iptables = 1</span></span><br><span class="line"><span class="string">net.ipv4.ip_forward = 1</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"><span class="comment">#使配置生效</span></span><br><span class="line">modprobe br_netfilter</span><br><span class="line">sysctl -p /etc/sysctl.d/k8s.conf</span><br></pre></td></tr></table></figure>
-
-<h4 id="5-安装docker-使用阿里镜像"><a href="#5-安装docker-使用阿里镜像" class="headerlink" title="5.安装docker(使用阿里镜像)"></a>5.安装docker(使用阿里镜像)</h4><h5 id="step-1-安装必要的一些系统工具"><a href="#step-1-安装必要的一些系统工具" class="headerlink" title="step 1: 安装必要的一些系统工具"></a>step 1: 安装必要的一些系统工具</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-2-添加软件源信息"><a href="#Step-2-添加软件源信息" class="headerlink" title="Step 2: 添加软件源信息"></a>Step 2: 添加软件源信息</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-3-更新并安装Docker-CE"><a href="#Step-3-更新并安装Docker-CE" class="headerlink" title="Step 3: 更新并安装Docker-CE"></a>Step 3: 更新并安装Docker-CE</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum makecache fast</span><br><span class="line">sudo yum -y install docker-ce</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-4-开启Docker服务"><a href="#Step-4-开启Docker服务" class="headerlink" title="Step 4: 开启Docker服务"></a>Step 4: 开启Docker服务</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-5-修改cgroupdriver-和镜像地址"><a href="#Step-5-修改cgroupdriver-和镜像地址" class="headerlink" title="Step 5: 修改cgroupdriver 和镜像地址"></a>Step 5: 修改cgroupdriver 和镜像地址</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/docker/daemon.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;exec-opts&quot;</span>: [<span class="string">&quot;native.cgroupdriver=systemd&quot;</span>],</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://e7l8pkuq.mirror.aliyuncs.com&quot;</span>,<span class="string">&quot;https://hub-mirror.c.163.com/&quot;</span>,<span class="string">&quot;https://reg-mirror.qiniu.com&quot;</span>]</span><br><span class="line">&#125;</span><br><span class="line"> <span class="comment"># 安装校验 docker version</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-6-安装kubernetes"><a href="#Step-6-安装kubernetes" class="headerlink" title="Step  6.安装kubernetes"></a>Step  6.安装kubernetes</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">cat &lt;&lt;<span class="string">EOF &gt; /etc/yum.repos.d/kubernetes.repo</span></span><br><span class="line"><span class="string">[kubernetes]</span></span><br><span class="line"><span class="string">name=Kubernetes</span></span><br><span class="line"><span class="string">baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64/</span></span><br><span class="line"><span class="string">enabled=1</span></span><br><span class="line"><span class="string">gpgcheck=1</span></span><br><span class="line"><span class="string">repo_gpgcheck=1</span></span><br><span class="line"><span class="string">gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line">setenforce 0</span><br><span class="line">yum install -y kubelet kubeadm kubectl</span><br><span class="line">systemctl <span class="built_in">enable</span> kubelet &amp;&amp; systemctl start kubelet</span><br><span class="line"> <span class="comment"># 出现索引lgpg检查失败时，请用yum install -y --nogpgcheck kubelet kubeadm kubectl</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="step-7-kubeadm初始化安装"><a href="#step-7-kubeadm初始化安装" class="headerlink" title="step 7.kubeadm初始化安装"></a>step 7.kubeadm初始化安装</h5><p>kubeadm init –apiserver-advertise-address=本机IP –image-repository registry.aliyuncs.com/google_containers –kubernetes-version 版本号 –pod-network-cidr=10.244.0.0/16</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubeadm init --apiserver-advertise-address=192.168.94.129 --image-repository registry.aliyuncs.com/google_containers --kubernetes-version 1.18.2 --pod-network-cidr=10.244.0.0/16</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-8-初始化安装成功后进行配置"><a href="#step-8-初始化安装成功后进行配置" class="headerlink" title="step 8.初始化安装成功后进行配置"></a>step 8.初始化安装成功后进行配置</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mkdir -p <span class="variable">$HOME</span>/.kube</span><br><span class="line">sudo cp -i /etc/kubernetes/admin.conf <span class="variable">$HOME</span>/.kube/config</span><br><span class="line">sudo chown $(id -u):$(id -g) <span class="variable">$HOME</span>/.kube/config</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-9-查看kubelet状态"><a href="#step-9-查看kubelet状态" class="headerlink" title="step 9.查看kubelet状态"></a>step 9.查看kubelet状态</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl status kubelet.service</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-10-确认每个组件的状态"><a href="#step-10-确认每个组件的状态" class="headerlink" title="step 10.确认每个组件的状态"></a>step 10.确认每个组件的状态</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl get cs</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-11-查看node状态，此时会发现处于NoReady"><a href="#step-11-查看node状态，此时会发现处于NoReady" class="headerlink" title="step 11.查看node状态，此时会发现处于NoReady"></a>step 11.查看node状态，此时会发现处于NoReady</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl get node</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-12-安装port-Network-flannel-k8s-cluster-工作-须安装pod网络，否则pod之间无法通信，k8s支持多种方案"><a href="#step-12-安装port-Network-flannel-k8s-cluster-工作-须安装pod网络，否则pod之间无法通信，k8s支持多种方案" class="headerlink" title="step 12.安装port Network( flannel )  : k8s cluster 工作 须安装pod网络，否则pod之间无法通信，k8s支持多种方案"></a>step 12.安装port Network( flannel )  : k8s cluster 工作 须安装pod网络，否则pod之间无法通信，k8s支持多种方案</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml</span><br></pre></td></tr></table></figure>
-
-<p>建议将kube-fannle文件拷贝至本地，将其中所需的镜像进行替换。</p>
-<h5 id="step-13-检查pod-确保每个pod都是running"><a href="#step-13-检查pod-确保每个pod都是running" class="headerlink" title="step 13.检查pod,确保每个pod都是running"></a>step 13.检查pod,确保每个pod都是running</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl get pod --all-namespaces -o wide</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>环境安装</category>
-      </categories>
-      <tags>
-        <tag>K8S</tag>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>cetnos 8.2单节点安装部署k8s（v1.18.2）</title>
-    <url>/Echo/2020/08/10/cetnos-8-2%E5%8D%95%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2k8s%EF%BC%88v1-18-2%EF%BC%89/</url>
-    <content><![CDATA[<h4 id="1-配置hosts文件"><a href="#1-配置hosts文件" class="headerlink" title="1.配置hosts文件"></a>1.配置hosts文件</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/hosts</span><br></pre></td></tr></table></figure>
-
-<p>本机ip  本机hostname 本机hostname</p>
-<h4 id="2-关闭防火墙-sawp等"><a href="#2-关闭防火墙-sawp等" class="headerlink" title="2.关闭防火墙, sawp等"></a>2.关闭防火墙, sawp等</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl <span class="built_in">disable</span> firewalld</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-关闭swap"><a href="#3-关闭swap" class="headerlink" title="3.关闭swap"></a>3.关闭swap</h4><h4 id="4-禁用selinux"><a href="#4-禁用selinux" class="headerlink" title="4.禁用selinux"></a>4.禁用selinux</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br><span class="line">SELINUX=disabled</span><br><span class="line">/usr/sbin/sestatus -v  <span class="comment"># 查看selinux状态</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="5-安装docker"><a href="#5-安装docker" class="headerlink" title="5.安装docker"></a>5.安装docker</h4><h5 id="step-1-安装必要的一些系统工具"><a href="#step-1-安装必要的一些系统工具" class="headerlink" title="step 1: 安装必要的一些系统工具"></a>step 1: 安装必要的一些系统工具</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-2-添加软件源信息"><a href="#Step-2-添加软件源信息" class="headerlink" title="Step 2: 添加软件源信息"></a>Step 2: 添加软件源信息</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-3-更新并安装Docker-CE"><a href="#Step-3-更新并安装Docker-CE" class="headerlink" title="Step 3: 更新并安装Docker-CE"></a>Step 3: 更新并安装Docker-CE</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum makecache --refresh</span><br><span class="line">sudo yum -y install docker-ce</span><br><span class="line"><span class="comment"># 发现报错：Problem: package docker-ce-3:19.03.12-3.el7.x86_64 requires containerd.io &gt;= 1.2.2-3, but none of the providers can be installed</span></span><br><span class="line"><span class="comment"># 因为containerd 版本过低</span></span><br><span class="line">dnf install container-selinux</span><br><span class="line">通过yum -y install https://download.docker.com/linux/centos/7/x86_64/edge/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm 升级即可</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-4-docker-修改Cgroup-Driver以及docker镜像拉取地址"><a href="#Step-4-docker-修改Cgroup-Driver以及docker镜像拉取地址" class="headerlink" title="Step 4: docker 修改Cgroup Driver以及docker镜像拉取地址"></a>Step 4: docker 修改Cgroup Driver以及docker镜像拉取地址</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"> cat /etc/docker/daemon.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://e7l8pkuq.mirror.aliyuncs.com&quot;</span>],</span><br><span class="line">  <span class="string">&quot;exec-opts&quot;</span>: [<span class="string">&quot;native.cgroupdriver=systemd&quot;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-5-开启Docker服务"><a href="#Step-5-开启Docker服务" class="headerlink" title="Step 5: 开启Docker服务"></a>Step 5: 开启Docker服务</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
-
-<h4 id="6-安装kubectl"><a href="#6-安装kubectl" class="headerlink" title="6.安装kubectl"></a>6.安装kubectl</h4><h5 id="step-1：下载最新kubectl最新资源"><a href="#step-1：下载最新kubectl最新资源" class="headerlink" title="step 1：下载最新kubectl最新资源"></a>step 1：下载最新kubectl最新资源</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">curl -LO <span class="string">&quot;https://storage.googleapis.com/kubernetes-release/release/<span class="subst">$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)</span>/bin/linux/amd64/kubectl&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="step-2：添加执行权限"><a href="#step-2：添加执行权限" class="headerlink" title="step 2：添加执行权限"></a>step 2：添加执行权限</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">chmod +x ./kubectl</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-3：移动kubectl至bin路径"><a href="#step-3：移动kubectl至bin路径" class="headerlink" title="step 3：移动kubectl至bin路径"></a>step 3：移动kubectl至bin路径</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo mv ./kubectl /usr/<span class="built_in">local</span>/bin/kubectl</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-4：确认安装的版本"><a href="#step-4：确认安装的版本" class="headerlink" title="step 4：确认安装的版本"></a>step 4：确认安装的版本</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl version --client</span><br></pre></td></tr></table></figure>
-
-<h4 id="7-安装minikube"><a href="#7-安装minikube" class="headerlink" title="7.安装minikube"></a>7.安装minikube</h4><h5 id="step-1：确认是否支持虚拟化"><a href="#step-1：确认是否支持虚拟化" class="headerlink" title="step 1：确认是否支持虚拟化"></a>step 1：确认是否支持虚拟化</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">grep -E --color <span class="string">&#x27;vmx|svm&#x27;</span> /proc/cpuinfo</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="step-2：下载minikube资源"><a href="#step-2：下载minikube资源" class="headerlink" title="step 2：下载minikube资源"></a>step 2：下载minikube资源</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \</span><br><span class="line">  &amp;&amp; chmod +x minikube</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="step-3：添加minikube进入系统命令"><a href="#step-3：添加minikube进入系统命令" class="headerlink" title="step 3：添加minikube进入系统命令"></a>step 3：添加minikube进入系统命令</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo mkdir -p /usr/<span class="built_in">local</span>/bin/</span><br><span class="line">sudo install minikube /usr/<span class="built_in">local</span>/bin/</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="step-4：启动-minikube（使用的VM安装的centos-8因此设置driver-none）"><a href="#step-4：启动-minikube（使用的VM安装的centos-8因此设置driver-none）" class="headerlink" title="step 4：启动 minikube（使用的VM安装的centos 8因此设置driver=none）"></a>step 4：启动 minikube（使用的VM安装的centos 8因此设置driver=none）</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">minikube start --driver=none --image-repository=registry.cn-hangzhou.aliyuncs.com/google_containers</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="step-5：确认minikube状态"><a href="#step-5：确认minikube状态" class="headerlink" title="step 5：确认minikube状态"></a>step 5：确认minikube状态</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">minikube status</span><br></pre></td></tr></table></figure>
-
-<p>8.istio安装</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">istioctl manifest apply --<span class="built_in">set</span> profile=demo</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>环境安装</category>
-      </categories>
-      <tags>
-        <tag>K8S</tag>
-        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -2235,6 +2092,149 @@
       </tags>
   </entry>
   <entry>
+    <title>Kafka常见命令</title>
+    <url>/Echo/2020/09/12/Kafka%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h4 id="kafka-启动命令"><a href="#kafka-启动命令" class="headerlink" title="kafka 启动命令"></a>kafka 启动命令</h4><p>dir：kafka 安装位置</p>
+<p>指定对应的配置文件启动</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kafka-server-start.sh  [dir]config/server.properties</span><br></pre></td></tr></table></figure>
+
+<p>以后台方式启动</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kafka-server-start.sh  -daemon [dir]config/server.properties</span><br></pre></td></tr></table></figure>
+
+<p>指定JMX 端口启动，指定JMX是为了可以方便的监控kafka集群（使用滴滴的logi会用到此端口）</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">JMX_PORT=9991 kafka-server-start.sh  -daemon [dir]config/server.properties</span><br></pre></td></tr></table></figure>
+
+<h4 id="kafka-停止命令"><a href="#kafka-停止命令" class="headerlink" title="kafka 停止命令"></a>kafka 停止命令</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kafka-server-stop.sh</span><br></pre></td></tr></table></figure>
+
+<p>或者</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment">#1 jps 找到kafka的pid</span></span><br><span class="line">jps</span><br><span class="line"><span class="comment">#2 通过kill -9 杀死进行</span></span><br><span class="line"><span class="built_in">kill</span> -9 pid</span><br></pre></td></tr></table></figure>
+
+<h4 id="kafka-topic-相关命令"><a href="#kafka-topic-相关命令" class="headerlink" title="kafka topic 相关命令"></a>kafka topic 相关命令</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment">#1.查看集群下所有topic</span></span><br><span class="line">kafka-topics --zookeeper ZKserverIP:2181 --list</span><br><span class="line"></span><br><span class="line"><span class="comment">#2.具体查看某个topic 默认端口号为2181，应根据自己配置修改</span></span><br><span class="line">kafka-topics --describe --zookeeper ZKserverIP:2181  --topic <span class="built_in">test</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#3.创建topic</span></span><br><span class="line">kafka-topics --create --zookeeper ZKserverIP:2181 --replication-factor 1 --partitions 3 --topic <span class="built_in">test</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#4.删除某个topic</span></span><br><span class="line"><span class="comment">#删除之前需要先将server.properties文件中配置的delete.topic.enable=true更改一下</span></span><br><span class="line">kafka-topics --delete --zookeeper ZKserverIP:2181 --topic <span class="built_in">test</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#5.console创建生产者往topic中写入数据 默认端口号9092，根据自己配置修改端口号</span></span><br><span class="line">kafka-console-producer --broker-list borkerServer:9092 --topic <span class="built_in">test</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#6.console创建消费者消费topic数据</span></span><br><span class="line">kafka-console-consumer --bootstrap-server borkerServer:9092 --topic <span class="built_in">test</span> --from-beginning</span><br><span class="line"></span><br><span class="line"><span class="comment">#7查看topic上面的消息数  --time -1 表示要获取当前topic所有分区当前最大位移， --time -2 表示获取当前最早位移</span></span><br><span class="line">kafka-run-class kafka.tools.GetOffsetShell --broker-list ZKserverIP:9092 --topic <span class="built_in">test</span> --time -1</span><br><span class="line"></span><br><span class="line"><span class="comment">#8修改topic分区数 注意：分区数量只能增加，不能减少</span></span><br><span class="line">kafka-topics --zookeeper ZKserverIP:2181 --alter --topic <span class="built_in">test</span> --partitions 3</span><br><span class="line"></span><br><span class="line"><span class="comment">#9查看消费组信息</span></span><br><span class="line">kafka-consumer-groups --bootstrap-server borkerServer:9092 --describe --group convert1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 10describe有两个参数用于找出有问题的分区 </span></span><br><span class="line"><span class="comment"># --unavailable-partitions：列出所有没有首领的分区，这些分区已经处于离线状态，对于生产者和消费者来说是不可用的</span></span><br><span class="line"><span class="comment"># --under-replicated-partitions：列出所有包含不同步副本的分区。</span></span><br><span class="line">kafka-topics.sh --zookeeper ZKserverIP:2181 --describe --unavailable-partitions</span><br><span class="line">kafka-topics.sh --zookeeper ZKserverIP:2181 --describe --under-replicated-partitions</span><br></pre></td></tr></table></figure>
+
+<h4 id="kafka-生产者"><a href="#kafka-生产者" class="headerlink" title="kafka 生产者"></a>kafka 生产者</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 有多个broker，可以用逗号分隔开都写上</span></span><br><span class="line">kafka-console-producer.sh --broker-list brokerServer:9092 --topic <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="kafka-消费者"><a href="#kafka-消费者" class="headerlink" title="kafka 消费者"></a>kafka 消费者</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看消费者最新消费到的消息</span></span><br><span class="line">kafka-console-consumer.sh --zookeeper ZKserverIP:2181  --topic <span class="built_in">test</span></span><br><span class="line"><span class="comment"># 从第一条信息查看消费者消费到的消息</span></span><br><span class="line">kafka-console-consumer.sh --zookeeper ZKserverIP:2181 --from-beginning --topic <span class="built_in">test</span></span><br><span class="line"><span class="comment"># 列出所有消费者群组</span></span><br><span class="line">kafka-consumer-groups.sh --zookeeper ZKserverIP:2181 --list</span><br><span class="line"><span class="comment"># 列出test_group消费组的详细信息</span></span><br><span class="line">kafka-consumer-groups.sh --zookeeper  ZKserverIP:2181 --describe --group test_group</span><br><span class="line"><span class="comment"># 删除消费者群组</span></span><br><span class="line">kafka-consumer-groups.sh --zookeeper ZKserverIP:2181 --delete --group test_group</span><br><span class="line"><span class="comment"># 删除消费者群组中的topic</span></span><br><span class="line">kafka-consumer-groups.sh --zookeeper ZKserverIP:2181 --delete --group test_group --topic <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="kafka-run-class命令"><a href="#kafka-run-class命令" class="headerlink" title="kafka-run-class命令"></a>kafka-run-class命令</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 导出偏移量</span></span><br><span class="line">kafka-run-class.sh kafka.tools.ExportZkOffsets --zkconnect ZKserverIP:2181 --group testGroup --output-file test_group_offsets</span><br><span class="line"><span class="comment"># 查看test_group_offsets</span></span><br><span class="line">cat test_group_offsets</span><br><span class="line"><span class="comment"># 导入偏移量</span></span><br><span class="line">kafka-run-class.sh kafka.tools.ImportZkOffsets --zkconnect ZKserverIP:2181 --input-file test_group_offsets</span><br><span class="line"><span class="comment"># segment片段信息</span></span><br><span class="line">kafka-run-class.sh kafka.tools.DumpLogSegments --files [dir]/logs/test-1/00000000000000000000.log</span><br><span class="line"><span class="comment"># segment片段信息 -print-data-log</span></span><br><span class="line">kafka-run-class.sh kafka.tools.DumpLogSegments --files [dir]/logs/test-1/00000000000000000000.log -print-data-log</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>大数据</tag>
+        <tag>kafka</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>cetnos 7.7单节点安装部署k8s（v1.18.2）</title>
+    <url>/Echo/2020/05/13/cetnos-7-7%E5%8D%95%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2k8s%EF%BC%88v1-18-2%EF%BC%89/</url>
+    <content><![CDATA[<h4 id="1-配置hosts文件"><a href="#1-配置hosts文件" class="headerlink" title="1.配置hosts文件"></a>1.配置hosts文件</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/hosts</span><br></pre></td></tr></table></figure>
+
+<p>本机ip  本机hostname 本机hostname</p>
+<h4 id="2-关闭防火墙-sawp等"><a href="#2-关闭防火墙-sawp等" class="headerlink" title="2.关闭防火墙, sawp等"></a>2.关闭防火墙, sawp等</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl <span class="built_in">disable</span> firewalld</span><br><span class="line">swapoff -a <span class="comment">#此处为临时关闭</span></span><br></pre></td></tr></table></figure>
+
+<p>#注释掉 /etc/fstab 里面这一行 /dev/mapper/centos-swap swap                    swap    defaults        0 0</p>
+<h4 id="3-禁用selinux"><a href="#3-禁用selinux" class="headerlink" title="3.禁用selinux"></a>3.禁用selinux</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br><span class="line">SELINUX=disabled</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-修改iptables参数-RHEL-CentOS-7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题"><a href="#4-修改iptables参数-RHEL-CentOS-7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题" class="headerlink" title="4.修改iptables参数 :: RHEL / CentOS 7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题"></a>4.修改iptables参数 :: RHEL / CentOS 7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">cat &lt;&lt;<span class="string">EOF &gt;  /etc/sysctl.d/k8s.conf</span></span><br><span class="line"><span class="string">vm.swappiness = 0</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-ip6tables = 1</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-iptables = 1</span></span><br><span class="line"><span class="string">net.ipv4.ip_forward = 1</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"><span class="comment">#使配置生效</span></span><br><span class="line">modprobe br_netfilter</span><br><span class="line">sysctl -p /etc/sysctl.d/k8s.conf</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-安装docker-使用阿里镜像"><a href="#5-安装docker-使用阿里镜像" class="headerlink" title="5.安装docker(使用阿里镜像)"></a>5.安装docker(使用阿里镜像)</h4><h5 id="step-1-安装必要的一些系统工具"><a href="#step-1-安装必要的一些系统工具" class="headerlink" title="step 1: 安装必要的一些系统工具"></a>step 1: 安装必要的一些系统工具</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-2-添加软件源信息"><a href="#Step-2-添加软件源信息" class="headerlink" title="Step 2: 添加软件源信息"></a>Step 2: 添加软件源信息</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-3-更新并安装Docker-CE"><a href="#Step-3-更新并安装Docker-CE" class="headerlink" title="Step 3: 更新并安装Docker-CE"></a>Step 3: 更新并安装Docker-CE</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum makecache fast</span><br><span class="line">sudo yum -y install docker-ce</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-4-开启Docker服务"><a href="#Step-4-开启Docker服务" class="headerlink" title="Step 4: 开启Docker服务"></a>Step 4: 开启Docker服务</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-5-修改cgroupdriver-和镜像地址"><a href="#Step-5-修改cgroupdriver-和镜像地址" class="headerlink" title="Step 5: 修改cgroupdriver 和镜像地址"></a>Step 5: 修改cgroupdriver 和镜像地址</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/docker/daemon.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;exec-opts&quot;</span>: [<span class="string">&quot;native.cgroupdriver=systemd&quot;</span>],</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://e7l8pkuq.mirror.aliyuncs.com&quot;</span>,<span class="string">&quot;https://hub-mirror.c.163.com/&quot;</span>,<span class="string">&quot;https://reg-mirror.qiniu.com&quot;</span>]</span><br><span class="line">&#125;</span><br><span class="line"> <span class="comment"># 安装校验 docker version</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-6-安装kubernetes"><a href="#Step-6-安装kubernetes" class="headerlink" title="Step  6.安装kubernetes"></a>Step  6.安装kubernetes</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">cat &lt;&lt;<span class="string">EOF &gt; /etc/yum.repos.d/kubernetes.repo</span></span><br><span class="line"><span class="string">[kubernetes]</span></span><br><span class="line"><span class="string">name=Kubernetes</span></span><br><span class="line"><span class="string">baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64/</span></span><br><span class="line"><span class="string">enabled=1</span></span><br><span class="line"><span class="string">gpgcheck=1</span></span><br><span class="line"><span class="string">repo_gpgcheck=1</span></span><br><span class="line"><span class="string">gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line">setenforce 0</span><br><span class="line">yum install -y kubelet kubeadm kubectl</span><br><span class="line">systemctl <span class="built_in">enable</span> kubelet &amp;&amp; systemctl start kubelet</span><br><span class="line"> <span class="comment"># 出现索引lgpg检查失败时，请用yum install -y --nogpgcheck kubelet kubeadm kubectl</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="step-7-kubeadm初始化安装"><a href="#step-7-kubeadm初始化安装" class="headerlink" title="step 7.kubeadm初始化安装"></a>step 7.kubeadm初始化安装</h5><p>kubeadm init –apiserver-advertise-address=本机IP –image-repository registry.aliyuncs.com/google_containers –kubernetes-version 版本号 –pod-network-cidr=10.244.0.0/16</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubeadm init --apiserver-advertise-address=192.168.94.129 --image-repository registry.aliyuncs.com/google_containers --kubernetes-version 1.18.2 --pod-network-cidr=10.244.0.0/16</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-8-初始化安装成功后进行配置"><a href="#step-8-初始化安装成功后进行配置" class="headerlink" title="step 8.初始化安装成功后进行配置"></a>step 8.初始化安装成功后进行配置</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mkdir -p <span class="variable">$HOME</span>/.kube</span><br><span class="line">sudo cp -i /etc/kubernetes/admin.conf <span class="variable">$HOME</span>/.kube/config</span><br><span class="line">sudo chown $(id -u):$(id -g) <span class="variable">$HOME</span>/.kube/config</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-9-查看kubelet状态"><a href="#step-9-查看kubelet状态" class="headerlink" title="step 9.查看kubelet状态"></a>step 9.查看kubelet状态</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl status kubelet.service</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-10-确认每个组件的状态"><a href="#step-10-确认每个组件的状态" class="headerlink" title="step 10.确认每个组件的状态"></a>step 10.确认每个组件的状态</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl get cs</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-11-查看node状态，此时会发现处于NoReady"><a href="#step-11-查看node状态，此时会发现处于NoReady" class="headerlink" title="step 11.查看node状态，此时会发现处于NoReady"></a>step 11.查看node状态，此时会发现处于NoReady</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl get node</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-12-安装port-Network-flannel-k8s-cluster-工作-须安装pod网络，否则pod之间无法通信，k8s支持多种方案"><a href="#step-12-安装port-Network-flannel-k8s-cluster-工作-须安装pod网络，否则pod之间无法通信，k8s支持多种方案" class="headerlink" title="step 12.安装port Network( flannel )  : k8s cluster 工作 须安装pod网络，否则pod之间无法通信，k8s支持多种方案"></a>step 12.安装port Network( flannel )  : k8s cluster 工作 须安装pod网络，否则pod之间无法通信，k8s支持多种方案</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml</span><br></pre></td></tr></table></figure>
+
+<p>建议将kube-fannle文件拷贝至本地，将其中所需的镜像进行替换。</p>
+<h5 id="step-13-检查pod-确保每个pod都是running"><a href="#step-13-检查pod-确保每个pod都是running" class="headerlink" title="step 13.检查pod,确保每个pod都是running"></a>step 13.检查pod,确保每个pod都是running</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl get pod --all-namespaces -o wide</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>环境安装</category>
+      </categories>
+      <tags>
+        <tag>K8S</tag>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>cetnos 8.2单节点安装部署k8s（v1.18.2）</title>
+    <url>/Echo/2020/08/10/cetnos-8-2%E5%8D%95%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2k8s%EF%BC%88v1-18-2%EF%BC%89/</url>
+    <content><![CDATA[<h4 id="1-配置hosts文件"><a href="#1-配置hosts文件" class="headerlink" title="1.配置hosts文件"></a>1.配置hosts文件</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/hosts</span><br></pre></td></tr></table></figure>
+
+<p>本机ip  本机hostname 本机hostname</p>
+<h4 id="2-关闭防火墙-sawp等"><a href="#2-关闭防火墙-sawp等" class="headerlink" title="2.关闭防火墙, sawp等"></a>2.关闭防火墙, sawp等</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl <span class="built_in">disable</span> firewalld</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-关闭swap"><a href="#3-关闭swap" class="headerlink" title="3.关闭swap"></a>3.关闭swap</h4><h4 id="4-禁用selinux"><a href="#4-禁用selinux" class="headerlink" title="4.禁用selinux"></a>4.禁用selinux</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br><span class="line">SELINUX=disabled</span><br><span class="line">/usr/sbin/sestatus -v  <span class="comment"># 查看selinux状态</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="5-安装docker"><a href="#5-安装docker" class="headerlink" title="5.安装docker"></a>5.安装docker</h4><h5 id="step-1-安装必要的一些系统工具"><a href="#step-1-安装必要的一些系统工具" class="headerlink" title="step 1: 安装必要的一些系统工具"></a>step 1: 安装必要的一些系统工具</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-2-添加软件源信息"><a href="#Step-2-添加软件源信息" class="headerlink" title="Step 2: 添加软件源信息"></a>Step 2: 添加软件源信息</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-3-更新并安装Docker-CE"><a href="#Step-3-更新并安装Docker-CE" class="headerlink" title="Step 3: 更新并安装Docker-CE"></a>Step 3: 更新并安装Docker-CE</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum makecache --refresh</span><br><span class="line">sudo yum -y install docker-ce</span><br><span class="line"><span class="comment"># 发现报错：Problem: package docker-ce-3:19.03.12-3.el7.x86_64 requires containerd.io &gt;= 1.2.2-3, but none of the providers can be installed</span></span><br><span class="line"><span class="comment"># 因为containerd 版本过低</span></span><br><span class="line">dnf install container-selinux</span><br><span class="line">通过yum -y install https://download.docker.com/linux/centos/7/x86_64/edge/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm 升级即可</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-4-docker-修改Cgroup-Driver以及docker镜像拉取地址"><a href="#Step-4-docker-修改Cgroup-Driver以及docker镜像拉取地址" class="headerlink" title="Step 4: docker 修改Cgroup Driver以及docker镜像拉取地址"></a>Step 4: docker 修改Cgroup Driver以及docker镜像拉取地址</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"> cat /etc/docker/daemon.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://e7l8pkuq.mirror.aliyuncs.com&quot;</span>],</span><br><span class="line">  <span class="string">&quot;exec-opts&quot;</span>: [<span class="string">&quot;native.cgroupdriver=systemd&quot;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-5-开启Docker服务"><a href="#Step-5-开启Docker服务" class="headerlink" title="Step 5: 开启Docker服务"></a>Step 5: 开启Docker服务</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-安装kubectl"><a href="#6-安装kubectl" class="headerlink" title="6.安装kubectl"></a>6.安装kubectl</h4><h5 id="step-1：下载最新kubectl最新资源"><a href="#step-1：下载最新kubectl最新资源" class="headerlink" title="step 1：下载最新kubectl最新资源"></a>step 1：下载最新kubectl最新资源</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">curl -LO <span class="string">&quot;https://storage.googleapis.com/kubernetes-release/release/<span class="subst">$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)</span>/bin/linux/amd64/kubectl&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="step-2：添加执行权限"><a href="#step-2：添加执行权限" class="headerlink" title="step 2：添加执行权限"></a>step 2：添加执行权限</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">chmod +x ./kubectl</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-3：移动kubectl至bin路径"><a href="#step-3：移动kubectl至bin路径" class="headerlink" title="step 3：移动kubectl至bin路径"></a>step 3：移动kubectl至bin路径</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo mv ./kubectl /usr/<span class="built_in">local</span>/bin/kubectl</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-4：确认安装的版本"><a href="#step-4：确认安装的版本" class="headerlink" title="step 4：确认安装的版本"></a>step 4：确认安装的版本</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl version --client</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-安装minikube"><a href="#7-安装minikube" class="headerlink" title="7.安装minikube"></a>7.安装minikube</h4><h5 id="step-1：确认是否支持虚拟化"><a href="#step-1：确认是否支持虚拟化" class="headerlink" title="step 1：确认是否支持虚拟化"></a>step 1：确认是否支持虚拟化</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">grep -E --color <span class="string">&#x27;vmx|svm&#x27;</span> /proc/cpuinfo</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="step-2：下载minikube资源"><a href="#step-2：下载minikube资源" class="headerlink" title="step 2：下载minikube资源"></a>step 2：下载minikube资源</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \</span><br><span class="line">  &amp;&amp; chmod +x minikube</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="step-3：添加minikube进入系统命令"><a href="#step-3：添加minikube进入系统命令" class="headerlink" title="step 3：添加minikube进入系统命令"></a>step 3：添加minikube进入系统命令</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo mkdir -p /usr/<span class="built_in">local</span>/bin/</span><br><span class="line">sudo install minikube /usr/<span class="built_in">local</span>/bin/</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="step-4：启动-minikube（使用的VM安装的centos-8因此设置driver-none）"><a href="#step-4：启动-minikube（使用的VM安装的centos-8因此设置driver-none）" class="headerlink" title="step 4：启动 minikube（使用的VM安装的centos 8因此设置driver=none）"></a>step 4：启动 minikube（使用的VM安装的centos 8因此设置driver=none）</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">minikube start --driver=none --image-repository=registry.cn-hangzhou.aliyuncs.com/google_containers</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="step-5：确认minikube状态"><a href="#step-5：确认minikube状态" class="headerlink" title="step 5：确认minikube状态"></a>step 5：确认minikube状态</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">minikube status</span><br></pre></td></tr></table></figure>
+
+<p>8.istio安装</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">istioctl manifest apply --<span class="built_in">set</span> profile=demo</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>环境安装</category>
+      </categories>
+      <tags>
+        <tag>K8S</tag>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>HBase shell命令</title>
     <url>/Echo/2020/03/13/hbase%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<h4 id="HBase简介"><a href="#HBase简介" class="headerlink" title="HBase简介"></a>HBase简介</h4><p>HBase 命名的起源是 Hadoop database，Hadoop数据库，是NoSQL数据库，基于列式存储而非行式存储。</p>
@@ -2555,6 +2555,28 @@
       </tags>
   </entry>
   <entry>
+    <title>2015-2020工作日志</title>
+    <url>/Echo/2020/04/02/%E4%BA%94%E5%B9%B4%E5%B7%A5%E4%BD%9C%E6%84%9F%E6%82%9F/</url>
+    <content><![CDATA[<h5 id="学校生涯"><a href="#学校生涯" class="headerlink" title="学校生涯"></a>学校生涯</h5><p>​       我自身是河南人，不过有一颗不安分的心。高考志愿填报了大连交通大学，选了软件工程与信息管理与信息系统的双专业学位，学制五年。大三期间参与学校老师ERP沙盘模拟软件的编写工作。在这期间开始真正的接触项目，这时才知道学习与实战的差距。当时主要用的J2EE和java struct。项目做到大四完成。完成第一版之后在学校的校内ERP沙盘大赛和校内实践课程上已经开始运用了。听说现在还在使用中。</p>
+<h5 id="北京"><a href="#北京" class="headerlink" title="北京"></a>北京</h5><h6 id="培训"><a href="#培训" class="headerlink" title="培训"></a>培训</h6><p>​     因为一心想去一线城市看看，在择业期毫不犹豫的就选择了去北京。因为大学有项目而且大学主修课程有日语，很顺利的面上了北京利达智通。14年11月开始进入公司实习。在实习前三个月是在济南培训。培训这段时间感觉是最充实的。当时公司主要业务是野村证券。使用的大机语言（COBOL，在校也有相关的选修课还有证书可拿），主要是linux系统上进行开发。三个月的培训每天有作业每月有考核，压力大收获也大。在此期间学的linux和养成的编程习惯让我至今仍有受益。</p>
+<h6 id="第一个项目-野村证券MRF"><a href="#第一个项目-野村证券MRF" class="headerlink" title="第一个项目-野村证券MRF"></a>第一个项目-野村证券MRF</h6><p>这个项目主要是为日本野村证券新增一个青少年可以参与基金交易的功能。前一个月由师傅的带领开始正式的面向对象编程，不得不说日本人的式样书真详细。主要负责是功能模块各种数据连接层的处理以及数据库维护等工作。在这工作期间培养了自己的时间观念（某办法日本人特别在意这个）在dead line 前必须完成，好的一点是式样书（详设）写的真详细，不好的一点是没有自己发展的空间。还有个教训让我记忆深刻。在转正后，开始自己独立编写，结对测试的工作模式。由于当时对全角和半角的空格不敏感，这编程过程这个错误反复的犯，差点耽误项目进度。后来就给自己贴了便签，同样的错误绝不能犯第二次。</p>
+<h6 id="第二个项目-青森银行的住贷项目"><a href="#第二个项目-青森银行的住贷项目" class="headerlink" title="第二个项目-青森银行的住贷项目"></a>第二个项目-青森银行的住贷项目</h6><p>这个项目是公司开始转型的开始。主要编程语言为java，使用SSM框架来进行开发。这项目算是一个全新的项目从资料上传、申请、审批、贷后管理这房屋住贷全流程。（不同的有两点一、青森银行的住贷是有授权民间金融借贷来进行，二、放款时本人必须到场身份验证）。之前的项目一直用的COBOL，从2016年12月开始重新捡回java进行面向对象开发。从此开始CURD之路，主要是DAO层使用原生的JDBC连接数据库，然后实现CURD操作。除了承担CURD操作之外同时还承担这项目组的DBA的角色。主要有数据库权限分配与管理，数据表视图的创建，数据库表结构创建与维护等工作。项目大概到5月份就开始进行客户验收了，中间去日本青森县出差过1个月，作为现场技术支持。因为我本身有日语N3证书（目前已经过期，日语也忘得差不多了），同时本身的水平在项目组中还不错。过完十一后就日渐想河南老家。北京节假日回家真的太难了。</p>
+<h5 id="浪潮之旅"><a href="#浪潮之旅" class="headerlink" title="浪潮之旅"></a>浪潮之旅</h5><h6 id="济南-初识测试、自动化测试"><a href="#济南-初识测试、自动化测试" class="headerlink" title="济南-初识测试、自动化测试"></a>济南-初识测试、自动化测试</h6><p>17年10月开始面试，11月收到浪潮的offer。当时面上大厂，心情激动，这个也可以实现回郑州，只不过要先在济南工作一年左右。入职岗位是测试验证部-测试开发。当时浪潮因为自身要搞自动化测试平台的建设，因为有个目标要在19年4月完成5000+自动化脚本库已经自动化平台的建设。入职后开始搞自动化测试。我的任务主要是前台选择完用例后，我后台开始执行相关测试脚本同时获取脚本执行结果以及日志信息。在18年7月ITMS平台搭建完成，同年获得浪潮集团内部创新一等奖。后续开始除了用例撰写人员全部投入脚本编写工作，自此开始认识测试。从需求分析，用例设计，手工测试，自动化测试，bug回归，事后分析总结等全流程，认识了了解了，熟悉了测试以及自动化用例和脚本如何进行对应。</p>
+<h6 id="郑州-挑战与转变"><a href="#郑州-挑战与转变" class="headerlink" title="郑州-挑战与转变"></a>郑州-挑战与转变</h6><p>18年10月因为要在郑州成立大数据产品线。我和我的主管作为河南人，直接安排回到郑州工作。当时的一切都是刚刚开始。</p>
+<p>1、协助团队组建——跟随主管以及主管的主管进行人员面试工作，在19年7月完成20人角色完善的大数据测试团队，同时实验服务器等设备申请组装到位；</p>
+<p>2、自动化任务——①带领四位成员完成1632自动化脚本撰写任务；②优化ITMS平台脚本上传工作，通过rsync由原来的脚本全量同步变更为脚本增量同步，脚本上传时间缩短15%以上；③借鉴BMC WEB自动化框架完成大数据自动化框架搭建，并实现与ITMS平台的对接；</p>
+<p>3、专利负责人——超额完成团队財年指标20%；通过每周的头脑风暴挖掘专利点，共完成发明专利80个。</p>
+<p>在这一时期培养了自己如何提问题，如何回答问题。同时培养自己的owner意识，时不时和领导沟通自己项目进度。在大数据自动化搭建期间领悟到了设计优先原则。因为前期有BMC搭建经验，自然而然想直接引用却忽略了二者之间的不同，导致一个月时间的浪费。后来区分二者的相同和不同之处，针对性的设计并开发。在规定时间内及时完成框架搭建，并接入ITMS平台。</p>
+<h5 id="离开→新的起点"><a href="#离开→新的起点" class="headerlink" title="离开→新的起点"></a>离开→新的起点</h5><p>经过思考再三决定离开，因为在这里已经完成了大数据自动化框架的搭建，并完全适配ITMS平台。后续的工作不能再给个人带来更大的成长。在3月份开始面试，面试过阿里、腾讯、恒生等公司，因为自己在这里骄傲自满，技术与前言的有些脱节，算法几乎是两眼一抹黑。种种不顺利，在3月底，收到华为外包、阿里外包、网易外包、中电金信以及郑煤机的offer。目前纠结选择中。。。未完待续</p>
+]]></content>
+      <categories>
+        <category>个人</category>
+      </categories>
+      <tags>
+        <tag>个人成长</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>springboot整合shiro和JWT使用指北</title>
     <url>/Echo/2021/11/09/springboot%E6%95%B4%E5%90%88shiro%E5%92%8CJWT%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8C%97/</url>
     <content><![CDATA[<h3 id="shiro是什么？"><a href="#shiro是什么？" class="headerlink" title="shiro是什么？"></a>shiro是什么？</h3><p><code>Shiro</code> 是一个强大的简单易用的 <code>Java</code> 安全框架，主要用来更便捷的 <code>认证，授权，加密，会话管理</code>。<code>Shiro</code> 首要的和最重要的目标就是容易使用并且容易理解，通过 <code>Shiro</code> 易于理解的<code>API</code>，您可以快速、轻松地获得任何应用程序——从最小的移动应用程序最大的网络和企业应用程序。</p>
@@ -2611,28 +2633,6 @@
       <tags>
         <tag>java</tag>
         <tag>springboot</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>2015-2020工作日志</title>
-    <url>/Echo/2020/04/02/%E4%BA%94%E5%B9%B4%E5%B7%A5%E4%BD%9C%E6%84%9F%E6%82%9F/</url>
-    <content><![CDATA[<h5 id="学校生涯"><a href="#学校生涯" class="headerlink" title="学校生涯"></a>学校生涯</h5><p>​       我自身是河南人，不过有一颗不安分的心。高考志愿填报了大连交通大学，选了软件工程与信息管理与信息系统的双专业学位，学制五年。大三期间参与学校老师ERP沙盘模拟软件的编写工作。在这期间开始真正的接触项目，这时才知道学习与实战的差距。当时主要用的J2EE和java struct。项目做到大四完成。完成第一版之后在学校的校内ERP沙盘大赛和校内实践课程上已经开始运用了。听说现在还在使用中。</p>
-<h5 id="北京"><a href="#北京" class="headerlink" title="北京"></a>北京</h5><h6 id="培训"><a href="#培训" class="headerlink" title="培训"></a>培训</h6><p>​     因为一心想去一线城市看看，在择业期毫不犹豫的就选择了去北京。因为大学有项目而且大学主修课程有日语，很顺利的面上了北京利达智通。14年11月开始进入公司实习。在实习前三个月是在济南培训。培训这段时间感觉是最充实的。当时公司主要业务是野村证券。使用的大机语言（COBOL，在校也有相关的选修课还有证书可拿），主要是linux系统上进行开发。三个月的培训每天有作业每月有考核，压力大收获也大。在此期间学的linux和养成的编程习惯让我至今仍有受益。</p>
-<h6 id="第一个项目-野村证券MRF"><a href="#第一个项目-野村证券MRF" class="headerlink" title="第一个项目-野村证券MRF"></a>第一个项目-野村证券MRF</h6><p>这个项目主要是为日本野村证券新增一个青少年可以参与基金交易的功能。前一个月由师傅的带领开始正式的面向对象编程，不得不说日本人的式样书真详细。主要负责是功能模块各种数据连接层的处理以及数据库维护等工作。在这工作期间培养了自己的时间观念（某办法日本人特别在意这个）在dead line 前必须完成，好的一点是式样书（详设）写的真详细，不好的一点是没有自己发展的空间。还有个教训让我记忆深刻。在转正后，开始自己独立编写，结对测试的工作模式。由于当时对全角和半角的空格不敏感，这编程过程这个错误反复的犯，差点耽误项目进度。后来就给自己贴了便签，同样的错误绝不能犯第二次。</p>
-<h6 id="第二个项目-青森银行的住贷项目"><a href="#第二个项目-青森银行的住贷项目" class="headerlink" title="第二个项目-青森银行的住贷项目"></a>第二个项目-青森银行的住贷项目</h6><p>这个项目是公司开始转型的开始。主要编程语言为java，使用SSM框架来进行开发。这项目算是一个全新的项目从资料上传、申请、审批、贷后管理这房屋住贷全流程。（不同的有两点一、青森银行的住贷是有授权民间金融借贷来进行，二、放款时本人必须到场身份验证）。之前的项目一直用的COBOL，从2016年12月开始重新捡回java进行面向对象开发。从此开始CURD之路，主要是DAO层使用原生的JDBC连接数据库，然后实现CURD操作。除了承担CURD操作之外同时还承担这项目组的DBA的角色。主要有数据库权限分配与管理，数据表视图的创建，数据库表结构创建与维护等工作。项目大概到5月份就开始进行客户验收了，中间去日本青森县出差过1个月，作为现场技术支持。因为我本身有日语N3证书（目前已经过期，日语也忘得差不多了），同时本身的水平在项目组中还不错。过完十一后就日渐想河南老家。北京节假日回家真的太难了。</p>
-<h5 id="浪潮之旅"><a href="#浪潮之旅" class="headerlink" title="浪潮之旅"></a>浪潮之旅</h5><h6 id="济南-初识测试、自动化测试"><a href="#济南-初识测试、自动化测试" class="headerlink" title="济南-初识测试、自动化测试"></a>济南-初识测试、自动化测试</h6><p>17年10月开始面试，11月收到浪潮的offer。当时面上大厂，心情激动，这个也可以实现回郑州，只不过要先在济南工作一年左右。入职岗位是测试验证部-测试开发。当时浪潮因为自身要搞自动化测试平台的建设，因为有个目标要在19年4月完成5000+自动化脚本库已经自动化平台的建设。入职后开始搞自动化测试。我的任务主要是前台选择完用例后，我后台开始执行相关测试脚本同时获取脚本执行结果以及日志信息。在18年7月ITMS平台搭建完成，同年获得浪潮集团内部创新一等奖。后续开始除了用例撰写人员全部投入脚本编写工作，自此开始认识测试。从需求分析，用例设计，手工测试，自动化测试，bug回归，事后分析总结等全流程，认识了了解了，熟悉了测试以及自动化用例和脚本如何进行对应。</p>
-<h6 id="郑州-挑战与转变"><a href="#郑州-挑战与转变" class="headerlink" title="郑州-挑战与转变"></a>郑州-挑战与转变</h6><p>18年10月因为要在郑州成立大数据产品线。我和我的主管作为河南人，直接安排回到郑州工作。当时的一切都是刚刚开始。</p>
-<p>1、协助团队组建——跟随主管以及主管的主管进行人员面试工作，在19年7月完成20人角色完善的大数据测试团队，同时实验服务器等设备申请组装到位；</p>
-<p>2、自动化任务——①带领四位成员完成1632自动化脚本撰写任务；②优化ITMS平台脚本上传工作，通过rsync由原来的脚本全量同步变更为脚本增量同步，脚本上传时间缩短15%以上；③借鉴BMC WEB自动化框架完成大数据自动化框架搭建，并实现与ITMS平台的对接；</p>
-<p>3、专利负责人——超额完成团队財年指标20%；通过每周的头脑风暴挖掘专利点，共完成发明专利80个。</p>
-<p>在这一时期培养了自己如何提问题，如何回答问题。同时培养自己的owner意识，时不时和领导沟通自己项目进度。在大数据自动化搭建期间领悟到了设计优先原则。因为前期有BMC搭建经验，自然而然想直接引用却忽略了二者之间的不同，导致一个月时间的浪费。后来区分二者的相同和不同之处，针对性的设计并开发。在规定时间内及时完成框架搭建，并接入ITMS平台。</p>
-<h5 id="离开→新的起点"><a href="#离开→新的起点" class="headerlink" title="离开→新的起点"></a>离开→新的起点</h5><p>经过思考再三决定离开，因为在这里已经完成了大数据自动化框架的搭建，并完全适配ITMS平台。后续的工作不能再给个人带来更大的成长。在3月份开始面试，面试过阿里、腾讯、恒生等公司，因为自己在这里骄傲自满，技术与前言的有些脱节，算法几乎是两眼一抹黑。种种不顺利，在3月底，收到华为外包、阿里外包、网易外包、中电金信以及郑煤机的offer。目前纠结选择中。。。未完待续</p>
-]]></content>
-      <categories>
-        <category>个人</category>
-      </categories>
-      <tags>
-        <tag>个人成长</tag>
       </tags>
   </entry>
   <entry>
@@ -2967,33 +2967,6 @@
       </tags>
   </entry>
   <entry>
-    <title>卸载centos自带的openjdk和MySQL</title>
-    <url>/Echo/2020/01/01/%E5%8D%B8%E8%BD%BDcentos%E8%87%AA%E5%B8%A6%E7%9A%84openjdk%E5%92%8CMySQL/</url>
-    <content><![CDATA[<h2 id="卸载openjdk"><a href="#卸载openjdk" class="headerlink" title="卸载openjdk"></a>卸载openjdk</h2><p>1.查看已经安装的jdk</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">rpm –qa|grep jdk</span><br><span class="line"></span><br><span class="line">java-1.7.0-openjdk-1.7.0.141-2.6.10.5.el7.x86_64</span><br><span class="line"></span><br><span class="line">java-1.8.0-openjdk-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">java-1.8.0-openjdk-headless-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">java-1.7.0-openjdk-headless-1.7.0.141-2.6.10.5.el7.x86_64</span><br><span class="line"></span><br><span class="line">ldap-4.19-1.el7.noarch</span><br><span class="line"></span><br><span class="line">copy-jdk-configs-2.2-3.el7.noarch</span><br></pre></td></tr></table></figure>
-
-<p>2.卸载命令</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum -y remove java-1.7.0-openjdk-1.7.0.141-2.6.10.5.el7.x86_64</span><br><span class="line"></span><br><span class="line">yum -y remove java-1.8.0-openjdk-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">yum -y remove java-1.8.0-openjdk-headless-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">yum -y remove java-1.7.0-openjdk-headless-1.7.0.141-2.6.10.5.el7.x86_64</span><br></pre></td></tr></table></figure>
-
-<p>.noarch文件不用</p>
-<p>3.用Java –version查看</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">提示如下： No such file or directoy</span><br></pre></td></tr></table></figure>
-
-<p>  卸载完成</p>
-<h2 id="卸载mysql"><a href="#卸载mysql" class="headerlink" title="卸载mysql"></a>卸载mysql</h2><p>执行命令</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum remove mariadb-libs</span><br></pre></td></tr></table></figure>
-
-<p>即可。</p>
-]]></content>
-      <categories>
-        <category>环境安装</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>JDK</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>kafka测试</title>
     <url>/Echo/2021/11/24/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%BB%84%E4%BB%B6kafka%E6%B5%8B%E8%AF%95/</url>
     <content><![CDATA[<h5 id="kafka是一个事件流平台"><a href="#kafka是一个事件流平台" class="headerlink" title="kafka是一个事件流平台"></a>kafka是一个事件流平台</h5><ul>
@@ -3042,6 +3015,88 @@
       </categories>
       <tags>
         <tag>kafka，大数据</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何编写有效的测试用例</title>
+    <url>/Echo/2022/01/15/%E5%A6%82%E4%BD%95%E7%BC%96%E5%86%99%E6%9C%89%E6%95%88%E7%9A%84%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B/</url>
+    <content><![CDATA[<h4 id="什么是测试用例？"><a href="#什么是测试用例？" class="headerlink" title="什么是测试用例？"></a>什么是测试用例？</h4><p>测试用例包含描述输入、动作或事件以及预期响应的组件，以确定应用程序的功能是否正常工作。</p>
+<h4 id="测试用例的级别："><a href="#测试用例的级别：" class="headerlink" title="测试用例的级别："></a>测试用例的级别：</h4><ul>
+<li> 级别 1: 您将根据可用的规范和用户文档编写基本的测试用例。</li>
+<li> 级别 2: 这是一个实践阶段，在这个阶段，编写测试用例依赖于应用程序的实际功能和系统流程。</li>
+<li>级别3 : 你将分组一些测试用例，并编写一个测试程序。测试过程只不过是一组小的测试用例，通常最多包含 10 个。</li>
+<li>级别 4: 测试用例自动化。这个阶段将帮助测试人员将测试工作集中在新的功能上，而测试自动化将负责回归测试。</li>
+</ul>
+<h4 id="如何开始编写测试用例？"><a href="#如何开始编写测试用例？" class="headerlink" title="如何开始编写测试用例？"></a>如何开始编写测试用例？</h4><p>当您获得软件需求规格(SRS)文档时，您将首先通过需求来理解应用程序的功能和范围。一旦获得了正在开发的功能的完整概述，您将开始为分配给您的模块编写测试用例。首先，将从涵盖 SRS 文档中提到的所有业务规则的功能测试用例开始。</p>
+<p>在编写测试用例时，最好从特定页面或屏幕上的所有需求开始。因此会写以下：<br>● 功能测试，<br>● 业务规则测试，<br>● 导航测试(链接、按钮等)),<br>● 集成测试(与其他模块的集成)，<br>● 安全测试，<br>● 端到端测试，<br>● 阴性测试，<br>● 负载和性能测试</p>
+<h4 id="如何减少测试用例的编写和执行时间？"><a href="#如何减少测试用例的编写和执行时间？" class="headerlink" title="如何减少测试用例的编写和执行时间？"></a>如何减少测试用例的编写和执行时间？</h4><p>● 使用标准测试用例模板来编写所有的测试用例<br>● 在开始编写测试用例之前，清楚地理解需求。<br>● 遵循基于测试类型序列编写测试用例的方法。例如，首先开始编写功能测试用例，然后继续进行用户界面、兼容性、安全性等等。<br>● 如果没有使用任何测试管理工具，那么请使用微软Excel电子表格来编写测试用例。微软 Excel的功能非常强大，你可以用很少的时间编写很多类似的测试用例。例如，为了编写一个包含许多字段的长表单的测试用例，大多数测试用例都是重复的，只是字段名发生了变化。您可以使用电子表格函数在几分钟内编写这些测试用例。如果开始使用测试管理工具，甚至可以导入这些测试用例。建议尽快开始使用。<br>● 为了编写各种排列和组合的测试用例，首先使用真值表格式，然后描述测试用例。<br>● 编写测试用例时使用流程图。这将确保最大的测试覆盖率。此外，您将能够更快地编写涵盖所有用例的测试用例。<br>● 根据应用程序页面/屏幕或用例对您的测试用例进行分组。这两种方法对于维护测试用例都是有用且容易的。</p>
+<p>测试执行时间取决于是自动执行还是手动执行。手动测试执行时间因测试用例的复杂性而异，它与编写测试用例所需的时间无关。一个测试用例可能在一分钟内编写完成，但是可能需要几个小时甚至几天的时间来执行。</p>
+<p>执行时间也可以通过其他技术来节省，例如对基于web的应用程序使用浏览器自动填充功能。使用此功能，只需单击鼠标即可填写网页数据，因此无需在每次运行测试时输入数据。也可以考虑按顺序执行测试，以便与一个页面相关的所有测试用例(不包括集成和端到端测试)在进入下一个页面之前被执行。</p>
+<h4 id="为什么要使用测试管理工具？"><a href="#为什么要使用测试管理工具？" class="headerlink" title="为什么要使用测试管理工具？"></a>为什么要使用测试管理工具？</h4><p>测试管理工具可以用来编写测试用例、管理需求、记录缺陷并将缺陷链接到测试用例并生成测试报告。<br>● 在一个地方组织你所有的测试用例将会帮助你减少你的测试用例管理时间。<br>● 测试管理工具可以随时为您提供测试进度的准确状态，帮助您对软件版本做出一些业务决策。<br>● 如果期限紧迫，您可以根据优先级来验证测试用例。<br>● 可以避免重复的测试用例。<br>● 可以有效地跟踪质量保证状态。<br>● 基于发布版本，容易逐步淘汰测试用例的执行。<br>● 良好的测试覆盖率报告。</p>
+<h4 id="如何编写测试用例"><a href="#如何编写测试用例" class="headerlink" title="如何编写测试用例"></a>如何编写测试用例</h4><p>测试用例标识:每个测试用例的唯一标识。遵循一些惯例来指明测试的类型。例如‘TC _ UI _ 1’表示‘用户界面测试用例# 1’。</p>
+<p>测试优先级(低/中/高):这在测试执行时很有用。业务规则和功能测试用例的测试优先级可以是中等或更高，而次要的用户界面用例可以是低优先级。测试优先级应由审查者设置。</p>
+<p>模块名称–提及主模块或子模块的名称。</p>
+<p>测试设计人: 测试人员姓名</p>
+<p>测试设计日期: 编写的日期</p>
+<p>测试执行人:执行此测试的测试人员的姓名。测试执行后填写。</p>
+<p>测试执行日期:测试执行的日期。</p>
+<p>先决条件:在执行这个测试用例之前必须满足的任何先决条件。列出成功执行这个测试用例的所有先决条件。</p>
+<p>依赖性:提及对其他测试用例或测试需求的任何依赖性。</p>
+<p>测试 标题/ / 名 称: 测试用 例标题 。 例如 ，使 用有效的用户名和密码验证 登 录 页。</p>
+<p>测试 总 结/ / 描述: 简 要描述 测试目 标 。</p>
+<p>测试步骤:详细列出所有测试执行步骤。按照应该执行的顺序编写测试步骤。确保提供尽可能多的细节。提示-为了有效地管理具有较少字段的测试用例，使用这个字段来描述测试条件、测试数据和运行测试的用户角色。</p>
+<p>测试数据:使用测试数据作为这个测试用例的输入。您可以为不同的数据集提供精确的值作为输入。</p>
+<p>预期结果:测试执行后系统输出应该是什么？详细描述预期结果，包括应在屏幕上显示的消息/错误。</p>
+<p>后 置 条 件: : 执 行这 个 测试用 例 后 ， 系统应 该 是 什么状态？</p>
+<p>实际结果:实际测试结果应在测试执行后填写。描述测试执行后的系统行为。</p>
+<p>状态( 通 过/  失 败 ): 如 果 实 际结 果 不 符 合 预 期结 果 ， 将 该 测试 标 记 为 失 败 。 否则 更 新 为 通过。</p>
+<p>注释/评论/问题:要支持上述字段，如果有一些特殊情况无法在上述任何字段中描述，或者有与预期或实际结果相关的问题，请在此处提及。</p>
+<p>如 有 必要 ， 添 加 以 下 字段：</p>
+<p>缺陷标识/链接:如果测试状态为失败，则包括到缺陷日志的链接或提及缺陷号。</p>
+<p>测试类型/关键字:此字段可用于根据测试类型对测试进行分类。例如功能、可用性、业务规则等。</p>
+<p>需求:为其编写测试用例的需求。最好是需求文档的准确章节号。</p>
+<p>附件/参考:此字段对于复杂的测试场景非常有用。使用visio图表作为参考来解释测试步骤或预期结果。提供图表或文档实际路径的链接或位置。</p>
+<p>自动化 ？( 是/ 否 ): 这 个 测试用 例 是 否 是自动化的。 当 测试用 例 自动化 时 ， 跟踪自动化状态很有用。</p>
+<h4 id="测试用例语句基本格式"><a href="#测试用例语句基本格式" class="headerlink" title="测试用例语句基本格式"></a>测试用例语句基本格式</h4><p>核实</p>
+<p>使用【工具名、标签名、对话框等】</p>
+<p>有【条件】</p>
+<p>返回【返回、显示、演示的内容】</p>
+<p>验证:用作测试用例语句的第一个单词。</p>
+<p>使用:识别正在测试的内容。在这里，您可以使用“输入”或“选择”，而不是使用“视情况而定”。</p>
+<p>所有的测试用例都应该简单易懂。不要写长篇大论的解释</p>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>测试，测试基本</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>卸载centos自带的openjdk和MySQL</title>
+    <url>/Echo/2020/01/01/%E5%8D%B8%E8%BD%BDcentos%E8%87%AA%E5%B8%A6%E7%9A%84openjdk%E5%92%8CMySQL/</url>
+    <content><![CDATA[<h2 id="卸载openjdk"><a href="#卸载openjdk" class="headerlink" title="卸载openjdk"></a>卸载openjdk</h2><p>1.查看已经安装的jdk</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">rpm –qa|grep jdk</span><br><span class="line"></span><br><span class="line">java-1.7.0-openjdk-1.7.0.141-2.6.10.5.el7.x86_64</span><br><span class="line"></span><br><span class="line">java-1.8.0-openjdk-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">java-1.8.0-openjdk-headless-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">java-1.7.0-openjdk-headless-1.7.0.141-2.6.10.5.el7.x86_64</span><br><span class="line"></span><br><span class="line">ldap-4.19-1.el7.noarch</span><br><span class="line"></span><br><span class="line">copy-jdk-configs-2.2-3.el7.noarch</span><br></pre></td></tr></table></figure>
+
+<p>2.卸载命令</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum -y remove java-1.7.0-openjdk-1.7.0.141-2.6.10.5.el7.x86_64</span><br><span class="line"></span><br><span class="line">yum -y remove java-1.8.0-openjdk-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">yum -y remove java-1.8.0-openjdk-headless-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">yum -y remove java-1.7.0-openjdk-headless-1.7.0.141-2.6.10.5.el7.x86_64</span><br></pre></td></tr></table></figure>
+
+<p>.noarch文件不用</p>
+<p>3.用Java –version查看</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">提示如下： No such file or directoy</span><br></pre></td></tr></table></figure>
+
+<p>  卸载完成</p>
+<h2 id="卸载mysql"><a href="#卸载mysql" class="headerlink" title="卸载mysql"></a>卸载mysql</h2><p>执行命令</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum remove mariadb-libs</span><br></pre></td></tr></table></figure>
+
+<p>即可。</p>
+]]></content>
+      <categories>
+        <category>环境安装</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>JDK</tag>
       </tags>
   </entry>
   <entry>

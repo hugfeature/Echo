@@ -189,6 +189,122 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/2022/01/15/%E5%A6%82%E4%BD%95%E7%BC%96%E5%86%99%E6%9C%89%E6%95%88%E7%9A%84%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Echo/images/avatar.gif">
+      <meta itemprop="name" content="丑牛">
+      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="贤の博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Echo/2022/01/15/%E5%A6%82%E4%BD%95%E7%BC%96%E5%86%99%E6%9C%89%E6%95%88%E7%9A%84%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B/" class="post-title-link" itemprop="url">如何编写有效的测试用例</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-01-15 14:45:51" itemprop="dateCreated datePublished" datetime="2022-01-15T14:45:51+08:00">2022-01-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Echo/categories/%E6%B5%8B%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">测试</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h4 id="什么是测试用例？"><a href="#什么是测试用例？" class="headerlink" title="什么是测试用例？"></a>什么是测试用例？</h4><p>测试用例包含描述输入、动作或事件以及预期响应的组件，以确定应用程序的功能是否正常工作。</p>
+<h4 id="测试用例的级别："><a href="#测试用例的级别：" class="headerlink" title="测试用例的级别："></a>测试用例的级别：</h4><ul>
+<li> 级别 1: 您将根据可用的规范和用户文档编写基本的测试用例。</li>
+<li> 级别 2: 这是一个实践阶段，在这个阶段，编写测试用例依赖于应用程序的实际功能和系统流程。</li>
+<li>级别3 : 你将分组一些测试用例，并编写一个测试程序。测试过程只不过是一组小的测试用例，通常最多包含 10 个。</li>
+<li>级别 4: 测试用例自动化。这个阶段将帮助测试人员将测试工作集中在新的功能上，而测试自动化将负责回归测试。</li>
+</ul>
+<h4 id="如何开始编写测试用例？"><a href="#如何开始编写测试用例？" class="headerlink" title="如何开始编写测试用例？"></a>如何开始编写测试用例？</h4><p>当您获得软件需求规格(SRS)文档时，您将首先通过需求来理解应用程序的功能和范围。一旦获得了正在开发的功能的完整概述，您将开始为分配给您的模块编写测试用例。首先，将从涵盖 SRS 文档中提到的所有业务规则的功能测试用例开始。</p>
+<p>在编写测试用例时，最好从特定页面或屏幕上的所有需求开始。因此会写以下：<br>● 功能测试，<br>● 业务规则测试，<br>● 导航测试(链接、按钮等)),<br>● 集成测试(与其他模块的集成)，<br>● 安全测试，<br>● 端到端测试，<br>● 阴性测试，<br>● 负载和性能测试</p>
+<h4 id="如何减少测试用例的编写和执行时间？"><a href="#如何减少测试用例的编写和执行时间？" class="headerlink" title="如何减少测试用例的编写和执行时间？"></a>如何减少测试用例的编写和执行时间？</h4><p>● 使用标准测试用例模板来编写所有的测试用例<br>● 在开始编写测试用例之前，清楚地理解需求。<br>● 遵循基于测试类型序列编写测试用例的方法。例如，首先开始编写功能测试用例，然后继续进行用户界面、兼容性、安全性等等。<br>● 如果没有使用任何测试管理工具，那么请使用微软Excel电子表格来编写测试用例。微软 Excel的功能非常强大，你可以用很少的时间编写很多类似的测试用例。例如，为了编写一个包含许多字段的长表单的测试用例，大多数测试用例都是重复的，只是字段名发生了变化。您可以使用电子表格函数在几分钟内编写这些测试用例。如果开始使用测试管理工具，甚至可以导入这些测试用例。建议尽快开始使用。<br>● 为了编写各种排列和组合的测试用例，首先使用真值表格式，然后描述测试用例。<br>● 编写测试用例时使用流程图。这将确保最大的测试覆盖率。此外，您将能够更快地编写涵盖所有用例的测试用例。<br>● 根据应用程序页面/屏幕或用例对您的测试用例进行分组。这两种方法对于维护测试用例都是有用且容易的。</p>
+<p>测试执行时间取决于是自动执行还是手动执行。手动测试执行时间因测试用例的复杂性而异，它与编写测试用例所需的时间无关。一个测试用例可能在一分钟内编写完成，但是可能需要几个小时甚至几天的时间来执行。</p>
+<p>执行时间也可以通过其他技术来节省，例如对基于web的应用程序使用浏览器自动填充功能。使用此功能，只需单击鼠标即可填写网页数据，因此无需在每次运行测试时输入数据。也可以考虑按顺序执行测试，以便与一个页面相关的所有测试用例(不包括集成和端到端测试)在进入下一个页面之前被执行。</p>
+<h4 id="为什么要使用测试管理工具？"><a href="#为什么要使用测试管理工具？" class="headerlink" title="为什么要使用测试管理工具？"></a>为什么要使用测试管理工具？</h4><p>测试管理工具可以用来编写测试用例、管理需求、记录缺陷并将缺陷链接到测试用例并生成测试报告。<br>● 在一个地方组织你所有的测试用例将会帮助你减少你的测试用例管理时间。<br>● 测试管理工具可以随时为您提供测试进度的准确状态，帮助您对软件版本做出一些业务决策。<br>● 如果期限紧迫，您可以根据优先级来验证测试用例。<br>● 可以避免重复的测试用例。<br>● 可以有效地跟踪质量保证状态。<br>● 基于发布版本，容易逐步淘汰测试用例的执行。<br>● 良好的测试覆盖率报告。</p>
+<h4 id="如何编写测试用例"><a href="#如何编写测试用例" class="headerlink" title="如何编写测试用例"></a>如何编写测试用例</h4><p>测试用例标识:每个测试用例的唯一标识。遵循一些惯例来指明测试的类型。例如‘TC _ UI _ 1’表示‘用户界面测试用例# 1’。</p>
+<p>测试优先级(低/中/高):这在测试执行时很有用。业务规则和功能测试用例的测试优先级可以是中等或更高，而次要的用户界面用例可以是低优先级。测试优先级应由审查者设置。</p>
+<p>模块名称–提及主模块或子模块的名称。</p>
+<p>测试设计人: 测试人员姓名</p>
+<p>测试设计日期: 编写的日期</p>
+<p>测试执行人:执行此测试的测试人员的姓名。测试执行后填写。</p>
+<p>测试执行日期:测试执行的日期。</p>
+<p>先决条件:在执行这个测试用例之前必须满足的任何先决条件。列出成功执行这个测试用例的所有先决条件。</p>
+<p>依赖性:提及对其他测试用例或测试需求的任何依赖性。</p>
+<p>测试 标题/ / 名 称: 测试用 例标题 。 例如 ，使 用有效的用户名和密码验证 登 录 页。</p>
+<p>测试 总 结/ / 描述: 简 要描述 测试目 标 。</p>
+<p>测试步骤:详细列出所有测试执行步骤。按照应该执行的顺序编写测试步骤。确保提供尽可能多的细节。提示-为了有效地管理具有较少字段的测试用例，使用这个字段来描述测试条件、测试数据和运行测试的用户角色。</p>
+<p>测试数据:使用测试数据作为这个测试用例的输入。您可以为不同的数据集提供精确的值作为输入。</p>
+<p>预期结果:测试执行后系统输出应该是什么？详细描述预期结果，包括应在屏幕上显示的消息/错误。</p>
+<p>后 置 条 件: : 执 行这 个 测试用 例 后 ， 系统应 该 是 什么状态？</p>
+<p>实际结果:实际测试结果应在测试执行后填写。描述测试执行后的系统行为。</p>
+<p>状态( 通 过/  失 败 ): 如 果 实 际结 果 不 符 合 预 期结 果 ， 将 该 测试 标 记 为 失 败 。 否则 更 新 为 通过。</p>
+<p>注释/评论/问题:要支持上述字段，如果有一些特殊情况无法在上述任何字段中描述，或者有与预期或实际结果相关的问题，请在此处提及。</p>
+<p>如 有 必要 ， 添 加 以 下 字段：</p>
+<p>缺陷标识/链接:如果测试状态为失败，则包括到缺陷日志的链接或提及缺陷号。</p>
+<p>测试类型/关键字:此字段可用于根据测试类型对测试进行分类。例如功能、可用性、业务规则等。</p>
+<p>需求:为其编写测试用例的需求。最好是需求文档的准确章节号。</p>
+<p>附件/参考:此字段对于复杂的测试场景非常有用。使用visio图表作为参考来解释测试步骤或预期结果。提供图表或文档实际路径的链接或位置。</p>
+<p>自动化 ？( 是/ 否 ): 这 个 测试用 例 是 否 是自动化的。 当 测试用 例 自动化 时 ， 跟踪自动化状态很有用。</p>
+<h4 id="测试用例语句基本格式"><a href="#测试用例语句基本格式" class="headerlink" title="测试用例语句基本格式"></a>测试用例语句基本格式</h4><p>核实</p>
+<p>使用【工具名、标签名、对话框等】</p>
+<p>有【条件】</p>
+<p>返回【返回、显示、演示的内容】</p>
+<p>验证:用作测试用例语句的第一个单词。</p>
+<p>使用:识别正在测试的内容。在这里，您可以使用“输入”或“选择”，而不是使用“视情况而定”。</p>
+<p>所有的测试用例都应该简单易懂。不要写长篇大论的解释</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/2022/01/08/%E4%BB%80%E4%B9%88%E6%98%AFYARN/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1611,118 +1727,6 @@
 <p><img src="image-20211216161518560.png" alt="image-20211216161518560"></p>
 <h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><p>到目前为止，一定都熟悉了JMeter的组件，并尝试过使用它，并且一定面临一些问题。在下一篇文章中，将介绍一些涵盖移动领域的实时性能测试场景，以便大家获得更多关于JMeter的实践知识。</p>
 <p><strong>敬请期待！下一篇文章将帮助管理请求，分析结果并与性能测试的基准进行比较。</strong></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/2021/11/24/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%BB%84%E4%BB%B6kafka%E6%B5%8B%E8%AF%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Echo/images/avatar.gif">
-      <meta itemprop="name" content="丑牛">
-      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="贤の博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Echo/2021/11/24/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%BB%84%E4%BB%B6kafka%E6%B5%8B%E8%AF%95/" class="post-title-link" itemprop="url">kafka测试</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-11-24 15:19:11" itemprop="dateCreated datePublished" datetime="2021-11-24T15:19:11+08:00">2021-11-24</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Echo/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h5 id="kafka是一个事件流平台"><a href="#kafka是一个事件流平台" class="headerlink" title="kafka是一个事件流平台"></a>kafka是一个事件流平台</h5><ul>
-<li><p>什么事件流？，事件流是从事件源实时捕获数据的做法 如数据库、传感器、移动设备、云服务和流形式的软件应用程序 事件； 持久地存储这些事件流以供以后检索； 操作、处理和反应 实时和可追溯​​的事件流； 并将事件流路由到不同的 根据需要使用目标技术。 事件流因此确保了连续的流和解释 数据，以便正确的信息在正确的时间出现在正确的位置。</p>
-</li>
-<li><p>kafka的功能？</p>
-<ol>
-<li><p>要 发布 （写）和 订阅 （读取）的事件流，包括连续的导入/导出 您来自其他系统的数据。</p>
-</li>
-<li><p>持久并可靠存储你想要的事件流</p>
-</li>
-<li><p><strong>处理</strong> 事件发生时或追溯性 事件流。</p>
-</li>
-</ol>
-<h5 id="kafka基本概念了解"><a href="#kafka基本概念了解" class="headerlink" title="kafka基本概念了解"></a>kafka基本概念了解</h5></li>
-<li><p>生产者：<strong>生产者</strong> 是那些向 Kafka 发布（写入）事件的客户端应用程序</p>
-</li>
-<li><p>消费者：订阅（读取和处理）这些事件的</p>
-</li>
-<li><p>主题：主题类似于文件系统中的文件夹，事件就是该文件夹中的文件</p>
-</li>
-<li><p>分区：主题是 <strong>分区的</strong> ，一个主题可以分布在位于不同 Kafka 代理的多个“桶”上。</p>
-</li>
-<li><p>broker：一个 Kafka 服务器也称为 Broker，它接受生产者发送的消息并存入磁盘；Broker 同时服务消费者拉取分区消息的请求，返回目前已经提交的消息一个 Kafka 服务器也称为 Broker，它接受生产者发送的消息并存入磁盘；Broker 同时服务消费者拉取分区消息的请求，返回目前已经提交的消息</p>
-</li>
-</ul>
-<h5 id="kafka功能测试-如何验证数据的一致性和有序性"><a href="#kafka功能测试-如何验证数据的一致性和有序性" class="headerlink" title="kafka功能测试-如何验证数据的一致性和有序性"></a>kafka功能测试-如何验证数据的一致性和有序性</h5><p>可以创建一个单分区的Topic，然后自己写一个生产者程序，程序发送的事件流可以从设定值从1到N自增长；写一个消费者程序，单线程消费，将消费到的数据写进文件中，观测有序性；还可以对kafka服务进程直接杀死，进行故障模拟。</p>
-<h5 id="kafka性能测试"><a href="#kafka性能测试" class="headerlink" title="kafka性能测试"></a>kafka性能测试</h5><p>性能压测是系统性问题，需要考量对整体业务的掌握程序，以及对kafka的熟悉程度。压测过程中涉及压测工具选取，监测kafka，压测结果分析。</p>
-<ul>
-<li><p>明确压测场景：明确要压测的场景</p>
-</li>
-<li><p>测试环境准备：在服务器选择，kafka版本，kafka架构以及相关配置参数、业务数据等尽可能与线上环境保持一致</p>
-</li>
-<li><p>压测工具选取：生产者压测使用kafka自带的测试工具kafka-producer-perf-test.sh来进行测试，发送数据推荐使用线上数据导出到本地文件，随机读取进行</p>
-</li>
-<li><p>压测过程观测：首先开启kafka的JMX端口，①可以使用滴滴的Logikm(但是需要自己搭建部署)；②自己通过JMX端口以及官方原生API获取相关指标，CPU、内存、网络等监测可以使用nomn或者top命令来监测</p>
-</li>
-<li><p>压测结果分析：理想状态是系统资源使用达到瓶颈，如未达到则寻找软件资源瓶颈，配合堆栈分析，发现线程阻塞点。</p>
-</li>
-<li><p>压测报告呈现：一般有测试环境说明、测试场景说明、测试过程说明、测试结论（在当前场景下的最佳资源使用以及配置）。</p>
-</li>
-</ul>
 
       
     </div>
