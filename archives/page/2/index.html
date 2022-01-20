@@ -189,6 +189,429 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/2021/12/15/emqtt-bench%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8E%8B%E6%B5%8BMQTTbroker/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Echo/images/avatar.gif">
+      <meta itemprop="name" content="丑牛">
+      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="贤の博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Echo/2021/12/15/emqtt-bench%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8E%8B%E6%B5%8BMQTTbroker/" class="post-title-link" itemprop="url">emqtt_bench安装与压测MQTTbroker</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-12-15 23:30:38" itemprop="dateCreated datePublished" datetime="2021-12-15T23:30:38+08:00">2021-12-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Echo/categories/%E6%B5%8B%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">测试</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h4 id="EMQX"><a href="#EMQX" class="headerlink" title="EMQX"></a>EMQX</h4><p><em>EMQ X</em> (Erlang/Enterprise/Elastic MQTT Broker) 是基于 Erlang/OTP 平台开发的开源物联网 MQTT 消息服务器。</p>
+<p>Erlang/OTP是出色的软实时 (Soft-Realtime)、低延时 (Low-Latency)、分布式 (Distributed)的语言平台。</p>
+<p>MQTT 是轻量的 (Lightweight)、发布订阅模式 (PubSub) 的物联网消息协议。</p>
+<p>EMQ X 设计目标是实现高可靠，并支持承载海量物联网终端的MQTT连接，支持在海量物联网设备间低延时消息路由:</p>
+<ol>
+<li>稳定承载大规模的 MQTT 客户端连接，单服务器节点支持50万到100万连接。</li>
+<li>分布式节点集群，快速低延时的消息路由，单集群支持1000万规模的路由。</li>
+<li>消息服务器内扩展，支持定制多种认证方式、高效存储消息到后端数据库。</li>
+<li>完整物联网协议支持，MQTT、MQTT-SN、CoAP、LwM2M、WebSocket 或私有协议支持。</li>
+</ol>
+<h4 id="emqtt-bench"><a href="#emqtt-bench" class="headerlink" title="emqtt_bench"></a>emqtt_bench</h4><p><a target="_blank" rel="noopener" href="https://github.com/emqx/emqtt_bench">emqtt_bench (opens new window)</a>是基于 Erlang 编写的，一个简洁强大的 MQTT 协议性能测试工具。</p>
+<h4 id="EMQX安装"><a href="#EMQX安装" class="headerlink" title="EMQX安装"></a>EMQX安装</h4><p>emqx安装比较简单，可以参照<a target="_blank" rel="noopener" href="https://docs.emqx.cn/broker/v4.3/getting-started/install.html">安装 | EMQ Docs (emqx.cn)</a>进行。</p>
+<h4 id="emqtt-bench安装"><a href="#emqtt-bench安装" class="headerlink" title="emqtt_bench安装"></a>emqtt_bench安装</h4><p>结合官网介绍需要 Erlang/OTP 22.3+以上，但是经过尝试最新版的Erlang不太兼容，所以还是老老实实用22.3了。</p>
+<h6 id="1-前提准备"><a href="#1-前提准备" class="headerlink" title="1.前提准备"></a>1.前提准备</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 各种依赖，缺乏可能会导致意外问题</span></span><br><span class="line">yum -y install ncurses-devel openssl-devel unixODBC-devel gcc-c++ perl</span><br></pre></td></tr></table></figure>
+
+<h6 id="2-安装Erlang-22-3"><a href="#2-安装Erlang-22-3" class="headerlink" title="2.安装Erlang 22.3"></a>2.安装Erlang 22.3</h6><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 切换到安装目录此处建议用opt文件夹</span></span><br><span class="line"><span class="built_in">cd</span> /opt</span><br><span class="line"><span class="comment"># 下载Erlang</span></span><br><span class="line">wget http://erlang.org/download/otp_src_22.3.tar.gz</span><br><span class="line"><span class="comment"># 解压</span></span><br><span class="line">tar -zxvf otp_src_22.3</span><br><span class="line">.tar.gz</span><br><span class="line"><span class="comment"># 切换到解压后的erlang安装包</span></span><br><span class="line"><span class="built_in">cd</span> otp_src_22.3</span><br><span class="line"><span class="comment"># 开始安装</span></span><br><span class="line">./configure &amp; make &amp; make install</span><br><span class="line"><span class="comment"># 查看版本</span></span><br><span class="line">erl</span><br></pre></td></tr></table></figure>
+
+<p><img src="image-20211216170648216.png" alt="image-20211216170648216"></p>
+<h6 id="3-安装新版git（因后续在emqtt-bench-make时centos7自带git版本较低导致问题）"><a href="#3-安装新版git（因后续在emqtt-bench-make时centos7自带git版本较低导致问题）" class="headerlink" title="3.安装新版git（因后续在emqtt_bench make时centos7自带git版本较低导致问题）"></a>3.安装新版git（因后续在emqtt_bench make时centos7自带git版本较低导致问题）</h6><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 更新系统资源包</span></span><br><span class="line">yum install http://opensource.wandisco.com/centos/7/git/x86_64/wandisco-git-release-7-2.noarch.rpm</span><br><span class="line"><span class="comment"># 安装git</span></span><br><span class="line">yum install -y git</span><br><span class="line"><span class="comment"># 查看git版本</span></span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
+
+<p>4.安装emqtt_bench</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装依赖</span></span><br><span class="line">yum install -y libatomic</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装</span></span><br><span class="line">git clone https://github.com/emqx/emqtt-bench</span><br><span class="line">cd emqtt-bench</span><br><span class="line"><span class="meta">#</span><span class="bash"> 因为QUIC目前不稳定所以选择禁用QUIC</span></span><br><span class="line">BUILD_WITHOUT_QUIC=1 make</span><br><span class="line"><span class="meta">#</span><span class="bash"> 验证</span></span><br><span class="line">./emqtt_bench</span><br></pre></td></tr></table></figure>
+
+<p>输出Usage: emqtt_bench pub | sub | conn [–help]即为安装成功</p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>安装中遇到的问题有以下两个</p>
+<h6 id="1-make失败（报错GUN版本）"><a href="#1-make失败（报错GUN版本）" class="headerlink" title="1.make失败（报错GUN版本）"></a>1.make失败（报错GUN版本）</h6><p>经排查此问题为QUIC功能不能使用导致，使用禁用模式make即可</p>
+<h6 id="2-有部分git资源下载失败"><a href="#2-有部分git资源下载失败" class="headerlink" title="2.有部分git资源下载失败"></a>2.有部分git资源下载失败</h6><p><img src="image-20211216171321403.png" alt="image-20211216171321403"></p>
+<p><strong>cd /opt/emqtt-bench/_build/default/lib/quicer/msquic/submodules</strong></p>
+<p><strong>git clone git://github.com/google/googletest</strong></p>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p><code>emqtt_bench</code> 共三个子命令：</p>
+<ol>
+<li><code>pub</code>：用于创建大量客户端执行发布消息的操作。</li>
+<li><code>sub</code>：用于创建大量客户端执行订阅主题，并接受消息的操作。</li>
+<li><code>conn</code>：用于创建大量的连接</li>
+</ol>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>简写</th>
+<th>可选值</th>
+<th>默认值</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">–host</td>
+<td>-h</td>
+<td>-</td>
+<td>localhost</td>
+<td align="left">要连接的 MQTT 服务器地址</td>
+</tr>
+<tr>
+<td align="left">–port</td>
+<td>-p</td>
+<td>-</td>
+<td>1883</td>
+<td align="left">MQTT 服务端口</td>
+</tr>
+<tr>
+<td align="left">–version</td>
+<td>-V</td>
+<td>3 4 5</td>
+<td>5</td>
+<td align="left">使用的 MQTT 协议版本</td>
+</tr>
+<tr>
+<td align="left">–count</td>
+<td>-c</td>
+<td>-</td>
+<td>200</td>
+<td align="left">客户端总数</td>
+</tr>
+<tr>
+<td align="left">–startnumber</td>
+<td>-n</td>
+<td>-</td>
+<td>0</td>
+<td align="left">客户端数量起始值</td>
+</tr>
+<tr>
+<td align="left">–interval</td>
+<td>-i</td>
+<td>-</td>
+<td>10</td>
+<td align="left">每间隔多少时间创建一个客户端；单位：毫秒</td>
+</tr>
+<tr>
+<td align="left">–interval_of_msg</td>
+<td>-I</td>
+<td>-</td>
+<td>1000</td>
+<td align="left">每间隔多少时间发送一个消息</td>
+</tr>
+<tr>
+<td align="left">–username</td>
+<td>-u</td>
+<td>-</td>
+<td>无；非必选</td>
+<td align="left">客户端用户名</td>
+</tr>
+<tr>
+<td align="left">–password</td>
+<td>-P</td>
+<td>-</td>
+<td>无；非必选</td>
+<td align="left">客户端密码</td>
+</tr>
+<tr>
+<td align="left">–topic</td>
+<td>-t</td>
+<td>-</td>
+<td>无；必选</td>
+<td align="left">发布的主题；支持站位符： <code>%c</code>：表示 ClientId <code>%u</code>：表示 Username <code>%i</code>：表示客户端的序列数</td>
+</tr>
+<tr>
+<td align="left">–szie</td>
+<td>-s</td>
+<td>-</td>
+<td>256</td>
+<td align="left">消息 Payload 的大小；单位：字节</td>
+</tr>
+<tr>
+<td align="left">–qos</td>
+<td>-q</td>
+<td>-</td>
+<td>0</td>
+<td align="left">Qos 等级</td>
+</tr>
+<tr>
+<td align="left">–retain</td>
+<td>-r</td>
+<td>true false</td>
+<td>false</td>
+<td align="left">消息是否设置 Retain 标志</td>
+</tr>
+<tr>
+<td align="left">–keepalive</td>
+<td>-k</td>
+<td>-</td>
+<td>300</td>
+<td align="left">客户端心跳时间</td>
+</tr>
+<tr>
+<td align="left">–clean</td>
+<td>-C</td>
+<td>true false</td>
+<td>true</td>
+<td align="left">是否以清除会话的方式建立连接</td>
+</tr>
+<tr>
+<td align="left">–ssl</td>
+<td>-S</td>
+<td>true false</td>
+<td>false</td>
+<td align="left">是否启用 SSL</td>
+</tr>
+<tr>
+<td align="left">–certfile</td>
+<td>-</td>
+<td>-</td>
+<td>无</td>
+<td align="left">客户端 SSL 证书</td>
+</tr>
+<tr>
+<td align="left">–keyfile</td>
+<td>-</td>
+<td>-</td>
+<td>无</td>
+<td align="left">客户端 SSL 秘钥文件</td>
+</tr>
+<tr>
+<td align="left">–ws</td>
+<td>-</td>
+<td>true false</td>
+<td>false</td>
+<td align="left">是否以 Websocket 的方式建立连接</td>
+</tr>
+<tr>
+<td align="left">–ifaddr</td>
+<td>-</td>
+<td>-</td>
+<td>无</td>
+<td align="left">指定客户端连接使用的本地网卡</td>
+</tr>
+</tbody></table>
+<h4 id="吞吐量性能压测"><a href="#吞吐量性能压测" class="headerlink" title="吞吐量性能压测"></a>吞吐量性能压测</h4><p>bench1上执行</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./emqtt_bench sub -t t -h EMQQserverIP -c 500</span><br></pre></td></tr></table></figure>
+
+<p>bench2 上执行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./emqtt_bench pub -t t -h EMQQserverIP -c 20 -I 100</span><br></pre></td></tr></table></figure>
+
+<p>在bench1上可以观察到</p>
+<p><strong>ecv(28006): total=2102563, rate=99725(msg/sec）</strong></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/2021/12/12/JMeter%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Echo/images/avatar.gif">
+      <meta itemprop="name" content="丑牛">
+      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="贤の博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Echo/2021/12/12/JMeter%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D/" class="post-title-link" itemprop="url">JMeter组件介绍</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-12-12 08:40:24" itemprop="dateCreated datePublished" datetime="2021-12-12T08:40:24+08:00">2021-12-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Echo/categories/%E6%B5%8B%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">测试</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在本文中，将熟悉<strong>JMeter 的所有组件，以及如何在测试计划中使用它们</strong>来覆盖所有可能的性能测试场景来测试 AUT（被测应用程序）。</p>
+<h4 id="JMeter的组件"><a href="#JMeter的组件" class="headerlink" title="JMeter的组件"></a>JMeter的组件</h4><p>请参考以下的流程图来了解每个组件及其与JMeter特定模块的关系。</p>
+<p><img src="JmeterFlowDiagram.jpg" alt="Jmeter流程图"></p>
+<h5 id="测试计划–TEST-PLAN"><a href="#测试计划–TEST-PLAN" class="headerlink" title="测试计划–TEST PLAN"></a>测试计划–TEST PLAN</h5><p>测试计划中包含的所有内容都是按从上到下的顺序或者测试计划中定义的顺序执行。测试计划可以尽可能简单，担忧线程组、采样器、监听器，可以添加更多的元素如配置元素、预处理器、控制器或前置/后置处理器。</p>
+<p>JMeter是通过虚拟用户或线程来衡量性能，这些虚拟用户或者线程会连接被测服务器，就像真实用户向服务器发送请求一样。因此，每个测试计划都应该有我们JMeter中所称的虚拟用户或者线程组–THREAD GROUP。</p>
+<p>测试计划的要点：</p>
+<ul>
+<li>运行前应保存测试计划</li>
+<li>JMeter文件或者测试计划以JMX文件的格式保存</li>
+<li>还可以将测试计划保存为不同方式，可以在其他测试场景中使用</li>
+</ul>
+<h5 id="线程组–THREAD-GROUP"><a href="#线程组–THREAD-GROUP" class="headerlink" title="线程组–THREAD GROUP"></a>线程组–THREAD GROUP</h5><p>线程组是一组用户，他们将同时以定义好的顺序访问被测服务器。可以通过右键单击测试计划将线程组添加到测试计划中。</p>
+<p><img src="image-20211213103617620.png" alt="线程组"></p>
+<p>1、你可以重命名线程组名称</p>
+<ul>
+<li><strong>Number of Thread(Users)</strong> ：它定义了虚拟用户的数量。出于测试目的，我们应该只生成有限的负载，因为一次生成大量负载意味着消耗大量线程，最终会导致 CPU 使用率高。</li>
+<li><strong>Ramp Up Period</strong> ：该字段在控制负载生成方面非常重要。加速周期定义了产生总负载的时间量。</li>
+<li><strong>Loop COUNT</strong>：定义了线程组将执行的次数。如果您选中 Forever 复选框，您的测试将永远运行，除非您手动停止它。这可用于测试诸如“如果您的服务器在持续加载几分钟内没有崩溃”之类的内容。</li>
+</ul>
+<p>取样器–Sample</p>
+<p>JMeter如何知道发送到服务器的请求类型是什么？</p>
+<p>是通过取样器。取样器是必须要添加到测试计划中的，因为只有它可以让JMeter知道需要发送那种类型的请求到那个服务器上以及需要携带什么样的参数。请求是HTTP、websocket、FTP、TCP、SMTP等。</p>
+<p>采样器只能添加到线程组，而不是直接在测试计划下，因为线程组需要使用采样器向被测服务器 URL 发送请求。采样器可以通过路径Thread Group -&gt; Sampler -&gt; HTTP Request 添加。</p>
+<h6 id="HTTP请求示例"><a href="#HTTP请求示例" class="headerlink" title="HTTP请求示例"></a>HTTP请求示例</h6><p><img src="image-20211213111816981.png" alt="HTTP示例"></p>
+<ul>
+<li>server name or ip ：输入服务的IP或者域名</li>
+<li>path： 请求的路径</li>
+<li>method：请求方式，常见的有post、get、put、delete等</li>
+<li>parameter：请求参数，如需要可以添加，还可以在config Element中添加httpcookie、请求头配置等</li>
+<li>body data：请求体</li>
+</ul>
+<h5 id="监听器-Listener"><a href="#监听器-Listener" class="headerlink" title="监听器-Listener"></a>监听器-Listener</h5><p>截止到这里，我们已经看到了取样器向服务器发送请求，但是还没有分析响应。性能测试就是分析各种形式的服务器响应，然后将呈现给客户端。监听器用于显示测试执行的结果，以便测试人员了解统计信息。在JMeter中大约有15种监听器，但是常用的是table、tree和graph。</p>
+<p>监听器可以直接在测试计划下或取样器下添加。不同之处在于，当您在取样器下添加侦听器时，它只会显示该取样器的结果。如果我们直接在测试计划下添加取样器，它会显示层次结构中所有取样器的结果。</p>
+<p>会看到如下结果：</p>
+<p><img src="image-20211214162144747.png" alt="image-20211214162144747"></p>
+<ul>
+<li>Label：一般展示为采样器名称</li>
+<li>samples：请求的总数量</li>
+<li>average：总请求平均耗时</li>
+<li>median:总请求耗时中位数</li>
+<li>90%Line：总请求中90%请求耗时</li>
+<li>95%Line：总请求中95%请求耗时</li>
+<li>99%Line：总请求中99%请求耗时</li>
+<li>min：所有请求中最小耗时</li>
+<li>max：所有请求中最大耗时</li>
+<li>Error：所有请求发生的错误率（一般有错误产生可以认为已经到达瓶颈）</li>
+<li>throughput:即QPS</li>
+<li>rec/sent:发送和接受的网速</li>
+</ul>
+<h5 id="断言–Assertions"><a href="#断言–Assertions" class="headerlink" title="断言–Assertions"></a>断言–Assertions</h5><p>我们已经介绍了JMeter如何击中服务器以及如何通过侦听器显示响应。为了确保收到的响应是正确的，并且符合预期，我们需要添加断言。断言只是我们需要放在响应上以比较结果的验证。有以下断言类型</p>
+<ul>
+<li>响应断言</li>
+<li>持续时间断言</li>
+<li>大小断言</li>
+<li>XML断言</li>
+<li>HTML断言</li>
+</ul>
+<h6 id="响应时间断言"><a href="#响应时间断言" class="headerlink" title="响应时间断言"></a>响应时间断言</h6><p>在响应断言中，我们可以添加自己的模式字符串，然后将它们与从服务器收到的响应进行比较。<em>例如，</em>当任何请求成功返回某些响应时，您都知道响应代码为 200。因此，如果我们添加模式字符串”响应代码 = 202”，则测试用例应该失败。</p>
+<p><img src="image-20211214195434442.png" alt="image-20211214195434442"></p>
+<h6 id="持续时间断言"><a href="#持续时间断言" class="headerlink" title="持续时间断言"></a>持续时间断言</h6><p>持续时间断言非常重要，可验证服务器是否在给定的时间内进行了响应。这可用于我们需要对 100 个请求进行采样并确保每次收到响应都在基准限制范围内的情况。</p>
+<p><img src="image-20211214202706648.png" alt="image-20211214202706648"></p>
+<p>XML 断言验证响应数据中是否包含正确的 XML 文档，HTML 断言验证从服务器收到的响应的 HTML 语法。</p>
+<h5 id="元素配置–config-ELements"><a href="#元素配置–config-ELements" class="headerlink" title="元素配置–config ELements"></a>元素配置–config ELements</h5><p>发送到服务器的请求可以使用一些在实际请求之前执行的配置元素进一步参数化。一个简单的示例可能是从使用 CSV 数据集配置的 CSV 文件中读取变量的值。常用的配置元素有如下这些：</p>
+<ul>
+<li>CSV数据集配置</li>
+<li>用户定义的参数</li>
+<li>HTTPS请求默认</li>
+<li>HTTPS缓存管理器</li>
+<li>HTTPS COOKIE MANAGER</li>
+</ul>
+<h6 id="csv数据集配置"><a href="#csv数据集配置" class="headerlink" title="csv数据集配置"></a>csv数据集配置</h6><p>CSV数据集配置可帮助Jmeter从CSV文件中选取某些参数的值，而不是在每个单独的请求中传递不同的参数。<em>例如，</em>如果我们需要使用一组不同的用户和密码来测试登录功能，那么我们可以在CSV文件中创建两列并在那里输入值，以便JMeter可以为发送到服务器的每个请求选择一个。</p>
+<p><img src="image-20211216160753990.png" alt="image-20211216160753990"></p>
+<h6 id="用户定义的变量-User-Defined-Variables"><a href="#用户定义的变量-User-Defined-Variables" class="headerlink" title="用户定义的变量-User Defined Variables"></a>用户定义的变量-User Defined Variables</h6><p>它可以帮助Jmeter从预定义的变量中选取值。<em>例如，</em>支持您需要创建一个测试计划，您需要在同一URL上添加许多HTTP请求，并且可能存在客户端计划稍后将其迁移到某些不同 URL.So 的情况，以避免在每个请求中更新URL，我们可以告诉JMeter从UDV（用户定义的变量）中选取URL，该UDV可以在以后更新以处理对更新的URL的所有请求。</p>
+<p>因此，为了避免在每个请求中更新URL，我们可以告诉JMeter从UDV（用户定义的变量）中选择URL，该UDV可以在以后更新以处理对更新URL的所有请求。</p>
+<p><img src="image-20211216161303245.png" alt="image-20211216161303245"></p>
+<h6 id="HTTP-请求默认值"><a href="#HTTP-请求默认值" class="headerlink" title="HTTP 请求默认值"></a>HTTP 请求默认值</h6><p>此配置元素对于指定 https 请求的默认值非常有用。为了指导您更多，请举个例子，我们需要在Google服务器上命中50个不同的请求。在这种情况下，如果我们添加HTTP请求默认值，则无需指定服务器名称，路径或任何其他属性，如端口号，连接超时属性。在 HTTP 请求默认配置元素中指定的任何内容都将由所有 HTTP 请求继承。</p>
+<p>在这种情况下，如果我们添加HTTP请求默认值，则无需指定服务器名称，路径或任何其他属性，如端口号，连接超时属性。在 HTTP 请求默认配置元素中指定的任何内容都将由所有 HTTP 请求继承。</p>
+<p><img src="image-20211216161420935.png" alt="image-20211216161420935"></p>
+<p><strong>HTTP Cache Manager</strong>和<strong>HTTP Cookie Manager</strong>用于使 JMeter 充当实时浏览器。HTTP缓存管理器可以在每个请求后清除缓存，而另一个可以管理cookie设置。</p>
+<h5 id="逻辑控制器和定时器"><a href="#逻辑控制器和定时器" class="headerlink" title="逻辑控制器和定时器"></a>逻辑控制器和定时器</h5><p>逻辑控制器和定时器帮助Jmeter控制交易流。如果需要测试任何服务器，计时器可确保每个线程中的延迟。<em>例如，</em>如果我们需要FTP请求在HTTP请求完成后等待5秒，我们可以在那里添加计时器。</p>
+<p>逻辑控制器用于定义发送到服务器的请求流。它还可以让您分别存储每个模块的请求，例如登录和注销。</p>
+<p><img src="image-20211216161518560.png" alt="image-20211216161518560"></p>
+<h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><p>到目前为止，一定都熟悉了JMeter的组件，并尝试过使用它，并且一定面临一些问题。在下一篇文章中，将介绍一些涵盖移动领域的实时性能测试场景，以便大家获得更多关于JMeter的实践知识。</p>
+<p><strong>敬请期待！下一篇文章将帮助管理请求，分析结果并与性能测试的基准进行比较。</strong></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/2021/11/24/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%BB%84%E4%BB%B6kafka%E6%B5%8B%E8%AF%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1828,893 +2251,6 @@
 <p>永远不要忘记，测试是一项创造性和具有挑战性的任务。这写完全取决于您如何处理这个挑战的技能和经验。</p>
 <p><strong>交给您：</strong></p>
 <p>在下面的评论中分享您自己的测试经验、想法或测试秘诀肯定会使本文更加有趣和有用！</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/2021/04/12/Azkaban-REST-API%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Echo/images/avatar.gif">
-      <meta itemprop="name" content="丑牛">
-      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="贤の博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Echo/2021/04/12/Azkaban-REST-API%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" class="post-title-link" itemprop="url">Azkaban REST API使用指南</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-04-12 21:30:07" itemprop="dateCreated datePublished" datetime="2021-04-12T21:30:07+08:00">2021-04-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Echo/categories/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/" itemprop="url" rel="index"><span itemprop="name">测试开发</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="API文档"><a href="#API文档" class="headerlink" title="API文档"></a>API文档</h2><p>通常，人们又一种无需使用Web UI即可与Azkaban进行交互的愿望。Azkaban有一些公开的ajax调用，可以通过curl或其他一些HTTP请求客户端进行访问。所有API调用都首先需要正确的身份验证。</p>
-<h3 id="授权"><a href="#授权" class="headerlink" title="授权"></a>授权</h3><ul>
-<li><strong>Method:</strong> POST</li>
-<li><strong>Request URL:</strong> /?action=login</li>
-<li><strong>Parameter Location:</strong> Request Query String</li>
-</ul>
-<p>该API可帮助验证用户身份并提供<code>session.id</code>响应。</p>
-<p><code>session.id</code>返回后，直到会话终止，此ID均可用于在授予适当权限的情况下执行任何API请求。如果您注销，更改计算机，浏览器或位置，重新启动Azkaban或会话过期，则会话过期。默认会话超时为24小时（一天）。您可以重新登录会话是否已过期。对于同一用户，新会话将始终覆盖旧会话。</p>
-<p><strong>重要的</strong> <code>session.id</code>是，几乎所有API调用都应提供（身份验证除外）。<code>session.id</code>可以简单地附加为请求参数之一，也可以通过cookie：设置 <code>azkaban.browser.session.id</code>。以下两个HTTP请求是等效的：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># a) Provide session.id parameter directly</span></span><br><span class="line">curl -k --get --data <span class="string">&quot;session.id=bca1d75d-6bae-4163-a5b0-378a7d7b5a91&amp;ajax=fetchflowgraph&amp;project=azkaban-test-project&amp;flow=test&quot;</span> https://localhost:8443/manager</span><br><span class="line"></span><br><span class="line"><span class="comment"># b) Provide azkaban.browser.session.id cookie</span></span><br><span class="line">curl -k --get -b <span class="string">&quot;azkaban.browser.session.id=bca1d75d-6bae-4163-a5b0-378a7d7b5a91&quot;</span> --data <span class="string">&quot;ajax=fetchflowgraph&amp;project=azkaban-test-project&amp;flow=test&quot;</span> https://localhost:8443/manager</span><br></pre></td></tr></table></figure>
-
-<p>请求参数</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>action=login</td>
-<td>指示登录操作的固定参数。</td>
-</tr>
-<tr>
-<td>username</td>
-<td>Azkaban用户名。</td>
-</tr>
-<tr>
-<td>password</td>
-<td>对应的密码。</td>
-</tr>
-</tbody></table>
-<p>返回数据</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>error</td>
-<td>如果登录尝试失败，则返回错误消息。</td>
-</tr>
-<tr>
-<td>session.id</td>
-<td>如果登录尝试成功，则返回会话ID。</td>
-</tr>
-</tbody></table>
-<p>通过curl进行的示例调用：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -k -X POST --data &quot;action=login&amp;username=azkaban&amp;password=azkaban&quot; https://localhost:8443</span><br></pre></td></tr></table></figure>
-
-<p>返回数据举例</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;status&quot;</span> : <span class="string">&quot;success&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;session.id&quot;</span> : <span class="string">&quot;c001aba5-a90f-4daf-8f11-62330d034c0a&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><p>用于创建新项目的ajax API。</p>
-<p><strong>注意：</strong>在上传任何项目zip文件之前，应首先通过此API创建项目。</p>
-<ul>
-<li><strong>Method:</strong> POST</li>
-<li><strong>Request URL:</strong> /manager?action=create</li>
-<li><strong>Parameter Location:</strong> Request Query</li>
-</ul>
-<p>请求参数</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>session.id</td>
-<td>用户会话ID。</td>
-</tr>
-<tr>
-<td>action=create</td>
-<td>指示创建项目动作的固定参数。</td>
-</tr>
-<tr>
-<td>name</td>
-<td>要上传的项目名称。</td>
-</tr>
-<tr>
-<td>description</td>
-<td>项目的描述。该字段不能为空。</td>
-</tr>
-</tbody></table>
-<p>返回数据（如果请求成功）</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>status</td>
-<td>创建尝试的状态。</td>
-</tr>
-<tr>
-<td>path</td>
-<td>重定向的URL路径</td>
-</tr>
-<tr>
-<td>action</td>
-<td>建议前端执行的操作。（这是为使用Azkaban前端javascript而设计的，外部用户可以忽略此字段。）</td>
-</tr>
-</tbody></table>
-<p>返回数据（如果请求失败）</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>message</td>
-<td>错误消息。</td>
-</tr>
-<tr>
-<td>error</td>
-<td>错误名称。</td>
-</tr>
-</tbody></table>
-<p>返回数据样例</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;status&quot;</span>:<span class="string">&quot;success&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;path&quot;</span>:<span class="string">&quot;manager?project=aaaa&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;action&quot;</span>:<span class="string">&quot;redirect&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="删除项目"><a href="#删除项目" class="headerlink" title="删除项目"></a>删除项目</h3><p>用于删除现有项目的ajax API。</p>
-<p><strong>注意：</strong>目前，删除操作完成后，将不会返回任何响应消息。</p>
-<ul>
-<li><strong>Method:</strong> GET</li>
-<li><strong>Request URL:</strong> /manager?delete=true</li>
-<li><strong>Parameter Location:</strong> Request Query</li>
-</ul>
-<p>请求参数</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>session.id</td>
-<td>用户会话ID。</td>
-</tr>
-<tr>
-<td>delete=true</td>
-<td>指示删除项目操作的固定参数。</td>
-</tr>
-<tr>
-<td>project</td>
-<td>要删除的项目名称。</td>
-</tr>
-</tbody></table>
-<p>返回数据：无</p>
-<h3 id="上传项目Zip文件"><a href="#上传项目Zip文件" class="headerlink" title="上传项目Zip文件"></a>上传项目Zip文件</h3><p>ajax调用以上传项目zip文件。zip文件结构应遵循“<a target="_blank" rel="noopener" href="https://azkaban.readthedocs.io/docs/2.5/#upload-projects">上传项目”中</a>所述的要求。</p>
-<p><strong>注意：</strong>成功创建项目后，应调用此API</p>
-<ul>
-<li><strong>Method:</strong> POST</li>
-<li><strong>Content-Type:</strong> multipart/mixed</li>
-<li><strong>Request URL:</strong> /manager?ajax=upload</li>
-<li><strong>Parameter Location:</strong> Request Body</li>
-</ul>
-<p>请求参数</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>session.id</td>
-<td>用户会话ID。</td>
-</tr>
-<tr>
-<td>ajax=upload</td>
-<td>上传操作的固定参数。</td>
-</tr>
-<tr>
-<td>project</td>
-<td>要上传的项目名称。</td>
-</tr>
-<tr>
-<td>file</td>
-<td>项目zip文件。类型应设置为 <code>application/zip</code>或 <code>application/x-zip-compressed</code>。</td>
-</tr>
-</tbody></table>
-<p>返回数据</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>error</td>
-<td>如果上传尝试失败，将显示错误消息。</td>
-</tr>
-<tr>
-<td>projectId</td>
-<td>项目的ID</td>
-</tr>
-<tr>
-<td>version</td>
-<td>上传的版本号</td>
-</tr>
-</tbody></table>
-<p>返回数据</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;error&quot;</span> : <span class="string">&quot;Installation Failed.\nError unzipping file.&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;projectId&quot;</span> : <span class="string">&quot;192&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;version&quot;</span> : <span class="string">&quot;1&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="获取项目流程"><a href="#获取项目流程" class="headerlink" title="获取项目流程"></a>获取项目流程</h3><p>给定项目名称后，此API调用将获取该项目的所有流ID。</p>
-<ul>
-<li><strong>Method:</strong> GET</li>
-<li><strong>Request URL:</strong> /manager?ajax=fetchprojectflows</li>
-<li><strong>Parameter Location:</strong> Request Query String</li>
-</ul>
-<p>请求参数</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>session.id</td>
-<td>用户会话ID。</td>
-</tr>
-<tr>
-<td>ajax=fetchprojectflows</td>
-<td>指示fetchProjectFlows操作的固定参数。</td>
-</tr>
-<tr>
-<td>project</td>
-<td>要获取的项目名称。</td>
-</tr>
-</tbody></table>
-<p>返回数据</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>project</td>
-<td>项目名称。</td>
-</tr>
-<tr>
-<td>projectId</td>
-<td>项目的数字ID。</td>
-</tr>
-<tr>
-<td>flows</td>
-<td>流ID的列表。 <strong>值示例：</strong> [{“ flowId”：“ aaa”}，{“ flowId”：“ bbb”}]</td>
-</tr>
-</tbody></table>
-<p>返回数据样例</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;project&quot;</span> : <span class="string">&quot;test-azkaban&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;projectId&quot;</span> : <span class="number">192</span>,</span><br><span class="line">  <span class="attr">&quot;flows&quot;</span> : [ &#123;</span><br><span class="line">    <span class="attr">&quot;flowId&quot;</span> : <span class="string">&quot;test&quot;</span></span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    <span class="attr">&quot;flowId&quot;</span> : <span class="string">&quot;test2&quot;</span></span><br><span class="line">  &#125; ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="提取流程作业"><a href="#提取流程作业" class="headerlink" title="提取流程作业"></a>提取流程作业</h3><p>对于给定的项目和流ID，此API调用将获取属于该流的所有作业。它还返回那些作业的相应图形结构。</p>
-<ul>
-<li><strong>Method:</strong> GET</li>
-<li><strong>Request URL:</strong> /manager?ajax=fetchflowgraph</li>
-<li><strong>Parameter Location:</strong> Request Query String</li>
-</ul>
-<p>请求参数</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>session.id</td>
-<td>用户会话ID。</td>
-</tr>
-<tr>
-<td>ajax=fetchflowgraph</td>
-<td>指示fetchProjectFlows操作的固定参数。</td>
-</tr>
-<tr>
-<td>project</td>
-<td>要获取的项目名称。</td>
-</tr>
-<tr>
-<td>flow</td>
-<td>要获取的项目ID。</td>
-</tr>
-</tbody></table>
-<p>返回参数</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>project</td>
-<td>项目名称。</td>
-</tr>
-<tr>
-<td>projectId</td>
-<td>项目的数字ID。</td>
-</tr>
-<tr>
-<td>flow</td>
-<td>流程ID已提取。</td>
-</tr>
-<tr>
-<td>nodes</td>
-<td>属于此流的作业节点列表。 <strong>结构：</strong> <strong>值的示例：</strong> [{“ id”：“ first_job”，“ type”：“ java”}，{“ id”：“ second_job”，“ type”：“ command”，“ in”：[“ first_job”]}]</td>
-</tr>
-</tbody></table>
-<p>返回数据</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;project&quot;</span> : <span class="string">&quot;azkaban-test-project&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;nodes&quot;</span> : [ &#123;</span><br><span class="line">    <span class="attr">&quot;id&quot;</span> : <span class="string">&quot;test-final&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;type&quot;</span> : <span class="string">&quot;command&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;in&quot;</span> : [ <span class="string">&quot;test-job-3&quot;</span> ]</span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    <span class="attr">&quot;id&quot;</span> : <span class="string">&quot;test-job-start&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;type&quot;</span> : <span class="string">&quot;java&quot;</span></span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    <span class="attr">&quot;id&quot;</span> : <span class="string">&quot;test-job-3&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;type&quot;</span> : <span class="string">&quot;java&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;in&quot;</span> : [ <span class="string">&quot;test-job-2&quot;</span> ]</span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    <span class="attr">&quot;id&quot;</span> : <span class="string">&quot;test-job-2&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;type&quot;</span> : <span class="string">&quot;java&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;in&quot;</span> : [ <span class="string">&quot;test-job-start&quot;</span> ]</span><br><span class="line">  &#125; ],</span><br><span class="line">  <span class="attr">&quot;flow&quot;</span> : <span class="string">&quot;test&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;projectId&quot;</span> : <span class="number">192</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="获取流的执行列表"><a href="#获取流的执行列表" class="headerlink" title="获取流的执行列表"></a>获取流的执行列表</h3><p>给定项目名称和特定流程，此API调用将提供相应执行的列表。这些执行按后代提交时间顺序排序。另外，还希望参数指定开始索引和列表的长度。这最初用于处理分页。</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>session.id</td>
-<td>用户会话ID。</td>
-</tr>
-<tr>
-<td>ajax=fetchFlowExecutions</td>
-<td>指示fetchFlowExecutions操作的固定参数。</td>
-</tr>
-<tr>
-<td>project</td>
-<td>要获取的项目名称。</td>
-</tr>
-<tr>
-<td>flow</td>
-<td>要获取的流ID。</td>
-</tr>
-<tr>
-<td>start</td>
-<td>返回列表的起始索引（含）。</td>
-</tr>
-<tr>
-<td>length</td>
-<td>返回列表的最大长度。例如，如果起始索引为2，长度为10，则返回的列表将包含索引的执行：[2、3、4、5、6、7、8、9、10、11]。</td>
-</tr>
-</tbody></table>
-<p>返回数据样例</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;executions&quot;</span> : [ &#123;</span><br><span class="line">    <span class="attr">&quot;startTime&quot;</span> : <span class="number">1407779928865</span>,</span><br><span class="line">    <span class="attr">&quot;submitUser&quot;</span> : <span class="string">&quot;1&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;status&quot;</span> : <span class="string">&quot;FAILED&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;submitTime&quot;</span> : <span class="number">1407779928829</span>,</span><br><span class="line">    <span class="attr">&quot;execId&quot;</span> : <span class="number">306</span>,</span><br><span class="line">    <span class="attr">&quot;projectId&quot;</span> : <span class="number">192</span>,</span><br><span class="line">    <span class="attr">&quot;endTime&quot;</span> : <span class="number">1407779950602</span>,</span><br><span class="line">    <span class="attr">&quot;flowId&quot;</span> : <span class="string">&quot;test&quot;</span></span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    <span class="attr">&quot;startTime&quot;</span> : <span class="number">1407779877807</span>,</span><br><span class="line">    <span class="attr">&quot;submitUser&quot;</span> : <span class="string">&quot;1&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;status&quot;</span> : <span class="string">&quot;FAILED&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;submitTime&quot;</span> : <span class="number">1407779877779</span>,</span><br><span class="line">    <span class="attr">&quot;execId&quot;</span> : <span class="number">305</span>,</span><br><span class="line">    <span class="attr">&quot;projectId&quot;</span> : <span class="number">192</span>,</span><br><span class="line">    <span class="attr">&quot;endTime&quot;</span> : <span class="number">1407779899599</span>,</span><br><span class="line">    <span class="attr">&quot;flowId&quot;</span> : <span class="string">&quot;test&quot;</span></span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    <span class="attr">&quot;startTime&quot;</span> : <span class="number">1407779473354</span>,</span><br><span class="line">    <span class="attr">&quot;submitUser&quot;</span> : <span class="string">&quot;1&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;status&quot;</span> : <span class="string">&quot;FAILED&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;submitTime&quot;</span> : <span class="number">1407779473318</span>,</span><br><span class="line">    <span class="attr">&quot;execId&quot;</span> : <span class="number">304</span>,</span><br><span class="line">    <span class="attr">&quot;projectId&quot;</span> : <span class="number">192</span>,</span><br><span class="line">    <span class="attr">&quot;endTime&quot;</span> : <span class="number">1407779495093</span>,</span><br><span class="line">    <span class="attr">&quot;flowId&quot;</span> : <span class="string">&quot;test&quot;</span></span><br><span class="line">  &#125; ],</span><br><span class="line">  <span class="attr">&quot;total&quot;</span> : <span class="number">16</span>,</span><br><span class="line">  <span class="attr">&quot;project&quot;</span> : <span class="string">&quot;azkaban-test-project&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;length&quot;</span> : <span class="number">3</span>,</span><br><span class="line">  <span class="attr">&quot;from&quot;</span> : <span class="number">0</span>,</span><br><span class="line">  <span class="attr">&quot;flow&quot;</span> : <span class="string">&quot;test&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;projectId&quot;</span> : <span class="number">192</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="获取流正在执行的列表"><a href="#获取流正在执行的列表" class="headerlink" title="获取流正在执行的列表"></a>获取流正在执行的列表</h3><p>给定项目名称和流程ID，此API调用仅获取当前正在运行的执行。</p>
-<ul>
-<li><strong>Method:</strong> GET</li>
-<li><strong>Request URL:</strong> /executor?ajax=getRunning</li>
-<li><strong>Parameter Location:</strong> Request Query String</li>
-</ul>
-<p>请求参数</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>session.id</td>
-<td>用户会话ID。</td>
-</tr>
-<tr>
-<td>ajax=getRunning</td>
-<td>指示getRunning动作的固定参数。</td>
-</tr>
-<tr>
-<td>project</td>
-<td>要获取的项目名称。</td>
-</tr>
-<tr>
-<td>flow</td>
-<td>要获取的流ID。</td>
-</tr>
-</tbody></table>
-<p>返回参数</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>execIds</td>
-<td>已获取执行ID的列表。 <strong>值示例：</strong> [301、302、111、999]</td>
-</tr>
-</tbody></table>
-<p>返回数据样例</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;execIds&quot;</span>: [<span class="number">301</span>, <span class="number">302</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="执行流程"><a href="#执行流程" class="headerlink" title="执行流程"></a>执行流程</h3><p>该API通过ajax调用执行流程，支持多种不同选项的选择。通过禁用同一流程中的所有其他作业，也可以通过此API来运行单个作业。</p>
-<p>请求参数</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>session.id</td>
-<td>用户会话ID。</td>
-</tr>
-<tr>
-<td>ajax=executeFlow</td>
-<td>指示executeFlow动作的固定参数。</td>
-</tr>
-<tr>
-<td>project</td>
-<td>要获取的项目名称。</td>
-</tr>
-<tr>
-<td>flow</td>
-<td>要获取的流ID。</td>
-</tr>
-<tr>
-<td>disabled</td>
-<td>不需要执行的jobID列表</td>
-</tr>
-</tbody></table>
-<p>返回数据</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>error</td>
-<td>如果请求失败的错误消息</td>
-</tr>
-<tr>
-<td>flow</td>
-<td>执行的流ID</td>
-</tr>
-<tr>
-<td>execid</td>
-<td>执行ID</td>
-</tr>
-</tbody></table>
-<p>返回数据样例</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  message: <span class="string">&quot;Execution submitted successfully with exec id 295&quot;</span>,</span><br><span class="line">  project: <span class="string">&quot;foo-demo&quot;</span>,</span><br><span class="line">  flow: <span class="string">&quot;test&quot;</span>,</span><br><span class="line">  execid: <span class="number">295</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="取消流程执行"><a href="#取消流程执行" class="headerlink" title="取消流程执行"></a>取消流程执行</h3><p>给定执行ID，此API调用将取消正在运行的流程。如果流未在运行，它将返回错误消息。</p>
-<ul>
-<li><strong>Method:</strong> GET</li>
-<li><strong>Request URL:</strong> /executor?ajax=cancelFlow</li>
-<li><strong>Parameter Location:</strong> Request Query String</li>
-</ul>
-<p>请求参数</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>session.id</td>
-<td>用户会话ID。</td>
-</tr>
-<tr>
-<td>ajax=cancelFlow</td>
-<td>指示当前ajax动作的固定参数是cancelFlow。</td>
-</tr>
-<tr>
-<td>execid</td>
-<td>执行ID。</td>
-</tr>
-</tbody></table>
-<p>成功的返回数据</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; &#125;</span><br></pre></td></tr></table></figure>
-
-<p>失败的返回数据</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;error&quot;</span> : <span class="string">&quot;Execution 302 of flow test isn&#x27;t running.&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="使用Cron创建一个调度"><a href="#使用Cron创建一个调度" class="headerlink" title="使用Cron创建一个调度"></a>使用Cron创建一个调度</h3><p>该API调用通过cron表达式调度流程。Cron是已广泛使用了很长时间的UNIX工具，我们使用<a target="_blank" rel="noopener" href="http://www.quartz-scheduler.org/">Quartz库</a>来解析cron表达式。所有cron计划都遵循azkaban Web服务器中定义的时区（时区ID是通过 <em>java.util.TimeZone.getDefault（）。getID（）获得的</em>）。</p>
-<ul>
-<li><strong>Method:</strong> POST</li>
-<li><strong>Request URL:</strong> /schedule?ajax=scheduleCronFlow</li>
-<li><strong>Parameter Location:</strong> Request Query String</li>
-</ul>
-<p>请求参数</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>session.id</td>
-<td>用户会话ID。</td>
-</tr>
-<tr>
-<td>ajax=scheduleCronFlow</td>
-<td>指示操作的固定参数是使用cron计划流。</td>
-</tr>
-<tr>
-<td>projectName</td>
-<td>项目的名称。</td>
-</tr>
-<tr>
-<td>flow</td>
-<td>流的名称。</td>
-</tr>
-<tr>
-<td>cronExpression</td>
-<td>CRON表达式是一个字符串，包含6或7个由空格隔开的字段，这些空格代表一组时间。在azkaban中，我们使用<a target="_blank" rel="noopener" href="http://www.quartz-scheduler.org/documentation/quartz-2.x/tutorials/crontrigger.html">Quartz Cron Format</a>。</td>
-</tr>
-</tbody></table>
-<p>成功的返回数据</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;message&quot;</span> : <span class="string">&quot;PROJECT_NAME.FLOW_NAME scheduled.&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;scheduleId&quot;</span> : SCHEDULE_ID,</span><br><span class="line">  <span class="attr">&quot;status&quot;</span> : <span class="string">&quot;success&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>失败的返回数据</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;message&quot;</span> : <span class="string">&quot;Cron expression must exist.&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;status&quot;</span> : <span class="string">&quot;error&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;message&quot;</span> : <span class="string">&quot;Permission denied. Cannot execute FLOW_NAME&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;status&quot;</span> : <span class="string">&quot;error&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>无效的cron表达式的返回数据</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;message&quot;</span> : <span class="string">&quot;This expression &lt;*****&gt; can not be parsed to quartz cron.&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;status&quot;</span> : <span class="string">&quot;error&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="获取一个调度"><a href="#获取一个调度" class="headerlink" title="获取一个调度"></a>获取一个调度</h3><p>给定项目ID和流程ID，此API调用将获取一个调度。</p>
-<ul>
-<li><strong>Method:</strong> GET</li>
-<li><strong>Request URL:</strong> /schedule?ajax=fetchSchedule</li>
-<li><strong>Parameter Location:</strong> Request Query String</li>
-</ul>
-<p>请求参数</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>session.id</td>
-<td>用户会话ID。</td>
-</tr>
-<tr>
-<td>ajax=fetchSchedule</td>
-<td>指示计划的固定参数。</td>
-</tr>
-<tr>
-<td>projectId</td>
-<td>项目的ID。</td>
-</tr>
-<tr>
-<td>flowId</td>
-<td>流的名称。</td>
-</tr>
-</tbody></table>
-<p>成功返回数据</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;schedule&quot;</span> : &#123;</span><br><span class="line">    <span class="attr">&quot;cronExpression&quot;</span> : <span class="string">&quot;0 * 9 ? * *&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;nextExecTime&quot;</span> : <span class="string">&quot;2017-04-01 09:00:00&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;period&quot;</span> : <span class="string">&quot;null&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;submitUser&quot;</span> : <span class="string">&quot;azkaban&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;executionOptions&quot;</span> : &#123;</span><br><span class="line">      <span class="attr">&quot;notifyOnFirstFailure&quot;</span> : <span class="literal">false</span>,</span><br><span class="line">      <span class="attr">&quot;notifyOnLastFailure&quot;</span> : <span class="literal">false</span>,</span><br><span class="line">      <span class="attr">&quot;failureEmails&quot;</span> : [ ],</span><br><span class="line">      <span class="attr">&quot;successEmails&quot;</span> : [ ],</span><br><span class="line">      <span class="attr">&quot;pipelineLevel&quot;</span> : <span class="literal">null</span>,</span><br><span class="line">      <span class="attr">&quot;queueLevel&quot;</span> : <span class="number">0</span>,</span><br><span class="line">      <span class="attr">&quot;concurrentOption&quot;</span> : <span class="string">&quot;skip&quot;</span>,</span><br><span class="line">      <span class="attr">&quot;mailCreator&quot;</span> : <span class="string">&quot;default&quot;</span>,</span><br><span class="line">      <span class="attr">&quot;memoryCheck&quot;</span> : <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">&quot;flowParameters&quot;</span> : &#123;</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="attr">&quot;failureAction&quot;</span> : <span class="string">&quot;FINISH_CURRENTLY_RUNNING&quot;</span>,</span><br><span class="line">      <span class="attr">&quot;failureEmailsOverridden&quot;</span> : <span class="literal">false</span>,</span><br><span class="line">      <span class="attr">&quot;successEmailsOverridden&quot;</span> : <span class="literal">false</span>,</span><br><span class="line">      <span class="attr">&quot;pipelineExecutionId&quot;</span> : <span class="literal">null</span>,</span><br><span class="line">      <span class="attr">&quot;disabledJobs&quot;</span> : [ ]</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">&quot;scheduleId&quot;</span> : <span class="string">&quot;3&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;firstSchedTime&quot;</span> : <span class="string">&quot;2017-03-31 11:45:21&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>如果没有调度，则返回数据为空</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="取消一个调度"><a href="#取消一个调度" class="headerlink" title="取消一个调度"></a>取消一个调度</h3><p>此API调用取消计划流程。</p>
-<ul>
-<li><strong>Method:</strong> POST</li>
-<li><strong>Request URL:</strong> /schedule?action=removeSched</li>
-<li><strong>Parameter Location:</strong> Request Query String</li>
-</ul>
-<p>请求参数</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>session.id</td>
-<td>用户会话ID。</td>
-</tr>
-<tr>
-<td>action=removeSched</td>
-<td>指示操作的固定参数是取消计划流。</td>
-</tr>
-<tr>
-<td>scheduleId</td>
-<td>时间表的ID。您可以在/ schedule页面上的Azkaban UI中找到它。</td>
-</tr>
-</tbody></table>
-<p>成功返回数据</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;message&quot;</span> : <span class="string">&quot;flow FLOW_NAME removed from Schedules.&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;status&quot;</span> : <span class="string">&quot;success&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>失败返回数据</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;message&quot;</span> : <span class="string">&quot;Schedule with ID SCHEDULE_ID does not exist&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;status&quot;</span> : <span class="string">&quot;error&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="获取流程执行详情"><a href="#获取流程执行详情" class="headerlink" title="获取流程执行详情"></a>获取流程执行详情</h3><p>给定执行ID，此API调用将获取该执行的所有详细信息，包括所有作业执行的列表。</p>
-<ul>
-<li><strong>Method:</strong> GET</li>
-<li><strong>Request URL:</strong> /executor?ajax=fetchexecflow</li>
-<li><strong>Parameter Location:</strong> Request Query String</li>
-</ul>
-<p>请求参数</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>session.id</td>
-<td>用户会话ID。</td>
-</tr>
-<tr>
-<td>ajax=fetchexecflow</td>
-<td>指示fetchexecflow操作的固定参数。</td>
-</tr>
-<tr>
-<td>execid</td>
-<td>要获取的执行ID。</td>
-</tr>
-</tbody></table>
-<p>它返回有关执行的详细信息（请查看下面的示例）。要注意的一件事是该字段<code>nodes[i].in</code>实际上指示此节点的依赖项是什么。</p>
-<p>返回数据</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;attempt&quot;</span> : <span class="number">0</span>,</span><br><span class="line">  <span class="attr">&quot;submitUser&quot;</span> : <span class="string">&quot;1&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;updateTime&quot;</span> : <span class="number">1407779495095</span>,</span><br><span class="line">  <span class="attr">&quot;status&quot;</span> : <span class="string">&quot;FAILED&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;submitTime&quot;</span> : <span class="number">1407779473318</span>,</span><br><span class="line">  <span class="attr">&quot;projectId&quot;</span> : <span class="number">192</span>,</span><br><span class="line">  <span class="attr">&quot;flow&quot;</span> : <span class="string">&quot;test&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;endTime&quot;</span> : <span class="number">1407779495093</span>,</span><br><span class="line">  <span class="attr">&quot;type&quot;</span> : <span class="literal">null</span>,</span><br><span class="line">  <span class="attr">&quot;nestedId&quot;</span> : <span class="string">&quot;test&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;startTime&quot;</span> : <span class="number">1407779473354</span>,</span><br><span class="line">  <span class="attr">&quot;id&quot;</span> : <span class="string">&quot;test&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;project&quot;</span> : <span class="string">&quot;test-azkaban&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;nodes&quot;</span> : [ &#123;</span><br><span class="line">    <span class="attr">&quot;attempt&quot;</span> : <span class="number">0</span>,</span><br><span class="line">    <span class="attr">&quot;startTime&quot;</span> : <span class="number">1407779495077</span>,</span><br><span class="line">    <span class="attr">&quot;id&quot;</span> : <span class="string">&quot;test&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;updateTime&quot;</span> : <span class="number">1407779495077</span>,</span><br><span class="line">    <span class="attr">&quot;status&quot;</span> : <span class="string">&quot;CANCELLED&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;nestedId&quot;</span> : <span class="string">&quot;test&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;type&quot;</span> : <span class="string">&quot;command&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;endTime&quot;</span> : <span class="number">1407779495077</span>,</span><br><span class="line">    <span class="attr">&quot;in&quot;</span> : [ <span class="string">&quot;test-foo&quot;</span> ]</span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    <span class="attr">&quot;attempt&quot;</span> : <span class="number">0</span>,</span><br><span class="line">    <span class="attr">&quot;startTime&quot;</span> : <span class="number">1407779473357</span>,</span><br><span class="line">    <span class="attr">&quot;id&quot;</span> : <span class="string">&quot;test-bar&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;updateTime&quot;</span> : <span class="number">1407779484241</span>,</span><br><span class="line">    <span class="attr">&quot;status&quot;</span> : <span class="string">&quot;SUCCEEDED&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;nestedId&quot;</span> : <span class="string">&quot;test-bar&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;type&quot;</span> : <span class="string">&quot;pig&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;endTime&quot;</span> : <span class="number">1407779484236</span></span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    <span class="attr">&quot;attempt&quot;</span> : <span class="number">0</span>,</span><br><span class="line">    <span class="attr">&quot;startTime&quot;</span> : <span class="number">1407779484240</span>,</span><br><span class="line">    <span class="attr">&quot;id&quot;</span> : <span class="string">&quot;test-foobar&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;updateTime&quot;</span> : <span class="number">1407779495073</span>,</span><br><span class="line">    <span class="attr">&quot;status&quot;</span> : <span class="string">&quot;FAILED&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;nestedId&quot;</span> : <span class="string">&quot;test-foobar&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;type&quot;</span> : <span class="string">&quot;java&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;endTime&quot;</span> : <span class="number">1407779495068</span>,</span><br><span class="line">    <span class="attr">&quot;in&quot;</span> : [ <span class="string">&quot;test-bar&quot;</span> ]</span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    <span class="attr">&quot;attempt&quot;</span> : <span class="number">0</span>,</span><br><span class="line">    <span class="attr">&quot;startTime&quot;</span> : <span class="number">1407779495069</span>,</span><br><span class="line">    <span class="attr">&quot;id&quot;</span> : <span class="string">&quot;test-foo&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;updateTime&quot;</span> : <span class="number">1407779495069</span>,</span><br><span class="line">    <span class="attr">&quot;status&quot;</span> : <span class="string">&quot;CANCELLED&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;nestedId&quot;</span> : <span class="string">&quot;test-foo&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;type&quot;</span> : <span class="string">&quot;java&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;endTime&quot;</span> : <span class="number">1407779495069</span>,</span><br><span class="line">    <span class="attr">&quot;in&quot;</span> : [ <span class="string">&quot;test-foobar&quot;</span> ]</span><br><span class="line">  &#125; ],</span><br><span class="line">  <span class="attr">&quot;flowId&quot;</span> : <span class="string">&quot;test&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;execid&quot;</span> : <span class="number">304</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="获取执行作业日志"><a href="#获取执行作业日志" class="headerlink" title="获取执行作业日志"></a>获取执行作业日志</h3><p>给定一个执行ID和一个作业ID，此API调用将获取相应的作业日志。有时日志文本可能会很大，因此此API调用也需要参数<code>offset</code>并<code>length</code>要指定。</p>
-<ul>
-<li><strong>Method:</strong> GET</li>
-<li><strong>Request URL:</strong> /executor?ajax=fetchExecJobLogs</li>
-<li><strong>Parameter Location:</strong> Request Query String</li>
-</ul>
-<p>请求参数</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>session.id</td>
-<td>用户会话ID。</td>
-</tr>
-<tr>
-<td>ajax=fetchExecJobLogs</td>
-<td>指示fetchExecJobLogs操作的固定参数。</td>
-</tr>
-<tr>
-<td>execid</td>
-<td>执行的唯一ID。</td>
-</tr>
-<tr>
-<td>jobId</td>
-<td>要获取的作业的唯一ID。</td>
-</tr>
-<tr>
-<td>offset</td>
-<td>日志数据的偏移量。</td>
-</tr>
-<tr>
-<td>length</td>
-<td>日志数据的长度。例如，如果偏移量设置为10，长度为1000，则返回的日志将从第10个字符开始，并且长度为1000（如果剩余对数小于1000，则返回较小的长度）。</td>
-</tr>
-</tbody></table>
-<p>返回数据</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>data</td>
-<td>日志的文本数据。</td>
-</tr>
-<tr>
-<td>offset</td>
-<td>日志数据的偏移量。</td>
-</tr>
-<tr>
-<td>length</td>
-<td>日志数据的长度。</td>
-</tr>
-</tbody></table>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Echo/images/avatar.gif">
-      <meta itemprop="name" content="丑牛">
-      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="贤の博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/" class="post-title-link" itemprop="url">GitHub搜索技巧</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-03-17 12:37:35" itemprop="dateCreated datePublished" datetime="2021-03-17T12:37:35+08:00">2021-03-17</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Echo/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>github是世界知名的代码托管平台，千万程序员的圣地。作为一个常逛github的程序员，你在github上搜索代码时，是怎样操作的呢？</p>
-<p>大家是不是也会像我一样搜索框直接输入关键字</p>
-<p><img src="image-20211117104623233.png" alt="image-20211117104623233"></p>
-<p>然后改变 一下列表oder排序方式</p>
-<p><img src="image-20211117104649103.png" alt="image-20211117104649103"></p>
-<p>但是找到了接近21万相关的开源项目，这时候的你是不是一脸懵呢！</p>
-<p>接下来我们一块掌握几个精确查找项目的方式（均以springboot为例）</p>
-<h6 id="1-项目名搜索"><a href="#1-项目名搜索" class="headerlink" title="1.项目名搜索"></a>1.项目名搜索</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">in:name 项目关键字</span><br></pre></td></tr></table></figure>
-
-<p><img src="image-20211117104831270.png" alt="image-20211117104831270"></p>
-<p>这时发现项目数据量已经少了一些，搜索到了16.5万个项目</p>
-<h6 id="2-项目描述搜索"><a href="#2-项目描述搜索" class="headerlink" title="2.项目描述搜索"></a>2.项目描述搜索</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">in:description 关键字</span><br></pre></td></tr></table></figure>
-
-<p><img src="image-20211117105101855.png" alt="image-20211117105101855"></p>
-<p>此时项目数量已经下降到了6.9万个</p>
-<h6 id="3-项目readMe搜索"><a href="#3-项目readMe搜索" class="headerlink" title="3.项目readMe搜索"></a>3.项目readMe搜索</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">in:readme 关键字</span><br></pre></td></tr></table></figure>
-
-<p><img src="image-20211117105323314.png" alt="image-20211117105323314"></p>
-<p>此时项目数量为12.6万个</p>
-<h6 id="4-关键字搜索，然后限制stars或者forks-数"><a href="#4-关键字搜索，然后限制stars或者forks-数" class="headerlink" title="4.关键字搜索，然后限制stars或者forks 数"></a>4.关键字搜索，然后限制stars或者forks 数</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">in:name 或者 description 或者 readme 关键字 stars:&gt;数字 forks:&gt;数字</span><br></pre></td></tr></table></figure>
-
-<p>stars 和 forks既可以单独使用，也可以组合使用</p>
-<p><img src="image-20211117113707201.png" alt="image-20211117113707201"></p>
-<p>当增加上stars 数量大于10000时，项目数为23个</p>
-<h6 id="5-限制项目更新时间"><a href="#5-限制项目更新时间" class="headerlink" title="5.限制项目更新时间"></a>5.限制项目更新时间</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">in:name或description或readme 关键字  pushed:&gt;2021-02-01</span><br></pre></td></tr></table></figure>
-
-<p><img src="image-20211117113931148.png" alt="image-20211117113931148"></p>
-<p>此时项目数为4.4万个。这里还可以和stars或者forks组合使用</p>
-<h6 id="6-限制项目的语言"><a href="#6-限制项目的语言" class="headerlink" title="6.限制项目的语言"></a>6.限制项目的语言</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">in:name或description或readme 关键字  language:javascript</span><br></pre></td></tr></table></figure>
-
-<p><img src="image-20211117114146576.png" alt="image-20211117114146576"></p>
-<p>项目数为8.5万个。</p>
-<h6 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h6><p>如何高效的从GitHub上搜索开源项目，有下面的小技巧：</p>
-<ul>
-<li>项目名搜索: in:name 关键字</li>
-<li>项目描述搜索： in:description 关键字</li>
-<li>项目详细描述搜索： in: readme 关键字</li>
-<li>限制项目的火热程度： stars:&gt;数字 或者 forks:&gt;数字</li>
-<li>限制项目的更新时间：pushed:&gt; 时间</li>
-<li>限制项目的语言：language:语言</li>
-</ul>
-<p>所以以上github搜索的小技巧。你学废了吗？</p>
 
       
     </div>
