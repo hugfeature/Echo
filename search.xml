@@ -828,59 +828,6 @@
       </tags>
   </entry>
   <entry>
-    <title>GitHub搜索技巧</title>
-    <url>/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/</url>
-    <content><![CDATA[<p>github是世界知名的代码托管平台，千万程序员的圣地。作为一个常逛github的程序员，你在github上搜索代码时，是怎样操作的呢？</p>
-<p>大家是不是也会像我一样搜索框直接输入关键字</p>
-<p><img src="image-20211117104623233.png" alt="image-20211117104623233"></p>
-<p>然后改变 一下列表oder排序方式</p>
-<p><img src="image-20211117104649103.png" alt="image-20211117104649103"></p>
-<p>但是找到了接近21万相关的开源项目，这时候的你是不是一脸懵呢！</p>
-<p>接下来我们一块掌握几个精确查找项目的方式（均以springboot为例）</p>
-<h6 id="1-项目名搜索"><a href="#1-项目名搜索" class="headerlink" title="1.项目名搜索"></a>1.项目名搜索</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:name 项目关键字</span><br></pre></td></tr></table></figure>
-
-<p><img src="image-20211117104831270.png" alt="image-20211117104831270"></p>
-<p>这时发现项目数据量已经少了一些，搜索到了16.5万个项目</p>
-<h6 id="2-项目描述搜索"><a href="#2-项目描述搜索" class="headerlink" title="2.项目描述搜索"></a>2.项目描述搜索</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:description 关键字</span><br></pre></td></tr></table></figure>
-
-<p><img src="image-20211117105101855.png" alt="image-20211117105101855"></p>
-<p>此时项目数量已经下降到了6.9万个</p>
-<h6 id="3-项目readMe搜索"><a href="#3-项目readMe搜索" class="headerlink" title="3.项目readMe搜索"></a>3.项目readMe搜索</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:readme 关键字</span><br></pre></td></tr></table></figure>
-
-<p><img src="image-20211117105323314.png" alt="image-20211117105323314"></p>
-<p>此时项目数量为12.6万个</p>
-<h6 id="4-关键字搜索，然后限制stars或者forks-数"><a href="#4-关键字搜索，然后限制stars或者forks-数" class="headerlink" title="4.关键字搜索，然后限制stars或者forks 数"></a>4.关键字搜索，然后限制stars或者forks 数</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:name 或者 description 或者 readme 关键字 stars:&gt;数字 forks:&gt;数字</span><br></pre></td></tr></table></figure>
-
-<p>stars 和 forks既可以单独使用，也可以组合使用</p>
-<p><img src="image-20211117113707201.png" alt="image-20211117113707201"></p>
-<p>当增加上stars 数量大于10000时，项目数为23个</p>
-<h6 id="5-限制项目更新时间"><a href="#5-限制项目更新时间" class="headerlink" title="5.限制项目更新时间"></a>5.限制项目更新时间</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:name或description或readme 关键字  pushed:&gt;2021-02-01</span><br></pre></td></tr></table></figure>
-
-<p><img src="image-20211117113931148.png" alt="image-20211117113931148"></p>
-<p>此时项目数为4.4万个。这里还可以和stars或者forks组合使用</p>
-<h6 id="6-限制项目的语言"><a href="#6-限制项目的语言" class="headerlink" title="6.限制项目的语言"></a>6.限制项目的语言</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:name或description或readme 关键字  language:javascript</span><br></pre></td></tr></table></figure>
-
-<p><img src="image-20211117114146576.png" alt="image-20211117114146576"></p>
-<p>项目数为8.5万个。</p>
-<h6 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h6><p>如何高效的从GitHub上搜索开源项目，有下面的小技巧：</p>
-<ul>
-<li>项目名搜索: in:name 关键字</li>
-<li>项目描述搜索： in:description 关键字</li>
-<li>项目详细描述搜索： in: readme 关键字</li>
-<li>限制项目的火热程度： stars:&gt;数字 或者 forks:&gt;数字</li>
-<li>限制项目的更新时间：pushed:&gt; 时间</li>
-<li>限制项目的语言：language:语言</li>
-</ul>
-<p>所以以上github搜索的小技巧。你学废了吗？</p>
-]]></content>
-      <categories>
-        <category>学习</category>
-      </categories>
-      <tags>
-        <tag>github</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>HDFS架构及命令</title>
     <url>/Echo/2022/01/02/HDFS%E6%9E%B6%E6%9E%84%E5%8F%8A%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<h4 id="HDFS架构"><a href="#HDFS架构" class="headerlink" title="HDFS架构"></a>HDFS架构</h4><p><img src="HDFS-Architecture.jpg" alt="HDFS-Architecture"></p>
@@ -1008,6 +955,154 @@
       </categories>
       <tags>
         <tag>大数据，HDFS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>GitHub搜索技巧</title>
+    <url>/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/</url>
+    <content><![CDATA[<p>github是世界知名的代码托管平台，千万程序员的圣地。作为一个常逛github的程序员，你在github上搜索代码时，是怎样操作的呢？</p>
+<p>大家是不是也会像我一样搜索框直接输入关键字</p>
+<p><img src="image-20211117104623233.png" alt="image-20211117104623233"></p>
+<p>然后改变 一下列表oder排序方式</p>
+<p><img src="image-20211117104649103.png" alt="image-20211117104649103"></p>
+<p>但是找到了接近21万相关的开源项目，这时候的你是不是一脸懵呢！</p>
+<p>接下来我们一块掌握几个精确查找项目的方式（均以springboot为例）</p>
+<h6 id="1-项目名搜索"><a href="#1-项目名搜索" class="headerlink" title="1.项目名搜索"></a>1.项目名搜索</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:name 项目关键字</span><br></pre></td></tr></table></figure>
+
+<p><img src="image-20211117104831270.png" alt="image-20211117104831270"></p>
+<p>这时发现项目数据量已经少了一些，搜索到了16.5万个项目</p>
+<h6 id="2-项目描述搜索"><a href="#2-项目描述搜索" class="headerlink" title="2.项目描述搜索"></a>2.项目描述搜索</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:description 关键字</span><br></pre></td></tr></table></figure>
+
+<p><img src="image-20211117105101855.png" alt="image-20211117105101855"></p>
+<p>此时项目数量已经下降到了6.9万个</p>
+<h6 id="3-项目readMe搜索"><a href="#3-项目readMe搜索" class="headerlink" title="3.项目readMe搜索"></a>3.项目readMe搜索</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:readme 关键字</span><br></pre></td></tr></table></figure>
+
+<p><img src="image-20211117105323314.png" alt="image-20211117105323314"></p>
+<p>此时项目数量为12.6万个</p>
+<h6 id="4-关键字搜索，然后限制stars或者forks-数"><a href="#4-关键字搜索，然后限制stars或者forks-数" class="headerlink" title="4.关键字搜索，然后限制stars或者forks 数"></a>4.关键字搜索，然后限制stars或者forks 数</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:name 或者 description 或者 readme 关键字 stars:&gt;数字 forks:&gt;数字</span><br></pre></td></tr></table></figure>
+
+<p>stars 和 forks既可以单独使用，也可以组合使用</p>
+<p><img src="image-20211117113707201.png" alt="image-20211117113707201"></p>
+<p>当增加上stars 数量大于10000时，项目数为23个</p>
+<h6 id="5-限制项目更新时间"><a href="#5-限制项目更新时间" class="headerlink" title="5.限制项目更新时间"></a>5.限制项目更新时间</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:name或description或readme 关键字  pushed:&gt;2021-02-01</span><br></pre></td></tr></table></figure>
+
+<p><img src="image-20211117113931148.png" alt="image-20211117113931148"></p>
+<p>此时项目数为4.4万个。这里还可以和stars或者forks组合使用</p>
+<h6 id="6-限制项目的语言"><a href="#6-限制项目的语言" class="headerlink" title="6.限制项目的语言"></a>6.限制项目的语言</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:name或description或readme 关键字  language:javascript</span><br></pre></td></tr></table></figure>
+
+<p><img src="image-20211117114146576.png" alt="image-20211117114146576"></p>
+<p>项目数为8.5万个。</p>
+<h6 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h6><p>如何高效的从GitHub上搜索开源项目，有下面的小技巧：</p>
+<ul>
+<li>项目名搜索: in:name 关键字</li>
+<li>项目描述搜索： in:description 关键字</li>
+<li>项目详细描述搜索： in: readme 关键字</li>
+<li>限制项目的火热程度： stars:&gt;数字 或者 forks:&gt;数字</li>
+<li>限制项目的更新时间：pushed:&gt; 时间</li>
+<li>限制项目的语言：language:语言</li>
+</ul>
+<p>所以以上github搜索的小技巧。你学废了吗？</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JMeter介绍</title>
+    <url>/Echo/2021/11/20/JMeter%E4%BB%8B%E7%BB%8D/</url>
+    <content><![CDATA[<p>在本文中我们将了解什么是性能测试、为什么选择 JMeter、JMeter 与 HP LoadRunner。</p>
+<h5 id="什么是性能测试？"><a href="#什么是性能测试？" class="headerlink" title="什么是性能测试？"></a>什么是性能测试？</h5><p>在我们继续探索 Jmeter 及其安装过程之前，我们需要了解什么是性能测试以及 JMeter 作为工具如何支持性能测试。 </p>
+<p>就像学生需要表现良好才能提升自己的水平一样。 同样，应用程序（移动或 Web 或桌面）需要表现良好，才能在竞争激烈的市场中更上一层楼。 </p>
+<p>性能测试衡量 <strong>您的应用程序在不同工作负载下的性能。</strong> 有许多参数可用于确定负载测试中的服务器是否运行良好，本文稍后将讨论这些参数。 </p>
+<ul>
+<li>举一个简单的例子。  在浏览器中输入“<a href="http://www.facebook.com”,它显示了/">www.facebook.com”，它显示了</a> Facebook 的主页使用时间10秒。 现在假设 1000 人同时输入“<a href="http://www.facebook.com”并点击/">www.facebook.com”并点击</a> Google 主页显示可能超过 10 秒 。</li>
+<li>因此，在不同的工作负载（用户数量）下性能会发生变化。  这种类型的测试非常重要，因为无论您的应用程序有多么好的设计和功能，但如果它的性能很差，那么很有可能失去所有潜在的目标受众 。</li>
+</ul>
+<p>通过下图我们可以清晰看到比较</p>
+<p><img src="FlowDiagram.jpg" alt="FlowDiagram"></p>
+<h6 id="性能测试主要考虑以下参数："><a href="#性能测试主要考虑以下参数：" class="headerlink" title="性能测试主要考虑以下参数："></a>性能测试主要考虑以下参数：</h6><ul>
+<li><strong>吞吐量</strong> - 它被定义为每秒的事务数。 例：假设银行客户服务一次只能处理 30 个呼叫，因此其余呼叫者需要排队。 这意味着吞吐量是 30</li>
+<li><strong>响应时间</strong> ——这个时间是用户从服务器收到响应所用的时间 </li>
+<li><strong>延迟</strong> 是信息的第一个字节到达用户端的时间。例：假设用户点击 HTTP 请求以检索网页。 因此，接收该网页的第一个字节的时间就是该请求的延迟时间 </li>
+<li><strong>可扩展性</strong>  - 它是指应用程序可以承受的最大负载 </li>
+<li>CPU 负载、内存使用和资源使用 </li>
+</ul>
+<h5 id="为什么是JMeter？"><a href="#为什么是JMeter？" class="headerlink" title="为什么是JMeter？"></a>为什么是JMeter？</h5><p>JMeter 最初是由 Apache Software 的  Stefano Mazzocchi 开发的。  基本上，JMeter 是一个基于 Java 的桌面应用程序。  JMeter 使用 Swing  图形 API，不是由特定于平台的编码实现的，只要有JAVA即可。JMeter的安装自己行搜索。</p>
+<p> Jmeter支持以下协议：</p>
+<ul>
+<li>HTTP、HTTPS</li>
+<li>FTP</li>
+<li>JDBC</li>
+<li>SMTP、IMAP</li>
+<li>LDAP</li>
+<li>TCP</li>
+<li>SOAP</li>
+</ul>
+<p>JMeter的优点：</p>
+<ul>
+<li>免费–JMeter是免费的，Apache官网下载即可；</li>
+<li>友好的界面–测试人员可以很容易地熟悉它的大部分组件，工具内提供每个组件的帮助文档</li>
+<li>高度可扩展–用户可以使用 JSR223 创建自己的采样器，并且有许多采样器插件可用，测试人员增加测试能力</li>
+<li>协议支持–JMeter 不仅可用于应用程序性能测试，还支持多种协议</li>
+<li>记录– JMeter 内置了 HTTP(S) 测试脚本记录器，可用于记录来自网站或移动应用程序的所有操作，然后可以模拟负载以测试各种负载条件下的性能。 此外，还有一个 chrome 扩展可用于记录操作，然后可以在 JMeter 中使用相同的脚本来扩展负载</li>
+<li>集成selenium–可以与selenium进行集成测试</li>
+<li>安装简单</li>
+<li>图形化的报告</li>
+</ul>
+<h5 id="HP-LoadRunner-VS-JMeter"><a href="#HP-LoadRunner-VS-JMeter" class="headerlink" title="HP LoadRunner VS JMeter"></a>HP LoadRunner VS JMeter</h5><table>
+<thead>
+<tr>
+<th>JMeter</th>
+<th>Loadrunner</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>开源，免费</td>
+<td>惠普产品，许可证还是很贵的</td>
+</tr>
+<tr>
+<td>协议支持有限</td>
+<td>更多的协议支持</td>
+</tr>
+<tr>
+<td>Jmeter 是一个基于 Java 的产品，使用基于 sprint 的 API，这使得它独立于平台，可以在任何环境下运行，无论是 win、mac、Linux。</td>
+<td>它使用基于 C 的语言、Java、Java Script 和 VB。</td>
+</tr>
+<tr>
+<td>负载生成能力有限。  在具有高 RAM 和处理器的机器上，Jmeter 只能产生 1-2k 用户的负载。  增加负载可能会导致内存不足异常。</td>
+<td>负载生成能力更高。</td>
+</tr>
+<tr>
+<td>Jmeter的技术熟练程度较低。</td>
+<td>LoadRunner 技术精湛。</td>
+</tr>
+<tr>
+<td>Jmeter 在云中运行有很多复杂性。</td>
+<td>Load Runner 也很容易在云环境中运行。</td>
+</tr>
+<tr>
+<td>Jmeter 中的录制功能非常简单，并且也支持可扩展性。  有一些 chrome 插件，可以直接在 Jmeter 中导入脚本。</td>
+<td>与 Jmeter 相比，Load Runner 中的记录功能也不复杂。</td>
+</tr>
+<tr>
+<td>Jmeter 的结果不是实时的。</td>
+<td>LoadRunner 提供相对更实时的结果</td>
+</tr>
+<tr>
+<td>Jmeter 在用于 SAP 等企业产品时效率不高。</td>
+<td>即使使用 SAP、Siebel 等，Load Runner 也能提供高效的结果。</td>
+</tr>
+</tbody></table>
+<h5 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h5><p>JMeter 是市场上用于测试 Web 和移动应用程序的强大工具。  它非常易于使用并且不需要太多编程技能，除非在 JMeter 中编写自己的采样器。 将在接下来的系列文章中详细介绍每个组件，敬请期待！ </p>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>性能测试，JMeter</tag>
       </tags>
   </entry>
   <entry>
@@ -1153,101 +1248,6 @@
       </tags>
   </entry>
   <entry>
-    <title>JMeter介绍</title>
-    <url>/Echo/2021/11/20/JMeter%E4%BB%8B%E7%BB%8D/</url>
-    <content><![CDATA[<p>在本文中我们将了解什么是性能测试、为什么选择 JMeter、JMeter 与 HP LoadRunner。</p>
-<h5 id="什么是性能测试？"><a href="#什么是性能测试？" class="headerlink" title="什么是性能测试？"></a>什么是性能测试？</h5><p>在我们继续探索 Jmeter 及其安装过程之前，我们需要了解什么是性能测试以及 JMeter 作为工具如何支持性能测试。 </p>
-<p>就像学生需要表现良好才能提升自己的水平一样。 同样，应用程序（移动或 Web 或桌面）需要表现良好，才能在竞争激烈的市场中更上一层楼。 </p>
-<p>性能测试衡量 <strong>您的应用程序在不同工作负载下的性能。</strong> 有许多参数可用于确定负载测试中的服务器是否运行良好，本文稍后将讨论这些参数。 </p>
-<ul>
-<li>举一个简单的例子。  在浏览器中输入“<a href="http://www.facebook.com”,它显示了/">www.facebook.com”，它显示了</a> Facebook 的主页使用时间10秒。 现在假设 1000 人同时输入“<a href="http://www.facebook.com”并点击/">www.facebook.com”并点击</a> Google 主页显示可能超过 10 秒 。</li>
-<li>因此，在不同的工作负载（用户数量）下性能会发生变化。  这种类型的测试非常重要，因为无论您的应用程序有多么好的设计和功能，但如果它的性能很差，那么很有可能失去所有潜在的目标受众 。</li>
-</ul>
-<p>通过下图我们可以清晰看到比较</p>
-<p><img src="FlowDiagram.jpg" alt="FlowDiagram"></p>
-<h6 id="性能测试主要考虑以下参数："><a href="#性能测试主要考虑以下参数：" class="headerlink" title="性能测试主要考虑以下参数："></a>性能测试主要考虑以下参数：</h6><ul>
-<li><strong>吞吐量</strong> - 它被定义为每秒的事务数。 例：假设银行客户服务一次只能处理 30 个呼叫，因此其余呼叫者需要排队。 这意味着吞吐量是 30</li>
-<li><strong>响应时间</strong> ——这个时间是用户从服务器收到响应所用的时间 </li>
-<li><strong>延迟</strong> 是信息的第一个字节到达用户端的时间。例：假设用户点击 HTTP 请求以检索网页。 因此，接收该网页的第一个字节的时间就是该请求的延迟时间 </li>
-<li><strong>可扩展性</strong>  - 它是指应用程序可以承受的最大负载 </li>
-<li>CPU 负载、内存使用和资源使用 </li>
-</ul>
-<h5 id="为什么是JMeter？"><a href="#为什么是JMeter？" class="headerlink" title="为什么是JMeter？"></a>为什么是JMeter？</h5><p>JMeter 最初是由 Apache Software 的  Stefano Mazzocchi 开发的。  基本上，JMeter 是一个基于 Java 的桌面应用程序。  JMeter 使用 Swing  图形 API，不是由特定于平台的编码实现的，只要有JAVA即可。JMeter的安装自己行搜索。</p>
-<p> Jmeter支持以下协议：</p>
-<ul>
-<li>HTTP、HTTPS</li>
-<li>FTP</li>
-<li>JDBC</li>
-<li>SMTP、IMAP</li>
-<li>LDAP</li>
-<li>TCP</li>
-<li>SOAP</li>
-</ul>
-<p>JMeter的优点：</p>
-<ul>
-<li>免费–JMeter是免费的，Apache官网下载即可；</li>
-<li>友好的界面–测试人员可以很容易地熟悉它的大部分组件，工具内提供每个组件的帮助文档</li>
-<li>高度可扩展–用户可以使用 JSR223 创建自己的采样器，并且有许多采样器插件可用，测试人员增加测试能力</li>
-<li>协议支持–JMeter 不仅可用于应用程序性能测试，还支持多种协议</li>
-<li>记录– JMeter 内置了 HTTP(S) 测试脚本记录器，可用于记录来自网站或移动应用程序的所有操作，然后可以模拟负载以测试各种负载条件下的性能。 此外，还有一个 chrome 扩展可用于记录操作，然后可以在 JMeter 中使用相同的脚本来扩展负载</li>
-<li>集成selenium–可以与selenium进行集成测试</li>
-<li>安装简单</li>
-<li>图形化的报告</li>
-</ul>
-<h5 id="HP-LoadRunner-VS-JMeter"><a href="#HP-LoadRunner-VS-JMeter" class="headerlink" title="HP LoadRunner VS JMeter"></a>HP LoadRunner VS JMeter</h5><table>
-<thead>
-<tr>
-<th>JMeter</th>
-<th>Loadrunner</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>开源，免费</td>
-<td>惠普产品，许可证还是很贵的</td>
-</tr>
-<tr>
-<td>协议支持有限</td>
-<td>更多的协议支持</td>
-</tr>
-<tr>
-<td>Jmeter 是一个基于 Java 的产品，使用基于 sprint 的 API，这使得它独立于平台，可以在任何环境下运行，无论是 win、mac、Linux。</td>
-<td>它使用基于 C 的语言、Java、Java Script 和 VB。</td>
-</tr>
-<tr>
-<td>负载生成能力有限。  在具有高 RAM 和处理器的机器上，Jmeter 只能产生 1-2k 用户的负载。  增加负载可能会导致内存不足异常。</td>
-<td>负载生成能力更高。</td>
-</tr>
-<tr>
-<td>Jmeter的技术熟练程度较低。</td>
-<td>LoadRunner 技术精湛。</td>
-</tr>
-<tr>
-<td>Jmeter 在云中运行有很多复杂性。</td>
-<td>Load Runner 也很容易在云环境中运行。</td>
-</tr>
-<tr>
-<td>Jmeter 中的录制功能非常简单，并且也支持可扩展性。  有一些 chrome 插件，可以直接在 Jmeter 中导入脚本。</td>
-<td>与 Jmeter 相比，Load Runner 中的记录功能也不复杂。</td>
-</tr>
-<tr>
-<td>Jmeter 的结果不是实时的。</td>
-<td>LoadRunner 提供相对更实时的结果</td>
-</tr>
-<tr>
-<td>Jmeter 在用于 SAP 等企业产品时效率不高。</td>
-<td>即使使用 SAP、Siebel 等，Load Runner 也能提供高效的结果。</td>
-</tr>
-</tbody></table>
-<h5 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h5><p>JMeter 是市场上用于测试 Web 和移动应用程序的强大工具。  它非常易于使用并且不需要太多编程技能，除非在 JMeter 中编写自己的采样器。 将在接下来的系列文章中详细介绍每个组件，敬请期待！ </p>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>性能测试，JMeter</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JMeter组件介绍</title>
     <url>/Echo/2021/12/12/JMeter%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D/</url>
     <content><![CDATA[<p>在本文中，将熟悉<strong>JMeter 的所有组件，以及如何在测试计划中使用它们</strong>来覆盖所有可能的性能测试场景来测试 AUT（被测应用程序）。</p>
@@ -1375,64 +1375,6 @@
       <tags>
         <tag>大数据</tag>
         <tag>kafka</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>cetnos 8.2单节点安装部署k8s（v1.18.2）</title>
-    <url>/Echo/2020/08/10/cetnos-8-2%E5%8D%95%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2k8s%EF%BC%88v1-18-2%EF%BC%89/</url>
-    <content><![CDATA[<h4 id="1-配置hosts文件"><a href="#1-配置hosts文件" class="headerlink" title="1.配置hosts文件"></a>1.配置hosts文件</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/hosts</span><br></pre></td></tr></table></figure>
-
-<p>本机ip  本机hostname 本机hostname</p>
-<h4 id="2-关闭防火墙-sawp等"><a href="#2-关闭防火墙-sawp等" class="headerlink" title="2.关闭防火墙, sawp等"></a>2.关闭防火墙, sawp等</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl <span class="built_in">disable</span> firewalld</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-关闭swap"><a href="#3-关闭swap" class="headerlink" title="3.关闭swap"></a>3.关闭swap</h4><h4 id="4-禁用selinux"><a href="#4-禁用selinux" class="headerlink" title="4.禁用selinux"></a>4.禁用selinux</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br><span class="line">SELINUX=disabled</span><br><span class="line">/usr/sbin/sestatus -v  <span class="comment"># 查看selinux状态</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="5-安装docker"><a href="#5-安装docker" class="headerlink" title="5.安装docker"></a>5.安装docker</h4><h5 id="step-1-安装必要的一些系统工具"><a href="#step-1-安装必要的一些系统工具" class="headerlink" title="step 1: 安装必要的一些系统工具"></a>step 1: 安装必要的一些系统工具</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-2-添加软件源信息"><a href="#Step-2-添加软件源信息" class="headerlink" title="Step 2: 添加软件源信息"></a>Step 2: 添加软件源信息</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-3-更新并安装Docker-CE"><a href="#Step-3-更新并安装Docker-CE" class="headerlink" title="Step 3: 更新并安装Docker-CE"></a>Step 3: 更新并安装Docker-CE</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum makecache --refresh</span><br><span class="line">sudo yum -y install docker-ce</span><br><span class="line"><span class="comment"># 发现报错：Problem: package docker-ce-3:19.03.12-3.el7.x86_64 requires containerd.io &gt;= 1.2.2-3, but none of the providers can be installed</span></span><br><span class="line"><span class="comment"># 因为containerd 版本过低</span></span><br><span class="line">dnf install container-selinux</span><br><span class="line">通过yum -y install https://download.docker.com/linux/centos/7/x86_64/edge/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm 升级即可</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-4-docker-修改Cgroup-Driver以及docker镜像拉取地址"><a href="#Step-4-docker-修改Cgroup-Driver以及docker镜像拉取地址" class="headerlink" title="Step 4: docker 修改Cgroup Driver以及docker镜像拉取地址"></a>Step 4: docker 修改Cgroup Driver以及docker镜像拉取地址</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"> cat /etc/docker/daemon.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://e7l8pkuq.mirror.aliyuncs.com&quot;</span>],</span><br><span class="line">  <span class="string">&quot;exec-opts&quot;</span>: [<span class="string">&quot;native.cgroupdriver=systemd&quot;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-5-开启Docker服务"><a href="#Step-5-开启Docker服务" class="headerlink" title="Step 5: 开启Docker服务"></a>Step 5: 开启Docker服务</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
-
-<h4 id="6-安装kubectl"><a href="#6-安装kubectl" class="headerlink" title="6.安装kubectl"></a>6.安装kubectl</h4><h5 id="step-1：下载最新kubectl最新资源"><a href="#step-1：下载最新kubectl最新资源" class="headerlink" title="step 1：下载最新kubectl最新资源"></a>step 1：下载最新kubectl最新资源</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">curl -LO <span class="string">&quot;https://storage.googleapis.com/kubernetes-release/release/<span class="subst">$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)</span>/bin/linux/amd64/kubectl&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="step-2：添加执行权限"><a href="#step-2：添加执行权限" class="headerlink" title="step 2：添加执行权限"></a>step 2：添加执行权限</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">chmod +x ./kubectl</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-3：移动kubectl至bin路径"><a href="#step-3：移动kubectl至bin路径" class="headerlink" title="step 3：移动kubectl至bin路径"></a>step 3：移动kubectl至bin路径</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo mv ./kubectl /usr/<span class="built_in">local</span>/bin/kubectl</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-4：确认安装的版本"><a href="#step-4：确认安装的版本" class="headerlink" title="step 4：确认安装的版本"></a>step 4：确认安装的版本</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl version --client</span><br></pre></td></tr></table></figure>
-
-<h4 id="7-安装minikube"><a href="#7-安装minikube" class="headerlink" title="7.安装minikube"></a>7.安装minikube</h4><h5 id="step-1：确认是否支持虚拟化"><a href="#step-1：确认是否支持虚拟化" class="headerlink" title="step 1：确认是否支持虚拟化"></a>step 1：确认是否支持虚拟化</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">grep -E --color <span class="string">&#x27;vmx|svm&#x27;</span> /proc/cpuinfo</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="step-2：下载minikube资源"><a href="#step-2：下载minikube资源" class="headerlink" title="step 2：下载minikube资源"></a>step 2：下载minikube资源</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \</span><br><span class="line">  &amp;&amp; chmod +x minikube</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="step-3：添加minikube进入系统命令"><a href="#step-3：添加minikube进入系统命令" class="headerlink" title="step 3：添加minikube进入系统命令"></a>step 3：添加minikube进入系统命令</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo mkdir -p /usr/<span class="built_in">local</span>/bin/</span><br><span class="line">sudo install minikube /usr/<span class="built_in">local</span>/bin/</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="step-4：启动-minikube（使用的VM安装的centos-8因此设置driver-none）"><a href="#step-4：启动-minikube（使用的VM安装的centos-8因此设置driver-none）" class="headerlink" title="step 4：启动 minikube（使用的VM安装的centos 8因此设置driver=none）"></a>step 4：启动 minikube（使用的VM安装的centos 8因此设置driver=none）</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">minikube start --driver=none --image-repository=registry.cn-hangzhou.aliyuncs.com/google_containers</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="step-5：确认minikube状态"><a href="#step-5：确认minikube状态" class="headerlink" title="step 5：确认minikube状态"></a>step 5：确认minikube状态</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">minikube status</span><br></pre></td></tr></table></figure>
-
-<p>8.istio安装</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">istioctl manifest apply --<span class="built_in">set</span> profile=demo</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>环境安装</category>
-      </categories>
-      <tags>
-        <tag>K8S</tag>
-        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -2185,6 +2127,64 @@
       </tags>
   </entry>
   <entry>
+    <title>cetnos 8.2单节点安装部署k8s（v1.18.2）</title>
+    <url>/Echo/2020/08/10/cetnos-8-2%E5%8D%95%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2k8s%EF%BC%88v1-18-2%EF%BC%89/</url>
+    <content><![CDATA[<h4 id="1-配置hosts文件"><a href="#1-配置hosts文件" class="headerlink" title="1.配置hosts文件"></a>1.配置hosts文件</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/hosts</span><br></pre></td></tr></table></figure>
+
+<p>本机ip  本机hostname 本机hostname</p>
+<h4 id="2-关闭防火墙-sawp等"><a href="#2-关闭防火墙-sawp等" class="headerlink" title="2.关闭防火墙, sawp等"></a>2.关闭防火墙, sawp等</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl <span class="built_in">disable</span> firewalld</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-关闭swap"><a href="#3-关闭swap" class="headerlink" title="3.关闭swap"></a>3.关闭swap</h4><h4 id="4-禁用selinux"><a href="#4-禁用selinux" class="headerlink" title="4.禁用selinux"></a>4.禁用selinux</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br><span class="line">SELINUX=disabled</span><br><span class="line">/usr/sbin/sestatus -v  <span class="comment"># 查看selinux状态</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="5-安装docker"><a href="#5-安装docker" class="headerlink" title="5.安装docker"></a>5.安装docker</h4><h5 id="step-1-安装必要的一些系统工具"><a href="#step-1-安装必要的一些系统工具" class="headerlink" title="step 1: 安装必要的一些系统工具"></a>step 1: 安装必要的一些系统工具</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-2-添加软件源信息"><a href="#Step-2-添加软件源信息" class="headerlink" title="Step 2: 添加软件源信息"></a>Step 2: 添加软件源信息</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-3-更新并安装Docker-CE"><a href="#Step-3-更新并安装Docker-CE" class="headerlink" title="Step 3: 更新并安装Docker-CE"></a>Step 3: 更新并安装Docker-CE</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum makecache --refresh</span><br><span class="line">sudo yum -y install docker-ce</span><br><span class="line"><span class="comment"># 发现报错：Problem: package docker-ce-3:19.03.12-3.el7.x86_64 requires containerd.io &gt;= 1.2.2-3, but none of the providers can be installed</span></span><br><span class="line"><span class="comment"># 因为containerd 版本过低</span></span><br><span class="line">dnf install container-selinux</span><br><span class="line">通过yum -y install https://download.docker.com/linux/centos/7/x86_64/edge/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm 升级即可</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-4-docker-修改Cgroup-Driver以及docker镜像拉取地址"><a href="#Step-4-docker-修改Cgroup-Driver以及docker镜像拉取地址" class="headerlink" title="Step 4: docker 修改Cgroup Driver以及docker镜像拉取地址"></a>Step 4: docker 修改Cgroup Driver以及docker镜像拉取地址</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"> cat /etc/docker/daemon.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://e7l8pkuq.mirror.aliyuncs.com&quot;</span>],</span><br><span class="line">  <span class="string">&quot;exec-opts&quot;</span>: [<span class="string">&quot;native.cgroupdriver=systemd&quot;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-5-开启Docker服务"><a href="#Step-5-开启Docker服务" class="headerlink" title="Step 5: 开启Docker服务"></a>Step 5: 开启Docker服务</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-安装kubectl"><a href="#6-安装kubectl" class="headerlink" title="6.安装kubectl"></a>6.安装kubectl</h4><h5 id="step-1：下载最新kubectl最新资源"><a href="#step-1：下载最新kubectl最新资源" class="headerlink" title="step 1：下载最新kubectl最新资源"></a>step 1：下载最新kubectl最新资源</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">curl -LO <span class="string">&quot;https://storage.googleapis.com/kubernetes-release/release/<span class="subst">$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)</span>/bin/linux/amd64/kubectl&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="step-2：添加执行权限"><a href="#step-2：添加执行权限" class="headerlink" title="step 2：添加执行权限"></a>step 2：添加执行权限</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">chmod +x ./kubectl</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-3：移动kubectl至bin路径"><a href="#step-3：移动kubectl至bin路径" class="headerlink" title="step 3：移动kubectl至bin路径"></a>step 3：移动kubectl至bin路径</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo mv ./kubectl /usr/<span class="built_in">local</span>/bin/kubectl</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-4：确认安装的版本"><a href="#step-4：确认安装的版本" class="headerlink" title="step 4：确认安装的版本"></a>step 4：确认安装的版本</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl version --client</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-安装minikube"><a href="#7-安装minikube" class="headerlink" title="7.安装minikube"></a>7.安装minikube</h4><h5 id="step-1：确认是否支持虚拟化"><a href="#step-1：确认是否支持虚拟化" class="headerlink" title="step 1：确认是否支持虚拟化"></a>step 1：确认是否支持虚拟化</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">grep -E --color <span class="string">&#x27;vmx|svm&#x27;</span> /proc/cpuinfo</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="step-2：下载minikube资源"><a href="#step-2：下载minikube资源" class="headerlink" title="step 2：下载minikube资源"></a>step 2：下载minikube资源</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \</span><br><span class="line">  &amp;&amp; chmod +x minikube</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="step-3：添加minikube进入系统命令"><a href="#step-3：添加minikube进入系统命令" class="headerlink" title="step 3：添加minikube进入系统命令"></a>step 3：添加minikube进入系统命令</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo mkdir -p /usr/<span class="built_in">local</span>/bin/</span><br><span class="line">sudo install minikube /usr/<span class="built_in">local</span>/bin/</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="step-4：启动-minikube（使用的VM安装的centos-8因此设置driver-none）"><a href="#step-4：启动-minikube（使用的VM安装的centos-8因此设置driver-none）" class="headerlink" title="step 4：启动 minikube（使用的VM安装的centos 8因此设置driver=none）"></a>step 4：启动 minikube（使用的VM安装的centos 8因此设置driver=none）</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">minikube start --driver=none --image-repository=registry.cn-hangzhou.aliyuncs.com/google_containers</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="step-5：确认minikube状态"><a href="#step-5：确认minikube状态" class="headerlink" title="step 5：确认minikube状态"></a>step 5：确认minikube状态</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">minikube status</span><br></pre></td></tr></table></figure>
+
+<p>8.istio安装</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">istioctl manifest apply --<span class="built_in">set</span> profile=demo</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>环境安装</category>
+      </categories>
+      <tags>
+        <tag>K8S</tag>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>cetnos 7.7单节点安装部署k8s（v1.18.2）</title>
     <url>/Echo/2020/05/13/cetnos-7-7%E5%8D%95%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2k8s%EF%BC%88v1-18-2%EF%BC%89/</url>
     <content><![CDATA[<h4 id="1-配置hosts文件"><a href="#1-配置hosts文件" class="headerlink" title="1.配置hosts文件"></a>1.配置hosts文件</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/hosts</span><br></pre></td></tr></table></figure>
@@ -2442,6 +2442,39 @@
       </tags>
   </entry>
   <entry>
+    <title>HBase shell命令</title>
+    <url>/Echo/2020/03/13/hbase%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h4 id="HBase简介"><a href="#HBase简介" class="headerlink" title="HBase简介"></a>HBase简介</h4><p>HBase 命名的起源是 Hadoop database，Hadoop数据库，是NoSQL数据库，基于列式存储而非行式存储。</p>
+<p>HBase是一个分布式的、面向列的、基于Google Bigtable的开源实现。</p>
+<ul>
+<li>利用Hadoop HDFS作为其文件存储系统</li>
+<li>利用Hadoop MapReduce来处理HBase中的海量数据</li>
+<li>利用Zookeeper作为协同服务</li>
+</ul>
+<h4 id="HBase数据模型"><a href="#HBase数据模型" class="headerlink" title="HBase数据模型"></a>HBase数据模型</h4><p>HBase是一个稀疏、多维度、有序的映射表。表有行和列组成，列划分为若干个列族/列簇(column family)，每个列族/列簇下面可以有多个普通列。</p>
+<p><img src="5-1Z5091305564M.gif" alt="5-1Z5091305564M"></p>
+<h4 id="HBase-shell-命令"><a href="#HBase-shell-命令" class="headerlink" title="HBase shell 命令"></a>HBase shell 命令</h4><h5 id="进入-HBase-shell"><a href="#进入-HBase-shell" class="headerlink" title="进入 HBase shell"></a>进入 HBase shell</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hbase shell</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="HBase版本状态查看"><a href="#HBase版本状态查看" class="headerlink" title="HBase版本状态查看"></a>HBase版本状态查看</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查询状态</span></span><br><span class="line">status</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查询版本</span></span><br><span class="line">version</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看当前操作用户</span></span><br><span class="line">whoami</span><br><span class="line"><span class="meta">#</span><span class="bash"> 帮助命令</span></span><br><span class="line">help</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看hbase支持的工具</span></span><br><span class="line">tools</span><br></pre></td></tr></table></figure>
+
+<h5 id="DDL操作"><a href="#DDL操作" class="headerlink" title="DDL操作"></a>DDL操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建一个表</span></span><br><span class="line">create<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;column_famaly&#x27;</span>,<span class="string">&#x27;column_famaly1&#x27;</span>,<span class="string">&#x27;column_famaly2&#x27;</span></span><br><span class="line"><span class="comment"># 列出所有表</span></span><br><span class="line">list</span><br><span class="line"><span class="comment"># 获取表的描述</span></span><br><span class="line">describe<span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 删除一个列族</span></span><br><span class="line">alter<span class="string">&#x27;table&#x27;</span>,&#123;NAME=&gt;<span class="string">&#x27;column_famaly&#x27;</span>,METHOD=&gt;<span class="string">&#x27;delete&#x27;</span>&#125;</span><br><span class="line"><span class="comment"># 删除一个表</span></span><br><span class="line"><span class="comment"># ① 要删除的表设置为disable</span></span><br><span class="line"><span class="built_in">disable</span><span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># ② 删除表</span></span><br><span class="line">drop <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 查询表是否存在</span></span><br><span class="line">exists<span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 查看表是否可用</span></span><br><span class="line">is_enabled<span class="string">&#x27;table&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="DML操作"><a href="#DML操作" class="headerlink" title="DML操作"></a>DML操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 插入数据</span></span><br><span class="line">put<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span>,<span class="string">&#x27;name&#x27;</span></span><br><span class="line"><span class="comment"># 获取row1所有数据</span></span><br><span class="line">get <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span></span><br><span class="line"><span class="comment"># 获取表row1，col1所有数据</span></span><br><span class="line">get<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1&#x27;</span></span><br><span class="line"><span class="comment"># 更新一条数据</span></span><br><span class="line">put <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span>,<span class="string">&#x27;name1&#x27;</span></span><br><span class="line"><span class="comment"># 通过时间戳获取数据</span></span><br><span class="line">get <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,&#123;COLUMN=&gt;<span class="string">&#x27;col1:name&#x27;</span>,TIMESTAMP=&gt;1463055736277&#125;</span><br><span class="line"><span class="comment"># 扫描整张表（数据量大时不建议此操作）</span></span><br><span class="line">scan <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 删除一列</span></span><br><span class="line">delete <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span></span><br><span class="line"><span class="comment"># 删除行所有的数据</span></span><br><span class="line">deleteall <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span></span><br><span class="line"><span class="comment"># 统计表中的行数</span></span><br><span class="line">count <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 清空整张表（清空表后，表的分区设置会默认为1不建议）</span></span><br><span class="line">truncate <span class="string">&#x27;table&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="退出操作"><a href="#退出操作" class="headerlink" title="退出操作"></a>退出操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 退出</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment"># 关闭hbase集群（危险操作！！！）</span></span><br><span class="line">shutdown</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>大数据</tag>
+        <tag>HBase</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>jekins环境搭建</title>
     <url>/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
     <content><![CDATA[<table>
@@ -2522,36 +2555,133 @@
       </tags>
   </entry>
   <entry>
-    <title>HBase shell命令</title>
-    <url>/Echo/2020/03/13/hbase%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<h4 id="HBase简介"><a href="#HBase简介" class="headerlink" title="HBase简介"></a>HBase简介</h4><p>HBase 命名的起源是 Hadoop database，Hadoop数据库，是NoSQL数据库，基于列式存储而非行式存储。</p>
-<p>HBase是一个分布式的、面向列的、基于Google Bigtable的开源实现。</p>
-<ul>
-<li>利用Hadoop HDFS作为其文件存储系统</li>
-<li>利用Hadoop MapReduce来处理HBase中的海量数据</li>
-<li>利用Zookeeper作为协同服务</li>
-</ul>
-<h4 id="HBase数据模型"><a href="#HBase数据模型" class="headerlink" title="HBase数据模型"></a>HBase数据模型</h4><p>HBase是一个稀疏、多维度、有序的映射表。表有行和列组成，列划分为若干个列族/列簇(column family)，每个列族/列簇下面可以有多个普通列。</p>
-<p><img src="5-1Z5091305564M.gif" alt="5-1Z5091305564M"></p>
-<h4 id="HBase-shell-命令"><a href="#HBase-shell-命令" class="headerlink" title="HBase shell 命令"></a>HBase shell 命令</h4><h5 id="进入-HBase-shell"><a href="#进入-HBase-shell" class="headerlink" title="进入 HBase shell"></a>进入 HBase shell</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hbase shell</span><br></pre></td></tr></table></figure>
+    <title>kubekey安装K8S集群</title>
+    <url>/Echo/2022/01/19/kubekey%E5%AE%89%E8%A3%85K8S%E9%9B%86%E7%BE%A4/</url>
+    <content><![CDATA[<h2 id="一-K8S1-20-x的重要更新"><a href="#一-K8S1-20-x的重要更新" class="headerlink" title="一.K8S1.20.x的重要更新"></a>一.K8S1.20.x的重要更新</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">1、Kubectl debug 设置一个临时容器</span><br><span class="line">2、Sidecar </span><br><span class="line">3、Volume：更改目录权限，fsGroup</span><br><span class="line">4、ConfigMap和Secret</span><br><span class="line"></span><br><span class="line">K8S官网：https://kubernetes.io/docs/setup/</span><br><span class="line">最新版高可用安装：https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/high-availability/</span><br></pre></td></tr></table></figure>
 
+<h2 id="二-K8S1-20-x的安装"><a href="#二-K8S1-20-x的安装" class="headerlink" title="二.K8S1.20.x的安装"></a>二.K8S1.20.x的安装</h2><h2 id="2-1-集群规划"><a href="#2-1-集群规划" class="headerlink" title="2.1 集群规划"></a>2.1 集群规划</h2><table>
+<thead>
+<tr>
+<th align="center">主机名</th>
+<th align="center">IP地址</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">k8s-worker6</td>
+<td align="center">X.X.X.X</td>
+<td align="center">master节点</td>
+</tr>
+<tr>
+<td align="center">k8s-worker7</td>
+<td align="center">X.X.X.X</td>
+<td align="center">worker01节点</td>
+</tr>
+<tr>
+<td align="center">k8s-worker8</td>
+<td align="center">X.X.X.X</td>
+<td align="center">worker02节点</td>
+</tr>
+</tbody></table>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">查看Centos版本</span></span><br><span class="line">cat /etc/redhat-release </span><br><span class="line">CentOS Linux release 7.9.2009 (Core)</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#https://www.cnblogs.com/liucx/</span></span></span><br></pre></td></tr></table></figure>
 
+<h2 id="修改主机名"><a href="#修改主机名" class="headerlink" title="修改主机名"></a>修改主机名</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> master节点</span></span><br><span class="line">hostnamectl set-hostname k8s-worker6</span><br><span class="line"><span class="meta">#</span><span class="bash">node1节点</span></span><br><span class="line">hostnamectl set-hostname k8s-worker7</span><br><span class="line"><span class="meta">#</span><span class="bash">node2节点</span></span><br><span class="line">hostnamectl set-hostname k8s-worker8</span><br></pre></td></tr></table></figure>
 
-<h5 id="HBase版本状态查看"><a href="#HBase版本状态查看" class="headerlink" title="HBase版本状态查看"></a>HBase版本状态查看</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查询状态</span></span><br><span class="line">status</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查询版本</span></span><br><span class="line">version</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看当前操作用户</span></span><br><span class="line">whoami</span><br><span class="line"><span class="meta">#</span><span class="bash"> 帮助命令</span></span><br><span class="line">help</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看hbase支持的工具</span></span><br><span class="line">tools</span><br></pre></td></tr></table></figure>
+<h2 id="所有节点配置hosts，修改-etc-hosts如下："><a href="#所有节点配置hosts，修改-etc-hosts如下：" class="headerlink" title="所有节点配置hosts，修改/etc/hosts如下："></a><strong>所有节点配置hosts，修改/etc/hosts如下：</strong></h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">所有节点配置hosts，修改/etc/hosts如下：</span><br><span class="line"></span><br><span class="line">cat /etc/hosts </span><br><span class="line"></span><br><span class="line">::1    localhost	localhost.localdomain	localhost6	localhost6.localdomain6</span><br><span class="line">127.0.0.1 localhost  localhost</span><br><span class="line"></span><br><span class="line">X.X.X.X k8s-worker8  k8s-worker8</span><br><span class="line">X.X.X.X k8s-worker6  k8s-worker6</span><br><span class="line">X.X.X.X k8s-worker7  k8s-worker7</span><br></pre></td></tr></table></figure>
 
-<h5 id="DDL操作"><a href="#DDL操作" class="headerlink" title="DDL操作"></a>DDL操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建一个表</span></span><br><span class="line">create<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;column_famaly&#x27;</span>,<span class="string">&#x27;column_famaly1&#x27;</span>,<span class="string">&#x27;column_famaly2&#x27;</span></span><br><span class="line"><span class="comment"># 列出所有表</span></span><br><span class="line">list</span><br><span class="line"><span class="comment"># 获取表的描述</span></span><br><span class="line">describe<span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 删除一个列族</span></span><br><span class="line">alter<span class="string">&#x27;table&#x27;</span>,&#123;NAME=&gt;<span class="string">&#x27;column_famaly&#x27;</span>,METHOD=&gt;<span class="string">&#x27;delete&#x27;</span>&#125;</span><br><span class="line"><span class="comment"># 删除一个表</span></span><br><span class="line"><span class="comment"># ① 要删除的表设置为disable</span></span><br><span class="line"><span class="built_in">disable</span><span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># ② 删除表</span></span><br><span class="line">drop <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 查询表是否存在</span></span><br><span class="line">exists<span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 查看表是否可用</span></span><br><span class="line">is_enabled<span class="string">&#x27;table&#x27;</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-2-更新配置-（所有节点全部安装）"><a href="#2-2-更新配置-（所有节点全部安装）" class="headerlink" title="2.2 更新配置 （所有节点全部安装）"></a>2.2 <strong>更新配置 （所有节点全部安装）</strong></h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 所有节点安装</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Centos 7安装yum源如下：</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 更改为国内阿里yum源</span></span><br><span class="line">[root@k8s-worker6 ~]# curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo</span><br><span class="line">[root@k8s-worker6 ~]# yum install -y yum-utils device-mapper-persistent-data lvm2</span><br><span class="line">[root@k8s-worker6 ~]# yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br><span class="line">[root@k8s-worker6 ~]# cat &lt;&lt;EOF &gt; /etc/yum.repos.d/kubernetes.repo</span><br><span class="line">[kubernetes]</span><br><span class="line">name=Kubernetes</span><br><span class="line">baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64/</span><br><span class="line">enabled=1</span><br><span class="line">gpgcheck=1</span><br><span class="line">repo_gpgcheck=1</span><br><span class="line">gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg</span><br><span class="line">EOF</span><br><span class="line">[root@k8s-worker6 ~]# sed -i -e &#x27;/mirrors.cloud.aliyuncs.com/d&#x27; -e &#x27;/mirrors.aliyuncs.com/d&#x27; /etc/yum.repos.d/CentOS-Base.repo</span><br></pre></td></tr></table></figure>
 
-<h5 id="DML操作"><a href="#DML操作" class="headerlink" title="DML操作"></a>DML操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 插入数据</span></span><br><span class="line">put<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span>,<span class="string">&#x27;name&#x27;</span></span><br><span class="line"><span class="comment"># 获取row1所有数据</span></span><br><span class="line">get <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span></span><br><span class="line"><span class="comment"># 获取表row1，col1所有数据</span></span><br><span class="line">get<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1&#x27;</span></span><br><span class="line"><span class="comment"># 更新一条数据</span></span><br><span class="line">put <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span>,<span class="string">&#x27;name1&#x27;</span></span><br><span class="line"><span class="comment"># 通过时间戳获取数据</span></span><br><span class="line">get <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,&#123;COLUMN=&gt;<span class="string">&#x27;col1:name&#x27;</span>,TIMESTAMP=&gt;1463055736277&#125;</span><br><span class="line"><span class="comment"># 扫描整张表（数据量大时不建议此操作）</span></span><br><span class="line">scan <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 删除一列</span></span><br><span class="line">delete <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span></span><br><span class="line"><span class="comment"># 删除行所有的数据</span></span><br><span class="line">deleteall <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span></span><br><span class="line"><span class="comment"># 统计表中的行数</span></span><br><span class="line">count <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 清空整张表（清空表后，表的分区设置会默认为1不建议）</span></span><br><span class="line">truncate <span class="string">&#x27;table&#x27;</span></span><br></pre></td></tr></table></figure>
+<h2 id="安装必备工具"><a href="#安装必备工具" class="headerlink" title="安装必备工具"></a>安装必备工具</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@k8s-worker6 ~]# yum install wget jq psmisc vim net-tools telnet yum-utils device-mapper-persistent-data lvm2 git -y</span><br></pre></td></tr></table></figure>
 
-<h5 id="退出操作"><a href="#退出操作" class="headerlink" title="退出操作"></a>退出操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 退出</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment"># 关闭hbase集群（危险操作！！！）</span></span><br><span class="line">shutdown</span><br></pre></td></tr></table></figure>
+<h2 id="所有节点关闭防火墙、selinux、dnsmasq、swap。服务器配置如下："><a href="#所有节点关闭防火墙、selinux、dnsmasq、swap。服务器配置如下：" class="headerlink" title="所有节点关闭防火墙、selinux、dnsmasq、swap。服务器配置如下："></a>所有节点关闭防火墙、selinux、dnsmasq、swap。服务器配置如下：</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@k8s-worker6 ~]# systemctl disable --now firewalld </span><br><span class="line">[root@k8s-worker6 ~]# systemctl disable --now dnsmasq</span><br><span class="line">[root@k8s-worker6 ~]# systemctl disable --now NetworkManager</span><br><span class="line"></span><br><span class="line">[root@k8s-worker6 ~]# setenforce 0</span><br><span class="line">[root@k8s-worker6 ~]# sed -i &#x27;s#SELINUX=enforcing#SELINUX=disabled#g&#x27; /etc/sysconfig/selinux</span><br><span class="line">[root@k8s-worker6 ~]# sed -i &#x27;s#SELINUX=enforcing#SELINUX=disabled#g&#x27; /etc/selinux/config</span><br></pre></td></tr></table></figure>
+
+<h2 id="关闭swap分区（所有节点）"><a href="#关闭swap分区（所有节点）" class="headerlink" title="关闭swap分区（所有节点）"></a>关闭swap分区（所有节点）</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@k8s-worker6 ~]# swapoff -a &amp;&amp; sysctl -w vm.swappiness=0</span><br><span class="line">[root@k8s-worker6 ~]# sed -ri &#x27;/^[^#]*swap/s@^@#@&#x27; /etc/fstab</span><br></pre></td></tr></table></figure>
+
+<h2 id="时钟同步"><a href="#时钟同步" class="headerlink" title="时钟同步"></a>时钟同步</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">安装同步时钟ntpdate</span></span><br><span class="line">[root@k8s-worker6 ~]# rpm -ivh http://mirrors.wlnmp.com/centos/wlnmp-release-centos.noarch.rpm</span><br><span class="line">[root@k8s-worker6 ~]# yum install ntpdate -y</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 所有节点同步时间。时间同步配置如下：</span></span><br><span class="line">[root@k8s-worker6 ~]# ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br><span class="line">[root@k8s-worker6 ~]# echo &#x27;Asia/Shanghai&#x27; &gt;/etc/timezone</span><br><span class="line">[root@k8s-worker6 ~]# ntpdate time2.aliyun.com</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 加入到crontab,每5分钟同步一次</span></span><br><span class="line">[root@k8s-worker6 ~]# crontab -e</span><br><span class="line">*/5 * * * * ntpdate time2.aliyun.com</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置limit"><a href="#配置limit" class="headerlink" title="配置limit"></a>配置limit</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@k8s-worker6 ~]# ulimit -SHn 65535</span><br><span class="line">[root@k8s-worker6 ~]# vim /etc/security/limits.conf</span><br><span class="line"><span class="meta">#</span><span class="bash"> 末尾添加如下内容</span></span><br><span class="line">* soft nofile 655360</span><br><span class="line">* hard nofile 131072</span><br><span class="line">* soft nproc 655350</span><br><span class="line">* hard nproc 655350</span><br><span class="line">* soft memlock unlimited</span><br><span class="line">* hard memlock unlimite</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置免密登录"><a href="#配置免密登录" class="headerlink" title="配置免密登录"></a>配置免密登录</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Master01节点免密钥登录其他节点：</span></span><br><span class="line">[root@k8s-worker6 ~]# ssh-keygen -t rsa</span><br><span class="line">[root@k8s-worker6 ~]# ssh-copy-id -i root@X.X.X.X</span><br><span class="line">[root@k8s-worker6 ~]# ssh-copy-id -i root@X.X.X.X</span><br></pre></td></tr></table></figure>
+
+<h2 id="所有节点升级重启"><a href="#所有节点升级重启" class="headerlink" title="所有节点升级重启"></a>所有节点升级重启</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@k8s-worker6 ~]# yum update -y  &amp;&amp; reboot </span><br></pre></td></tr></table></figure>
+
+<h2 id="2-3-Linux内核升级（所有节点）"><a href="#2-3-Linux内核升级（所有节点）" class="headerlink" title="2.3 Linux内核升级（所有节点）"></a>2.3 Linux内核升级（所有节点）</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">CentOS7 需要升级内核至4.18+  https://www.kernel.org/ 和 https://elrepo.org/linux/kernel/el7/x86_64/</span><br><span class="line">CentOS 7 dnf可能无法安装内核</span><br><span class="line">[root@k8s-worker6 ~]# dnf --disablerepo=\* --enablerepo=elrepo -y install kernel-ml kernel-ml-devel</span><br><span class="line">[root@k8s-worker6 ~]# grubby --default-kernel</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 使用如下指令查看内核版本</span></span><br><span class="line">[root@k8s-worker6 ~]# uname -a</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 使用如下指令安装最新内核</span></span><br><span class="line"><span class="meta">#</span><span class="bash">导入ELRepo软件仓库的公共秘钥</span></span><br><span class="line">[root@k8s-worker6 ~]# rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org</span><br><span class="line"><span class="meta">#</span><span class="bash">安装ELRepo软件仓库的yum源</span></span><br><span class="line">[root@k8s-worker6 ~]# rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看最新版内核</span></span><br><span class="line">[root@k8s-worker6 ~]# yum --disablerepo=&quot;*&quot; --enablerepo=&quot;elrepo-kernel&quot; list available</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装最新版内核</span></span><br><span class="line">[root@k8s-worker6 ~]# yum --enablerepo=elrepo-kernel install kernel-ml kernel-ml-devel –y</span><br><span class="line">[root@k8s-worker6 ~]# reboot</span><br><span class="line"><span class="meta">#</span><span class="bash"> 更改内核顺序</span></span><br><span class="line">[root@k8s-worker6 ~]# grub2-set-default  0 &amp;&amp; grub2-mkconfig -o /etc/grub2.cfg &amp;&amp; grubby --args=&quot;user_namespace.enable=1&quot; --update-kernel=&quot;$(grubby --default-kernel)&quot; &amp;&amp; reboot</span><br><span class="line"><span class="meta">#</span><span class="bash"> 开机查看内核</span></span><br><span class="line">[root@k8s-worker6 ~]# uname -a</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装ipvsadm"><a href="#安装ipvsadm" class="headerlink" title="安装ipvsadm"></a>安装ipvsadm</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 所有节点安装ipvsadm</span></span><br><span class="line">[root@k8s-worker6 ~]# yum install ipvsadm ipset sysstat conntrack libseccomp -y</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 所有节点配置ipvs模块，在内核4.19+版本nf_conntrack_ipv4已经改为nf_conntrack。</span></span><br><span class="line">[root@k8s-worker6 ~]# vim /etc/modules-load.d/ipvs.conf</span><br><span class="line">[root@k8s-worker6 ~]# systemctl enable --now systemd-modules-load.service</span><br></pre></td></tr></table></figure>
+
+<p>![img](D:/GitLab_item/zz-study-notes/5.Cloud Native/images/k8s-zl/4.jpg)</p>
+<h2 id="开启一些k8s集群中必须的内核参数，所有节点配置k8s内核："><a href="#开启一些k8s集群中必须的内核参数，所有节点配置k8s内核：" class="headerlink" title="开启一些k8s集群中必须的内核参数，所有节点配置k8s内核："></a>开启一些k8s集群中必须的内核参数，所有节点配置k8s内核：</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@k8s-worker6 ~]# cat &lt;&lt;EOF &gt; /etc/sysctl.d/k8s.conf</span><br><span class="line">net.ipv4.ip_forward = 1</span><br><span class="line">net.bridge.bridge-nf-call-iptables = 1</span><br><span class="line">net.bridge.bridge-nf-call-ip6tables = 1</span><br><span class="line">fs.may_detach_mounts = 1</span><br><span class="line">vm.overcommit_memory=1</span><br><span class="line">vm.panic_on_oom=0</span><br><span class="line">fs.inotify.max_user_watches=89100</span><br><span class="line">fs.file-max=52706963</span><br><span class="line">fs.nr_open=52706963</span><br><span class="line">net.netfilter.nf_conntrack_max=2310720</span><br><span class="line"></span><br><span class="line">net.ipv4.tcp_keepalive_time = 600</span><br><span class="line">net.ipv4.tcp_keepalive_probes = 3</span><br><span class="line">net.ipv4.tcp_keepalive_intvl =15</span><br><span class="line">net.ipv4.tcp_max_tw_buckets = 36000</span><br><span class="line">net.ipv4.tcp_tw_reuse = 1</span><br><span class="line">net.ipv4.tcp_max_orphans = 327680</span><br><span class="line">net.ipv4.tcp_orphan_retries = 3</span><br><span class="line">net.ipv4.tcp_syncookies = 1</span><br><span class="line">net.ipv4.tcp_max_syn_backlog = 16384</span><br><span class="line"></span><br><span class="line">net.ipv4.ip_conntrack_max = 65536</span><br><span class="line">net.ipv4.tcp_max_syn_backlog = 16384</span><br><span class="line">net.ipv4.tcp_timestamps = 0</span><br><span class="line">net.core.somaxconn = 16384</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> k8s内核装载并应用</span></span><br><span class="line">[root@k8s-worker6 ~]# sysctl --system</span><br></pre></td></tr></table></figure>
+
+<h1 id="三-所有节点K8S基本组件安装"><a href="#三-所有节点K8S基本组件安装" class="headerlink" title="三.所有节点K8S基本组件安装"></a>三.<strong>所有节点K8S基本组件安装</strong></h1><h2 id="3-1-安装docker-ce"><a href="#3-1-安装docker-ce" class="headerlink" title="3.1 安装docker-ce"></a>3.1 安装docker-ce</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@k8s-worker8 ~]# wget https://download.docker.com/linux/centos/7/x86_64/edge/Packages/containerd.io-1.2.13-3.2.el7.x86_64.rpm</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装docker-ce 19.03版本</span></span><br><span class="line">[root@k8s-worker8 ~]# yum install -y docker-ce-cli-19.03.8-3.el7.x86_64 docker-ce-19.03.8-3.el7.x86_64</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看安装的docker版本</span></span><br><span class="line">[root@k8s-worker8 ~]# rpm -qa|grep </span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h2 id="kubeadm不改如下字段，kubelet无法启动温馨提示：由于新版kubelet建议使用systemd，所以可以把docker的CgroupDriver改成systemd。（重要）"><a href="#kubeadm不改如下字段，kubelet无法启动温馨提示：由于新版kubelet建议使用systemd，所以可以把docker的CgroupDriver改成systemd。（重要）" class="headerlink" title="kubeadm不改如下字段，kubelet无法启动温馨提示：由于新版kubelet建议使用systemd，所以可以把docker的CgroupDriver改成systemd。（重要）"></a>kubeadm不改如下字段，kubelet无法启动温馨提示：由于新版kubelet建议使用systemd，所以可以把docker的CgroupDriver改成systemd。（重要）</h2></blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@k8s-worker8 ~]# cat &gt; /etc/docker/daemon.json &lt;&lt;EOF</span><br><span class="line">&#123;</span><br><span class="line">&quot;exec-opts&quot;: [&quot;native.cgroupdriver=systemd&quot;]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line"><span class="meta">#</span><span class="bash"> 重启</span></span><br><span class="line">[root@k8s-worker8 ~]# systemctl restart docker</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看docekr配置文件，主要看Cgroup Driver: systemd</span></span><br><span class="line">[root@k8s-worker7 ~]# docker info</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash">启动docker</span></span><br><span class="line">[root@k8s-worker8 ~]# service docker start</span><br><span class="line">[root@k8s-worker8 ~]# chkconfig docker on</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 所有节点设置开机启动docker</span></span><br><span class="line">[root@k8s-worker8 ~]# systemctl daemon-reload &amp;&amp; systemctl enable --now docker</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看Docker的状态</span></span><br><span class="line">[root@k8s-worker8 ~]# systemctl status docker</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-2-kubekey安装K8S集群"><a href="#3-2-kubekey安装K8S集群" class="headerlink" title="3.2 kubekey安装K8S集群"></a>3.2 kubekey安装K8S集群</h2><h3 id="3-2-1-下载KubeKey"><a href="#3-2-1-下载KubeKey" class="headerlink" title="3.2.1 下载KubeKey"></a>3.2.1 下载KubeKey</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 首先运行以下命令以确保从正确的区域下载 KubeKey。</span></span><br><span class="line">export KKZONE=cn</span><br><span class="line"><span class="meta">#</span><span class="bash"> 运行以下命令下载 KubeKey：</span></span><br><span class="line">curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -</span><br><span class="line">chmod +x kk</span><br></pre></td></tr></table></figure>
+
+<p>kubekey安装的K8S集群版本和KubeSpherev3.1.1，请参阅下表支持的Kubenetes版本。</p>
+<table>
+<thead>
+<tr>
+<th align="center">KubeSphere 版本</th>
+<th>支持的 Kubernetes 版本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">v3.1.1</td>
+<td>v1.17.0, v1.17.4, v1.17.5, v1.17.6, v1.17.7, v1.17.8, v1.17.9, v1.18.3, v1.18.5, v1.18.6, v1.18.8, v1.19.0, v1.19.0 19.8、v1.19.9、v1.20.4、v1.20.6</td>
+</tr>
+</tbody></table>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#  您还可以运行如下命令以查看 KubeKey 可以安装的所有受支持的 Kubernetes 版本。</span></span><br><span class="line">[root@k8s-worker6 yaml]<span class="comment"># ./kk version --show-supported-k8s</span></span><br><span class="line"><span class="comment"># 使用 KubeKey 可以安装的 Kubernetes 版本与 KubeSphere v3.0.0 支持的 Kubernetes 版本不同。如果您想在现有的 Kubernetes 集群上安装 KubeSphere v3.1.1，您的 Kubernetes 版本必须是 v1.17.x、v1.18.x、v1.19.x 或 v1.20.x。</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-2-创建Kubernetes多节点集群"><a href="#3-2-2-创建Kubernetes多节点集群" class="headerlink" title="3.2.2 创建Kubernetes多节点集群"></a>3.2.2 创建Kubernetes多节点集群</h3><p>首先创建示例配置文件，执行如下命令：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@k8s-worker6 yaml]# ./kk create config --with-kubernetes 1.20.6 --with-kubesphere 3.1.1 -f config-sample.yaml</span><br></pre></td></tr></table></figure>
+
+<p>下面为一个示例的config-sample.yaml文件：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">kubekey.kubesphere.io/v1alpha1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Cluster</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">sample</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">hosts:</span></span><br><span class="line">  <span class="bullet">-</span> &#123;<span class="attr">name:</span> <span class="string">k8s-worker6</span>, <span class="attr">address:</span> <span class="string">IP</span>, <span class="attr">internalAddress:</span> <span class="string">IP</span>, <span class="attr">user:</span> <span class="string">root</span>, <span class="attr">password:</span> <span class="string">passWord</span>&#125;</span><br><span class="line">  <span class="bullet">-</span> &#123;<span class="attr">name:</span> <span class="string">k8s-worker7</span>, <span class="attr">address:</span> <span class="string">IP</span>, <span class="attr">internalAddress:</span> <span class="string">IP</span>, <span class="attr">user:</span> <span class="string">root</span>, <span class="attr">password:</span> <span class="string">passWord</span>&#125;</span><br><span class="line">  <span class="bullet">-</span> &#123;<span class="attr">name:</span> <span class="string">k8s-worker8</span>, <span class="attr">address:</span> <span class="string">IP</span>, <span class="attr">internalAddress:</span> <span class="string">IP</span>, <span class="attr">user:</span> <span class="string">root</span>, <span class="attr">password:</span> <span class="string">passWord</span>&#125;</span><br><span class="line">  <span class="attr">roleGroups:</span></span><br><span class="line">    <span class="attr">etcd:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">k8s-worker6</span></span><br><span class="line">    <span class="attr">master:</span> </span><br><span class="line">    <span class="bullet">-</span> <span class="string">k8s-worker6</span></span><br><span class="line">    <span class="attr">worker:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">k8s-worker7</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">k8s-worker8</span></span><br><span class="line">  <span class="attr">controlPlaneEndpoint:</span></span><br><span class="line">    <span class="attr">domain:</span> <span class="string">lb.kubesphere.local</span></span><br><span class="line">    <span class="attr">address:</span> <span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="attr">port:</span> <span class="number">6443</span></span><br><span class="line">  <span class="attr">kubernetes:</span></span><br><span class="line">    <span class="attr">version:</span> <span class="string">v1.20.4</span></span><br><span class="line">    <span class="attr">imageRepo:</span> <span class="string">kubesphere</span></span><br><span class="line">    <span class="attr">clusterName:</span> <span class="string">cluster.local</span></span><br><span class="line">  <span class="attr">network:</span></span><br><span class="line">    <span class="attr">plugin:</span> <span class="string">calico</span></span><br><span class="line">    <span class="attr">kubePodsCIDR:</span> <span class="number">10.233</span><span class="number">.64</span><span class="number">.0</span><span class="string">/18</span></span><br><span class="line">    <span class="attr">kubeServiceCIDR:</span> <span class="number">10.233</span><span class="number">.0</span><span class="number">.0</span><span class="string">/18</span></span><br><span class="line">  <span class="attr">registry:</span></span><br><span class="line">    <span class="attr">registryMirrors:</span> []</span><br><span class="line">    <span class="attr">insecureRegistries:</span> []</span><br><span class="line">  <span class="attr">addons:</span> []</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">installer.kubesphere.io/v1alpha1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">ClusterConfiguration</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">ks-installer</span></span><br><span class="line">  <span class="attr">namespace:</span> <span class="string">kubesphere-system</span></span><br><span class="line">  <span class="attr">labels:</span></span><br><span class="line">    <span class="attr">version:</span> <span class="string">v3.1.1</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">persistence:</span></span><br><span class="line">    <span class="attr">storageClass:</span> <span class="string">&quot;&quot;</span>       </span><br><span class="line">  <span class="attr">authentication:</span></span><br><span class="line">    <span class="attr">jwtSecret:</span> <span class="string">&quot;&quot;</span></span><br><span class="line">  <span class="attr">zone:</span> <span class="string">&quot;&quot;</span></span><br><span class="line">  <span class="attr">local_registry:</span> <span class="string">&quot;&quot;</span>        </span><br><span class="line">  <span class="attr">etcd:</span></span><br><span class="line">    <span class="attr">monitoring:</span> <span class="literal">false</span>      </span><br><span class="line">    <span class="attr">endpointIps:</span> <span class="string">localhost</span>  </span><br><span class="line">    <span class="attr">port:</span> <span class="number">2379</span>             </span><br><span class="line">    <span class="attr">tlsEnable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">common:</span></span><br><span class="line">    <span class="attr">redis:</span></span><br><span class="line">      <span class="attr">enabled:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">redisVolumSize:</span> <span class="string">2Gi</span> </span><br><span class="line">    <span class="attr">openldap:</span></span><br><span class="line">      <span class="attr">enabled:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">openldapVolumeSize:</span> <span class="string">2Gi</span>  </span><br><span class="line">    <span class="attr">minioVolumeSize:</span> <span class="string">20Gi</span></span><br><span class="line">    <span class="attr">monitoring:</span></span><br><span class="line">      <span class="attr">endpoint:</span> <span class="string">http://prometheus-operated.kubesphere-monitoring-system.svc:9090</span></span><br><span class="line">    <span class="attr">es:</span>  </span><br><span class="line">      <span class="attr">elasticsearchMasterVolumeSize:</span> <span class="string">4Gi</span>   </span><br><span class="line">      <span class="attr">elasticsearchDataVolumeSize:</span> <span class="string">20Gi</span>   </span><br><span class="line">      <span class="attr">logMaxAge:</span> <span class="number">7</span>          </span><br><span class="line">      <span class="attr">elkPrefix:</span> <span class="string">logstash</span></span><br><span class="line">      <span class="attr">basicAuth:</span></span><br><span class="line">        <span class="attr">enabled:</span> <span class="literal">false</span></span><br><span class="line">        <span class="attr">username:</span> <span class="string">&quot;&quot;</span></span><br><span class="line">        <span class="attr">password:</span> <span class="string">&quot;&quot;</span></span><br><span class="line">      <span class="attr">externalElasticsearchUrl:</span> <span class="string">&quot;&quot;</span></span><br><span class="line">      <span class="attr">externalElasticsearchPort:</span> <span class="string">&quot;&quot;</span>  </span><br><span class="line">  <span class="attr">console:</span></span><br><span class="line">    <span class="attr">enableMultiLogin:</span> <span class="literal">true</span> </span><br><span class="line">    <span class="attr">port:</span> <span class="number">30880</span></span><br><span class="line">  <span class="attr">alerting:</span>       </span><br><span class="line">    <span class="attr">enabled:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># thanosruler:</span></span><br><span class="line">    <span class="comment">#   replicas: 1</span></span><br><span class="line">    <span class="comment">#   resources: &#123;&#125;</span></span><br><span class="line">  <span class="attr">auditing:</span>    </span><br><span class="line">    <span class="attr">enabled:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">devops:</span>           </span><br><span class="line">    <span class="attr">enabled:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">jenkinsMemoryLim:</span> <span class="string">2Gi</span>     </span><br><span class="line">    <span class="attr">jenkinsMemoryReq:</span> <span class="string">1500Mi</span> </span><br><span class="line">    <span class="attr">jenkinsVolumeSize:</span> <span class="string">8Gi</span>   </span><br><span class="line">    <span class="attr">jenkinsJavaOpts_Xms:</span> <span class="string">512m</span>  </span><br><span class="line">    <span class="attr">jenkinsJavaOpts_Xmx:</span> <span class="string">512m</span></span><br><span class="line">    <span class="attr">jenkinsJavaOpts_MaxRAM:</span> <span class="string">2g</span></span><br><span class="line">  <span class="attr">events:</span>          </span><br><span class="line">    <span class="attr">enabled:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">ruler:</span></span><br><span class="line">      <span class="attr">enabled:</span> <span class="literal">true</span></span><br><span class="line">      <span class="attr">replicas:</span> <span class="number">2</span></span><br><span class="line">  <span class="attr">logging:</span>         </span><br><span class="line">    <span class="attr">enabled:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">logsidecar:</span></span><br><span class="line">      <span class="attr">enabled:</span> <span class="literal">true</span></span><br><span class="line">      <span class="attr">replicas:</span> <span class="number">2</span></span><br><span class="line">  <span class="attr">metrics_server:</span>             </span><br><span class="line">    <span class="attr">enabled:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">monitoring:</span></span><br><span class="line">    <span class="attr">storageClass:</span> <span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="attr">prometheusMemoryRequest:</span> <span class="string">400Mi</span>  </span><br><span class="line">    <span class="attr">prometheusVolumeSize:</span> <span class="string">20Gi</span>  </span><br><span class="line">  <span class="attr">multicluster:</span></span><br><span class="line">    <span class="attr">clusterRole:</span> <span class="string">none</span> </span><br><span class="line">  <span class="attr">network:</span></span><br><span class="line">    <span class="attr">networkpolicy:</span></span><br><span class="line">      <span class="attr">enabled:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">ippool:</span></span><br><span class="line">      <span class="attr">type:</span> <span class="string">none</span></span><br><span class="line">    <span class="attr">topology:</span></span><br><span class="line">      <span class="attr">type:</span> <span class="string">none</span></span><br><span class="line">  <span class="attr">openpitrix:</span></span><br><span class="line">    <span class="attr">store:</span></span><br><span class="line">      <span class="attr">enabled:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">servicemesh:</span>    </span><br><span class="line">    <span class="attr">enabled:</span> <span class="literal">true</span>  </span><br><span class="line">  <span class="attr">kubeedge:</span></span><br><span class="line">    <span class="attr">enabled:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">cloudCore:</span></span><br><span class="line">      <span class="attr">nodeSelector:</span> &#123;<span class="attr">&quot;node-role.kubernetes.io/worker&quot;:</span> <span class="string">&quot;&quot;</span>&#125;</span><br><span class="line">      <span class="attr">tolerations:</span> []</span><br><span class="line">      <span class="attr">cloudhubPort:</span> <span class="string">&quot;10000&quot;</span></span><br><span class="line">      <span class="attr">cloudhubQuicPort:</span> <span class="string">&quot;10001&quot;</span></span><br><span class="line">      <span class="attr">cloudhubHttpsPort:</span> <span class="string">&quot;10002&quot;</span></span><br><span class="line">      <span class="attr">cloudstreamPort:</span> <span class="string">&quot;10003&quot;</span></span><br><span class="line">      <span class="attr">tunnelPort:</span> <span class="string">&quot;10004&quot;</span></span><br><span class="line">      <span class="attr">cloudHub:</span></span><br><span class="line">        <span class="attr">advertiseAddress:</span> </span><br><span class="line">          <span class="bullet">-</span> <span class="string">&quot;&quot;</span>           </span><br><span class="line">        <span class="attr">nodeLimit:</span> <span class="string">&quot;100&quot;</span></span><br><span class="line">      <span class="attr">service:</span></span><br><span class="line">        <span class="attr">cloudhubNodePort:</span> <span class="string">&quot;30000&quot;</span></span><br><span class="line">        <span class="attr">cloudhubQuicNodePort:</span> <span class="string">&quot;30001&quot;</span></span><br><span class="line">        <span class="attr">cloudhubHttpsNodePort:</span> <span class="string">&quot;30002&quot;</span></span><br><span class="line">        <span class="attr">cloudstreamNodePort:</span> <span class="string">&quot;30003&quot;</span></span><br><span class="line">        <span class="attr">tunnelNodePort:</span> <span class="string">&quot;30004&quot;</span></span><br><span class="line">    <span class="attr">edgeWatcher:</span></span><br><span class="line">      <span class="attr">nodeSelector:</span> &#123;<span class="attr">&quot;node-role.kubernetes.io/worker&quot;:</span> <span class="string">&quot;&quot;</span>&#125;</span><br><span class="line">      <span class="attr">tolerations:</span> []</span><br><span class="line">      <span class="attr">edgeWatcherAgent:</span></span><br><span class="line">        <span class="attr">nodeSelector:</span> &#123;<span class="attr">&quot;node-role.kubernetes.io/worker&quot;:</span> <span class="string">&quot;&quot;</span>&#125;</span><br><span class="line">        <span class="attr">tolerations:</span> []</span><br></pre></td></tr></table></figure>
+
+<p>使用如下命令创建集群：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@k8s-worker6 ~]# ./kk create cluster -f config-sample.yaml</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-3-验证安装"><a href="#3-2-3-验证安装" class="headerlink" title="3.2.3 验证安装"></a>3.2.3 验证安装</h3><p>安装完成后，可以看到如下内容：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#####################################################</span></span><br><span class="line"><span class="comment">###              Welcome to KubeSphere!           ###</span></span><br><span class="line"><span class="comment">#####################################################</span></span><br><span class="line"></span><br><span class="line">Console: http://192.168.0.2:30880</span><br><span class="line">Account: admin</span><br><span class="line">Password: P@88w0rd</span><br><span class="line"></span><br><span class="line">NOTES：</span><br><span class="line">  1. After you <span class="built_in">log</span> into the console, please check the</span><br><span class="line">     monitoring status of service components <span class="keyword">in</span></span><br><span class="line">     the <span class="string">&quot;Cluster Management&quot;</span>. If any service is not</span><br><span class="line">     ready, please <span class="built_in">wait</span> patiently until all components</span><br><span class="line">     are up and running.</span><br><span class="line">  2. Please change the default password after login.</span><br><span class="line"></span><br><span class="line"><span class="comment">#####################################################</span></span><br><span class="line">https://kubesphere.io             20xx-xx-xx xx:xx:xx</span><br><span class="line"><span class="comment">#####################################################</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>现在，您将能够使用<code>&lt;NodeIP&gt;:30880</code>默认帐户和密码 ( <code>admin/P@88w0rd</code>)访问 KubeSphere 的 Web 控制台。</p>
+<h3 id="3-2-4-查看集群状态"><a href="#3-2-4-查看集群状态" class="headerlink" title="3.2.4 查看集群状态"></a>3.2.4 查看集群状态</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@k8s-worker6 yaml]# kubectl get nodes</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-5-查看cs状态"><a href="#3-2-5-查看cs状态" class="headerlink" title="3.2.5 查看cs状态"></a>3.2.5 <strong>查看cs状态</strong></h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@k8s-worker6 ~]# kubectl get cs</span><br></pre></td></tr></table></figure>
+
+<p>如若为status为unhealthy，则执行下述操作：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@k8s-worker6 ~]# vi /etc/kubernetes/manifests/kube-scheduler.yaml</span><br><span class="line">[root@k8s-worker6 ~]# vi /etc/kubernetes/manifests/kube-controller-manager.yaml</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 将两个文件中的- --port=0这一行注释掉</span></span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-3-安装flannel插件-Master节点-Kubesphere已经安装calico作为网络插件-（此步骤不用执行）"><a href="#3-3-安装flannel插件-Master节点-Kubesphere已经安装calico作为网络插件-（此步骤不用执行）" class="headerlink" title="3.3 安装flannel插件(Master节点)(Kubesphere已经安装calico作为网络插件)（此步骤不用执行）"></a>3.3 <strong>安装flannel插件(Master节点)</strong>(Kubesphere已经安装calico作为网络插件)（此步骤不用执行）</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@k8s-worker6 ~]# curl -o kube-flannel.yml https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml</span><br></pre></td></tr></table></figure>
+
+<p>如果显示超时，直接复制下述文件，下面为kube-flannel.yml文件的具体内容：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">apiVersion: policy/v1beta1</span><br><span class="line">kind: PodSecurityPolicy</span><br><span class="line">metadata:</span><br><span class="line">  name: psp.flannel.unprivileged</span><br><span class="line">  annotations:</span><br><span class="line">    seccomp.security.alpha.kubernetes.io/allowedProfileNames: docker/default</span><br><span class="line">    seccomp.security.alpha.kubernetes.io/defaultProfileName: docker/default</span><br><span class="line">    apparmor.security.beta.kubernetes.io/allowedProfileNames: runtime/default</span><br><span class="line">    apparmor.security.beta.kubernetes.io/defaultProfileName: runtime/default</span><br><span class="line">spec:</span><br><span class="line">  privileged: <span class="literal">false</span></span><br><span class="line">  volumes:</span><br><span class="line">  - configMap</span><br><span class="line">  - secret</span><br><span class="line">  - emptyDir</span><br><span class="line">  - hostPath</span><br><span class="line">  allowedHostPaths:</span><br><span class="line">  - pathPrefix: <span class="string">&quot;/etc/cni/net.d&quot;</span></span><br><span class="line">  - pathPrefix: <span class="string">&quot;/etc/kube-flannel&quot;</span></span><br><span class="line">  - pathPrefix: <span class="string">&quot;/run/flannel&quot;</span></span><br><span class="line">  readOnlyRootFilesystem: <span class="literal">false</span></span><br><span class="line">  <span class="comment"># Users and groups</span></span><br><span class="line">  runAsUser:</span><br><span class="line">    rule: RunAsAny</span><br><span class="line">  supplementalGroups:</span><br><span class="line">    rule: RunAsAny</span><br><span class="line">  fsGroup:</span><br><span class="line">    rule: RunAsAny</span><br><span class="line">  <span class="comment"># Privilege Escalation</span></span><br><span class="line">  allowPrivilegeEscalation: <span class="literal">false</span></span><br><span class="line">  defaultAllowPrivilegeEscalation: <span class="literal">false</span></span><br><span class="line">  <span class="comment"># Capabilities</span></span><br><span class="line">  allowedCapabilities: [<span class="string">&#x27;NET_ADMIN&#x27;</span>, <span class="string">&#x27;NET_RAW&#x27;</span>]</span><br><span class="line">  defaultAddCapabilities: []</span><br><span class="line">  requiredDropCapabilities: []</span><br><span class="line">  <span class="comment"># Host namespaces</span></span><br><span class="line">  hostPID: <span class="literal">false</span></span><br><span class="line">  hostIPC: <span class="literal">false</span></span><br><span class="line">  hostNetwork: <span class="literal">true</span></span><br><span class="line">  hostPorts:</span><br><span class="line">  - min: 0</span><br><span class="line">    max: 65535</span><br><span class="line">  <span class="comment"># SELinux</span></span><br><span class="line">  seLinux:</span><br><span class="line">    <span class="comment"># SELinux is unused in CaaSP</span></span><br><span class="line">    rule: <span class="string">&#x27;RunAsAny&#x27;</span></span><br><span class="line">---</span><br><span class="line">kind: ClusterRole</span><br><span class="line">apiVersion: rbac.authorization.k8s.io/v1</span><br><span class="line">metadata:</span><br><span class="line">  name: flannel</span><br><span class="line">rules:</span><br><span class="line">- apiGroups: [<span class="string">&#x27;extensions&#x27;</span>]</span><br><span class="line">  resources: [<span class="string">&#x27;podsecuritypolicies&#x27;</span>]</span><br><span class="line">  verbs: [<span class="string">&#x27;use&#x27;</span>]</span><br><span class="line">  resourceNames: [<span class="string">&#x27;psp.flannel.unprivileged&#x27;</span>]</span><br><span class="line">- apiGroups:</span><br><span class="line">  - <span class="string">&quot;&quot;</span></span><br><span class="line">  resources:</span><br><span class="line">  - pods</span><br><span class="line">  verbs:</span><br><span class="line">  - get</span><br><span class="line">- apiGroups:</span><br><span class="line">  - <span class="string">&quot;&quot;</span></span><br><span class="line">  resources:</span><br><span class="line">  - nodes</span><br><span class="line">  verbs:</span><br><span class="line">  - list</span><br><span class="line">  - watch</span><br><span class="line">- apiGroups:</span><br><span class="line">  - <span class="string">&quot;&quot;</span></span><br><span class="line">  resources:</span><br><span class="line">  - nodes/status</span><br><span class="line">  verbs:</span><br><span class="line">  - patch</span><br><span class="line">---</span><br><span class="line">kind: ClusterRoleBinding</span><br><span class="line">apiVersion: rbac.authorization.k8s.io/v1</span><br><span class="line">metadata:</span><br><span class="line">  name: flannel</span><br><span class="line">roleRef:</span><br><span class="line">  apiGroup: rbac.authorization.k8s.io</span><br><span class="line">  kind: ClusterRole</span><br><span class="line">  name: flannel</span><br><span class="line">subjects:</span><br><span class="line">- kind: ServiceAccount</span><br><span class="line">  name: flannel</span><br><span class="line">  namespace: kube-system</span><br><span class="line">---</span><br><span class="line">apiVersion: v1</span><br><span class="line">kind: ServiceAccount</span><br><span class="line">metadata:</span><br><span class="line">  name: flannel</span><br><span class="line">  namespace: kube-system</span><br><span class="line">---</span><br><span class="line">kind: ConfigMap</span><br><span class="line">apiVersion: v1</span><br><span class="line">metadata:</span><br><span class="line">  name: kube-flannel-cfg</span><br><span class="line">  namespace: kube-system</span><br><span class="line">  labels:</span><br><span class="line">    tier: node</span><br><span class="line">    app: flannel</span><br><span class="line">data:</span><br><span class="line">  cni-conf.json: |</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">&quot;name&quot;</span>: <span class="string">&quot;cbr0&quot;</span>,</span><br><span class="line">      <span class="string">&quot;cniVersion&quot;</span>: <span class="string">&quot;0.3.1&quot;</span>,</span><br><span class="line">      <span class="string">&quot;plugins&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="string">&quot;type&quot;</span>: <span class="string">&quot;flannel&quot;</span>,</span><br><span class="line">          <span class="string">&quot;delegate&quot;</span>: &#123;</span><br><span class="line">            <span class="string">&quot;hairpinMode&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">            <span class="string">&quot;isDefaultGateway&quot;</span>: <span class="literal">true</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="string">&quot;type&quot;</span>: <span class="string">&quot;portmap&quot;</span>,</span><br><span class="line">          <span class="string">&quot;capabilities&quot;</span>: &#123;</span><br><span class="line">            <span class="string">&quot;portMappings&quot;</span>: <span class="literal">true</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  net-conf.json: |</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">&quot;Network&quot;</span>: <span class="string">&quot;10.244.0.0/16&quot;</span>,</span><br><span class="line">      <span class="string">&quot;Backend&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;Type&quot;</span>: <span class="string">&quot;vxlan&quot;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">---</span><br><span class="line">apiVersion: apps/v1</span><br><span class="line">kind: DaemonSet</span><br><span class="line">metadata:</span><br><span class="line">  name: kube-flannel-ds</span><br><span class="line">  namespace: kube-system</span><br><span class="line">  labels:</span><br><span class="line">    tier: node</span><br><span class="line">    app: flannel</span><br><span class="line">spec:</span><br><span class="line">  selector:</span><br><span class="line">    matchLabels:</span><br><span class="line">      app: flannel</span><br><span class="line">  template:</span><br><span class="line">    metadata:</span><br><span class="line">      labels:</span><br><span class="line">        tier: node</span><br><span class="line">        app: flannel</span><br><span class="line">    spec:</span><br><span class="line">      affinity:</span><br><span class="line">        nodeAffinity:</span><br><span class="line">          requiredDuringSchedulingIgnoredDuringExecution:</span><br><span class="line">            nodeSelectorTerms:</span><br><span class="line">            - matchExpressions:</span><br><span class="line">              - key: kubernetes.io/os</span><br><span class="line">                operator: In</span><br><span class="line">                values:</span><br><span class="line">                - linux</span><br><span class="line">      hostNetwork: <span class="literal">true</span></span><br><span class="line">      priorityClassName: system-node-critical</span><br><span class="line">      tolerations:</span><br><span class="line">      - operator: Exists</span><br><span class="line">        effect: NoSchedule</span><br><span class="line">      serviceAccountName: flannel</span><br><span class="line">      initContainers:</span><br><span class="line">      - name: install-cni</span><br><span class="line">        image: quay.io/coreos/flannel:v0.14.0</span><br><span class="line">        <span class="built_in">command</span>:</span><br><span class="line">        - cp</span><br><span class="line">        args:</span><br><span class="line">        - -f</span><br><span class="line">        - /etc/kube-flannel/cni-conf.json</span><br><span class="line">        - /etc/cni/net.d/10-flannel.conflist</span><br><span class="line">        volumeMounts:</span><br><span class="line">        - name: cni</span><br><span class="line">          mountPath: /etc/cni/net.d</span><br><span class="line">        - name: flannel-cfg</span><br><span class="line">          mountPath: /etc/kube-flannel/</span><br><span class="line">      containers:</span><br><span class="line">      - name: kube-flannel</span><br><span class="line">        image: quay.io/coreos/flannel:v0.14.0</span><br><span class="line">        <span class="built_in">command</span>:</span><br><span class="line">        - /opt/bin/flanneld</span><br><span class="line">        args:</span><br><span class="line">        - --ip-masq</span><br><span class="line">        - --kube-subnet-mgr</span><br><span class="line">        resources:</span><br><span class="line">          requests:</span><br><span class="line">            cpu: <span class="string">&quot;100m&quot;</span></span><br><span class="line">            memory: <span class="string">&quot;50Mi&quot;</span></span><br><span class="line">          limits:</span><br><span class="line">            cpu: <span class="string">&quot;100m&quot;</span></span><br><span class="line">            memory: <span class="string">&quot;50Mi&quot;</span></span><br><span class="line">        securityContext:</span><br><span class="line">          privileged: <span class="literal">false</span></span><br><span class="line">          capabilities:</span><br><span class="line">            add: [<span class="string">&quot;NET_ADMIN&quot;</span>, <span class="string">&quot;NET_RAW&quot;</span>]</span><br><span class="line">        env:</span><br><span class="line">        - name: POD_NAME</span><br><span class="line">          valueFrom:</span><br><span class="line">            fieldRef:</span><br><span class="line">              fieldPath: metadata.name</span><br><span class="line">        - name: POD_NAMESPACE</span><br><span class="line">          valueFrom:</span><br><span class="line">            fieldRef:</span><br><span class="line">              fieldPath: metadata.namespace</span><br><span class="line">        volumeMounts:</span><br><span class="line">        - name: run</span><br><span class="line">          mountPath: /run/flannel</span><br><span class="line">        - name: flannel-cfg</span><br><span class="line">          mountPath: /etc/kube-flannel/</span><br><span class="line">      volumes:</span><br><span class="line">      - name: run</span><br><span class="line">        hostPath:</span><br><span class="line">          path: /run/flannel</span><br><span class="line">      - name: cni</span><br><span class="line">        hostPath:</span><br><span class="line">          path: /etc/cni/net.d</span><br><span class="line">      - name: flannel-cfg</span><br><span class="line">        configMap:</span><br><span class="line">          name: kube-flannel-cfg</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用kubectl安装flannel插件"><a href="#使用kubectl安装flannel插件" class="headerlink" title="使用kubectl安装flannel插件"></a>使用kubectl安装flannel插件</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装flannel插件</span></span><br><span class="line">[root@k8s-worker6 yaml]# kubectl apply -f kube-flannel.yml</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 再次查看node状态，此时应该全为Ready状态</span></span><br><span class="line">[root@k8s-worker6 yaml]# kubectl get nodes</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-4-1部署flannel网络插件时发现flannel-pod一直处于CrashLoopBackOff状态，查看日志提示没有分配cidr"><a href="#4-4-1部署flannel网络插件时发现flannel-pod一直处于CrashLoopBackOff状态，查看日志提示没有分配cidr" class="headerlink" title="4.4.1部署flannel网络插件时发现flannel pod一直处于CrashLoopBackOff状态，查看日志提示没有分配cidr"></a>4.4.1<strong>部署flannel网络插件时发现flannel pod一直处于CrashLoopBackOff状态，查看日志提示没有分配cidr</strong></h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看pods运行状态</span></span><br><span class="line">[root@k8s-worker6 yaml]# kubectl get pods --all-namespaces</span><br><span class="line"><span class="meta">#</span><span class="bash"> 针对失败的pods通过日志查找原因</span></span><br><span class="line">[root@k8s-worker6 yaml]# kubectl logs kube-flannel-ds-2qhdt -n kube-system</span><br></pre></td></tr></table></figure>
+
+<p>解决方法如下,master节点修改/etc/kubernetes/manifests/kube-controller-manager.yaml文件：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@k8s-worker6 ~]# vim /etc/kubernetes/manifests/kube-controller-manager.yaml</span><br><span class="line">增加参数：</span><br><span class="line">--allocate-node-cidrs=true</span><br><span class="line">--cluster-cidr=10.244.0.0/16</span><br><span class="line">重启kubelet</span><br><span class="line">[root@k8s-worker6 ~]# systemctl restart kubelet</span><br><span class="line">[root@k8s-worker6 yaml]# kubectl get pods --all-namespaces</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-5-Master节点添加自动补全脚本到系统"><a href="#4-5-Master节点添加自动补全脚本到系统" class="headerlink" title="4.5 Master节点添加自动补全脚本到系统"></a>4.5 Master节点添加自动补全脚本到系统</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@k8s-worker6 ~]# yum install -y bash-completion</span><br><span class="line">[root@k8s-worker6 ~]# source /usr/share/bash-completion/bash_completion</span><br><span class="line">[root@k8s-worker6 ~]# source &lt;(kubectl completion bash)</span><br><span class="line">[root@k8s-worker6 ~]# echo &quot;source &lt;(kubectl completion bash)&quot; &gt;&gt; ~/.bashrc</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
-        <category>大数据</category>
+        <category>环境安装</category>
       </categories>
       <tags>
-        <tag>大数据</tag>
-        <tag>HBase</tag>
+        <tag>K8S</tag>
+        <tag>环境安装</tag>
       </tags>
   </entry>
   <entry>
@@ -2703,136 +2833,6 @@
       </tags>
   </entry>
   <entry>
-    <title>kubekey安装K8S集群</title>
-    <url>/Echo/2022/01/19/kubekey%E5%AE%89%E8%A3%85K8S%E9%9B%86%E7%BE%A4/</url>
-    <content><![CDATA[<h2 id="一-K8S1-20-x的重要更新"><a href="#一-K8S1-20-x的重要更新" class="headerlink" title="一.K8S1.20.x的重要更新"></a>一.K8S1.20.x的重要更新</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">1、Kubectl debug 设置一个临时容器</span><br><span class="line">2、Sidecar </span><br><span class="line">3、Volume：更改目录权限，fsGroup</span><br><span class="line">4、ConfigMap和Secret</span><br><span class="line"></span><br><span class="line">K8S官网：https://kubernetes.io/docs/setup/</span><br><span class="line">最新版高可用安装：https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/high-availability/</span><br></pre></td></tr></table></figure>
-
-<h2 id="二-K8S1-20-x的安装"><a href="#二-K8S1-20-x的安装" class="headerlink" title="二.K8S1.20.x的安装"></a>二.K8S1.20.x的安装</h2><h2 id="2-1-集群规划"><a href="#2-1-集群规划" class="headerlink" title="2.1 集群规划"></a>2.1 集群规划</h2><table>
-<thead>
-<tr>
-<th align="center">主机名</th>
-<th align="center">IP地址</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">k8s-worker6</td>
-<td align="center">X.X.X.X</td>
-<td align="center">master节点</td>
-</tr>
-<tr>
-<td align="center">k8s-worker7</td>
-<td align="center">X.X.X.X</td>
-<td align="center">worker01节点</td>
-</tr>
-<tr>
-<td align="center">k8s-worker8</td>
-<td align="center">X.X.X.X</td>
-<td align="center">worker02节点</td>
-</tr>
-</tbody></table>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">查看Centos版本</span></span><br><span class="line">cat /etc/redhat-release </span><br><span class="line">CentOS Linux release 7.9.2009 (Core)</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#https://www.cnblogs.com/liucx/</span></span></span><br></pre></td></tr></table></figure>
-
-<h2 id="修改主机名"><a href="#修改主机名" class="headerlink" title="修改主机名"></a>修改主机名</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> master节点</span></span><br><span class="line">hostnamectl set-hostname k8s-worker6</span><br><span class="line"><span class="meta">#</span><span class="bash">node1节点</span></span><br><span class="line">hostnamectl set-hostname k8s-worker7</span><br><span class="line"><span class="meta">#</span><span class="bash">node2节点</span></span><br><span class="line">hostnamectl set-hostname k8s-worker8</span><br></pre></td></tr></table></figure>
-
-<h2 id="所有节点配置hosts，修改-etc-hosts如下："><a href="#所有节点配置hosts，修改-etc-hosts如下：" class="headerlink" title="所有节点配置hosts，修改/etc/hosts如下："></a><strong>所有节点配置hosts，修改/etc/hosts如下：</strong></h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">所有节点配置hosts，修改/etc/hosts如下：</span><br><span class="line"></span><br><span class="line">cat /etc/hosts </span><br><span class="line"></span><br><span class="line">::1    localhost	localhost.localdomain	localhost6	localhost6.localdomain6</span><br><span class="line">127.0.0.1 localhost  localhost</span><br><span class="line"></span><br><span class="line">X.X.X.X k8s-worker8  k8s-worker8</span><br><span class="line">X.X.X.X k8s-worker6  k8s-worker6</span><br><span class="line">X.X.X.X k8s-worker7  k8s-worker7</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-2-更新配置-（所有节点全部安装）"><a href="#2-2-更新配置-（所有节点全部安装）" class="headerlink" title="2.2 更新配置 （所有节点全部安装）"></a>2.2 <strong>更新配置 （所有节点全部安装）</strong></h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 所有节点安装</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Centos 7安装yum源如下：</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 更改为国内阿里yum源</span></span><br><span class="line">[root@k8s-worker6 ~]# curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo</span><br><span class="line">[root@k8s-worker6 ~]# yum install -y yum-utils device-mapper-persistent-data lvm2</span><br><span class="line">[root@k8s-worker6 ~]# yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br><span class="line">[root@k8s-worker6 ~]# cat &lt;&lt;EOF &gt; /etc/yum.repos.d/kubernetes.repo</span><br><span class="line">[kubernetes]</span><br><span class="line">name=Kubernetes</span><br><span class="line">baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64/</span><br><span class="line">enabled=1</span><br><span class="line">gpgcheck=1</span><br><span class="line">repo_gpgcheck=1</span><br><span class="line">gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg</span><br><span class="line">EOF</span><br><span class="line">[root@k8s-worker6 ~]# sed -i -e &#x27;/mirrors.cloud.aliyuncs.com/d&#x27; -e &#x27;/mirrors.aliyuncs.com/d&#x27; /etc/yum.repos.d/CentOS-Base.repo</span><br></pre></td></tr></table></figure>
-
-<h2 id="安装必备工具"><a href="#安装必备工具" class="headerlink" title="安装必备工具"></a>安装必备工具</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@k8s-worker6 ~]# yum install wget jq psmisc vim net-tools telnet yum-utils device-mapper-persistent-data lvm2 git -y</span><br></pre></td></tr></table></figure>
-
-<h2 id="所有节点关闭防火墙、selinux、dnsmasq、swap。服务器配置如下："><a href="#所有节点关闭防火墙、selinux、dnsmasq、swap。服务器配置如下：" class="headerlink" title="所有节点关闭防火墙、selinux、dnsmasq、swap。服务器配置如下："></a>所有节点关闭防火墙、selinux、dnsmasq、swap。服务器配置如下：</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@k8s-worker6 ~]# systemctl disable --now firewalld </span><br><span class="line">[root@k8s-worker6 ~]# systemctl disable --now dnsmasq</span><br><span class="line">[root@k8s-worker6 ~]# systemctl disable --now NetworkManager</span><br><span class="line"></span><br><span class="line">[root@k8s-worker6 ~]# setenforce 0</span><br><span class="line">[root@k8s-worker6 ~]# sed -i &#x27;s#SELINUX=enforcing#SELINUX=disabled#g&#x27; /etc/sysconfig/selinux</span><br><span class="line">[root@k8s-worker6 ~]# sed -i &#x27;s#SELINUX=enforcing#SELINUX=disabled#g&#x27; /etc/selinux/config</span><br></pre></td></tr></table></figure>
-
-<h2 id="关闭swap分区（所有节点）"><a href="#关闭swap分区（所有节点）" class="headerlink" title="关闭swap分区（所有节点）"></a>关闭swap分区（所有节点）</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@k8s-worker6 ~]# swapoff -a &amp;&amp; sysctl -w vm.swappiness=0</span><br><span class="line">[root@k8s-worker6 ~]# sed -ri &#x27;/^[^#]*swap/s@^@#@&#x27; /etc/fstab</span><br></pre></td></tr></table></figure>
-
-<h2 id="时钟同步"><a href="#时钟同步" class="headerlink" title="时钟同步"></a>时钟同步</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">安装同步时钟ntpdate</span></span><br><span class="line">[root@k8s-worker6 ~]# rpm -ivh http://mirrors.wlnmp.com/centos/wlnmp-release-centos.noarch.rpm</span><br><span class="line">[root@k8s-worker6 ~]# yum install ntpdate -y</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 所有节点同步时间。时间同步配置如下：</span></span><br><span class="line">[root@k8s-worker6 ~]# ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br><span class="line">[root@k8s-worker6 ~]# echo &#x27;Asia/Shanghai&#x27; &gt;/etc/timezone</span><br><span class="line">[root@k8s-worker6 ~]# ntpdate time2.aliyun.com</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 加入到crontab,每5分钟同步一次</span></span><br><span class="line">[root@k8s-worker6 ~]# crontab -e</span><br><span class="line">*/5 * * * * ntpdate time2.aliyun.com</span><br></pre></td></tr></table></figure>
-
-<h2 id="配置limit"><a href="#配置limit" class="headerlink" title="配置limit"></a>配置limit</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@k8s-worker6 ~]# ulimit -SHn 65535</span><br><span class="line">[root@k8s-worker6 ~]# vim /etc/security/limits.conf</span><br><span class="line"><span class="meta">#</span><span class="bash"> 末尾添加如下内容</span></span><br><span class="line">* soft nofile 655360</span><br><span class="line">* hard nofile 131072</span><br><span class="line">* soft nproc 655350</span><br><span class="line">* hard nproc 655350</span><br><span class="line">* soft memlock unlimited</span><br><span class="line">* hard memlock unlimite</span><br></pre></td></tr></table></figure>
-
-<h2 id="配置免密登录"><a href="#配置免密登录" class="headerlink" title="配置免密登录"></a>配置免密登录</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Master01节点免密钥登录其他节点：</span></span><br><span class="line">[root@k8s-worker6 ~]# ssh-keygen -t rsa</span><br><span class="line">[root@k8s-worker6 ~]# ssh-copy-id -i root@X.X.X.X</span><br><span class="line">[root@k8s-worker6 ~]# ssh-copy-id -i root@X.X.X.X</span><br></pre></td></tr></table></figure>
-
-<h2 id="所有节点升级重启"><a href="#所有节点升级重启" class="headerlink" title="所有节点升级重启"></a>所有节点升级重启</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@k8s-worker6 ~]# yum update -y  &amp;&amp; reboot </span><br></pre></td></tr></table></figure>
-
-<h2 id="2-3-Linux内核升级（所有节点）"><a href="#2-3-Linux内核升级（所有节点）" class="headerlink" title="2.3 Linux内核升级（所有节点）"></a>2.3 Linux内核升级（所有节点）</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">CentOS7 需要升级内核至4.18+  https://www.kernel.org/ 和 https://elrepo.org/linux/kernel/el7/x86_64/</span><br><span class="line">CentOS 7 dnf可能无法安装内核</span><br><span class="line">[root@k8s-worker6 ~]# dnf --disablerepo=\* --enablerepo=elrepo -y install kernel-ml kernel-ml-devel</span><br><span class="line">[root@k8s-worker6 ~]# grubby --default-kernel</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 使用如下指令查看内核版本</span></span><br><span class="line">[root@k8s-worker6 ~]# uname -a</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 使用如下指令安装最新内核</span></span><br><span class="line"><span class="meta">#</span><span class="bash">导入ELRepo软件仓库的公共秘钥</span></span><br><span class="line">[root@k8s-worker6 ~]# rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org</span><br><span class="line"><span class="meta">#</span><span class="bash">安装ELRepo软件仓库的yum源</span></span><br><span class="line">[root@k8s-worker6 ~]# rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看最新版内核</span></span><br><span class="line">[root@k8s-worker6 ~]# yum --disablerepo=&quot;*&quot; --enablerepo=&quot;elrepo-kernel&quot; list available</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装最新版内核</span></span><br><span class="line">[root@k8s-worker6 ~]# yum --enablerepo=elrepo-kernel install kernel-ml kernel-ml-devel –y</span><br><span class="line">[root@k8s-worker6 ~]# reboot</span><br><span class="line"><span class="meta">#</span><span class="bash"> 更改内核顺序</span></span><br><span class="line">[root@k8s-worker6 ~]# grub2-set-default  0 &amp;&amp; grub2-mkconfig -o /etc/grub2.cfg &amp;&amp; grubby --args=&quot;user_namespace.enable=1&quot; --update-kernel=&quot;$(grubby --default-kernel)&quot; &amp;&amp; reboot</span><br><span class="line"><span class="meta">#</span><span class="bash"> 开机查看内核</span></span><br><span class="line">[root@k8s-worker6 ~]# uname -a</span><br></pre></td></tr></table></figure>
-
-<h2 id="安装ipvsadm"><a href="#安装ipvsadm" class="headerlink" title="安装ipvsadm"></a>安装ipvsadm</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 所有节点安装ipvsadm</span></span><br><span class="line">[root@k8s-worker6 ~]# yum install ipvsadm ipset sysstat conntrack libseccomp -y</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 所有节点配置ipvs模块，在内核4.19+版本nf_conntrack_ipv4已经改为nf_conntrack。</span></span><br><span class="line">[root@k8s-worker6 ~]# vim /etc/modules-load.d/ipvs.conf</span><br><span class="line">[root@k8s-worker6 ~]# systemctl enable --now systemd-modules-load.service</span><br></pre></td></tr></table></figure>
-
-<p>![img](D:/GitLab_item/zz-study-notes/5.Cloud Native/images/k8s-zl/4.jpg)</p>
-<h2 id="开启一些k8s集群中必须的内核参数，所有节点配置k8s内核："><a href="#开启一些k8s集群中必须的内核参数，所有节点配置k8s内核：" class="headerlink" title="开启一些k8s集群中必须的内核参数，所有节点配置k8s内核："></a>开启一些k8s集群中必须的内核参数，所有节点配置k8s内核：</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@k8s-worker6 ~]# cat &lt;&lt;EOF &gt; /etc/sysctl.d/k8s.conf</span><br><span class="line">net.ipv4.ip_forward = 1</span><br><span class="line">net.bridge.bridge-nf-call-iptables = 1</span><br><span class="line">net.bridge.bridge-nf-call-ip6tables = 1</span><br><span class="line">fs.may_detach_mounts = 1</span><br><span class="line">vm.overcommit_memory=1</span><br><span class="line">vm.panic_on_oom=0</span><br><span class="line">fs.inotify.max_user_watches=89100</span><br><span class="line">fs.file-max=52706963</span><br><span class="line">fs.nr_open=52706963</span><br><span class="line">net.netfilter.nf_conntrack_max=2310720</span><br><span class="line"></span><br><span class="line">net.ipv4.tcp_keepalive_time = 600</span><br><span class="line">net.ipv4.tcp_keepalive_probes = 3</span><br><span class="line">net.ipv4.tcp_keepalive_intvl =15</span><br><span class="line">net.ipv4.tcp_max_tw_buckets = 36000</span><br><span class="line">net.ipv4.tcp_tw_reuse = 1</span><br><span class="line">net.ipv4.tcp_max_orphans = 327680</span><br><span class="line">net.ipv4.tcp_orphan_retries = 3</span><br><span class="line">net.ipv4.tcp_syncookies = 1</span><br><span class="line">net.ipv4.tcp_max_syn_backlog = 16384</span><br><span class="line"></span><br><span class="line">net.ipv4.ip_conntrack_max = 65536</span><br><span class="line">net.ipv4.tcp_max_syn_backlog = 16384</span><br><span class="line">net.ipv4.tcp_timestamps = 0</span><br><span class="line">net.core.somaxconn = 16384</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> k8s内核装载并应用</span></span><br><span class="line">[root@k8s-worker6 ~]# sysctl --system</span><br></pre></td></tr></table></figure>
-
-<h1 id="三-所有节点K8S基本组件安装"><a href="#三-所有节点K8S基本组件安装" class="headerlink" title="三.所有节点K8S基本组件安装"></a>三.<strong>所有节点K8S基本组件安装</strong></h1><h2 id="3-1-安装docker-ce"><a href="#3-1-安装docker-ce" class="headerlink" title="3.1 安装docker-ce"></a>3.1 安装docker-ce</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@k8s-worker8 ~]# wget https://download.docker.com/linux/centos/7/x86_64/edge/Packages/containerd.io-1.2.13-3.2.el7.x86_64.rpm</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装docker-ce 19.03版本</span></span><br><span class="line">[root@k8s-worker8 ~]# yum install -y docker-ce-cli-19.03.8-3.el7.x86_64 docker-ce-19.03.8-3.el7.x86_64</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看安装的docker版本</span></span><br><span class="line">[root@k8s-worker8 ~]# rpm -qa|grep </span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<h2 id="kubeadm不改如下字段，kubelet无法启动温馨提示：由于新版kubelet建议使用systemd，所以可以把docker的CgroupDriver改成systemd。（重要）"><a href="#kubeadm不改如下字段，kubelet无法启动温馨提示：由于新版kubelet建议使用systemd，所以可以把docker的CgroupDriver改成systemd。（重要）" class="headerlink" title="kubeadm不改如下字段，kubelet无法启动温馨提示：由于新版kubelet建议使用systemd，所以可以把docker的CgroupDriver改成systemd。（重要）"></a>kubeadm不改如下字段，kubelet无法启动温馨提示：由于新版kubelet建议使用systemd，所以可以把docker的CgroupDriver改成systemd。（重要）</h2></blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@k8s-worker8 ~]# cat &gt; /etc/docker/daemon.json &lt;&lt;EOF</span><br><span class="line">&#123;</span><br><span class="line">&quot;exec-opts&quot;: [&quot;native.cgroupdriver=systemd&quot;]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line"><span class="meta">#</span><span class="bash"> 重启</span></span><br><span class="line">[root@k8s-worker8 ~]# systemctl restart docker</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看docekr配置文件，主要看Cgroup Driver: systemd</span></span><br><span class="line">[root@k8s-worker7 ~]# docker info</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash">启动docker</span></span><br><span class="line">[root@k8s-worker8 ~]# service docker start</span><br><span class="line">[root@k8s-worker8 ~]# chkconfig docker on</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 所有节点设置开机启动docker</span></span><br><span class="line">[root@k8s-worker8 ~]# systemctl daemon-reload &amp;&amp; systemctl enable --now docker</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看Docker的状态</span></span><br><span class="line">[root@k8s-worker8 ~]# systemctl status docker</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-2-kubekey安装K8S集群"><a href="#3-2-kubekey安装K8S集群" class="headerlink" title="3.2 kubekey安装K8S集群"></a>3.2 kubekey安装K8S集群</h2><h3 id="3-2-1-下载KubeKey"><a href="#3-2-1-下载KubeKey" class="headerlink" title="3.2.1 下载KubeKey"></a>3.2.1 下载KubeKey</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 首先运行以下命令以确保从正确的区域下载 KubeKey。</span></span><br><span class="line">export KKZONE=cn</span><br><span class="line"><span class="meta">#</span><span class="bash"> 运行以下命令下载 KubeKey：</span></span><br><span class="line">curl -sfL https://get-kk.kubesphere.io | VERSION=v1.1.1 sh -</span><br><span class="line">chmod +x kk</span><br></pre></td></tr></table></figure>
-
-<p>kubekey安装的K8S集群版本和KubeSpherev3.1.1，请参阅下表支持的Kubenetes版本。</p>
-<table>
-<thead>
-<tr>
-<th align="center">KubeSphere 版本</th>
-<th>支持的 Kubernetes 版本</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">v3.1.1</td>
-<td>v1.17.0, v1.17.4, v1.17.5, v1.17.6, v1.17.7, v1.17.8, v1.17.9, v1.18.3, v1.18.5, v1.18.6, v1.18.8, v1.19.0, v1.19.0 19.8、v1.19.9、v1.20.4、v1.20.6</td>
-</tr>
-</tbody></table>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#  您还可以运行如下命令以查看 KubeKey 可以安装的所有受支持的 Kubernetes 版本。</span></span><br><span class="line">[root@k8s-worker6 yaml]<span class="comment"># ./kk version --show-supported-k8s</span></span><br><span class="line"><span class="comment"># 使用 KubeKey 可以安装的 Kubernetes 版本与 KubeSphere v3.0.0 支持的 Kubernetes 版本不同。如果您想在现有的 Kubernetes 集群上安装 KubeSphere v3.1.1，您的 Kubernetes 版本必须是 v1.17.x、v1.18.x、v1.19.x 或 v1.20.x。</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="3-2-2-创建Kubernetes多节点集群"><a href="#3-2-2-创建Kubernetes多节点集群" class="headerlink" title="3.2.2 创建Kubernetes多节点集群"></a>3.2.2 创建Kubernetes多节点集群</h3><p>首先创建示例配置文件，执行如下命令：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@k8s-worker6 yaml]# ./kk create config --with-kubernetes 1.20.6 --with-kubesphere 3.1.1 -f config-sample.yaml</span><br></pre></td></tr></table></figure>
-
-<p>下面为一个示例的config-sample.yaml文件：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">kubekey.kubesphere.io/v1alpha1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Cluster</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">sample</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">hosts:</span></span><br><span class="line">  <span class="bullet">-</span> &#123;<span class="attr">name:</span> <span class="string">k8s-worker6</span>, <span class="attr">address:</span> <span class="string">IP</span>, <span class="attr">internalAddress:</span> <span class="string">IP</span>, <span class="attr">user:</span> <span class="string">root</span>, <span class="attr">password:</span> <span class="string">passWord</span>&#125;</span><br><span class="line">  <span class="bullet">-</span> &#123;<span class="attr">name:</span> <span class="string">k8s-worker7</span>, <span class="attr">address:</span> <span class="string">IP</span>, <span class="attr">internalAddress:</span> <span class="string">IP</span>, <span class="attr">user:</span> <span class="string">root</span>, <span class="attr">password:</span> <span class="string">passWord</span>&#125;</span><br><span class="line">  <span class="bullet">-</span> &#123;<span class="attr">name:</span> <span class="string">k8s-worker8</span>, <span class="attr">address:</span> <span class="string">IP</span>, <span class="attr">internalAddress:</span> <span class="string">IP</span>, <span class="attr">user:</span> <span class="string">root</span>, <span class="attr">password:</span> <span class="string">passWord</span>&#125;</span><br><span class="line">  <span class="attr">roleGroups:</span></span><br><span class="line">    <span class="attr">etcd:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">k8s-worker6</span></span><br><span class="line">    <span class="attr">master:</span> </span><br><span class="line">    <span class="bullet">-</span> <span class="string">k8s-worker6</span></span><br><span class="line">    <span class="attr">worker:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">k8s-worker7</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">k8s-worker8</span></span><br><span class="line">  <span class="attr">controlPlaneEndpoint:</span></span><br><span class="line">    <span class="attr">domain:</span> <span class="string">lb.kubesphere.local</span></span><br><span class="line">    <span class="attr">address:</span> <span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="attr">port:</span> <span class="number">6443</span></span><br><span class="line">  <span class="attr">kubernetes:</span></span><br><span class="line">    <span class="attr">version:</span> <span class="string">v1.20.4</span></span><br><span class="line">    <span class="attr">imageRepo:</span> <span class="string">kubesphere</span></span><br><span class="line">    <span class="attr">clusterName:</span> <span class="string">cluster.local</span></span><br><span class="line">  <span class="attr">network:</span></span><br><span class="line">    <span class="attr">plugin:</span> <span class="string">calico</span></span><br><span class="line">    <span class="attr">kubePodsCIDR:</span> <span class="number">10.233</span><span class="number">.64</span><span class="number">.0</span><span class="string">/18</span></span><br><span class="line">    <span class="attr">kubeServiceCIDR:</span> <span class="number">10.233</span><span class="number">.0</span><span class="number">.0</span><span class="string">/18</span></span><br><span class="line">  <span class="attr">registry:</span></span><br><span class="line">    <span class="attr">registryMirrors:</span> []</span><br><span class="line">    <span class="attr">insecureRegistries:</span> []</span><br><span class="line">  <span class="attr">addons:</span> []</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">installer.kubesphere.io/v1alpha1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">ClusterConfiguration</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">ks-installer</span></span><br><span class="line">  <span class="attr">namespace:</span> <span class="string">kubesphere-system</span></span><br><span class="line">  <span class="attr">labels:</span></span><br><span class="line">    <span class="attr">version:</span> <span class="string">v3.1.1</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">persistence:</span></span><br><span class="line">    <span class="attr">storageClass:</span> <span class="string">&quot;&quot;</span>       </span><br><span class="line">  <span class="attr">authentication:</span></span><br><span class="line">    <span class="attr">jwtSecret:</span> <span class="string">&quot;&quot;</span></span><br><span class="line">  <span class="attr">zone:</span> <span class="string">&quot;&quot;</span></span><br><span class="line">  <span class="attr">local_registry:</span> <span class="string">&quot;&quot;</span>        </span><br><span class="line">  <span class="attr">etcd:</span></span><br><span class="line">    <span class="attr">monitoring:</span> <span class="literal">false</span>      </span><br><span class="line">    <span class="attr">endpointIps:</span> <span class="string">localhost</span>  </span><br><span class="line">    <span class="attr">port:</span> <span class="number">2379</span>             </span><br><span class="line">    <span class="attr">tlsEnable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">common:</span></span><br><span class="line">    <span class="attr">redis:</span></span><br><span class="line">      <span class="attr">enabled:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">redisVolumSize:</span> <span class="string">2Gi</span> </span><br><span class="line">    <span class="attr">openldap:</span></span><br><span class="line">      <span class="attr">enabled:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">openldapVolumeSize:</span> <span class="string">2Gi</span>  </span><br><span class="line">    <span class="attr">minioVolumeSize:</span> <span class="string">20Gi</span></span><br><span class="line">    <span class="attr">monitoring:</span></span><br><span class="line">      <span class="attr">endpoint:</span> <span class="string">http://prometheus-operated.kubesphere-monitoring-system.svc:9090</span></span><br><span class="line">    <span class="attr">es:</span>  </span><br><span class="line">      <span class="attr">elasticsearchMasterVolumeSize:</span> <span class="string">4Gi</span>   </span><br><span class="line">      <span class="attr">elasticsearchDataVolumeSize:</span> <span class="string">20Gi</span>   </span><br><span class="line">      <span class="attr">logMaxAge:</span> <span class="number">7</span>          </span><br><span class="line">      <span class="attr">elkPrefix:</span> <span class="string">logstash</span></span><br><span class="line">      <span class="attr">basicAuth:</span></span><br><span class="line">        <span class="attr">enabled:</span> <span class="literal">false</span></span><br><span class="line">        <span class="attr">username:</span> <span class="string">&quot;&quot;</span></span><br><span class="line">        <span class="attr">password:</span> <span class="string">&quot;&quot;</span></span><br><span class="line">      <span class="attr">externalElasticsearchUrl:</span> <span class="string">&quot;&quot;</span></span><br><span class="line">      <span class="attr">externalElasticsearchPort:</span> <span class="string">&quot;&quot;</span>  </span><br><span class="line">  <span class="attr">console:</span></span><br><span class="line">    <span class="attr">enableMultiLogin:</span> <span class="literal">true</span> </span><br><span class="line">    <span class="attr">port:</span> <span class="number">30880</span></span><br><span class="line">  <span class="attr">alerting:</span>       </span><br><span class="line">    <span class="attr">enabled:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># thanosruler:</span></span><br><span class="line">    <span class="comment">#   replicas: 1</span></span><br><span class="line">    <span class="comment">#   resources: &#123;&#125;</span></span><br><span class="line">  <span class="attr">auditing:</span>    </span><br><span class="line">    <span class="attr">enabled:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">devops:</span>           </span><br><span class="line">    <span class="attr">enabled:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">jenkinsMemoryLim:</span> <span class="string">2Gi</span>     </span><br><span class="line">    <span class="attr">jenkinsMemoryReq:</span> <span class="string">1500Mi</span> </span><br><span class="line">    <span class="attr">jenkinsVolumeSize:</span> <span class="string">8Gi</span>   </span><br><span class="line">    <span class="attr">jenkinsJavaOpts_Xms:</span> <span class="string">512m</span>  </span><br><span class="line">    <span class="attr">jenkinsJavaOpts_Xmx:</span> <span class="string">512m</span></span><br><span class="line">    <span class="attr">jenkinsJavaOpts_MaxRAM:</span> <span class="string">2g</span></span><br><span class="line">  <span class="attr">events:</span>          </span><br><span class="line">    <span class="attr">enabled:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">ruler:</span></span><br><span class="line">      <span class="attr">enabled:</span> <span class="literal">true</span></span><br><span class="line">      <span class="attr">replicas:</span> <span class="number">2</span></span><br><span class="line">  <span class="attr">logging:</span>         </span><br><span class="line">    <span class="attr">enabled:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">logsidecar:</span></span><br><span class="line">      <span class="attr">enabled:</span> <span class="literal">true</span></span><br><span class="line">      <span class="attr">replicas:</span> <span class="number">2</span></span><br><span class="line">  <span class="attr">metrics_server:</span>             </span><br><span class="line">    <span class="attr">enabled:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">monitoring:</span></span><br><span class="line">    <span class="attr">storageClass:</span> <span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="attr">prometheusMemoryRequest:</span> <span class="string">400Mi</span>  </span><br><span class="line">    <span class="attr">prometheusVolumeSize:</span> <span class="string">20Gi</span>  </span><br><span class="line">  <span class="attr">multicluster:</span></span><br><span class="line">    <span class="attr">clusterRole:</span> <span class="string">none</span> </span><br><span class="line">  <span class="attr">network:</span></span><br><span class="line">    <span class="attr">networkpolicy:</span></span><br><span class="line">      <span class="attr">enabled:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">ippool:</span></span><br><span class="line">      <span class="attr">type:</span> <span class="string">none</span></span><br><span class="line">    <span class="attr">topology:</span></span><br><span class="line">      <span class="attr">type:</span> <span class="string">none</span></span><br><span class="line">  <span class="attr">openpitrix:</span></span><br><span class="line">    <span class="attr">store:</span></span><br><span class="line">      <span class="attr">enabled:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">servicemesh:</span>    </span><br><span class="line">    <span class="attr">enabled:</span> <span class="literal">true</span>  </span><br><span class="line">  <span class="attr">kubeedge:</span></span><br><span class="line">    <span class="attr">enabled:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">cloudCore:</span></span><br><span class="line">      <span class="attr">nodeSelector:</span> &#123;<span class="attr">&quot;node-role.kubernetes.io/worker&quot;:</span> <span class="string">&quot;&quot;</span>&#125;</span><br><span class="line">      <span class="attr">tolerations:</span> []</span><br><span class="line">      <span class="attr">cloudhubPort:</span> <span class="string">&quot;10000&quot;</span></span><br><span class="line">      <span class="attr">cloudhubQuicPort:</span> <span class="string">&quot;10001&quot;</span></span><br><span class="line">      <span class="attr">cloudhubHttpsPort:</span> <span class="string">&quot;10002&quot;</span></span><br><span class="line">      <span class="attr">cloudstreamPort:</span> <span class="string">&quot;10003&quot;</span></span><br><span class="line">      <span class="attr">tunnelPort:</span> <span class="string">&quot;10004&quot;</span></span><br><span class="line">      <span class="attr">cloudHub:</span></span><br><span class="line">        <span class="attr">advertiseAddress:</span> </span><br><span class="line">          <span class="bullet">-</span> <span class="string">&quot;&quot;</span>           </span><br><span class="line">        <span class="attr">nodeLimit:</span> <span class="string">&quot;100&quot;</span></span><br><span class="line">      <span class="attr">service:</span></span><br><span class="line">        <span class="attr">cloudhubNodePort:</span> <span class="string">&quot;30000&quot;</span></span><br><span class="line">        <span class="attr">cloudhubQuicNodePort:</span> <span class="string">&quot;30001&quot;</span></span><br><span class="line">        <span class="attr">cloudhubHttpsNodePort:</span> <span class="string">&quot;30002&quot;</span></span><br><span class="line">        <span class="attr">cloudstreamNodePort:</span> <span class="string">&quot;30003&quot;</span></span><br><span class="line">        <span class="attr">tunnelNodePort:</span> <span class="string">&quot;30004&quot;</span></span><br><span class="line">    <span class="attr">edgeWatcher:</span></span><br><span class="line">      <span class="attr">nodeSelector:</span> &#123;<span class="attr">&quot;node-role.kubernetes.io/worker&quot;:</span> <span class="string">&quot;&quot;</span>&#125;</span><br><span class="line">      <span class="attr">tolerations:</span> []</span><br><span class="line">      <span class="attr">edgeWatcherAgent:</span></span><br><span class="line">        <span class="attr">nodeSelector:</span> &#123;<span class="attr">&quot;node-role.kubernetes.io/worker&quot;:</span> <span class="string">&quot;&quot;</span>&#125;</span><br><span class="line">        <span class="attr">tolerations:</span> []</span><br></pre></td></tr></table></figure>
-
-<p>使用如下命令创建集群：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@k8s-worker6 ~]# ./kk create cluster -f config-sample.yaml</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-2-3-验证安装"><a href="#3-2-3-验证安装" class="headerlink" title="3.2.3 验证安装"></a>3.2.3 验证安装</h3><p>安装完成后，可以看到如下内容：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#####################################################</span></span><br><span class="line"><span class="comment">###              Welcome to KubeSphere!           ###</span></span><br><span class="line"><span class="comment">#####################################################</span></span><br><span class="line"></span><br><span class="line">Console: http://192.168.0.2:30880</span><br><span class="line">Account: admin</span><br><span class="line">Password: P@88w0rd</span><br><span class="line"></span><br><span class="line">NOTES：</span><br><span class="line">  1. After you <span class="built_in">log</span> into the console, please check the</span><br><span class="line">     monitoring status of service components <span class="keyword">in</span></span><br><span class="line">     the <span class="string">&quot;Cluster Management&quot;</span>. If any service is not</span><br><span class="line">     ready, please <span class="built_in">wait</span> patiently until all components</span><br><span class="line">     are up and running.</span><br><span class="line">  2. Please change the default password after login.</span><br><span class="line"></span><br><span class="line"><span class="comment">#####################################################</span></span><br><span class="line">https://kubesphere.io             20xx-xx-xx xx:xx:xx</span><br><span class="line"><span class="comment">#####################################################</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>现在，您将能够使用<code>&lt;NodeIP&gt;:30880</code>默认帐户和密码 ( <code>admin/P@88w0rd</code>)访问 KubeSphere 的 Web 控制台。</p>
-<h3 id="3-2-4-查看集群状态"><a href="#3-2-4-查看集群状态" class="headerlink" title="3.2.4 查看集群状态"></a>3.2.4 查看集群状态</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@k8s-worker6 yaml]# kubectl get nodes</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-2-5-查看cs状态"><a href="#3-2-5-查看cs状态" class="headerlink" title="3.2.5 查看cs状态"></a>3.2.5 <strong>查看cs状态</strong></h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@k8s-worker6 ~]# kubectl get cs</span><br></pre></td></tr></table></figure>
-
-<p>如若为status为unhealthy，则执行下述操作：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@k8s-worker6 ~]# vi /etc/kubernetes/manifests/kube-scheduler.yaml</span><br><span class="line">[root@k8s-worker6 ~]# vi /etc/kubernetes/manifests/kube-controller-manager.yaml</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 将两个文件中的- --port=0这一行注释掉</span></span></span><br></pre></td></tr></table></figure>
-
-<h2 id="3-3-安装flannel插件-Master节点-Kubesphere已经安装calico作为网络插件-（此步骤不用执行）"><a href="#3-3-安装flannel插件-Master节点-Kubesphere已经安装calico作为网络插件-（此步骤不用执行）" class="headerlink" title="3.3 安装flannel插件(Master节点)(Kubesphere已经安装calico作为网络插件)（此步骤不用执行）"></a>3.3 <strong>安装flannel插件(Master节点)</strong>(Kubesphere已经安装calico作为网络插件)（此步骤不用执行）</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@k8s-worker6 ~]# curl -o kube-flannel.yml https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml</span><br></pre></td></tr></table></figure>
-
-<p>如果显示超时，直接复制下述文件，下面为kube-flannel.yml文件的具体内容：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">apiVersion: policy/v1beta1</span><br><span class="line">kind: PodSecurityPolicy</span><br><span class="line">metadata:</span><br><span class="line">  name: psp.flannel.unprivileged</span><br><span class="line">  annotations:</span><br><span class="line">    seccomp.security.alpha.kubernetes.io/allowedProfileNames: docker/default</span><br><span class="line">    seccomp.security.alpha.kubernetes.io/defaultProfileName: docker/default</span><br><span class="line">    apparmor.security.beta.kubernetes.io/allowedProfileNames: runtime/default</span><br><span class="line">    apparmor.security.beta.kubernetes.io/defaultProfileName: runtime/default</span><br><span class="line">spec:</span><br><span class="line">  privileged: <span class="literal">false</span></span><br><span class="line">  volumes:</span><br><span class="line">  - configMap</span><br><span class="line">  - secret</span><br><span class="line">  - emptyDir</span><br><span class="line">  - hostPath</span><br><span class="line">  allowedHostPaths:</span><br><span class="line">  - pathPrefix: <span class="string">&quot;/etc/cni/net.d&quot;</span></span><br><span class="line">  - pathPrefix: <span class="string">&quot;/etc/kube-flannel&quot;</span></span><br><span class="line">  - pathPrefix: <span class="string">&quot;/run/flannel&quot;</span></span><br><span class="line">  readOnlyRootFilesystem: <span class="literal">false</span></span><br><span class="line">  <span class="comment"># Users and groups</span></span><br><span class="line">  runAsUser:</span><br><span class="line">    rule: RunAsAny</span><br><span class="line">  supplementalGroups:</span><br><span class="line">    rule: RunAsAny</span><br><span class="line">  fsGroup:</span><br><span class="line">    rule: RunAsAny</span><br><span class="line">  <span class="comment"># Privilege Escalation</span></span><br><span class="line">  allowPrivilegeEscalation: <span class="literal">false</span></span><br><span class="line">  defaultAllowPrivilegeEscalation: <span class="literal">false</span></span><br><span class="line">  <span class="comment"># Capabilities</span></span><br><span class="line">  allowedCapabilities: [<span class="string">&#x27;NET_ADMIN&#x27;</span>, <span class="string">&#x27;NET_RAW&#x27;</span>]</span><br><span class="line">  defaultAddCapabilities: []</span><br><span class="line">  requiredDropCapabilities: []</span><br><span class="line">  <span class="comment"># Host namespaces</span></span><br><span class="line">  hostPID: <span class="literal">false</span></span><br><span class="line">  hostIPC: <span class="literal">false</span></span><br><span class="line">  hostNetwork: <span class="literal">true</span></span><br><span class="line">  hostPorts:</span><br><span class="line">  - min: 0</span><br><span class="line">    max: 65535</span><br><span class="line">  <span class="comment"># SELinux</span></span><br><span class="line">  seLinux:</span><br><span class="line">    <span class="comment"># SELinux is unused in CaaSP</span></span><br><span class="line">    rule: <span class="string">&#x27;RunAsAny&#x27;</span></span><br><span class="line">---</span><br><span class="line">kind: ClusterRole</span><br><span class="line">apiVersion: rbac.authorization.k8s.io/v1</span><br><span class="line">metadata:</span><br><span class="line">  name: flannel</span><br><span class="line">rules:</span><br><span class="line">- apiGroups: [<span class="string">&#x27;extensions&#x27;</span>]</span><br><span class="line">  resources: [<span class="string">&#x27;podsecuritypolicies&#x27;</span>]</span><br><span class="line">  verbs: [<span class="string">&#x27;use&#x27;</span>]</span><br><span class="line">  resourceNames: [<span class="string">&#x27;psp.flannel.unprivileged&#x27;</span>]</span><br><span class="line">- apiGroups:</span><br><span class="line">  - <span class="string">&quot;&quot;</span></span><br><span class="line">  resources:</span><br><span class="line">  - pods</span><br><span class="line">  verbs:</span><br><span class="line">  - get</span><br><span class="line">- apiGroups:</span><br><span class="line">  - <span class="string">&quot;&quot;</span></span><br><span class="line">  resources:</span><br><span class="line">  - nodes</span><br><span class="line">  verbs:</span><br><span class="line">  - list</span><br><span class="line">  - watch</span><br><span class="line">- apiGroups:</span><br><span class="line">  - <span class="string">&quot;&quot;</span></span><br><span class="line">  resources:</span><br><span class="line">  - nodes/status</span><br><span class="line">  verbs:</span><br><span class="line">  - patch</span><br><span class="line">---</span><br><span class="line">kind: ClusterRoleBinding</span><br><span class="line">apiVersion: rbac.authorization.k8s.io/v1</span><br><span class="line">metadata:</span><br><span class="line">  name: flannel</span><br><span class="line">roleRef:</span><br><span class="line">  apiGroup: rbac.authorization.k8s.io</span><br><span class="line">  kind: ClusterRole</span><br><span class="line">  name: flannel</span><br><span class="line">subjects:</span><br><span class="line">- kind: ServiceAccount</span><br><span class="line">  name: flannel</span><br><span class="line">  namespace: kube-system</span><br><span class="line">---</span><br><span class="line">apiVersion: v1</span><br><span class="line">kind: ServiceAccount</span><br><span class="line">metadata:</span><br><span class="line">  name: flannel</span><br><span class="line">  namespace: kube-system</span><br><span class="line">---</span><br><span class="line">kind: ConfigMap</span><br><span class="line">apiVersion: v1</span><br><span class="line">metadata:</span><br><span class="line">  name: kube-flannel-cfg</span><br><span class="line">  namespace: kube-system</span><br><span class="line">  labels:</span><br><span class="line">    tier: node</span><br><span class="line">    app: flannel</span><br><span class="line">data:</span><br><span class="line">  cni-conf.json: |</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">&quot;name&quot;</span>: <span class="string">&quot;cbr0&quot;</span>,</span><br><span class="line">      <span class="string">&quot;cniVersion&quot;</span>: <span class="string">&quot;0.3.1&quot;</span>,</span><br><span class="line">      <span class="string">&quot;plugins&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="string">&quot;type&quot;</span>: <span class="string">&quot;flannel&quot;</span>,</span><br><span class="line">          <span class="string">&quot;delegate&quot;</span>: &#123;</span><br><span class="line">            <span class="string">&quot;hairpinMode&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">            <span class="string">&quot;isDefaultGateway&quot;</span>: <span class="literal">true</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="string">&quot;type&quot;</span>: <span class="string">&quot;portmap&quot;</span>,</span><br><span class="line">          <span class="string">&quot;capabilities&quot;</span>: &#123;</span><br><span class="line">            <span class="string">&quot;portMappings&quot;</span>: <span class="literal">true</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  net-conf.json: |</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">&quot;Network&quot;</span>: <span class="string">&quot;10.244.0.0/16&quot;</span>,</span><br><span class="line">      <span class="string">&quot;Backend&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;Type&quot;</span>: <span class="string">&quot;vxlan&quot;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">---</span><br><span class="line">apiVersion: apps/v1</span><br><span class="line">kind: DaemonSet</span><br><span class="line">metadata:</span><br><span class="line">  name: kube-flannel-ds</span><br><span class="line">  namespace: kube-system</span><br><span class="line">  labels:</span><br><span class="line">    tier: node</span><br><span class="line">    app: flannel</span><br><span class="line">spec:</span><br><span class="line">  selector:</span><br><span class="line">    matchLabels:</span><br><span class="line">      app: flannel</span><br><span class="line">  template:</span><br><span class="line">    metadata:</span><br><span class="line">      labels:</span><br><span class="line">        tier: node</span><br><span class="line">        app: flannel</span><br><span class="line">    spec:</span><br><span class="line">      affinity:</span><br><span class="line">        nodeAffinity:</span><br><span class="line">          requiredDuringSchedulingIgnoredDuringExecution:</span><br><span class="line">            nodeSelectorTerms:</span><br><span class="line">            - matchExpressions:</span><br><span class="line">              - key: kubernetes.io/os</span><br><span class="line">                operator: In</span><br><span class="line">                values:</span><br><span class="line">                - linux</span><br><span class="line">      hostNetwork: <span class="literal">true</span></span><br><span class="line">      priorityClassName: system-node-critical</span><br><span class="line">      tolerations:</span><br><span class="line">      - operator: Exists</span><br><span class="line">        effect: NoSchedule</span><br><span class="line">      serviceAccountName: flannel</span><br><span class="line">      initContainers:</span><br><span class="line">      - name: install-cni</span><br><span class="line">        image: quay.io/coreos/flannel:v0.14.0</span><br><span class="line">        <span class="built_in">command</span>:</span><br><span class="line">        - cp</span><br><span class="line">        args:</span><br><span class="line">        - -f</span><br><span class="line">        - /etc/kube-flannel/cni-conf.json</span><br><span class="line">        - /etc/cni/net.d/10-flannel.conflist</span><br><span class="line">        volumeMounts:</span><br><span class="line">        - name: cni</span><br><span class="line">          mountPath: /etc/cni/net.d</span><br><span class="line">        - name: flannel-cfg</span><br><span class="line">          mountPath: /etc/kube-flannel/</span><br><span class="line">      containers:</span><br><span class="line">      - name: kube-flannel</span><br><span class="line">        image: quay.io/coreos/flannel:v0.14.0</span><br><span class="line">        <span class="built_in">command</span>:</span><br><span class="line">        - /opt/bin/flanneld</span><br><span class="line">        args:</span><br><span class="line">        - --ip-masq</span><br><span class="line">        - --kube-subnet-mgr</span><br><span class="line">        resources:</span><br><span class="line">          requests:</span><br><span class="line">            cpu: <span class="string">&quot;100m&quot;</span></span><br><span class="line">            memory: <span class="string">&quot;50Mi&quot;</span></span><br><span class="line">          limits:</span><br><span class="line">            cpu: <span class="string">&quot;100m&quot;</span></span><br><span class="line">            memory: <span class="string">&quot;50Mi&quot;</span></span><br><span class="line">        securityContext:</span><br><span class="line">          privileged: <span class="literal">false</span></span><br><span class="line">          capabilities:</span><br><span class="line">            add: [<span class="string">&quot;NET_ADMIN&quot;</span>, <span class="string">&quot;NET_RAW&quot;</span>]</span><br><span class="line">        env:</span><br><span class="line">        - name: POD_NAME</span><br><span class="line">          valueFrom:</span><br><span class="line">            fieldRef:</span><br><span class="line">              fieldPath: metadata.name</span><br><span class="line">        - name: POD_NAMESPACE</span><br><span class="line">          valueFrom:</span><br><span class="line">            fieldRef:</span><br><span class="line">              fieldPath: metadata.namespace</span><br><span class="line">        volumeMounts:</span><br><span class="line">        - name: run</span><br><span class="line">          mountPath: /run/flannel</span><br><span class="line">        - name: flannel-cfg</span><br><span class="line">          mountPath: /etc/kube-flannel/</span><br><span class="line">      volumes:</span><br><span class="line">      - name: run</span><br><span class="line">        hostPath:</span><br><span class="line">          path: /run/flannel</span><br><span class="line">      - name: cni</span><br><span class="line">        hostPath:</span><br><span class="line">          path: /etc/cni/net.d</span><br><span class="line">      - name: flannel-cfg</span><br><span class="line">        configMap:</span><br><span class="line">          name: kube-flannel-cfg</span><br></pre></td></tr></table></figure>
-
-<h3 id="使用kubectl安装flannel插件"><a href="#使用kubectl安装flannel插件" class="headerlink" title="使用kubectl安装flannel插件"></a>使用kubectl安装flannel插件</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装flannel插件</span></span><br><span class="line">[root@k8s-worker6 yaml]# kubectl apply -f kube-flannel.yml</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 再次查看node状态，此时应该全为Ready状态</span></span><br><span class="line">[root@k8s-worker6 yaml]# kubectl get nodes</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-4-1部署flannel网络插件时发现flannel-pod一直处于CrashLoopBackOff状态，查看日志提示没有分配cidr"><a href="#4-4-1部署flannel网络插件时发现flannel-pod一直处于CrashLoopBackOff状态，查看日志提示没有分配cidr" class="headerlink" title="4.4.1部署flannel网络插件时发现flannel pod一直处于CrashLoopBackOff状态，查看日志提示没有分配cidr"></a>4.4.1<strong>部署flannel网络插件时发现flannel pod一直处于CrashLoopBackOff状态，查看日志提示没有分配cidr</strong></h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看pods运行状态</span></span><br><span class="line">[root@k8s-worker6 yaml]# kubectl get pods --all-namespaces</span><br><span class="line"><span class="meta">#</span><span class="bash"> 针对失败的pods通过日志查找原因</span></span><br><span class="line">[root@k8s-worker6 yaml]# kubectl logs kube-flannel-ds-2qhdt -n kube-system</span><br></pre></td></tr></table></figure>
-
-<p>解决方法如下,master节点修改/etc/kubernetes/manifests/kube-controller-manager.yaml文件：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@k8s-worker6 ~]# vim /etc/kubernetes/manifests/kube-controller-manager.yaml</span><br><span class="line">增加参数：</span><br><span class="line">--allocate-node-cidrs=true</span><br><span class="line">--cluster-cidr=10.244.0.0/16</span><br><span class="line">重启kubelet</span><br><span class="line">[root@k8s-worker6 ~]# systemctl restart kubelet</span><br><span class="line">[root@k8s-worker6 yaml]# kubectl get pods --all-namespaces</span><br></pre></td></tr></table></figure>
-
-<h2 id="4-5-Master节点添加自动补全脚本到系统"><a href="#4-5-Master节点添加自动补全脚本到系统" class="headerlink" title="4.5 Master节点添加自动补全脚本到系统"></a>4.5 Master节点添加自动补全脚本到系统</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@k8s-worker6 ~]# yum install -y bash-completion</span><br><span class="line">[root@k8s-worker6 ~]# source /usr/share/bash-completion/bash_completion</span><br><span class="line">[root@k8s-worker6 ~]# source &lt;(kubectl completion bash)</span><br><span class="line">[root@k8s-worker6 ~]# echo &quot;source &lt;(kubectl completion bash)&quot; &gt;&gt; ~/.bashrc</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>环境安装</category>
-      </categories>
-      <tags>
-        <tag>K8S</tag>
-        <tag>环境安装</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2015-2020工作日志</title>
     <url>/Echo/2020/04/02/%E4%BA%94%E5%B9%B4%E5%B7%A5%E4%BD%9C%E6%84%9F%E6%82%9F/</url>
     <content><![CDATA[<h5 id="学校生涯"><a href="#学校生涯" class="headerlink" title="学校生涯"></a>学校生涯</h5><p>​       我自身是河南人，不过有一颗不安分的心。高考志愿填报了大连交通大学，选了软件工程与信息管理与信息系统的双专业学位，学制五年。大三期间参与学校老师ERP沙盘模拟软件的编写工作。在这期间开始真正的接触项目，这时才知道学习与实战的差距。当时主要用的J2EE和java struct。项目做到大四完成。完成第一版之后在学校的校内ERP沙盘大赛和校内实践课程上已经开始运用了。听说现在还在使用中。</p>
@@ -2914,52 +2914,6 @@
       </tags>
   </entry>
   <entry>
-    <title>YARN原理及工作流？</title>
-    <url>/Echo/2022/01/08/%E4%BB%80%E4%B9%88%E6%98%AFYARN/</url>
-    <content><![CDATA[<h4 id="YRAN是什么？"><a href="#YRAN是什么？" class="headerlink" title="YRAN是什么？"></a>YRAN是什么？</h4><p>YARN是hadoop集群中另一个资源管理者，为需要在Hadoop集群上执行的各种作业分配资源。在Hadoop 2.0中引入的。在Hadoop 2.0中引入了YARN，使用它能够超越MapReduce。</p>
-<p><img src="Framework-Supported-by-YARN.jpg" alt="Framework-Supported-by-YARN"></p>
-<p>正如你在图中看到的，我们在两者之间的底部有HDFS，我们有YARN并使用YARN，很多框架都能够连接和利用HDFS。因此，即使MapReduce也用于使用YARN进行连接以请求资源，并且只有这样它才能通过HDFS（即Hadoop Cluster）执行作业。</p>
-<p>同样;SPARK，STORM和其他搜索引擎可以连接到HDFS。HBase是一个No SQL数据库也可以连接它。因此，HDFS的应用变得庞大，因为YARN能够为其他框架和其他大数据分析工具更好的分配资源。</p>
-<h4 id="Hadoop-2-x-守护进程"><a href="#Hadoop-2-x-守护进程" class="headerlink" title="Hadoop 2.x 守护进程"></a>Hadoop 2.x 守护进程</h4><p>让我们快速看一下Hadoop 2.0中新引入的守护进程，它们运行组件，即存储和处理。</p>
-<p>在HDFS一文中，我们详细理解了守护进程，即NameNode和DataNode。在此，我们将了解资源管理器和节点管理器如何在 Hadoop 2.x 群集中工作，以管理需要在 Hadoop 群集中执行的处理和作业。</p>
-<p><img src="Hadoop-2-Daemons.jpg" alt="Hadoop-2-Daemons"></p>
-<p>什么是资源管理器？资源管理器是在主计算机或 NameNode（高端计算机）上运行的主守护程序。另一方面，节点管理器是在从属机器或DataNodes上运行的守护进程，或者与DataNode进程一起运行。</p>
-<h4 id="Hadoop-2-x-MapReduce-YARN-组件"><a href="#Hadoop-2-x-MapReduce-YARN-组件" class="headerlink" title="Hadoop 2.x MapReduce YARN 组件"></a>Hadoop 2.x MapReduce YARN 组件</h4><p>首先我们探讨下YARN的其他组件：</p>
-<ul>
-<li><strong>客户端：</strong>它是一个提交类似作业的命令行界面 （CLI） 的单元，客户端可以是 JAVA 应用程序。</li>
-<li><strong>资源管理器：</strong>它是一个主守护程序，所有作业都从客户端提交到该守护程序，并且是分配所有群集级别资源以执行特定作业的主守护程序。它运行在具有高质量硬件和良好配置的高端计算机上，因为它是必须管理群集上所有内容的主计算机。</li>
-<li><strong>节点管理器</strong>：它是一个在从属机器或DataNode上运行的从属守护进程，因此每个从属机器都有一个运行的节点管理器。它监视特定 DataNode 的资源，资源管理器管理群集资源，节点管理器管理 DataNode 资源。</li>
-<li><strong>作业历史记录服务器：</strong>它是跟踪已在群集上执行或已提交到群集的所有作业的单元。它还跟踪状态，并保留在Hadoop集群上发生的每次执行的日志文件。</li>
-<li><strong>应用程序主</strong>设备：它是一个通过节点计算机（从属计算机）执行的组件，由资源管理器创建以执行和管理作业。它是从资源管理器协商资源并最终与节点管理器协调以执行任务的那个。</li>
-<li><strong>容器：</strong>它由节点管理器本身创建，该节点管理器已由资源管理器分配，所有作业最终在容器中执行。</li>
-</ul>
-<h4 id="YARN工作流程"><a href="#YARN工作流程" class="headerlink" title="YARN工作流程"></a>YARN工作流程</h4><p><img src="YARN-Work-Flow.jpg" alt="YARN-Work-Flow"></p>
-<p>如上图所示，有一个资源管理器，所有作业都已提交到该管理器，并且有一个群集，其中有从属计算机，并且在每台从属计算机上，都有一个节点管理器正在运行。</p>
-<p>资源管理器有两个组件，即计划程序和应用程序管理器。</p>
-<p>应用程序主服务器和应用程序管理器之间有什么区别？</p>
-<p>应用程序管理器是资源管理器的一个组件，可确保执行每个任务并为其创建应用程序主节点。另一方面，应用程序主服务器是执行任务并请求需要执行的所有资源的人员。</p>
-<p>假设作业已提交到资源管理器，一旦作业提交，计划程序就会计划该作业。一旦计划程序计划要执行的作业，应用程序管理器将在其中一个DataNode 中创建一个容器，并且在此容器中，将启动应用程序主节点。</p>
-<p>然后，此应用程序主机将向资源管理器注册，并请求容器来执行任务。分配容器后，应用程序主节点现在将与节点管理器连接，并请求启动容器。</p>
-<p>正如我们所看到的，应用程序主节点被分配给DataNodes D和E，现在这个应用程序主节点请求节点管理器启动DataNode D和DataNode E的容器。</p>
-<p>一旦容器启动，应用程序主服务器将在容器内执行任务，结果将发送回客户端。</p>
-<h4 id="作业执行流程"><a href="#作业执行流程" class="headerlink" title="作业执行流程"></a>作业执行流程</h4><p>我们以一种顺序的方式理解资源申请流程。</p>
-<p><img src="Sequence-of-Execution.jpg" alt="Sequence-of-Execution"></p>
-<p>图中有四个组件，一个是客户端（client），一个是资源管理器（resource manager），一个是节点管理器（node manager），一个是程序主节点（application master）</p>
-<p>第一步是将作业提交给资源管理器的客户端，在第二步中，资源管理器分配一个容器以启动从属计算机上的应用程序主站;第三步是应用程序主机向资源管理器注册。</p>
-<p>一旦它注册，它就会请求容器执行任务，即第四步。在步骤 5 中，应用程序主机通知需要在其上启动容器的节点管理器。</p>
-<p>在第六步中，节点管理器启动容器后，应用程序主机将在这些容器中执行代码。</p>
-<p>最后，在第七步中，客户端联系资源管理器或应用程序主机以监视应用程序状态。</p>
-<p>最后，应用程序主机将从资源管理器中注销自身，并将结果返回给客户端。因此，这是一个简单的顺序流，说明如何使用YARN框架执行MapReduce程序。</p>
-]]></content>
-      <categories>
-        <category>大数据</category>
-      </categories>
-      <tags>
-        <tag>大数据</tag>
-        <tag>yarn</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MapReduce是什么？</title>
     <url>/Echo/2022/01/03/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/</url>
     <content><![CDATA[<h4 id="为什么需要MapReduce？"><a href="#为什么需要MapReduce？" class="headerlink" title="为什么需要MapReduce？"></a>为什么需要MapReduce？</h4><p><img src="Map-Reduce.jpg" alt="Map-Reduce"></p>
@@ -3035,96 +2989,76 @@
       </tags>
   </entry>
   <entry>
-    <title>大数据是什么？</title>
-    <url>/Echo/2021/12/19/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%A7%E6%95%B0%E6%8D%AE/</url>
-    <content><![CDATA[<h3 id="什么是大数据？"><a href="#什么是大数据？" class="headerlink" title="什么是大数据？"></a>什么是大数据？</h3><p>“巨大”这个词不足以解释大数据，某些特征将数据分类为大数据。</p>
-<p>我们有大数据的三个主要特征，如果任何数据满足这些特征，那么它将被视为大数据。它是下面提到的三个 V 的组合：</p>
+    <title>YARN原理及工作流？</title>
+    <url>/Echo/2022/01/08/%E4%BB%80%E4%B9%88%E6%98%AFYARN/</url>
+    <content><![CDATA[<h4 id="YRAN是什么？"><a href="#YRAN是什么？" class="headerlink" title="YRAN是什么？"></a>YRAN是什么？</h4><p>YARN是hadoop集群中另一个资源管理者，为需要在Hadoop集群上执行的各种作业分配资源。在Hadoop 2.0中引入的。在Hadoop 2.0中引入了YARN，使用它能够超越MapReduce。</p>
+<p><img src="Framework-Supported-by-YARN.jpg" alt="Framework-Supported-by-YARN"></p>
+<p>正如你在图中看到的，我们在两者之间的底部有HDFS，我们有YARN并使用YARN，很多框架都能够连接和利用HDFS。因此，即使MapReduce也用于使用YARN进行连接以请求资源，并且只有这样它才能通过HDFS（即Hadoop Cluster）执行作业。</p>
+<p>同样;SPARK，STORM和其他搜索引擎可以连接到HDFS。HBase是一个No SQL数据库也可以连接它。因此，HDFS的应用变得庞大，因为YARN能够为其他框架和其他大数据分析工具更好的分配资源。</p>
+<h4 id="Hadoop-2-x-守护进程"><a href="#Hadoop-2-x-守护进程" class="headerlink" title="Hadoop 2.x 守护进程"></a>Hadoop 2.x 守护进程</h4><p>让我们快速看一下Hadoop 2.0中新引入的守护进程，它们运行组件，即存储和处理。</p>
+<p>在HDFS一文中，我们详细理解了守护进程，即NameNode和DataNode。在此，我们将了解资源管理器和节点管理器如何在 Hadoop 2.x 群集中工作，以管理需要在 Hadoop 群集中执行的处理和作业。</p>
+<p><img src="Hadoop-2-Daemons.jpg" alt="Hadoop-2-Daemons"></p>
+<p>什么是资源管理器？资源管理器是在主计算机或 NameNode（高端计算机）上运行的主守护程序。另一方面，节点管理器是在从属机器或DataNodes上运行的守护进程，或者与DataNode进程一起运行。</p>
+<h4 id="Hadoop-2-x-MapReduce-YARN-组件"><a href="#Hadoop-2-x-MapReduce-YARN-组件" class="headerlink" title="Hadoop 2.x MapReduce YARN 组件"></a>Hadoop 2.x MapReduce YARN 组件</h4><p>首先我们探讨下YARN的其他组件：</p>
 <ul>
-<li>volume：体积</li>
-<li>velocity：速度</li>
-<li>variety：多样性</li>
+<li><strong>客户端：</strong>它是一个提交类似作业的命令行界面 （CLI） 的单元，客户端可以是 JAVA 应用程序。</li>
+<li><strong>资源管理器：</strong>它是一个主守护程序，所有作业都从客户端提交到该守护程序，并且是分配所有群集级别资源以执行特定作业的主守护程序。它运行在具有高质量硬件和良好配置的高端计算机上，因为它是必须管理群集上所有内容的主计算机。</li>
+<li><strong>节点管理器</strong>：它是一个在从属机器或DataNode上运行的从属守护进程，因此每个从属机器都有一个运行的节点管理器。它监视特定 DataNode 的资源，资源管理器管理群集资源，节点管理器管理 DataNode 资源。</li>
+<li><strong>作业历史记录服务器：</strong>它是跟踪已在群集上执行或已提交到群集的所有作业的单元。它还跟踪状态，并保留在Hadoop集群上发生的每次执行的日志文件。</li>
+<li><strong>应用程序主</strong>设备：它是一个通过节点计算机（从属计算机）执行的组件，由资源管理器创建以执行和管理作业。它是从资源管理器协商资源并最终与节点管理器协调以执行任务的那个。</li>
+<li><strong>容器：</strong>它由节点管理器本身创建，该节点管理器已由资源管理器分配，所有作业最终在容器中执行。</li>
 </ul>
-<p><img src="Three-Vs.png"></p>
-<p>volume：应该是巨大体积的数据。大数据具有维护大量数据的解决方案，这些数据以TB或PB为单位。我们可以轻松有效地对大数据执行CRUD（创建，读取，更新和删除）操作。</p>
-<p>volecity：更快地访问数据。如今的社交媒体需要在很短的时间内快速交换数据，而大数据是它的最佳解决方案。因此，速度是另一个特征，它是数据的处理速度。</p>
-<p>variety：在社交媒体上，我们正在处理非结构化数据，如音频或视频记录，图像等。此外，银行领域等各个行业都需要结构化和半结构化数据。大数据是在一个地方维护两种类型的数据的解决方案。</p>
-<p>多样性意味着不同类型的数据，如多个来源的结构化/非结构化数据。</p>
-<p><strong>结构化数据</strong>：具有适当结构的数据或可以轻松存储在任何关系数据库中（如Oracle，SQL Server或MySQL）中的表格形式的数据称为结构化数据。我们可以轻松有效地处理或分析它。</p>
-<p>结构化数据的一个例子是存储在关系数据库中的数据，可以使用SQL（结构化查询语言）进行管理。<strong>例如</strong>员工数据（姓名、ID、职称和薪水）可以以表格格式存储。</p>
-<p>在传统数据库中，只有在非结构化或半结构化数据格式化或适合关系数据库后，我们才能执行操作或处理数据。结构化数据<strong>的示例</strong>包括 ERP、CRM 等。</p>
-<p><strong>半结构化数据：</strong>半结构化数据是未完全格式化的数据。它不存储在数据表或任何数据库中。但是，我们仍然可以轻松准备和处理它，因为此数据包含标记或逗号分隔值等。半结构化数据的示例：XML文件，CSV文件等。</p>
-<p><strong>非结构化数据：</strong>非结构化数据是没有任何结构的数据。它可以是任何形式，没有预定义的数据模型。我们无法将其存储在传统数据库中。搜索和处理它很复杂。</p>
-<p>此外，非结构化数据的数量也非常高。非结构化数据的示例：电子邮件正文、音频、视频、图像、实现的文档等。</p>
-<h4 id="传统数据库的挑战"><a href="#传统数据库的挑战" class="headerlink" title="传统数据库的挑战"></a>传统数据库的挑战</h4><p><img src="Challenges-of-Traditional-Databases.png" alt="Challenges-of-Traditional-Databases"></p>
-<ul>
-<li>传统数据库不支持各种数据，即它无法处理非结构化和半结构化数据。</li>
-<li>传统数据库在处理大量数据时速度很慢。</li>
-<li>在传统数据库中，处理或分析大量数据非常困难。</li>
-<li>传统数据库能够存储以 TB 或 PB 为单位的数据。</li>
-<li>传统数据库无法处理历史数据和报告。</li>
-<li>经过一定时间后，需要对数据库进行数据清理。</li>
-<li>使用传统数据库，维护大量数据的成本非常高。</li>
-<li>传统数据库中的数据准确性较低，因为其中未维护完整的历史数据。</li>
-</ul>
-<h4 id="与传统数据库相比，大数据的优势"><a href="#与传统数据库相比，大数据的优势" class="headerlink" title="与传统数据库相比，大数据的优势"></a>与传统数据库相比，大数据的优势</h4><p><img src="Advantages-of-BigData-over-Traditional-database.png" alt="Advantages-of-BigData-over-Traditional-database"></p>
-<ul>
-<li>大数据负责处理、管理和处理不同类型的数据，如结构化、半结构化和非结构化数据。</li>
-<li>它在维护大量数据方面具有成本效益。它适用于分布式数据库系统。</li>
-<li>我们可以使用大数据技术长时间保存大量数据。因此，处理历史数据和生成准确报告很容易。</li>
-<li>数据处理速度非常快，因此社交媒体正在使用大数据技术。</li>
-<li>数据准确性是大数据的一大优势。</li>
-<li>它允许用户根据当前和历史数据为其业务做出有效的决策。</li>
-<li>错误处理、版本控制和客户体验在大数据中非常有效。</li>
-</ul>
-<h4 id="大数据中的挑战和风险"><a href="#大数据中的挑战和风险" class="headerlink" title="大数据中的挑战和风险"></a>大数据中的挑战和风险</h4><p><strong>挑战：</strong></p>
-<ol>
-<li>大数据面临的主要挑战之一是管理大量数据。如今，数据来自各种来源的系统，种类繁多。因此，对于公司来说，妥善管理它是一个非常大的挑战。如，要生成包含过去 20 年数据的报告，它需要保存和维护系统过去 20 年的数据。为了提供准确的报告，有必要仅将相关数据放入系统。它不应该包含不相关或不必要的数据，否则保持如此大量的数据对公司来说将是一个巨大的挑战。</li>
-<li>该技术的另一个挑战是各种类型数据的同步。众所周知，大数据支持来自不同来源的结构化、非结构化和半结构化数据，因此同步数据并获得数据的一致性非常困难。</li>
-<li>公司面临的下一个挑战是专家的差距，他们可以帮助和实施他们在系统中面临的问题。这个领域的人才缺口很大。</li>
-<li>处理合规性方面成本高昂。</li>
-<li>大数据的数据收集、聚合、存储、分析和报告具有巨大的成本。组织应该能够管理所有这些成本。</li>
-</ol>
-<p><strong>风险：</strong></p>
-<ol>
-<li>它可以处理各种数据，但如果公司无法正确理解需求并控制数据源，那么它将提供有缺陷的结果。因此，它将需要大量的时间和金钱来调查和纠正结果。</li>
-<li>数据安全是大数据的另一个风险。由于数据量很大，因此有人窃取数据的可能性更高。数据黑客可能会窃取和出售公司的重要信息（包括历史数据）。</li>
-<li>此外，数据隐私是大数据的另一个风险。如果我们想保护个人和敏感数据免受黑客攻击，那么它应该受到保护，并且必须通过所有隐私政策。</li>
-</ol>
-<h4 id="大数据技术"><a href="#大数据技术" class="headerlink" title="大数据技术"></a>大数据技术</h4><ol>
-<li>Apache Hadoop</li>
-<li>Microsoft HDInsight</li>
-<li>No SQL</li>
-<li>Hive</li>
-<li>Sqoop</li>
-<li>BigData in Excel</li>
-</ol>
-<h4 id="大数据和数据仓库"><a href="#大数据和数据仓库" class="headerlink" title="大数据和数据仓库"></a>大数据和数据仓库</h4><p>数据仓库是我们在讨论Hadoop或大数据测试之前需要了解的基本概念。</p>
-<p>让我们从实时示例中了解数据仓库。<strong>例如</strong>，有一家公司在三个不同的国家建立了分支机构，让我们假设在印度，澳大利亚和日本设有分支机构。</p>
-<p>在每个分支机构中，整个客户数据存储在本地数据库中。这些本地数据库可以是普通的经典RDBMS，如Oracle或MySQL或SQL Server等，所有客户数据都将每天存储在其中。</p>
-<p>现在，每个季度、每半年或每年，组织都希望分析这些数据以进行业务开发。为了做同样的事情，组织将从多个来源收集所有这些数据，然后将其放在一个地方，这个地方被称为**”数据仓库”。**</p>
-<p>数据仓库是一种数据库，它包含通过**”ETL”（<strong>即 E xtract、T ransform 和</strong>L**oad）过程从多个源或多个数据库类型中提取的所有数据。数据在数据仓库中准备就绪后，我们可以将其用于分析目的。</p>
-<p>因此，为了进行分析，我们可以根据数据仓库中的可用数据生成报告。可以使用商业智能工具生成多个图表和报告。</p>
-<p>我们需要数据仓库用于分析目的，以发展业务并为组织做出适当的决策。</p>
-<p><img src="Organization-Data-WareHouse.jpg" alt="Organization-Data-WareHouse"></p>
-<p>在此过程中发生了三件事，首先是我们从多个源中提取数据，并将其放在数据仓库的单个位置。</p>
-<p>在这里，我们使用”ETL”过程，因此在将数据从多个源加载到一个地方时，我们将在转换根中应用它，然后我们可以在这里使用各种ETL工具。</p>
-<p>一旦数据准备好进入数据仓库，我们就可以生成各种报告，以使用商业智能（BI）工具分析业务数据，或者我们称之为报告工具。Tableau 或 Cognos 等工具可用于生成报告和 DashBoard，用于分析业务数据。</p>
-<h4 id="OLTP-和-OLAP"><a href="#OLTP-和-OLAP" class="headerlink" title="OLTP 和 OLAP"></a>OLTP 和 OLAP</h4><p>本地维护并用于事务目的的数据库称为<strong>OLTP，即联机事务处理。</strong>日常事务将存储在此处并立即更新，这就是为什么我们称它们为OLTP系统。</p>
-<p>在这里，我们使用传统数据库，我们有多个表，并且有关系，因此一切都是根据数据库系统地规划的。我们不会将这些数据用于分析目的。在这里，我们可以使用经典的RDMBS数据库，如Oracle，MySQL，SQL Server等。</p>
-<p>当我们进入数据仓库部分时，我们使用Teradata或Hadoop系统，它们也是一种数据库，但DataWarehouse中的数据通常用于分析目的，称为<strong>OLAP</strong>或<strong>在线分析处理。</strong></p>
-<p>在这里，数据可以每季度，每半年或每年更新一次。有时数据也会”Offerly”更新，其中Offerly表示根据客户要求更新和获取数据以进行分析。</p>
-<p>此外，用于分析的数据不会每天更新，因为我们将按计划从多个来源获取数据，并且可以执行此 ETL 任务。这就是在线分析处理系统的工作原理。</p>
-<p>同样，BI工具或报告工具可以生成报告以及仪表板，并且基于此，业务人员将做出改进其业务的决策。</p>
-<h3 id="大数据从何而来？"><a href="#大数据从何而来？" class="headerlink" title="大数据从何而来？"></a>大数据从何而来？</h3><p>大数据是超出传统数据库的存储和处理能力的数据，它采用结构化和非结构化格式，因此无法由本地RDBMS系统处理。</p>
-<p>这种数据将以TB（TB）或PB或更高速率生成，并且现在正在迅速增加。有多个来源可以获得这种数据，例如Facebook，WhatsApp（与社交网络有关）;亚马逊，与电子商务相关的Flipkart;Gmail，Yahoo，Rediff与电子邮件和Google等搜索引擎有关。我们还从手机中获取大数据，例如SMS数据，通话记录，通话记录等。</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>大数据是高效、安全地处理大量数据的解决方案。它还负责维护历史数据。这项技术有很多优点，这就是为什么每家公司都想转向大数据</p>
+<h4 id="YARN工作流程"><a href="#YARN工作流程" class="headerlink" title="YARN工作流程"></a>YARN工作流程</h4><p><img src="YARN-Work-Flow.jpg" alt="YARN-Work-Flow"></p>
+<p>如上图所示，有一个资源管理器，所有作业都已提交到该管理器，并且有一个群集，其中有从属计算机，并且在每台从属计算机上，都有一个节点管理器正在运行。</p>
+<p>资源管理器有两个组件，即计划程序和应用程序管理器。</p>
+<p>应用程序主服务器和应用程序管理器之间有什么区别？</p>
+<p>应用程序管理器是资源管理器的一个组件，可确保执行每个任务并为其创建应用程序主节点。另一方面，应用程序主服务器是执行任务并请求需要执行的所有资源的人员。</p>
+<p>假设作业已提交到资源管理器，一旦作业提交，计划程序就会计划该作业。一旦计划程序计划要执行的作业，应用程序管理器将在其中一个DataNode 中创建一个容器，并且在此容器中，将启动应用程序主节点。</p>
+<p>然后，此应用程序主机将向资源管理器注册，并请求容器来执行任务。分配容器后，应用程序主节点现在将与节点管理器连接，并请求启动容器。</p>
+<p>正如我们所看到的，应用程序主节点被分配给DataNodes D和E，现在这个应用程序主节点请求节点管理器启动DataNode D和DataNode E的容器。</p>
+<p>一旦容器启动，应用程序主服务器将在容器内执行任务，结果将发送回客户端。</p>
+<h4 id="作业执行流程"><a href="#作业执行流程" class="headerlink" title="作业执行流程"></a>作业执行流程</h4><p>我们以一种顺序的方式理解资源申请流程。</p>
+<p><img src="Sequence-of-Execution.jpg" alt="Sequence-of-Execution"></p>
+<p>图中有四个组件，一个是客户端（client），一个是资源管理器（resource manager），一个是节点管理器（node manager），一个是程序主节点（application master）</p>
+<p>第一步是将作业提交给资源管理器的客户端，在第二步中，资源管理器分配一个容器以启动从属计算机上的应用程序主站;第三步是应用程序主机向资源管理器注册。</p>
+<p>一旦它注册，它就会请求容器执行任务，即第四步。在步骤 5 中，应用程序主机通知需要在其上启动容器的节点管理器。</p>
+<p>在第六步中，节点管理器启动容器后，应用程序主机将在这些容器中执行代码。</p>
+<p>最后，在第七步中，客户端联系资源管理器或应用程序主机以监视应用程序状态。</p>
+<p>最后，应用程序主机将从资源管理器中注销自身，并将结果返回给客户端。因此，这是一个简单的顺序流，说明如何使用YARN框架执行MapReduce程序。</p>
 ]]></content>
       <categories>
         <category>大数据</category>
       </categories>
       <tags>
         <tag>大数据</tag>
-        <tag>数据</tag>
+        <tag>yarn</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>卸载centos自带的openjdk和MySQL</title>
+    <url>/Echo/2020/01/01/%E5%8D%B8%E8%BD%BDcentos%E8%87%AA%E5%B8%A6%E7%9A%84openjdk%E5%92%8CMySQL/</url>
+    <content><![CDATA[<h2 id="卸载openjdk"><a href="#卸载openjdk" class="headerlink" title="卸载openjdk"></a>卸载openjdk</h2><p>1.查看已经安装的jdk</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">rpm –qa|grep jdk</span><br><span class="line"></span><br><span class="line">java-1.7.0-openjdk-1.7.0.141-2.6.10.5.el7.x86_64</span><br><span class="line"></span><br><span class="line">java-1.8.0-openjdk-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">java-1.8.0-openjdk-headless-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">java-1.7.0-openjdk-headless-1.7.0.141-2.6.10.5.el7.x86_64</span><br><span class="line"></span><br><span class="line">ldap-4.19-1.el7.noarch</span><br><span class="line"></span><br><span class="line">copy-jdk-configs-2.2-3.el7.noarch</span><br></pre></td></tr></table></figure>
+
+<p>2.卸载命令</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum -y remove java-1.7.0-openjdk-1.7.0.141-2.6.10.5.el7.x86_64</span><br><span class="line"></span><br><span class="line">yum -y remove java-1.8.0-openjdk-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">yum -y remove java-1.8.0-openjdk-headless-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">yum -y remove java-1.7.0-openjdk-headless-1.7.0.141-2.6.10.5.el7.x86_64</span><br></pre></td></tr></table></figure>
+
+<p>.noarch文件不用</p>
+<p>3.用Java –version查看</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">提示如下： No such file or directoy</span><br></pre></td></tr></table></figure>
+
+<p>  卸载完成</p>
+<h2 id="卸载mysql"><a href="#卸载mysql" class="headerlink" title="卸载mysql"></a>卸载mysql</h2><p>执行命令</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum remove mariadb-libs</span><br></pre></td></tr></table></figure>
+
+<p>即可。</p>
+]]></content>
+      <categories>
+        <category>环境安装</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>JDK</tag>
       </tags>
   </entry>
   <entry>
@@ -3245,30 +3179,96 @@
       </tags>
   </entry>
   <entry>
-    <title>卸载centos自带的openjdk和MySQL</title>
-    <url>/Echo/2020/01/01/%E5%8D%B8%E8%BD%BDcentos%E8%87%AA%E5%B8%A6%E7%9A%84openjdk%E5%92%8CMySQL/</url>
-    <content><![CDATA[<h2 id="卸载openjdk"><a href="#卸载openjdk" class="headerlink" title="卸载openjdk"></a>卸载openjdk</h2><p>1.查看已经安装的jdk</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">rpm –qa|grep jdk</span><br><span class="line"></span><br><span class="line">java-1.7.0-openjdk-1.7.0.141-2.6.10.5.el7.x86_64</span><br><span class="line"></span><br><span class="line">java-1.8.0-openjdk-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">java-1.8.0-openjdk-headless-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">java-1.7.0-openjdk-headless-1.7.0.141-2.6.10.5.el7.x86_64</span><br><span class="line"></span><br><span class="line">ldap-4.19-1.el7.noarch</span><br><span class="line"></span><br><span class="line">copy-jdk-configs-2.2-3.el7.noarch</span><br></pre></td></tr></table></figure>
-
-<p>2.卸载命令</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum -y remove java-1.7.0-openjdk-1.7.0.141-2.6.10.5.el7.x86_64</span><br><span class="line"></span><br><span class="line">yum -y remove java-1.8.0-openjdk-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">yum -y remove java-1.8.0-openjdk-headless-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">yum -y remove java-1.7.0-openjdk-headless-1.7.0.141-2.6.10.5.el7.x86_64</span><br></pre></td></tr></table></figure>
-
-<p>.noarch文件不用</p>
-<p>3.用Java –version查看</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">提示如下： No such file or directoy</span><br></pre></td></tr></table></figure>
-
-<p>  卸载完成</p>
-<h2 id="卸载mysql"><a href="#卸载mysql" class="headerlink" title="卸载mysql"></a>卸载mysql</h2><p>执行命令</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum remove mariadb-libs</span><br></pre></td></tr></table></figure>
-
-<p>即可。</p>
+    <title>大数据是什么？</title>
+    <url>/Echo/2021/12/19/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%A7%E6%95%B0%E6%8D%AE/</url>
+    <content><![CDATA[<h3 id="什么是大数据？"><a href="#什么是大数据？" class="headerlink" title="什么是大数据？"></a>什么是大数据？</h3><p>“巨大”这个词不足以解释大数据，某些特征将数据分类为大数据。</p>
+<p>我们有大数据的三个主要特征，如果任何数据满足这些特征，那么它将被视为大数据。它是下面提到的三个 V 的组合：</p>
+<ul>
+<li>volume：体积</li>
+<li>velocity：速度</li>
+<li>variety：多样性</li>
+</ul>
+<p><img src="Three-Vs.png"></p>
+<p>volume：应该是巨大体积的数据。大数据具有维护大量数据的解决方案，这些数据以TB或PB为单位。我们可以轻松有效地对大数据执行CRUD（创建，读取，更新和删除）操作。</p>
+<p>volecity：更快地访问数据。如今的社交媒体需要在很短的时间内快速交换数据，而大数据是它的最佳解决方案。因此，速度是另一个特征，它是数据的处理速度。</p>
+<p>variety：在社交媒体上，我们正在处理非结构化数据，如音频或视频记录，图像等。此外，银行领域等各个行业都需要结构化和半结构化数据。大数据是在一个地方维护两种类型的数据的解决方案。</p>
+<p>多样性意味着不同类型的数据，如多个来源的结构化/非结构化数据。</p>
+<p><strong>结构化数据</strong>：具有适当结构的数据或可以轻松存储在任何关系数据库中（如Oracle，SQL Server或MySQL）中的表格形式的数据称为结构化数据。我们可以轻松有效地处理或分析它。</p>
+<p>结构化数据的一个例子是存储在关系数据库中的数据，可以使用SQL（结构化查询语言）进行管理。<strong>例如</strong>员工数据（姓名、ID、职称和薪水）可以以表格格式存储。</p>
+<p>在传统数据库中，只有在非结构化或半结构化数据格式化或适合关系数据库后，我们才能执行操作或处理数据。结构化数据<strong>的示例</strong>包括 ERP、CRM 等。</p>
+<p><strong>半结构化数据：</strong>半结构化数据是未完全格式化的数据。它不存储在数据表或任何数据库中。但是，我们仍然可以轻松准备和处理它，因为此数据包含标记或逗号分隔值等。半结构化数据的示例：XML文件，CSV文件等。</p>
+<p><strong>非结构化数据：</strong>非结构化数据是没有任何结构的数据。它可以是任何形式，没有预定义的数据模型。我们无法将其存储在传统数据库中。搜索和处理它很复杂。</p>
+<p>此外，非结构化数据的数量也非常高。非结构化数据的示例：电子邮件正文、音频、视频、图像、实现的文档等。</p>
+<h4 id="传统数据库的挑战"><a href="#传统数据库的挑战" class="headerlink" title="传统数据库的挑战"></a>传统数据库的挑战</h4><p><img src="Challenges-of-Traditional-Databases.png" alt="Challenges-of-Traditional-Databases"></p>
+<ul>
+<li>传统数据库不支持各种数据，即它无法处理非结构化和半结构化数据。</li>
+<li>传统数据库在处理大量数据时速度很慢。</li>
+<li>在传统数据库中，处理或分析大量数据非常困难。</li>
+<li>传统数据库能够存储以 TB 或 PB 为单位的数据。</li>
+<li>传统数据库无法处理历史数据和报告。</li>
+<li>经过一定时间后，需要对数据库进行数据清理。</li>
+<li>使用传统数据库，维护大量数据的成本非常高。</li>
+<li>传统数据库中的数据准确性较低，因为其中未维护完整的历史数据。</li>
+</ul>
+<h4 id="与传统数据库相比，大数据的优势"><a href="#与传统数据库相比，大数据的优势" class="headerlink" title="与传统数据库相比，大数据的优势"></a>与传统数据库相比，大数据的优势</h4><p><img src="Advantages-of-BigData-over-Traditional-database.png" alt="Advantages-of-BigData-over-Traditional-database"></p>
+<ul>
+<li>大数据负责处理、管理和处理不同类型的数据，如结构化、半结构化和非结构化数据。</li>
+<li>它在维护大量数据方面具有成本效益。它适用于分布式数据库系统。</li>
+<li>我们可以使用大数据技术长时间保存大量数据。因此，处理历史数据和生成准确报告很容易。</li>
+<li>数据处理速度非常快，因此社交媒体正在使用大数据技术。</li>
+<li>数据准确性是大数据的一大优势。</li>
+<li>它允许用户根据当前和历史数据为其业务做出有效的决策。</li>
+<li>错误处理、版本控制和客户体验在大数据中非常有效。</li>
+</ul>
+<h4 id="大数据中的挑战和风险"><a href="#大数据中的挑战和风险" class="headerlink" title="大数据中的挑战和风险"></a>大数据中的挑战和风险</h4><p><strong>挑战：</strong></p>
+<ol>
+<li>大数据面临的主要挑战之一是管理大量数据。如今，数据来自各种来源的系统，种类繁多。因此，对于公司来说，妥善管理它是一个非常大的挑战。如，要生成包含过去 20 年数据的报告，它需要保存和维护系统过去 20 年的数据。为了提供准确的报告，有必要仅将相关数据放入系统。它不应该包含不相关或不必要的数据，否则保持如此大量的数据对公司来说将是一个巨大的挑战。</li>
+<li>该技术的另一个挑战是各种类型数据的同步。众所周知，大数据支持来自不同来源的结构化、非结构化和半结构化数据，因此同步数据并获得数据的一致性非常困难。</li>
+<li>公司面临的下一个挑战是专家的差距，他们可以帮助和实施他们在系统中面临的问题。这个领域的人才缺口很大。</li>
+<li>处理合规性方面成本高昂。</li>
+<li>大数据的数据收集、聚合、存储、分析和报告具有巨大的成本。组织应该能够管理所有这些成本。</li>
+</ol>
+<p><strong>风险：</strong></p>
+<ol>
+<li>它可以处理各种数据，但如果公司无法正确理解需求并控制数据源，那么它将提供有缺陷的结果。因此，它将需要大量的时间和金钱来调查和纠正结果。</li>
+<li>数据安全是大数据的另一个风险。由于数据量很大，因此有人窃取数据的可能性更高。数据黑客可能会窃取和出售公司的重要信息（包括历史数据）。</li>
+<li>此外，数据隐私是大数据的另一个风险。如果我们想保护个人和敏感数据免受黑客攻击，那么它应该受到保护，并且必须通过所有隐私政策。</li>
+</ol>
+<h4 id="大数据技术"><a href="#大数据技术" class="headerlink" title="大数据技术"></a>大数据技术</h4><ol>
+<li>Apache Hadoop</li>
+<li>Microsoft HDInsight</li>
+<li>No SQL</li>
+<li>Hive</li>
+<li>Sqoop</li>
+<li>BigData in Excel</li>
+</ol>
+<h4 id="大数据和数据仓库"><a href="#大数据和数据仓库" class="headerlink" title="大数据和数据仓库"></a>大数据和数据仓库</h4><p>数据仓库是我们在讨论Hadoop或大数据测试之前需要了解的基本概念。</p>
+<p>让我们从实时示例中了解数据仓库。<strong>例如</strong>，有一家公司在三个不同的国家建立了分支机构，让我们假设在印度，澳大利亚和日本设有分支机构。</p>
+<p>在每个分支机构中，整个客户数据存储在本地数据库中。这些本地数据库可以是普通的经典RDBMS，如Oracle或MySQL或SQL Server等，所有客户数据都将每天存储在其中。</p>
+<p>现在，每个季度、每半年或每年，组织都希望分析这些数据以进行业务开发。为了做同样的事情，组织将从多个来源收集所有这些数据，然后将其放在一个地方，这个地方被称为**”数据仓库”。**</p>
+<p>数据仓库是一种数据库，它包含通过**”ETL”（<strong>即 E xtract、T ransform 和</strong>L**oad）过程从多个源或多个数据库类型中提取的所有数据。数据在数据仓库中准备就绪后，我们可以将其用于分析目的。</p>
+<p>因此，为了进行分析，我们可以根据数据仓库中的可用数据生成报告。可以使用商业智能工具生成多个图表和报告。</p>
+<p>我们需要数据仓库用于分析目的，以发展业务并为组织做出适当的决策。</p>
+<p><img src="Organization-Data-WareHouse.jpg" alt="Organization-Data-WareHouse"></p>
+<p>在此过程中发生了三件事，首先是我们从多个源中提取数据，并将其放在数据仓库的单个位置。</p>
+<p>在这里，我们使用”ETL”过程，因此在将数据从多个源加载到一个地方时，我们将在转换根中应用它，然后我们可以在这里使用各种ETL工具。</p>
+<p>一旦数据准备好进入数据仓库，我们就可以生成各种报告，以使用商业智能（BI）工具分析业务数据，或者我们称之为报告工具。Tableau 或 Cognos 等工具可用于生成报告和 DashBoard，用于分析业务数据。</p>
+<h4 id="OLTP-和-OLAP"><a href="#OLTP-和-OLAP" class="headerlink" title="OLTP 和 OLAP"></a>OLTP 和 OLAP</h4><p>本地维护并用于事务目的的数据库称为<strong>OLTP，即联机事务处理。</strong>日常事务将存储在此处并立即更新，这就是为什么我们称它们为OLTP系统。</p>
+<p>在这里，我们使用传统数据库，我们有多个表，并且有关系，因此一切都是根据数据库系统地规划的。我们不会将这些数据用于分析目的。在这里，我们可以使用经典的RDMBS数据库，如Oracle，MySQL，SQL Server等。</p>
+<p>当我们进入数据仓库部分时，我们使用Teradata或Hadoop系统，它们也是一种数据库，但DataWarehouse中的数据通常用于分析目的，称为<strong>OLAP</strong>或<strong>在线分析处理。</strong></p>
+<p>在这里，数据可以每季度，每半年或每年更新一次。有时数据也会”Offerly”更新，其中Offerly表示根据客户要求更新和获取数据以进行分析。</p>
+<p>此外，用于分析的数据不会每天更新，因为我们将按计划从多个来源获取数据，并且可以执行此 ETL 任务。这就是在线分析处理系统的工作原理。</p>
+<p>同样，BI工具或报告工具可以生成报告以及仪表板，并且基于此，业务人员将做出改进其业务的决策。</p>
+<h3 id="大数据从何而来？"><a href="#大数据从何而来？" class="headerlink" title="大数据从何而来？"></a>大数据从何而来？</h3><p>大数据是超出传统数据库的存储和处理能力的数据，它采用结构化和非结构化格式，因此无法由本地RDBMS系统处理。</p>
+<p>这种数据将以TB（TB）或PB或更高速率生成，并且现在正在迅速增加。有多个来源可以获得这种数据，例如Facebook，WhatsApp（与社交网络有关）;亚马逊，与电子商务相关的Flipkart;Gmail，Yahoo，Rediff与电子邮件和Google等搜索引擎有关。我们还从手机中获取大数据，例如SMS数据，通话记录，通话记录等。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>大数据是高效、安全地处理大量数据的解决方案。它还负责维护历史数据。这项技术有很多优点，这就是为什么每家公司都想转向大数据</p>
 ]]></content>
       <categories>
-        <category>环境安装</category>
+        <category>大数据</category>
       </categories>
       <tags>
-        <tag>linux</tag>
-        <tag>JDK</tag>
+        <tag>大数据</tag>
+        <tag>数据</tag>
       </tags>
   </entry>
   <entry>
@@ -3277,13 +3277,63 @@
     <content><![CDATA[<p>之前的文章写了大数据的存储或处理的一些程序，对于后续的这篇大数据如何测试，却迟迟无法落笔。因为每个公司都是根据自己的业务来使用大数据平台的一个或者多个功能的。这里随便聊下大数据测试！（就是想到哪里写到哪里）</p>
 <h4 id="大数据测试与传统测试的区别"><a href="#大数据测试与传统测试的区别" class="headerlink" title="大数据测试与传统测试的区别"></a>大数据测试与传统测试的区别</h4><p>传统测试：特定条件下运行的结果进行观察或者验证，构建上下文验证输出</p>
 <p>大数据测试：数据正确，系统正确仅仅是第一步，后边还有诸多额外工作，如数据计算后结果，系统性能等。</p>
-<p>大数据测试</p>
-]]></content>
+<h4 id="大数据测试的挑战"><a href="#大数据测试的挑战" class="headerlink" title="大数据测试的挑战"></a>大数据测试的挑战</h4>]]></content>
       <categories>
         <category>大数据</category>
       </categories>
       <tags>
         <tag>大数据</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>kafka测试</title>
+    <url>/Echo/2021/11/24/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%BB%84%E4%BB%B6kafka%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<h5 id="kafka是一个事件流平台"><a href="#kafka是一个事件流平台" class="headerlink" title="kafka是一个事件流平台"></a>kafka是一个事件流平台</h5><ul>
+<li><p>什么事件流？，事件流是从事件源实时捕获数据的做法 如数据库、传感器、移动设备、云服务和流形式的软件应用程序 事件； 持久地存储这些事件流以供以后检索； 操作、处理和反应 实时和可追溯​​的事件流； 并将事件流路由到不同的 根据需要使用目标技术。 事件流因此确保了连续的流和解释 数据，以便正确的信息在正确的时间出现在正确的位置。</p>
+</li>
+<li><p>kafka的功能？</p>
+<ol>
+<li><p>要 发布 （写）和 订阅 （读取）的事件流，包括连续的导入/导出 您来自其他系统的数据。</p>
+</li>
+<li><p>持久并可靠存储你想要的事件流</p>
+</li>
+<li><p><strong>处理</strong> 事件发生时或追溯性 事件流。</p>
+</li>
+</ol>
+<h5 id="kafka基本概念了解"><a href="#kafka基本概念了解" class="headerlink" title="kafka基本概念了解"></a>kafka基本概念了解</h5></li>
+<li><p>生产者：<strong>生产者</strong> 是那些向 Kafka 发布（写入）事件的客户端应用程序</p>
+</li>
+<li><p>消费者：订阅（读取和处理）这些事件的</p>
+</li>
+<li><p>主题：主题类似于文件系统中的文件夹，事件就是该文件夹中的文件</p>
+</li>
+<li><p>分区：主题是 <strong>分区的</strong> ，一个主题可以分布在位于不同 Kafka 代理的多个“桶”上。</p>
+</li>
+<li><p>broker：一个 Kafka 服务器也称为 Broker，它接受生产者发送的消息并存入磁盘；Broker 同时服务消费者拉取分区消息的请求，返回目前已经提交的消息一个 Kafka 服务器也称为 Broker，它接受生产者发送的消息并存入磁盘；Broker 同时服务消费者拉取分区消息的请求，返回目前已经提交的消息</p>
+</li>
+</ul>
+<h5 id="kafka功能测试-如何验证数据的一致性和有序性"><a href="#kafka功能测试-如何验证数据的一致性和有序性" class="headerlink" title="kafka功能测试-如何验证数据的一致性和有序性"></a>kafka功能测试-如何验证数据的一致性和有序性</h5><p>可以创建一个单分区的Topic，然后自己写一个生产者程序，程序发送的事件流可以从设定值从1到N自增长；写一个消费者程序，单线程消费，将消费到的数据写进文件中，观测有序性；还可以对kafka服务进程直接杀死，进行故障模拟。</p>
+<h5 id="kafka性能测试"><a href="#kafka性能测试" class="headerlink" title="kafka性能测试"></a>kafka性能测试</h5><p>性能压测是系统性问题，需要考量对整体业务的掌握程序，以及对kafka的熟悉程度。压测过程中涉及压测工具选取，监测kafka，压测结果分析。</p>
+<ul>
+<li><p>明确压测场景：明确要压测的场景</p>
+</li>
+<li><p>测试环境准备：在服务器选择，kafka版本，kafka架构以及相关配置参数、业务数据等尽可能与线上环境保持一致</p>
+</li>
+<li><p>压测工具选取：生产者压测使用kafka自带的测试工具kafka-producer-perf-test.sh来进行测试，发送数据推荐使用线上数据导出到本地文件，随机读取进行</p>
+</li>
+<li><p>压测过程观测：首先开启kafka的JMX端口，①可以使用滴滴的Logikm(但是需要自己搭建部署)；②自己通过JMX端口以及官方原生API获取相关指标，CPU、内存、网络等监测可以使用nomn或者top命令来监测</p>
+</li>
+<li><p>压测结果分析：理想状态是系统资源使用达到瓶颈，如未达到则寻找软件资源瓶颈，配合堆栈分析，发现线程阻塞点。</p>
+</li>
+<li><p>压测报告呈现：一般有测试环境说明、测试场景说明、测试过程说明、测试结论（在当前场景下的最佳资源使用以及配置）。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>kafka，大数据</tag>
       </tags>
   </entry>
   <entry>
@@ -3339,57 +3389,6 @@
       </categories>
       <tags>
         <tag>测试，测试基本</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>kafka测试</title>
-    <url>/Echo/2021/11/24/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%BB%84%E4%BB%B6kafka%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<h5 id="kafka是一个事件流平台"><a href="#kafka是一个事件流平台" class="headerlink" title="kafka是一个事件流平台"></a>kafka是一个事件流平台</h5><ul>
-<li><p>什么事件流？，事件流是从事件源实时捕获数据的做法 如数据库、传感器、移动设备、云服务和流形式的软件应用程序 事件； 持久地存储这些事件流以供以后检索； 操作、处理和反应 实时和可追溯​​的事件流； 并将事件流路由到不同的 根据需要使用目标技术。 事件流因此确保了连续的流和解释 数据，以便正确的信息在正确的时间出现在正确的位置。</p>
-</li>
-<li><p>kafka的功能？</p>
-<ol>
-<li><p>要 发布 （写）和 订阅 （读取）的事件流，包括连续的导入/导出 您来自其他系统的数据。</p>
-</li>
-<li><p>持久并可靠存储你想要的事件流</p>
-</li>
-<li><p><strong>处理</strong> 事件发生时或追溯性 事件流。</p>
-</li>
-</ol>
-<h5 id="kafka基本概念了解"><a href="#kafka基本概念了解" class="headerlink" title="kafka基本概念了解"></a>kafka基本概念了解</h5></li>
-<li><p>生产者：<strong>生产者</strong> 是那些向 Kafka 发布（写入）事件的客户端应用程序</p>
-</li>
-<li><p>消费者：订阅（读取和处理）这些事件的</p>
-</li>
-<li><p>主题：主题类似于文件系统中的文件夹，事件就是该文件夹中的文件</p>
-</li>
-<li><p>分区：主题是 <strong>分区的</strong> ，一个主题可以分布在位于不同 Kafka 代理的多个“桶”上。</p>
-</li>
-<li><p>broker：一个 Kafka 服务器也称为 Broker，它接受生产者发送的消息并存入磁盘；Broker 同时服务消费者拉取分区消息的请求，返回目前已经提交的消息一个 Kafka 服务器也称为 Broker，它接受生产者发送的消息并存入磁盘；Broker 同时服务消费者拉取分区消息的请求，返回目前已经提交的消息</p>
-</li>
-</ul>
-<h5 id="kafka功能测试-如何验证数据的一致性和有序性"><a href="#kafka功能测试-如何验证数据的一致性和有序性" class="headerlink" title="kafka功能测试-如何验证数据的一致性和有序性"></a>kafka功能测试-如何验证数据的一致性和有序性</h5><p>可以创建一个单分区的Topic，然后自己写一个生产者程序，程序发送的事件流可以从设定值从1到N自增长；写一个消费者程序，单线程消费，将消费到的数据写进文件中，观测有序性；还可以对kafka服务进程直接杀死，进行故障模拟。</p>
-<h5 id="kafka性能测试"><a href="#kafka性能测试" class="headerlink" title="kafka性能测试"></a>kafka性能测试</h5><p>性能压测是系统性问题，需要考量对整体业务的掌握程序，以及对kafka的熟悉程度。压测过程中涉及压测工具选取，监测kafka，压测结果分析。</p>
-<ul>
-<li><p>明确压测场景：明确要压测的场景</p>
-</li>
-<li><p>测试环境准备：在服务器选择，kafka版本，kafka架构以及相关配置参数、业务数据等尽可能与线上环境保持一致</p>
-</li>
-<li><p>压测工具选取：生产者压测使用kafka自带的测试工具kafka-producer-perf-test.sh来进行测试，发送数据推荐使用线上数据导出到本地文件，随机读取进行</p>
-</li>
-<li><p>压测过程观测：首先开启kafka的JMX端口，①可以使用滴滴的Logikm(但是需要自己搭建部署)；②自己通过JMX端口以及官方原生API获取相关指标，CPU、内存、网络等监测可以使用nomn或者top命令来监测</p>
-</li>
-<li><p>压测结果分析：理想状态是系统资源使用达到瓶颈，如未达到则寻找软件资源瓶颈，配合堆栈分析，发现线程阻塞点。</p>
-</li>
-<li><p>压测报告呈现：一般有测试环境说明、测试场景说明、测试过程说明、测试结论（在当前场景下的最佳资源使用以及配置）。</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>大数据</category>
-      </categories>
-      <tags>
-        <tag>kafka，大数据</tag>
       </tags>
   </entry>
   <entry>
