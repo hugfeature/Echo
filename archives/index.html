@@ -189,7 +189,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/2022/01/27/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%B5%8B%E8%AF%95/">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/2022/01/27/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%B5%8B%E8%AF%95-%E6%B5%8B%E8%AF%95%E7%B1%BB%E5%9E%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/Echo/images/avatar.gif">
@@ -202,7 +202,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/Echo/2022/01/27/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%B5%8B%E8%AF%95/" class="post-title-link" itemprop="url">大数据测试</a>
+          <a href="/Echo/2022/01/27/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%B5%8B%E8%AF%95-%E6%B5%8B%E8%AF%95%E7%B1%BB%E5%9E%8B/" class="post-title-link" itemprop="url">大数据测试-测试类型</a>
         </h2>
 
         <div class="post-meta-container">
@@ -213,7 +213,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-01-27 10:04:30" itemprop="dateCreated datePublished" datetime="2022-01-27T10:04:30+08:00">2022-01-27</time>
+      <time title="创建时间：2022-01-27 20:04:30" itemprop="dateCreated datePublished" datetime="2022-01-27T20:04:30+08:00">2022-01-27</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -238,7 +238,24 @@
           <p>之前的文章写了大数据的存储或处理的一些程序，对于后续的这篇大数据如何测试，却迟迟无法落笔。因为每个公司都是根据自己的业务来使用大数据平台的一个或者多个功能的。这里随便聊下大数据测试！（就是想到哪里写到哪里）</p>
 <h4 id="大数据测试与传统测试的区别"><a href="#大数据测试与传统测试的区别" class="headerlink" title="大数据测试与传统测试的区别"></a>大数据测试与传统测试的区别</h4><p>传统测试：特定条件下运行的结果进行观察或者验证，构建上下文验证输出</p>
 <p>大数据测试：数据正确，系统正确仅仅是第一步，后边还有诸多额外工作，如数据计算后结果，系统性能等。</p>
-<h4 id="大数据测试的挑战"><a href="#大数据测试的挑战" class="headerlink" title="大数据测试的挑战"></a>大数据测试的挑战</h4>
+<h4 id="大数据测试的挑战"><a href="#大数据测试的挑战" class="headerlink" title="大数据测试的挑战"></a>大数据测试的挑战</h4><ol>
+<li>复杂的数据流，数据的多样性；</li>
+<li>集群规模大，数据量大</li>
+<li>复杂算法测试</li>
+<li>无明确的验收标准</li>
+</ol>
+<h4 id="大数据测试的测试类型"><a href="#大数据测试的测试类型" class="headerlink" title="大数据测试的测试类型"></a>大数据测试的测试类型</h4><h5 id="架构测试"><a href="#架构测试" class="headerlink" title="架构测试"></a>架构测试</h5><p>进行此测试是为了确保数据处理正确并符合要求。实际上，Hadoop系统处理大量数据，并且资源非常全面。如果体系结构不正确，则可能会降低性能，因此数据处理可能会中断并可能发生数据丢失。</p>
+<h5 id="数据库测试"><a href="#数据库测试" class="headerlink" title="数据库测试"></a>数据库测试</h5><p>需要确保从源数据库或本地数据库获取的数据必须是正确和适当的。需要检查源数据库中可用的数据是否与在Hadoop系统中输入的数据匹配。</p>
+<p><img src="DataBase-Testing.jpg" alt="DataBase-Testing"></p>
+<p>需要验证Hadoop系统中的数据在处理后或转换后是否正确，并通过适当的验证和确认加载到客户端环境中。作为数据库测试的一部分，需要完成CRUD操作，即在本地数据库中创建数据，然后检索数据，需要搜索它，它应该在加载到数据仓库之前和之后在数据库中可用，并从数据仓库到客户端的环境。在存储或加载和处理数据的每个阶段验证任何更新的数据。删除任何损坏的数据或任何重复和空的数据。</p>
+<h5 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h5><p>作为性能测试的一部分，我们需要检查数据的加载和处理速度，例如IOPS（每秒输入输出）。</p>
+<p>需要检查输入数据或数据作为输入的速度，从各种数据库到数据仓库或Hadoop系统，以及从Hadoop系统或数据仓库到客户环境。</p>
+<p>还必须检查来自各种数据库的数据以及作为输出的数据仓库的速度。这就是我们所说的每秒输入输出或 IOPS。</p>
+<p>除此之外，另一个方面是检查数据吸收和数据分发的性能，以及数据仓库从各种数据库和客户端系统从Hadoop系统消耗数据的速度。</p>
+<p>此外，作为测试人员，我们需要检查数据分发的性能，例如，数据以多快的速度分发到Hadoop系统或数据仓库中可用的各种文件。同样，在将数据分发到客户端系统时也会发生相同的过程。</p>
+<p>Hadoop系统或数据仓库由多个组件组成，因此测试人员需要检查所有这些组件的性能，例如MapReduce作业，数据插入和使用，查询的响应时间及其性能以及搜索操作的性能。所有这些都包含在性能测试中。</p>
+<h4 id="功能测试"><a href="#功能测试" class="headerlink" title="功能测试"></a>功能测试</h4><p>功能测试包含对所有子组件，程序和脚本，用于执行存储或加载和处理操作的工具等的测试。对于测试人员来说，这是需要过滤数据的四个重要类型和阶段，以便客户端获得完美且无差错的数据。</p>
+
       
     </div>
 
