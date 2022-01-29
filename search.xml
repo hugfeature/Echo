@@ -38,6 +38,55 @@
       </tags>
   </entry>
   <entry>
+    <title>BMCweb解释</title>
+    <url>/Echo/2020/01/17/BMCweb%E8%A7%A3%E9%87%8A/</url>
+    <content><![CDATA[<p><strong>UID****：</strong>定位作用，控制定位灯是否亮起，便于寻找机器</p>
+<p><strong>循环开机</strong>：服务器先关机再开机</p>
+<p><strong>重启</strong>：不关闭电源（热开机）的情况下重新启动系统</p>
+<p>**软关机:**先执行操作系统的关机再关闭系统</p>
+<p><strong>CPU****速率</strong>：cup主频，即CPU<a href="https://baike.baidu.com/item/%E5%86%85%E6%A0%B8">内核</a>工作的<a href="https://baike.baidu.com/item/%E6%97%B6%E9%92%9F%E9%A2%91%E7%8E%87/103708">时钟频率</a>。CPU的主频表示在CPU内数字<a href="https://baike.baidu.com/item/%E8%84%89%E5%86%B2">脉冲</a>信号震荡的速度，主频和实际的<a href="https://baike.baidu.com/item/%E8%BF%90%E7%AE%97%E9%80%9F%E5%BA%A6">运算速度</a>存在一定的关系，但没有一个定量，因为CPU的运算速度还要看CPU的流水线的各方面的性能指标（<a href="https://baike.baidu.com/item/%E7%BC%93%E5%AD%98">缓存</a>、<a href="https://baike.baidu.com/item/%E6%8C%87%E4%BB%A4%E9%9B%86">指令集</a>，CPU的<a href="https://baike.baidu.com/item/%E4%BD%8D%E6%95%B0">位数</a>等等）。</p>
+<p><strong>核心</strong>（Die）又称为内核，是CPU最重要的组成部分。CPU中心那块隆起的芯片就是核心， CPU所有的计算、接受/存储命令、处理数据都由核心执行。各种CPU核心都具有固定的逻辑结构，一级缓存、二级缓存、执行单元、指令级单元和总线接口等逻辑单元都会有科学的布局。</p>
+<p><strong>CPU****的核心数</strong>是指物理上，也就是硬件上存在着几个核心。比如，双核就是包括2个相对独立的CPU核心单元组，四核就包含4个相对独立的CPU核心单元组。</p>
+<p><strong>TDP</strong>： Thermal Design Power——散热设计功耗</p>
+<p>大小：一级缓存&lt;二级缓存&lt;三级缓存</p>
+<p>速度：一级缓存&gt;二级缓存&gt;三级缓存</p>
+<p>当CPU需要写入内存的时候通常只更新<a href="http://www.baidu.com/s?wd=%E4%B8%89%E7%BA%A7%E7%BC%93%E5%AD%98&tn=SE_PcZhidaonwhc_ngpagmjz&rsv_dl=gh_pc_zhidao">三级缓存</a>，如果数据写入频繁将会更新到二级乃至一级缓存</p>
+<p><strong>网络控制器</strong>:网卡，又称<a href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E9%80%82%E9%85%8D%E5%99%A8/214428">网络适配器</a>或网络接口卡（NIC），英文名为Network Interface Card。</p>
+<p><strong>带宽</strong>：单位时间内能传输的数据量</p>
+<p><strong>硬盘：</strong>硬盘是集精密机械、微电子电路、电磁转换为一体的电脑存储设备，它存储着电脑系统资源和重要的信息及数据</p>
+<p><strong>额定功率</strong>：正常工作下的功率</p>
+<p><strong>错峰上电</strong>：设定一个时间让服务器随机开机</p>
+<p><strong>PIN</strong>：输入功率</p>
+<p><strong>POUT</strong>:输出功率</p>
+<p><strong>Iin</strong>：电源输入电流</p>
+<p><strong>Iout</strong>:电源电流输出</p>
+<p><strong>Vin</strong>:电源输入电压</p>
+<p><strong>Vout</strong>:电源输出电压</p>
+<p><strong>传感器</strong>（<a href="https://baike.baidu.com/item/%E8%8B%B1%E6%96%87">英文</a>名称：transducer/sensor）是一种检测装置，能感受到被测量的信息，并能将感受到的信息，按一定规律变换成为电信号或其他所需形式的信息输出，以满足信息的传输、处理、存储、显示、记录和控制等要求。</p>
+<p><strong>KVM</strong>：就是Keyboard Video Mouse的缩写。KVM <a href="https://baike.baidu.com/item/%E4%BA%A4%E6%8D%A2%E6%9C%BA/103532">交换机</a>通过直接连接键盘、视频和鼠标 (KVM) 端口，让您能够访问和控制计算机。</p>
+<p>**VLAN(**Virtual LAN)， “虚拟局域网”，LAN是网络，VLAN所指的LAN特指使用路由器分割的网络——也就是广播域。</p>
+<p><strong>广播域</strong>，指的是广播帧(目标MAC地址全部为1)所能传递到的范围，亦即能够直接通信的范围。</p>
+<p><strong>域名</strong>：（Domain Name）网域，是由一串用点分隔的名字组成的<a href="https://baike.baidu.com/item/Internet">Internet</a>上某一台<a href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA/140338">计算机</a>或计算机组的名称，用于在数据传输时标识计算机的电子方位（有时也指地理位置）。</p>
+<p><strong>双工模式</strong>：1、全双工： 指可以同时（瞬时）进行信号的双向传输（A→B且B→A）。</p>
+<p>2、半双工：指一个时间内只有一个方向的信号传输（A→B或B→A）。</p>
+<p><strong>端口：</strong>分为逻辑端口和物理端口。物理端口指的是物理存在的端口，如ADSL Modem、<a href="https://baike.baidu.com/item/%E9%9B%86%E7%BA%BF%E5%99%A8">集线器</a>、<a href="https://baike.baidu.com/item/%E4%BA%A4%E6%8D%A2%E6%9C%BA">交换机</a>、<a href="https://baike.baidu.com/item/%E8%B7%AF%E7%94%B1%E5%99%A8">路由器</a>上用 于连接其他<a href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87">网络设备</a>的接口，如<a href="https://baike.baidu.com/item/RJ-45%E7%AB%AF%E5%8F%A3">RJ-45端口</a>、SC端口等等。逻辑端口是指逻辑意义上用于区分服务的端口，如<a href="https://baike.baidu.com/item/TCP%2FIP%E5%8D%8F%E8%AE%AE">TCP/IP协议</a>中的服务端口，端口号的范围从0到65535，比如用于浏览网页服务的80端口，用于FTP服务的21端口等。端口号就是端口的编号。</p>
+<p><strong>NTP****服务器：</strong>【Network Time Protocol（NTP）】是用来使计算机<a href="https://baike.baidu.com/item/%E6%97%B6%E9%97%B4%E5%90%8C%E6%AD%A5">时间同步</a>化的一种协议，它可以使计算机对其服务器或时钟源（如石英钟，GPS等等)做同步化，它可以提供高精准度的时间校正，且可介由加密确认的方式来防止恶毒的协议攻击。</p>
+<p><strong>SMTP****：</strong>（Simple Mail Transfer Protocol）即<a href="https://baike.baidu.com/item/%E7%AE%80%E5%8D%95%E9%82%AE%E4%BB%B6%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE">简单邮件传输协议</a>,它是一组用于由源地址到目的地址传送<a href="https://baike.baidu.com/item/%E9%82%AE%E4%BB%B6">邮件</a>的规则，由它来控制信件的中转方式。<a href="https://baike.baidu.com/item/SMTP%E5%8D%8F%E8%AE%AE">SMTP协议</a>属于<a href="https://baike.baidu.com/item/TCP%2FIP%E5%8D%8F%E8%AE%AE%E7%B0%87">TCP/IP协议簇</a>，它帮助每台<a href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA/140338">计算机</a>在发送或中转信件时找到下一个目的地。通过SMTP协议所指定的<a href="https://baike.baidu.com/item/%E6%9C%8D%E5%8A%A1%E5%99%A8">服务器</a>,就可以把E-mail寄到收信人的服务器上了，整个过程只要几分钟。SMTP<a href="https://baike.baidu.com/item/%E6%9C%8D%E5%8A%A1%E5%99%A8/100571">服务器</a>则是遵循SMTP协议的发送<a href="https://baike.baidu.com/item/%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8">邮件服务器</a>，用来发送或中转发出的<a href="https://baike.baidu.com/item/%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6/111106">电子邮件</a>。</p>
+<p><strong>网卡：</strong>是工作在链路层的网络组件，是局域网中连接计算机和传输介质的接口，不仅能实现与局域网传输介质之间的物理连接和电信号匹配，还涉及帧的发送与接收、帧的封装与拆封、介质访问控制、数据的编码与解码以及数据缓存的功能等。</p>
+<p><strong>LDAP****：</strong>是轻量<a href="https://baike.baidu.com/item/%E7%9B%AE%E5%BD%95%E8%AE%BF%E9%97%AE%E5%8D%8F%E8%AE%AE">目录访问协议</a>，以树状的层次结构来存储数据。</p>
+<p><strong>SSL</strong>(Secure Sockets Layer <a href="https://baike.baidu.com/item/%E5%AE%89%E5%85%A8%E5%A5%97%E6%8E%A5%E5%B1%82">安全套接层</a>),及其继任者<a href="https://baike.baidu.com/item/%E4%BC%A0%E8%BE%93%E5%B1%82%E5%AE%89%E5%85%A8">传输层安全</a>（Transport Layer Security，TLS）是为<a href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/9636548">网络通信</a>提供安全及<a href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7/110071">数据完整性</a>的一种安全协议。SSL通过互相认证、使用数字签名确保完整性、使用加密确保私密性，以实现客户端和服务器之间的安全通讯。该协议由两层组成：SSL记录协议和SSL握手协议。</p>
+<p><strong>TLS</strong>：(Transport Layer Security，传输层安全协议)，用于两个应用程序之间提供保密性和数据完整性。该协议由两层组成：TLS记录协议和TLS握手协议。</p>
+<p><strong>TLS****与SSL</strong>在<a href="https://baike.baidu.com/item/%E4%BC%A0%E8%BE%93%E5%B1%82/4329536">传输层</a>对网络连接进行加密。　位于可靠的面向连接的网络层协议和应用层协议之间的一种协议层。</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>BMC</tag>
+        <tag>服务器</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Azkaban REST API使用指南</title>
     <url>/Echo/2021/04/12/Azkaban-REST-API%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
     <content><![CDATA[<h2 id="API文档"><a href="#API文档" class="headerlink" title="API文档"></a>API文档</h2><p>通常，人们又一种无需使用Web UI即可与Azkaban进行交互的愿望。Azkaban有一些公开的ajax调用，可以通过curl或其他一些HTTP请求客户端进行访问。所有API调用都首先需要正确的身份验证。</p>
@@ -748,55 +797,6 @@
       <tags>
         <tag>azkaban</tag>
         <tag>任务调度</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>BMCweb解释</title>
-    <url>/Echo/2020/01/17/BMCweb%E8%A7%A3%E9%87%8A/</url>
-    <content><![CDATA[<p><strong>UID****：</strong>定位作用，控制定位灯是否亮起，便于寻找机器</p>
-<p><strong>循环开机</strong>：服务器先关机再开机</p>
-<p><strong>重启</strong>：不关闭电源（热开机）的情况下重新启动系统</p>
-<p>**软关机:**先执行操作系统的关机再关闭系统</p>
-<p><strong>CPU****速率</strong>：cup主频，即CPU<a href="https://baike.baidu.com/item/%E5%86%85%E6%A0%B8">内核</a>工作的<a href="https://baike.baidu.com/item/%E6%97%B6%E9%92%9F%E9%A2%91%E7%8E%87/103708">时钟频率</a>。CPU的主频表示在CPU内数字<a href="https://baike.baidu.com/item/%E8%84%89%E5%86%B2">脉冲</a>信号震荡的速度，主频和实际的<a href="https://baike.baidu.com/item/%E8%BF%90%E7%AE%97%E9%80%9F%E5%BA%A6">运算速度</a>存在一定的关系，但没有一个定量，因为CPU的运算速度还要看CPU的流水线的各方面的性能指标（<a href="https://baike.baidu.com/item/%E7%BC%93%E5%AD%98">缓存</a>、<a href="https://baike.baidu.com/item/%E6%8C%87%E4%BB%A4%E9%9B%86">指令集</a>，CPU的<a href="https://baike.baidu.com/item/%E4%BD%8D%E6%95%B0">位数</a>等等）。</p>
-<p><strong>核心</strong>（Die）又称为内核，是CPU最重要的组成部分。CPU中心那块隆起的芯片就是核心， CPU所有的计算、接受/存储命令、处理数据都由核心执行。各种CPU核心都具有固定的逻辑结构，一级缓存、二级缓存、执行单元、指令级单元和总线接口等逻辑单元都会有科学的布局。</p>
-<p><strong>CPU****的核心数</strong>是指物理上，也就是硬件上存在着几个核心。比如，双核就是包括2个相对独立的CPU核心单元组，四核就包含4个相对独立的CPU核心单元组。</p>
-<p><strong>TDP</strong>： Thermal Design Power——散热设计功耗</p>
-<p>大小：一级缓存&lt;二级缓存&lt;三级缓存</p>
-<p>速度：一级缓存&gt;二级缓存&gt;三级缓存</p>
-<p>当CPU需要写入内存的时候通常只更新<a href="http://www.baidu.com/s?wd=%E4%B8%89%E7%BA%A7%E7%BC%93%E5%AD%98&tn=SE_PcZhidaonwhc_ngpagmjz&rsv_dl=gh_pc_zhidao">三级缓存</a>，如果数据写入频繁将会更新到二级乃至一级缓存</p>
-<p><strong>网络控制器</strong>:网卡，又称<a href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E9%80%82%E9%85%8D%E5%99%A8/214428">网络适配器</a>或网络接口卡（NIC），英文名为Network Interface Card。</p>
-<p><strong>带宽</strong>：单位时间内能传输的数据量</p>
-<p><strong>硬盘：</strong>硬盘是集精密机械、微电子电路、电磁转换为一体的电脑存储设备，它存储着电脑系统资源和重要的信息及数据</p>
-<p><strong>额定功率</strong>：正常工作下的功率</p>
-<p><strong>错峰上电</strong>：设定一个时间让服务器随机开机</p>
-<p><strong>PIN</strong>：输入功率</p>
-<p><strong>POUT</strong>:输出功率</p>
-<p><strong>Iin</strong>：电源输入电流</p>
-<p><strong>Iout</strong>:电源电流输出</p>
-<p><strong>Vin</strong>:电源输入电压</p>
-<p><strong>Vout</strong>:电源输出电压</p>
-<p><strong>传感器</strong>（<a href="https://baike.baidu.com/item/%E8%8B%B1%E6%96%87">英文</a>名称：transducer/sensor）是一种检测装置，能感受到被测量的信息，并能将感受到的信息，按一定规律变换成为电信号或其他所需形式的信息输出，以满足信息的传输、处理、存储、显示、记录和控制等要求。</p>
-<p><strong>KVM</strong>：就是Keyboard Video Mouse的缩写。KVM <a href="https://baike.baidu.com/item/%E4%BA%A4%E6%8D%A2%E6%9C%BA/103532">交换机</a>通过直接连接键盘、视频和鼠标 (KVM) 端口，让您能够访问和控制计算机。</p>
-<p>**VLAN(**Virtual LAN)， “虚拟局域网”，LAN是网络，VLAN所指的LAN特指使用路由器分割的网络——也就是广播域。</p>
-<p><strong>广播域</strong>，指的是广播帧(目标MAC地址全部为1)所能传递到的范围，亦即能够直接通信的范围。</p>
-<p><strong>域名</strong>：（Domain Name）网域，是由一串用点分隔的名字组成的<a href="https://baike.baidu.com/item/Internet">Internet</a>上某一台<a href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA/140338">计算机</a>或计算机组的名称，用于在数据传输时标识计算机的电子方位（有时也指地理位置）。</p>
-<p><strong>双工模式</strong>：1、全双工： 指可以同时（瞬时）进行信号的双向传输（A→B且B→A）。</p>
-<p>2、半双工：指一个时间内只有一个方向的信号传输（A→B或B→A）。</p>
-<p><strong>端口：</strong>分为逻辑端口和物理端口。物理端口指的是物理存在的端口，如ADSL Modem、<a href="https://baike.baidu.com/item/%E9%9B%86%E7%BA%BF%E5%99%A8">集线器</a>、<a href="https://baike.baidu.com/item/%E4%BA%A4%E6%8D%A2%E6%9C%BA">交换机</a>、<a href="https://baike.baidu.com/item/%E8%B7%AF%E7%94%B1%E5%99%A8">路由器</a>上用 于连接其他<a href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87">网络设备</a>的接口，如<a href="https://baike.baidu.com/item/RJ-45%E7%AB%AF%E5%8F%A3">RJ-45端口</a>、SC端口等等。逻辑端口是指逻辑意义上用于区分服务的端口，如<a href="https://baike.baidu.com/item/TCP%2FIP%E5%8D%8F%E8%AE%AE">TCP/IP协议</a>中的服务端口，端口号的范围从0到65535，比如用于浏览网页服务的80端口，用于FTP服务的21端口等。端口号就是端口的编号。</p>
-<p><strong>NTP****服务器：</strong>【Network Time Protocol（NTP）】是用来使计算机<a href="https://baike.baidu.com/item/%E6%97%B6%E9%97%B4%E5%90%8C%E6%AD%A5">时间同步</a>化的一种协议，它可以使计算机对其服务器或时钟源（如石英钟，GPS等等)做同步化，它可以提供高精准度的时间校正，且可介由加密确认的方式来防止恶毒的协议攻击。</p>
-<p><strong>SMTP****：</strong>（Simple Mail Transfer Protocol）即<a href="https://baike.baidu.com/item/%E7%AE%80%E5%8D%95%E9%82%AE%E4%BB%B6%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE">简单邮件传输协议</a>,它是一组用于由源地址到目的地址传送<a href="https://baike.baidu.com/item/%E9%82%AE%E4%BB%B6">邮件</a>的规则，由它来控制信件的中转方式。<a href="https://baike.baidu.com/item/SMTP%E5%8D%8F%E8%AE%AE">SMTP协议</a>属于<a href="https://baike.baidu.com/item/TCP%2FIP%E5%8D%8F%E8%AE%AE%E7%B0%87">TCP/IP协议簇</a>，它帮助每台<a href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA/140338">计算机</a>在发送或中转信件时找到下一个目的地。通过SMTP协议所指定的<a href="https://baike.baidu.com/item/%E6%9C%8D%E5%8A%A1%E5%99%A8">服务器</a>,就可以把E-mail寄到收信人的服务器上了，整个过程只要几分钟。SMTP<a href="https://baike.baidu.com/item/%E6%9C%8D%E5%8A%A1%E5%99%A8/100571">服务器</a>则是遵循SMTP协议的发送<a href="https://baike.baidu.com/item/%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8">邮件服务器</a>，用来发送或中转发出的<a href="https://baike.baidu.com/item/%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6/111106">电子邮件</a>。</p>
-<p><strong>网卡：</strong>是工作在链路层的网络组件，是局域网中连接计算机和传输介质的接口，不仅能实现与局域网传输介质之间的物理连接和电信号匹配，还涉及帧的发送与接收、帧的封装与拆封、介质访问控制、数据的编码与解码以及数据缓存的功能等。</p>
-<p><strong>LDAP****：</strong>是轻量<a href="https://baike.baidu.com/item/%E7%9B%AE%E5%BD%95%E8%AE%BF%E9%97%AE%E5%8D%8F%E8%AE%AE">目录访问协议</a>，以树状的层次结构来存储数据。</p>
-<p><strong>SSL</strong>(Secure Sockets Layer <a href="https://baike.baidu.com/item/%E5%AE%89%E5%85%A8%E5%A5%97%E6%8E%A5%E5%B1%82">安全套接层</a>),及其继任者<a href="https://baike.baidu.com/item/%E4%BC%A0%E8%BE%93%E5%B1%82%E5%AE%89%E5%85%A8">传输层安全</a>（Transport Layer Security，TLS）是为<a href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/9636548">网络通信</a>提供安全及<a href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7/110071">数据完整性</a>的一种安全协议。SSL通过互相认证、使用数字签名确保完整性、使用加密确保私密性，以实现客户端和服务器之间的安全通讯。该协议由两层组成：SSL记录协议和SSL握手协议。</p>
-<p><strong>TLS</strong>：(Transport Layer Security，传输层安全协议)，用于两个应用程序之间提供保密性和数据完整性。该协议由两层组成：TLS记录协议和TLS握手协议。</p>
-<p><strong>TLS****与SSL</strong>在<a href="https://baike.baidu.com/item/%E4%BC%A0%E8%BE%93%E5%B1%82/4329536">传输层</a>对网络连接进行加密。　位于可靠的面向连接的网络层协议和应用层协议之间的一种协议层。</p>
-]]></content>
-      <categories>
-        <category>学习</category>
-      </categories>
-      <tags>
-        <tag>BMC</tag>
-        <tag>服务器</tag>
       </tags>
   </entry>
   <entry>
@@ -3245,38 +3245,6 @@
       </tags>
   </entry>
   <entry>
-    <title>大数据测试-测试类型</title>
-    <url>/Echo/2022/01/27/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%B5%8B%E8%AF%95-%E6%B5%8B%E8%AF%95%E7%B1%BB%E5%9E%8B/</url>
-    <content><![CDATA[<p>之前的文章写了大数据的存储或处理的一些程序，对于后续的这篇大数据如何测试，却迟迟无法落笔。因为每个公司都是根据自己的业务来使用大数据平台的一个或者多个功能的。这里随便聊下大数据测试！（就是想到哪里写到哪里）</p>
-<h4 id="大数据测试与传统测试的区别"><a href="#大数据测试与传统测试的区别" class="headerlink" title="大数据测试与传统测试的区别"></a>大数据测试与传统测试的区别</h4><p>传统测试：特定条件下运行的结果进行观察或者验证，构建上下文验证输出</p>
-<p>大数据测试：数据正确，系统正确仅仅是第一步，后边还有诸多额外工作，如数据计算后结果，系统性能等。</p>
-<h4 id="大数据测试的挑战"><a href="#大数据测试的挑战" class="headerlink" title="大数据测试的挑战"></a>大数据测试的挑战</h4><ol>
-<li>复杂的数据流，数据的多样性；</li>
-<li>集群规模大，数据量大</li>
-<li>复杂算法测试</li>
-<li>无明确的验收标准</li>
-</ol>
-<h4 id="大数据测试的测试类型"><a href="#大数据测试的测试类型" class="headerlink" title="大数据测试的测试类型"></a>大数据测试的测试类型</h4><h5 id="架构测试"><a href="#架构测试" class="headerlink" title="架构测试"></a>架构测试</h5><p>进行此测试是为了确保数据处理正确并符合要求。实际上，Hadoop系统处理大量数据，并且资源非常全面。如果体系结构不正确，则可能会降低性能，因此数据处理可能会中断并可能发生数据丢失。</p>
-<h5 id="数据库测试"><a href="#数据库测试" class="headerlink" title="数据库测试"></a>数据库测试</h5><p>需要确保从源数据库或本地数据库获取的数据必须是正确和适当的。需要检查源数据库中可用的数据是否与在Hadoop系统中输入的数据匹配。</p>
-<p><img src="DataBase-Testing.jpg" alt="DataBase-Testing"></p>
-<p>需要验证Hadoop系统中的数据在处理后或转换后是否正确，并通过适当的验证和确认加载到客户端环境中。作为数据库测试的一部分，需要完成CRUD操作，即在本地数据库中创建数据，然后检索数据，需要搜索它，它应该在加载到数据仓库之前和之后在数据库中可用，并从数据仓库到客户端的环境。在存储或加载和处理数据的每个阶段验证任何更新的数据。删除任何损坏的数据或任何重复和空的数据。</p>
-<h5 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h5><p>作为性能测试的一部分，我们需要检查数据的加载和处理速度，例如IOPS（每秒输入输出）。</p>
-<p>需要检查输入数据或数据作为输入的速度，从各种数据库到数据仓库或Hadoop系统，以及从Hadoop系统或数据仓库到客户环境。</p>
-<p>还必须检查来自各种数据库的数据以及作为输出的数据仓库的速度。这就是我们所说的每秒输入输出或 IOPS。</p>
-<p>除此之外，另一个方面是检查数据吸收和数据分发的性能，以及数据仓库从各种数据库和客户端系统从Hadoop系统消耗数据的速度。</p>
-<p>此外，作为测试人员，我们需要检查数据分发的性能，例如，数据以多快的速度分发到Hadoop系统或数据仓库中可用的各种文件。同样，在将数据分发到客户端系统时也会发生相同的过程。</p>
-<p>Hadoop系统或数据仓库由多个组件组成，因此测试人员需要检查所有这些组件的性能，例如MapReduce作业，数据插入和使用，查询的响应时间及其性能以及搜索操作的性能。所有这些都包含在性能测试中。</p>
-<h4 id="功能测试"><a href="#功能测试" class="headerlink" title="功能测试"></a>功能测试</h4><p>功能测试包含对所有子组件，程序和脚本，用于执行存储或加载和处理操作的工具等的测试。对于测试人员来说，这是需要过滤数据的四个重要类型和阶段，以便客户端获得完美且无差错的数据。</p>
-]]></content>
-      <categories>
-        <category>大数据</category>
-      </categories>
-      <tags>
-        <tag>大数据</tag>
-        <tag>测试类型</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>卸载centos自带的openjdk和MySQL</title>
     <url>/Echo/2020/01/01/%E5%8D%B8%E8%BD%BDcentos%E8%87%AA%E5%B8%A6%E7%9A%84openjdk%E5%92%8CMySQL/</url>
     <content><![CDATA[<h2 id="卸载openjdk"><a href="#卸载openjdk" class="headerlink" title="卸载openjdk"></a>卸载openjdk</h2><p>1.查看已经安装的jdk</p>
@@ -3352,6 +3320,38 @@
       </categories>
       <tags>
         <tag>kafka，大数据</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>大数据测试-测试类型</title>
+    <url>/Echo/2022/01/27/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%B5%8B%E8%AF%95-%E6%B5%8B%E8%AF%95%E7%B1%BB%E5%9E%8B/</url>
+    <content><![CDATA[<p>之前的文章写了大数据的存储或处理的一些程序，对于后续的这篇大数据如何测试，却迟迟无法落笔。因为每个公司都是根据自己的业务来使用大数据平台的一个或者多个功能的。这里随便聊下大数据测试！（就是想到哪里写到哪里）</p>
+<h4 id="大数据测试与传统测试的区别"><a href="#大数据测试与传统测试的区别" class="headerlink" title="大数据测试与传统测试的区别"></a>大数据测试与传统测试的区别</h4><p>传统测试：特定条件下运行的结果进行观察或者验证，构建上下文验证输出</p>
+<p>大数据测试：数据正确，系统正确仅仅是第一步，后边还有诸多额外工作，如数据计算后结果，系统性能等。</p>
+<h4 id="大数据测试的挑战"><a href="#大数据测试的挑战" class="headerlink" title="大数据测试的挑战"></a>大数据测试的挑战</h4><ol>
+<li>复杂的数据流，数据的多样性；</li>
+<li>集群规模大，数据量大</li>
+<li>复杂算法测试</li>
+<li>无明确的验收标准</li>
+</ol>
+<h4 id="大数据测试的测试类型"><a href="#大数据测试的测试类型" class="headerlink" title="大数据测试的测试类型"></a>大数据测试的测试类型</h4><h5 id="架构测试"><a href="#架构测试" class="headerlink" title="架构测试"></a>架构测试</h5><p>进行此测试是为了确保数据处理正确并符合要求。实际上，Hadoop系统处理大量数据，并且资源非常全面。如果体系结构不正确，则可能会降低性能，因此数据处理可能会中断并可能发生数据丢失。</p>
+<h5 id="数据库测试"><a href="#数据库测试" class="headerlink" title="数据库测试"></a>数据库测试</h5><p>需要确保从源数据库或本地数据库获取的数据必须是正确和适当的。需要检查源数据库中可用的数据是否与在Hadoop系统中输入的数据匹配。</p>
+<p><img src="DataBase-Testing.jpg" alt="DataBase-Testing"></p>
+<p>需要验证Hadoop系统中的数据在处理后或转换后是否正确，并通过适当的验证和确认加载到客户端环境中。作为数据库测试的一部分，需要完成CRUD操作，即在本地数据库中创建数据，然后检索数据，需要搜索它，它应该在加载到数据仓库之前和之后在数据库中可用，并从数据仓库到客户端的环境。在存储或加载和处理数据的每个阶段验证任何更新的数据。删除任何损坏的数据或任何重复和空的数据。</p>
+<h5 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h5><p>作为性能测试的一部分，我们需要检查数据的加载和处理速度，例如IOPS（每秒输入输出）。</p>
+<p>需要检查输入数据或数据作为输入的速度，从各种数据库到数据仓库或Hadoop系统，以及从Hadoop系统或数据仓库到客户环境。</p>
+<p>还必须检查来自各种数据库的数据以及作为输出的数据仓库的速度。这就是我们所说的每秒输入输出或 IOPS。</p>
+<p>除此之外，另一个方面是检查数据吸收和数据分发的性能，以及数据仓库从各种数据库和客户端系统从Hadoop系统消耗数据的速度。</p>
+<p>此外，作为测试人员，我们需要检查数据分发的性能，例如，数据以多快的速度分发到Hadoop系统或数据仓库中可用的各种文件。同样，在将数据分发到客户端系统时也会发生相同的过程。</p>
+<p>Hadoop系统或数据仓库由多个组件组成，因此测试人员需要检查所有这些组件的性能，例如MapReduce作业，数据插入和使用，查询的响应时间及其性能以及搜索操作的性能。所有这些都包含在性能测试中。</p>
+<h4 id="功能测试"><a href="#功能测试" class="headerlink" title="功能测试"></a>功能测试</h4><p>功能测试包含对所有子组件，程序和脚本，用于执行存储或加载和处理操作的工具等的测试。对于测试人员来说，这是需要过滤数据的四个重要类型和阶段，以便客户端获得完美且无差错的数据。</p>
+]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>大数据</tag>
+        <tag>测试类型</tag>
       </tags>
   </entry>
   <entry>
