@@ -29,20 +29,20 @@
 <meta property="og:site_name" content="测试的名义">
 <meta property="og:description" content="Hadoop 分布式文件系统HDFS解决了大数据的存储问题，Map Reduce解决了与处理部分大数据相关的问题。 Hadoop的组件HDFS有两个主要组件来解决大数据问题：  用于存储大数据的HDFS 用于处理大数据的MapReduce   如图所示，Hadoop的架构，一个是HDFS，Hadoop的文件存储系统，一个是YARN和MapReduce，大数据处理部分。 使用HDFS，Hadoop使">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://hugfeature.github.io/Echo/2022/01/02/HDFS%E7%AE%80%E4%BB%8B/Hadoop-Component-1.jpg">
-<meta property="og:image" content="https://hugfeature.github.io/Echo/2022/01/02/HDFS%E7%AE%80%E4%BB%8B/Hadoop-Core-Components.jpg">
-<meta property="og:image" content="https://hugfeature.github.io/Echo/2022/01/02/HDFS%E7%AE%80%E4%BB%8B/NameNode-DataNode.jpg">
-<meta property="og:image" content="https://hugfeature.github.io/Echo/2022/01/02/HDFS%E7%AE%80%E4%BB%8B/Hadoop-Cluster.jpg">
-<meta property="og:image" content="https://hugfeature.github.io/Echo/2022/01/02/HDFS%E7%AE%80%E4%BB%8B/Example-Diagram.jpg">
-<meta property="og:image" content="https://hugfeature.github.io/Echo/2022/01/02/HDFS%E7%AE%80%E4%BB%8B/Block-Replication.jpg">
-<meta property="og:image" content="https://hugfeature.github.io/Echo/2022/01/02/HDFS%E7%AE%80%E4%BB%8B/Rack-Awareness-Algorithm.jpg">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/Hadoop-Component-1.jpg">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/Hadoop-Core-Components.jpg">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/NameNode-DataNode.jpg">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/Hadoop-Cluster.jpg">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/Example-Diagram.jpg">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/Block-Replication.jpg">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/Rack-Awareness-Algorithm.jpg">
 <meta property="article:published_time" content="2022-01-02T00:45:39.000Z">
 <meta property="article:modified_time" content="2022-01-02T00:45:39.000Z">
 <meta property="article:author" content="丑牛">
 <meta property="article:tag" content="HDFS">
 <meta property="article:tag" content="大数据">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://hugfeature.github.io/Echo/2022/01/02/HDFS%E7%AE%80%E4%BB%8B/Hadoop-Component-1.jpg">
+<meta name="twitter:image" content="https://hugfeature.github.io/Echo/Hadoop-Component-1.jpg">
 
 
 <link rel="canonical" href="https://hugfeature.github.io/Echo/2022/01/02/HDFS%E7%AE%80%E4%BB%8B/">
@@ -263,10 +263,10 @@
 <li>用于存储大数据的HDFS</li>
 <li>用于处理大数据的MapReduce</li>
 </ul>
-<p><img src="Hadoop-Component-1.jpg" alt="Hadoop-Component-1"></p>
+<p><img src="/Echo/Hadoop-Component-1.jpg" alt="Hadoop-Component-1"></p>
 <p>如图所示，Hadoop的架构，一个是HDFS，Hadoop的文件存储系统，一个是YARN和MapReduce，大数据处理部分。</p>
 <p>使用HDFS，Hadoop使我们能够存储大数据，使用YARN和Map Reduce，Hadoop使我们能够处理存储在HDFS中的相同大数据。</p>
-<p><img src="Hadoop-Core-Components.jpg" alt="Hadoop-Core-Components"></p>
+<p><img src="/Echo/Hadoop-Core-Components.jpg" alt="Hadoop-Core-Components"></p>
 <p>正如您在上图中看到的，HDFS有两个主要的守护进程，或者您可以将它们称为进程或线程，它们只不过是JAVA进程，即在JVM中运行 - NameNode和DataNode。</p>
 <p>NameNode是一个在Master Machine上运行的主守护程序，即本质上是高端机器，DataNode是在商用硬件上运行的从机。可以有更多的DataNode，因为从机不仅仅是主机。</p>
 <p>因此，我们总是在从属机器上运行一个NameNode和多个DataNode。</p>
@@ -284,7 +284,7 @@
 <li>实际数据存储在此处。</li>
 <li>为来自客户端的读取和写入请求提供服务。</li>
 </ul>
-<p><img src="NameNode-DataNode.jpg" alt="NameNode-DataNode"></p>
+<p><img src="/Echo/NameNode-DataNode.jpg" alt="NameNode-DataNode"></p>
 <p>有一个集中式机器名称节点，它控制着各种DataNode，即商用硬件。因此，Name Node只不过是维护所有DataNode的主守护进程。</p>
 <p>这些名称节点具有有关存储在 DataNode 中的数据的所有信息。DataNode顾名思义，用于存储Hadoop集群中存在的数据。</p>
 <p>NameNode仅包含有关哪些数据存储在哪个DataNode上的信息。因此，我们可以说的是NameNode存储存储在DataNodes上的数据的元数据。</p>
@@ -292,7 +292,7 @@
 <p>DataNodes将检测信号发送回NameNode，这样NameNode就可以知道这些数据节点是活跃的，因此NameNode可以使用这些数据节点来存储更多数据或从这些数据节点读取数据。</p>
 <p>现在我们来看看DataNode，DataNode只不过是从属守护进程，它实际上存储着发送到Hadoop集群的数据。这些数据节点是实际为客户端发出的读取和写入请求提供服务的节点。</p>
 <p>如果有人想从Hadoop集群中读取数据，那么这些请求实际上由数据所在的DataNodes处理。</p>
-<h4 id="Hadoop-集群架构"><a href="#Hadoop-集群架构" class="headerlink" title="Hadoop 集群架构"></a>Hadoop 集群架构</h4><p><img src="Hadoop-Cluster.jpg" alt="Hadoop-Cluster"></p>
+<h4 id="Hadoop-集群架构"><a href="#Hadoop-集群架构" class="headerlink" title="Hadoop 集群架构"></a>Hadoop 集群架构</h4><p><img src="/Echo/Hadoop-Cluster.jpg" alt="Hadoop-Cluster"></p>
 <p>如图所示，Hadoop 集群r只不过是一个主从拓扑，其中有一个主机器，正如你在顶部看到的那样，即Hadoop 集群。在此主计算机中，有一个 NameNode 和正在运行的资源管理器，即主守护程序。</p>
 <p>主机使用核心交换机连接到所有从机，这是因为这些数据节点实际上存储在各种机架中，因此您可以看到计算机1，计算机2，计算机3直到计算机N。这只不过是从属机器或DataNodes，它们都存在于一个机架中。</p>
 <h5 id="HDFS将如何存取数据？"><a href="#HDFS将如何存取数据？" class="headerlink" title="HDFS将如何存取数据？"></a>HDFS将如何存取数据？</h5><p>将文件存储在HDFS中时，数据被存储为HDFS中的块。整个文件不存储在HDFS中，这是因为如您所知，Hadoop是一个分布式文件系统。</p>
@@ -305,18 +305,18 @@
 </ul>
 <p>让我们在这里考虑一个248 MB的文件，现在如果我们打破这个文件，或者如果我们把这个文件移动到Hadoop Cluster（即2.x）中，那么这个文件将被分解成一个块，即128 MB的块A和另一个120 MB的块B。</p>
 <p>如您所见，第一个块为128 MB，即第一个板块在那里削减，这就是为什么另一个块为120 MB而不是128 MB，即如果剩余的文件大小小于默认块大小，则不会浪费任何空间。</p>
-<p><img src="Example-Diagram.jpg" alt="Example-Diagram"></p>
+<p><img src="/Echo/Example-Diagram.jpg" alt="Example-Diagram"></p>
 <p>现在我们面前还有另一个问题，即每个块的单个副本是否安全？</p>
 <p>答案是否定的，因为系统可能会失败，而它只是商品硬件，因此我们可能会遇到大麻烦。为了克服这个问题，Hadoop HDFS有一个很好的解决方案，即**”块的复制”。**</p>
 <h5 id="Hadoop-架构块复制"><a href="#Hadoop-架构块复制" class="headerlink" title="Hadoop 架构块复制"></a>Hadoop 架构块复制</h5><p>Hadoop创建存储到Hadoop分布式文件系统中的每个块的副本，这就是Hadoop作为容错系统的方式，即即使您的系统出现故障或DataNode失败或副本丢失，您也会在其他DataNode或其他服务器中存在多个其他副本，以便您始终可以从那里选择这些副本。</p>
-<p><img src="Block-Replication.jpg" alt="Block-Replication"></p>
+<p><img src="/Echo/Block-Replication.jpg" alt="Block-Replication"></p>
 <p>如图所表示块复制，文件有五个不同的块，即块 1、2、3、4、5。让我们先检查一下块 1，您将在节点 1、节点 2 和节点 4 中找到块 1 的副本。</p>
 <p>同样，块 2 也有三个副本，即节点 2、节点 3 和节点 4，因此在各自的节点中，块 3、4 和 5 也是如此。</p>
 <p>因此，除了创建的副本之外，每个块都被复制了三次，即Hadoop遵循默认的复制因子为3，这意味着您复制到Hadoop分发文件系统中的任何文件都会被复制三次。</p>
 <p>换句话说，如果您将1 GB的文件复制到Hadoop分发文件系统中，它实际上将3 GB的文件存储在HDFS中。好的部分是，通过更改Hadoop的配置文件，默认复制因子是可以更改的。</p>
 <p>*<strong>Hadoop 如何决定存储副本的位置？*</strong></p>
 <p>Hadoop实际上遵循Rack Awareness的概念来决定在哪里存储Block的副本。如图所示机架感知算法图表。</p>
-<p><img src="Rack-Awareness-Algorithm.jpg" alt="Rack-Awareness-Algorithm"></p>
+<p><img src="/Echo/Rack-Awareness-Algorithm.jpg" alt="Rack-Awareness-Algorithm"></p>
 <p>Rack-1有四个DataNodes，Rack-2和Rack-3也是如此，因此整个Hadoop集群总共将由所有三个机架组成，并且将有12个DataNode。</p>
 <p>假设块 A 在 Rack-1 的 DataNode 1 上复制，根据 Rack Aware 的概念，块 A 的副本不能在同一机架中创建，并且需要在 Rack-1 之外的任何其他机架中创建，因为主文件已经存在于 Rack-1 中。</p>
 <p>如果我们在同一机架-1中创建块A的副本，并且如果整个Rack-1发生故障，那么我们肯定会丢失数据，因此副本必须存储在任何其他机架中，而不是存储在Rack-1中。</p>

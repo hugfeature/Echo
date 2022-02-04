@@ -29,15 +29,15 @@
 <meta property="og:site_name" content="测试的名义">
 <meta property="og:description" content="Apache Hadoop是一个开源框架，用于管理所有类型的数据（结构化，非结构化和半结构化）。 众所周知，如果我们想处理，存储和管理我们的数据，那么RDBMS是最好的解决方案。但是，数据应采用结构化格式，以便使用 RDBMS 进行处理。此外，如果数据大小增加，则RDBMS无法处理它，我们需要定期执行数据库清理。 这可能会导致历史数据丢失，并且无法在某些行业（如天气预报，银行，保险，销售等）中生成">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://hugfeature.github.io/Echo/2021/12/27/%E4%BB%80%E4%B9%88%E6%98%AFhadoop%EF%BC%9F/Hadoop-Features.webp">
-<meta property="og:image" content="https://hugfeature.github.io/Echo/2021/12/27/%E4%BB%80%E4%B9%88%E6%98%AFhadoop%EF%BC%9F/Hadoop-framework.png">
-<meta property="og:image" content="https://hugfeature.github.io/Echo/2021/12/27/%E4%BB%80%E4%B9%88%E6%98%AFhadoop%EF%BC%9F/Components-used-in-Hadoop.png">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/Hadoop-Features.webp">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/Hadoop-framework.png">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/Components-used-in-Hadoop.png">
 <meta property="article:published_time" content="2021-12-27T11:43:27.000Z">
 <meta property="article:modified_time" content="2021-12-27T11:43:27.000Z">
 <meta property="article:author" content="丑牛">
 <meta property="article:tag" content="大数据，数据">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://hugfeature.github.io/Echo/2021/12/27/%E4%BB%80%E4%B9%88%E6%98%AFhadoop%EF%BC%9F/Hadoop-Features.webp">
+<meta name="twitter:image" content="https://hugfeature.github.io/Echo/Hadoop-Features.webp">
 
 
 <link rel="canonical" href="https://hugfeature.github.io/Echo/2021/12/27/%E4%BB%80%E4%B9%88%E6%98%AFhadoop%EF%BC%9F/">
@@ -279,7 +279,7 @@
 <td>RDBMS 无法处理大量数据。</td>
 </tr>
 <tr>
-<td><strong>数据的种类/类型</strong></td>
+<td><strong>数据的种类&#x2F;类型</strong></td>
 <td>可以处理结构化，半结构化和非结构化数据，如视频，图像，CSV文件，xml等。</td>
 <td>仅处理结构化数据。</td>
 </tr>
@@ -310,7 +310,7 @@
 </tr>
 </tbody></table>
 <h4 id="hadoop-功能"><a href="#hadoop-功能" class="headerlink" title="hadoop 功能"></a>hadoop 功能</h4><p>Hadoop框架</p>
-<p><img src="Hadoop-Features.webp" alt="Hadoop-Features"></p>
+<p><img src="/Echo/Hadoop-Features.webp" alt="Hadoop-Features"></p>
 <ul>
 <li>Hadoop yarn</li>
 <li>Hadoop common</li>
@@ -327,7 +327,7 @@
 <li>MapReduce</li>
 <li>YARN</li>
 </ul>
-<p><img src="Hadoop-framework.png" alt="Hadoop-framework"></p>
+<p><img src="/Echo/Hadoop-framework.png" alt="Hadoop-framework"></p>
 <p>这些是Hadoop架构的三个重要组成部分。我们还应该了解架构的一些术语或概念，并了解它们是如何工作的。</p>
 <ol>
 <li>管理节点–manager node</li>
@@ -349,7 +349,7 @@
 <p>在一段时间后，它将复制命名空间映像，并从管理节点更新编辑日志。因此，在管理节点失败的情况下，辅助管理节点进入图片并表现得与主名称节点类似。由于此过程，它可以防止完全失败。</p>
 <p>4）blocks–块</p>
 <p>块是HDFS中最小的单位。Hadoop可以处理大量的文件，因为它将其分成小块。我们可以说，块只不过是一个大文件的数据。每个块的大小为128MB。这些块保存在数据节点中并处理数据。</p>
-<p><img src="Components-used-in-Hadoop.png" alt="Components-used-in-Hadoop"></p>
+<p><img src="/Echo/Components-used-in-Hadoop.png" alt="Components-used-in-Hadoop"></p>
 <p>Hadoop 分布式文件系统 （HDFS） 是 Hadoop 集群中使用的文件系统。HDFS主要用于在集群中存储Hadoop数据。HDFS通常致力于顺序数据处理。正如我们已经知道的那样，它基于主从架构。</p>
 <p>集群的所有元数据都保存在 JobTracker 的 Name 节点上，实际数据存储在 TaskTracker 的 HDFS 的数据节点中。</p>
 <p>MapReduce负责数据的处理。每当任何文件进入集群进行处理时，第一个数据节点都会将其划分为块，每个块包含64MB的数据，它可以存储128MB。然后，每个块将复制两次，并存储在群集中任何位置的不同数据节点中。</p>

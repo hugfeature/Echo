@@ -22,12 +22,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"hugfeature.github.io","root":"/Echo/","images":"/Echo/images","scheme":"Gemini","darkmode":false,"version":"8.8.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":{"gitalk":{"order":-2}}},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/Echo/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Echo/js/config.js"></script>
-<meta name="description" content="API文档通常，人们又一种无需使用Web UI即可与Azkaban进行交互的愿望。Azkaban有一些公开的ajax调用，可以通过curl或其他一些HTTP请求客户端进行访问。所有API调用都首先需要正确的身份验证。 授权 Method: POST Request URL: &#x2F;?action&#x3D;login Parameter Location: Request Query String  该API可">
+<meta name="description" content="API文档通常，人们又一种无需使用Web UI即可与Azkaban进行交互的愿望。Azkaban有一些公开的ajax调用，可以通过curl或其他一些HTTP请求客户端进行访问。所有API调用都首先需要正确的身份验证。 授权 Method: POST Request URL: &#x2F;?action&#x3D;login Parameter Location: Request Query Str">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Azkaban REST API使用指南">
 <meta property="og:url" content="https://hugfeature.github.io/Echo/2021/04/12/Azkaban-REST-API%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/index.html">
 <meta property="og:site_name" content="测试的名义">
-<meta property="og:description" content="API文档通常，人们又一种无需使用Web UI即可与Azkaban进行交互的愿望。Azkaban有一些公开的ajax调用，可以通过curl或其他一些HTTP请求客户端进行访问。所有API调用都首先需要正确的身份验证。 授权 Method: POST Request URL: &#x2F;?action&#x3D;login Parameter Location: Request Query String  该API可">
+<meta property="og:description" content="API文档通常，人们又一种无需使用Web UI即可与Azkaban进行交互的愿望。Azkaban有一些公开的ajax调用，可以通过curl或其他一些HTTP请求客户端进行访问。所有API调用都首先需要正确的身份验证。 授权 Method: POST Request URL: &#x2F;?action&#x3D;login Parameter Location: Request Query Str">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-04-12T13:30:07.000Z">
 <meta property="article:modified_time" content="2021-04-12T13:30:07.000Z">
@@ -252,7 +252,7 @@
         <h2 id="API文档"><a href="#API文档" class="headerlink" title="API文档"></a>API文档</h2><p>通常，人们又一种无需使用Web UI即可与Azkaban进行交互的愿望。Azkaban有一些公开的ajax调用，可以通过curl或其他一些HTTP请求客户端进行访问。所有API调用都首先需要正确的身份验证。</p>
 <h3 id="授权"><a href="#授权" class="headerlink" title="授权"></a>授权</h3><ul>
 <li><strong>Method:</strong> POST</li>
-<li><strong>Request URL:</strong> /?action=login</li>
+<li><strong>Request URL:</strong> &#x2F;?action&#x3D;login</li>
 <li><strong>Parameter Location:</strong> Request Query String</li>
 </ul>
 <p>该API可帮助验证用户身份并提供<code>session.id</code>响应。</p>
@@ -269,7 +269,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>action=login</td>
+<td>action&#x3D;login</td>
 <td>指示登录操作的固定参数。</td>
 </tr>
 <tr>
@@ -308,7 +308,7 @@
 <p><strong>注意：</strong>在上传任何项目zip文件之前，应首先通过此API创建项目。</p>
 <ul>
 <li><strong>Method:</strong> POST</li>
-<li><strong>Request URL:</strong> /manager?action=create</li>
+<li><strong>Request URL:</strong> &#x2F;manager?action&#x3D;create</li>
 <li><strong>Parameter Location:</strong> Request Query</li>
 </ul>
 <p>请求参数</p>
@@ -324,7 +324,7 @@
 <td>用户会话ID。</td>
 </tr>
 <tr>
-<td>action=create</td>
+<td>action&#x3D;create</td>
 <td>指示创建项目动作的固定参数。</td>
 </tr>
 <tr>
@@ -381,7 +381,7 @@
 <p><strong>注意：</strong>目前，删除操作完成后，将不会返回任何响应消息。</p>
 <ul>
 <li><strong>Method:</strong> GET</li>
-<li><strong>Request URL:</strong> /manager?delete=true</li>
+<li><strong>Request URL:</strong> &#x2F;manager?delete&#x3D;true</li>
 <li><strong>Parameter Location:</strong> Request Query</li>
 </ul>
 <p>请求参数</p>
@@ -397,7 +397,7 @@
 <td>用户会话ID。</td>
 </tr>
 <tr>
-<td>delete=true</td>
+<td>delete&#x3D;true</td>
 <td>指示删除项目操作的固定参数。</td>
 </tr>
 <tr>
@@ -410,8 +410,8 @@
 <p><strong>注意：</strong>成功创建项目后，应调用此API</p>
 <ul>
 <li><strong>Method:</strong> POST</li>
-<li><strong>Content-Type:</strong> multipart/mixed</li>
-<li><strong>Request URL:</strong> /manager?ajax=upload</li>
+<li><strong>Content-Type:</strong> multipart&#x2F;mixed</li>
+<li><strong>Request URL:</strong> &#x2F;manager?ajax&#x3D;upload</li>
 <li><strong>Parameter Location:</strong> Request Body</li>
 </ul>
 <p>请求参数</p>
@@ -427,7 +427,7 @@
 <td>用户会话ID。</td>
 </tr>
 <tr>
-<td>ajax=upload</td>
+<td>ajax&#x3D;upload</td>
 <td>上传操作的固定参数。</td>
 </tr>
 <tr>
@@ -466,7 +466,7 @@
 <h3 id="获取项目流程"><a href="#获取项目流程" class="headerlink" title="获取项目流程"></a>获取项目流程</h3><p>给定项目名称后，此API调用将获取该项目的所有流ID。</p>
 <ul>
 <li><strong>Method:</strong> GET</li>
-<li><strong>Request URL:</strong> /manager?ajax=fetchprojectflows</li>
+<li><strong>Request URL:</strong> &#x2F;manager?ajax&#x3D;fetchprojectflows</li>
 <li><strong>Parameter Location:</strong> Request Query String</li>
 </ul>
 <p>请求参数</p>
@@ -482,7 +482,7 @@
 <td>用户会话ID。</td>
 </tr>
 <tr>
-<td>ajax=fetchprojectflows</td>
+<td>ajax&#x3D;fetchprojectflows</td>
 <td>指示fetchProjectFlows操作的固定参数。</td>
 </tr>
 <tr>
@@ -517,7 +517,7 @@
 <h3 id="提取流程作业"><a href="#提取流程作业" class="headerlink" title="提取流程作业"></a>提取流程作业</h3><p>对于给定的项目和流ID，此API调用将获取属于该流的所有作业。它还返回那些作业的相应图形结构。</p>
 <ul>
 <li><strong>Method:</strong> GET</li>
-<li><strong>Request URL:</strong> /manager?ajax=fetchflowgraph</li>
+<li><strong>Request URL:</strong> &#x2F;manager?ajax&#x3D;fetchflowgraph</li>
 <li><strong>Parameter Location:</strong> Request Query String</li>
 </ul>
 <p>请求参数</p>
@@ -533,7 +533,7 @@
 <td>用户会话ID。</td>
 </tr>
 <tr>
-<td>ajax=fetchflowgraph</td>
+<td>ajax&#x3D;fetchflowgraph</td>
 <td>指示fetchProjectFlows操作的固定参数。</td>
 </tr>
 <tr>
@@ -586,7 +586,7 @@
 <td>用户会话ID。</td>
 </tr>
 <tr>
-<td>ajax=fetchFlowExecutions</td>
+<td>ajax&#x3D;fetchFlowExecutions</td>
 <td>指示fetchFlowExecutions操作的固定参数。</td>
 </tr>
 <tr>
@@ -612,7 +612,7 @@
 <h3 id="获取流正在执行的列表"><a href="#获取流正在执行的列表" class="headerlink" title="获取流正在执行的列表"></a>获取流正在执行的列表</h3><p>给定项目名称和流程ID，此API调用仅获取当前正在运行的执行。</p>
 <ul>
 <li><strong>Method:</strong> GET</li>
-<li><strong>Request URL:</strong> /executor?ajax=getRunning</li>
+<li><strong>Request URL:</strong> &#x2F;executor?ajax&#x3D;getRunning</li>
 <li><strong>Parameter Location:</strong> Request Query String</li>
 </ul>
 <p>请求参数</p>
@@ -628,7 +628,7 @@
 <td>用户会话ID。</td>
 </tr>
 <tr>
-<td>ajax=getRunning</td>
+<td>ajax&#x3D;getRunning</td>
 <td>指示getRunning动作的固定参数。</td>
 </tr>
 <tr>
@@ -670,7 +670,7 @@
 <td>用户会话ID。</td>
 </tr>
 <tr>
-<td>ajax=executeFlow</td>
+<td>ajax&#x3D;executeFlow</td>
 <td>指示executeFlow动作的固定参数。</td>
 </tr>
 <tr>
@@ -713,7 +713,7 @@
 <h3 id="取消流程执行"><a href="#取消流程执行" class="headerlink" title="取消流程执行"></a>取消流程执行</h3><p>给定执行ID，此API调用将取消正在运行的流程。如果流未在运行，它将返回错误消息。</p>
 <ul>
 <li><strong>Method:</strong> GET</li>
-<li><strong>Request URL:</strong> /executor?ajax=cancelFlow</li>
+<li><strong>Request URL:</strong> &#x2F;executor?ajax&#x3D;cancelFlow</li>
 <li><strong>Parameter Location:</strong> Request Query String</li>
 </ul>
 <p>请求参数</p>
@@ -729,7 +729,7 @@
 <td>用户会话ID。</td>
 </tr>
 <tr>
-<td>ajax=cancelFlow</td>
+<td>ajax&#x3D;cancelFlow</td>
 <td>指示当前ajax动作的固定参数是cancelFlow。</td>
 </tr>
 <tr>
@@ -746,7 +746,7 @@
 <h3 id="使用Cron创建一个调度"><a href="#使用Cron创建一个调度" class="headerlink" title="使用Cron创建一个调度"></a>使用Cron创建一个调度</h3><p>该API调用通过cron表达式调度流程。Cron是已广泛使用了很长时间的UNIX工具，我们使用<a target="_blank" rel="noopener" href="http://www.quartz-scheduler.org/">Quartz库</a>来解析cron表达式。所有cron计划都遵循azkaban Web服务器中定义的时区（时区ID是通过 <em>java.util.TimeZone.getDefault（）。getID（）获得的</em>）。</p>
 <ul>
 <li><strong>Method:</strong> POST</li>
-<li><strong>Request URL:</strong> /schedule?ajax=scheduleCronFlow</li>
+<li><strong>Request URL:</strong> &#x2F;schedule?ajax&#x3D;scheduleCronFlow</li>
 <li><strong>Parameter Location:</strong> Request Query String</li>
 </ul>
 <p>请求参数</p>
@@ -762,7 +762,7 @@
 <td>用户会话ID。</td>
 </tr>
 <tr>
-<td>ajax=scheduleCronFlow</td>
+<td>ajax&#x3D;scheduleCronFlow</td>
 <td>指示操作的固定参数是使用cron计划流。</td>
 </tr>
 <tr>
@@ -792,7 +792,7 @@
 <h3 id="获取一个调度"><a href="#获取一个调度" class="headerlink" title="获取一个调度"></a>获取一个调度</h3><p>给定项目ID和流程ID，此API调用将获取一个调度。</p>
 <ul>
 <li><strong>Method:</strong> GET</li>
-<li><strong>Request URL:</strong> /schedule?ajax=fetchSchedule</li>
+<li><strong>Request URL:</strong> &#x2F;schedule?ajax&#x3D;fetchSchedule</li>
 <li><strong>Parameter Location:</strong> Request Query String</li>
 </ul>
 <p>请求参数</p>
@@ -808,7 +808,7 @@
 <td>用户会话ID。</td>
 </tr>
 <tr>
-<td>ajax=fetchSchedule</td>
+<td>ajax&#x3D;fetchSchedule</td>
 <td>指示计划的固定参数。</td>
 </tr>
 <tr>
@@ -829,7 +829,7 @@
 <h3 id="取消一个调度"><a href="#取消一个调度" class="headerlink" title="取消一个调度"></a>取消一个调度</h3><p>此API调用取消计划流程。</p>
 <ul>
 <li><strong>Method:</strong> POST</li>
-<li><strong>Request URL:</strong> /schedule?action=removeSched</li>
+<li><strong>Request URL:</strong> &#x2F;schedule?action&#x3D;removeSched</li>
 <li><strong>Parameter Location:</strong> Request Query String</li>
 </ul>
 <p>请求参数</p>
@@ -845,12 +845,12 @@
 <td>用户会话ID。</td>
 </tr>
 <tr>
-<td>action=removeSched</td>
+<td>action&#x3D;removeSched</td>
 <td>指示操作的固定参数是取消计划流。</td>
 </tr>
 <tr>
 <td>scheduleId</td>
-<td>时间表的ID。您可以在/ schedule页面上的Azkaban UI中找到它。</td>
+<td>时间表的ID。您可以在&#x2F; schedule页面上的Azkaban UI中找到它。</td>
 </tr>
 </tbody></table>
 <p>成功返回数据</p>
@@ -862,7 +862,7 @@
 <h3 id="获取流程执行详情"><a href="#获取流程执行详情" class="headerlink" title="获取流程执行详情"></a>获取流程执行详情</h3><p>给定执行ID，此API调用将获取该执行的所有详细信息，包括所有作业执行的列表。</p>
 <ul>
 <li><strong>Method:</strong> GET</li>
-<li><strong>Request URL:</strong> /executor?ajax=fetchexecflow</li>
+<li><strong>Request URL:</strong> &#x2F;executor?ajax&#x3D;fetchexecflow</li>
 <li><strong>Parameter Location:</strong> Request Query String</li>
 </ul>
 <p>请求参数</p>
@@ -878,7 +878,7 @@
 <td>用户会话ID。</td>
 </tr>
 <tr>
-<td>ajax=fetchexecflow</td>
+<td>ajax&#x3D;fetchexecflow</td>
 <td>指示fetchexecflow操作的固定参数。</td>
 </tr>
 <tr>
@@ -893,7 +893,7 @@
 <h3 id="获取执行作业日志"><a href="#获取执行作业日志" class="headerlink" title="获取执行作业日志"></a>获取执行作业日志</h3><p>给定一个执行ID和一个作业ID，此API调用将获取相应的作业日志。有时日志文本可能会很大，因此此API调用也需要参数<code>offset</code>并<code>length</code>要指定。</p>
 <ul>
 <li><strong>Method:</strong> GET</li>
-<li><strong>Request URL:</strong> /executor?ajax=fetchExecJobLogs</li>
+<li><strong>Request URL:</strong> &#x2F;executor?ajax&#x3D;fetchExecJobLogs</li>
 <li><strong>Parameter Location:</strong> Request Query String</li>
 </ul>
 <p>请求参数</p>
@@ -909,7 +909,7 @@
 <td>用户会话ID。</td>
 </tr>
 <tr>
-<td>ajax=fetchExecJobLogs</td>
+<td>ajax&#x3D;fetchExecJobLogs</td>
 <td>指示fetchExecJobLogs操作的固定参数。</td>
 </tr>
 <tr>
