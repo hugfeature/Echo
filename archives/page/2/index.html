@@ -191,6 +191,247 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/2022/01/08/%E4%BB%80%E4%B9%88%E6%98%AFYARN/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Echo/images/avatar.gif">
+      <meta itemprop="name" content="丑牛">
+      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="测试的名义">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Echo/2022/01/08/%E4%BB%80%E4%B9%88%E6%98%AFYARN/" class="post-title-link" itemprop="url">YARN原理及工作流？</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-01-08 06:55:01" itemprop="dateCreated datePublished" datetime="2022-01-08T06:55:01+08:00">2022-01-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Echo/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h4 id="YRAN是什么？"><a href="#YRAN是什么？" class="headerlink" title="YRAN是什么？"></a>YRAN是什么？</h4><p>YARN是hadoop集群中另一个资源管理者，为需要在Hadoop集群上执行的各种作业分配资源。在Hadoop 2.0中引入的。在Hadoop 2.0中引入了YARN，使用它能够超越MapReduce。</p>
+<p><img src="/Echo/Framework-Supported-by-YARN.jpg" alt="Framework-Supported-by-YARN"></p>
+<p>正如你在图中看到的，我们在两者之间的底部有HDFS，我们有YARN并使用YARN，很多框架都能够连接和利用HDFS。因此，即使MapReduce也用于使用YARN进行连接以请求资源，并且只有这样它才能通过HDFS（即Hadoop Cluster）执行作业。</p>
+<p>同样;SPARK，STORM和其他搜索引擎可以连接到HDFS。HBase是一个No SQL数据库也可以连接它。因此，HDFS的应用变得庞大，因为YARN能够为其他框架和其他大数据分析工具更好的分配资源。</p>
+<h4 id="Hadoop-2-x-守护进程"><a href="#Hadoop-2-x-守护进程" class="headerlink" title="Hadoop 2.x 守护进程"></a>Hadoop 2.x 守护进程</h4><p>让我们快速看一下Hadoop 2.0中新引入的守护进程，它们运行组件，即存储和处理。</p>
+<p>在HDFS一文中，我们详细理解了守护进程，即NameNode和DataNode。在此，我们将了解资源管理器和节点管理器如何在 Hadoop 2.x 群集中工作，以管理需要在 Hadoop 群集中执行的处理和作业。</p>
+<p><img src="/Echo/Hadoop-2-Daemons.jpg" alt="Hadoop-2-Daemons"></p>
+<p>什么是资源管理器？资源管理器是在主计算机或 NameNode（高端计算机）上运行的主守护程序。另一方面，节点管理器是在从属机器或DataNodes上运行的守护进程，或者与DataNode进程一起运行。</p>
+<h4 id="Hadoop-2-x-MapReduce-YARN-组件"><a href="#Hadoop-2-x-MapReduce-YARN-组件" class="headerlink" title="Hadoop 2.x MapReduce YARN 组件"></a>Hadoop 2.x MapReduce YARN 组件</h4><p>首先我们探讨下YARN的其他组件：</p>
+<ul>
+<li><strong>客户端：</strong>它是一个提交类似作业的命令行界面 （CLI） 的单元，客户端可以是 JAVA 应用程序。</li>
+<li><strong>资源管理器：</strong>它是一个主守护程序，所有作业都从客户端提交到该守护程序，并且是分配所有群集级别资源以执行特定作业的主守护程序。它运行在具有高质量硬件和良好配置的高端计算机上，因为它是必须管理群集上所有内容的主计算机。</li>
+<li><strong>节点管理器</strong>：它是一个在从属机器或DataNode上运行的从属守护进程，因此每个从属机器都有一个运行的节点管理器。它监视特定 DataNode 的资源，资源管理器管理群集资源，节点管理器管理 DataNode 资源。</li>
+<li><strong>作业历史记录服务器：</strong>它是跟踪已在群集上执行或已提交到群集的所有作业的单元。它还跟踪状态，并保留在Hadoop集群上发生的每次执行的日志文件。</li>
+<li><strong>应用程序主</strong>设备：它是一个通过节点计算机（从属计算机）执行的组件，由资源管理器创建以执行和管理作业。它是从资源管理器协商资源并最终与节点管理器协调以执行任务的那个。</li>
+<li><strong>容器：</strong>它由节点管理器本身创建，该节点管理器已由资源管理器分配，所有作业最终在容器中执行。</li>
+</ul>
+<h4 id="YARN工作流程"><a href="#YARN工作流程" class="headerlink" title="YARN工作流程"></a>YARN工作流程</h4><p><img src="/Echo/YARN-Work-Flow.jpg" alt="YARN-Work-Flow"></p>
+<p>如上图所示，有一个资源管理器，所有作业都已提交到该管理器，并且有一个群集，其中有从属计算机，并且在每台从属计算机上，都有一个节点管理器正在运行。</p>
+<p>资源管理器有两个组件，即计划程序和应用程序管理器。</p>
+<p>应用程序主服务器和应用程序管理器之间有什么区别？</p>
+<p>应用程序管理器是资源管理器的一个组件，可确保执行每个任务并为其创建应用程序主节点。另一方面，应用程序主服务器是执行任务并请求需要执行的所有资源的人员。</p>
+<p>假设作业已提交到资源管理器，一旦作业提交，计划程序就会计划该作业。一旦计划程序计划要执行的作业，应用程序管理器将在其中一个DataNode 中创建一个容器，并且在此容器中，将启动应用程序主节点。</p>
+<p>然后，此应用程序主机将向资源管理器注册，并请求容器来执行任务。分配容器后，应用程序主节点现在将与节点管理器连接，并请求启动容器。</p>
+<p>正如我们所看到的，应用程序主节点被分配给DataNodes D和E，现在这个应用程序主节点请求节点管理器启动DataNode D和DataNode E的容器。</p>
+<p>一旦容器启动，应用程序主服务器将在容器内执行任务，结果将发送回客户端。</p>
+<h4 id="作业执行流程"><a href="#作业执行流程" class="headerlink" title="作业执行流程"></a>作业执行流程</h4><p>我们以一种顺序的方式理解资源申请流程。</p>
+<p><img src="/Echo/Sequence-of-Execution.jpg" alt="Sequence-of-Execution"></p>
+<p>图中有四个组件，一个是客户端（client），一个是资源管理器（resource manager），一个是节点管理器（node manager），一个是程序主节点（application master）</p>
+<p>第一步是将作业提交给资源管理器的客户端，在第二步中，资源管理器分配一个容器以启动从属计算机上的应用程序主站;第三步是应用程序主机向资源管理器注册。</p>
+<p>一旦它注册，它就会请求容器执行任务，即第四步。在步骤 5 中，应用程序主机通知需要在其上启动容器的节点管理器。</p>
+<p>在第六步中，节点管理器启动容器后，应用程序主机将在这些容器中执行代码。</p>
+<p>最后，在第七步中，客户端联系资源管理器或应用程序主机以监视应用程序状态。</p>
+<p>最后，应用程序主机将从资源管理器中注销自身，并将结果返回给客户端。因此，这是一个简单的顺序流，说明如何使用YARN框架执行MapReduce程序。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/2022/01/03/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Echo/images/avatar.gif">
+      <meta itemprop="name" content="丑牛">
+      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="测试的名义">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Echo/2022/01/03/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/" class="post-title-link" itemprop="url">MapReduce是什么？</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-01-03 09:01:16" itemprop="dateCreated datePublished" datetime="2022-01-03T09:01:16+08:00">2022-01-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Echo/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h4 id="为什么需要MapReduce？"><a href="#为什么需要MapReduce？" class="headerlink" title="为什么需要MapReduce？"></a>为什么需要MapReduce？</h4><p><img src="/Echo/Map-Reduce.jpg" alt="Map-Reduce"></p>
+<p>MapReduce是**”处理单元”，**使用此组件，我们可以处理存储在Hadoop HDFS上的大数据。</p>
+<p>但确切的要求是为什么我们需要Hadoop的这个组件？</p>
+<p>存储在Hadoop HDFS上的大数据和传统存储不一样。数据被划分为存储在各个DataNodes中的数据块。因此，整个数据不会存储在一个集中的位置。</p>
+<p>因此，像Java这样的本机客户端应用程序或任何此类应用程序无法以当前格式处理数据，我们需要一个特殊的框架来处理存储在各个DataNodes中的碎片化数据块。</p>
+<p>处理是使用Hadoop MapReduce处理完成的。</p>
+<h4 id="MapReduce简述"><a href="#MapReduce简述" class="headerlink" title="MapReduce简述"></a>MapReduce简述</h4><p><img src="/Echo/NutShell-MapReduce.jpg" alt="NutShell-MapReduce"></p>
+<p>如图所示显示了MapReduce的功能和用途。</p>
+<p>让我们从MapReduce的应用程序开始及如何应用。它用于分类器，索引和搜索，以及在电子商务网站（Flipkart，Amazon等）上创建推荐引擎。它也被几家公司用作分析。</p>
+<p>当我们从功能的角度来看，它是一个编程模型，可以用于像Hadoop HDFS这样的大规模分布式模型，并且具有并行编程的功能，使其非常有用。</p>
+<p>当我们在Map Reduce中看到函数时，会执行两个函数，即Map Function和Reduce函数。</p>
+<p>这项技术已经由谷歌，雅虎，Facebook等主要组织实施，也被Apache Hadoop采用，如HDFS，PIG，HIVE，并使用HBase存储数据或执行和处理大数据，也称为No-SQL。</p>
+<h5 id="MapReduce的优点"><a href="#MapReduce的优点" class="headerlink" title="MapReduce的优点"></a>MapReduce的优点</h5><p>1、并行处理</p>
+<p><img src="/Echo/Advantage.jpg" alt="Advantage"></p>
+<p>整个数据块被Hadoop HDFS分成HDFS块，MapReduce并行处理这些数据块，因此处理变得很快。</p>
+<p>2、数据局部性</p>
+<p>这是Hadoop MapReduce给出的一个多功能的东西，即我们可以在它所在的位置处理数据。</p>
+<p><em><strong>这是什么意思？</strong></em></p>
+<p>在之前的HDFS教程中，我们了解到我们移动到Hadoop Cluster中的数据被划分为HDFS块，这些块被保存到SlaveMachines或DataNodes中。Map-Reduce将处理和逻辑感知到数据驻留在HDFS块中的相应从节点或DataNodes。</p>
+<p>处理在多个位置的较小数据块上并行执行。这节省了大量时间以及将大数据从一个位置移动到另一个位置所需的网络带宽。</p>
+<p>请记住，我们正在处理的数据是分解成块的大数据，如果我们开始将大数据直接通过分配的网络通道移动到集中式计算机中并对其进行处理，那么它将不会给我们带来任何优势，因为我们将消耗整个带宽将数据移动到集中式服务器。</p>
+<p>因此，使用Hadoop MapReduce，我们不只是在进行”并行处理”，我们还将数据处理到存在数据块的相应从节点或DataNodes上，因此我们也”节省了大量网络带宽”，这是非常有益的。</p>
+<p>最后，SlaveMachines完成了对存储在SlaveMachines的数据的处理，它们将结果发送回主机器，因为结果不如SlaveMachines上存储的块大。因此，它不会占用大量带宽。</p>
+<p>从属计算机将结果发送回主计算机，这些结果将聚合在一起，最终结果将发送回提交作业的客户端计算机。</p>
+<p><em><strong>如何决定哪些数据应该在哪个DataNode上处理？</strong></em></p>
+<p>客户端将作业提交给资源管理器，资源管理器是提供在数据所在的相应 DataNode 上执行作业的方向的资源管理器，它根据最近的可用 DataNode 做出决定，以便不会使用大量网络带宽。</p>
+<h4 id="传统方式VSMapReduce方式"><a href="#传统方式VSMapReduce方式" class="headerlink" title="传统方式VSMapReduce方式"></a>传统方式VSMapReduce方式</h4><p>假设有五个保险公司分支机构，人们来申请人寿保险单。现在，还有一家保险公司的总部，该总部拥有有关可用和所在分支机构的所有信息。</p>
+<p>但是，当人们来各自的分行A，B，C，D，E申请人寿保险时，保单申请保留在各自的分行本身，并且该信息不会与保险公司总部共享。</p>
+<p>1、传统方式</p>
+<p>传统为了上解决这个问题，所有申请将被转移到保险公司总部，然后申请过程将开始。</p>
+<p>在这种情况下，我们需要将所有申请转移到保险公司总部，这是一件代价高昂的事情，即必须从保险公司分支机构收集所有申请并将其带到保险公司总部。</p>
+<p>这就是成本以及进行此活动的巨大努力的方式。</p>
+<p><img src="/Echo/Traditional-way-1.jpg" alt="Traditional-way-1"></p>
+<p><img src="/Echo/Traditional-way-2.jpg" alt="Traditional-way-2"></p>
+<p>另一个方面是保险公司总部负担过重，因为它必须处理人民在各自分支机构申请保单的所有申请。</p>
+<p>由于保险公司正在处理所有分支机构都适用的申请，因此需要很长时间。最后，这个过程效果不是很好。</p>
+<p>2、MapReduce方式</p>
+<p>MapReduce遵循Data Locality，即它不会将所有应用程序带到保险公司总部，而是并行处理各个分支机构本身的应用程序。</p>
+<p><img src="/Echo/MapReduce-Way.jpg" alt="MapReduce-Way"></p>
+<p>一旦应用于每个分支机构的申请得到处理，他们就会将处理后的详细信息发回保险公司总部。</p>
+<p>现在，保险公司总部只需要汇总从各自分支机构发送的已处理申请的数量，并将详细信息保存在各自的数据库或存储中心。</p>
+<p>通过这种方式，处理将非常容易和快速，保单持有人可以立即获得福利。</p>
+<h4 id="MapReduce运行原理"><a href="#MapReduce运行原理" class="headerlink" title="MapReduce运行原理"></a>MapReduce运行原理</h4><p>在前面的示例中，我们有一个分布在各个分支之间的输入（应用程序），每个输入都由相应的 Map 函数处理。</p>
+<p>我们知道MapReduce有两个函数，即Map Function和Reduce Function。</p>
+<p>在各个分支上完成的处理部分由 Map 函数完成。因此，每个分支机构中的每个输入（应用程序）都使用Map函数进行处理，之后处理后的详细信息被发送到保险公司总部，聚合部分由Reduce功能完成。</p>
+<p>聚合的已处理应用程序详细信息作为输出提供。</p>
+<p><img src="/Echo/MapReduce-in-Detail.jpg" alt="MapReduce-in-Detail"></p>
+<p>这就是我们前面的例子中发生的事情。整个过程分为map任务和reduce任务。</p>
+<p>映射任务获取输入，映射任务的输出作为输入提供给 Reduce 任务，此 Reduce 任务最终将输出提供给客户端。</p>
+<p>为了更好地理解它，让我们来了解一下MapReduce的解剖结构。</p>
+<p><img src="/Echo/Anatomy-of-MapReduce.jpg" alt="Anatomy-of-MapReduce"></p>
+<p>MapReduce任务在键值对上工作，因此当我们谈论Map时，Map将输入作为键值，并将输出作为键值列表给出。此键值列表将经历随机播放阶段，键的输入和值列表将转到化简器。</p>
+<p>最后，Reducer 为我们提供了键值对的列表。</p>
+<h4 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h4><ul>
+<li>Hadoop Map Reduce是Hadoop的”处理单元”。</li>
+<li>为了处理Hadoop HDFS存储的大数据，我们使用Hadoop Map Reduce。</li>
+<li>它用于搜索和索引，分类，推荐和分析。</li>
+<li>它具有编程模型，并行编程和大规模分布式模型等功能。</li>
+<li>MapReduce的设计模式是：汇总，热门记录的分类，排序和分析，如连接和选择。</li>
+<li>它只有两个功能，即mapper功能和reducer功能。</li>
+<li>并行处理和数据局部性是Hadoop MapReduce的良好优势。</li>
+<li>MapReduce的过程分为六个阶段，即输入，拆分，映射，洗牌，减少和最终结果</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/2022/01/02/HDFS%E6%9E%B6%E6%9E%84%E5%8F%8A%E5%91%BD%E4%BB%A4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1484,250 +1725,6 @@
 <li><p>压测报告呈现：一般有测试环境说明、测试场景说明、测试过程说明、测试结论（在当前场景下的最佳资源使用以及配置）。</p>
 </li>
 </ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/2021/11/20/JMeter%E4%BB%8B%E7%BB%8D/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Echo/images/avatar.gif">
-      <meta itemprop="name" content="丑牛">
-      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="测试的名义">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Echo/2021/11/20/JMeter%E4%BB%8B%E7%BB%8D/" class="post-title-link" itemprop="url">JMeter介绍</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-11-20 21:22:06" itemprop="dateCreated datePublished" datetime="2021-11-20T21:22:06+08:00">2021-11-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Echo/categories/%E6%B5%8B%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">测试</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>在本文中我们将了解什么是性能测试、为什么选择 JMeter、JMeter 与 HP LoadRunner。</p>
-<h5 id="什么是性能测试？"><a href="#什么是性能测试？" class="headerlink" title="什么是性能测试？"></a>什么是性能测试？</h5><p>在我们继续探索 Jmeter 及其安装过程之前，我们需要了解什么是性能测试以及 JMeter 作为工具如何支持性能测试。 </p>
-<p>就像学生需要表现良好才能提升自己的水平一样。 同样，应用程序（移动或 Web 或桌面）需要表现良好，才能在竞争激烈的市场中更上一层楼。 </p>
-<p>性能测试衡量 <strong>您的应用程序在不同工作负载下的性能。</strong> 有许多参数可用于确定负载测试中的服务器是否运行良好，本文稍后将讨论这些参数。 </p>
-<ul>
-<li>举一个简单的例子。  在浏览器中输入“<a target="_blank" rel="noopener" href="http://www.facebook.com”,它显示了/">www.facebook.com”，它显示了</a> Facebook 的主页使用时间10秒。 现在假设 1000 人同时输入“<a target="_blank" rel="noopener" href="http://www.facebook.com”并点击/">www.facebook.com”并点击</a> Google 主页显示可能超过 10 秒 。</li>
-<li>因此，在不同的工作负载（用户数量）下性能会发生变化。  这种类型的测试非常重要，因为无论您的应用程序有多么好的设计和功能，但如果它的性能很差，那么很有可能失去所有潜在的目标受众 。</li>
-</ul>
-<p>通过下图我们可以清晰看到比较</p>
-<p><img src="/Echo/FlowDiagram.jpg" alt="FlowDiagram"></p>
-<h6 id="性能测试主要考虑以下参数："><a href="#性能测试主要考虑以下参数：" class="headerlink" title="性能测试主要考虑以下参数："></a>性能测试主要考虑以下参数：</h6><ul>
-<li><strong>吞吐量</strong> - 它被定义为每秒的事务数。 例：假设银行客户服务一次只能处理 30 个呼叫，因此其余呼叫者需要排队。 这意味着吞吐量是 30</li>
-<li><strong>响应时间</strong> ——这个时间是用户从服务器收到响应所用的时间 </li>
-<li><strong>延迟</strong> 是信息的第一个字节到达用户端的时间。例：假设用户点击 HTTP 请求以检索网页。 因此，接收该网页的第一个字节的时间就是该请求的延迟时间 </li>
-<li><strong>可扩展性</strong>  - 它是指应用程序可以承受的最大负载 </li>
-<li>CPU 负载、内存使用和资源使用</li>
-</ul>
-<h5 id="为什么是JMeter？"><a href="#为什么是JMeter？" class="headerlink" title="为什么是JMeter？"></a>为什么是JMeter？</h5><p>JMeter 最初是由 Apache Software 的  Stefano Mazzocchi 开发的。  基本上，JMeter 是一个基于 Java 的桌面应用程序。  JMeter 使用 Swing  图形 API，不是由特定于平台的编码实现的，只要有JAVA即可。JMeter的安装自己行搜索。</p>
-<p> Jmeter支持以下协议：</p>
-<ul>
-<li>HTTP、HTTPS</li>
-<li>FTP</li>
-<li>JDBC</li>
-<li>SMTP、IMAP</li>
-<li>LDAP</li>
-<li>TCP</li>
-<li>SOAP</li>
-</ul>
-<p>JMeter的优点：</p>
-<ul>
-<li>免费–JMeter是免费的，Apache官网下载即可；</li>
-<li>友好的界面–测试人员可以很容易地熟悉它的大部分组件，工具内提供每个组件的帮助文档</li>
-<li>高度可扩展–用户可以使用 JSR223 创建自己的采样器，并且有许多采样器插件可用，测试人员增加测试能力</li>
-<li>协议支持–JMeter 不仅可用于应用程序性能测试，还支持多种协议</li>
-<li>记录– JMeter 内置了 HTTP(S) 测试脚本记录器，可用于记录来自网站或移动应用程序的所有操作，然后可以模拟负载以测试各种负载条件下的性能。 此外，还有一个 chrome 扩展可用于记录操作，然后可以在 JMeter 中使用相同的脚本来扩展负载</li>
-<li>集成selenium–可以与selenium进行集成测试</li>
-<li>安装简单</li>
-<li>图形化的报告</li>
-</ul>
-<h5 id="HP-LoadRunner-VS-JMeter"><a href="#HP-LoadRunner-VS-JMeter" class="headerlink" title="HP LoadRunner VS JMeter"></a>HP LoadRunner VS JMeter</h5><table>
-<thead>
-<tr>
-<th>JMeter</th>
-<th>Loadrunner</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>开源，免费</td>
-<td>惠普产品，许可证还是很贵的</td>
-</tr>
-<tr>
-<td>协议支持有限</td>
-<td>更多的协议支持</td>
-</tr>
-<tr>
-<td>Jmeter 是一个基于 Java 的产品，使用基于 sprint 的 API，这使得它独立于平台，可以在任何环境下运行，无论是 win、mac、Linux。</td>
-<td>它使用基于 C 的语言、Java、Java Script 和 VB。</td>
-</tr>
-<tr>
-<td>负载生成能力有限。  在具有高 RAM 和处理器的机器上，Jmeter 只能产生 1-2k 用户的负载。  增加负载可能会导致内存不足异常。</td>
-<td>负载生成能力更高。</td>
-</tr>
-<tr>
-<td>Jmeter的技术熟练程度较低。</td>
-<td>LoadRunner 技术精湛。</td>
-</tr>
-<tr>
-<td>Jmeter 在云中运行有很多复杂性。</td>
-<td>Load Runner 也很容易在云环境中运行。</td>
-</tr>
-<tr>
-<td>Jmeter 中的录制功能非常简单，并且也支持可扩展性。  有一些 chrome 插件，可以直接在 Jmeter 中导入脚本。</td>
-<td>与 Jmeter 相比，Load Runner 中的记录功能也不复杂。</td>
-</tr>
-<tr>
-<td>Jmeter 的结果不是实时的。</td>
-<td>LoadRunner 提供相对更实时的结果</td>
-</tr>
-<tr>
-<td>Jmeter 在用于 SAP 等企业产品时效率不高。</td>
-<td>即使使用 SAP、Siebel 等，Load Runner 也能提供高效的结果。</td>
-</tr>
-</tbody></table>
-<h5 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h5><p>JMeter 是市场上用于测试 Web 和移动应用程序的强大工具。  它非常易于使用并且不需要太多编程技能，除非在 JMeter 中编写自己的采样器。 将在接下来的系列文章中详细介绍每个组件，敬请期待！ </p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/2021/11/14/Flume%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Echo/images/avatar.gif">
-      <meta itemprop="name" content="丑牛">
-      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="测试的名义">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Echo/2021/11/14/Flume%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">Flume日志采集框架学习</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-11-14 15:10:19" itemprop="dateCreated datePublished" datetime="2021-11-14T15:10:19+08:00">2021-11-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Echo/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h4 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h4><ul>
-<li>Flume 是一个<code>分布式</code>、<code>可靠</code>、<code>高可用</code>的海量<code>日志采集</code>、<code>聚合</code>和<code>传输</code>的系统；</li>
-<li>Flume 可以采集文件、socket数据包、文件、目录、Kafka等<code>各种形式数据源</code>，又可以将采集到的数据（下沉 sink）输出到 HDFS、HBase、Hive、Kafka等<code>众多外部存储系统</code>中；</li>
-<li>一般的采集需求，通过对 Flume 的简单配置即可实现；</li>
-<li>Flume 针对特殊场景也具备良好的自定义扩展能力，因此，Flume 适用于大部分的日常数据采集场景；</li>
-</ul>
-<h4 id="2-运行机制"><a href="#2-运行机制" class="headerlink" title="2. 运行机制"></a>2. 运行机制</h4><p>Flume 分布式系统中最<code>核心的角色是 agent</code>，Flume 采集系统就是由一个个 agent 所连接起来形成的；</p>
-<p><img src="/Echo/image-20211114152336278.png" alt="image-20211114152336278"></p>
-<p> 每一个 agent 相当于一个数据传递员，内部有三个组件：</p>
-<ul>
-<li>Source：&#96; 采集组件，用于与众多数据源对接，以获取数据；</li>
-<li>Channel：&#96; 传输通道组件，用于从 Source 将数据传递到 Sink；</li>
-<li>Sink：&#96; 下沉组件，用于往下一级 agent 传递数据 或者 往最终存储系统传递数据；</li>
-</ul>
-<h4 id="3-单个agent采集数据"><a href="#3-单个agent采集数据" class="headerlink" title="3.单个agent采集数据"></a>3.单个agent采集数据</h4><p><img src="/Echo/image-20211114152023931.png" alt="image-20211114152023931"></p>
-<h4 id="4-多个agent采集数据"><a href="#4-多个agent采集数据" class="headerlink" title="4.多个agent采集数据"></a>4.多个agent采集数据</h4><p><img src="/Echo/image-20211114152057458.png" alt="image-20211114152057458"></p>
 
       
     </div>

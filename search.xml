@@ -751,6 +751,55 @@
       </tags>
   </entry>
   <entry>
+    <title>BMCweb解释</title>
+    <url>/Echo/2020/01/17/BMCweb%E8%A7%A3%E9%87%8A/</url>
+    <content><![CDATA[<p><strong>UID****：</strong>定位作用，控制定位灯是否亮起，便于寻找机器</p>
+<p><strong>循环开机</strong>：服务器先关机再开机</p>
+<p><strong>重启</strong>：不关闭电源（热开机）的情况下重新启动系统</p>
+<p>**软关机:**先执行操作系统的关机再关闭系统</p>
+<p><strong>CPU****速率</strong>：cup主频，即CPU<a href="https://baike.baidu.com/item/%E5%86%85%E6%A0%B8">内核</a>工作的<a href="https://baike.baidu.com/item/%E6%97%B6%E9%92%9F%E9%A2%91%E7%8E%87/103708">时钟频率</a>。CPU的主频表示在CPU内数字<a href="https://baike.baidu.com/item/%E8%84%89%E5%86%B2">脉冲</a>信号震荡的速度，主频和实际的<a href="https://baike.baidu.com/item/%E8%BF%90%E7%AE%97%E9%80%9F%E5%BA%A6">运算速度</a>存在一定的关系，但没有一个定量，因为CPU的运算速度还要看CPU的流水线的各方面的性能指标（<a href="https://baike.baidu.com/item/%E7%BC%93%E5%AD%98">缓存</a>、<a href="https://baike.baidu.com/item/%E6%8C%87%E4%BB%A4%E9%9B%86">指令集</a>，CPU的<a href="https://baike.baidu.com/item/%E4%BD%8D%E6%95%B0">位数</a>等等）。</p>
+<p><strong>核心</strong>（Die）又称为内核，是CPU最重要的组成部分。CPU中心那块隆起的芯片就是核心， CPU所有的计算、接受&#x2F;存储命令、处理数据都由核心执行。各种CPU核心都具有固定的逻辑结构，一级缓存、二级缓存、执行单元、指令级单元和总线接口等逻辑单元都会有科学的布局。</p>
+<p><strong>CPU****的核心数</strong>是指物理上，也就是硬件上存在着几个核心。比如，双核就是包括2个相对独立的CPU核心单元组，四核就包含4个相对独立的CPU核心单元组。</p>
+<p><strong>TDP</strong>： Thermal Design Power——散热设计功耗</p>
+<p>大小：一级缓存&lt;二级缓存&lt;三级缓存</p>
+<p>速度：一级缓存&gt;二级缓存&gt;三级缓存</p>
+<p>当CPU需要写入内存的时候通常只更新<a href="http://www.baidu.com/s?wd=%E4%B8%89%E7%BA%A7%E7%BC%93%E5%AD%98&tn=SE_PcZhidaonwhc_ngpagmjz&rsv_dl=gh_pc_zhidao">三级缓存</a>，如果数据写入频繁将会更新到二级乃至一级缓存</p>
+<p><strong>网络控制器</strong>:网卡，又称<a href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E9%80%82%E9%85%8D%E5%99%A8/214428">网络适配器</a>或网络接口卡（NIC），英文名为Network Interface Card。</p>
+<p><strong>带宽</strong>：单位时间内能传输的数据量</p>
+<p><strong>硬盘：</strong>硬盘是集精密机械、微电子电路、电磁转换为一体的电脑存储设备，它存储着电脑系统资源和重要的信息及数据</p>
+<p><strong>额定功率</strong>：正常工作下的功率</p>
+<p><strong>错峰上电</strong>：设定一个时间让服务器随机开机</p>
+<p><strong>PIN</strong>：输入功率</p>
+<p><strong>POUT</strong>:输出功率</p>
+<p><strong>Iin</strong>：电源输入电流</p>
+<p><strong>Iout</strong>:电源电流输出</p>
+<p><strong>Vin</strong>:电源输入电压</p>
+<p><strong>Vout</strong>:电源输出电压</p>
+<p><strong>传感器</strong>（<a href="https://baike.baidu.com/item/%E8%8B%B1%E6%96%87">英文</a>名称：transducer&#x2F;sensor）是一种检测装置，能感受到被测量的信息，并能将感受到的信息，按一定规律变换成为电信号或其他所需形式的信息输出，以满足信息的传输、处理、存储、显示、记录和控制等要求。</p>
+<p><strong>KVM</strong>：就是Keyboard Video Mouse的缩写。KVM <a href="https://baike.baidu.com/item/%E4%BA%A4%E6%8D%A2%E6%9C%BA/103532">交换机</a>通过直接连接键盘、视频和鼠标 (KVM) 端口，让您能够访问和控制计算机。</p>
+<p>**VLAN(**Virtual LAN)， “虚拟局域网”，LAN是网络，VLAN所指的LAN特指使用路由器分割的网络——也就是广播域。</p>
+<p><strong>广播域</strong>，指的是广播帧(目标MAC地址全部为1)所能传递到的范围，亦即能够直接通信的范围。</p>
+<p><strong>域名</strong>：（Domain Name）网域，是由一串用点分隔的名字组成的<a href="https://baike.baidu.com/item/Internet">Internet</a>上某一台<a href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA/140338">计算机</a>或计算机组的名称，用于在数据传输时标识计算机的电子方位（有时也指地理位置）。</p>
+<p><strong>双工模式</strong>：1、全双工： 指可以同时（瞬时）进行信号的双向传输（A→B且B→A）。</p>
+<p>2、半双工：指一个时间内只有一个方向的信号传输（A→B或B→A）。</p>
+<p><strong>端口：</strong>分为逻辑端口和物理端口。物理端口指的是物理存在的端口，如ADSL Modem、<a href="https://baike.baidu.com/item/%E9%9B%86%E7%BA%BF%E5%99%A8">集线器</a>、<a href="https://baike.baidu.com/item/%E4%BA%A4%E6%8D%A2%E6%9C%BA">交换机</a>、<a href="https://baike.baidu.com/item/%E8%B7%AF%E7%94%B1%E5%99%A8">路由器</a>上用 于连接其他<a href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87">网络设备</a>的接口，如<a href="https://baike.baidu.com/item/RJ-45%E7%AB%AF%E5%8F%A3">RJ-45端口</a>、SC端口等等。逻辑端口是指逻辑意义上用于区分服务的端口，如<a href="https://baike.baidu.com/item/TCP%2FIP%E5%8D%8F%E8%AE%AE">TCP&#x2F;IP协议</a>中的服务端口，端口号的范围从0到65535，比如用于浏览网页服务的80端口，用于FTP服务的21端口等。端口号就是端口的编号。</p>
+<p><strong>NTP****服务器：</strong>【Network Time Protocol（NTP）】是用来使计算机<a href="https://baike.baidu.com/item/%E6%97%B6%E9%97%B4%E5%90%8C%E6%AD%A5">时间同步</a>化的一种协议，它可以使计算机对其服务器或时钟源（如石英钟，GPS等等)做同步化，它可以提供高精准度的时间校正，且可介由加密确认的方式来防止恶毒的协议攻击。</p>
+<p><strong>SMTP****：</strong>（Simple Mail Transfer Protocol）即<a href="https://baike.baidu.com/item/%E7%AE%80%E5%8D%95%E9%82%AE%E4%BB%B6%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE">简单邮件传输协议</a>,它是一组用于由源地址到目的地址传送<a href="https://baike.baidu.com/item/%E9%82%AE%E4%BB%B6">邮件</a>的规则，由它来控制信件的中转方式。<a href="https://baike.baidu.com/item/SMTP%E5%8D%8F%E8%AE%AE">SMTP协议</a>属于<a href="https://baike.baidu.com/item/TCP%2FIP%E5%8D%8F%E8%AE%AE%E7%B0%87">TCP&#x2F;IP协议簇</a>，它帮助每台<a href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA/140338">计算机</a>在发送或中转信件时找到下一个目的地。通过SMTP协议所指定的<a href="https://baike.baidu.com/item/%E6%9C%8D%E5%8A%A1%E5%99%A8">服务器</a>,就可以把E-mail寄到收信人的服务器上了，整个过程只要几分钟。SMTP<a href="https://baike.baidu.com/item/%E6%9C%8D%E5%8A%A1%E5%99%A8/100571">服务器</a>则是遵循SMTP协议的发送<a href="https://baike.baidu.com/item/%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8">邮件服务器</a>，用来发送或中转发出的<a href="https://baike.baidu.com/item/%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6/111106">电子邮件</a>。</p>
+<p><strong>网卡：</strong>是工作在链路层的网络组件，是局域网中连接计算机和传输介质的接口，不仅能实现与局域网传输介质之间的物理连接和电信号匹配，还涉及帧的发送与接收、帧的封装与拆封、介质访问控制、数据的编码与解码以及数据缓存的功能等。</p>
+<p><strong>LDAP****：</strong>是轻量<a href="https://baike.baidu.com/item/%E7%9B%AE%E5%BD%95%E8%AE%BF%E9%97%AE%E5%8D%8F%E8%AE%AE">目录访问协议</a>，以树状的层次结构来存储数据。</p>
+<p><strong>SSL</strong>(Secure Sockets Layer <a href="https://baike.baidu.com/item/%E5%AE%89%E5%85%A8%E5%A5%97%E6%8E%A5%E5%B1%82">安全套接层</a>),及其继任者<a href="https://baike.baidu.com/item/%E4%BC%A0%E8%BE%93%E5%B1%82%E5%AE%89%E5%85%A8">传输层安全</a>（Transport Layer Security，TLS）是为<a href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/9636548">网络通信</a>提供安全及<a href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7/110071">数据完整性</a>的一种安全协议。SSL通过互相认证、使用数字签名确保完整性、使用加密确保私密性，以实现客户端和服务器之间的安全通讯。该协议由两层组成：SSL记录协议和SSL握手协议。</p>
+<p><strong>TLS</strong>：(Transport Layer Security，传输层安全协议)，用于两个应用程序之间提供保密性和数据完整性。该协议由两层组成：TLS记录协议和TLS握手协议。</p>
+<p><strong>TLS****与SSL</strong>在<a href="https://baike.baidu.com/item/%E4%BC%A0%E8%BE%93%E5%B1%82/4329536">传输层</a>对网络连接进行加密。　位于可靠的面向连接的网络层协议和应用层协议之间的一种协议层。</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>BMC</tag>
+        <tag>服务器</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>B/S架构如何测试</title>
     <url>/Echo/2022/02/04/B-S%E6%9E%B6%E6%9E%84%E5%A6%82%E4%BD%95%E6%B5%8B%E8%AF%95/</url>
     <content><![CDATA[<p>随着信息技术的发展，人们越来越习惯与在网上搜索信息来做出决定，因此网站已经是各类企业的必备之选。但是仅仅拥有一个网站还不够，还需要提供一个信息丰富、可访问和用户友好的网站。为了实现这样的功能，网站要经过良好的测试，这样的测试测试成为B&#x2F;S架构测试即页面测试。</p>
@@ -872,80 +921,74 @@
       </tags>
   </entry>
   <entry>
-    <title>BMCweb解释</title>
-    <url>/Echo/2020/01/17/BMCweb%E8%A7%A3%E9%87%8A/</url>
-    <content><![CDATA[<p><strong>UID****：</strong>定位作用，控制定位灯是否亮起，便于寻找机器</p>
-<p><strong>循环开机</strong>：服务器先关机再开机</p>
-<p><strong>重启</strong>：不关闭电源（热开机）的情况下重新启动系统</p>
-<p>**软关机:**先执行操作系统的关机再关闭系统</p>
-<p><strong>CPU****速率</strong>：cup主频，即CPU<a href="https://baike.baidu.com/item/%E5%86%85%E6%A0%B8">内核</a>工作的<a href="https://baike.baidu.com/item/%E6%97%B6%E9%92%9F%E9%A2%91%E7%8E%87/103708">时钟频率</a>。CPU的主频表示在CPU内数字<a href="https://baike.baidu.com/item/%E8%84%89%E5%86%B2">脉冲</a>信号震荡的速度，主频和实际的<a href="https://baike.baidu.com/item/%E8%BF%90%E7%AE%97%E9%80%9F%E5%BA%A6">运算速度</a>存在一定的关系，但没有一个定量，因为CPU的运算速度还要看CPU的流水线的各方面的性能指标（<a href="https://baike.baidu.com/item/%E7%BC%93%E5%AD%98">缓存</a>、<a href="https://baike.baidu.com/item/%E6%8C%87%E4%BB%A4%E9%9B%86">指令集</a>，CPU的<a href="https://baike.baidu.com/item/%E4%BD%8D%E6%95%B0">位数</a>等等）。</p>
-<p><strong>核心</strong>（Die）又称为内核，是CPU最重要的组成部分。CPU中心那块隆起的芯片就是核心， CPU所有的计算、接受&#x2F;存储命令、处理数据都由核心执行。各种CPU核心都具有固定的逻辑结构，一级缓存、二级缓存、执行单元、指令级单元和总线接口等逻辑单元都会有科学的布局。</p>
-<p><strong>CPU****的核心数</strong>是指物理上，也就是硬件上存在着几个核心。比如，双核就是包括2个相对独立的CPU核心单元组，四核就包含4个相对独立的CPU核心单元组。</p>
-<p><strong>TDP</strong>： Thermal Design Power——散热设计功耗</p>
-<p>大小：一级缓存&lt;二级缓存&lt;三级缓存</p>
-<p>速度：一级缓存&gt;二级缓存&gt;三级缓存</p>
-<p>当CPU需要写入内存的时候通常只更新<a href="http://www.baidu.com/s?wd=%E4%B8%89%E7%BA%A7%E7%BC%93%E5%AD%98&tn=SE_PcZhidaonwhc_ngpagmjz&rsv_dl=gh_pc_zhidao">三级缓存</a>，如果数据写入频繁将会更新到二级乃至一级缓存</p>
-<p><strong>网络控制器</strong>:网卡，又称<a href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E9%80%82%E9%85%8D%E5%99%A8/214428">网络适配器</a>或网络接口卡（NIC），英文名为Network Interface Card。</p>
-<p><strong>带宽</strong>：单位时间内能传输的数据量</p>
-<p><strong>硬盘：</strong>硬盘是集精密机械、微电子电路、电磁转换为一体的电脑存储设备，它存储着电脑系统资源和重要的信息及数据</p>
-<p><strong>额定功率</strong>：正常工作下的功率</p>
-<p><strong>错峰上电</strong>：设定一个时间让服务器随机开机</p>
-<p><strong>PIN</strong>：输入功率</p>
-<p><strong>POUT</strong>:输出功率</p>
-<p><strong>Iin</strong>：电源输入电流</p>
-<p><strong>Iout</strong>:电源电流输出</p>
-<p><strong>Vin</strong>:电源输入电压</p>
-<p><strong>Vout</strong>:电源输出电压</p>
-<p><strong>传感器</strong>（<a href="https://baike.baidu.com/item/%E8%8B%B1%E6%96%87">英文</a>名称：transducer&#x2F;sensor）是一种检测装置，能感受到被测量的信息，并能将感受到的信息，按一定规律变换成为电信号或其他所需形式的信息输出，以满足信息的传输、处理、存储、显示、记录和控制等要求。</p>
-<p><strong>KVM</strong>：就是Keyboard Video Mouse的缩写。KVM <a href="https://baike.baidu.com/item/%E4%BA%A4%E6%8D%A2%E6%9C%BA/103532">交换机</a>通过直接连接键盘、视频和鼠标 (KVM) 端口，让您能够访问和控制计算机。</p>
-<p>**VLAN(**Virtual LAN)， “虚拟局域网”，LAN是网络，VLAN所指的LAN特指使用路由器分割的网络——也就是广播域。</p>
-<p><strong>广播域</strong>，指的是广播帧(目标MAC地址全部为1)所能传递到的范围，亦即能够直接通信的范围。</p>
-<p><strong>域名</strong>：（Domain Name）网域，是由一串用点分隔的名字组成的<a href="https://baike.baidu.com/item/Internet">Internet</a>上某一台<a href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA/140338">计算机</a>或计算机组的名称，用于在数据传输时标识计算机的电子方位（有时也指地理位置）。</p>
-<p><strong>双工模式</strong>：1、全双工： 指可以同时（瞬时）进行信号的双向传输（A→B且B→A）。</p>
-<p>2、半双工：指一个时间内只有一个方向的信号传输（A→B或B→A）。</p>
-<p><strong>端口：</strong>分为逻辑端口和物理端口。物理端口指的是物理存在的端口，如ADSL Modem、<a href="https://baike.baidu.com/item/%E9%9B%86%E7%BA%BF%E5%99%A8">集线器</a>、<a href="https://baike.baidu.com/item/%E4%BA%A4%E6%8D%A2%E6%9C%BA">交换机</a>、<a href="https://baike.baidu.com/item/%E8%B7%AF%E7%94%B1%E5%99%A8">路由器</a>上用 于连接其他<a href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87">网络设备</a>的接口，如<a href="https://baike.baidu.com/item/RJ-45%E7%AB%AF%E5%8F%A3">RJ-45端口</a>、SC端口等等。逻辑端口是指逻辑意义上用于区分服务的端口，如<a href="https://baike.baidu.com/item/TCP%2FIP%E5%8D%8F%E8%AE%AE">TCP&#x2F;IP协议</a>中的服务端口，端口号的范围从0到65535，比如用于浏览网页服务的80端口，用于FTP服务的21端口等。端口号就是端口的编号。</p>
-<p><strong>NTP****服务器：</strong>【Network Time Protocol（NTP）】是用来使计算机<a href="https://baike.baidu.com/item/%E6%97%B6%E9%97%B4%E5%90%8C%E6%AD%A5">时间同步</a>化的一种协议，它可以使计算机对其服务器或时钟源（如石英钟，GPS等等)做同步化，它可以提供高精准度的时间校正，且可介由加密确认的方式来防止恶毒的协议攻击。</p>
-<p><strong>SMTP****：</strong>（Simple Mail Transfer Protocol）即<a href="https://baike.baidu.com/item/%E7%AE%80%E5%8D%95%E9%82%AE%E4%BB%B6%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE">简单邮件传输协议</a>,它是一组用于由源地址到目的地址传送<a href="https://baike.baidu.com/item/%E9%82%AE%E4%BB%B6">邮件</a>的规则，由它来控制信件的中转方式。<a href="https://baike.baidu.com/item/SMTP%E5%8D%8F%E8%AE%AE">SMTP协议</a>属于<a href="https://baike.baidu.com/item/TCP%2FIP%E5%8D%8F%E8%AE%AE%E7%B0%87">TCP&#x2F;IP协议簇</a>，它帮助每台<a href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA/140338">计算机</a>在发送或中转信件时找到下一个目的地。通过SMTP协议所指定的<a href="https://baike.baidu.com/item/%E6%9C%8D%E5%8A%A1%E5%99%A8">服务器</a>,就可以把E-mail寄到收信人的服务器上了，整个过程只要几分钟。SMTP<a href="https://baike.baidu.com/item/%E6%9C%8D%E5%8A%A1%E5%99%A8/100571">服务器</a>则是遵循SMTP协议的发送<a href="https://baike.baidu.com/item/%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8">邮件服务器</a>，用来发送或中转发出的<a href="https://baike.baidu.com/item/%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6/111106">电子邮件</a>。</p>
-<p><strong>网卡：</strong>是工作在链路层的网络组件，是局域网中连接计算机和传输介质的接口，不仅能实现与局域网传输介质之间的物理连接和电信号匹配，还涉及帧的发送与接收、帧的封装与拆封、介质访问控制、数据的编码与解码以及数据缓存的功能等。</p>
-<p><strong>LDAP****：</strong>是轻量<a href="https://baike.baidu.com/item/%E7%9B%AE%E5%BD%95%E8%AE%BF%E9%97%AE%E5%8D%8F%E8%AE%AE">目录访问协议</a>，以树状的层次结构来存储数据。</p>
-<p><strong>SSL</strong>(Secure Sockets Layer <a href="https://baike.baidu.com/item/%E5%AE%89%E5%85%A8%E5%A5%97%E6%8E%A5%E5%B1%82">安全套接层</a>),及其继任者<a href="https://baike.baidu.com/item/%E4%BC%A0%E8%BE%93%E5%B1%82%E5%AE%89%E5%85%A8">传输层安全</a>（Transport Layer Security，TLS）是为<a href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/9636548">网络通信</a>提供安全及<a href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7/110071">数据完整性</a>的一种安全协议。SSL通过互相认证、使用数字签名确保完整性、使用加密确保私密性，以实现客户端和服务器之间的安全通讯。该协议由两层组成：SSL记录协议和SSL握手协议。</p>
-<p><strong>TLS</strong>：(Transport Layer Security，传输层安全协议)，用于两个应用程序之间提供保密性和数据完整性。该协议由两层组成：TLS记录协议和TLS握手协议。</p>
-<p><strong>TLS****与SSL</strong>在<a href="https://baike.baidu.com/item/%E4%BC%A0%E8%BE%93%E5%B1%82/4329536">传输层</a>对网络连接进行加密。　位于可靠的面向连接的网络层协议和应用层协议之间的一种协议层。</p>
+    <title>Cookie测试</title>
+    <url>/Echo/2022/02/05/Cookie%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<h4 id="什么是Cookie？"><a href="#什么是Cookie？" class="headerlink" title="什么是Cookie？"></a>什么是Cookie？</h4><p> Cookie 是由网络服务器存储在用户硬盘上的文本文件中的一小段信息。Web 浏览器稍后将使用此信息从该计算机检索信息。</p>
+<p>通常，Cookie包含用于在不同网页之间进行通信的个性化用户数据或信息。</p>
+<h4 id="为什么使用cookie？"><a href="#为什么使用cookie？" class="headerlink" title="为什么使用cookie？"></a>为什么使用cookie？</h4><p>Cookies只不过是记录用户的身份，用于跟踪用户在整个网站页面中的导航位置。但是Web 浏览器和 Web 服务器之间的通信是无状态的。</p>
+<p><strong>例：</strong></p>
+<p>如果正在访问域”<a href="http://www.example.com/1.html&quot;%EF%BC%8C%E5%88%99Web%E6%B5%8F%E8%A7%88%E5%99%A8%E5%B0%86%E4%BB%85%E5%90%91">http://www.example.com/1.html&quot;，则Web浏览器将仅向</a> example.com Web服务器查询第1.html页。</p>
+<p>下次，如果将页面键入为”<a href="http://www.example.com/2.html&quot;%EF%BC%8C%E5%88%99%E6%96%B0%E8%AF%B7%E6%B1%82%E5%B0%86%E5%8F%91%E9%80%81%E5%88%B0">http://www.example.com/2.html&quot;，则新请求将发送到</a> example.com Web服务器以发送2.html页面，并且Web服务器不知道有关上一页1.html的任何信息。</p>
+<p>如果想要此用户与 Web 服务器通信的先前历史记录，该怎么办？需要在某个位置维护 Web 浏览器和 Web 服务器之间的用户状态和交互。这就是饼干进入画面的地方。Cookie 用于维护用户与网络服务器的交互。</p>
+<h4 id="Cookie是如何工作的？"><a href="#Cookie是如何工作的？" class="headerlink" title="Cookie是如何工作的？"></a>Cookie是如何工作的？</h4><p>Cookie用于维护在HYYP协议上 Web 上交换信息的文件。</p>
+<p>有两种类型的 HTTP 协议。无状态 HTTP 和有状态 HTTP 协议。无状态 HTTP 协议不保留以前访问过的网页历史记录的任何记录。虽然有状态 HTTP 协议确实保留了以前的 Web 浏览器和 Web 服务器交互的一些历史记录，但 Cookie 使用此协议来维护用户交互。</p>
+<p>每当用户访问使用cookie的网站或页面时，该HTML页面中的小代码（通常，调用某些语言脚本来编写cookie，如JAVAScript，PHP，Perl中的cookie）会在用户的计算机上写入一个文本文件，称为cookie。</p>
+<p>下面一段示例代码如何设置写一个cookie，可以放在任何HTML页面上：</p>
+<p><strong>Set-Cookie: NAME&#x3D;VALUE; expires&#x3D;DATE; path&#x3D;PATH; domain&#x3D;DOMAIN_NAME;</strong></p>
+<p>当用户稍后访问同一页面或域时，将从磁盘读取此 Cookie，并用于标识该域上同一用户的第二次访问。过期时间是在写入 Cookie 时设置的。此时间由要使用 Cookie 的应用程序决定。</p>
+<p>通常，在用户计算机上写入两种类型的Cookie</p>
+<p><strong>会话 Cookie：</strong>此 Cookie 处于活动状态，直到调用该 Cookie 的浏览器打开。当我们关闭浏览器时，此会话cookie将被删除。有时，可以将 20 分钟的会话设置为使 Cookie 过期。</p>
+<p><strong>持久性 Cookie：</strong>这些是永久写入用户计算机上并持续数月或数年的 Cookie。</p>
+<h4 id="Cookie存储在哪里？"><a href="#Cookie存储在哪里？" class="headerlink" title="Cookie存储在哪里？"></a>Cookie存储在哪里？</h4><p>当任何网页应用程序写入 Cookie 时，它会保存在用户硬盘驱动器上的文本文件中。存储 Cookie 的路径取决于浏览器。不同的浏览器将 Cookie 存储在不同的路径中。</p>
+<p> <strong>Cookie 存储位置示例：</strong></p>
+<p><strong>Edge：</strong> <em>“C：\Users\username\AppData\Roaming\Microsoft\Windows\Cookies”。</em></p>
+<p>**Windows 7：”**<em>C：\Users\username\AppData\Roaming\Microsoft\Windows\Cookies\Low”。</em></p>
+<p>**Windows 8 和 Windows 10：”**<em>C：\Users\username\AppData\Local\Microsoft\Windows\INetCookies”。</em></p>
+<p>在这里，”默认用户”可以替换为您登录的当前用户，如”管理员”，或用户名，如”admin”等。通过浏览浏览器选项可以轻松找到 Cookie 路径。</p>
+<p>在Mozilla Firefox浏览器中，您甚至可以在浏览器选项本身中看到cookie。打开 Mozilla 浏览器，按”打开菜单”按钮？”网络开发人员”？”存储检查器”或按组合”Shift + F9”。</p>
+<p>在谷歌浏览器中，您可以通过在地址栏中输入”chrome:&#x2F;&#x2F;settings&#x2F;content&#x2F;cookies”来查找cookie。也可以使用浏览器控制台访问 Cookie：按 F12 – &gt; 应用程序 – &gt;存储 – &gt; Cookie。</p>
+<h4 id="Cookie是如何存储的？"><a href="#Cookie是如何存储的？" class="headerlink" title="Cookie是如何存储的？"></a>Cookie是如何存储的？</h4><p>以 <a href="http://www.rediff.com/">rediff.com</a> 在 Mozilla Firefox 浏览器上编写的 Cookie 为例。在 Mozilla Firefox 浏览器上，当您打开 rediff.com 页面或登录您的 Rediffmail 帐户时，您的硬盘上会写入一个 Cookie。</p>
+<p>要查看此 Cookie，只需单击上述路径中提到的”显示 Cookie”按钮即可。单击此 Cookie 列表下的 Rediff.com 站点。</p>
+<p><em><strong>可以看到 Rediff 域中写入的不同 Cookie 具有不同的名称。</strong></em></p>
+<p><strong>Site:</strong> Rediff.com Cookie name: RMID<br><strong>Name:</strong> RMID (Name of the cookie)<br><strong>Content:</strong> 1d11c8ec44bf49e0… (Encrypted content)<br><strong>Domain:</strong> .rediff.com<br><strong>Path:</strong> &#x2F; (Any path after the domain name)<br><strong>Send For:</strong> Any type of connection<br><strong>Expires:</strong> Thursday, December 31, 2020, 11:59:59 PM</p>
+<h4 id="Cookie可以使用在哪里？"><a href="#Cookie可以使用在哪里？" class="headerlink" title="Cookie可以使用在哪里？"></a>Cookie可以使用在哪里？</h4><p><strong>实现购物车：</strong> Cookie 用于维护在线订购系统。如果用户将某些产品添加到购物车中，并且由于某种原因用户这次不想购买这些产品并关闭浏览器窗口，该怎么办？Cookie记住用户想要购买的东西。下次同一用户访问购买页面时，他可以看到他在上次访问期间添加到购物车中的所有产品。</p>
+<p><strong>个性化网站：</strong> 当用户访问某个页面时，系统会询问他们不想访问或显示哪些页面。用户选项存储在cookie中，直到用户在线，这些页面不会显示给他。</p>
+<p><strong>用户跟踪：</strong> 跟踪特定时间的在线唯一身份访问者数量。</p>
+<p><strong>营销：</strong> 一些公司使用Cookie在用户机器上显示广告。Cookie 控制这些广告。何时以及应显示哪个广告？用户的兴趣是什么？他们在网站上搜索哪些关键字？所有这些东西都可以使用cookie进行维护。</p>
+<p><strong>用户会话：</strong> Cookie 可以使用用户 ID 和密码跟踪用户与特定域的会话。</p>
+<h4 id="Cookie的缺点"><a href="#Cookie的缺点" class="headerlink" title="Cookie的缺点"></a>Cookie的缺点</h4><p><strong>用户禁用：</strong>使用Cookie是维护用户交互的好方法。但是如果用户在编写任何Cookie或完全禁用Cookie之前设置了浏览器选项以警告，则包含Cookie的网站将被完全禁用，并且无法执行任何操作，从而导致网站流量损失。这可以在浏览器设置中禁用&#x2F;启用。</p>
+<p><strong>例如：</strong>对于谷歌浏览器，需要转到设置-&gt;高级-&gt;内容设置-&gt;Cookie。在那里，可以应用 Cookie 策略的一般规则，或为各个网站设置规则。</p>
+<p><strong>Cookie 过多：</strong>如果在每个页面导航上写入了过多的 Cookie，并且用户在编写 Cookie 之前打开了警告选项，这甚至可能会使用户离开您的网站。</p>
+<p><strong>安全问题：</strong>有时，用户的个人信息存储在Cookie中，如果有人入侵Cookie，那么黑客可以访问您的个人信息。即使是损坏的 Cookie 也可能被不同的域读取，并导致安全问题。</p>
+<p><strong>敏感信息：</strong>某些网站可能会在Cookie中写入和存储敏感信息，出于隐私考虑，这不应该被允许。</p>
+<h4 id="Cookie的测试用例"><a href="#Cookie的测试用例" class="headerlink" title="Cookie的测试用例"></a>Cookie的测试用例</h4><p><strong>#1）</strong>请确保在您的设计文档中，Cookie 中未存储任何个人或敏感数据。</p>
+<p><strong>#2）</strong> 如果除了将敏感数据保存在 Cookie 中之外别无选择，请确保存储在 Cookie 中的数据以加密格式存储。</p>
+<p><strong>#3）</strong>确保在被测的网站上没有过度使用 Cookie。如果浏览器更频繁地提示输入 Cookie，则过度使用 Cookie 会惹恼用户，这可能会导致网站流量损失并最终导致业务损失。</p>
+<p><strong>#4）</strong>从您的浏览器设置中禁用 Cookie。如果您在网站上使用 Cookie，则禁用 Cookie 将无法使用您网站的主要功能。然后尝试访问受测网站。导航到该网站，查看是否向用户显示适当的消息，例如”为了使本网站顺利运行，请确保在您的浏览器上启用了Cookie”。任何页面都不应因禁用 Cookie 而崩溃。在执行此测试之前，请确保关闭所有浏览器并删除所有以前编写的cookie。</p>
+<p><strong>#5）接受&#x2F;拒绝某些 Cookie：</strong>检查网站功能的最佳方法是不接受所有 Cookie。如果您在Web应用程序上编写10个Cookie，则随机接受一些Cookie，例如接受5个Cookie并拒绝5个Cookie。</p>
+<p>要执行上述测试用例，您可以将浏览器选项设置为每当在磁盘上写入Cookie时都会提示。在此提示窗口中，您可以接受或拒绝 Cookie。尝试访问网站的主要功能，并查看页面是否崩溃或数据是否损坏。</p>
+<p><strong>#6）删除 Cookie：</strong>允许网站编写 Cookie，然后关闭所有浏览器并手动删除受测网站的所有 Cookie。访问网页并检查网页的行为。</p>
+<p><strong>#7）损坏 Cookie：</strong>损坏 Cookie 很容易。可以在记事本中手动编辑 Cookie，并将参数更改为一些模糊的值，例如更改 Cookie 内容、Cookie 名称或 Cookie 的到期日期，并查看网站功能。</p>
+<p>在某些情况下，损坏的 Cookie 允许读取任何其他域的数据。对于网站 Cookie，不应发生这种情况。请注意，如果 Cookie 是由一个域编写的，如 rediff.com写的Cookie 另一个yahoo.com域无法访问它，除非 Cookie 已损坏并且有人试图破解 Cookie 数据。</p>
+<p><strong>#8 ）检查从您的 Web 应用程序页面中删除 Cookie：</strong>有时，由域编写的 cookie 表示 rediff.com 可能由同一域删除，但由该域下的不同页面删除。如果您正在测试某操作跟Web 门户，则这是一般情况。操作跟踪或购买跟踪像素放置在操作网页上，当用户发生任何操作或购买时，写入磁盘上的Cookie将被删除，以避免从同一Cookie记录多个操作。检查到达您的操作或购买页面是否正确删除了Cookie，并且不再记录来自同一用户的无效操作或购买。</p>
+<p><strong>#9）在多个浏览器上进行 Cookie 测试：</strong>这是检查您的 Web 应用程序页面是否按预期在不同的浏览器上正确编写 Cookie 以及网站是否使用这些 Cookie 正常工作的最重要情况。您可以在最常用的浏览器（如Chrome，Edge，Mozilla Firefox，Netscape，Opera等）上测试您的Web应用程序。</p>
+<p><strong>#10）</strong>如果使用 Cookie 来维护任何用户的日志记录状态，请使用某些用户名和密码登录到您的 Web 应用程序。</p>
+<p>在许多情况下，您可以直接在浏览器地址栏中看到登录的用户 ID 参数。将此参数更改为其他值，例如，如果以前的用户 ID 为 100，则将其设置为 101，然后按 Enter。应向用户显示正确的访问消息，并且用户不应能够看到其他用户的帐户详细信息。</p>
+<p><strong>#11）</strong>通过在 Cookie 文件或浏览器控制台中检查 Cookie 类型和到期日期来验证 Cookie 是否持久（是否符合要求）</p>
+<p><strong>#12）</strong>验证是否根据要求相应地设置了到期日期。在某些情况下，通过使用应用程序（例如刷新会话）来检查Cookie到期日期是否更新至关重要。这可以在浏览器控制台或 cookie 文件本身中进行检查。</p>
+<p>请注意，手动解码cookie不是最佳方法，依赖浏览器数据更加容易。</p>
+<p><strong>#13）</strong>如果某些 Cookie 是特定于用户的，请务必确保在其他用户登录应用程序时将其删除或直接忽略，除非另有说明。</p>
+<p><strong>#14）针对多环境站点的特定测试：</strong>检查是否在所有环境中都可接受相同的 Cookie。问题可能是由 Cookie 路径中使用通配符（所谓的超级 cookie）引起的。如果这是允许它的要求，则由于使用了不同的加密密钥（例如，对于 .Net，除非另有指定，否则它通常是唯一的计算机密钥），因此可能会导致一些访问问题。</p>
+<p>这些是测试网站 Cookie 时要考虑的一些主要测试用例。可以通过执行各种组合从这些测试用例编写多个测试用例。</p>
 ]]></content>
       <categories>
-        <category>学习</category>
+        <category>测试</category>
       </categories>
       <tags>
-        <tag>BMC</tag>
-        <tag>服务器</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Flume日志采集框架学习</title>
-    <url>/Echo/2021/11/14/Flume%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<h4 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h4><ul>
-<li>Flume 是一个<code>分布式</code>、<code>可靠</code>、<code>高可用</code>的海量<code>日志采集</code>、<code>聚合</code>和<code>传输</code>的系统；</li>
-<li>Flume 可以采集文件、socket数据包、文件、目录、Kafka等<code>各种形式数据源</code>，又可以将采集到的数据（下沉 sink）输出到 HDFS、HBase、Hive、Kafka等<code>众多外部存储系统</code>中；</li>
-<li>一般的采集需求，通过对 Flume 的简单配置即可实现；</li>
-<li>Flume 针对特殊场景也具备良好的自定义扩展能力，因此，Flume 适用于大部分的日常数据采集场景；</li>
-</ul>
-<h4 id="2-运行机制"><a href="#2-运行机制" class="headerlink" title="2. 运行机制"></a>2. 运行机制</h4><p>Flume 分布式系统中最<code>核心的角色是 agent</code>，Flume 采集系统就是由一个个 agent 所连接起来形成的；</p>
-<p><img src="/Echo/image-20211114152336278.png" alt="image-20211114152336278"></p>
-<p> 每一个 agent 相当于一个数据传递员，内部有三个组件：</p>
-<ul>
-<li>Source：&#96; 采集组件，用于与众多数据源对接，以获取数据；</li>
-<li>Channel：&#96; 传输通道组件，用于从 Source 将数据传递到 Sink；</li>
-<li>Sink：&#96; 下沉组件，用于往下一级 agent 传递数据 或者 往最终存储系统传递数据；</li>
-</ul>
-<h4 id="3-单个agent采集数据"><a href="#3-单个agent采集数据" class="headerlink" title="3.单个agent采集数据"></a>3.单个agent采集数据</h4><p><img src="/Echo/image-20211114152023931.png" alt="image-20211114152023931"></p>
-<h4 id="4-多个agent采集数据"><a href="#4-多个agent采集数据" class="headerlink" title="4.多个agent采集数据"></a>4.多个agent采集数据</h4><p><img src="/Echo/image-20211114152057458.png" alt="image-20211114152057458"></p>
-]]></content>
-      <categories>
-        <category>学习</category>
-      </categories>
-      <tags>
-        <tag>日志</tag>
-        <tag>flume</tag>
+        <tag>测试</tag>
+        <tag>页面测试</tag>
+        <tag>安全测试</tag>
+        <tag>cookie</tag>
       </tags>
   </entry>
   <entry>
@@ -999,6 +1042,34 @@
       </categories>
       <tags>
         <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Flume日志采集框架学习</title>
+    <url>/Echo/2021/11/14/Flume%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h4 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h4><ul>
+<li>Flume 是一个<code>分布式</code>、<code>可靠</code>、<code>高可用</code>的海量<code>日志采集</code>、<code>聚合</code>和<code>传输</code>的系统；</li>
+<li>Flume 可以采集文件、socket数据包、文件、目录、Kafka等<code>各种形式数据源</code>，又可以将采集到的数据（下沉 sink）输出到 HDFS、HBase、Hive、Kafka等<code>众多外部存储系统</code>中；</li>
+<li>一般的采集需求，通过对 Flume 的简单配置即可实现；</li>
+<li>Flume 针对特殊场景也具备良好的自定义扩展能力，因此，Flume 适用于大部分的日常数据采集场景；</li>
+</ul>
+<h4 id="2-运行机制"><a href="#2-运行机制" class="headerlink" title="2. 运行机制"></a>2. 运行机制</h4><p>Flume 分布式系统中最<code>核心的角色是 agent</code>，Flume 采集系统就是由一个个 agent 所连接起来形成的；</p>
+<p><img src="/Echo/image-20211114152336278.png" alt="image-20211114152336278"></p>
+<p> 每一个 agent 相当于一个数据传递员，内部有三个组件：</p>
+<ul>
+<li>Source：&#96; 采集组件，用于与众多数据源对接，以获取数据；</li>
+<li>Channel：&#96; 传输通道组件，用于从 Source 将数据传递到 Sink；</li>
+<li>Sink：&#96; 下沉组件，用于往下一级 agent 传递数据 或者 往最终存储系统传递数据；</li>
+</ul>
+<h4 id="3-单个agent采集数据"><a href="#3-单个agent采集数据" class="headerlink" title="3.单个agent采集数据"></a>3.单个agent采集数据</h4><p><img src="/Echo/image-20211114152023931.png" alt="image-20211114152023931"></p>
+<h4 id="4-多个agent采集数据"><a href="#4-多个agent采集数据" class="headerlink" title="4.多个agent采集数据"></a>4.多个agent采集数据</h4><p><img src="/Echo/image-20211114152057458.png" alt="image-20211114152057458"></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>日志</tag>
+        <tag>flume</tag>
       </tags>
   </entry>
   <entry>
@@ -1814,39 +1885,6 @@
       </tags>
   </entry>
   <entry>
-    <title>HBase shell命令</title>
-    <url>/Echo/2020/03/13/hbase%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<h4 id="HBase简介"><a href="#HBase简介" class="headerlink" title="HBase简介"></a>HBase简介</h4><p>HBase 命名的起源是 Hadoop database，Hadoop数据库，是NoSQL数据库，基于列式存储而非行式存储。</p>
-<p>HBase是一个分布式的、面向列的、基于Google Bigtable的开源实现。</p>
-<ul>
-<li>利用Hadoop HDFS作为其文件存储系统</li>
-<li>利用Hadoop MapReduce来处理HBase中的海量数据</li>
-<li>利用Zookeeper作为协同服务</li>
-</ul>
-<h4 id="HBase数据模型"><a href="#HBase数据模型" class="headerlink" title="HBase数据模型"></a>HBase数据模型</h4><p>HBase是一个稀疏、多维度、有序的映射表。表有行和列组成，列划分为若干个列族&#x2F;列簇(column family)，每个列族&#x2F;列簇下面可以有多个普通列。</p>
-<p><img src="/Echo/5-1Z5091305564M.gif" alt="5-1Z5091305564M"></p>
-<h4 id="HBase-shell-命令"><a href="#HBase-shell-命令" class="headerlink" title="HBase shell 命令"></a>HBase shell 命令</h4><h5 id="进入-HBase-shell"><a href="#进入-HBase-shell" class="headerlink" title="进入 HBase shell"></a>进入 HBase shell</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hbase shell</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="HBase版本状态查看"><a href="#HBase版本状态查看" class="headerlink" title="HBase版本状态查看"></a>HBase版本状态查看</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查询状态</span></span><br><span class="line">status</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查询版本</span></span><br><span class="line">version</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看当前操作用户</span></span><br><span class="line">whoami</span><br><span class="line"><span class="meta">#</span><span class="bash"> 帮助命令</span></span><br><span class="line">help</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看hbase支持的工具</span></span><br><span class="line">tools</span><br></pre></td></tr></table></figure>
-
-<h5 id="DDL操作"><a href="#DDL操作" class="headerlink" title="DDL操作"></a>DDL操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建一个表</span></span><br><span class="line">create<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;column_famaly&#x27;</span>,<span class="string">&#x27;column_famaly1&#x27;</span>,<span class="string">&#x27;column_famaly2&#x27;</span></span><br><span class="line"><span class="comment"># 列出所有表</span></span><br><span class="line">list</span><br><span class="line"><span class="comment"># 获取表的描述</span></span><br><span class="line">describe<span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 删除一个列族</span></span><br><span class="line">alter<span class="string">&#x27;table&#x27;</span>,&#123;NAME=&gt;<span class="string">&#x27;column_famaly&#x27;</span>,METHOD=&gt;<span class="string">&#x27;delete&#x27;</span>&#125;</span><br><span class="line"><span class="comment"># 删除一个表</span></span><br><span class="line"><span class="comment"># ① 要删除的表设置为disable</span></span><br><span class="line"><span class="built_in">disable</span><span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># ② 删除表</span></span><br><span class="line">drop <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 查询表是否存在</span></span><br><span class="line">exists<span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 查看表是否可用</span></span><br><span class="line">is_enabled<span class="string">&#x27;table&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="DML操作"><a href="#DML操作" class="headerlink" title="DML操作"></a>DML操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 插入数据</span></span><br><span class="line">put<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span>,<span class="string">&#x27;name&#x27;</span></span><br><span class="line"><span class="comment"># 获取row1所有数据</span></span><br><span class="line">get <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span></span><br><span class="line"><span class="comment"># 获取表row1，col1所有数据</span></span><br><span class="line">get<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1&#x27;</span></span><br><span class="line"><span class="comment"># 更新一条数据</span></span><br><span class="line">put <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span>,<span class="string">&#x27;name1&#x27;</span></span><br><span class="line"><span class="comment"># 通过时间戳获取数据</span></span><br><span class="line">get <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,&#123;COLUMN=&gt;<span class="string">&#x27;col1:name&#x27;</span>,TIMESTAMP=&gt;1463055736277&#125;</span><br><span class="line"><span class="comment"># 扫描整张表（数据量大时不建议此操作）</span></span><br><span class="line">scan <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 删除一列</span></span><br><span class="line">delete <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span></span><br><span class="line"><span class="comment"># 删除行所有的数据</span></span><br><span class="line">deleteall <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span></span><br><span class="line"><span class="comment"># 统计表中的行数</span></span><br><span class="line">count <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 清空整张表（清空表后，表的分区设置会默认为1不建议）</span></span><br><span class="line">truncate <span class="string">&#x27;table&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="退出操作"><a href="#退出操作" class="headerlink" title="退出操作"></a>退出操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 退出</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment"># 关闭hbase集群（危险操作！！！）</span></span><br><span class="line">shutdown</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>大数据</category>
-      </categories>
-      <tags>
-        <tag>大数据</tag>
-        <tag>HBase</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Yarn REST API 使用指南</title>
     <url>/Echo/2021/11/13/Yarn-ResourceManager-REST-API-%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
     <content><![CDATA[<p>Yarn作为一款优秀的开源集群管理工具，可以用它来运行Hadoop，Spark，Flink等大数据处理任务。所有的分布式计算框架，都是主从模式，ResourceManager作为集群的管理员，是任务提交的入口。一般企业的大数据处理平台会在Yarn的基础中做进一步的封装，以web应用的形式提供更高级的大数据处理平台。如果web应用通过shell的方式提交任务将显得太重，而且不利于任务状态的监控。幸好Yarn提供了ResourceManager的REST API，可以很方便的向集群提交、杀死任务或者监控任务的状态，本文将简要介绍ResourceManager REST API的使用方法。</p>
@@ -2596,6 +2634,39 @@
       </tags>
   </entry>
   <entry>
+    <title>HBase shell命令</title>
+    <url>/Echo/2020/03/13/hbase%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h4 id="HBase简介"><a href="#HBase简介" class="headerlink" title="HBase简介"></a>HBase简介</h4><p>HBase 命名的起源是 Hadoop database，Hadoop数据库，是NoSQL数据库，基于列式存储而非行式存储。</p>
+<p>HBase是一个分布式的、面向列的、基于Google Bigtable的开源实现。</p>
+<ul>
+<li>利用Hadoop HDFS作为其文件存储系统</li>
+<li>利用Hadoop MapReduce来处理HBase中的海量数据</li>
+<li>利用Zookeeper作为协同服务</li>
+</ul>
+<h4 id="HBase数据模型"><a href="#HBase数据模型" class="headerlink" title="HBase数据模型"></a>HBase数据模型</h4><p>HBase是一个稀疏、多维度、有序的映射表。表有行和列组成，列划分为若干个列族&#x2F;列簇(column family)，每个列族&#x2F;列簇下面可以有多个普通列。</p>
+<p><img src="/Echo/5-1Z5091305564M.gif" alt="5-1Z5091305564M"></p>
+<h4 id="HBase-shell-命令"><a href="#HBase-shell-命令" class="headerlink" title="HBase shell 命令"></a>HBase shell 命令</h4><h5 id="进入-HBase-shell"><a href="#进入-HBase-shell" class="headerlink" title="进入 HBase shell"></a>进入 HBase shell</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hbase shell</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="HBase版本状态查看"><a href="#HBase版本状态查看" class="headerlink" title="HBase版本状态查看"></a>HBase版本状态查看</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查询状态</span></span><br><span class="line">status</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查询版本</span></span><br><span class="line">version</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看当前操作用户</span></span><br><span class="line">whoami</span><br><span class="line"><span class="meta">#</span><span class="bash"> 帮助命令</span></span><br><span class="line">help</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看hbase支持的工具</span></span><br><span class="line">tools</span><br></pre></td></tr></table></figure>
+
+<h5 id="DDL操作"><a href="#DDL操作" class="headerlink" title="DDL操作"></a>DDL操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建一个表</span></span><br><span class="line">create<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;column_famaly&#x27;</span>,<span class="string">&#x27;column_famaly1&#x27;</span>,<span class="string">&#x27;column_famaly2&#x27;</span></span><br><span class="line"><span class="comment"># 列出所有表</span></span><br><span class="line">list</span><br><span class="line"><span class="comment"># 获取表的描述</span></span><br><span class="line">describe<span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 删除一个列族</span></span><br><span class="line">alter<span class="string">&#x27;table&#x27;</span>,&#123;NAME=&gt;<span class="string">&#x27;column_famaly&#x27;</span>,METHOD=&gt;<span class="string">&#x27;delete&#x27;</span>&#125;</span><br><span class="line"><span class="comment"># 删除一个表</span></span><br><span class="line"><span class="comment"># ① 要删除的表设置为disable</span></span><br><span class="line"><span class="built_in">disable</span><span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># ② 删除表</span></span><br><span class="line">drop <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 查询表是否存在</span></span><br><span class="line">exists<span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 查看表是否可用</span></span><br><span class="line">is_enabled<span class="string">&#x27;table&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="DML操作"><a href="#DML操作" class="headerlink" title="DML操作"></a>DML操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 插入数据</span></span><br><span class="line">put<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span>,<span class="string">&#x27;name&#x27;</span></span><br><span class="line"><span class="comment"># 获取row1所有数据</span></span><br><span class="line">get <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span></span><br><span class="line"><span class="comment"># 获取表row1，col1所有数据</span></span><br><span class="line">get<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1&#x27;</span></span><br><span class="line"><span class="comment"># 更新一条数据</span></span><br><span class="line">put <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span>,<span class="string">&#x27;name1&#x27;</span></span><br><span class="line"><span class="comment"># 通过时间戳获取数据</span></span><br><span class="line">get <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,&#123;COLUMN=&gt;<span class="string">&#x27;col1:name&#x27;</span>,TIMESTAMP=&gt;1463055736277&#125;</span><br><span class="line"><span class="comment"># 扫描整张表（数据量大时不建议此操作）</span></span><br><span class="line">scan <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 删除一列</span></span><br><span class="line">delete <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span></span><br><span class="line"><span class="comment"># 删除行所有的数据</span></span><br><span class="line">deleteall <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span></span><br><span class="line"><span class="comment"># 统计表中的行数</span></span><br><span class="line">count <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 清空整张表（清空表后，表的分区设置会默认为1不建议）</span></span><br><span class="line">truncate <span class="string">&#x27;table&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="退出操作"><a href="#退出操作" class="headerlink" title="退出操作"></a>退出操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 退出</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment"># 关闭hbase集群（危险操作！！！）</span></span><br><span class="line">shutdown</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>大数据</tag>
+        <tag>HBase</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>jekins环境搭建</title>
     <url>/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
     <content><![CDATA[<table>
@@ -3010,6 +3081,53 @@
       <tags>
         <tag>java</tag>
         <tag>springboot</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>web应用程序安全测试</title>
+    <url>/Echo/2022/02/05/web%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%AE%89%E5%85%A8%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<h4 id="什么是安全测试？"><a href="#什么是安全测试？" class="headerlink" title="什么是安全测试？"></a>什么是安全测试？</h4><p>安全测试是一个检查机密数据是否保密的过程（即，它不会暴露给不适合它的个人&#x2F;实体），并且用户只能执行他们有权执行的任务。</p>
+<p><strong>例</strong>用户不应能够拒绝其他用户使用网站的功能，或者用户不应能够以意外的方式更改Web应用程序的功能等。</p>
+<h4 id="安全测试中的术语"><a href="#安全测试中的术语" class="headerlink" title="安全测试中的术语"></a>安全测试中的术语</h4><p><strong>“漏洞”</strong></p>
+<p>这是 Web 应用程序中的一个弱点。”漏洞”的原因可能是由于应用程序中的错误，注入（SQL &#x2F;脚本代码）或病毒的存在。</p>
+<p><strong>“网址操作”</strong></p>
+<p>某些 Web 应用程序在 URL 中的客户端（浏览器）和服务器之间传递其他信息。更改 URL 中的某些信息有时可能会导致服务器出现意外行为，这称为 URL 操作。</p>
+<p><strong>“SQL注入”</strong></p>
+<p>这是通过 Web 应用程序用户界面将 SQL 语句插入到某个查询中，然后由服务器执行的过程。</p>
+<p><strong>“XSS（跨站点脚本）”</strong></p>
+<p>当用户在 Web 应用程序的用户界面中插入 HTML&#x2F;客户端脚本时，此插入对其他用户可见，称为 <em>XSS</em>。</p>
+<p><strong>“欺骗”</strong></p>
+<p>欺骗是创建类似恶作剧的网站和电子邮件。</p>
+<h4 id="web安全测试的方法"><a href="#web安全测试的方法" class="headerlink" title="web安全测试的方法"></a>web安全测试的方法</h4><h5 id="密码破解"><a href="#密码破解" class="headerlink" title="密码破解"></a>密码破解</h5><p>Web应用程序的安全测试可以通过”密码破解”开始。为了登录到应用程序的私人区域，人们可以猜测用户名&#x2F;密码或使用一些密码破解工具。常见的用户名和密码列表以及开源密码破解程序一起可用。</p>
+<p>如果 Web 应用程序不强制实施复杂密码（<strong>例</strong>使用字母、数字和特殊字符或至少具有所需数量的字符），则破解用户名和密码可能不会花费很长时间。</p>
+<p>如果用户名或密码存储在 Cookie 中而未经过加密，则攻击者可以使用不同的方法来窃取 Cookie 以及存储在 Cookie 中的信息（如用户名和密码）。</p>
+<h5 id="通过HTTP-GET方法进行URL操作"><a href="#通过HTTP-GET方法进行URL操作" class="headerlink" title="通过HTTP GET方法进行URL操作"></a>通过HTTP GET方法进行URL操作</h5><p>测试人员应检查应用程序是否传递查询字符串中的重要信息。当应用程序使用 HTTP GET 方法在客户端和服务器之间传递信息时，会发生这种情况。</p>
+<p>信息通过查询字符串中的参数传递。测试人员可以修改查询字符串中的参数值，以检查服务器是否接受它。</p>
+<p>通过HTTP GET请求将用户信息传递到服务器进行身份验证或获取数据。攻击者可以操纵从此 GET 请求传递到服务器的每个输入变量，以获取所需信息或损坏数据。在这种情况下，应用程序或 Web 服务器的任何异常行为都是攻击者进入应用程序的入口。</p>
+<h5 id="SQL-注入"><a href="#SQL-注入" class="headerlink" title="SQL 注入"></a>SQL 注入</h5><p>应该检查的下一个因素是SQL注入。在任何文本框中输入单引号 （’） 应被应用程序拒绝。相反，如果测试人员遇到数据库错误，则意味着用户输入入到某个查询中，然后由应用程序执行。在这种情况下，应用程序容易受到 SQL 注入的影响。</p>
+<p>SQL注入攻击非常关键，因为攻击者可以从服务器数据库中获取重要信息。若要检查 Web 应用程序中的 SQL 注入入口点，请从代码库中找出代码，其中通过接受某些用户输入在数据库上执行直接 MySQL 查询。</p>
+<p>如果在 SQL 查询中精心编制用户输入数据以查询数据库，则攻击者可以将 SQL 语句或部分 SQL 语句作为用户输入注入，以从数据库中提取重要信息。</p>
+<p>即使攻击者成功使应用程序崩溃，攻击者也可以从浏览器上显示的 SQL 查询错误中获取他们要查找的信息。在这种情况下，应正确处理&#x2F;转义用户输入中的特殊字符。</p>
+<h5 id="跨站点脚本-（XSS）"><a href="#跨站点脚本-（XSS）" class="headerlink" title="跨站点脚本 （XSS）"></a>跨站点脚本 （XSS）</h5><p>测试人员还应检查 Web 应用程序中是否有 XSS（跨站点脚本）。任何 HTML <strong>如</strong><HTML> 或任何脚本 <strong>如</strong><SCRIPT>不应被应用程序接受。如果是，则应用程序可能容易受到跨站点脚本的攻击。</p>
+<p>攻击者可以使用此方法在受害者的浏览器上执行恶意脚本或URL。使用跨站点脚本，攻击者可以使用 JavaScript 等脚本来窃取用户 Cookie 和存储在 Cookie 中的信息。</p>
+<p>许多Web应用程序获取一些有用的信息，并将此信息传递给来自不同页面的某些变量。</p>
+<p><strong>例</strong> <a href="http://www.examplesite.com/index.php?userid=123&amp;query=xyz">http://www.examplesite.com/index.php?userid=123&amp;query=xyz</a></p>
+<p>攻击者可以很容易地将一些恶意输入或<script>作为"&query"参数传递，该参数可以探索浏览器上的重要用户/服务器数据。</p>
+<p>在安全测试期间，测试人员应非常小心，不应修改以下任何内容：</p>
+<ul>
+<li>应用程序或服务器的配置。</li>
+<li>服务器上运行的服务。</li>
+<li>应用程序托管的现有用户或客户数据。</li>
+</ul>
+<p>此外，应避免在生产系统中进行安全测试。</p>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+        <tag>页面测试</tag>
+        <tag>安全测试</tag>
       </tags>
   </entry>
   <entry>
@@ -3451,33 +3569,6 @@
       </tags>
   </entry>
   <entry>
-    <title>卸载centos自带的openjdk和MySQL</title>
-    <url>/Echo/2020/01/01/%E5%8D%B8%E8%BD%BDcentos%E8%87%AA%E5%B8%A6%E7%9A%84openjdk%E5%92%8CMySQL/</url>
-    <content><![CDATA[<h2 id="卸载openjdk"><a href="#卸载openjdk" class="headerlink" title="卸载openjdk"></a>卸载openjdk</h2><p>1.查看已经安装的jdk</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">rpm –qa|grep jdk</span><br><span class="line"></span><br><span class="line">java-1.7.0-openjdk-1.7.0.141-2.6.10.5.el7.x86_64</span><br><span class="line"></span><br><span class="line">java-1.8.0-openjdk-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">java-1.8.0-openjdk-headless-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">java-1.7.0-openjdk-headless-1.7.0.141-2.6.10.5.el7.x86_64</span><br><span class="line"></span><br><span class="line">ldap-4.19-1.el7.noarch</span><br><span class="line"></span><br><span class="line">copy-jdk-configs-2.2-3.el7.noarch</span><br></pre></td></tr></table></figure>
-
-<p>2.卸载命令</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum -y remove java-1.7.0-openjdk-1.7.0.141-2.6.10.5.el7.x86_64</span><br><span class="line"></span><br><span class="line">yum -y remove java-1.8.0-openjdk-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">yum -y remove java-1.8.0-openjdk-headless-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">yum -y remove java-1.7.0-openjdk-headless-1.7.0.141-2.6.10.5.el7.x86_64</span><br></pre></td></tr></table></figure>
-
-<p>.noarch文件不用</p>
-<p>3.用Java –version查看</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">提示如下： No such file or directoy</span><br></pre></td></tr></table></figure>
-
-<p>  卸载完成</p>
-<h2 id="卸载mysql"><a href="#卸载mysql" class="headerlink" title="卸载mysql"></a>卸载mysql</h2><p>执行命令</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum remove mariadb-libs</span><br></pre></td></tr></table></figure>
-
-<p>即可。</p>
-]]></content>
-      <categories>
-        <category>环境安装</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>JDK</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>大数据测试-测试类型</title>
     <url>/Echo/2022/01/27/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%B5%8B%E8%AF%95-%E6%B5%8B%E8%AF%95%E7%B1%BB%E5%9E%8B/</url>
     <content><![CDATA[<p>之前的文章写了大数据的存储或处理的一些程序，对于后续的这篇大数据如何测试，却迟迟无法落笔。因为每个公司都是根据自己的业务来使用大数据平台的一个或者多个功能的。这里随便聊下大数据测试！（就是想到哪里写到哪里）</p>
@@ -3507,6 +3598,33 @@
       <tags>
         <tag>大数据</tag>
         <tag>测试类型</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>卸载centos自带的openjdk和MySQL</title>
+    <url>/Echo/2020/01/01/%E5%8D%B8%E8%BD%BDcentos%E8%87%AA%E5%B8%A6%E7%9A%84openjdk%E5%92%8CMySQL/</url>
+    <content><![CDATA[<h2 id="卸载openjdk"><a href="#卸载openjdk" class="headerlink" title="卸载openjdk"></a>卸载openjdk</h2><p>1.查看已经安装的jdk</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">rpm –qa|grep jdk</span><br><span class="line"></span><br><span class="line">java-1.7.0-openjdk-1.7.0.141-2.6.10.5.el7.x86_64</span><br><span class="line"></span><br><span class="line">java-1.8.0-openjdk-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">java-1.8.0-openjdk-headless-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">java-1.7.0-openjdk-headless-1.7.0.141-2.6.10.5.el7.x86_64</span><br><span class="line"></span><br><span class="line">ldap-4.19-1.el7.noarch</span><br><span class="line"></span><br><span class="line">copy-jdk-configs-2.2-3.el7.noarch</span><br></pre></td></tr></table></figure>
+
+<p>2.卸载命令</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum -y remove java-1.7.0-openjdk-1.7.0.141-2.6.10.5.el7.x86_64</span><br><span class="line"></span><br><span class="line">yum -y remove java-1.8.0-openjdk-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">yum -y remove java-1.8.0-openjdk-headless-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">yum -y remove java-1.7.0-openjdk-headless-1.7.0.141-2.6.10.5.el7.x86_64</span><br></pre></td></tr></table></figure>
+
+<p>.noarch文件不用</p>
+<p>3.用Java –version查看</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">提示如下： No such file or directoy</span><br></pre></td></tr></table></figure>
+
+<p>  卸载完成</p>
+<h2 id="卸载mysql"><a href="#卸载mysql" class="headerlink" title="卸载mysql"></a>卸载mysql</h2><p>执行命令</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum remove mariadb-libs</span><br></pre></td></tr></table></figure>
+
+<p>即可。</p>
+]]></content>
+      <categories>
+        <category>环境安装</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>JDK</tag>
       </tags>
   </entry>
   <entry>

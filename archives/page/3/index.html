@@ -191,6 +191,250 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/2021/11/20/JMeter%E4%BB%8B%E7%BB%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Echo/images/avatar.gif">
+      <meta itemprop="name" content="丑牛">
+      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="测试的名义">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Echo/2021/11/20/JMeter%E4%BB%8B%E7%BB%8D/" class="post-title-link" itemprop="url">JMeter介绍</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-11-20 21:22:06" itemprop="dateCreated datePublished" datetime="2021-11-20T21:22:06+08:00">2021-11-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Echo/categories/%E6%B5%8B%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">测试</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在本文中我们将了解什么是性能测试、为什么选择 JMeter、JMeter 与 HP LoadRunner。</p>
+<h5 id="什么是性能测试？"><a href="#什么是性能测试？" class="headerlink" title="什么是性能测试？"></a>什么是性能测试？</h5><p>在我们继续探索 Jmeter 及其安装过程之前，我们需要了解什么是性能测试以及 JMeter 作为工具如何支持性能测试。 </p>
+<p>就像学生需要表现良好才能提升自己的水平一样。 同样，应用程序（移动或 Web 或桌面）需要表现良好，才能在竞争激烈的市场中更上一层楼。 </p>
+<p>性能测试衡量 <strong>您的应用程序在不同工作负载下的性能。</strong> 有许多参数可用于确定负载测试中的服务器是否运行良好，本文稍后将讨论这些参数。 </p>
+<ul>
+<li>举一个简单的例子。  在浏览器中输入“<a target="_blank" rel="noopener" href="http://www.facebook.com”,它显示了/">www.facebook.com”，它显示了</a> Facebook 的主页使用时间10秒。 现在假设 1000 人同时输入“<a target="_blank" rel="noopener" href="http://www.facebook.com”并点击/">www.facebook.com”并点击</a> Google 主页显示可能超过 10 秒 。</li>
+<li>因此，在不同的工作负载（用户数量）下性能会发生变化。  这种类型的测试非常重要，因为无论您的应用程序有多么好的设计和功能，但如果它的性能很差，那么很有可能失去所有潜在的目标受众 。</li>
+</ul>
+<p>通过下图我们可以清晰看到比较</p>
+<p><img src="/Echo/FlowDiagram.jpg" alt="FlowDiagram"></p>
+<h6 id="性能测试主要考虑以下参数："><a href="#性能测试主要考虑以下参数：" class="headerlink" title="性能测试主要考虑以下参数："></a>性能测试主要考虑以下参数：</h6><ul>
+<li><strong>吞吐量</strong> - 它被定义为每秒的事务数。 例：假设银行客户服务一次只能处理 30 个呼叫，因此其余呼叫者需要排队。 这意味着吞吐量是 30</li>
+<li><strong>响应时间</strong> ——这个时间是用户从服务器收到响应所用的时间 </li>
+<li><strong>延迟</strong> 是信息的第一个字节到达用户端的时间。例：假设用户点击 HTTP 请求以检索网页。 因此，接收该网页的第一个字节的时间就是该请求的延迟时间 </li>
+<li><strong>可扩展性</strong>  - 它是指应用程序可以承受的最大负载 </li>
+<li>CPU 负载、内存使用和资源使用</li>
+</ul>
+<h5 id="为什么是JMeter？"><a href="#为什么是JMeter？" class="headerlink" title="为什么是JMeter？"></a>为什么是JMeter？</h5><p>JMeter 最初是由 Apache Software 的  Stefano Mazzocchi 开发的。  基本上，JMeter 是一个基于 Java 的桌面应用程序。  JMeter 使用 Swing  图形 API，不是由特定于平台的编码实现的，只要有JAVA即可。JMeter的安装自己行搜索。</p>
+<p> Jmeter支持以下协议：</p>
+<ul>
+<li>HTTP、HTTPS</li>
+<li>FTP</li>
+<li>JDBC</li>
+<li>SMTP、IMAP</li>
+<li>LDAP</li>
+<li>TCP</li>
+<li>SOAP</li>
+</ul>
+<p>JMeter的优点：</p>
+<ul>
+<li>免费–JMeter是免费的，Apache官网下载即可；</li>
+<li>友好的界面–测试人员可以很容易地熟悉它的大部分组件，工具内提供每个组件的帮助文档</li>
+<li>高度可扩展–用户可以使用 JSR223 创建自己的采样器，并且有许多采样器插件可用，测试人员增加测试能力</li>
+<li>协议支持–JMeter 不仅可用于应用程序性能测试，还支持多种协议</li>
+<li>记录– JMeter 内置了 HTTP(S) 测试脚本记录器，可用于记录来自网站或移动应用程序的所有操作，然后可以模拟负载以测试各种负载条件下的性能。 此外，还有一个 chrome 扩展可用于记录操作，然后可以在 JMeter 中使用相同的脚本来扩展负载</li>
+<li>集成selenium–可以与selenium进行集成测试</li>
+<li>安装简单</li>
+<li>图形化的报告</li>
+</ul>
+<h5 id="HP-LoadRunner-VS-JMeter"><a href="#HP-LoadRunner-VS-JMeter" class="headerlink" title="HP LoadRunner VS JMeter"></a>HP LoadRunner VS JMeter</h5><table>
+<thead>
+<tr>
+<th>JMeter</th>
+<th>Loadrunner</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>开源，免费</td>
+<td>惠普产品，许可证还是很贵的</td>
+</tr>
+<tr>
+<td>协议支持有限</td>
+<td>更多的协议支持</td>
+</tr>
+<tr>
+<td>Jmeter 是一个基于 Java 的产品，使用基于 sprint 的 API，这使得它独立于平台，可以在任何环境下运行，无论是 win、mac、Linux。</td>
+<td>它使用基于 C 的语言、Java、Java Script 和 VB。</td>
+</tr>
+<tr>
+<td>负载生成能力有限。  在具有高 RAM 和处理器的机器上，Jmeter 只能产生 1-2k 用户的负载。  增加负载可能会导致内存不足异常。</td>
+<td>负载生成能力更高。</td>
+</tr>
+<tr>
+<td>Jmeter的技术熟练程度较低。</td>
+<td>LoadRunner 技术精湛。</td>
+</tr>
+<tr>
+<td>Jmeter 在云中运行有很多复杂性。</td>
+<td>Load Runner 也很容易在云环境中运行。</td>
+</tr>
+<tr>
+<td>Jmeter 中的录制功能非常简单，并且也支持可扩展性。  有一些 chrome 插件，可以直接在 Jmeter 中导入脚本。</td>
+<td>与 Jmeter 相比，Load Runner 中的记录功能也不复杂。</td>
+</tr>
+<tr>
+<td>Jmeter 的结果不是实时的。</td>
+<td>LoadRunner 提供相对更实时的结果</td>
+</tr>
+<tr>
+<td>Jmeter 在用于 SAP 等企业产品时效率不高。</td>
+<td>即使使用 SAP、Siebel 等，Load Runner 也能提供高效的结果。</td>
+</tr>
+</tbody></table>
+<h5 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h5><p>JMeter 是市场上用于测试 Web 和移动应用程序的强大工具。  它非常易于使用并且不需要太多编程技能，除非在 JMeter 中编写自己的采样器。 将在接下来的系列文章中详细介绍每个组件，敬请期待！ </p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/2021/11/14/Flume%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Echo/images/avatar.gif">
+      <meta itemprop="name" content="丑牛">
+      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="测试的名义">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Echo/2021/11/14/Flume%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">Flume日志采集框架学习</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-11-14 15:10:19" itemprop="dateCreated datePublished" datetime="2021-11-14T15:10:19+08:00">2021-11-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Echo/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h4 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h4><ul>
+<li>Flume 是一个<code>分布式</code>、<code>可靠</code>、<code>高可用</code>的海量<code>日志采集</code>、<code>聚合</code>和<code>传输</code>的系统；</li>
+<li>Flume 可以采集文件、socket数据包、文件、目录、Kafka等<code>各种形式数据源</code>，又可以将采集到的数据（下沉 sink）输出到 HDFS、HBase、Hive、Kafka等<code>众多外部存储系统</code>中；</li>
+<li>一般的采集需求，通过对 Flume 的简单配置即可实现；</li>
+<li>Flume 针对特殊场景也具备良好的自定义扩展能力，因此，Flume 适用于大部分的日常数据采集场景；</li>
+</ul>
+<h4 id="2-运行机制"><a href="#2-运行机制" class="headerlink" title="2. 运行机制"></a>2. 运行机制</h4><p>Flume 分布式系统中最<code>核心的角色是 agent</code>，Flume 采集系统就是由一个个 agent 所连接起来形成的；</p>
+<p><img src="/Echo/image-20211114152336278.png" alt="image-20211114152336278"></p>
+<p> 每一个 agent 相当于一个数据传递员，内部有三个组件：</p>
+<ul>
+<li>Source：&#96; 采集组件，用于与众多数据源对接，以获取数据；</li>
+<li>Channel：&#96; 传输通道组件，用于从 Source 将数据传递到 Sink；</li>
+<li>Sink：&#96; 下沉组件，用于往下一级 agent 传递数据 或者 往最终存储系统传递数据；</li>
+</ul>
+<h4 id="3-单个agent采集数据"><a href="#3-单个agent采集数据" class="headerlink" title="3.单个agent采集数据"></a>3.单个agent采集数据</h4><p><img src="/Echo/image-20211114152023931.png" alt="image-20211114152023931"></p>
+<h4 id="4-多个agent采集数据"><a href="#4-多个agent采集数据" class="headerlink" title="4.多个agent采集数据"></a>4.多个agent采集数据</h4><p><img src="/Echo/image-20211114152057458.png" alt="image-20211114152057458"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/2021/11/13/Yarn-ResourceManager-REST-API-%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2455,234 +2699,6 @@
 <h4 id="kafka-消费者"><a href="#kafka-消费者" class="headerlink" title="kafka 消费者"></a>kafka 消费者</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看消费者最新消费到的消息</span></span><br><span class="line">kafka-console-consumer.sh --zookeeper ZKserverIP:2181  --topic <span class="built_in">test</span></span><br><span class="line"><span class="comment"># 从第一条信息查看消费者消费到的消息</span></span><br><span class="line">kafka-console-consumer.sh --zookeeper ZKserverIP:2181 --from-beginning --topic <span class="built_in">test</span></span><br><span class="line"><span class="comment"># 列出所有消费者群组</span></span><br><span class="line">kafka-consumer-groups.sh --zookeeper ZKserverIP:2181 --list</span><br><span class="line"><span class="comment"># 列出test_group消费组的详细信息</span></span><br><span class="line">kafka-consumer-groups.sh --zookeeper  ZKserverIP:2181 --describe --group test_group</span><br><span class="line"><span class="comment"># 删除消费者群组</span></span><br><span class="line">kafka-consumer-groups.sh --zookeeper ZKserverIP:2181 --delete --group test_group</span><br><span class="line"><span class="comment"># 删除消费者群组中的topic</span></span><br><span class="line">kafka-consumer-groups.sh --zookeeper ZKserverIP:2181 --delete --group test_group --topic <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="kafka-run-class命令"><a href="#kafka-run-class命令" class="headerlink" title="kafka-run-class命令"></a>kafka-run-class命令</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导出偏移量</span></span><br><span class="line">kafka-run-class.sh kafka.tools.ExportZkOffsets --zkconnect ZKserverIP:2181 --group testGroup --output-file test_group_offsets</span><br><span class="line"><span class="comment"># 查看test_group_offsets</span></span><br><span class="line">cat test_group_offsets</span><br><span class="line"><span class="comment"># 导入偏移量</span></span><br><span class="line">kafka-run-class.sh kafka.tools.ImportZkOffsets --zkconnect ZKserverIP:2181 --input-file test_group_offsets</span><br><span class="line"><span class="comment"># segment片段信息</span></span><br><span class="line">kafka-run-class.sh kafka.tools.DumpLogSegments --files [dir]/logs/test-1/00000000000000000000.log</span><br><span class="line"><span class="comment"># segment片段信息 -print-data-log</span></span><br><span class="line">kafka-run-class.sh kafka.tools.DumpLogSegments --files [dir]/logs/test-1/00000000000000000000.log -print-data-log</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/2020/08/10/cetnos-8-2%E5%8D%95%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2k8s%EF%BC%88v1-18-2%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Echo/images/avatar.gif">
-      <meta itemprop="name" content="丑牛">
-      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="测试的名义">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Echo/2020/08/10/cetnos-8-2%E5%8D%95%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2k8s%EF%BC%88v1-18-2%EF%BC%89/" class="post-title-link" itemprop="url">cetnos 8.2单节点安装部署k8s（v1.18.2）</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-08-10 23:20:55" itemprop="dateCreated datePublished" datetime="2020-08-10T23:20:55+08:00">2020-08-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Echo/categories/%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/" itemprop="url" rel="index"><span itemprop="name">环境安装</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h4 id="1-配置hosts文件"><a href="#1-配置hosts文件" class="headerlink" title="1.配置hosts文件"></a>1.配置hosts文件</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/hosts</span><br></pre></td></tr></table></figure>
-
-<p>本机ip  本机hostname 本机hostname</p>
-<h4 id="2-关闭防火墙-sawp等"><a href="#2-关闭防火墙-sawp等" class="headerlink" title="2.关闭防火墙, sawp等"></a>2.关闭防火墙, sawp等</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl <span class="built_in">disable</span> firewalld</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-关闭swap"><a href="#3-关闭swap" class="headerlink" title="3.关闭swap"></a>3.关闭swap</h4><h4 id="4-禁用selinux"><a href="#4-禁用selinux" class="headerlink" title="4.禁用selinux"></a>4.禁用selinux</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br><span class="line">SELINUX=disabled</span><br><span class="line">/usr/sbin/sestatus -v  <span class="comment"># 查看selinux状态</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="5-安装docker"><a href="#5-安装docker" class="headerlink" title="5.安装docker"></a>5.安装docker</h4><h5 id="step-1-安装必要的一些系统工具"><a href="#step-1-安装必要的一些系统工具" class="headerlink" title="step 1: 安装必要的一些系统工具"></a>step 1: 安装必要的一些系统工具</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-2-添加软件源信息"><a href="#Step-2-添加软件源信息" class="headerlink" title="Step 2: 添加软件源信息"></a>Step 2: 添加软件源信息</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-3-更新并安装Docker-CE"><a href="#Step-3-更新并安装Docker-CE" class="headerlink" title="Step 3: 更新并安装Docker-CE"></a>Step 3: 更新并安装Docker-CE</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">yum makecache --refresh</span><br><span class="line">sudo yum -y install docker-ce</span><br><span class="line"><span class="comment"># 发现报错：Problem: package docker-ce-3:19.03.12-3.el7.x86_64 requires containerd.io &gt;= 1.2.2-3, but none of the providers can be installed</span></span><br><span class="line"><span class="comment"># 因为containerd 版本过低</span></span><br><span class="line">dnf install container-selinux</span><br><span class="line">通过yum -y install https://download.docker.com/linux/centos/7/x86_64/edge/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm 升级即可</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-4-docker-修改Cgroup-Driver以及docker镜像拉取地址"><a href="#Step-4-docker-修改Cgroup-Driver以及docker镜像拉取地址" class="headerlink" title="Step 4: docker 修改Cgroup Driver以及docker镜像拉取地址"></a>Step 4: docker 修改Cgroup Driver以及docker镜像拉取地址</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> cat /etc/docker/daemon.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://e7l8pkuq.mirror.aliyuncs.com&quot;</span>],</span><br><span class="line">  <span class="string">&quot;exec-opts&quot;</span>: [<span class="string">&quot;native.cgroupdriver=systemd&quot;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-5-开启Docker服务"><a href="#Step-5-开启Docker服务" class="headerlink" title="Step 5: 开启Docker服务"></a>Step 5: 开启Docker服务</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
-
-<h4 id="6-安装kubectl"><a href="#6-安装kubectl" class="headerlink" title="6.安装kubectl"></a>6.安装kubectl</h4><h5 id="step-1：下载最新kubectl最新资源"><a href="#step-1：下载最新kubectl最新资源" class="headerlink" title="step 1：下载最新kubectl最新资源"></a>step 1：下载最新kubectl最新资源</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -LO <span class="string">&quot;https://storage.googleapis.com/kubernetes-release/release/<span class="subst">$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)</span>/bin/linux/amd64/kubectl&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="step-2：添加执行权限"><a href="#step-2：添加执行权限" class="headerlink" title="step 2：添加执行权限"></a>step 2：添加执行权限</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x ./kubectl</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-3：移动kubectl至bin路径"><a href="#step-3：移动kubectl至bin路径" class="headerlink" title="step 3：移动kubectl至bin路径"></a>step 3：移动kubectl至bin路径</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mv ./kubectl /usr/<span class="built_in">local</span>/bin/kubectl</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-4：确认安装的版本"><a href="#step-4：确认安装的版本" class="headerlink" title="step 4：确认安装的版本"></a>step 4：确认安装的版本</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl version --client</span><br></pre></td></tr></table></figure>
-
-<h4 id="7-安装minikube"><a href="#7-安装minikube" class="headerlink" title="7.安装minikube"></a>7.安装minikube</h4><h5 id="step-1：确认是否支持虚拟化"><a href="#step-1：确认是否支持虚拟化" class="headerlink" title="step 1：确认是否支持虚拟化"></a>step 1：确认是否支持虚拟化</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -E --color <span class="string">&#x27;vmx|svm&#x27;</span> /proc/cpuinfo</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="step-2：下载minikube资源"><a href="#step-2：下载minikube资源" class="headerlink" title="step 2：下载minikube资源"></a>step 2：下载minikube资源</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \</span><br><span class="line">  &amp;&amp; chmod +x minikube</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="step-3：添加minikube进入系统命令"><a href="#step-3：添加minikube进入系统命令" class="headerlink" title="step 3：添加minikube进入系统命令"></a>step 3：添加minikube进入系统命令</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p /usr/<span class="built_in">local</span>/bin/</span><br><span class="line">sudo install minikube /usr/<span class="built_in">local</span>/bin/</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="step-4：启动-minikube（使用的VM安装的centos-8因此设置driver-x3D-none）"><a href="#step-4：启动-minikube（使用的VM安装的centos-8因此设置driver-x3D-none）" class="headerlink" title="step 4：启动 minikube（使用的VM安装的centos 8因此设置driver&#x3D;none）"></a>step 4：启动 minikube（使用的VM安装的centos 8因此设置driver&#x3D;none）</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">minikube start --driver=none --image-repository=registry.cn-hangzhou.aliyuncs.com/google_containers</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="step-5：确认minikube状态"><a href="#step-5：确认minikube状态" class="headerlink" title="step 5：确认minikube状态"></a>step 5：确认minikube状态</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">minikube status</span><br></pre></td></tr></table></figure>
-
-<p>8.istio安装</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">istioctl manifest apply --<span class="built_in">set</span> profile=demo</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/2020/05/13/cetnos-7-7%E5%8D%95%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2k8s%EF%BC%88v1-18-2%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Echo/images/avatar.gif">
-      <meta itemprop="name" content="丑牛">
-      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="测试的名义">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Echo/2020/05/13/cetnos-7-7%E5%8D%95%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2k8s%EF%BC%88v1-18-2%EF%BC%89/" class="post-title-link" itemprop="url">cetnos 7.7单节点安装部署k8s（v1.18.2）</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-05-13 22:30:27" itemprop="dateCreated datePublished" datetime="2020-05-13T22:30:27+08:00">2020-05-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Echo/categories/%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/" itemprop="url" rel="index"><span itemprop="name">环境安装</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h4 id="1-配置hosts文件"><a href="#1-配置hosts文件" class="headerlink" title="1.配置hosts文件"></a>1.配置hosts文件</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/hosts</span><br></pre></td></tr></table></figure>
-
-<p>本机ip  本机hostname 本机hostname</p>
-<h4 id="2-关闭防火墙-sawp等"><a href="#2-关闭防火墙-sawp等" class="headerlink" title="2.关闭防火墙, sawp等"></a>2.关闭防火墙, sawp等</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl <span class="built_in">disable</span> firewalld</span><br><span class="line">swapoff -a <span class="comment">#此处为临时关闭</span></span><br></pre></td></tr></table></figure>
-
-<p>#注释掉 &#x2F;etc&#x2F;fstab 里面这一行 &#x2F;dev&#x2F;mapper&#x2F;centos-swap swap                    swap    defaults        0 0</p>
-<h4 id="3-禁用selinux"><a href="#3-禁用selinux" class="headerlink" title="3.禁用selinux"></a>3.禁用selinux</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br><span class="line">SELINUX=disabled</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-修改iptables参数-RHEL-x2F-CentOS-7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题"><a href="#4-修改iptables参数-RHEL-x2F-CentOS-7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题" class="headerlink" title="4.修改iptables参数 :: RHEL &#x2F; CentOS 7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题"></a>4.修改iptables参数 :: RHEL &#x2F; CentOS 7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cat &lt;&lt;<span class="string">EOF &gt;  /etc/sysctl.d/k8s.conf</span></span><br><span class="line"><span class="string">vm.swappiness = 0</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-ip6tables = 1</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-iptables = 1</span></span><br><span class="line"><span class="string">net.ipv4.ip_forward = 1</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"><span class="comment">#使配置生效</span></span><br><span class="line">modprobe br_netfilter</span><br><span class="line">sysctl -p /etc/sysctl.d/k8s.conf</span><br></pre></td></tr></table></figure>
-
-<h4 id="5-安装docker-使用阿里镜像"><a href="#5-安装docker-使用阿里镜像" class="headerlink" title="5.安装docker(使用阿里镜像)"></a>5.安装docker(使用阿里镜像)</h4><h5 id="step-1-安装必要的一些系统工具"><a href="#step-1-安装必要的一些系统工具" class="headerlink" title="step 1: 安装必要的一些系统工具"></a>step 1: 安装必要的一些系统工具</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-2-添加软件源信息"><a href="#Step-2-添加软件源信息" class="headerlink" title="Step 2: 添加软件源信息"></a>Step 2: 添加软件源信息</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-3-更新并安装Docker-CE"><a href="#Step-3-更新并安装Docker-CE" class="headerlink" title="Step 3: 更新并安装Docker-CE"></a>Step 3: 更新并安装Docker-CE</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo yum makecache fast</span><br><span class="line">sudo yum -y install docker-ce</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-4-开启Docker服务"><a href="#Step-4-开启Docker服务" class="headerlink" title="Step 4: 开启Docker服务"></a>Step 4: 开启Docker服务</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-5-修改cgroupdriver-和镜像地址"><a href="#Step-5-修改cgroupdriver-和镜像地址" class="headerlink" title="Step 5: 修改cgroupdriver 和镜像地址"></a>Step 5: 修改cgroupdriver 和镜像地址</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/docker/daemon.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;exec-opts&quot;</span>: [<span class="string">&quot;native.cgroupdriver=systemd&quot;</span>],</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://e7l8pkuq.mirror.aliyuncs.com&quot;</span>,<span class="string">&quot;https://hub-mirror.c.163.com/&quot;</span>,<span class="string">&quot;https://reg-mirror.qiniu.com&quot;</span>]</span><br><span class="line">&#125;</span><br><span class="line"> <span class="comment"># 安装校验 docker version</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-6-安装kubernetes"><a href="#Step-6-安装kubernetes" class="headerlink" title="Step  6.安装kubernetes"></a>Step  6.安装kubernetes</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">cat &lt;&lt;<span class="string">EOF &gt; /etc/yum.repos.d/kubernetes.repo</span></span><br><span class="line"><span class="string">[kubernetes]</span></span><br><span class="line"><span class="string">name=Kubernetes</span></span><br><span class="line"><span class="string">baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64/</span></span><br><span class="line"><span class="string">enabled=1</span></span><br><span class="line"><span class="string">gpgcheck=1</span></span><br><span class="line"><span class="string">repo_gpgcheck=1</span></span><br><span class="line"><span class="string">gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line">setenforce 0</span><br><span class="line">yum install -y kubelet kubeadm kubectl</span><br><span class="line">systemctl <span class="built_in">enable</span> kubelet &amp;&amp; systemctl start kubelet</span><br><span class="line"> <span class="comment"># 出现索引lgpg检查失败时，请用yum install -y --nogpgcheck kubelet kubeadm kubectl</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="step-7-kubeadm初始化安装"><a href="#step-7-kubeadm初始化安装" class="headerlink" title="step 7.kubeadm初始化安装"></a>step 7.kubeadm初始化安装</h5><p>kubeadm init –apiserver-advertise-address&#x3D;本机IP –image-repository registry.aliyuncs.com&#x2F;google_containers –kubernetes-version 版本号 –pod-network-cidr&#x3D;10.244.0.0&#x2F;16</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubeadm init --apiserver-advertise-address=192.168.94.129 --image-repository registry.aliyuncs.com/google_containers --kubernetes-version 1.18.2 --pod-network-cidr=10.244.0.0/16</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-8-初始化安装成功后进行配置"><a href="#step-8-初始化安装成功后进行配置" class="headerlink" title="step 8.初始化安装成功后进行配置"></a>step 8.初始化安装成功后进行配置</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p <span class="variable">$HOME</span>/.kube</span><br><span class="line">sudo cp -i /etc/kubernetes/admin.conf <span class="variable">$HOME</span>/.kube/config</span><br><span class="line">sudo chown $(id -u):$(id -g) <span class="variable">$HOME</span>/.kube/config</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-9-查看kubelet状态"><a href="#step-9-查看kubelet状态" class="headerlink" title="step 9.查看kubelet状态"></a>step 9.查看kubelet状态</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status kubelet.service</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-10-确认每个组件的状态"><a href="#step-10-确认每个组件的状态" class="headerlink" title="step 10.确认每个组件的状态"></a>step 10.确认每个组件的状态</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl get cs</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-11-查看node状态，此时会发现处于NoReady"><a href="#step-11-查看node状态，此时会发现处于NoReady" class="headerlink" title="step 11.查看node状态，此时会发现处于NoReady"></a>step 11.查看node状态，此时会发现处于NoReady</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl get node</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-12-安装port-Network-flannel-k8s-cluster-工作-须安装pod网络，否则pod之间无法通信，k8s支持多种方案"><a href="#step-12-安装port-Network-flannel-k8s-cluster-工作-须安装pod网络，否则pod之间无法通信，k8s支持多种方案" class="headerlink" title="step 12.安装port Network( flannel )  : k8s cluster 工作 须安装pod网络，否则pod之间无法通信，k8s支持多种方案"></a>step 12.安装port Network( flannel )  : k8s cluster 工作 须安装pod网络，否则pod之间无法通信，k8s支持多种方案</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml</span><br></pre></td></tr></table></figure>
-
-<p>建议将kube-fannle文件拷贝至本地，将其中所需的镜像进行替换。</p>
-<h5 id="step-13-检查pod-确保每个pod都是running"><a href="#step-13-检查pod-确保每个pod都是running" class="headerlink" title="step 13.检查pod,确保每个pod都是running"></a>step 13.检查pod,确保每个pod都是running</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl get pod --all-namespaces -o wide</span><br></pre></td></tr></table></figure>
 
 
       

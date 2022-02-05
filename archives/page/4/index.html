@@ -191,6 +191,234 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/2020/08/10/cetnos-8-2%E5%8D%95%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2k8s%EF%BC%88v1-18-2%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Echo/images/avatar.gif">
+      <meta itemprop="name" content="丑牛">
+      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="测试的名义">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Echo/2020/08/10/cetnos-8-2%E5%8D%95%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2k8s%EF%BC%88v1-18-2%EF%BC%89/" class="post-title-link" itemprop="url">cetnos 8.2单节点安装部署k8s（v1.18.2）</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-08-10 23:20:55" itemprop="dateCreated datePublished" datetime="2020-08-10T23:20:55+08:00">2020-08-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Echo/categories/%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/" itemprop="url" rel="index"><span itemprop="name">环境安装</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h4 id="1-配置hosts文件"><a href="#1-配置hosts文件" class="headerlink" title="1.配置hosts文件"></a>1.配置hosts文件</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/hosts</span><br></pre></td></tr></table></figure>
+
+<p>本机ip  本机hostname 本机hostname</p>
+<h4 id="2-关闭防火墙-sawp等"><a href="#2-关闭防火墙-sawp等" class="headerlink" title="2.关闭防火墙, sawp等"></a>2.关闭防火墙, sawp等</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl <span class="built_in">disable</span> firewalld</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-关闭swap"><a href="#3-关闭swap" class="headerlink" title="3.关闭swap"></a>3.关闭swap</h4><h4 id="4-禁用selinux"><a href="#4-禁用selinux" class="headerlink" title="4.禁用selinux"></a>4.禁用selinux</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br><span class="line">SELINUX=disabled</span><br><span class="line">/usr/sbin/sestatus -v  <span class="comment"># 查看selinux状态</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="5-安装docker"><a href="#5-安装docker" class="headerlink" title="5.安装docker"></a>5.安装docker</h4><h5 id="step-1-安装必要的一些系统工具"><a href="#step-1-安装必要的一些系统工具" class="headerlink" title="step 1: 安装必要的一些系统工具"></a>step 1: 安装必要的一些系统工具</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-2-添加软件源信息"><a href="#Step-2-添加软件源信息" class="headerlink" title="Step 2: 添加软件源信息"></a>Step 2: 添加软件源信息</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-3-更新并安装Docker-CE"><a href="#Step-3-更新并安装Docker-CE" class="headerlink" title="Step 3: 更新并安装Docker-CE"></a>Step 3: 更新并安装Docker-CE</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">yum makecache --refresh</span><br><span class="line">sudo yum -y install docker-ce</span><br><span class="line"><span class="comment"># 发现报错：Problem: package docker-ce-3:19.03.12-3.el7.x86_64 requires containerd.io &gt;= 1.2.2-3, but none of the providers can be installed</span></span><br><span class="line"><span class="comment"># 因为containerd 版本过低</span></span><br><span class="line">dnf install container-selinux</span><br><span class="line">通过yum -y install https://download.docker.com/linux/centos/7/x86_64/edge/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm 升级即可</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-4-docker-修改Cgroup-Driver以及docker镜像拉取地址"><a href="#Step-4-docker-修改Cgroup-Driver以及docker镜像拉取地址" class="headerlink" title="Step 4: docker 修改Cgroup Driver以及docker镜像拉取地址"></a>Step 4: docker 修改Cgroup Driver以及docker镜像拉取地址</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> cat /etc/docker/daemon.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://e7l8pkuq.mirror.aliyuncs.com&quot;</span>],</span><br><span class="line">  <span class="string">&quot;exec-opts&quot;</span>: [<span class="string">&quot;native.cgroupdriver=systemd&quot;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-5-开启Docker服务"><a href="#Step-5-开启Docker服务" class="headerlink" title="Step 5: 开启Docker服务"></a>Step 5: 开启Docker服务</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-安装kubectl"><a href="#6-安装kubectl" class="headerlink" title="6.安装kubectl"></a>6.安装kubectl</h4><h5 id="step-1：下载最新kubectl最新资源"><a href="#step-1：下载最新kubectl最新资源" class="headerlink" title="step 1：下载最新kubectl最新资源"></a>step 1：下载最新kubectl最新资源</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -LO <span class="string">&quot;https://storage.googleapis.com/kubernetes-release/release/<span class="subst">$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)</span>/bin/linux/amd64/kubectl&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="step-2：添加执行权限"><a href="#step-2：添加执行权限" class="headerlink" title="step 2：添加执行权限"></a>step 2：添加执行权限</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x ./kubectl</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-3：移动kubectl至bin路径"><a href="#step-3：移动kubectl至bin路径" class="headerlink" title="step 3：移动kubectl至bin路径"></a>step 3：移动kubectl至bin路径</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mv ./kubectl /usr/<span class="built_in">local</span>/bin/kubectl</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-4：确认安装的版本"><a href="#step-4：确认安装的版本" class="headerlink" title="step 4：确认安装的版本"></a>step 4：确认安装的版本</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl version --client</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-安装minikube"><a href="#7-安装minikube" class="headerlink" title="7.安装minikube"></a>7.安装minikube</h4><h5 id="step-1：确认是否支持虚拟化"><a href="#step-1：确认是否支持虚拟化" class="headerlink" title="step 1：确认是否支持虚拟化"></a>step 1：确认是否支持虚拟化</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -E --color <span class="string">&#x27;vmx|svm&#x27;</span> /proc/cpuinfo</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="step-2：下载minikube资源"><a href="#step-2：下载minikube资源" class="headerlink" title="step 2：下载minikube资源"></a>step 2：下载minikube资源</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \</span><br><span class="line">  &amp;&amp; chmod +x minikube</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="step-3：添加minikube进入系统命令"><a href="#step-3：添加minikube进入系统命令" class="headerlink" title="step 3：添加minikube进入系统命令"></a>step 3：添加minikube进入系统命令</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p /usr/<span class="built_in">local</span>/bin/</span><br><span class="line">sudo install minikube /usr/<span class="built_in">local</span>/bin/</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="step-4：启动-minikube（使用的VM安装的centos-8因此设置driver-x3D-none）"><a href="#step-4：启动-minikube（使用的VM安装的centos-8因此设置driver-x3D-none）" class="headerlink" title="step 4：启动 minikube（使用的VM安装的centos 8因此设置driver&#x3D;none）"></a>step 4：启动 minikube（使用的VM安装的centos 8因此设置driver&#x3D;none）</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">minikube start --driver=none --image-repository=registry.cn-hangzhou.aliyuncs.com/google_containers</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="step-5：确认minikube状态"><a href="#step-5：确认minikube状态" class="headerlink" title="step 5：确认minikube状态"></a>step 5：确认minikube状态</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">minikube status</span><br></pre></td></tr></table></figure>
+
+<p>8.istio安装</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">istioctl manifest apply --<span class="built_in">set</span> profile=demo</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/2020/05/13/cetnos-7-7%E5%8D%95%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2k8s%EF%BC%88v1-18-2%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Echo/images/avatar.gif">
+      <meta itemprop="name" content="丑牛">
+      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="测试的名义">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Echo/2020/05/13/cetnos-7-7%E5%8D%95%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2k8s%EF%BC%88v1-18-2%EF%BC%89/" class="post-title-link" itemprop="url">cetnos 7.7单节点安装部署k8s（v1.18.2）</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-05-13 22:30:27" itemprop="dateCreated datePublished" datetime="2020-05-13T22:30:27+08:00">2020-05-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Echo/categories/%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/" itemprop="url" rel="index"><span itemprop="name">环境安装</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h4 id="1-配置hosts文件"><a href="#1-配置hosts文件" class="headerlink" title="1.配置hosts文件"></a>1.配置hosts文件</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/hosts</span><br></pre></td></tr></table></figure>
+
+<p>本机ip  本机hostname 本机hostname</p>
+<h4 id="2-关闭防火墙-sawp等"><a href="#2-关闭防火墙-sawp等" class="headerlink" title="2.关闭防火墙, sawp等"></a>2.关闭防火墙, sawp等</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl <span class="built_in">disable</span> firewalld</span><br><span class="line">swapoff -a <span class="comment">#此处为临时关闭</span></span><br></pre></td></tr></table></figure>
+
+<p>#注释掉 &#x2F;etc&#x2F;fstab 里面这一行 &#x2F;dev&#x2F;mapper&#x2F;centos-swap swap                    swap    defaults        0 0</p>
+<h4 id="3-禁用selinux"><a href="#3-禁用selinux" class="headerlink" title="3.禁用selinux"></a>3.禁用selinux</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br><span class="line">SELINUX=disabled</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-修改iptables参数-RHEL-x2F-CentOS-7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题"><a href="#4-修改iptables参数-RHEL-x2F-CentOS-7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题" class="headerlink" title="4.修改iptables参数 :: RHEL &#x2F; CentOS 7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题"></a>4.修改iptables参数 :: RHEL &#x2F; CentOS 7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cat &lt;&lt;<span class="string">EOF &gt;  /etc/sysctl.d/k8s.conf</span></span><br><span class="line"><span class="string">vm.swappiness = 0</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-ip6tables = 1</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-iptables = 1</span></span><br><span class="line"><span class="string">net.ipv4.ip_forward = 1</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"><span class="comment">#使配置生效</span></span><br><span class="line">modprobe br_netfilter</span><br><span class="line">sysctl -p /etc/sysctl.d/k8s.conf</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-安装docker-使用阿里镜像"><a href="#5-安装docker-使用阿里镜像" class="headerlink" title="5.安装docker(使用阿里镜像)"></a>5.安装docker(使用阿里镜像)</h4><h5 id="step-1-安装必要的一些系统工具"><a href="#step-1-安装必要的一些系统工具" class="headerlink" title="step 1: 安装必要的一些系统工具"></a>step 1: 安装必要的一些系统工具</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-2-添加软件源信息"><a href="#Step-2-添加软件源信息" class="headerlink" title="Step 2: 添加软件源信息"></a>Step 2: 添加软件源信息</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-3-更新并安装Docker-CE"><a href="#Step-3-更新并安装Docker-CE" class="headerlink" title="Step 3: 更新并安装Docker-CE"></a>Step 3: 更新并安装Docker-CE</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo yum makecache fast</span><br><span class="line">sudo yum -y install docker-ce</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-4-开启Docker服务"><a href="#Step-4-开启Docker服务" class="headerlink" title="Step 4: 开启Docker服务"></a>Step 4: 开启Docker服务</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-5-修改cgroupdriver-和镜像地址"><a href="#Step-5-修改cgroupdriver-和镜像地址" class="headerlink" title="Step 5: 修改cgroupdriver 和镜像地址"></a>Step 5: 修改cgroupdriver 和镜像地址</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/docker/daemon.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;exec-opts&quot;</span>: [<span class="string">&quot;native.cgroupdriver=systemd&quot;</span>],</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://e7l8pkuq.mirror.aliyuncs.com&quot;</span>,<span class="string">&quot;https://hub-mirror.c.163.com/&quot;</span>,<span class="string">&quot;https://reg-mirror.qiniu.com&quot;</span>]</span><br><span class="line">&#125;</span><br><span class="line"> <span class="comment"># 安装校验 docker version</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-6-安装kubernetes"><a href="#Step-6-安装kubernetes" class="headerlink" title="Step  6.安装kubernetes"></a>Step  6.安装kubernetes</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">cat &lt;&lt;<span class="string">EOF &gt; /etc/yum.repos.d/kubernetes.repo</span></span><br><span class="line"><span class="string">[kubernetes]</span></span><br><span class="line"><span class="string">name=Kubernetes</span></span><br><span class="line"><span class="string">baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64/</span></span><br><span class="line"><span class="string">enabled=1</span></span><br><span class="line"><span class="string">gpgcheck=1</span></span><br><span class="line"><span class="string">repo_gpgcheck=1</span></span><br><span class="line"><span class="string">gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line">setenforce 0</span><br><span class="line">yum install -y kubelet kubeadm kubectl</span><br><span class="line">systemctl <span class="built_in">enable</span> kubelet &amp;&amp; systemctl start kubelet</span><br><span class="line"> <span class="comment"># 出现索引lgpg检查失败时，请用yum install -y --nogpgcheck kubelet kubeadm kubectl</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="step-7-kubeadm初始化安装"><a href="#step-7-kubeadm初始化安装" class="headerlink" title="step 7.kubeadm初始化安装"></a>step 7.kubeadm初始化安装</h5><p>kubeadm init –apiserver-advertise-address&#x3D;本机IP –image-repository registry.aliyuncs.com&#x2F;google_containers –kubernetes-version 版本号 –pod-network-cidr&#x3D;10.244.0.0&#x2F;16</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubeadm init --apiserver-advertise-address=192.168.94.129 --image-repository registry.aliyuncs.com/google_containers --kubernetes-version 1.18.2 --pod-network-cidr=10.244.0.0/16</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-8-初始化安装成功后进行配置"><a href="#step-8-初始化安装成功后进行配置" class="headerlink" title="step 8.初始化安装成功后进行配置"></a>step 8.初始化安装成功后进行配置</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p <span class="variable">$HOME</span>/.kube</span><br><span class="line">sudo cp -i /etc/kubernetes/admin.conf <span class="variable">$HOME</span>/.kube/config</span><br><span class="line">sudo chown $(id -u):$(id -g) <span class="variable">$HOME</span>/.kube/config</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-9-查看kubelet状态"><a href="#step-9-查看kubelet状态" class="headerlink" title="step 9.查看kubelet状态"></a>step 9.查看kubelet状态</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status kubelet.service</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-10-确认每个组件的状态"><a href="#step-10-确认每个组件的状态" class="headerlink" title="step 10.确认每个组件的状态"></a>step 10.确认每个组件的状态</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl get cs</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-11-查看node状态，此时会发现处于NoReady"><a href="#step-11-查看node状态，此时会发现处于NoReady" class="headerlink" title="step 11.查看node状态，此时会发现处于NoReady"></a>step 11.查看node状态，此时会发现处于NoReady</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl get node</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-12-安装port-Network-flannel-k8s-cluster-工作-须安装pod网络，否则pod之间无法通信，k8s支持多种方案"><a href="#step-12-安装port-Network-flannel-k8s-cluster-工作-须安装pod网络，否则pod之间无法通信，k8s支持多种方案" class="headerlink" title="step 12.安装port Network( flannel )  : k8s cluster 工作 须安装pod网络，否则pod之间无法通信，k8s支持多种方案"></a>step 12.安装port Network( flannel )  : k8s cluster 工作 须安装pod网络，否则pod之间无法通信，k8s支持多种方案</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml</span><br></pre></td></tr></table></figure>
+
+<p>建议将kube-fannle文件拷贝至本地，将其中所需的镜像进行替换。</p>
+<h5 id="step-13-检查pod-确保每个pod都是running"><a href="#step-13-检查pod-确保每个pod都是running" class="headerlink" title="step 13.检查pod,确保每个pod都是running"></a>step 13.检查pod,确保每个pod都是running</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl get pod --all-namespaces -o wide</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/2020/04/02/%E4%BA%94%E5%B9%B4%E5%B7%A5%E4%BD%9C%E6%84%9F%E6%82%9F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">

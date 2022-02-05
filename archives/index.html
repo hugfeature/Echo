@@ -191,6 +191,241 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/2022/02/05/Cookie%E6%B5%8B%E8%AF%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Echo/images/avatar.gif">
+      <meta itemprop="name" content="丑牛">
+      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="测试的名义">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Echo/2022/02/05/Cookie%E6%B5%8B%E8%AF%95/" class="post-title-link" itemprop="url">Cookie测试</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-02-05 14:12:59" itemprop="dateCreated datePublished" datetime="2022-02-05T14:12:59+08:00">2022-02-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Echo/categories/%E6%B5%8B%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">测试</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h4 id="什么是Cookie？"><a href="#什么是Cookie？" class="headerlink" title="什么是Cookie？"></a>什么是Cookie？</h4><p> Cookie 是由网络服务器存储在用户硬盘上的文本文件中的一小段信息。Web 浏览器稍后将使用此信息从该计算机检索信息。</p>
+<p>通常，Cookie包含用于在不同网页之间进行通信的个性化用户数据或信息。</p>
+<h4 id="为什么使用cookie？"><a href="#为什么使用cookie？" class="headerlink" title="为什么使用cookie？"></a>为什么使用cookie？</h4><p>Cookies只不过是记录用户的身份，用于跟踪用户在整个网站页面中的导航位置。但是Web 浏览器和 Web 服务器之间的通信是无状态的。</p>
+<p><strong>例：</strong></p>
+<p>如果正在访问域”<a target="_blank" rel="noopener" href="http://www.example.com/1.html&quot;%EF%BC%8C%E5%88%99Web%E6%B5%8F%E8%A7%88%E5%99%A8%E5%B0%86%E4%BB%85%E5%90%91">http://www.example.com/1.html&quot;，则Web浏览器将仅向</a> example.com Web服务器查询第1.html页。</p>
+<p>下次，如果将页面键入为”<a target="_blank" rel="noopener" href="http://www.example.com/2.html&quot;%EF%BC%8C%E5%88%99%E6%96%B0%E8%AF%B7%E6%B1%82%E5%B0%86%E5%8F%91%E9%80%81%E5%88%B0">http://www.example.com/2.html&quot;，则新请求将发送到</a> example.com Web服务器以发送2.html页面，并且Web服务器不知道有关上一页1.html的任何信息。</p>
+<p>如果想要此用户与 Web 服务器通信的先前历史记录，该怎么办？需要在某个位置维护 Web 浏览器和 Web 服务器之间的用户状态和交互。这就是饼干进入画面的地方。Cookie 用于维护用户与网络服务器的交互。</p>
+<h4 id="Cookie是如何工作的？"><a href="#Cookie是如何工作的？" class="headerlink" title="Cookie是如何工作的？"></a>Cookie是如何工作的？</h4><p>Cookie用于维护在HYYP协议上 Web 上交换信息的文件。</p>
+<p>有两种类型的 HTTP 协议。无状态 HTTP 和有状态 HTTP 协议。无状态 HTTP 协议不保留以前访问过的网页历史记录的任何记录。虽然有状态 HTTP 协议确实保留了以前的 Web 浏览器和 Web 服务器交互的一些历史记录，但 Cookie 使用此协议来维护用户交互。</p>
+<p>每当用户访问使用cookie的网站或页面时，该HTML页面中的小代码（通常，调用某些语言脚本来编写cookie，如JAVAScript，PHP，Perl中的cookie）会在用户的计算机上写入一个文本文件，称为cookie。</p>
+<p>下面一段示例代码如何设置写一个cookie，可以放在任何HTML页面上：</p>
+<p><strong>Set-Cookie: NAME&#x3D;VALUE; expires&#x3D;DATE; path&#x3D;PATH; domain&#x3D;DOMAIN_NAME;</strong></p>
+<p>当用户稍后访问同一页面或域时，将从磁盘读取此 Cookie，并用于标识该域上同一用户的第二次访问。过期时间是在写入 Cookie 时设置的。此时间由要使用 Cookie 的应用程序决定。</p>
+<p>通常，在用户计算机上写入两种类型的Cookie</p>
+<p><strong>会话 Cookie：</strong>此 Cookie 处于活动状态，直到调用该 Cookie 的浏览器打开。当我们关闭浏览器时，此会话cookie将被删除。有时，可以将 20 分钟的会话设置为使 Cookie 过期。</p>
+<p><strong>持久性 Cookie：</strong>这些是永久写入用户计算机上并持续数月或数年的 Cookie。</p>
+<h4 id="Cookie存储在哪里？"><a href="#Cookie存储在哪里？" class="headerlink" title="Cookie存储在哪里？"></a>Cookie存储在哪里？</h4><p>当任何网页应用程序写入 Cookie 时，它会保存在用户硬盘驱动器上的文本文件中。存储 Cookie 的路径取决于浏览器。不同的浏览器将 Cookie 存储在不同的路径中。</p>
+<p> <strong>Cookie 存储位置示例：</strong></p>
+<p><strong>Edge：</strong> <em>“C：\Users\username\AppData\Roaming\Microsoft\Windows\Cookies”。</em></p>
+<p>**Windows 7：”**<em>C：\Users\username\AppData\Roaming\Microsoft\Windows\Cookies\Low”。</em></p>
+<p>**Windows 8 和 Windows 10：”**<em>C：\Users\username\AppData\Local\Microsoft\Windows\INetCookies”。</em></p>
+<p>在这里，”默认用户”可以替换为您登录的当前用户，如”管理员”，或用户名，如”admin”等。通过浏览浏览器选项可以轻松找到 Cookie 路径。</p>
+<p>在Mozilla Firefox浏览器中，您甚至可以在浏览器选项本身中看到cookie。打开 Mozilla 浏览器，按”打开菜单”按钮？”网络开发人员”？”存储检查器”或按组合”Shift + F9”。</p>
+<p>在谷歌浏览器中，您可以通过在地址栏中输入”chrome:&#x2F;&#x2F;settings&#x2F;content&#x2F;cookies”来查找cookie。也可以使用浏览器控制台访问 Cookie：按 F12 – &gt; 应用程序 – &gt;存储 – &gt; Cookie。</p>
+<h4 id="Cookie是如何存储的？"><a href="#Cookie是如何存储的？" class="headerlink" title="Cookie是如何存储的？"></a>Cookie是如何存储的？</h4><p>以 <a target="_blank" rel="noopener" href="http://www.rediff.com/">rediff.com</a> 在 Mozilla Firefox 浏览器上编写的 Cookie 为例。在 Mozilla Firefox 浏览器上，当您打开 rediff.com 页面或登录您的 Rediffmail 帐户时，您的硬盘上会写入一个 Cookie。</p>
+<p>要查看此 Cookie，只需单击上述路径中提到的”显示 Cookie”按钮即可。单击此 Cookie 列表下的 Rediff.com 站点。</p>
+<p><em><strong>可以看到 Rediff 域中写入的不同 Cookie 具有不同的名称。</strong></em></p>
+<p><strong>Site:</strong> Rediff.com Cookie name: RMID<br><strong>Name:</strong> RMID (Name of the cookie)<br><strong>Content:</strong> 1d11c8ec44bf49e0… (Encrypted content)<br><strong>Domain:</strong> .rediff.com<br><strong>Path:</strong> &#x2F; (Any path after the domain name)<br><strong>Send For:</strong> Any type of connection<br><strong>Expires:</strong> Thursday, December 31, 2020, 11:59:59 PM</p>
+<h4 id="Cookie可以使用在哪里？"><a href="#Cookie可以使用在哪里？" class="headerlink" title="Cookie可以使用在哪里？"></a>Cookie可以使用在哪里？</h4><p><strong>实现购物车：</strong> Cookie 用于维护在线订购系统。如果用户将某些产品添加到购物车中，并且由于某种原因用户这次不想购买这些产品并关闭浏览器窗口，该怎么办？Cookie记住用户想要购买的东西。下次同一用户访问购买页面时，他可以看到他在上次访问期间添加到购物车中的所有产品。</p>
+<p><strong>个性化网站：</strong> 当用户访问某个页面时，系统会询问他们不想访问或显示哪些页面。用户选项存储在cookie中，直到用户在线，这些页面不会显示给他。</p>
+<p><strong>用户跟踪：</strong> 跟踪特定时间的在线唯一身份访问者数量。</p>
+<p><strong>营销：</strong> 一些公司使用Cookie在用户机器上显示广告。Cookie 控制这些广告。何时以及应显示哪个广告？用户的兴趣是什么？他们在网站上搜索哪些关键字？所有这些东西都可以使用cookie进行维护。</p>
+<p><strong>用户会话：</strong> Cookie 可以使用用户 ID 和密码跟踪用户与特定域的会话。</p>
+<h4 id="Cookie的缺点"><a href="#Cookie的缺点" class="headerlink" title="Cookie的缺点"></a>Cookie的缺点</h4><p><strong>用户禁用：</strong>使用Cookie是维护用户交互的好方法。但是如果用户在编写任何Cookie或完全禁用Cookie之前设置了浏览器选项以警告，则包含Cookie的网站将被完全禁用，并且无法执行任何操作，从而导致网站流量损失。这可以在浏览器设置中禁用&#x2F;启用。</p>
+<p><strong>例如：</strong>对于谷歌浏览器，需要转到设置-&gt;高级-&gt;内容设置-&gt;Cookie。在那里，可以应用 Cookie 策略的一般规则，或为各个网站设置规则。</p>
+<p><strong>Cookie 过多：</strong>如果在每个页面导航上写入了过多的 Cookie，并且用户在编写 Cookie 之前打开了警告选项，这甚至可能会使用户离开您的网站。</p>
+<p><strong>安全问题：</strong>有时，用户的个人信息存储在Cookie中，如果有人入侵Cookie，那么黑客可以访问您的个人信息。即使是损坏的 Cookie 也可能被不同的域读取，并导致安全问题。</p>
+<p><strong>敏感信息：</strong>某些网站可能会在Cookie中写入和存储敏感信息，出于隐私考虑，这不应该被允许。</p>
+<h4 id="Cookie的测试用例"><a href="#Cookie的测试用例" class="headerlink" title="Cookie的测试用例"></a>Cookie的测试用例</h4><p><strong>#1）</strong>请确保在您的设计文档中，Cookie 中未存储任何个人或敏感数据。</p>
+<p><strong>#2）</strong> 如果除了将敏感数据保存在 Cookie 中之外别无选择，请确保存储在 Cookie 中的数据以加密格式存储。</p>
+<p><strong>#3）</strong>确保在被测的网站上没有过度使用 Cookie。如果浏览器更频繁地提示输入 Cookie，则过度使用 Cookie 会惹恼用户，这可能会导致网站流量损失并最终导致业务损失。</p>
+<p><strong>#4）</strong>从您的浏览器设置中禁用 Cookie。如果您在网站上使用 Cookie，则禁用 Cookie 将无法使用您网站的主要功能。然后尝试访问受测网站。导航到该网站，查看是否向用户显示适当的消息，例如”为了使本网站顺利运行，请确保在您的浏览器上启用了Cookie”。任何页面都不应因禁用 Cookie 而崩溃。在执行此测试之前，请确保关闭所有浏览器并删除所有以前编写的cookie。</p>
+<p><strong>#5）接受&#x2F;拒绝某些 Cookie：</strong>检查网站功能的最佳方法是不接受所有 Cookie。如果您在Web应用程序上编写10个Cookie，则随机接受一些Cookie，例如接受5个Cookie并拒绝5个Cookie。</p>
+<p>要执行上述测试用例，您可以将浏览器选项设置为每当在磁盘上写入Cookie时都会提示。在此提示窗口中，您可以接受或拒绝 Cookie。尝试访问网站的主要功能，并查看页面是否崩溃或数据是否损坏。</p>
+<p><strong>#6）删除 Cookie：</strong>允许网站编写 Cookie，然后关闭所有浏览器并手动删除受测网站的所有 Cookie。访问网页并检查网页的行为。</p>
+<p><strong>#7）损坏 Cookie：</strong>损坏 Cookie 很容易。可以在记事本中手动编辑 Cookie，并将参数更改为一些模糊的值，例如更改 Cookie 内容、Cookie 名称或 Cookie 的到期日期，并查看网站功能。</p>
+<p>在某些情况下，损坏的 Cookie 允许读取任何其他域的数据。对于网站 Cookie，不应发生这种情况。请注意，如果 Cookie 是由一个域编写的，如 rediff.com写的Cookie 另一个yahoo.com域无法访问它，除非 Cookie 已损坏并且有人试图破解 Cookie 数据。</p>
+<p><strong>#8 ）检查从您的 Web 应用程序页面中删除 Cookie：</strong>有时，由域编写的 cookie 表示 rediff.com 可能由同一域删除，但由该域下的不同页面删除。如果您正在测试某操作跟Web 门户，则这是一般情况。操作跟踪或购买跟踪像素放置在操作网页上，当用户发生任何操作或购买时，写入磁盘上的Cookie将被删除，以避免从同一Cookie记录多个操作。检查到达您的操作或购买页面是否正确删除了Cookie，并且不再记录来自同一用户的无效操作或购买。</p>
+<p><strong>#9）在多个浏览器上进行 Cookie 测试：</strong>这是检查您的 Web 应用程序页面是否按预期在不同的浏览器上正确编写 Cookie 以及网站是否使用这些 Cookie 正常工作的最重要情况。您可以在最常用的浏览器（如Chrome，Edge，Mozilla Firefox，Netscape，Opera等）上测试您的Web应用程序。</p>
+<p><strong>#10）</strong>如果使用 Cookie 来维护任何用户的日志记录状态，请使用某些用户名和密码登录到您的 Web 应用程序。</p>
+<p>在许多情况下，您可以直接在浏览器地址栏中看到登录的用户 ID 参数。将此参数更改为其他值，例如，如果以前的用户 ID 为 100，则将其设置为 101，然后按 Enter。应向用户显示正确的访问消息，并且用户不应能够看到其他用户的帐户详细信息。</p>
+<p><strong>#11）</strong>通过在 Cookie 文件或浏览器控制台中检查 Cookie 类型和到期日期来验证 Cookie 是否持久（是否符合要求）</p>
+<p><strong>#12）</strong>验证是否根据要求相应地设置了到期日期。在某些情况下，通过使用应用程序（例如刷新会话）来检查Cookie到期日期是否更新至关重要。这可以在浏览器控制台或 cookie 文件本身中进行检查。</p>
+<p>请注意，手动解码cookie不是最佳方法，依赖浏览器数据更加容易。</p>
+<p><strong>#13）</strong>如果某些 Cookie 是特定于用户的，请务必确保在其他用户登录应用程序时将其删除或直接忽略，除非另有说明。</p>
+<p><strong>#14）针对多环境站点的特定测试：</strong>检查是否在所有环境中都可接受相同的 Cookie。问题可能是由 Cookie 路径中使用通配符（所谓的超级 cookie）引起的。如果这是允许它的要求，则由于使用了不同的加密密钥（例如，对于 .Net，除非另有指定，否则它通常是唯一的计算机密钥），因此可能会导致一些访问问题。</p>
+<p>这些是测试网站 Cookie 时要考虑的一些主要测试用例。可以通过执行各种组合从这些测试用例编写多个测试用例。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/2022/02/05/web%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%AE%89%E5%85%A8%E6%B5%8B%E8%AF%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Echo/images/avatar.gif">
+      <meta itemprop="name" content="丑牛">
+      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="测试的名义">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Echo/2022/02/05/web%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%AE%89%E5%85%A8%E6%B5%8B%E8%AF%95/" class="post-title-link" itemprop="url">web应用程序安全测试</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-02-05 11:04:11" itemprop="dateCreated datePublished" datetime="2022-02-05T11:04:11+08:00">2022-02-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Echo/categories/%E6%B5%8B%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">测试</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h4 id="什么是安全测试？"><a href="#什么是安全测试？" class="headerlink" title="什么是安全测试？"></a>什么是安全测试？</h4><p>安全测试是一个检查机密数据是否保密的过程（即，它不会暴露给不适合它的个人&#x2F;实体），并且用户只能执行他们有权执行的任务。</p>
+<p><strong>例</strong>用户不应能够拒绝其他用户使用网站的功能，或者用户不应能够以意外的方式更改Web应用程序的功能等。</p>
+<h4 id="安全测试中的术语"><a href="#安全测试中的术语" class="headerlink" title="安全测试中的术语"></a>安全测试中的术语</h4><p><strong>“漏洞”</strong></p>
+<p>这是 Web 应用程序中的一个弱点。”漏洞”的原因可能是由于应用程序中的错误，注入（SQL &#x2F;脚本代码）或病毒的存在。</p>
+<p><strong>“网址操作”</strong></p>
+<p>某些 Web 应用程序在 URL 中的客户端（浏览器）和服务器之间传递其他信息。更改 URL 中的某些信息有时可能会导致服务器出现意外行为，这称为 URL 操作。</p>
+<p><strong>“SQL注入”</strong></p>
+<p>这是通过 Web 应用程序用户界面将 SQL 语句插入到某个查询中，然后由服务器执行的过程。</p>
+<p><strong>“XSS（跨站点脚本）”</strong></p>
+<p>当用户在 Web 应用程序的用户界面中插入 HTML&#x2F;客户端脚本时，此插入对其他用户可见，称为 <em>XSS</em>。</p>
+<p><strong>“欺骗”</strong></p>
+<p>欺骗是创建类似恶作剧的网站和电子邮件。</p>
+<h4 id="web安全测试的方法"><a href="#web安全测试的方法" class="headerlink" title="web安全测试的方法"></a>web安全测试的方法</h4><h5 id="密码破解"><a href="#密码破解" class="headerlink" title="密码破解"></a>密码破解</h5><p>Web应用程序的安全测试可以通过”密码破解”开始。为了登录到应用程序的私人区域，人们可以猜测用户名&#x2F;密码或使用一些密码破解工具。常见的用户名和密码列表以及开源密码破解程序一起可用。</p>
+<p>如果 Web 应用程序不强制实施复杂密码（<strong>例</strong>使用字母、数字和特殊字符或至少具有所需数量的字符），则破解用户名和密码可能不会花费很长时间。</p>
+<p>如果用户名或密码存储在 Cookie 中而未经过加密，则攻击者可以使用不同的方法来窃取 Cookie 以及存储在 Cookie 中的信息（如用户名和密码）。</p>
+<h5 id="通过HTTP-GET方法进行URL操作"><a href="#通过HTTP-GET方法进行URL操作" class="headerlink" title="通过HTTP GET方法进行URL操作"></a>通过HTTP GET方法进行URL操作</h5><p>测试人员应检查应用程序是否传递查询字符串中的重要信息。当应用程序使用 HTTP GET 方法在客户端和服务器之间传递信息时，会发生这种情况。</p>
+<p>信息通过查询字符串中的参数传递。测试人员可以修改查询字符串中的参数值，以检查服务器是否接受它。</p>
+<p>通过HTTP GET请求将用户信息传递到服务器进行身份验证或获取数据。攻击者可以操纵从此 GET 请求传递到服务器的每个输入变量，以获取所需信息或损坏数据。在这种情况下，应用程序或 Web 服务器的任何异常行为都是攻击者进入应用程序的入口。</p>
+<h5 id="SQL-注入"><a href="#SQL-注入" class="headerlink" title="SQL 注入"></a>SQL 注入</h5><p>应该检查的下一个因素是SQL注入。在任何文本框中输入单引号 （’） 应被应用程序拒绝。相反，如果测试人员遇到数据库错误，则意味着用户输入入到某个查询中，然后由应用程序执行。在这种情况下，应用程序容易受到 SQL 注入的影响。</p>
+<p>SQL注入攻击非常关键，因为攻击者可以从服务器数据库中获取重要信息。若要检查 Web 应用程序中的 SQL 注入入口点，请从代码库中找出代码，其中通过接受某些用户输入在数据库上执行直接 MySQL 查询。</p>
+<p>如果在 SQL 查询中精心编制用户输入数据以查询数据库，则攻击者可以将 SQL 语句或部分 SQL 语句作为用户输入注入，以从数据库中提取重要信息。</p>
+<p>即使攻击者成功使应用程序崩溃，攻击者也可以从浏览器上显示的 SQL 查询错误中获取他们要查找的信息。在这种情况下，应正确处理&#x2F;转义用户输入中的特殊字符。</p>
+<h5 id="跨站点脚本-（XSS）"><a href="#跨站点脚本-（XSS）" class="headerlink" title="跨站点脚本 （XSS）"></a>跨站点脚本 （XSS）</h5><p>测试人员还应检查 Web 应用程序中是否有 XSS（跨站点脚本）。任何 HTML <strong>如</strong><HTML> 或任何脚本 <strong>如</strong><SCRIPT>不应被应用程序接受。如果是，则应用程序可能容易受到跨站点脚本的攻击。</p>
+<p>攻击者可以使用此方法在受害者的浏览器上执行恶意脚本或URL。使用跨站点脚本，攻击者可以使用 JavaScript 等脚本来窃取用户 Cookie 和存储在 Cookie 中的信息。</p>
+<p>许多Web应用程序获取一些有用的信息，并将此信息传递给来自不同页面的某些变量。</p>
+<p><strong>例</strong> <a target="_blank" rel="noopener" href="http://www.examplesite.com/index.php?userid=123&amp;query=xyz">http://www.examplesite.com/index.php?userid=123&amp;query=xyz</a></p>
+<p>攻击者可以很容易地将一些恶意输入或<script>作为"&query"参数传递，该参数可以探索浏览器上的重要用户/服务器数据。</p>
+<p>在安全测试期间，测试人员应非常小心，不应修改以下任何内容：</p>
+<ul>
+<li>应用程序或服务器的配置。</li>
+<li>服务器上运行的服务。</li>
+<li>应用程序托管的现有用户或客户数据。</li>
+</ul>
+<p>此外，应避免在生产系统中进行安全测试。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/2022/02/05/%E7%BD%91%E7%AB%99%E6%B5%8B%E8%AF%95%E8%A6%81%E8%80%83%E8%99%91%E7%9A%84%E7%82%B9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1409,247 +1644,6 @@
 <p>验证:用作测试用例语句的第一个单词。</p>
 <p>使用:识别正在测试的内容。在这里，您可以使用“输入”或“选择”，而不是使用“视情况而定”。</p>
 <p>所有的测试用例都应该简单易懂。不要写长篇大论的解释</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/2022/01/08/%E4%BB%80%E4%B9%88%E6%98%AFYARN/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Echo/images/avatar.gif">
-      <meta itemprop="name" content="丑牛">
-      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="测试的名义">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Echo/2022/01/08/%E4%BB%80%E4%B9%88%E6%98%AFYARN/" class="post-title-link" itemprop="url">YARN原理及工作流？</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-01-08 06:55:01" itemprop="dateCreated datePublished" datetime="2022-01-08T06:55:01+08:00">2022-01-08</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Echo/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h4 id="YRAN是什么？"><a href="#YRAN是什么？" class="headerlink" title="YRAN是什么？"></a>YRAN是什么？</h4><p>YARN是hadoop集群中另一个资源管理者，为需要在Hadoop集群上执行的各种作业分配资源。在Hadoop 2.0中引入的。在Hadoop 2.0中引入了YARN，使用它能够超越MapReduce。</p>
-<p><img src="/Echo/Framework-Supported-by-YARN.jpg" alt="Framework-Supported-by-YARN"></p>
-<p>正如你在图中看到的，我们在两者之间的底部有HDFS，我们有YARN并使用YARN，很多框架都能够连接和利用HDFS。因此，即使MapReduce也用于使用YARN进行连接以请求资源，并且只有这样它才能通过HDFS（即Hadoop Cluster）执行作业。</p>
-<p>同样;SPARK，STORM和其他搜索引擎可以连接到HDFS。HBase是一个No SQL数据库也可以连接它。因此，HDFS的应用变得庞大，因为YARN能够为其他框架和其他大数据分析工具更好的分配资源。</p>
-<h4 id="Hadoop-2-x-守护进程"><a href="#Hadoop-2-x-守护进程" class="headerlink" title="Hadoop 2.x 守护进程"></a>Hadoop 2.x 守护进程</h4><p>让我们快速看一下Hadoop 2.0中新引入的守护进程，它们运行组件，即存储和处理。</p>
-<p>在HDFS一文中，我们详细理解了守护进程，即NameNode和DataNode。在此，我们将了解资源管理器和节点管理器如何在 Hadoop 2.x 群集中工作，以管理需要在 Hadoop 群集中执行的处理和作业。</p>
-<p><img src="/Echo/Hadoop-2-Daemons.jpg" alt="Hadoop-2-Daemons"></p>
-<p>什么是资源管理器？资源管理器是在主计算机或 NameNode（高端计算机）上运行的主守护程序。另一方面，节点管理器是在从属机器或DataNodes上运行的守护进程，或者与DataNode进程一起运行。</p>
-<h4 id="Hadoop-2-x-MapReduce-YARN-组件"><a href="#Hadoop-2-x-MapReduce-YARN-组件" class="headerlink" title="Hadoop 2.x MapReduce YARN 组件"></a>Hadoop 2.x MapReduce YARN 组件</h4><p>首先我们探讨下YARN的其他组件：</p>
-<ul>
-<li><strong>客户端：</strong>它是一个提交类似作业的命令行界面 （CLI） 的单元，客户端可以是 JAVA 应用程序。</li>
-<li><strong>资源管理器：</strong>它是一个主守护程序，所有作业都从客户端提交到该守护程序，并且是分配所有群集级别资源以执行特定作业的主守护程序。它运行在具有高质量硬件和良好配置的高端计算机上，因为它是必须管理群集上所有内容的主计算机。</li>
-<li><strong>节点管理器</strong>：它是一个在从属机器或DataNode上运行的从属守护进程，因此每个从属机器都有一个运行的节点管理器。它监视特定 DataNode 的资源，资源管理器管理群集资源，节点管理器管理 DataNode 资源。</li>
-<li><strong>作业历史记录服务器：</strong>它是跟踪已在群集上执行或已提交到群集的所有作业的单元。它还跟踪状态，并保留在Hadoop集群上发生的每次执行的日志文件。</li>
-<li><strong>应用程序主</strong>设备：它是一个通过节点计算机（从属计算机）执行的组件，由资源管理器创建以执行和管理作业。它是从资源管理器协商资源并最终与节点管理器协调以执行任务的那个。</li>
-<li><strong>容器：</strong>它由节点管理器本身创建，该节点管理器已由资源管理器分配，所有作业最终在容器中执行。</li>
-</ul>
-<h4 id="YARN工作流程"><a href="#YARN工作流程" class="headerlink" title="YARN工作流程"></a>YARN工作流程</h4><p><img src="/Echo/YARN-Work-Flow.jpg" alt="YARN-Work-Flow"></p>
-<p>如上图所示，有一个资源管理器，所有作业都已提交到该管理器，并且有一个群集，其中有从属计算机，并且在每台从属计算机上，都有一个节点管理器正在运行。</p>
-<p>资源管理器有两个组件，即计划程序和应用程序管理器。</p>
-<p>应用程序主服务器和应用程序管理器之间有什么区别？</p>
-<p>应用程序管理器是资源管理器的一个组件，可确保执行每个任务并为其创建应用程序主节点。另一方面，应用程序主服务器是执行任务并请求需要执行的所有资源的人员。</p>
-<p>假设作业已提交到资源管理器，一旦作业提交，计划程序就会计划该作业。一旦计划程序计划要执行的作业，应用程序管理器将在其中一个DataNode 中创建一个容器，并且在此容器中，将启动应用程序主节点。</p>
-<p>然后，此应用程序主机将向资源管理器注册，并请求容器来执行任务。分配容器后，应用程序主节点现在将与节点管理器连接，并请求启动容器。</p>
-<p>正如我们所看到的，应用程序主节点被分配给DataNodes D和E，现在这个应用程序主节点请求节点管理器启动DataNode D和DataNode E的容器。</p>
-<p>一旦容器启动，应用程序主服务器将在容器内执行任务，结果将发送回客户端。</p>
-<h4 id="作业执行流程"><a href="#作业执行流程" class="headerlink" title="作业执行流程"></a>作业执行流程</h4><p>我们以一种顺序的方式理解资源申请流程。</p>
-<p><img src="/Echo/Sequence-of-Execution.jpg" alt="Sequence-of-Execution"></p>
-<p>图中有四个组件，一个是客户端（client），一个是资源管理器（resource manager），一个是节点管理器（node manager），一个是程序主节点（application master）</p>
-<p>第一步是将作业提交给资源管理器的客户端，在第二步中，资源管理器分配一个容器以启动从属计算机上的应用程序主站;第三步是应用程序主机向资源管理器注册。</p>
-<p>一旦它注册，它就会请求容器执行任务，即第四步。在步骤 5 中，应用程序主机通知需要在其上启动容器的节点管理器。</p>
-<p>在第六步中，节点管理器启动容器后，应用程序主机将在这些容器中执行代码。</p>
-<p>最后，在第七步中，客户端联系资源管理器或应用程序主机以监视应用程序状态。</p>
-<p>最后，应用程序主机将从资源管理器中注销自身，并将结果返回给客户端。因此，这是一个简单的顺序流，说明如何使用YARN框架执行MapReduce程序。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/2022/01/03/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Echo/images/avatar.gif">
-      <meta itemprop="name" content="丑牛">
-      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="测试的名义">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Echo/2022/01/03/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/" class="post-title-link" itemprop="url">MapReduce是什么？</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-01-03 09:01:16" itemprop="dateCreated datePublished" datetime="2022-01-03T09:01:16+08:00">2022-01-03</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Echo/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h4 id="为什么需要MapReduce？"><a href="#为什么需要MapReduce？" class="headerlink" title="为什么需要MapReduce？"></a>为什么需要MapReduce？</h4><p><img src="/Echo/Map-Reduce.jpg" alt="Map-Reduce"></p>
-<p>MapReduce是**”处理单元”，**使用此组件，我们可以处理存储在Hadoop HDFS上的大数据。</p>
-<p>但确切的要求是为什么我们需要Hadoop的这个组件？</p>
-<p>存储在Hadoop HDFS上的大数据和传统存储不一样。数据被划分为存储在各个DataNodes中的数据块。因此，整个数据不会存储在一个集中的位置。</p>
-<p>因此，像Java这样的本机客户端应用程序或任何此类应用程序无法以当前格式处理数据，我们需要一个特殊的框架来处理存储在各个DataNodes中的碎片化数据块。</p>
-<p>处理是使用Hadoop MapReduce处理完成的。</p>
-<h4 id="MapReduce简述"><a href="#MapReduce简述" class="headerlink" title="MapReduce简述"></a>MapReduce简述</h4><p><img src="/Echo/NutShell-MapReduce.jpg" alt="NutShell-MapReduce"></p>
-<p>如图所示显示了MapReduce的功能和用途。</p>
-<p>让我们从MapReduce的应用程序开始及如何应用。它用于分类器，索引和搜索，以及在电子商务网站（Flipkart，Amazon等）上创建推荐引擎。它也被几家公司用作分析。</p>
-<p>当我们从功能的角度来看，它是一个编程模型，可以用于像Hadoop HDFS这样的大规模分布式模型，并且具有并行编程的功能，使其非常有用。</p>
-<p>当我们在Map Reduce中看到函数时，会执行两个函数，即Map Function和Reduce函数。</p>
-<p>这项技术已经由谷歌，雅虎，Facebook等主要组织实施，也被Apache Hadoop采用，如HDFS，PIG，HIVE，并使用HBase存储数据或执行和处理大数据，也称为No-SQL。</p>
-<h5 id="MapReduce的优点"><a href="#MapReduce的优点" class="headerlink" title="MapReduce的优点"></a>MapReduce的优点</h5><p>1、并行处理</p>
-<p><img src="/Echo/Advantage.jpg" alt="Advantage"></p>
-<p>整个数据块被Hadoop HDFS分成HDFS块，MapReduce并行处理这些数据块，因此处理变得很快。</p>
-<p>2、数据局部性</p>
-<p>这是Hadoop MapReduce给出的一个多功能的东西，即我们可以在它所在的位置处理数据。</p>
-<p><em><strong>这是什么意思？</strong></em></p>
-<p>在之前的HDFS教程中，我们了解到我们移动到Hadoop Cluster中的数据被划分为HDFS块，这些块被保存到SlaveMachines或DataNodes中。Map-Reduce将处理和逻辑感知到数据驻留在HDFS块中的相应从节点或DataNodes。</p>
-<p>处理在多个位置的较小数据块上并行执行。这节省了大量时间以及将大数据从一个位置移动到另一个位置所需的网络带宽。</p>
-<p>请记住，我们正在处理的数据是分解成块的大数据，如果我们开始将大数据直接通过分配的网络通道移动到集中式计算机中并对其进行处理，那么它将不会给我们带来任何优势，因为我们将消耗整个带宽将数据移动到集中式服务器。</p>
-<p>因此，使用Hadoop MapReduce，我们不只是在进行”并行处理”，我们还将数据处理到存在数据块的相应从节点或DataNodes上，因此我们也”节省了大量网络带宽”，这是非常有益的。</p>
-<p>最后，SlaveMachines完成了对存储在SlaveMachines的数据的处理，它们将结果发送回主机器，因为结果不如SlaveMachines上存储的块大。因此，它不会占用大量带宽。</p>
-<p>从属计算机将结果发送回主计算机，这些结果将聚合在一起，最终结果将发送回提交作业的客户端计算机。</p>
-<p><em><strong>如何决定哪些数据应该在哪个DataNode上处理？</strong></em></p>
-<p>客户端将作业提交给资源管理器，资源管理器是提供在数据所在的相应 DataNode 上执行作业的方向的资源管理器，它根据最近的可用 DataNode 做出决定，以便不会使用大量网络带宽。</p>
-<h4 id="传统方式VSMapReduce方式"><a href="#传统方式VSMapReduce方式" class="headerlink" title="传统方式VSMapReduce方式"></a>传统方式VSMapReduce方式</h4><p>假设有五个保险公司分支机构，人们来申请人寿保险单。现在，还有一家保险公司的总部，该总部拥有有关可用和所在分支机构的所有信息。</p>
-<p>但是，当人们来各自的分行A，B，C，D，E申请人寿保险时，保单申请保留在各自的分行本身，并且该信息不会与保险公司总部共享。</p>
-<p>1、传统方式</p>
-<p>传统为了上解决这个问题，所有申请将被转移到保险公司总部，然后申请过程将开始。</p>
-<p>在这种情况下，我们需要将所有申请转移到保险公司总部，这是一件代价高昂的事情，即必须从保险公司分支机构收集所有申请并将其带到保险公司总部。</p>
-<p>这就是成本以及进行此活动的巨大努力的方式。</p>
-<p><img src="/Echo/Traditional-way-1.jpg" alt="Traditional-way-1"></p>
-<p><img src="/Echo/Traditional-way-2.jpg" alt="Traditional-way-2"></p>
-<p>另一个方面是保险公司总部负担过重，因为它必须处理人民在各自分支机构申请保单的所有申请。</p>
-<p>由于保险公司正在处理所有分支机构都适用的申请，因此需要很长时间。最后，这个过程效果不是很好。</p>
-<p>2、MapReduce方式</p>
-<p>MapReduce遵循Data Locality，即它不会将所有应用程序带到保险公司总部，而是并行处理各个分支机构本身的应用程序。</p>
-<p><img src="/Echo/MapReduce-Way.jpg" alt="MapReduce-Way"></p>
-<p>一旦应用于每个分支机构的申请得到处理，他们就会将处理后的详细信息发回保险公司总部。</p>
-<p>现在，保险公司总部只需要汇总从各自分支机构发送的已处理申请的数量，并将详细信息保存在各自的数据库或存储中心。</p>
-<p>通过这种方式，处理将非常容易和快速，保单持有人可以立即获得福利。</p>
-<h4 id="MapReduce运行原理"><a href="#MapReduce运行原理" class="headerlink" title="MapReduce运行原理"></a>MapReduce运行原理</h4><p>在前面的示例中，我们有一个分布在各个分支之间的输入（应用程序），每个输入都由相应的 Map 函数处理。</p>
-<p>我们知道MapReduce有两个函数，即Map Function和Reduce Function。</p>
-<p>在各个分支上完成的处理部分由 Map 函数完成。因此，每个分支机构中的每个输入（应用程序）都使用Map函数进行处理，之后处理后的详细信息被发送到保险公司总部，聚合部分由Reduce功能完成。</p>
-<p>聚合的已处理应用程序详细信息作为输出提供。</p>
-<p><img src="/Echo/MapReduce-in-Detail.jpg" alt="MapReduce-in-Detail"></p>
-<p>这就是我们前面的例子中发生的事情。整个过程分为map任务和reduce任务。</p>
-<p>映射任务获取输入，映射任务的输出作为输入提供给 Reduce 任务，此 Reduce 任务最终将输出提供给客户端。</p>
-<p>为了更好地理解它，让我们来了解一下MapReduce的解剖结构。</p>
-<p><img src="/Echo/Anatomy-of-MapReduce.jpg" alt="Anatomy-of-MapReduce"></p>
-<p>MapReduce任务在键值对上工作，因此当我们谈论Map时，Map将输入作为键值，并将输出作为键值列表给出。此键值列表将经历随机播放阶段，键的输入和值列表将转到化简器。</p>
-<p>最后，Reducer 为我们提供了键值对的列表。</p>
-<h4 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h4><ul>
-<li>Hadoop Map Reduce是Hadoop的”处理单元”。</li>
-<li>为了处理Hadoop HDFS存储的大数据，我们使用Hadoop Map Reduce。</li>
-<li>它用于搜索和索引，分类，推荐和分析。</li>
-<li>它具有编程模型，并行编程和大规模分布式模型等功能。</li>
-<li>MapReduce的设计模式是：汇总，热门记录的分类，排序和分析，如连接和选择。</li>
-<li>它只有两个功能，即mapper功能和reducer功能。</li>
-<li>并行处理和数据局部性是Hadoop MapReduce的良好优势。</li>
-<li>MapReduce的过程分为六个阶段，即输入，拆分，映射，洗牌，减少和最终结果</li>
-</ul>
 
       
     </div>
