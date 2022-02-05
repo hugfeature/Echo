@@ -191,6 +191,210 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/2022/02/05/%E7%BD%91%E7%AB%99%E6%B5%8B%E8%AF%95%E8%A6%81%E8%80%83%E8%99%91%E7%9A%84%E7%82%B9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Echo/images/avatar.gif">
+      <meta itemprop="name" content="丑牛">
+      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="测试的名义">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Echo/2022/02/05/%E7%BD%91%E7%AB%99%E6%B5%8B%E8%AF%95%E8%A6%81%E8%80%83%E8%99%91%E7%9A%84%E7%82%B9/" class="post-title-link" itemprop="url">网站测试要考虑的点</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-02-05 08:35:52" itemprop="dateCreated datePublished" datetime="2022-02-05T08:35:52+08:00">2022-02-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Echo/categories/%E6%B5%8B%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">测试</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>网站本质上都是B&#x2F;S架构的应用程序-具有service和browser。</p>
+<p>测试时应考虑 HTML 页、TCP&#x2F;IP 通信、Internet 连接、防火墙、在网页中运行的应用程序（如小程序、javascript、插件应用程序）和在服务器端运行的应用程序（如 CGI 脚本、数据库接口、日志记录应用程序、动态页面生成器、asp 等）之间的交互。</p>
+<p>此外，还有各种各样的服务器和浏览器，每种服务器和浏览器都有不同的版本。它们包括它们之间在连接速度变化，快速变化的技术以及多个标准和协议方面的小但有时显着的差异。对网站的测试的最终结果可以成为一项重大的持续工作。</p>
+<h4 id="测试网站需考虑的因素"><a href="#测试网站需考虑的因素" class="headerlink" title="测试网站需考虑的因素"></a>测试网站需考虑的因素</h4><ul>
+<li>服务器上的预期负载是多少（例如，单位时间内的命中数）？</li>
+<li>在每种负载条件下（如 Web 服务器响应时间、数据库查询响应时间）下需要什么样的性能？</li>
+<li>性能测试需要什么样的工具（例如Web负载测试工具，其他可以适应的内部工具，Web机器人下载工具等）？</li>
+<li>谁是目标受众？他们将使用哪种浏览器？他们将使用哪种连接速度？它们是组织内部的（因此可能具有高连接速度和类似的浏览器）还是Internet范围的（因此具有各种连接速度和浏览器类型）？</li>
+<li>客户端期望获得什么样的性能（例如，页面应该以多快的速度显示，动画、小程序等的加载和运行速度应该有多快）？</li>
+<li>是否允许服务器和内容维护&#x2F;升级的停机时间？如果是这样，那么多少钱？</li>
+<li>需要什么样的安全性（防火墙，加密，密码等），以及它应该做什么？如何对其进行测试？</li>
+<li>网站的互联网连接要求有多可靠？这对备份系统或冗余连接要求和测试有何影响？</li>
+<li>管理网站内容更新需要什么过程？</li>
+<li>维护、跟踪和控制页面内容、图形、链接等有哪些要求？</li>
+<li>将遵循哪种 HTML 规范？严格程度如何？目标浏览器允许哪些变体？</li>
+<li>整个网站或网站的某些部分对页面外观和&#x2F;或图形是否有任何标准要求？</li>
+<li>如何验证和更新内部和外部链接？多久一次？它会发生吗？</li>
+<li>是否可以在生产系统上进行测试，还是需要单独的测试系统？</li>
+<li>如何考虑浏览器缓存、浏览器选项设置的变化、拨号连接的可变性以及实际的互联网”流量拥塞”问题进行测试？</li>
+<li>服务器日志记录和报告要求的范围或定制程度;它们是否被视为系统的一个组成部分，是否需要测试？</li>
+<li>如何维护、跟踪、控制和测试 CGI 程序、小程序、javascript、ActiveX 组件等？</li>
+<li>页面应最多为3-5个屏幕，除非内容高度集中在单个主题上。如果较大，请在页面中提供内部链接。</li>
+<li>页面布局和设计元素应在整个网站中保持一致，以便用户清楚地知道他们仍在网站上。</li>
+<li>页面应尽可能独立于浏览器，或者应根据浏览器类型提供或生成页面。</li>
+<li>所有页面都应具有指向该页面外部的链接;不应该有死胡同的页面。</li>
+<li>每个页面上都应包含页面所有者、修订日期以及指向联系人或组织的链接。</li>
+</ul>
+<h4 id="网站测试常见问题"><a href="#网站测试常见问题" class="headerlink" title="网站测试常见问题"></a>网站测试常见问题</h4><ul>
+<li>网站是否按预期运行？</li>
+<li>网站易于浏览吗？</li>
+<li>网站是否可以在不同设备上访问？</li>
+<li>网站是否足够安全？</li>
+<li>网站性能是否达到标准？</li>
+<li>在网站上输入的数据是否准确存储并跨会话保留？</li>
+<li>网站是否与工作流程中的其他界面很好地集成在一起？</li>
+<li>上线后，网站的性能是否仍能达到预期？</li>
+</ul>
+<p>将详细介绍上述问题，以了解测试范围，并了解如何执行网站测试。</p>
+<h5 id="网站是否按预期运行？"><a href="#网站是否按预期运行？" class="headerlink" title="网站是否按预期运行？"></a>网站是否按预期运行？</h5><p>要考虑的点</p>
+<ul>
+<li>用户导航到网站的不同页面并完成端到端工作流程</li>
+<li>如果用户可以选中&#x2F;取消选中复选框</li>
+<li>如果用户可以从下拉字段中选择值</li>
+<li>如果用户可以选择&#x2F;取消选择单选按钮</li>
+<li>不同的导航按钮，如提交，下一步，上传等按钮运行良好</li>
+<li>日历正确加载并允许用户选择日期</li>
+<li>计算正在按照实施方式进行</li>
+<li>搜索功能正在工作（如果有）</li>
+<li>正确的信息显示</li>
+<li>指向其他页面的各种内部和外部链接</li>
+<li>网页上字段的正确 Tab 键顺序</li>
+<li>应验证正输入和负输入的必填字段和可选字段</li>
+<li>应验证每个 Web 字段的默认值</li>
+<li>电子邮件功能是为网站上的某些操作而实现的</li>
+</ul>
+<p>网站与搜索引擎兼容非常重要。因此，我们应该审查网站的HTML语法正确性，格式和合规性标准，如WS-I，ISO和ECMA。</p>
+<p>考虑到用于维护登录会话的 Cookie，应通过启用&#x2F;禁用 Cookie 或使用不匹配的域来测试网站。还可以通过重置 Cookie 将浏览器恢复到原始状态来跨会话执行测试。</p>
+<p>QA还应验证网站cookie是否始终以加密格式存储在本地。</p>
+<p>考虑到我们的电子商务网站，如果用户导航到预期的页面，则应单击并验证网页上可用的各种链接，例如男士时尚，女性时尚，儿童时尚，家居饰品，电子电器，书籍，电影和音乐等。</p>
+<p>同样，不同的功能，如登录，注册，搜索选项，过滤器，排序订单，添加到购物车等，应该在不同的网页上进行验证，如登录页面，注册页面，产品详细信息页面，购物车，订单审查，付款等。应检查网站的会话&#x2F;Cookie管理，如会话过期和会话存储等。</p>
+<h5 id="网站易于浏览吗？"><a href="#网站易于浏览吗？" class="headerlink" title="网站易于浏览吗？"></a>网站易于浏览吗？</h5><p>要考虑的点</p>
+<ul>
+<li>网站内容应信息丰富，结构化和逻辑链接，以便用户可以轻松理解</li>
+<li>网页控件应易于用户导航</li>
+<li>网站应上传帮助和说明文档</li>
+<li>网站应具有搜索功能，以方便最终用户</li>
+<li>访问&#x2F;从主菜单到所有页面都应该在那里</li>
+<li>应验证网站内容是否存在任何拼写错误</li>
+<li>网站应遵循背景颜色，图案，样式，字体，图像位置，框架，边框等上下文中定义的准则。</li>
+<li>考虑到来自不同国家&#x2F;地区具有不同语言，货币等的用户可以访问该网站，因此该网站应习惯于翻译功能。</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://www.userzoom.com/">用户缩放</a>和<a target="_blank" rel="noopener" href="https://reflector.en.softonic.com/">反射器</a>是少数可用于执行可用性测试的工具。</p>
+<p>电子商务网站应该是客户友好的，易于浏览和引人注目的。所有网页都应验证其可访问性、字体、样式、图像、拼写错误和产品相关信息。网站应配备相关的帮助文档和客户支持设施。</p>
+<p>考虑到基于触摸屏的界面的增加，需要验证关键输入和触摸屏输入的可访问性。同样，应验证图像和网站内容在不同屏幕尺寸（手机、笔记本电脑和标签等）上的可用性。</p>
+<h5 id="网站是否可以在不同设备上访问？"><a href="#网站是否可以在不同设备上访问？" class="headerlink" title="网站是否可以在不同设备上访问？"></a>网站是否可以在不同设备上访问？</h5><p>假设网站可以被使用不同设备组的一系列用户访问，需要确保网站在所有这些设备上都能正常运行，而不会出现任何故障。</p>
+<p>为了确保相同，应执行兼容性检查，这是兼容性测试附带的。在网站的兼容性测试期间，确保网站在不同的浏览器，操作系统和设备（如笔记本电脑，手机，平板电脑，打印机等）上运行良好。</p>
+<h6 id="浏览器兼容性（跨浏览器测试）"><a href="#浏览器兼容性（跨浏览器测试）" class="headerlink" title="浏览器兼容性（跨浏览器测试）"></a><strong>浏览器兼容性（跨浏览器测试）</strong></h6><p>该网站应该可以很好地与不同的浏览器配合使用，如Microsoft Internet Explorer，Microsoft Edge，Firefox，Google Chrome，Safari和Opera。这些浏览器的所有活动版本都应使用打开&#x2F;关闭的不同浏览器功能进行验证。</p>
+<p>此外，在执行跨浏览器测试时，QA还应检查跨浏览器的最佳网站性能。</p>
+<h6 id="操作系统兼容性（跨平台测试）"><a href="#操作系统兼容性（跨平台测试）" class="headerlink" title="操作系统兼容性（跨平台测试）"></a><strong>操作系统兼容性（跨平台测试）</strong></h6><p>为了识别潜在的用户体验问题，应该在Windows，Linux，Unix.MAC，Solaris等各种平台上测试网站，以确保操作系统的兼容性。</p>
+<h6 id="设备兼容性（跨设备测试）"><a href="#设备兼容性（跨设备测试）" class="headerlink" title="设备兼容性（跨设备测试）"></a><strong>设备兼容性（跨设备测试）</strong></h6><p>网站可以通过不同的设备（如笔记本电脑，手机，平板电脑等）浏览，并提供不同的操作系统，如iOS，Android，Windows等。因此，测试也应该在设备上执行，涵盖以下方案。</p>
+<ul>
+<li>网站屏幕尺寸应根据设备进行调整</li>
+<li>设备应具有屏幕旋转功能</li>
+<li>网站不应在具有不同网络速度的不同设备上显示任何加载问题</li>
+<li>验证设备进入&#x2F;退出网络范围时的网站行为</li>
+<li>验证网站在 CPU 和内存不足时的行为，以支持不同的外形规格</li>
+</ul>
+<p>对于电子商务网站，兼容性检查是最重要的测试类型之一。客户群将很大，并将从不同的浏览器，操作系统和设备访问我们的网站。</p>
+<p>考虑到移动平台越来越受欢迎，应该确保在可接受的加载时间内以小尺寸加载网站。验证不同网络速度的使用以确保它对所有客户都可用也很重要。</p>
+<h4 id="网站是否足够安全？"><a href="#网站是否足够安全？" class="headerlink" title="网站是否足够安全？"></a>网站是否足够安全？</h4><p>测试的点</p>
+<ul>
+<li>只有经过身份验证的用户才能访问网站</li>
+<li>网站用户应只能执行他们有权执行的任务</li>
+<li>应验证网站的 CAPTCHA 字段，以便用户识别</li>
+<li>在从安全页面移动到不安全页面时，应验证浏览器安全设置</li>
+<li>Web 服务器保护应适用于无法访问的 Web 目录或文件</li>
+<li>确保在没有适当访问权限的情况下不应下载受限制的文件</li>
+<li>处于非活动状态的会话应在一段时间后自动终止</li>
+<li>应记录最终用户的所有无效和未经授权的尝试或间歇性的系统错误&#x2F;故障，以便进行分析</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://www.beyondtrust.com/vulnerability-management">漏洞管理</a>，Veracode和<a target="_blank" rel="noopener" href="http://sqlmap.org/">SQL Map</a>等工具可用于对网站执行安全测试。</p>
+<h4 id="网站性能是否达到标准？"><a href="#网站性能是否达到标准？" class="headerlink" title="网站性能是否达到标准？"></a>网站性能是否达到标准？</h4><p>要检查网站的性能，可以进行性能测试。它将评估应用程序在各种工作负载条件下的行为，这可能是一个现实的场景。如果系统在没有进行性能测试的情况下上线，则最终可能会出现系统运行缓慢或可用性差等问题，这可能会影响品牌形象和市场销售。</p>
+<p>测试的点</p>
+<ul>
+<li>在正常和峰值负载条件下应观察网站</li>
+<li>应通过测量响应时间、速度、可扩展性和资源利用率来检查网站的性能</li>
+<li>如果系统在任何时间点发生故障或不稳定，则应使用解决方案进行适当的RCA（根本原因分析）</li>
+<li>应确定网络延迟问题（如果有）</li>
+</ul>
+<h4 id="在网站上输入的数据是否准确存储并跨会话保留？"><a href="#在网站上输入的数据是否准确存储并跨会话保留？" class="headerlink" title="在网站上输入的数据是否准确存储并跨会话保留？"></a>在网站上输入的数据是否准确存储并跨会话保留？</h4><p>数据库是 Web 应用程序的关键组件之一，它保存通过网站输入的完整信息。因此，应确保在没有任何操作的情况下将正确的用户数据保存在数据库表中，并在验证下保持数据完整性。</p>
+<ul>
+<li>验证跨用户界面（即网站 UI 和数据库）的数据一致性</li>
+<li>验证每当网站应用程序执行插入&#x2F;更新&#x2F;删除操作时，数据库表是否正确更新</li>
+<li>验证技术查询的响应时间，并根据需要对其进行微调</li>
+<li>检查数据库连接和访问权限</li>
+</ul>
+<p>作为测试电子商务网站的QA团队成员，可以执行以下活动，并每次在相应的数据库表中验证更改。这将确保网站UI和DB都是一致的。</p>
+<p><strong>1）</strong>下订单购买产品。</p>
+<p><strong>2）</strong> 取消产品。</p>
+<p><strong>3）</strong>选择交换产品。</p>
+<p><strong>4）</strong> 选择退货。</p>
+<h4 id="网站是否与工作流程中的其他界面很好地集成在一起？"><a href="#网站是否与工作流程中的其他界面很好地集成在一起？" class="headerlink" title="网站是否与工作流程中的其他界面很好地集成在一起？"></a>网站是否与工作流程中的其他界面很好地集成在一起？</h4><p>执行接口级测试以检查网站与不同接口（如Web服务器和数据库服务器）的平滑交互。</p>
+<p>在接口测试期间，测试人员需要确保应用程序请求是否正确发送到数据库，并且正确的信息作为输出显示给客户端。Web 服务器不应在任何时间点引发任何拒绝异常，数据库应始终与应用程序保持同步。</p>
+<h4 id="上线后，网站的性能是否仍能达到预期？"><a href="#上线后，网站的性能是否仍能达到预期？" class="headerlink" title="上线后，网站的性能是否仍能达到预期？"></a>上线后，网站的性能是否仍能达到预期？</h4><p>一旦产品进入生产环境，应进行定期检查，以保持对质量控制的检查。</p>
+<p>在生产中验证产品时，可以考虑以下情况</p>
+<ul>
+<li>应定期执行 Web 应用程序测试，并应将测试日志保存为符合服务级别协议 （SLA） 的证明</li>
+<li>应检查自动扩展系统和负载均衡器是否就位且正常运行</li>
+<li>检查最终用户体验，并尝试发现在 QA 测试期间通常未被注意到的缺陷或恶意攻击</li>
+<li>监控峰值负载期间的产品响应时间</li>
+<li>实时执行边缘级测试用例，以识别网络故障、连接故障或意外呼叫中断</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/2022/02/04/%E4%B8%8D%E5%90%8C%E7%B1%BB%E5%9E%8B%E7%9A%84%E9%A1%B5%E9%9D%A2%E5%BA%94%E8%AF%A5%E5%A6%82%E4%BD%95%E6%B5%8B%E8%AF%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1446,197 +1650,6 @@
 <li>并行处理和数据局部性是Hadoop MapReduce的良好优势。</li>
 <li>MapReduce的过程分为六个阶段，即输入，拆分，映射，洗牌，减少和最终结果</li>
 </ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/2022/01/02/HDFS%E6%9E%B6%E6%9E%84%E5%8F%8A%E5%91%BD%E4%BB%A4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Echo/images/avatar.gif">
-      <meta itemprop="name" content="丑牛">
-      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="测试的名义">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Echo/2022/01/02/HDFS%E6%9E%B6%E6%9E%84%E5%8F%8A%E5%91%BD%E4%BB%A4/" class="post-title-link" itemprop="url">HDFS架构及命令</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-01-02 14:53:07" itemprop="dateCreated datePublished" datetime="2022-01-02T14:53:07+08:00">2022-01-02</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Echo/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h4 id="HDFS架构"><a href="#HDFS架构" class="headerlink" title="HDFS架构"></a>HDFS架构</h4><p><img src="/Echo/HDFS-Architecture.jpg" alt="HDFS-Architecture"></p>
-<p>如图所示，有NameNode，因为已经知道哪个是HDFS架构中的主守护进程，它存储集群中存在的所有DataNode的元数据以及每个DataNode中存在的所有块的信息。</p>
-<p>有像Rack-1这样的机架，它有三个DataNodes，Rack-2有两个DataNodes，如图所示。</p>
-<p>还有一个应用于所有节点的复制因子。现在有一个客户端可以从DataNode读取数据，还有另一个客户端可以将数据写入这些数据节点。</p>
-<p>因此，本质上两种机制是并行的，即读取机制，它是客户端为读取数据而生成的请求，而写入机制是为客户端写入数据而生成的。这就是客户端将数据移动到DataNode或Hadoop 集群中的方式。</p>
-<h4 id="HDFS读写机制"><a href="#HDFS读写机制" class="headerlink" title="HDFS读写机制"></a>HDFS读写机制</h4><h5 id="写"><a href="#写" class="headerlink" title="写"></a>写</h5><p><img src="/Echo/Write-Mechanism-in-HDFS.jpg" alt="Write-Mechanism-in-HDFS"></p>
-<p>如图所示HDFS写入机制，客户端可以提出写入文件或读取文件的请求。步骤1表示客户端为块A生成的写入请求NameNode，NameNode的作用是它感知客户端可以写入块的IP地址列表，即块A。</p>
-<p>现在，此客户端连接到交换机，然后最终向 DataNode 1、DataNode 4 和 DataNode 6 发送通知，为什么此 DataNode 本身，是因为这些是由 NameNode、NameNode 指定的 DataNode 发送的数据节点，数据必须写入 DataNode 1、4 和 6 中，这就是为什么客户端同时连接到所有这三个 DataNode 的原因。</p>
-<p><img src="/Echo/HDFS-Write-PipeLine.jpg" alt="HDFS-Write-PipeLine"></p>
-<p>在第一步中，客户端从所有这些 DataNode 中获取确认，无论它们是否准备好对它们执行写入操作。它可能就像DataNode正在执行任务一样，目前还不可用。因此，第一步是接受他们的承认。</p>
-<p>一旦他们说他们准备好了，写入管道就会创建。现在，客户端在 DataNode 1、4 和 6 上感知到写入请求，并且第一个副本是在 DataNode 1 中创建的，即在 DataNode 1 中创建&#x2F;存储或写入的块 A。</p>
-<p>然后，下一个副本由 DataNode 1 本身在 DataNode 4 中创建，正如您可以看到核心交换机的箭头所示，首先副本是在 DataNode 1 中创建的，DataNode 1 在 DataNode 4 中创建第二个副本。</p>
-<p>现在不是客户端在做这项工作，而是DataNode实际在DataNode 4中创建副本，最后，DataNode 4在DataNode 6上创建副本，即块A的第三个副本。</p>
-<p>在 DataNode 6 上创建第三个副本后，它会向 DataNode 4 发送回确认，DataNode 4 会将确认发回 DataNode 1，同样，DataNode 1 会将确认发送回客户端，最后客户端会将成功写回 NameNode 的消息作为确认。</p>
-<p>一旦您通过NameNode获得成功消息，它就会在其末端更新元数据，即它将存储块A已存储在DataNode 1，4和6中的信息。因此，当我们谈论块A时，这是整个写入机制，这是按顺序发生的，即按顺序创建副本的副本。</p>
-<p><img src="/Echo/HDFS-Multi-Block-Write-Pipeline.jpg" alt="HDFS-Multi-Block-Write-Pipeline"></p>
-<p>当有多个块时，它会变得有点复杂。上图显示，当有多个块（即块 A 和块 B）时，它将遵循相同的过程，就像客户端向 NameNode 发送请求一样。</p>
-<p>NameNode 会将 DataNode 的列表返回给客户端，然后客户端将连接到核心交换机。当客户端连接到核心交换机时，它将并行写入两个块的第一个副本。</p>
-<p>只需尝试理解这一点，您就可以看到1A和1B，即复制块A和块B的第一步，现在看到2A和2B向机架1的交换机发送请求，并将其他交换机发送到机架5的交换机，现在此交换机（机架1）连接到DataNode 1并创建块A的副本。</p>
-<p>同时，客户端还在DataNode 7中创建了块B的副本，因此每个块的第一个副本，即块A和块B，即使有更多的块，块的第一个副本也将并行创建，而不是按顺序创建。</p>
-<p>创建第一个副本后，将按顺序创建复制副本。首先，我们将看到块 A，DataNode 1 与 Rack 4 的数据节点 4 中的另一个块 A 副本一起按顺序创建。</p>
-<p>创建此副本后，将在同一机架 4 的 DataNode 6 中创建块 A 的另一个副本。同样，块 B 是在 DataNode 9 中创建的，并且将根据发送到交换机的请求，在机架 1 的数据节点 3 中按顺序创建下一个副本。</p>
-<p>如果您看到并行创建或写入HDFS的每个块的第一个副本，而这些块的副本由其后续DataNodes本身按顺序创建。</p>
-<h5 id="读"><a href="#读" class="headerlink" title="读"></a>读</h5><p>阅读机制更容易理解，因为它非常简单。因此，客户端是发出所有请求的人，就像编写一样，它将从NameNode请求特定块。NameNode将通过存储这些特定块的数据节点发送。</p>
-<p><img src="/Echo/HDFS-Read-Mechanism.jpg" alt="HDFS-Read-Mechanism"></p>
-<p>如图所示，客户端已从NameNode请求块A和B，NameNode将DN1（即DataNode 1和DN3，即DataNode 3）的地址发送回客户端计算机。</p>
-<p>现在，此客户端计算机将与核心交换机建立连接，它将从 DataNode 1 读取块 A，从 DataNode 3 读取块 B，并将核心交换机设置的此数据发送回客户端计算机。客户端可以将这些数据用于所需的任何目的。</p>
-<p>NameNode将确保客户端没有分配用于获取数据或读取数据的工作。</p>
-<p>它将确保存储实际数据的DataNodes非常接近，并且客户端不必消耗大量网络带宽来读取数据。这是一件非常关键的事情，由NameNode负责，它有很大帮助。</p>
-<h4 id="HDFS命令"><a href="#HDFS命令" class="headerlink" title="HDFS命令"></a>HDFS命令</h4><p>下面列出的是常用的 Hadoop&#x2F;HDFS 命令。我们需要 FsShell 系统来运行这些命令。首先，从命令提示符转到主目录或工作目录，然后编写命令。</p>
-<p><strong>#1）查看HDFS中可用命令的列表。</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$hadoopfs–help</span><br></pre></td></tr></table></figure>
-
-<p><strong>#2）在HDFS中创建目录。</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$hadoopfs-mkdir &lt;path&gt;</span><br></pre></td></tr></table></figure>
-
-<p><strong>#3）查看特定目录下的内容。</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$hadoopfs–ls</span><br></pre></td></tr></table></figure>
-
-<p><strong>此外，我们可以将 -d、-h 或 –r 与 ls 命令一起使用。</strong></p>
-<ul>
-<li>-d 目录列为普通文件。</li>
-<li>-h 以人类可读的方式（而不是字节数）格式化文件大小。</li>
-<li>-R 递归列出目录的内容</li>
-</ul>
-<p><strong>#4）查看文件的内容。</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hadoopfs -cat&lt;Path of file&gt;</span><br></pre></td></tr></table></figure>
-
-<p><strong>#5）将文件从本地文件系统复制到HDFS。</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$hadoopfs-put &lt;source-path&gt;&lt;destination-path&gt;</span><br></pre></td></tr></table></figure>
-
-<p><strong>此外，我们可以将 –p 或 –f 与 cat 命令一起使用。</strong></p>
-<ul>
-<li>-p 保留访问和修改时间。</li>
-<li>-f 覆盖目标。</li>
-</ul>
-<p>或</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ Hadoop fs –copyFromLocal &lt;source-path&gt;&lt;destination-path&gt;</span><br></pre></td></tr></table></figure>
-
-<p><strong>#6）将文件从HDFS复制到本地。</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$hadoopfs-put &lt;source-hadoop-path&gt;&lt;destination-local-path&gt;</span><br></pre></td></tr></table></figure>
-
-<p>或</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ Hadoop fs –copyToLocal &lt;source-hadoop-path&gt;&lt;destination-local-path&gt;</span><br></pre></td></tr></table></figure>
-
-<p><strong>#7） 删除由路径标识的文件或空目录。</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hadoopfs -rm &lt;File Path&gt;</span><br></pre></td></tr></table></figure>
-
-<p><strong>#8）将src标识的文件或目录复制到HDFS中。</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hadoopfs cp &lt;src&gt;&lt;dest&gt;</span><br></pre></td></tr></table></figure>
-
-<p><strong>#9）将src指示的文件或目录移动到HDFS中的dest。</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hadoopfs mv &lt;src&gt;&lt;dest&gt;</span><br></pre></td></tr></table></figure>
-
-<p><strong>#10） 显示磁盘使用情况，以字节为单位。</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hadoopfsdu &lt;path&gt;</span><br></pre></td></tr></table></figure>
-
-<p><strong>#11） 将所有给定本地文件的内容追加到 HDFS 上的给定目标文件中。</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$hadoopfs-appendToFile&lt;local files separated by space&gt;&lt;hdfs destination file&gt;</span><br></pre></td></tr></table></figure>
-
-<p><strong>#12） 显示文件的最后 1KB。</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hadoopfs -tail &lt;filename&gt;</span><br></pre></td></tr></table></figure>
-
-<p><strong>#13）在HDFS中创建长度为零的文件。</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$hadoopfs-touchz &lt;path&gt;</span><br></pre></td></tr></table></figure>
-
-<p><strong>#14） 将文件的复制因子更改为特定名称，而不是 HDFS 中其余文件的复制因子的默认值。</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$hadoopfs-setrep&lt;replication factor number&gt;&lt;file/path name&gt;</span><br></pre></td></tr></table></figure>
-
-<p><strong>此外，我们可以将 -r 或 -w 与 -setrep 一起使用。</strong></p>
-<ul>
-<li>-w 请求命令等待复制完成。</li>
-<li>-R 被接受为向后兼容性。</li>
-</ul>
-<p><strong>#15） 将 HDFS 上一个目录中的文件列表合并到本地文件系统上的单个文件中。</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hadoopfs getmerge &lt;src&gt;&lt;localDest&gt;</span><br></pre></td></tr></table></figure>
-
-<p><strong>#16） 计算路径下的目录、文件和字节数。</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hadoopfs -count &lt;path&gt;</span><br></pre></td></tr></table></figure>
-
-<p><strong>#17）显示空间量，以字节为单位。</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hadoopfs -du &lt;path&gt;</span><br></pre></td></tr></table></figure>
-
-<p><strong>此外，我们可以将 -s 或 -h 与 du 命令一起使用。</strong></p>
-<ul>
-<li>-s 显示总（摘要）大小。</li>
-<li>-h 以人类可读的方式格式化文件大小</li>
-</ul>
-<p><strong>#18） 更改文件的权限。</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hadoopfs chmod [-R] mode,mode,... &lt;path&gt;...</span><br></pre></td></tr></table></figure>
-
-<p>此处，-R 以递归方式修改文件。</p>
-<p><strong>#19） 更改文件或路径的组。</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hadoopfs -chgrp [-R] groupname&lt;path&gt;</span><br></pre></td></tr></table></figure>
-
-<p><strong>#20） 更改文件的所有者和组。</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hadoop fs -chown [-R] [OWNER][:[GROUP]] PATH</span><br></pre></td></tr></table></figure>
-
-<h4 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h4><p>Hadoop的文件存储结构以及读写机制我们已经了解完成了，下一篇文章，我们会了解下MapReduce数据处理机制。</p>
 
       
     </div>
