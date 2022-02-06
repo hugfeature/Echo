@@ -41,7 +41,7 @@
 <script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"archives/page/3/index.html","title":""}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>测试的名义</title>
+<title>测试的名义 - Stay hungry, Stay foolish</title>
   
 
 
@@ -246,7 +246,7 @@
 <li>因此，在不同的工作负载（用户数量）下性能会发生变化。  这种类型的测试非常重要，因为无论您的应用程序有多么好的设计和功能，但如果它的性能很差，那么很有可能失去所有潜在的目标受众 。</li>
 </ul>
 <p>通过下图我们可以清晰看到比较</p>
-<p><img src="/Echo/FlowDiagram.jpg" alt="FlowDiagram"></p>
+<p><img src="/Echo/2021/11/20/JMeter%E4%BB%8B%E7%BB%8D/FlowDiagram.jpg" alt="FlowDiagram"></p>
 <h6 id="性能测试主要考虑以下参数："><a href="#性能测试主要考虑以下参数：" class="headerlink" title="性能测试主要考虑以下参数："></a>性能测试主要考虑以下参数：</h6><ul>
 <li><strong>吞吐量</strong> - 它被定义为每秒的事务数。 例：假设银行客户服务一次只能处理 30 个呼叫，因此其余呼叫者需要排队。 这意味着吞吐量是 30</li>
 <li><strong>响应时间</strong> ——这个时间是用户从服务器收到响应所用的时间 </li>
@@ -400,15 +400,15 @@
 <li>Flume 针对特殊场景也具备良好的自定义扩展能力，因此，Flume 适用于大部分的日常数据采集场景；</li>
 </ul>
 <h4 id="2-运行机制"><a href="#2-运行机制" class="headerlink" title="2. 运行机制"></a>2. 运行机制</h4><p>Flume 分布式系统中最<code>核心的角色是 agent</code>，Flume 采集系统就是由一个个 agent 所连接起来形成的；</p>
-<p><img src="/Echo/image-20211114152336278.png" alt="image-20211114152336278"></p>
+<p><img src="/Echo/2021/11/14/Flume%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/image-20211114152336278.png" alt="image-20211114152336278"></p>
 <p> 每一个 agent 相当于一个数据传递员，内部有三个组件：</p>
 <ul>
 <li>Source：&#96; 采集组件，用于与众多数据源对接，以获取数据；</li>
 <li>Channel：&#96; 传输通道组件，用于从 Source 将数据传递到 Sink；</li>
 <li>Sink：&#96; 下沉组件，用于往下一级 agent 传递数据 或者 往最终存储系统传递数据；</li>
 </ul>
-<h4 id="3-单个agent采集数据"><a href="#3-单个agent采集数据" class="headerlink" title="3.单个agent采集数据"></a>3.单个agent采集数据</h4><p><img src="/Echo/image-20211114152023931.png" alt="image-20211114152023931"></p>
-<h4 id="4-多个agent采集数据"><a href="#4-多个agent采集数据" class="headerlink" title="4.多个agent采集数据"></a>4.多个agent采集数据</h4><p><img src="/Echo/image-20211114152057458.png" alt="image-20211114152057458"></p>
+<h4 id="3-单个agent采集数据"><a href="#3-单个agent采集数据" class="headerlink" title="3.单个agent采集数据"></a>3.单个agent采集数据</h4><p><img src="/Echo/2021/11/14/Flume%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/image-20211114152023931.png" alt="image-20211114152023931"></p>
+<h4 id="4-多个agent采集数据"><a href="#4-多个agent采集数据" class="headerlink" title="4.多个agent采集数据"></a>4.多个agent采集数据</h4><p><img src="/Echo/2021/11/14/Flume%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/image-20211114152057458.png" alt="image-20211114152057458"></p>
 
       
     </div>
@@ -1601,26 +1601,26 @@
 <h2 id="5-1-访问jekins"><a href="#5-1-访问jekins" class="headerlink" title="5.1 访问jekins"></a>5.1 访问jekins</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://yellow.bigdata:8088</span><br></pre></td></tr></table></figure>
 
 <h2 id="5-2-解锁Jenkins"><a href="#5-2-解锁Jenkins" class="headerlink" title="5.2 解锁Jenkins"></a>5.2 解锁Jenkins</h2><p>依据提示，查看&#x2F;root&#x2F;.jenkins&#x2F;secrets&#x2F;initialAdminPassword文件中内容，填入文本框，这里填写的密码，也是admin账号的密码</p>
-<p><img src="/Echo/image-20211113151335779.png" alt="image-20211113151335779"></p>
+<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113151335779.png" alt="image-20211113151335779"></p>
 <h2 id="5-3-选择插件安装模式"><a href="#5-3-选择插件安装模式" class="headerlink" title="5.3 选择插件安装模式"></a>5.3 选择插件安装模式</h2><p>选择哪种插件的安装方式都可以，对后续操作没有太大影响，若后面有需要可以有针对性的安装插件，本次选择 “<strong>安装推荐的插件</strong>”，此时安装插件节点必须能够联网。</p>
-<p><img src="/Echo/image-20211113153312956.png" alt="image-20211113153312956"></p>
-<p><img src="/Echo/image-20211113153332209.png" alt="image-20211113153332209"></p>
+<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153312956.png" alt="image-20211113153312956"></p>
+<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153332209.png" alt="image-20211113153332209"></p>
 <p>打×的插件是由于网络传输导致的安装失败，后面再重新安装即可</p>
 <h2 id="5-4-新建账号或以管理员身份继续"><a href="#5-4-新建账号或以管理员身份继续" class="headerlink" title="5.4 新建账号或以管理员身份继续"></a>5.4 新建账号或以管理员身份继续</h2><p>可以选择使用admin账户继续，后面仍然有机会注册新账户</p>
-<p><img src="/Echo/image-20211113153358671.png" alt="image-20211113153358671"></p>
-<h2 id="5-5-实例配置"><a href="#5-5-实例配置" class="headerlink" title="5.5 实例配置"></a>5.5 实例配置</h2><p><img src="/Echo/image-20211113153424306.png" alt="image-20211113153424306"></p>
-<h2 id="5-6-开始使用Jenkins"><a href="#5-6-开始使用Jenkins" class="headerlink" title="5.6 开始使用Jenkins"></a>5.6 开始使用Jenkins</h2><p><img src="/Echo/image-20211113153454866.png" alt="image-20211113153454866"></p>
-<p><img src="/Echo/image-20211113153524832.png" alt="image-20211113153524832"></p>
+<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153358671.png" alt="image-20211113153358671"></p>
+<h2 id="5-5-实例配置"><a href="#5-5-实例配置" class="headerlink" title="5.5 实例配置"></a>5.5 实例配置</h2><p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153424306.png" alt="image-20211113153424306"></p>
+<h2 id="5-6-开始使用Jenkins"><a href="#5-6-开始使用Jenkins" class="headerlink" title="5.6 开始使用Jenkins"></a>5.6 开始使用Jenkins</h2><p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153454866.png" alt="image-20211113153454866"></p>
+<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153524832.png" alt="image-20211113153524832"></p>
 <h2 id="5-7-Jenkins设置中文"><a href="#5-7-Jenkins设置中文" class="headerlink" title="5.7 Jenkins设置中文"></a>5.7 Jenkins设置中文</h2><p>安装插件 Locale plugin , Localization: Chinese (Simplified) , Localization Support Plugin，如果失败就再安装一次</p>
-<p><img src="/Echo/image-20211113153552830.png" alt="image-20211113153552830"></p>
+<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153552830.png" alt="image-20211113153552830"></p>
 <p>重启：<a target="_blank" rel="noopener" href="http://yellow.bigdata:8088/restart">http://yellow.bigdata:8088/restart</a><br> 如果出现部分汉化，部分没有汉化，则卸载插件，重新安装插件<br> 如果还是存在部分汉化，部分没有汉化的现象，则如下操作：<br> 1.先设置Default Language：zh_US（含义：英文）<br> 2.重启Jenkins<br> 3.再设置Default Language：zh_CN（含义：中文）<br> 4.刷新即可</p>
-<h1 id="6-Jenkins系统管理初始化设置"><a href="#6-Jenkins系统管理初始化设置" class="headerlink" title="6.Jenkins系统管理初始化设置"></a>6.Jenkins系统管理初始化设置</h1><h2 id="6-1-全局工具配置"><a href="#6-1-全局工具配置" class="headerlink" title="6.1 全局工具配置"></a>6.1 全局工具配置</h2><p><img src="/Echo/image-20211113153642733.png" alt="image-20211113153642733"></p>
+<h1 id="6-Jenkins系统管理初始化设置"><a href="#6-Jenkins系统管理初始化设置" class="headerlink" title="6.Jenkins系统管理初始化设置"></a>6.Jenkins系统管理初始化设置</h1><h2 id="6-1-全局工具配置"><a href="#6-1-全局工具配置" class="headerlink" title="6.1 全局工具配置"></a>6.1 全局工具配置</h2><p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153642733.png" alt="image-20211113153642733"></p>
 <p>JDK</p>
-<p><img src="/Echo/image-20211113153701355.png" alt="image-20211113153701355"></p>
+<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153701355.png" alt="image-20211113153701355"></p>
 <p>Git</p>
-<p><img src="/Echo/image-20211113153722363.png" alt="image-20211113153722363"></p>
+<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153722363.png" alt="image-20211113153722363"></p>
 <p>Maven</p>
-<p><img src="/Echo/image-20211113153742157.png" alt="image-20211113153742157"></p>
+<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153742157.png" alt="image-20211113153742157"></p>
 
       
     </div>
@@ -2565,35 +2565,35 @@
     <div class="post-body" itemprop="articleBody">
           <p>github是世界知名的代码托管平台，千万程序员的圣地。作为一个常逛github的程序员，你在github上搜索代码时，是怎样操作的呢？</p>
 <p>大家是不是也会像我一样搜索框直接输入关键字</p>
-<p><img src="/Echo/image-20211117104623233.png" alt="image-20211117104623233"></p>
+<p><img src="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117104623233.png" alt="image-20211117104623233"></p>
 <p>然后改变 一下列表oder排序方式</p>
-<p><img src="/Echo/image-20211117104649103.png" alt="image-20211117104649103"></p>
+<p><img src="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117104649103.png" alt="image-20211117104649103"></p>
 <p>但是找到了接近21万相关的开源项目，这时候的你是不是一脸懵呢！</p>
 <p>接下来我们一块掌握几个精确查找项目的方式（均以springboot为例）</p>
 <h6 id="1-项目名搜索"><a href="#1-项目名搜索" class="headerlink" title="1.项目名搜索"></a>1.项目名搜索</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">in:name 项目关键字</span><br></pre></td></tr></table></figure>
 
-<p><img src="/Echo/image-20211117104831270.png" alt="image-20211117104831270"></p>
+<p><img src="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117104831270.png" alt="image-20211117104831270"></p>
 <p>这时发现项目数据量已经少了一些，搜索到了16.5万个项目</p>
 <h6 id="2-项目描述搜索"><a href="#2-项目描述搜索" class="headerlink" title="2.项目描述搜索"></a>2.项目描述搜索</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">in:description 关键字</span><br></pre></td></tr></table></figure>
 
-<p><img src="/Echo/image-20211117105101855.png" alt="image-20211117105101855"></p>
+<p><img src="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117105101855.png" alt="image-20211117105101855"></p>
 <p>此时项目数量已经下降到了6.9万个</p>
 <h6 id="3-项目readMe搜索"><a href="#3-项目readMe搜索" class="headerlink" title="3.项目readMe搜索"></a>3.项目readMe搜索</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">in:readme 关键字</span><br></pre></td></tr></table></figure>
 
-<p><img src="/Echo/image-20211117105323314.png" alt="image-20211117105323314"></p>
+<p><img src="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117105323314.png" alt="image-20211117105323314"></p>
 <p>此时项目数量为12.6万个</p>
 <h6 id="4-关键字搜索，然后限制stars或者forks-数"><a href="#4-关键字搜索，然后限制stars或者forks-数" class="headerlink" title="4.关键字搜索，然后限制stars或者forks 数"></a>4.关键字搜索，然后限制stars或者forks 数</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">in:name 或者 description 或者 readme 关键字 stars:&gt;数字 forks:&gt;数字</span><br></pre></td></tr></table></figure>
 
 <p>stars 和 forks既可以单独使用，也可以组合使用</p>
-<p><img src="/Echo/image-20211117113707201.png" alt="image-20211117113707201"></p>
+<p><img src="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117113707201.png" alt="image-20211117113707201"></p>
 <p>当增加上stars 数量大于10000时，项目数为23个</p>
 <h6 id="5-限制项目更新时间"><a href="#5-限制项目更新时间" class="headerlink" title="5.限制项目更新时间"></a>5.限制项目更新时间</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">in:name或description或readme 关键字  pushed:&gt;2021-02-01</span><br></pre></td></tr></table></figure>
 
-<p><img src="/Echo/image-20211117113931148.png" alt="image-20211117113931148"></p>
+<p><img src="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117113931148.png" alt="image-20211117113931148"></p>
 <p>此时项目数为4.4万个。这里还可以和stars或者forks组合使用</p>
 <h6 id="6-限制项目的语言"><a href="#6-限制项目的语言" class="headerlink" title="6.限制项目的语言"></a>6.限制项目的语言</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">in:name或description或readme 关键字  language:javascript</span><br></pre></td></tr></table></figure>
 
-<p><img src="/Echo/image-20211117114146576.png" alt="image-20211117114146576"></p>
+<p><img src="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117114146576.png" alt="image-20211117114146576"></p>
 <p>项目数为8.5万个。</p>
 <h6 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h6><p>如何高效的从GitHub上搜索开源项目，有下面的小技巧：</p>
 <ul>

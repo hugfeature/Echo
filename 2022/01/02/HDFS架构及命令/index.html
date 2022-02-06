@@ -29,17 +29,17 @@
 <meta property="og:site_name" content="测试的名义">
 <meta property="og:description" content="HDFS架构 如图所示，有NameNode，因为已经知道哪个是HDFS架构中的主守护进程，它存储集群中存在的所有DataNode的元数据以及每个DataNode中存在的所有块的信息。 有像Rack-1这样的机架，它有三个DataNodes，Rack-2有两个DataNodes，如图所示。 还有一个应用于所有节点的复制因子。现在有一个客户端可以从DataNode读取数据，还有另一个客户端可以将数据写">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://hugfeature.github.io/Echo/HDFS-Architecture.jpg">
-<meta property="og:image" content="https://hugfeature.github.io/Echo/Write-Mechanism-in-HDFS.jpg">
-<meta property="og:image" content="https://hugfeature.github.io/Echo/HDFS-Write-PipeLine.jpg">
-<meta property="og:image" content="https://hugfeature.github.io/Echo/HDFS-Multi-Block-Write-Pipeline.jpg">
-<meta property="og:image" content="https://hugfeature.github.io/Echo/HDFS-Read-Mechanism.jpg">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/2022/01/02/HDFS%E6%9E%B6%E6%9E%84%E5%8F%8A%E5%91%BD%E4%BB%A4/HDFS-Architecture.jpg">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/2022/01/02/HDFS%E6%9E%B6%E6%9E%84%E5%8F%8A%E5%91%BD%E4%BB%A4/Write-Mechanism-in-HDFS.jpg">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/2022/01/02/HDFS%E6%9E%B6%E6%9E%84%E5%8F%8A%E5%91%BD%E4%BB%A4/HDFS-Write-PipeLine.jpg">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/2022/01/02/HDFS%E6%9E%B6%E6%9E%84%E5%8F%8A%E5%91%BD%E4%BB%A4/HDFS-Multi-Block-Write-Pipeline.jpg">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/2022/01/02/HDFS%E6%9E%B6%E6%9E%84%E5%8F%8A%E5%91%BD%E4%BB%A4/HDFS-Read-Mechanism.jpg">
 <meta property="article:published_time" content="2022-01-02T06:53:07.000Z">
 <meta property="article:modified_time" content="2022-01-02T06:53:07.000Z">
 <meta property="article:author" content="丑牛">
 <meta property="article:tag" content="大数据，HDFS">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://hugfeature.github.io/Echo/HDFS-Architecture.jpg">
+<meta name="twitter:image" content="https://hugfeature.github.io/Echo/2022/01/02/HDFS%E6%9E%B6%E6%9E%84%E5%8F%8A%E5%91%BD%E4%BB%A4/HDFS-Architecture.jpg">
 
 
 <link rel="canonical" href="https://hugfeature.github.io/Echo/2022/01/02/HDFS%E6%9E%B6%E6%9E%84%E5%8F%8A%E5%91%BD%E4%BB%A4/">
@@ -254,22 +254,22 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h4 id="HDFS架构"><a href="#HDFS架构" class="headerlink" title="HDFS架构"></a>HDFS架构</h4><p><img src="/Echo/HDFS-Architecture.jpg" alt="HDFS-Architecture"></p>
+        <h4 id="HDFS架构"><a href="#HDFS架构" class="headerlink" title="HDFS架构"></a>HDFS架构</h4><p><img src="/Echo/2022/01/02/HDFS%E6%9E%B6%E6%9E%84%E5%8F%8A%E5%91%BD%E4%BB%A4/HDFS-Architecture.jpg" alt="HDFS-Architecture"></p>
 <p>如图所示，有NameNode，因为已经知道哪个是HDFS架构中的主守护进程，它存储集群中存在的所有DataNode的元数据以及每个DataNode中存在的所有块的信息。</p>
 <p>有像Rack-1这样的机架，它有三个DataNodes，Rack-2有两个DataNodes，如图所示。</p>
 <p>还有一个应用于所有节点的复制因子。现在有一个客户端可以从DataNode读取数据，还有另一个客户端可以将数据写入这些数据节点。</p>
 <p>因此，本质上两种机制是并行的，即读取机制，它是客户端为读取数据而生成的请求，而写入机制是为客户端写入数据而生成的。这就是客户端将数据移动到DataNode或Hadoop 集群中的方式。</p>
-<h4 id="HDFS读写机制"><a href="#HDFS读写机制" class="headerlink" title="HDFS读写机制"></a>HDFS读写机制</h4><h5 id="写"><a href="#写" class="headerlink" title="写"></a>写</h5><p><img src="/Echo/Write-Mechanism-in-HDFS.jpg" alt="Write-Mechanism-in-HDFS"></p>
+<h4 id="HDFS读写机制"><a href="#HDFS读写机制" class="headerlink" title="HDFS读写机制"></a>HDFS读写机制</h4><h5 id="写"><a href="#写" class="headerlink" title="写"></a>写</h5><p><img src="/Echo/2022/01/02/HDFS%E6%9E%B6%E6%9E%84%E5%8F%8A%E5%91%BD%E4%BB%A4/Write-Mechanism-in-HDFS.jpg" alt="Write-Mechanism-in-HDFS"></p>
 <p>如图所示HDFS写入机制，客户端可以提出写入文件或读取文件的请求。步骤1表示客户端为块A生成的写入请求NameNode，NameNode的作用是它感知客户端可以写入块的IP地址列表，即块A。</p>
 <p>现在，此客户端连接到交换机，然后最终向 DataNode 1、DataNode 4 和 DataNode 6 发送通知，为什么此 DataNode 本身，是因为这些是由 NameNode、NameNode 指定的 DataNode 发送的数据节点，数据必须写入 DataNode 1、4 和 6 中，这就是为什么客户端同时连接到所有这三个 DataNode 的原因。</p>
-<p><img src="/Echo/HDFS-Write-PipeLine.jpg" alt="HDFS-Write-PipeLine"></p>
+<p><img src="/Echo/2022/01/02/HDFS%E6%9E%B6%E6%9E%84%E5%8F%8A%E5%91%BD%E4%BB%A4/HDFS-Write-PipeLine.jpg" alt="HDFS-Write-PipeLine"></p>
 <p>在第一步中，客户端从所有这些 DataNode 中获取确认，无论它们是否准备好对它们执行写入操作。它可能就像DataNode正在执行任务一样，目前还不可用。因此，第一步是接受他们的承认。</p>
 <p>一旦他们说他们准备好了，写入管道就会创建。现在，客户端在 DataNode 1、4 和 6 上感知到写入请求，并且第一个副本是在 DataNode 1 中创建的，即在 DataNode 1 中创建&#x2F;存储或写入的块 A。</p>
 <p>然后，下一个副本由 DataNode 1 本身在 DataNode 4 中创建，正如您可以看到核心交换机的箭头所示，首先副本是在 DataNode 1 中创建的，DataNode 1 在 DataNode 4 中创建第二个副本。</p>
 <p>现在不是客户端在做这项工作，而是DataNode实际在DataNode 4中创建副本，最后，DataNode 4在DataNode 6上创建副本，即块A的第三个副本。</p>
 <p>在 DataNode 6 上创建第三个副本后，它会向 DataNode 4 发送回确认，DataNode 4 会将确认发回 DataNode 1，同样，DataNode 1 会将确认发送回客户端，最后客户端会将成功写回 NameNode 的消息作为确认。</p>
 <p>一旦您通过NameNode获得成功消息，它就会在其末端更新元数据，即它将存储块A已存储在DataNode 1，4和6中的信息。因此，当我们谈论块A时，这是整个写入机制，这是按顺序发生的，即按顺序创建副本的副本。</p>
-<p><img src="/Echo/HDFS-Multi-Block-Write-Pipeline.jpg" alt="HDFS-Multi-Block-Write-Pipeline"></p>
+<p><img src="/Echo/2022/01/02/HDFS%E6%9E%B6%E6%9E%84%E5%8F%8A%E5%91%BD%E4%BB%A4/HDFS-Multi-Block-Write-Pipeline.jpg" alt="HDFS-Multi-Block-Write-Pipeline"></p>
 <p>当有多个块时，它会变得有点复杂。上图显示，当有多个块（即块 A 和块 B）时，它将遵循相同的过程，就像客户端向 NameNode 发送请求一样。</p>
 <p>NameNode 会将 DataNode 的列表返回给客户端，然后客户端将连接到核心交换机。当客户端连接到核心交换机时，它将并行写入两个块的第一个副本。</p>
 <p>只需尝试理解这一点，您就可以看到1A和1B，即复制块A和块B的第一步，现在看到2A和2B向机架1的交换机发送请求，并将其他交换机发送到机架5的交换机，现在此交换机（机架1）连接到DataNode 1并创建块A的副本。</p>
@@ -278,7 +278,7 @@
 <p>创建此副本后，将在同一机架 4 的 DataNode 6 中创建块 A 的另一个副本。同样，块 B 是在 DataNode 9 中创建的，并且将根据发送到交换机的请求，在机架 1 的数据节点 3 中按顺序创建下一个副本。</p>
 <p>如果您看到并行创建或写入HDFS的每个块的第一个副本，而这些块的副本由其后续DataNodes本身按顺序创建。</p>
 <h5 id="读"><a href="#读" class="headerlink" title="读"></a>读</h5><p>阅读机制更容易理解，因为它非常简单。因此，客户端是发出所有请求的人，就像编写一样，它将从NameNode请求特定块。NameNode将通过存储这些特定块的数据节点发送。</p>
-<p><img src="/Echo/HDFS-Read-Mechanism.jpg" alt="HDFS-Read-Mechanism"></p>
+<p><img src="/Echo/2022/01/02/HDFS%E6%9E%B6%E6%9E%84%E5%8F%8A%E5%91%BD%E4%BB%A4/HDFS-Read-Mechanism.jpg" alt="HDFS-Read-Mechanism"></p>
 <p>如图所示，客户端已从NameNode请求块A和B，NameNode将DN1（即DataNode 1和DN3，即DataNode 3）的地址发送回客户端计算机。</p>
 <p>现在，此客户端计算机将与核心交换机建立连接，它将从 DataNode 1 读取块 A，从 DataNode 3 读取块 B，并将核心交换机设置的此数据发送回客户端计算机。客户端可以将这些数据用于所需的任何目的。</p>
 <p>NameNode将确保客户端没有分配用于获取数据或读取数据的工作。</p>

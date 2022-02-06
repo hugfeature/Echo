@@ -29,21 +29,21 @@
 <meta property="og:site_name" content="测试的名义">
 <meta property="og:description" content="为什么需要MapReduce？ MapReduce是**”处理单元”，**使用此组件，我们可以处理存储在Hadoop HDFS上的大数据。 但确切的要求是为什么我们需要Hadoop的这个组件？ 存储在Hadoop HDFS上的大数据和传统存储不一样。数据被划分为存储在各个DataNodes中的数据块。因此，整个数据不会存储在一个集中的位置。 因此，像Java这样的本机客户端应用程序或任何此类应用程">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://hugfeature.github.io/Echo/Map-Reduce.jpg">
-<meta property="og:image" content="https://hugfeature.github.io/Echo/NutShell-MapReduce.jpg">
-<meta property="og:image" content="https://hugfeature.github.io/Echo/Advantage.jpg">
-<meta property="og:image" content="https://hugfeature.github.io/Echo/Traditional-way-1.jpg">
-<meta property="og:image" content="https://hugfeature.github.io/Echo/Traditional-way-2.jpg">
-<meta property="og:image" content="https://hugfeature.github.io/Echo/MapReduce-Way.jpg">
-<meta property="og:image" content="https://hugfeature.github.io/Echo/MapReduce-in-Detail.jpg">
-<meta property="og:image" content="https://hugfeature.github.io/Echo/Anatomy-of-MapReduce.jpg">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/2022/01/03/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/Map-Reduce.jpg">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/2022/01/03/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/NutShell-MapReduce.jpg">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/2022/01/03/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/Advantage.jpg">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/2022/01/03/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/Traditional-way-1.jpg">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/2022/01/03/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/Traditional-way-2.jpg">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/2022/01/03/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/MapReduce-Way.jpg">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/2022/01/03/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/MapReduce-in-Detail.jpg">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/2022/01/03/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/Anatomy-of-MapReduce.jpg">
 <meta property="article:published_time" content="2022-01-03T01:01:16.000Z">
 <meta property="article:modified_time" content="2022-01-03T01:01:16.000Z">
 <meta property="article:author" content="丑牛">
 <meta property="article:tag" content="大数据">
 <meta property="article:tag" content="MapReduce">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://hugfeature.github.io/Echo/Map-Reduce.jpg">
+<meta name="twitter:image" content="https://hugfeature.github.io/Echo/2022/01/03/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/Map-Reduce.jpg">
 
 
 <link rel="canonical" href="https://hugfeature.github.io/Echo/2022/01/03/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/">
@@ -258,20 +258,20 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h4 id="为什么需要MapReduce？"><a href="#为什么需要MapReduce？" class="headerlink" title="为什么需要MapReduce？"></a>为什么需要MapReduce？</h4><p><img src="/Echo/Map-Reduce.jpg" alt="Map-Reduce"></p>
+        <h4 id="为什么需要MapReduce？"><a href="#为什么需要MapReduce？" class="headerlink" title="为什么需要MapReduce？"></a>为什么需要MapReduce？</h4><p><img src="/Echo/2022/01/03/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/Map-Reduce.jpg" alt="Map-Reduce"></p>
 <p>MapReduce是**”处理单元”，**使用此组件，我们可以处理存储在Hadoop HDFS上的大数据。</p>
 <p>但确切的要求是为什么我们需要Hadoop的这个组件？</p>
 <p>存储在Hadoop HDFS上的大数据和传统存储不一样。数据被划分为存储在各个DataNodes中的数据块。因此，整个数据不会存储在一个集中的位置。</p>
 <p>因此，像Java这样的本机客户端应用程序或任何此类应用程序无法以当前格式处理数据，我们需要一个特殊的框架来处理存储在各个DataNodes中的碎片化数据块。</p>
 <p>处理是使用Hadoop MapReduce处理完成的。</p>
-<h4 id="MapReduce简述"><a href="#MapReduce简述" class="headerlink" title="MapReduce简述"></a>MapReduce简述</h4><p><img src="/Echo/NutShell-MapReduce.jpg" alt="NutShell-MapReduce"></p>
+<h4 id="MapReduce简述"><a href="#MapReduce简述" class="headerlink" title="MapReduce简述"></a>MapReduce简述</h4><p><img src="/Echo/2022/01/03/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/NutShell-MapReduce.jpg" alt="NutShell-MapReduce"></p>
 <p>如图所示显示了MapReduce的功能和用途。</p>
 <p>让我们从MapReduce的应用程序开始及如何应用。它用于分类器，索引和搜索，以及在电子商务网站（Flipkart，Amazon等）上创建推荐引擎。它也被几家公司用作分析。</p>
 <p>当我们从功能的角度来看，它是一个编程模型，可以用于像Hadoop HDFS这样的大规模分布式模型，并且具有并行编程的功能，使其非常有用。</p>
 <p>当我们在Map Reduce中看到函数时，会执行两个函数，即Map Function和Reduce函数。</p>
 <p>这项技术已经由谷歌，雅虎，Facebook等主要组织实施，也被Apache Hadoop采用，如HDFS，PIG，HIVE，并使用HBase存储数据或执行和处理大数据，也称为No-SQL。</p>
 <h5 id="MapReduce的优点"><a href="#MapReduce的优点" class="headerlink" title="MapReduce的优点"></a>MapReduce的优点</h5><p>1、并行处理</p>
-<p><img src="/Echo/Advantage.jpg" alt="Advantage"></p>
+<p><img src="/Echo/2022/01/03/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/Advantage.jpg" alt="Advantage"></p>
 <p>整个数据块被Hadoop HDFS分成HDFS块，MapReduce并行处理这些数据块，因此处理变得很快。</p>
 <p>2、数据局部性</p>
 <p>这是Hadoop MapReduce给出的一个多功能的东西，即我们可以在它所在的位置处理数据。</p>
@@ -290,13 +290,13 @@
 <p>传统为了上解决这个问题，所有申请将被转移到保险公司总部，然后申请过程将开始。</p>
 <p>在这种情况下，我们需要将所有申请转移到保险公司总部，这是一件代价高昂的事情，即必须从保险公司分支机构收集所有申请并将其带到保险公司总部。</p>
 <p>这就是成本以及进行此活动的巨大努力的方式。</p>
-<p><img src="/Echo/Traditional-way-1.jpg" alt="Traditional-way-1"></p>
-<p><img src="/Echo/Traditional-way-2.jpg" alt="Traditional-way-2"></p>
+<p><img src="/Echo/2022/01/03/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/Traditional-way-1.jpg" alt="Traditional-way-1"></p>
+<p><img src="/Echo/2022/01/03/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/Traditional-way-2.jpg" alt="Traditional-way-2"></p>
 <p>另一个方面是保险公司总部负担过重，因为它必须处理人民在各自分支机构申请保单的所有申请。</p>
 <p>由于保险公司正在处理所有分支机构都适用的申请，因此需要很长时间。最后，这个过程效果不是很好。</p>
 <p>2、MapReduce方式</p>
 <p>MapReduce遵循Data Locality，即它不会将所有应用程序带到保险公司总部，而是并行处理各个分支机构本身的应用程序。</p>
-<p><img src="/Echo/MapReduce-Way.jpg" alt="MapReduce-Way"></p>
+<p><img src="/Echo/2022/01/03/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/MapReduce-Way.jpg" alt="MapReduce-Way"></p>
 <p>一旦应用于每个分支机构的申请得到处理，他们就会将处理后的详细信息发回保险公司总部。</p>
 <p>现在，保险公司总部只需要汇总从各自分支机构发送的已处理申请的数量，并将详细信息保存在各自的数据库或存储中心。</p>
 <p>通过这种方式，处理将非常容易和快速，保单持有人可以立即获得福利。</p>
@@ -304,11 +304,11 @@
 <p>我们知道MapReduce有两个函数，即Map Function和Reduce Function。</p>
 <p>在各个分支上完成的处理部分由 Map 函数完成。因此，每个分支机构中的每个输入（应用程序）都使用Map函数进行处理，之后处理后的详细信息被发送到保险公司总部，聚合部分由Reduce功能完成。</p>
 <p>聚合的已处理应用程序详细信息作为输出提供。</p>
-<p><img src="/Echo/MapReduce-in-Detail.jpg" alt="MapReduce-in-Detail"></p>
+<p><img src="/Echo/2022/01/03/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/MapReduce-in-Detail.jpg" alt="MapReduce-in-Detail"></p>
 <p>这就是我们前面的例子中发生的事情。整个过程分为map任务和reduce任务。</p>
 <p>映射任务获取输入，映射任务的输出作为输入提供给 Reduce 任务，此 Reduce 任务最终将输出提供给客户端。</p>
 <p>为了更好地理解它，让我们来了解一下MapReduce的解剖结构。</p>
-<p><img src="/Echo/Anatomy-of-MapReduce.jpg" alt="Anatomy-of-MapReduce"></p>
+<p><img src="/Echo/2022/01/03/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/Anatomy-of-MapReduce.jpg" alt="Anatomy-of-MapReduce"></p>
 <p>MapReduce任务在键值对上工作，因此当我们谈论Map时，Map将输入作为键值，并将输出作为键值列表给出。此键值列表将经历随机播放阶段，键的输入和值列表将转到化简器。</p>
 <p>最后，Reducer 为我们提供了键值对的列表。</p>
 <h4 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h4><ul>
