@@ -1570,114 +1570,6 @@
       </tags>
   </entry>
   <entry>
-    <title>cetnos 7.7单节点安装部署k8s（v1.18.2）</title>
-    <url>/Echo/2020/05/13/cetnos-7-7%E5%8D%95%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2k8s%EF%BC%88v1-18-2%EF%BC%89/</url>
-    <content><![CDATA[<h4 id="1-配置hosts文件"><a href="#1-配置hosts文件" class="headerlink" title="1.配置hosts文件"></a>1.配置hosts文件</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/hosts</span><br></pre></td></tr></table></figure>
-
-<p>本机ip  本机hostname 本机hostname</p>
-<h4 id="2-关闭防火墙-sawp等"><a href="#2-关闭防火墙-sawp等" class="headerlink" title="2.关闭防火墙, sawp等"></a>2.关闭防火墙, sawp等</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl <span class="built_in">disable</span> firewalld</span><br><span class="line">swapoff -a <span class="comment">#此处为临时关闭</span></span><br></pre></td></tr></table></figure>
-
-<p>#注释掉 &#x2F;etc&#x2F;fstab 里面这一行 &#x2F;dev&#x2F;mapper&#x2F;centos-swap swap                    swap    defaults        0 0</p>
-<h4 id="3-禁用selinux"><a href="#3-禁用selinux" class="headerlink" title="3.禁用selinux"></a>3.禁用selinux</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br><span class="line">SELINUX=disabled</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-修改iptables参数-RHEL-x2F-CentOS-7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题"><a href="#4-修改iptables参数-RHEL-x2F-CentOS-7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题" class="headerlink" title="4.修改iptables参数 :: RHEL &#x2F; CentOS 7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题"></a>4.修改iptables参数 :: RHEL &#x2F; CentOS 7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">cat &lt;&lt;<span class="string">EOF &gt;  /etc/sysctl.d/k8s.conf</span></span><br><span class="line"><span class="string">vm.swappiness = 0</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-ip6tables = 1</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-iptables = 1</span></span><br><span class="line"><span class="string">net.ipv4.ip_forward = 1</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"><span class="comment">#使配置生效</span></span><br><span class="line">modprobe br_netfilter</span><br><span class="line">sysctl -p /etc/sysctl.d/k8s.conf</span><br></pre></td></tr></table></figure>
-
-<h4 id="5-安装docker-使用阿里镜像"><a href="#5-安装docker-使用阿里镜像" class="headerlink" title="5.安装docker(使用阿里镜像)"></a>5.安装docker(使用阿里镜像)</h4><h5 id="step-1-安装必要的一些系统工具"><a href="#step-1-安装必要的一些系统工具" class="headerlink" title="step 1: 安装必要的一些系统工具"></a>step 1: 安装必要的一些系统工具</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-2-添加软件源信息"><a href="#Step-2-添加软件源信息" class="headerlink" title="Step 2: 添加软件源信息"></a>Step 2: 添加软件源信息</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-3-更新并安装Docker-CE"><a href="#Step-3-更新并安装Docker-CE" class="headerlink" title="Step 3: 更新并安装Docker-CE"></a>Step 3: 更新并安装Docker-CE</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum makecache fast</span><br><span class="line">sudo yum -y install docker-ce</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-4-开启Docker服务"><a href="#Step-4-开启Docker服务" class="headerlink" title="Step 4: 开启Docker服务"></a>Step 4: 开启Docker服务</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-5-修改cgroupdriver-和镜像地址"><a href="#Step-5-修改cgroupdriver-和镜像地址" class="headerlink" title="Step 5: 修改cgroupdriver 和镜像地址"></a>Step 5: 修改cgroupdriver 和镜像地址</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/docker/daemon.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;exec-opts&quot;</span>: [<span class="string">&quot;native.cgroupdriver=systemd&quot;</span>],</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://e7l8pkuq.mirror.aliyuncs.com&quot;</span>,<span class="string">&quot;https://hub-mirror.c.163.com/&quot;</span>,<span class="string">&quot;https://reg-mirror.qiniu.com&quot;</span>]</span><br><span class="line">&#125;</span><br><span class="line"> <span class="comment"># 安装校验 docker version</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-6-安装kubernetes"><a href="#Step-6-安装kubernetes" class="headerlink" title="Step  6.安装kubernetes"></a>Step  6.安装kubernetes</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">cat &lt;&lt;<span class="string">EOF &gt; /etc/yum.repos.d/kubernetes.repo</span></span><br><span class="line"><span class="string">[kubernetes]</span></span><br><span class="line"><span class="string">name=Kubernetes</span></span><br><span class="line"><span class="string">baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64/</span></span><br><span class="line"><span class="string">enabled=1</span></span><br><span class="line"><span class="string">gpgcheck=1</span></span><br><span class="line"><span class="string">repo_gpgcheck=1</span></span><br><span class="line"><span class="string">gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line">setenforce 0</span><br><span class="line">yum install -y kubelet kubeadm kubectl</span><br><span class="line">systemctl <span class="built_in">enable</span> kubelet &amp;&amp; systemctl start kubelet</span><br><span class="line"> <span class="comment"># 出现索引lgpg检查失败时，请用yum install -y --nogpgcheck kubelet kubeadm kubectl</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="step-7-kubeadm初始化安装"><a href="#step-7-kubeadm初始化安装" class="headerlink" title="step 7.kubeadm初始化安装"></a>step 7.kubeadm初始化安装</h5><p>kubeadm init –apiserver-advertise-address&#x3D;本机IP –image-repository registry.aliyuncs.com&#x2F;google_containers –kubernetes-version 版本号 –pod-network-cidr&#x3D;10.244.0.0&#x2F;16</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubeadm init --apiserver-advertise-address=192.168.94.129 --image-repository registry.aliyuncs.com/google_containers --kubernetes-version 1.18.2 --pod-network-cidr=10.244.0.0/16</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-8-初始化安装成功后进行配置"><a href="#step-8-初始化安装成功后进行配置" class="headerlink" title="step 8.初始化安装成功后进行配置"></a>step 8.初始化安装成功后进行配置</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mkdir -p <span class="variable">$HOME</span>/.kube</span><br><span class="line">sudo cp -i /etc/kubernetes/admin.conf <span class="variable">$HOME</span>/.kube/config</span><br><span class="line">sudo chown $(id -u):$(id -g) <span class="variable">$HOME</span>/.kube/config</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-9-查看kubelet状态"><a href="#step-9-查看kubelet状态" class="headerlink" title="step 9.查看kubelet状态"></a>step 9.查看kubelet状态</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl status kubelet.service</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-10-确认每个组件的状态"><a href="#step-10-确认每个组件的状态" class="headerlink" title="step 10.确认每个组件的状态"></a>step 10.确认每个组件的状态</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl get cs</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-11-查看node状态，此时会发现处于NoReady"><a href="#step-11-查看node状态，此时会发现处于NoReady" class="headerlink" title="step 11.查看node状态，此时会发现处于NoReady"></a>step 11.查看node状态，此时会发现处于NoReady</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl get node</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-12-安装port-Network-flannel-k8s-cluster-工作-须安装pod网络，否则pod之间无法通信，k8s支持多种方案"><a href="#step-12-安装port-Network-flannel-k8s-cluster-工作-须安装pod网络，否则pod之间无法通信，k8s支持多种方案" class="headerlink" title="step 12.安装port Network( flannel )  : k8s cluster 工作 须安装pod网络，否则pod之间无法通信，k8s支持多种方案"></a>step 12.安装port Network( flannel )  : k8s cluster 工作 须安装pod网络，否则pod之间无法通信，k8s支持多种方案</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml</span><br></pre></td></tr></table></figure>
-
-<p>建议将kube-fannle文件拷贝至本地，将其中所需的镜像进行替换。</p>
-<h5 id="step-13-检查pod-确保每个pod都是running"><a href="#step-13-检查pod-确保每个pod都是running" class="headerlink" title="step 13.检查pod,确保每个pod都是running"></a>step 13.检查pod,确保每个pod都是running</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl get pod --all-namespaces -o wide</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>环境安装</category>
-      </categories>
-      <tags>
-        <tag>K8S</tag>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>cetnos 8.2单节点安装部署k8s（v1.18.2）</title>
-    <url>/Echo/2020/08/10/cetnos-8-2%E5%8D%95%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2k8s%EF%BC%88v1-18-2%EF%BC%89/</url>
-    <content><![CDATA[<h4 id="1-配置hosts文件"><a href="#1-配置hosts文件" class="headerlink" title="1.配置hosts文件"></a>1.配置hosts文件</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/hosts</span><br></pre></td></tr></table></figure>
-
-<p>本机ip  本机hostname 本机hostname</p>
-<h4 id="2-关闭防火墙-sawp等"><a href="#2-关闭防火墙-sawp等" class="headerlink" title="2.关闭防火墙, sawp等"></a>2.关闭防火墙, sawp等</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl <span class="built_in">disable</span> firewalld</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-关闭swap"><a href="#3-关闭swap" class="headerlink" title="3.关闭swap"></a>3.关闭swap</h4><h4 id="4-禁用selinux"><a href="#4-禁用selinux" class="headerlink" title="4.禁用selinux"></a>4.禁用selinux</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br><span class="line">SELINUX=disabled</span><br><span class="line">/usr/sbin/sestatus -v  <span class="comment"># 查看selinux状态</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="5-安装docker"><a href="#5-安装docker" class="headerlink" title="5.安装docker"></a>5.安装docker</h4><h5 id="step-1-安装必要的一些系统工具"><a href="#step-1-安装必要的一些系统工具" class="headerlink" title="step 1: 安装必要的一些系统工具"></a>step 1: 安装必要的一些系统工具</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-2-添加软件源信息"><a href="#Step-2-添加软件源信息" class="headerlink" title="Step 2: 添加软件源信息"></a>Step 2: 添加软件源信息</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-3-更新并安装Docker-CE"><a href="#Step-3-更新并安装Docker-CE" class="headerlink" title="Step 3: 更新并安装Docker-CE"></a>Step 3: 更新并安装Docker-CE</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum makecache --refresh</span><br><span class="line">sudo yum -y install docker-ce</span><br><span class="line"><span class="comment"># 发现报错：Problem: package docker-ce-3:19.03.12-3.el7.x86_64 requires containerd.io &gt;= 1.2.2-3, but none of the providers can be installed</span></span><br><span class="line"><span class="comment"># 因为containerd 版本过低</span></span><br><span class="line">dnf install container-selinux</span><br><span class="line">通过yum -y install https://download.docker.com/linux/centos/7/x86_64/edge/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm 升级即可</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-4-docker-修改Cgroup-Driver以及docker镜像拉取地址"><a href="#Step-4-docker-修改Cgroup-Driver以及docker镜像拉取地址" class="headerlink" title="Step 4: docker 修改Cgroup Driver以及docker镜像拉取地址"></a>Step 4: docker 修改Cgroup Driver以及docker镜像拉取地址</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"> cat /etc/docker/daemon.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://e7l8pkuq.mirror.aliyuncs.com&quot;</span>],</span><br><span class="line">  <span class="string">&quot;exec-opts&quot;</span>: [<span class="string">&quot;native.cgroupdriver=systemd&quot;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-5-开启Docker服务"><a href="#Step-5-开启Docker服务" class="headerlink" title="Step 5: 开启Docker服务"></a>Step 5: 开启Docker服务</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
-
-<h4 id="6-安装kubectl"><a href="#6-安装kubectl" class="headerlink" title="6.安装kubectl"></a>6.安装kubectl</h4><h5 id="step-1：下载最新kubectl最新资源"><a href="#step-1：下载最新kubectl最新资源" class="headerlink" title="step 1：下载最新kubectl最新资源"></a>step 1：下载最新kubectl最新资源</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">curl -LO <span class="string">&quot;https://storage.googleapis.com/kubernetes-release/release/<span class="subst">$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)</span>/bin/linux/amd64/kubectl&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="step-2：添加执行权限"><a href="#step-2：添加执行权限" class="headerlink" title="step 2：添加执行权限"></a>step 2：添加执行权限</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">chmod +x ./kubectl</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-3：移动kubectl至bin路径"><a href="#step-3：移动kubectl至bin路径" class="headerlink" title="step 3：移动kubectl至bin路径"></a>step 3：移动kubectl至bin路径</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo mv ./kubectl /usr/<span class="built_in">local</span>/bin/kubectl</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-4：确认安装的版本"><a href="#step-4：确认安装的版本" class="headerlink" title="step 4：确认安装的版本"></a>step 4：确认安装的版本</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl version --client</span><br></pre></td></tr></table></figure>
-
-<h4 id="7-安装minikube"><a href="#7-安装minikube" class="headerlink" title="7.安装minikube"></a>7.安装minikube</h4><h5 id="step-1：确认是否支持虚拟化"><a href="#step-1：确认是否支持虚拟化" class="headerlink" title="step 1：确认是否支持虚拟化"></a>step 1：确认是否支持虚拟化</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">grep -E --color <span class="string">&#x27;vmx|svm&#x27;</span> /proc/cpuinfo</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="step-2：下载minikube资源"><a href="#step-2：下载minikube资源" class="headerlink" title="step 2：下载minikube资源"></a>step 2：下载minikube资源</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \</span><br><span class="line">  &amp;&amp; chmod +x minikube</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="step-3：添加minikube进入系统命令"><a href="#step-3：添加minikube进入系统命令" class="headerlink" title="step 3：添加minikube进入系统命令"></a>step 3：添加minikube进入系统命令</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo mkdir -p /usr/<span class="built_in">local</span>/bin/</span><br><span class="line">sudo install minikube /usr/<span class="built_in">local</span>/bin/</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="step-4：启动-minikube（使用的VM安装的centos-8因此设置driver-x3D-none）"><a href="#step-4：启动-minikube（使用的VM安装的centos-8因此设置driver-x3D-none）" class="headerlink" title="step 4：启动 minikube（使用的VM安装的centos 8因此设置driver&#x3D;none）"></a>step 4：启动 minikube（使用的VM安装的centos 8因此设置driver&#x3D;none）</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">minikube start --driver=none --image-repository=registry.cn-hangzhou.aliyuncs.com/google_containers</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="step-5：确认minikube状态"><a href="#step-5：确认minikube状态" class="headerlink" title="step 5：确认minikube状态"></a>step 5：确认minikube状态</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">minikube status</span><br></pre></td></tr></table></figure>
-
-<p>8.istio安装</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">istioctl manifest apply --<span class="built_in">set</span> profile=demo</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>环境安装</category>
-      </categories>
-      <tags>
-        <tag>K8S</tag>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Yarn REST API 使用指南</title>
     <url>/Echo/2021/11/13/Yarn-ResourceManager-REST-API-%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
     <content><![CDATA[<p>Yarn作为一款优秀的开源集群管理工具，可以用它来运行Hadoop，Spark，Flink等大数据处理任务。所有的分布式计算框架，都是主从模式，ResourceManager作为集群的管理员，是任务提交的入口。一般企业的大数据处理平台会在Yarn的基础中做进一步的封装，以web应用的形式提供更高级的大数据处理平台。如果web应用通过shell的方式提交任务将显得太重，而且不利于任务状态的监控。幸好Yarn提供了ResourceManager的REST API，可以很方便的向集群提交、杀死任务或者监控任务的状态，本文将简要介绍ResourceManager REST API的使用方法。</p>
@@ -2424,6 +2316,114 @@
       </categories>
       <tags>
         <tag>YARN，大数据</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>cetnos 7.7单节点安装部署k8s（v1.18.2）</title>
+    <url>/Echo/2020/05/13/cetnos-7-7%E5%8D%95%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2k8s%EF%BC%88v1-18-2%EF%BC%89/</url>
+    <content><![CDATA[<h4 id="1-配置hosts文件"><a href="#1-配置hosts文件" class="headerlink" title="1.配置hosts文件"></a>1.配置hosts文件</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/hosts</span><br></pre></td></tr></table></figure>
+
+<p>本机ip  本机hostname 本机hostname</p>
+<h4 id="2-关闭防火墙-sawp等"><a href="#2-关闭防火墙-sawp等" class="headerlink" title="2.关闭防火墙, sawp等"></a>2.关闭防火墙, sawp等</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl <span class="built_in">disable</span> firewalld</span><br><span class="line">swapoff -a <span class="comment">#此处为临时关闭</span></span><br></pre></td></tr></table></figure>
+
+<p>#注释掉 &#x2F;etc&#x2F;fstab 里面这一行 &#x2F;dev&#x2F;mapper&#x2F;centos-swap swap                    swap    defaults        0 0</p>
+<h4 id="3-禁用selinux"><a href="#3-禁用selinux" class="headerlink" title="3.禁用selinux"></a>3.禁用selinux</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br><span class="line">SELINUX=disabled</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-修改iptables参数-RHEL-x2F-CentOS-7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题"><a href="#4-修改iptables参数-RHEL-x2F-CentOS-7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题" class="headerlink" title="4.修改iptables参数 :: RHEL &#x2F; CentOS 7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题"></a>4.修改iptables参数 :: RHEL &#x2F; CentOS 7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">cat &lt;&lt;<span class="string">EOF &gt;  /etc/sysctl.d/k8s.conf</span></span><br><span class="line"><span class="string">vm.swappiness = 0</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-ip6tables = 1</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-iptables = 1</span></span><br><span class="line"><span class="string">net.ipv4.ip_forward = 1</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"><span class="comment">#使配置生效</span></span><br><span class="line">modprobe br_netfilter</span><br><span class="line">sysctl -p /etc/sysctl.d/k8s.conf</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-安装docker-使用阿里镜像"><a href="#5-安装docker-使用阿里镜像" class="headerlink" title="5.安装docker(使用阿里镜像)"></a>5.安装docker(使用阿里镜像)</h4><h5 id="step-1-安装必要的一些系统工具"><a href="#step-1-安装必要的一些系统工具" class="headerlink" title="step 1: 安装必要的一些系统工具"></a>step 1: 安装必要的一些系统工具</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-2-添加软件源信息"><a href="#Step-2-添加软件源信息" class="headerlink" title="Step 2: 添加软件源信息"></a>Step 2: 添加软件源信息</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-3-更新并安装Docker-CE"><a href="#Step-3-更新并安装Docker-CE" class="headerlink" title="Step 3: 更新并安装Docker-CE"></a>Step 3: 更新并安装Docker-CE</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum makecache fast</span><br><span class="line">sudo yum -y install docker-ce</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-4-开启Docker服务"><a href="#Step-4-开启Docker服务" class="headerlink" title="Step 4: 开启Docker服务"></a>Step 4: 开启Docker服务</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-5-修改cgroupdriver-和镜像地址"><a href="#Step-5-修改cgroupdriver-和镜像地址" class="headerlink" title="Step 5: 修改cgroupdriver 和镜像地址"></a>Step 5: 修改cgroupdriver 和镜像地址</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/docker/daemon.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;exec-opts&quot;</span>: [<span class="string">&quot;native.cgroupdriver=systemd&quot;</span>],</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://e7l8pkuq.mirror.aliyuncs.com&quot;</span>,<span class="string">&quot;https://hub-mirror.c.163.com/&quot;</span>,<span class="string">&quot;https://reg-mirror.qiniu.com&quot;</span>]</span><br><span class="line">&#125;</span><br><span class="line"> <span class="comment"># 安装校验 docker version</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-6-安装kubernetes"><a href="#Step-6-安装kubernetes" class="headerlink" title="Step  6.安装kubernetes"></a>Step  6.安装kubernetes</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">cat &lt;&lt;<span class="string">EOF &gt; /etc/yum.repos.d/kubernetes.repo</span></span><br><span class="line"><span class="string">[kubernetes]</span></span><br><span class="line"><span class="string">name=Kubernetes</span></span><br><span class="line"><span class="string">baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64/</span></span><br><span class="line"><span class="string">enabled=1</span></span><br><span class="line"><span class="string">gpgcheck=1</span></span><br><span class="line"><span class="string">repo_gpgcheck=1</span></span><br><span class="line"><span class="string">gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line">setenforce 0</span><br><span class="line">yum install -y kubelet kubeadm kubectl</span><br><span class="line">systemctl <span class="built_in">enable</span> kubelet &amp;&amp; systemctl start kubelet</span><br><span class="line"> <span class="comment"># 出现索引lgpg检查失败时，请用yum install -y --nogpgcheck kubelet kubeadm kubectl</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="step-7-kubeadm初始化安装"><a href="#step-7-kubeadm初始化安装" class="headerlink" title="step 7.kubeadm初始化安装"></a>step 7.kubeadm初始化安装</h5><p>kubeadm init –apiserver-advertise-address&#x3D;本机IP –image-repository registry.aliyuncs.com&#x2F;google_containers –kubernetes-version 版本号 –pod-network-cidr&#x3D;10.244.0.0&#x2F;16</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubeadm init --apiserver-advertise-address=192.168.94.129 --image-repository registry.aliyuncs.com/google_containers --kubernetes-version 1.18.2 --pod-network-cidr=10.244.0.0/16</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-8-初始化安装成功后进行配置"><a href="#step-8-初始化安装成功后进行配置" class="headerlink" title="step 8.初始化安装成功后进行配置"></a>step 8.初始化安装成功后进行配置</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mkdir -p <span class="variable">$HOME</span>/.kube</span><br><span class="line">sudo cp -i /etc/kubernetes/admin.conf <span class="variable">$HOME</span>/.kube/config</span><br><span class="line">sudo chown $(id -u):$(id -g) <span class="variable">$HOME</span>/.kube/config</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-9-查看kubelet状态"><a href="#step-9-查看kubelet状态" class="headerlink" title="step 9.查看kubelet状态"></a>step 9.查看kubelet状态</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl status kubelet.service</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-10-确认每个组件的状态"><a href="#step-10-确认每个组件的状态" class="headerlink" title="step 10.确认每个组件的状态"></a>step 10.确认每个组件的状态</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl get cs</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-11-查看node状态，此时会发现处于NoReady"><a href="#step-11-查看node状态，此时会发现处于NoReady" class="headerlink" title="step 11.查看node状态，此时会发现处于NoReady"></a>step 11.查看node状态，此时会发现处于NoReady</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl get node</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-12-安装port-Network-flannel-k8s-cluster-工作-须安装pod网络，否则pod之间无法通信，k8s支持多种方案"><a href="#step-12-安装port-Network-flannel-k8s-cluster-工作-须安装pod网络，否则pod之间无法通信，k8s支持多种方案" class="headerlink" title="step 12.安装port Network( flannel )  : k8s cluster 工作 须安装pod网络，否则pod之间无法通信，k8s支持多种方案"></a>step 12.安装port Network( flannel )  : k8s cluster 工作 须安装pod网络，否则pod之间无法通信，k8s支持多种方案</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml</span><br></pre></td></tr></table></figure>
+
+<p>建议将kube-fannle文件拷贝至本地，将其中所需的镜像进行替换。</p>
+<h5 id="step-13-检查pod-确保每个pod都是running"><a href="#step-13-检查pod-确保每个pod都是running" class="headerlink" title="step 13.检查pod,确保每个pod都是running"></a>step 13.检查pod,确保每个pod都是running</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl get pod --all-namespaces -o wide</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>环境安装</category>
+      </categories>
+      <tags>
+        <tag>K8S</tag>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>cetnos 8.2单节点安装部署k8s（v1.18.2）</title>
+    <url>/Echo/2020/08/10/cetnos-8-2%E5%8D%95%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2k8s%EF%BC%88v1-18-2%EF%BC%89/</url>
+    <content><![CDATA[<h4 id="1-配置hosts文件"><a href="#1-配置hosts文件" class="headerlink" title="1.配置hosts文件"></a>1.配置hosts文件</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/hosts</span><br></pre></td></tr></table></figure>
+
+<p>本机ip  本机hostname 本机hostname</p>
+<h4 id="2-关闭防火墙-sawp等"><a href="#2-关闭防火墙-sawp等" class="headerlink" title="2.关闭防火墙, sawp等"></a>2.关闭防火墙, sawp等</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl <span class="built_in">disable</span> firewalld</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-关闭swap"><a href="#3-关闭swap" class="headerlink" title="3.关闭swap"></a>3.关闭swap</h4><h4 id="4-禁用selinux"><a href="#4-禁用selinux" class="headerlink" title="4.禁用selinux"></a>4.禁用selinux</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br><span class="line">SELINUX=disabled</span><br><span class="line">/usr/sbin/sestatus -v  <span class="comment"># 查看selinux状态</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="5-安装docker"><a href="#5-安装docker" class="headerlink" title="5.安装docker"></a>5.安装docker</h4><h5 id="step-1-安装必要的一些系统工具"><a href="#step-1-安装必要的一些系统工具" class="headerlink" title="step 1: 安装必要的一些系统工具"></a>step 1: 安装必要的一些系统工具</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-2-添加软件源信息"><a href="#Step-2-添加软件源信息" class="headerlink" title="Step 2: 添加软件源信息"></a>Step 2: 添加软件源信息</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-3-更新并安装Docker-CE"><a href="#Step-3-更新并安装Docker-CE" class="headerlink" title="Step 3: 更新并安装Docker-CE"></a>Step 3: 更新并安装Docker-CE</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum makecache --refresh</span><br><span class="line">sudo yum -y install docker-ce</span><br><span class="line"><span class="comment"># 发现报错：Problem: package docker-ce-3:19.03.12-3.el7.x86_64 requires containerd.io &gt;= 1.2.2-3, but none of the providers can be installed</span></span><br><span class="line"><span class="comment"># 因为containerd 版本过低</span></span><br><span class="line">dnf install container-selinux</span><br><span class="line">通过yum -y install https://download.docker.com/linux/centos/7/x86_64/edge/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm 升级即可</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-4-docker-修改Cgroup-Driver以及docker镜像拉取地址"><a href="#Step-4-docker-修改Cgroup-Driver以及docker镜像拉取地址" class="headerlink" title="Step 4: docker 修改Cgroup Driver以及docker镜像拉取地址"></a>Step 4: docker 修改Cgroup Driver以及docker镜像拉取地址</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"> cat /etc/docker/daemon.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://e7l8pkuq.mirror.aliyuncs.com&quot;</span>],</span><br><span class="line">  <span class="string">&quot;exec-opts&quot;</span>: [<span class="string">&quot;native.cgroupdriver=systemd&quot;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-5-开启Docker服务"><a href="#Step-5-开启Docker服务" class="headerlink" title="Step 5: 开启Docker服务"></a>Step 5: 开启Docker服务</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-安装kubectl"><a href="#6-安装kubectl" class="headerlink" title="6.安装kubectl"></a>6.安装kubectl</h4><h5 id="step-1：下载最新kubectl最新资源"><a href="#step-1：下载最新kubectl最新资源" class="headerlink" title="step 1：下载最新kubectl最新资源"></a>step 1：下载最新kubectl最新资源</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">curl -LO <span class="string">&quot;https://storage.googleapis.com/kubernetes-release/release/<span class="subst">$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)</span>/bin/linux/amd64/kubectl&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="step-2：添加执行权限"><a href="#step-2：添加执行权限" class="headerlink" title="step 2：添加执行权限"></a>step 2：添加执行权限</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">chmod +x ./kubectl</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-3：移动kubectl至bin路径"><a href="#step-3：移动kubectl至bin路径" class="headerlink" title="step 3：移动kubectl至bin路径"></a>step 3：移动kubectl至bin路径</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo mv ./kubectl /usr/<span class="built_in">local</span>/bin/kubectl</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-4：确认安装的版本"><a href="#step-4：确认安装的版本" class="headerlink" title="step 4：确认安装的版本"></a>step 4：确认安装的版本</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl version --client</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-安装minikube"><a href="#7-安装minikube" class="headerlink" title="7.安装minikube"></a>7.安装minikube</h4><h5 id="step-1：确认是否支持虚拟化"><a href="#step-1：确认是否支持虚拟化" class="headerlink" title="step 1：确认是否支持虚拟化"></a>step 1：确认是否支持虚拟化</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">grep -E --color <span class="string">&#x27;vmx|svm&#x27;</span> /proc/cpuinfo</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="step-2：下载minikube资源"><a href="#step-2：下载minikube资源" class="headerlink" title="step 2：下载minikube资源"></a>step 2：下载minikube资源</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \</span><br><span class="line">  &amp;&amp; chmod +x minikube</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="step-3：添加minikube进入系统命令"><a href="#step-3：添加minikube进入系统命令" class="headerlink" title="step 3：添加minikube进入系统命令"></a>step 3：添加minikube进入系统命令</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo mkdir -p /usr/<span class="built_in">local</span>/bin/</span><br><span class="line">sudo install minikube /usr/<span class="built_in">local</span>/bin/</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="step-4：启动-minikube（使用的VM安装的centos-8因此设置driver-x3D-none）"><a href="#step-4：启动-minikube（使用的VM安装的centos-8因此设置driver-x3D-none）" class="headerlink" title="step 4：启动 minikube（使用的VM安装的centos 8因此设置driver&#x3D;none）"></a>step 4：启动 minikube（使用的VM安装的centos 8因此设置driver&#x3D;none）</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">minikube start --driver=none --image-repository=registry.cn-hangzhou.aliyuncs.com/google_containers</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="step-5：确认minikube状态"><a href="#step-5：确认minikube状态" class="headerlink" title="step 5：确认minikube状态"></a>step 5：确认minikube状态</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">minikube status</span><br></pre></td></tr></table></figure>
+
+<p>8.istio安装</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">istioctl manifest apply --<span class="built_in">set</span> profile=demo</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>环境安装</category>
+      </categories>
+      <tags>
+        <tag>K8S</tag>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -3679,6 +3679,93 @@
       </tags>
   </entry>
   <entry>
+    <title>如何编写有效的测试用例</title>
+    <url>/Echo/2022/01/15/%E5%A6%82%E4%BD%95%E7%BC%96%E5%86%99%E6%9C%89%E6%95%88%E7%9A%84%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B/</url>
+    <content><![CDATA[<h4 id="什么是测试用例？"><a href="#什么是测试用例？" class="headerlink" title="什么是测试用例？"></a>什么是测试用例？</h4><p>测试用例包含描述输入、动作或事件以及预期响应的组件，以确定应用程序的功能是否正常工作。</p>
+<h4 id="测试用例的级别："><a href="#测试用例的级别：" class="headerlink" title="测试用例的级别："></a>测试用例的级别：</h4><ul>
+<li>级别 1: 您将根据可用的规范和用户文档编写基本的测试用例。</li>
+<li>级别 2: 这是一个实践阶段，在这个阶段，编写测试用例依赖于应用程序的实际功能和系统流程。</li>
+<li>级别3 : 你将分组一些测试用例，并编写一个测试程序。测试过程只不过是一组小的测试用例，通常最多包含 10 个。</li>
+<li>级别 4: 测试用例自动化。这个阶段将帮助测试人员将测试工作集中在新的功能上，而测试自动化将负责回归测试。</li>
+</ul>
+<h4 id="如何开始编写测试用例？"><a href="#如何开始编写测试用例？" class="headerlink" title="如何开始编写测试用例？"></a>如何开始编写测试用例？</h4><p>当您获得软件需求规格(SRS)文档时，您将首先通过需求来理解应用程序的功能和范围。一旦获得了正在开发的功能的完整概述，您将开始为分配给您的模块编写测试用例。首先，将从涵盖 SRS 文档中提到的所有业务规则的功能测试用例开始。</p>
+<p>在编写测试用例时，最好从特定页面或屏幕上的所有需求开始。因此会写以下：<br>● 功能测试，<br>● 业务规则测试，<br>● 导航测试(链接、按钮等)),<br>● 集成测试(与其他模块的集成)，<br>● 安全测试，<br>● 端到端测试，<br>● 阴性测试，<br>● 负载和性能测试</p>
+<h4 id="如何减少测试用例的编写和执行时间？"><a href="#如何减少测试用例的编写和执行时间？" class="headerlink" title="如何减少测试用例的编写和执行时间？"></a>如何减少测试用例的编写和执行时间？</h4><p>● 使用标准测试用例模板来编写所有的测试用例<br>● 在开始编写测试用例之前，清楚地理解需求。<br>● 遵循基于测试类型序列编写测试用例的方法。例如，首先开始编写功能测试用例，然后继续进行用户界面、兼容性、安全性等等。<br>● 如果没有使用任何测试管理工具，那么请使用微软Excel电子表格来编写测试用例。微软 Excel的功能非常强大，你可以用很少的时间编写很多类似的测试用例。例如，为了编写一个包含许多字段的长表单的测试用例，大多数测试用例都是重复的，只是字段名发生了变化。您可以使用电子表格函数在几分钟内编写这些测试用例。如果开始使用测试管理工具，甚至可以导入这些测试用例。建议尽快开始使用。<br>● 为了编写各种排列和组合的测试用例，首先使用真值表格式，然后描述测试用例。<br>● 编写测试用例时使用流程图。这将确保最大的测试覆盖率。此外，您将能够更快地编写涵盖所有用例的测试用例。<br>● 根据应用程序页面&#x2F;屏幕或用例对您的测试用例进行分组。这两种方法对于维护测试用例都是有用且容易的。</p>
+<p>测试执行时间取决于是自动执行还是手动执行。手动测试执行时间因测试用例的复杂性而异，它与编写测试用例所需的时间无关。一个测试用例可能在一分钟内编写完成，但是可能需要几个小时甚至几天的时间来执行。</p>
+<p>执行时间也可以通过其他技术来节省，例如对基于web的应用程序使用浏览器自动填充功能。使用此功能，只需单击鼠标即可填写网页数据，因此无需在每次运行测试时输入数据。也可以考虑按顺序执行测试，以便与一个页面相关的所有测试用例(不包括集成和端到端测试)在进入下一个页面之前被执行。</p>
+<h4 id="为什么要使用测试管理工具？"><a href="#为什么要使用测试管理工具？" class="headerlink" title="为什么要使用测试管理工具？"></a>为什么要使用测试管理工具？</h4><p>测试管理工具可以用来编写测试用例、管理需求、记录缺陷并将缺陷链接到测试用例并生成测试报告。<br>● 在一个地方组织你所有的测试用例将会帮助你减少你的测试用例管理时间。<br>● 测试管理工具可以随时为您提供测试进度的准确状态，帮助您对软件版本做出一些业务决策。<br>● 如果期限紧迫，您可以根据优先级来验证测试用例。<br>● 可以避免重复的测试用例。<br>● 可以有效地跟踪质量保证状态。<br>● 基于发布版本，容易逐步淘汰测试用例的执行。<br>● 良好的测试覆盖率报告。</p>
+<h4 id="如何编写测试用例"><a href="#如何编写测试用例" class="headerlink" title="如何编写测试用例"></a>如何编写测试用例</h4><p>测试用例标识:每个测试用例的唯一标识。遵循一些惯例来指明测试的类型。例如‘TC _ UI _ 1’表示‘用户界面测试用例# 1’。</p>
+<p>测试优先级(低&#x2F;中&#x2F;高):这在测试执行时很有用。业务规则和功能测试用例的测试优先级可以是中等或更高，而次要的用户界面用例可以是低优先级。测试优先级应由审查者设置。</p>
+<p>模块名称–提及主模块或子模块的名称。</p>
+<p>测试设计人: 测试人员姓名</p>
+<p>测试设计日期: 编写的日期</p>
+<p>测试执行人:执行此测试的测试人员的姓名。测试执行后填写。</p>
+<p>测试执行日期:测试执行的日期。</p>
+<p>先决条件:在执行这个测试用例之前必须满足的任何先决条件。列出成功执行这个测试用例的所有先决条件。</p>
+<p>依赖性:提及对其他测试用例或测试需求的任何依赖性。</p>
+<p>测试 标题&#x2F; &#x2F; 名 称: 测试用 例标题 。 例如 ，使 用有效的用户名和密码验证 登 录 页。</p>
+<p>测试 总 结&#x2F; &#x2F; 描述: 简 要描述 测试目 标 。</p>
+<p>测试步骤:详细列出所有测试执行步骤。按照应该执行的顺序编写测试步骤。确保提供尽可能多的细节。提示-为了有效地管理具有较少字段的测试用例，使用这个字段来描述测试条件、测试数据和运行测试的用户角色。</p>
+<p>测试数据:使用测试数据作为这个测试用例的输入。您可以为不同的数据集提供精确的值作为输入。</p>
+<p>预期结果:测试执行后系统输出应该是什么？详细描述预期结果，包括应在屏幕上显示的消息&#x2F;错误。</p>
+<p>后 置 条 件: : 执 行这 个 测试用 例 后 ， 系统应 该 是 什么状态？</p>
+<p>实际结果:实际测试结果应在测试执行后填写。描述测试执行后的系统行为。</p>
+<p>状态( 通 过&#x2F;  失 败 ): 如 果 实 际结 果 不 符 合 预 期结 果 ， 将 该 测试 标 记 为 失 败 。 否则 更 新 为 通过。</p>
+<p>注释&#x2F;评论&#x2F;问题:要支持上述字段，如果有一些特殊情况无法在上述任何字段中描述，或者有与预期或实际结果相关的问题，请在此处提及。</p>
+<p>如 有 必要 ， 添 加 以 下 字段：</p>
+<p>缺陷标识&#x2F;链接:如果测试状态为失败，则包括到缺陷日志的链接或提及缺陷号。</p>
+<p>测试类型&#x2F;关键字:此字段可用于根据测试类型对测试进行分类。例如功能、可用性、业务规则等。</p>
+<p>需求:为其编写测试用例的需求。最好是需求文档的准确章节号。</p>
+<p>附件&#x2F;参考:此字段对于复杂的测试场景非常有用。使用visio图表作为参考来解释测试步骤或预期结果。提供图表或文档实际路径的链接或位置。</p>
+<p>自动化 ？( 是&#x2F; 否 ): 这 个 测试用 例 是 否 是自动化的。 当 测试用 例 自动化 时 ， 跟踪自动化状态很有用。</p>
+<h4 id="测试用例语句基本格式"><a href="#测试用例语句基本格式" class="headerlink" title="测试用例语句基本格式"></a>测试用例语句基本格式</h4><p>核实</p>
+<p>使用【工具名、标签名、对话框等】</p>
+<p>有【条件】</p>
+<p>返回【返回、显示、演示的内容】</p>
+<p>验证:用作测试用例语句的第一个单词。</p>
+<p>使用:识别正在测试的内容。在这里，您可以使用“输入”或“选择”，而不是使用“视情况而定”。</p>
+<p>所有的测试用例都应该简单易懂。不要写长篇大论的解释</p>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>测试，测试基本</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>技术人如何申请专利</title>
+    <url>/Echo/2020/03/01/%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%A6%82%E4%BD%95%E7%94%B3%E8%AF%B7%E4%B8%93%E5%88%A9/</url>
+    <content><![CDATA[<h4 id="什么是专利？"><a href="#什么是专利？" class="headerlink" title="什么是专利？"></a>什么是专利？</h4><p>专利一般是由政府机关或者代表若干国家的区域性组织根据申请而颁发的一种文件，这种文件记载了发明创造的内容，并且在一定时期内产生这样一种法律状态，即获得专利的发明创造在一般情况下他人只有经专利权人许可才能予以实施。在我国，专利分为发明、实用新型和外观设计三种类型。</p>
+<h4 id="有什么好处？"><a href="#有什么好处？" class="headerlink" title="有什么好处？"></a>有什么好处？</h4><p>专利权人可以提高自身资质、获得收益、提高竞争力； 发明人可以获得收益、提高个人竞争力、获得成就感。</p>
+<h4 id="专利说明书长啥样？"><a href="#专利说明书长啥样？" class="headerlink" title="专利说明书长啥样？"></a>专利说明书长啥样？</h4><p><img src="/Echo/2020/03/01/%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%A6%82%E4%BD%95%E7%94%B3%E8%AF%B7%E4%B8%93%E5%88%A9/%E5%8F%91%E6%98%8E%E4%B8%93%E5%88%A9%E8%AF%B4%E6%98%8E%E4%B9%A6.png" alt="发明专利说明书"></p>
+<h5 id="扉页"><a href="#扉页" class="headerlink" title="扉页"></a>扉页</h5><p>专利说明书中的扉页是揭示每件专利的基本信息的文件部分。扉页揭示的基本专利信息包括：专利申请的时间、申请的号码、申请人或专利权人、发明人、发明创造名称、发明创造简要介绍及主图（机械图、电路图、化学结构式等）、发明所属技术领域分类号、公布或授权的时间、文献号、出版专利文件的国家机构等。</p>
+<h5 id="权利要求书"><a href="#权利要求书" class="headerlink" title="权利要求书"></a>权利要求书</h5><p>权利要求书是专利文件中限定专利保护范围的文件部分。权利要求书中至少有一项独立权利要求，还可以有从属权利要求。</p>
+<h5 id="说明书"><a href="#说明书" class="headerlink" title="说明书"></a>说明书</h5><p>说明书是清楚完整地描述发明创造的技术内容的文件部分，附图则用于对说明书文字部分的补充。各国对说明书中发明描述的规定大体相同，以中国专利说明书为例，说明书部分包括：技术领域，背景技术，发明内容，附图说明，实施条例等。</p>
+<h5 id="检索报告"><a href="#检索报告" class="headerlink" title="检索报告"></a>检索报告</h5><p>有些机构出版的专利说明书还附有检索报告。检索报告是专利审查员通过对专利申请所涉及的发明创造进行现有技术检索，找到可进行专利性对比的文件，向专利申请人及公众展示检索结果的一种文件。附有检索报告的专利文件均为申请公布说明书，即未经审查尚未授予专利权的专利文件。检索报告以表格式报告书的形式出版。</p>
+<h4 id="专利申请的要求？"><a href="#专利申请的要求？" class="headerlink" title="专利申请的要求？"></a>专利申请的要求？</h4><p>1、新颖性：是指在申请日以前没有同样的发明或者实用新型在国内外出版物上公开发表过，没有在国内公开使用过或者以其他方式为公众所知，也没有同样的发明或者实用新型由他人向国家专利行政部门提出过申请并且记载在申请日以后公布的专利申请文件中。</p>
+<p>2、创造性：是指同申请日以前已有的技术相比，该实用新型有实质性特点和进步。</p>
+<p>3、实用性：是指该实用新型能够制造或者使用，并且能够产生积极效果。</p>
+<p>4、非智力活动或者规则</p>
+<h4 id="写专利前要想清楚的？"><a href="#写专利前要想清楚的？" class="headerlink" title="写专利前要想清楚的？"></a>写专利前要想清楚的？</h4><p>专利的背景：当前市场上有什么技术，当前技术存在的难点与痛点。（非常重要） 核心创新与收益：你的创新点在哪里，就是牛在哪里？创造的收益如何的。（最好能与专利背景中的难点与痛点互相匹配起来）； 流程：文字+流程图描述最为合适（专利接口人可能并无此方面专业知识</p>
+<h4 id="背景和现有技术怎么写？"><a href="#背景和现有技术怎么写？" class="headerlink" title="背景和现有技术怎么写？"></a>背景和现有技术怎么写？</h4><p>目的 — 说明此专利存在的意义</p>
+<ol>
+<li>关键术语定义：公知术语（如 Java 反射）的定义，多列一些，每个给链接；</li>
+<li>背景技术：泛泛介绍大背景和大前提（实践场景），以助理解为宜，不用过多着墨；</li>
+<li>现有技术：找出最具代表的进行客观的简述，说清缺陷。可提供链接；</li>
+<li>发明目的：针对上述缺陷，可用什么手段来解决它。简述；</li>
+<li>收益：实施本发明（解决问题）后能带来什么收益（指标、效果等）。</li>
+</ol>
+<h4 id="技术关键点和保护点"><a href="#技术关键点和保护点" class="headerlink" title="技术关键点和保护点"></a>技术关键点和保护点</h4><p>1.关键技术点罗列； 2.具体实施过程–说清楚“技术关键点”的具体实现 ① 实现步骤&amp;流程：总流程→细化→再细化 ② 总分结构：类、接口、方法及关系→各方法的描述、总结构→细化 （尽量用图来展示）</p>
+]]></content>
+      <categories>
+        <category>个人</category>
+      </categories>
+      <tags>
+        <tag>个人</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>测试方法</title>
     <url>/Echo/2022/01/29/%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<p>图片是网上找的。测试方法对于所有类型的测试都很常见，不仅因为它是大数据或Hadoop测试，当我们进入正常的手动测试或自动化测试或安全测试，性能测试时也是如此，因此任何类型的测试都遵循相同的方法。<img src="/Echo/2022/01/29/%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95/Testing-Approach.webp" alt="Testing-Approach"></p>
@@ -3722,38 +3809,6 @@
       </categories>
       <tags>
         <tag>测试，测试基本</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>技术人如何申请专利</title>
-    <url>/Echo/2020/03/01/%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%A6%82%E4%BD%95%E7%94%B3%E8%AF%B7%E4%B8%93%E5%88%A9/</url>
-    <content><![CDATA[<h4 id="什么是专利？"><a href="#什么是专利？" class="headerlink" title="什么是专利？"></a>什么是专利？</h4><p>专利一般是由政府机关或者代表若干国家的区域性组织根据申请而颁发的一种文件，这种文件记载了发明创造的内容，并且在一定时期内产生这样一种法律状态，即获得专利的发明创造在一般情况下他人只有经专利权人许可才能予以实施。在我国，专利分为发明、实用新型和外观设计三种类型。</p>
-<h4 id="有什么好处？"><a href="#有什么好处？" class="headerlink" title="有什么好处？"></a>有什么好处？</h4><p>专利权人可以提高自身资质、获得收益、提高竞争力； 发明人可以获得收益、提高个人竞争力、获得成就感。</p>
-<h4 id="专利说明书长啥样？"><a href="#专利说明书长啥样？" class="headerlink" title="专利说明书长啥样？"></a>专利说明书长啥样？</h4><p><img src="/Echo/2020/03/01/%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%A6%82%E4%BD%95%E7%94%B3%E8%AF%B7%E4%B8%93%E5%88%A9/%E5%8F%91%E6%98%8E%E4%B8%93%E5%88%A9%E8%AF%B4%E6%98%8E%E4%B9%A6.png" alt="发明专利说明书"></p>
-<h5 id="扉页"><a href="#扉页" class="headerlink" title="扉页"></a>扉页</h5><p>专利说明书中的扉页是揭示每件专利的基本信息的文件部分。扉页揭示的基本专利信息包括：专利申请的时间、申请的号码、申请人或专利权人、发明人、发明创造名称、发明创造简要介绍及主图（机械图、电路图、化学结构式等）、发明所属技术领域分类号、公布或授权的时间、文献号、出版专利文件的国家机构等。</p>
-<h5 id="权利要求书"><a href="#权利要求书" class="headerlink" title="权利要求书"></a>权利要求书</h5><p>权利要求书是专利文件中限定专利保护范围的文件部分。权利要求书中至少有一项独立权利要求，还可以有从属权利要求。</p>
-<h5 id="说明书"><a href="#说明书" class="headerlink" title="说明书"></a>说明书</h5><p>说明书是清楚完整地描述发明创造的技术内容的文件部分，附图则用于对说明书文字部分的补充。各国对说明书中发明描述的规定大体相同，以中国专利说明书为例，说明书部分包括：技术领域，背景技术，发明内容，附图说明，实施条例等。</p>
-<h5 id="检索报告"><a href="#检索报告" class="headerlink" title="检索报告"></a>检索报告</h5><p>有些机构出版的专利说明书还附有检索报告。检索报告是专利审查员通过对专利申请所涉及的发明创造进行现有技术检索，找到可进行专利性对比的文件，向专利申请人及公众展示检索结果的一种文件。附有检索报告的专利文件均为申请公布说明书，即未经审查尚未授予专利权的专利文件。检索报告以表格式报告书的形式出版。</p>
-<h4 id="专利申请的要求？"><a href="#专利申请的要求？" class="headerlink" title="专利申请的要求？"></a>专利申请的要求？</h4><p>1、新颖性：是指在申请日以前没有同样的发明或者实用新型在国内外出版物上公开发表过，没有在国内公开使用过或者以其他方式为公众所知，也没有同样的发明或者实用新型由他人向国家专利行政部门提出过申请并且记载在申请日以后公布的专利申请文件中。</p>
-<p>2、创造性：是指同申请日以前已有的技术相比，该实用新型有实质性特点和进步。</p>
-<p>3、实用性：是指该实用新型能够制造或者使用，并且能够产生积极效果。</p>
-<p>4、非智力活动或者规则</p>
-<h4 id="写专利前要想清楚的？"><a href="#写专利前要想清楚的？" class="headerlink" title="写专利前要想清楚的？"></a>写专利前要想清楚的？</h4><p>专利的背景：当前市场上有什么技术，当前技术存在的难点与痛点。（非常重要） 核心创新与收益：你的创新点在哪里，就是牛在哪里？创造的收益如何的。（最好能与专利背景中的难点与痛点互相匹配起来）； 流程：文字+流程图描述最为合适（专利接口人可能并无此方面专业知识</p>
-<h4 id="背景和现有技术怎么写？"><a href="#背景和现有技术怎么写？" class="headerlink" title="背景和现有技术怎么写？"></a>背景和现有技术怎么写？</h4><p>目的 — 说明此专利存在的意义</p>
-<ol>
-<li>关键术语定义：公知术语（如 Java 反射）的定义，多列一些，每个给链接；</li>
-<li>背景技术：泛泛介绍大背景和大前提（实践场景），以助理解为宜，不用过多着墨；</li>
-<li>现有技术：找出最具代表的进行客观的简述，说清缺陷。可提供链接；</li>
-<li>发明目的：针对上述缺陷，可用什么手段来解决它。简述；</li>
-<li>收益：实施本发明（解决问题）后能带来什么收益（指标、效果等）。</li>
-</ol>
-<h4 id="技术关键点和保护点"><a href="#技术关键点和保护点" class="headerlink" title="技术关键点和保护点"></a>技术关键点和保护点</h4><p>1.关键技术点罗列； 2.具体实施过程–说清楚“技术关键点”的具体实现 ① 实现步骤&amp;流程：总流程→细化→再细化 ② 总分结构：类、接口、方法及关系→各方法的描述、总结构→细化 （尽量用图来展示）</p>
-]]></content>
-      <categories>
-        <category>个人</category>
-      </categories>
-      <tags>
-        <tag>个人</tag>
       </tags>
   </entry>
   <entry>
@@ -3898,61 +3953,6 @@
       <tags>
         <tag>测试</tag>
         <tag>页面测试</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>如何编写有效的测试用例</title>
-    <url>/Echo/2022/01/15/%E5%A6%82%E4%BD%95%E7%BC%96%E5%86%99%E6%9C%89%E6%95%88%E7%9A%84%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B/</url>
-    <content><![CDATA[<h4 id="什么是测试用例？"><a href="#什么是测试用例？" class="headerlink" title="什么是测试用例？"></a>什么是测试用例？</h4><p>测试用例包含描述输入、动作或事件以及预期响应的组件，以确定应用程序的功能是否正常工作。</p>
-<h4 id="测试用例的级别："><a href="#测试用例的级别：" class="headerlink" title="测试用例的级别："></a>测试用例的级别：</h4><ul>
-<li>级别 1: 您将根据可用的规范和用户文档编写基本的测试用例。</li>
-<li>级别 2: 这是一个实践阶段，在这个阶段，编写测试用例依赖于应用程序的实际功能和系统流程。</li>
-<li>级别3 : 你将分组一些测试用例，并编写一个测试程序。测试过程只不过是一组小的测试用例，通常最多包含 10 个。</li>
-<li>级别 4: 测试用例自动化。这个阶段将帮助测试人员将测试工作集中在新的功能上，而测试自动化将负责回归测试。</li>
-</ul>
-<h4 id="如何开始编写测试用例？"><a href="#如何开始编写测试用例？" class="headerlink" title="如何开始编写测试用例？"></a>如何开始编写测试用例？</h4><p>当您获得软件需求规格(SRS)文档时，您将首先通过需求来理解应用程序的功能和范围。一旦获得了正在开发的功能的完整概述，您将开始为分配给您的模块编写测试用例。首先，将从涵盖 SRS 文档中提到的所有业务规则的功能测试用例开始。</p>
-<p>在编写测试用例时，最好从特定页面或屏幕上的所有需求开始。因此会写以下：<br>● 功能测试，<br>● 业务规则测试，<br>● 导航测试(链接、按钮等)),<br>● 集成测试(与其他模块的集成)，<br>● 安全测试，<br>● 端到端测试，<br>● 阴性测试，<br>● 负载和性能测试</p>
-<h4 id="如何减少测试用例的编写和执行时间？"><a href="#如何减少测试用例的编写和执行时间？" class="headerlink" title="如何减少测试用例的编写和执行时间？"></a>如何减少测试用例的编写和执行时间？</h4><p>● 使用标准测试用例模板来编写所有的测试用例<br>● 在开始编写测试用例之前，清楚地理解需求。<br>● 遵循基于测试类型序列编写测试用例的方法。例如，首先开始编写功能测试用例，然后继续进行用户界面、兼容性、安全性等等。<br>● 如果没有使用任何测试管理工具，那么请使用微软Excel电子表格来编写测试用例。微软 Excel的功能非常强大，你可以用很少的时间编写很多类似的测试用例。例如，为了编写一个包含许多字段的长表单的测试用例，大多数测试用例都是重复的，只是字段名发生了变化。您可以使用电子表格函数在几分钟内编写这些测试用例。如果开始使用测试管理工具，甚至可以导入这些测试用例。建议尽快开始使用。<br>● 为了编写各种排列和组合的测试用例，首先使用真值表格式，然后描述测试用例。<br>● 编写测试用例时使用流程图。这将确保最大的测试覆盖率。此外，您将能够更快地编写涵盖所有用例的测试用例。<br>● 根据应用程序页面&#x2F;屏幕或用例对您的测试用例进行分组。这两种方法对于维护测试用例都是有用且容易的。</p>
-<p>测试执行时间取决于是自动执行还是手动执行。手动测试执行时间因测试用例的复杂性而异，它与编写测试用例所需的时间无关。一个测试用例可能在一分钟内编写完成，但是可能需要几个小时甚至几天的时间来执行。</p>
-<p>执行时间也可以通过其他技术来节省，例如对基于web的应用程序使用浏览器自动填充功能。使用此功能，只需单击鼠标即可填写网页数据，因此无需在每次运行测试时输入数据。也可以考虑按顺序执行测试，以便与一个页面相关的所有测试用例(不包括集成和端到端测试)在进入下一个页面之前被执行。</p>
-<h4 id="为什么要使用测试管理工具？"><a href="#为什么要使用测试管理工具？" class="headerlink" title="为什么要使用测试管理工具？"></a>为什么要使用测试管理工具？</h4><p>测试管理工具可以用来编写测试用例、管理需求、记录缺陷并将缺陷链接到测试用例并生成测试报告。<br>● 在一个地方组织你所有的测试用例将会帮助你减少你的测试用例管理时间。<br>● 测试管理工具可以随时为您提供测试进度的准确状态，帮助您对软件版本做出一些业务决策。<br>● 如果期限紧迫，您可以根据优先级来验证测试用例。<br>● 可以避免重复的测试用例。<br>● 可以有效地跟踪质量保证状态。<br>● 基于发布版本，容易逐步淘汰测试用例的执行。<br>● 良好的测试覆盖率报告。</p>
-<h4 id="如何编写测试用例"><a href="#如何编写测试用例" class="headerlink" title="如何编写测试用例"></a>如何编写测试用例</h4><p>测试用例标识:每个测试用例的唯一标识。遵循一些惯例来指明测试的类型。例如‘TC _ UI _ 1’表示‘用户界面测试用例# 1’。</p>
-<p>测试优先级(低&#x2F;中&#x2F;高):这在测试执行时很有用。业务规则和功能测试用例的测试优先级可以是中等或更高，而次要的用户界面用例可以是低优先级。测试优先级应由审查者设置。</p>
-<p>模块名称–提及主模块或子模块的名称。</p>
-<p>测试设计人: 测试人员姓名</p>
-<p>测试设计日期: 编写的日期</p>
-<p>测试执行人:执行此测试的测试人员的姓名。测试执行后填写。</p>
-<p>测试执行日期:测试执行的日期。</p>
-<p>先决条件:在执行这个测试用例之前必须满足的任何先决条件。列出成功执行这个测试用例的所有先决条件。</p>
-<p>依赖性:提及对其他测试用例或测试需求的任何依赖性。</p>
-<p>测试 标题&#x2F; &#x2F; 名 称: 测试用 例标题 。 例如 ，使 用有效的用户名和密码验证 登 录 页。</p>
-<p>测试 总 结&#x2F; &#x2F; 描述: 简 要描述 测试目 标 。</p>
-<p>测试步骤:详细列出所有测试执行步骤。按照应该执行的顺序编写测试步骤。确保提供尽可能多的细节。提示-为了有效地管理具有较少字段的测试用例，使用这个字段来描述测试条件、测试数据和运行测试的用户角色。</p>
-<p>测试数据:使用测试数据作为这个测试用例的输入。您可以为不同的数据集提供精确的值作为输入。</p>
-<p>预期结果:测试执行后系统输出应该是什么？详细描述预期结果，包括应在屏幕上显示的消息&#x2F;错误。</p>
-<p>后 置 条 件: : 执 行这 个 测试用 例 后 ， 系统应 该 是 什么状态？</p>
-<p>实际结果:实际测试结果应在测试执行后填写。描述测试执行后的系统行为。</p>
-<p>状态( 通 过&#x2F;  失 败 ): 如 果 实 际结 果 不 符 合 预 期结 果 ， 将 该 测试 标 记 为 失 败 。 否则 更 新 为 通过。</p>
-<p>注释&#x2F;评论&#x2F;问题:要支持上述字段，如果有一些特殊情况无法在上述任何字段中描述，或者有与预期或实际结果相关的问题，请在此处提及。</p>
-<p>如 有 必要 ， 添 加 以 下 字段：</p>
-<p>缺陷标识&#x2F;链接:如果测试状态为失败，则包括到缺陷日志的链接或提及缺陷号。</p>
-<p>测试类型&#x2F;关键字:此字段可用于根据测试类型对测试进行分类。例如功能、可用性、业务规则等。</p>
-<p>需求:为其编写测试用例的需求。最好是需求文档的准确章节号。</p>
-<p>附件&#x2F;参考:此字段对于复杂的测试场景非常有用。使用visio图表作为参考来解释测试步骤或预期结果。提供图表或文档实际路径的链接或位置。</p>
-<p>自动化 ？( 是&#x2F; 否 ): 这 个 测试用 例 是 否 是自动化的。 当 测试用 例 自动化 时 ， 跟踪自动化状态很有用。</p>
-<h4 id="测试用例语句基本格式"><a href="#测试用例语句基本格式" class="headerlink" title="测试用例语句基本格式"></a>测试用例语句基本格式</h4><p>核实</p>
-<p>使用【工具名、标签名、对话框等】</p>
-<p>有【条件】</p>
-<p>返回【返回、显示、演示的内容】</p>
-<p>验证:用作测试用例语句的第一个单词。</p>
-<p>使用:识别正在测试的内容。在这里，您可以使用“输入”或“选择”，而不是使用“视情况而定”。</p>
-<p>所有的测试用例都应该简单易懂。不要写长篇大论的解释</p>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>测试，测试基本</tag>
       </tags>
   </entry>
   <entry>
