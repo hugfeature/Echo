@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 6.0.0">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.0.0">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/Echo/images/apple-touch-icon-next.png">
@@ -12,7 +11,6 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/Echo/images/favicon-16x16-next.png">
   <link rel="mask-icon" href="/Echo/images/logo.svg" color="#222">
   <meta name="msvalidate.01" content="58AE2D56435A76DA1BF1341C2E6930C1">
-  <meta name="baidu-site-verification" content="code-aUPFr2CtD9">
 
 <link rel="stylesheet" href="/Echo/css/main.css">
 
@@ -21,7 +19,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"hugfeature.github.io","root":"/Echo/","images":"/Echo/images","scheme":"Gemini","darkmode":false,"version":"8.8.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":{"gitalk":{"order":-2}}},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/Echo/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Echo/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"hugfeature.github.io","root":"/Echo/","images":"/Echo/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/Echo/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Echo/js/config.js"></script>
 <meta name="description" content="EMQXEMQ X (Erlang&#x2F;Enterprise&#x2F;Elastic MQTT Broker) 是基于 Erlang&#x2F;OTP 平台开发的开源物联网 MQTT 消息服务器。 Erlang&#x2F;OTP是出色的软实时 (Soft-Realtime)、低延时 (Low-Latency)、分布式 (Distributed)的语言平台。 MQTT 是轻量的 (Light">
 <meta property="og:type" content="article">
 <meta property="og:title" content="emqtt_bench安装与压测MQTTbroker">
@@ -53,6 +51,7 @@
 
 
 
+
   <noscript>
     <link rel="stylesheet" href="/Echo/css/noscript.css">
   </noscript>
@@ -76,7 +75,7 @@
 
     <a href="/Echo/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">测试的名义</h1>
+      <p class="site-title">测试的名义</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">Stay hungry, Stay foolish</p>
@@ -153,7 +152,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#EMQX"><span class="nav-text">EMQX</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#emqtt-bench"><span class="nav-text">emqtt_bench</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#EMQX%E5%AE%89%E8%A3%85"><span class="nav-text">EMQX安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#emqtt-bench%E5%AE%89%E8%A3%85"><span class="nav-text">emqtt_bench安装</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-%E5%89%8D%E6%8F%90%E5%87%86%E5%A4%87"><span class="nav-text">1.前提准备</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-%E5%AE%89%E8%A3%85Erlang-22-3"><span class="nav-text">2.安装Erlang 22.3</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-%E5%AE%89%E8%A3%85%E6%96%B0%E7%89%88git%EF%BC%88%E5%9B%A0%E5%90%8E%E7%BB%AD%E5%9C%A8emqtt-bench-make%E6%97%B6centos7%E8%87%AA%E5%B8%A6git%E7%89%88%E6%9C%AC%E8%BE%83%E4%BD%8E%E5%AF%BC%E8%87%B4%E9%97%AE%E9%A2%98%EF%BC%89"><span class="nav-text">3.安装新版git（因后续在emqtt_bench make时centos7自带git版本较低导致问题）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-make%E5%A4%B1%E8%B4%A5%EF%BC%88%E6%8A%A5%E9%94%99GUN%E7%89%88%E6%9C%AC%EF%BC%89"><span class="nav-text">1.make失败（报错GUN版本）</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-%E6%9C%89%E9%83%A8%E5%88%86git%E8%B5%84%E6%BA%90%E4%B8%8B%E8%BD%BD%E5%A4%B1%E8%B4%A5"><span class="nav-text">2.有部分git资源下载失败</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-text">使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%9E%E5%90%90%E9%87%8F%E6%80%A7%E8%83%BD%E5%8E%8B%E6%B5%8B"><span class="nav-text">吞吐量性能压测</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#EMQX"><span class="nav-number">1.</span> <span class="nav-text">EMQX</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#emqtt-bench"><span class="nav-number">2.</span> <span class="nav-text">emqtt_bench</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#EMQX%E5%AE%89%E8%A3%85"><span class="nav-number">3.</span> <span class="nav-text">EMQX安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#emqtt-bench%E5%AE%89%E8%A3%85"><span class="nav-number">4.</span> <span class="nav-text">emqtt_bench安装</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-%E5%89%8D%E6%8F%90%E5%87%86%E5%A4%87"><span class="nav-number">4.0.1.</span> <span class="nav-text">1.前提准备</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-%E5%AE%89%E8%A3%85Erlang-22-3"><span class="nav-number">4.0.2.</span> <span class="nav-text">2.安装Erlang 22.3</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-%E5%AE%89%E8%A3%85%E6%96%B0%E7%89%88git%EF%BC%88%E5%9B%A0%E5%90%8E%E7%BB%AD%E5%9C%A8emqtt-bench-make%E6%97%B6centos7%E8%87%AA%E5%B8%A6git%E7%89%88%E6%9C%AC%E8%BE%83%E4%BD%8E%E5%AF%BC%E8%87%B4%E9%97%AE%E9%A2%98%EF%BC%89"><span class="nav-number">4.0.3.</span> <span class="nav-text">3.安装新版git（因后续在emqtt_bench make时centos7自带git版本较低导致问题）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-make%E5%A4%B1%E8%B4%A5%EF%BC%88%E6%8A%A5%E9%94%99GUN%E7%89%88%E6%9C%AC%EF%BC%89"><span class="nav-number">5.0.1.</span> <span class="nav-text">1.make失败（报错GUN版本）</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-%E6%9C%89%E9%83%A8%E5%88%86git%E8%B5%84%E6%BA%90%E4%B8%8B%E8%BD%BD%E5%A4%B1%E8%B4%A5"><span class="nav-number">5.0.2.</span> <span class="nav-text">2.有部分git资源下载失败</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-number">6.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%9E%E5%90%90%E9%87%8F%E6%80%A7%E8%83%BD%E5%8E%8B%E6%B5%8B"><span class="nav-number">7.</span> <span class="nav-text">吞吐量性能压测</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -162,6 +161,28 @@
   <p class="site-author-name" itemprop="name">丑牛</p>
   <div class="site-description" itemprop="description">曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！</div>
 </div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-categories">
+          <a href="/Echo/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/Echo/tags/">
+        <span class="site-state-item-count">42</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hugfeature/" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hugfeature&#x2F;" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
 
 
 
@@ -455,6 +476,23 @@
     
 
     <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>丑牛
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://hugfeature.github.io/Echo/2021/12/15/emqtt-bench%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8E%8B%E6%B5%8BMQTTbroker/" title="emqtt_bench安装与压测MQTTbroker">https://hugfeature.github.io/Echo/2021/12/15/emqtt-bench安装与压测MQTTbroker/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
           <div class="post-tags">
               <a href="/Echo/tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" rel="tag"># 性能测试</a>
               <a href="/Echo/tags/mqtt/" rel="tag"># mqtt</a>
@@ -482,6 +520,8 @@
 
 
 
+
+    <div class="comments gitalk-container"></div>
 </div>
   </main>
 
@@ -527,6 +567,8 @@
 <script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
 <script src="/Echo/js/third-party/search/local-search.js"></script>
 
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdn.jsdelivr.net/npm/pdfobject@2.2.7/pdfobject.min.js","integrity":"sha256-ph3Dk89VmuTVXG6x/RDzk53SU9LPdAh1tpv0UvnDZ2I="},"url":"/Echo/lib/pdf/web/viewer.html"}</script>
+  <script src="/Echo/js/third-party/tags/pdf.js"></script>
 
 
 
@@ -537,6 +579,10 @@
 
 
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"hugfeature","repo":"myBlogTalk","client_id":"f4b1fae431a4943a75f3","client_secret":"2b6995c484ff0a0a920d65ac7fd5bb1bf13fb2f2","admin_user":null,"distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"f4f29168c1ff5f471ef830ba73b912c0"}</script>
+<script src="/Echo/js/third-party/comments/gitalk.js"></script>
 
 </body>
 </html>
