@@ -163,7 +163,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/Echo/tags/">
-        <span class="site-state-item-count">42</span>
+        <span class="site-state-item-count">45</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -203,6 +203,118 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/2021/11/24/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%BB%84%E4%BB%B6kafka%E6%B5%8B%E8%AF%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Echo/images/avatar.gif">
+      <meta itemprop="name" content="丑牛">
+      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="测试的名义">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Echo/2021/11/24/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%BB%84%E4%BB%B6kafka%E6%B5%8B%E8%AF%95/" class="post-title-link" itemprop="url">kafka测试</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-11-24 15:19:11" itemprop="dateCreated datePublished" datetime="2021-11-24T15:19:11+08:00">2021-11-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Echo/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h5 id="kafka是一个事件流平台"><a href="#kafka是一个事件流平台" class="headerlink" title="kafka是一个事件流平台"></a>kafka是一个事件流平台</h5><ul>
+<li><p>什么事件流？，事件流是从事件源实时捕获数据的做法 如数据库、传感器、移动设备、云服务和流形式的软件应用程序 事件； 持久地存储这些事件流以供以后检索； 操作、处理和反应 实时和可追溯​​的事件流； 并将事件流路由到不同的 根据需要使用目标技术。 事件流因此确保了连续的流和解释 数据，以便正确的信息在正确的时间出现在正确的位置。</p>
+</li>
+<li><p>kafka的功能？</p>
+<ol>
+<li><p>要 发布 （写）和 订阅 （读取）的事件流，包括连续的导入&#x2F;导出 您来自其他系统的数据。</p>
+</li>
+<li><p>持久并可靠存储你想要的事件流</p>
+</li>
+<li><p><strong>处理</strong> 事件发生时或追溯性 事件流。</p>
+</li>
+</ol>
+<h5 id="kafka基本概念了解"><a href="#kafka基本概念了解" class="headerlink" title="kafka基本概念了解"></a>kafka基本概念了解</h5></li>
+<li><p>生产者：<strong>生产者</strong> 是那些向 Kafka 发布（写入）事件的客户端应用程序</p>
+</li>
+<li><p>消费者：订阅（读取和处理）这些事件的</p>
+</li>
+<li><p>主题：主题类似于文件系统中的文件夹，事件就是该文件夹中的文件</p>
+</li>
+<li><p>分区：主题是 <strong>分区的</strong> ，一个主题可以分布在位于不同 Kafka 代理的多个“桶”上。</p>
+</li>
+<li><p>broker：一个 Kafka 服务器也称为 Broker，它接受生产者发送的消息并存入磁盘；Broker 同时服务消费者拉取分区消息的请求，返回目前已经提交的消息一个 Kafka 服务器也称为 Broker，它接受生产者发送的消息并存入磁盘；Broker 同时服务消费者拉取分区消息的请求，返回目前已经提交的消息</p>
+</li>
+</ul>
+<h5 id="kafka功能测试-如何验证数据的一致性和有序性"><a href="#kafka功能测试-如何验证数据的一致性和有序性" class="headerlink" title="kafka功能测试-如何验证数据的一致性和有序性"></a>kafka功能测试-如何验证数据的一致性和有序性</h5><p>可以创建一个单分区的Topic，然后自己写一个生产者程序，程序发送的事件流可以从设定值从1到N自增长；写一个消费者程序，单线程消费，将消费到的数据写进文件中，观测有序性；还可以对kafka服务进程直接杀死，进行故障模拟。</p>
+<h5 id="kafka性能测试"><a href="#kafka性能测试" class="headerlink" title="kafka性能测试"></a>kafka性能测试</h5><p>性能压测是系统性问题，需要考量对整体业务的掌握程序，以及对kafka的熟悉程度。压测过程中涉及压测工具选取，监测kafka，压测结果分析。</p>
+<ul>
+<li><p>明确压测场景：明确要压测的场景</p>
+</li>
+<li><p>测试环境准备：在服务器选择，kafka版本，kafka架构以及相关配置参数、业务数据等尽可能与线上环境保持一致</p>
+</li>
+<li><p>压测工具选取：生产者压测使用kafka自带的测试工具kafka-producer-perf-test.sh来进行测试，发送数据推荐使用线上数据导出到本地文件，随机读取进行</p>
+</li>
+<li><p>压测过程观测：首先开启kafka的JMX端口，①可以使用滴滴的Logikm(但是需要自己搭建部署)；②自己通过JMX端口以及官方原生API获取相关指标，CPU、内存、网络等监测可以使用nomn或者top命令来监测</p>
+</li>
+<li><p>压测结果分析：理想状态是系统资源使用达到瓶颈，如未达到则寻找软件资源瓶颈，配合堆栈分析，发现线程阻塞点。</p>
+</li>
+<li><p>压测报告呈现：一般有测试环境说明、测试场景说明、测试过程说明、测试结论（在当前场景下的最佳资源使用以及配置）。</p>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -2626,101 +2738,6 @@
 <li>限制项目的语言：language:语言</li>
 </ul>
 <p>所以以上github搜索的小技巧。你学废了吗？</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/2020/09/12/Kafka%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Echo/images/avatar.gif">
-      <meta itemprop="name" content="丑牛">
-      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="测试的名义">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Echo/2020/09/12/Kafka%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/" class="post-title-link" itemprop="url">Kafka常见命令</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-09-12 09:44:08" itemprop="dateCreated datePublished" datetime="2020-09-12T09:44:08+08:00">2020-09-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Echo/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h4 id="kafka-启动命令"><a href="#kafka-启动命令" class="headerlink" title="kafka 启动命令"></a>kafka 启动命令</h4><p>dir：kafka 安装位置</p>
-<p>指定对应的配置文件启动</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kafka-server-start.sh  [dir]config/server.properties</span><br></pre></td></tr></table></figure>
-
-<p>以后台方式启动</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kafka-server-start.sh  -daemon [dir]config/server.properties</span><br></pre></td></tr></table></figure>
-
-<p>指定JMX 端口启动，指定JMX是为了可以方便的监控kafka集群（使用滴滴的logi会用到此端口）</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JMX_PORT=9991 kafka-server-start.sh  -daemon [dir]config/server.properties</span><br></pre></td></tr></table></figure>
-
-<h4 id="kafka-停止命令"><a href="#kafka-停止命令" class="headerlink" title="kafka 停止命令"></a>kafka 停止命令</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kafka-server-stop.sh</span><br></pre></td></tr></table></figure>
-
-<p>或者</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#1 jps 找到kafka的pid</span></span><br><span class="line">jps</span><br><span class="line"><span class="comment">#2 通过kill -9 杀死进行</span></span><br><span class="line"><span class="built_in">kill</span> -9 pid</span><br></pre></td></tr></table></figure>
-
-<h4 id="kafka-topic-相关命令"><a href="#kafka-topic-相关命令" class="headerlink" title="kafka topic 相关命令"></a>kafka topic 相关命令</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#1.查看集群下所有topic</span></span><br><span class="line">kafka-topics --zookeeper ZKserverIP:2181 --list</span><br><span class="line"></span><br><span class="line"><span class="comment">#2.具体查看某个topic 默认端口号为2181，应根据自己配置修改</span></span><br><span class="line">kafka-topics --describe --zookeeper ZKserverIP:2181  --topic <span class="built_in">test</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#3.创建topic</span></span><br><span class="line">kafka-topics --create --zookeeper ZKserverIP:2181 --replication-factor 1 --partitions 3 --topic <span class="built_in">test</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#4.删除某个topic</span></span><br><span class="line"><span class="comment">#删除之前需要先将server.properties文件中配置的delete.topic.enable=true更改一下</span></span><br><span class="line">kafka-topics --delete --zookeeper ZKserverIP:2181 --topic <span class="built_in">test</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#5.console创建生产者往topic中写入数据 默认端口号9092，根据自己配置修改端口号</span></span><br><span class="line">kafka-console-producer --broker-list borkerServer:9092 --topic <span class="built_in">test</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#6.console创建消费者消费topic数据</span></span><br><span class="line">kafka-console-consumer --bootstrap-server borkerServer:9092 --topic <span class="built_in">test</span> --from-beginning</span><br><span class="line"></span><br><span class="line"><span class="comment">#7查看topic上面的消息数  --time -1 表示要获取当前topic所有分区当前最大位移， --time -2 表示获取当前最早位移</span></span><br><span class="line">kafka-run-class kafka.tools.GetOffsetShell --broker-list ZKserverIP:9092 --topic <span class="built_in">test</span> --time -1</span><br><span class="line"></span><br><span class="line"><span class="comment">#8修改topic分区数 注意：分区数量只能增加，不能减少</span></span><br><span class="line">kafka-topics --zookeeper ZKserverIP:2181 --alter --topic <span class="built_in">test</span> --partitions 3</span><br><span class="line"></span><br><span class="line"><span class="comment">#9查看消费组信息</span></span><br><span class="line">kafka-consumer-groups --bootstrap-server borkerServer:9092 --describe --group convert1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 10describe有两个参数用于找出有问题的分区 </span></span><br><span class="line"><span class="comment"># --unavailable-partitions：列出所有没有首领的分区，这些分区已经处于离线状态，对于生产者和消费者来说是不可用的</span></span><br><span class="line"><span class="comment"># --under-replicated-partitions：列出所有包含不同步副本的分区。</span></span><br><span class="line">kafka-topics.sh --zookeeper ZKserverIP:2181 --describe --unavailable-partitions</span><br><span class="line">kafka-topics.sh --zookeeper ZKserverIP:2181 --describe --under-replicated-partitions</span><br></pre></td></tr></table></figure>
-
-<h4 id="kafka-生产者"><a href="#kafka-生产者" class="headerlink" title="kafka 生产者"></a>kafka 生产者</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 有多个broker，可以用逗号分隔开都写上</span></span><br><span class="line">kafka-console-producer.sh --broker-list brokerServer:9092 --topic <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="kafka-消费者"><a href="#kafka-消费者" class="headerlink" title="kafka 消费者"></a>kafka 消费者</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看消费者最新消费到的消息</span></span><br><span class="line">kafka-console-consumer.sh --zookeeper ZKserverIP:2181  --topic <span class="built_in">test</span></span><br><span class="line"><span class="comment"># 从第一条信息查看消费者消费到的消息</span></span><br><span class="line">kafka-console-consumer.sh --zookeeper ZKserverIP:2181 --from-beginning --topic <span class="built_in">test</span></span><br><span class="line"><span class="comment"># 列出所有消费者群组</span></span><br><span class="line">kafka-consumer-groups.sh --zookeeper ZKserverIP:2181 --list</span><br><span class="line"><span class="comment"># 列出test_group消费组的详细信息</span></span><br><span class="line">kafka-consumer-groups.sh --zookeeper  ZKserverIP:2181 --describe --group test_group</span><br><span class="line"><span class="comment"># 删除消费者群组</span></span><br><span class="line">kafka-consumer-groups.sh --zookeeper ZKserverIP:2181 --delete --group test_group</span><br><span class="line"><span class="comment"># 删除消费者群组中的topic</span></span><br><span class="line">kafka-consumer-groups.sh --zookeeper ZKserverIP:2181 --delete --group test_group --topic <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="kafka-run-class命令"><a href="#kafka-run-class命令" class="headerlink" title="kafka-run-class命令"></a>kafka-run-class命令</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导出偏移量</span></span><br><span class="line">kafka-run-class.sh kafka.tools.ExportZkOffsets --zkconnect ZKserverIP:2181 --group testGroup --output-file test_group_offsets</span><br><span class="line"><span class="comment"># 查看test_group_offsets</span></span><br><span class="line">cat test_group_offsets</span><br><span class="line"><span class="comment"># 导入偏移量</span></span><br><span class="line">kafka-run-class.sh kafka.tools.ImportZkOffsets --zkconnect ZKserverIP:2181 --input-file test_group_offsets</span><br><span class="line"><span class="comment"># segment片段信息</span></span><br><span class="line">kafka-run-class.sh kafka.tools.DumpLogSegments --files [dir]/logs/test-1/00000000000000000000.log</span><br><span class="line"><span class="comment"># segment片段信息 -print-data-log</span></span><br><span class="line">kafka-run-class.sh kafka.tools.DumpLogSegments --files [dir]/logs/test-1/00000000000000000000.log -print-data-log</span><br></pre></td></tr></table></figure>
-
 
       
     </div>
