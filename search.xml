@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>20个实用软件测试技巧</title>
+    <url>/Echo/2021/05/01/20%E4%B8%AA%E5%AE%9E%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%8A%80%E5%B7%A7/</url>
+    <content><![CDATA[<p>以下是个人总结的20个软件测试过程中的技巧</p>
+<p>1、学会彻底分析测试结果。不要忽略任何测试结果。最终测试结果可能是”pass”或”fail”，但如果对”fail”的根本原因进行故障分析并提供问题的解决方案。如果测试人员不仅记录错误，而且还提供解决方案，那么待遇可想而知。</p>
+<p>2、了解如何在每次测试应用程序时最大限度地提高测试覆盖率。100%的测试覆盖率可能是不可能的，但是，总是可以尝试接近它。</p>
+<p>3、为了确保最大的测试覆盖率，请将被测应用程序 分解为较小的功能模块。在单个单元模块上编写测试用例。此外，如果可以的话，将这些模块分解成更小的部分，拆分到不能拆分为止。</p>
+<p>假设我们已将网站应用程序划分为多个模块，并且”添加用户信息”是其中一个模块。可以将此用户信息页面分解为较小的部分，用于编写测试用例：UI测试、安全测试、用户信息表单的功能测试等部分。在输入字段中应用所有形式的字段类型和大小测试、否定和验证测试，并编写所有此类测试用例以获得最大覆盖率。</p>
+<p>4、在编写测试用例时，我们必须首先为预期的功能编写测试用例，就是根据需求为正向条件编写测试用例。然后为反向或者无效条件编写测试用例。这些将涵盖受测应用程序的预期和意外行为。</p>
+<p>5、积极思考。开始测试应用程序，目的是查找bug&#x2F;错误。不要事先认为应用程序中不会有任何错误。如果以查找错误为目的测试应用程序，那么一定会成功找到这些微妙的bug。</p>
+<p>6、在需求分析和设计阶段编写测试用例。通过这种方式，您可以确保所有要求都是可测试的。</p>
+<p>7、在编写代码之前，使测试用例可供开发人员使用。不要一直等待获得最终的应用程序版本才开始编写测试用例进行测试，认为这样可以记录更多错误。让开发人员彻底分析测试用例，以开发高质量的应用程序。这也将节省返工时间。</p>
+<p>8、如果可以，对测试用例进行分组用以进行回归测试，将确保快速有效的手动回归测试。</p>
+<p>9、需要关键响应时间的应用程序应进行全面的性能测试。性能测试是许多应用程序的关键部分。对于手动测试测试人员来说这是最忽略的部分，因为在性能测试中缺乏所需的大量数据。寻找测试应用程序性能的方法。如果无法手动创建测试数据，请编写一些脚本来创建用于性能测试的测试数据，或要求开发人员为您编写一个。</p>
+<p>10、程序员不应该测试自己的代码。开发应用程序的基本单元测试应该足以让开发人员为测试人员发布应用程序。但是测试人员不应强迫开发人员发布产品进行测试。从测试领导到测试经理，每个人都知道模块&#x2F;更新何时发布进行测试，他们可以相应地估计测试时间。这在敏捷项目环境中是常见的。</p>
+<p>11、超越需求测试。测试应用程序不应执行的操作。</p>
+<p>12、在进行回归测试时，请使用 Bug 图（bug管理工具生成）。 bug 图可用于预测应用程序中最可能出现 bug 部分。</p>
+<p>13、记下在测试时学到的新术语和概念。在测试任何应用程序时保持文本文件处于打开状态。记录其中的测试进度和观察结果。在准备最终测试发布报告时使用记录的观察结果。这个习惯将帮助我们提供完整明确的测试报告和发布详细信息。</p>
+<p>14、很多时候，测试人员或开发人员会对受测应用程序的代码库进行更改。这是开发或测试环境中的必要步骤，避免像在银行项目中那样执行实时交易处理。记下为测试目的所做的所有此类代码更改，并在最终发布时确保已从最终的客户端部署文件资源中删除了所有这些更改。</p>
+<p>15、使开发人员远离测试环境。这是检测发布或部署文档中缺少的任何配置更改的必需步骤。有时，开发人员会进行一些系统或应用程序配置更改，但忘记在部署步骤中提及这些更改。如果开发人员无法访问测试环境，他们就不会意外地在测试环境中进行此类更改，以及如何在正确位置捕获的缺失内容。</p>
+<p>16、从软件需求和设计阶段开始让测试人员参与进来是一种很好的做法。通过这种方式，测试人员可以获得有关应用程序准确的信息，从而获得详细的测试覆盖率。如果您没有被要求参与此开发周期，那么您可以向您的主管或经理提出请求，让您的测试团队参与所有决策过程或会议。</p>
+<p>17、测试团队应与其组织中的其他团队分享最佳测试实践和经验。</p>
+<p>18、增加与开发人员的沟通，以了解有关产品的更多信息。尽可能进行面对面的沟通，以快速解决争议并避免任何误解。但是，当您了解要求或解决任何争议时，请确保以与电子邮件相同的覆盖通信方式进行沟通。不要相信任何口头内容。（这个要自己悟）</p>
+<p>19、不要没有时间去做优先级高的测试任务。将测试工作的优先级从高到低排序，并相应地规划您的工作。分析所有相关风险，确定工作的优先级。</p>
+<p>20、写一份清晰，描述性和明确的错误报告。不仅要提供详细bug描述和发现步骤，还要提供bug的影响和所有可能的解决方案。</p>
+<p>永远不要忘记，测试是一项创造性和具有挑战性的任务。这写完全取决于您如何处理这个挑战的技能和经验。</p>
+<p><strong>交给您：</strong></p>
+<p>在下面的评论中分享您自己的测试经验、想法或测试秘诀肯定会使本文更加有趣和有用！</p>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>测试技巧</tag>
+        <tag>测试经验</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2022年软件测试趋势</title>
     <url>/Echo/2022/02/06/2022%E5%B9%B4%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E8%B6%8B%E5%8A%BF/</url>
     <content><![CDATA[<p>技术呈指数级和前所未有的变化影响了组织开发、验证、交付和操作软件的方式。</p>
@@ -36,43 +73,6 @@
         <tag>自动化测试</tag>
         <tag>devops</tag>
         <tag>敏捷测试</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>20个实用软件测试技巧</title>
-    <url>/Echo/2021/05/01/20%E4%B8%AA%E5%AE%9E%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%8A%80%E5%B7%A7/</url>
-    <content><![CDATA[<p>以下是个人总结的20个软件测试过程中的技巧</p>
-<p>1、学会彻底分析测试结果。不要忽略任何测试结果。最终测试结果可能是”pass”或”fail”，但如果对”fail”的根本原因进行故障分析并提供问题的解决方案。如果测试人员不仅记录错误，而且还提供解决方案，那么待遇可想而知。</p>
-<p>2、了解如何在每次测试应用程序时最大限度地提高测试覆盖率。100%的测试覆盖率可能是不可能的，但是，总是可以尝试接近它。</p>
-<p>3、为了确保最大的测试覆盖率，请将被测应用程序 分解为较小的功能模块。在单个单元模块上编写测试用例。此外，如果可以的话，将这些模块分解成更小的部分，拆分到不能拆分为止。</p>
-<p>假设我们已将网站应用程序划分为多个模块，并且”添加用户信息”是其中一个模块。可以将此用户信息页面分解为较小的部分，用于编写测试用例：UI测试、安全测试、用户信息表单的功能测试等部分。在输入字段中应用所有形式的字段类型和大小测试、否定和验证测试，并编写所有此类测试用例以获得最大覆盖率。</p>
-<p>4、在编写测试用例时，我们必须首先为预期的功能编写测试用例，就是根据需求为正向条件编写测试用例。然后为反向或者无效条件编写测试用例。这些将涵盖受测应用程序的预期和意外行为。</p>
-<p>5、积极思考。开始测试应用程序，目的是查找bug&#x2F;错误。不要事先认为应用程序中不会有任何错误。如果以查找错误为目的测试应用程序，那么一定会成功找到这些微妙的bug。</p>
-<p>6、在需求分析和设计阶段编写测试用例。通过这种方式，您可以确保所有要求都是可测试的。</p>
-<p>7、在编写代码之前，使测试用例可供开发人员使用。不要一直等待获得最终的应用程序版本才开始编写测试用例进行测试，认为这样可以记录更多错误。让开发人员彻底分析测试用例，以开发高质量的应用程序。这也将节省返工时间。</p>
-<p>8、如果可以，对测试用例进行分组用以进行回归测试，将确保快速有效的手动回归测试。</p>
-<p>9、需要关键响应时间的应用程序应进行全面的性能测试。性能测试是许多应用程序的关键部分。对于手动测试测试人员来说这是最忽略的部分，因为在性能测试中缺乏所需的大量数据。寻找测试应用程序性能的方法。如果无法手动创建测试数据，请编写一些脚本来创建用于性能测试的测试数据，或要求开发人员为您编写一个。</p>
-<p>10、程序员不应该测试自己的代码。开发应用程序的基本单元测试应该足以让开发人员为测试人员发布应用程序。但是测试人员不应强迫开发人员发布产品进行测试。从测试领导到测试经理，每个人都知道模块&#x2F;更新何时发布进行测试，他们可以相应地估计测试时间。这在敏捷项目环境中是常见的。</p>
-<p>11、超越需求测试。测试应用程序不应执行的操作。</p>
-<p>12、在进行回归测试时，请使用 Bug 图（bug管理工具生成）。 bug 图可用于预测应用程序中最可能出现 bug 部分。</p>
-<p>13、记下在测试时学到的新术语和概念。在测试任何应用程序时保持文本文件处于打开状态。记录其中的测试进度和观察结果。在准备最终测试发布报告时使用记录的观察结果。这个习惯将帮助我们提供完整明确的测试报告和发布详细信息。</p>
-<p>14、很多时候，测试人员或开发人员会对受测应用程序的代码库进行更改。这是开发或测试环境中的必要步骤，避免像在银行项目中那样执行实时交易处理。记下为测试目的所做的所有此类代码更改，并在最终发布时确保已从最终的客户端部署文件资源中删除了所有这些更改。</p>
-<p>15、使开发人员远离测试环境。这是检测发布或部署文档中缺少的任何配置更改的必需步骤。有时，开发人员会进行一些系统或应用程序配置更改，但忘记在部署步骤中提及这些更改。如果开发人员无法访问测试环境，他们就不会意外地在测试环境中进行此类更改，以及如何在正确位置捕获的缺失内容。</p>
-<p>16、从软件需求和设计阶段开始让测试人员参与进来是一种很好的做法。通过这种方式，测试人员可以获得有关应用程序准确的信息，从而获得详细的测试覆盖率。如果您没有被要求参与此开发周期，那么您可以向您的主管或经理提出请求，让您的测试团队参与所有决策过程或会议。</p>
-<p>17、测试团队应与其组织中的其他团队分享最佳测试实践和经验。</p>
-<p>18、增加与开发人员的沟通，以了解有关产品的更多信息。尽可能进行面对面的沟通，以快速解决争议并避免任何误解。但是，当您了解要求或解决任何争议时，请确保以与电子邮件相同的覆盖通信方式进行沟通。不要相信任何口头内容。（这个要自己悟）</p>
-<p>19、不要没有时间去做优先级高的测试任务。将测试工作的优先级从高到低排序，并相应地规划您的工作。分析所有相关风险，确定工作的优先级。</p>
-<p>20、写一份清晰，描述性和明确的错误报告。不仅要提供详细bug描述和发现步骤，还要提供bug的影响和所有可能的解决方案。</p>
-<p>永远不要忘记，测试是一项创造性和具有挑战性的任务。这写完全取决于您如何处理这个挑战的技能和经验。</p>
-<p><strong>交给您：</strong></p>
-<p>在下面的评论中分享您自己的测试经验、想法或测试秘诀肯定会使本文更加有趣和有用！</p>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>测试技巧</tag>
-        <tag>测试经验</tag>
       </tags>
   </entry>
   <entry>
@@ -1030,34 +1030,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Flume日志采集框架学习</title>
-    <url>/Echo/2021/11/14/Flume%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<h4 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h4><ul>
-<li>Flume 是一个<code>分布式</code>、<code>可靠</code>、<code>高可用</code>的海量<code>日志采集</code>、<code>聚合</code>和<code>传输</code>的系统；</li>
-<li>Flume 可以采集文件、socket数据包、文件、目录、Kafka等<code>各种形式数据源</code>，又可以将采集到的数据（下沉 sink）输出到 HDFS、HBase、Hive、Kafka等<code>众多外部存储系统</code>中；</li>
-<li>一般的采集需求，通过对 Flume 的简单配置即可实现；</li>
-<li>Flume 针对特殊场景也具备良好的自定义扩展能力，因此，Flume 适用于大部分的日常数据采集场景；</li>
-</ul>
-<h4 id="2-运行机制"><a href="#2-运行机制" class="headerlink" title="2. 运行机制"></a>2. 运行机制</h4><p>Flume 分布式系统中最<code>核心的角色是 agent</code>，Flume 采集系统就是由一个个 agent 所连接起来形成的；</p>
-<p><img src="/Echo/2021/11/14/Flume%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/image-20211114152336278.png" alt="image-20211114152336278"></p>
-<p> 每一个 agent 相当于一个数据传递员，内部有三个组件：</p>
-<ul>
-<li>Source：&#96; 采集组件，用于与众多数据源对接，以获取数据；</li>
-<li>Channel：&#96; 传输通道组件，用于从 Source 将数据传递到 Sink；</li>
-<li>Sink：&#96; 下沉组件，用于往下一级 agent 传递数据 或者 往最终存储系统传递数据；</li>
-</ul>
-<h4 id="3-单个agent采集数据"><a href="#3-单个agent采集数据" class="headerlink" title="3.单个agent采集数据"></a>3.单个agent采集数据</h4><p><img src="/Echo/2021/11/14/Flume%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/image-20211114152023931.png" alt="image-20211114152023931"></p>
-<h4 id="4-多个agent采集数据"><a href="#4-多个agent采集数据" class="headerlink" title="4.多个agent采集数据"></a>4.多个agent采集数据</h4><p><img src="/Echo/2021/11/14/Flume%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/image-20211114152057458.png" alt="image-20211114152057458"></p>
-]]></content>
-      <categories>
-        <category>学习</category>
-      </categories>
-      <tags>
-        <tag>日志</tag>
-        <tag>flume</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>GitHub搜索技巧</title>
     <url>/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/</url>
     <content><![CDATA[<p>github是世界知名的代码托管平台，千万程序员的圣地。作为一个常逛github的程序员，你在github上搜索代码时，是怎样操作的呢？</p>
@@ -1108,6 +1080,34 @@
       </categories>
       <tags>
         <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Flume日志采集框架学习</title>
+    <url>/Echo/2021/11/14/Flume%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h4 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h4><ul>
+<li>Flume 是一个<code>分布式</code>、<code>可靠</code>、<code>高可用</code>的海量<code>日志采集</code>、<code>聚合</code>和<code>传输</code>的系统；</li>
+<li>Flume 可以采集文件、socket数据包、文件、目录、Kafka等<code>各种形式数据源</code>，又可以将采集到的数据（下沉 sink）输出到 HDFS、HBase、Hive、Kafka等<code>众多外部存储系统</code>中；</li>
+<li>一般的采集需求，通过对 Flume 的简单配置即可实现；</li>
+<li>Flume 针对特殊场景也具备良好的自定义扩展能力，因此，Flume 适用于大部分的日常数据采集场景；</li>
+</ul>
+<h4 id="2-运行机制"><a href="#2-运行机制" class="headerlink" title="2. 运行机制"></a>2. 运行机制</h4><p>Flume 分布式系统中最<code>核心的角色是 agent</code>，Flume 采集系统就是由一个个 agent 所连接起来形成的；</p>
+<p><img src="/Echo/2021/11/14/Flume%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/image-20211114152336278.png" alt="image-20211114152336278"></p>
+<p> 每一个 agent 相当于一个数据传递员，内部有三个组件：</p>
+<ul>
+<li>Source：&#96; 采集组件，用于与众多数据源对接，以获取数据；</li>
+<li>Channel：&#96; 传输通道组件，用于从 Source 将数据传递到 Sink；</li>
+<li>Sink：&#96; 下沉组件，用于往下一级 agent 传递数据 或者 往最终存储系统传递数据；</li>
+</ul>
+<h4 id="3-单个agent采集数据"><a href="#3-单个agent采集数据" class="headerlink" title="3.单个agent采集数据"></a>3.单个agent采集数据</h4><p><img src="/Echo/2021/11/14/Flume%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/image-20211114152023931.png" alt="image-20211114152023931"></p>
+<h4 id="4-多个agent采集数据"><a href="#4-多个agent采集数据" class="headerlink" title="4.多个agent采集数据"></a>4.多个agent采集数据</h4><p><img src="/Echo/2021/11/14/Flume%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/image-20211114152057458.png" alt="image-20211114152057458"></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>日志</tag>
+        <tag>flume</tag>
       </tags>
   </entry>
   <entry>
@@ -1327,6 +1327,62 @@
       </tags>
   </entry>
   <entry>
+    <title>JMeter处理器和控制器</title>
+    <url>/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/</url>
+    <content><![CDATA[<h5 id="预处理器–pre-processor"><a href="#预处理器–pre-processor" class="headerlink" title="预处理器–pre processor"></a>预处理器–pre processor</h5><p>执行采样器之前执行的元素。您可以将预处理器与要在请求中进行一些更改的采样器连接在一起。</p>
+<p>最简单的情况可能是在 HTTP 请求中添加”示例超时”预处理器，以便此请求仅运行定义的时间量。它还确保仅对父采样器执行此修改,以下是JMeter中的预处理器：</p>
+<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217094257136.png" alt="image-20211217094257136"></p>
+<h6 id="用户参数–-user-parameters"><a href="#用户参数–-user-parameters" class="headerlink" title="用户参数– user parameters"></a>用户参数– user parameters</h6><p>用户参数用于在取样器中使用变量之前定义变量的值。当JMeter执行此预处理器元素时，会将值存储在变量中，这些变量可由同一线程组中的任何取样器使用。</p>
+<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217100245301.png" alt="image-20211217100245301"></p>
+<p>示例超时–sample timeout</p>
+<p>用于定义请求的超时持续时间。例：如果将取样时间设置为 400 毫秒，则所有需要时间的请求&gt;400 都将具有失败的响应。请看下面的截图</p>
+<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217134259470.png" alt="image-20211217134259470"></p>
+<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217134313658.png" alt="image-20211217134313658"></p>
+<h5 id="控制器"><a href="#控制器" class="headerlink" title="控制器"></a>控制器</h5><p>控制器在构建实时JMeter测试计划方面十分重要，用于定义请求发送到服务器的顺序。JMeter中的控制器有以下：</p>
+<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217150511568.png" alt="image-20211217150511568"></p>
+<h6 id="简单控制器–simple-controller"><a href="#简单控制器–simple-controller" class="headerlink" title="简单控制器–simple controller"></a>简单控制器–simple controller</h6><p>简单的控制器不执行任何特定功能。它只是一种容器，您可以在其中保留类似的请求，以使测试计划易于理解。</p>
+<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217154100877.png" alt="image-20211217154100877"></p>
+<h6 id="循环控制器–Loop-Controller"><a href="#循环控制器–Loop-Controller" class="headerlink" title="循环控制器–Loop Controller"></a>循环控制器–Loop Controller</h6><p>如果希望某些特定请求运行的迭代次数多于”线程组”中指定的迭代次数，则可以将它们放在”循环控制器”下，然后在控制器设置中输入循环计数。</p>
+<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217154238730.png" alt="image-20211217154238730"></p>
+<p>图中的每个取样器将执行6次。</p>
+<h6 id="仅一次控制器–once-ONLY-controller"><a href="#仅一次控制器–once-ONLY-controller" class="headerlink" title="仅一次控制器–once ONLY controller"></a>仅一次控制器–once ONLY controller</h6><p>当您只想运行某个特定请求一次时，即使线程组中有多个线程，也会使用此控制器。可以考虑的最简单的例子是”获取网站主页”或”登录到Web应用程序”。实时方案希望它只发生一次，其他请求（如搜索或编辑&#x2F;删除某些内容）将多次发生。</p>
+<p>仅执行一次的请求可以放在”仅一次控制器”下。截图以供参考。一次 只有控制器设置绕过父线程组设置。</p>
+<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217160551520.png" alt="image-20211217160551520"></p>
+<h6 id="录制控制器–HTTP（S）-TEST-Script-Recorder"><a href="#录制控制器–HTTP（S）-TEST-Script-Recorder" class="headerlink" title="录制控制器–HTTP（S） TEST Script Recorder"></a>录制控制器–HTTP（S） TEST Script Recorder</h6><p>就像简单控制器一样，录制控制器不会修改发送到服务器的任何请求序列。它与HTTP（S）脚本记录器一起使用。使用此非测试元素记录的所有请求都保存在记录控制器下。需要指定目标控制器以保存对服务器发出的记录请求。</p>
+<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217160800045.png" alt="image-20211217160800045"></p>
+<h6 id="吞吐量控制器–Throughput-controller"><a href="#吞吐量控制器–Throughput-controller" class="headerlink" title="吞吐量控制器–Throughput controller"></a>吞吐量控制器–Throughput controller</h6><p>此控制器还用于控制执行流。如下图所示，该控制器进一步分为两部分：</p>
+<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217160905035.png" alt="image-20211217160905035"></p>
+<p>执行百分比–Percent Executions ： 选中后 Jmeter 将仅执行此控制器下采样器总迭代的一定百分比。也可以选中”每用户”复选框以在用户级别进行控制。</p>
+<p>执行总数– total Executions: 将允许用户直接为此控制器下包含的采样器指定迭代次数。</p>
+<h6 id="交错控制器–-interleave-controller"><a href="#交错控制器–-interleave-controller" class="headerlink" title="交错控制器– interleave controller"></a>交错控制器– interleave controller</h6><p>此控制器允许您通过以 n 种方式修改序列来增加性能测试的范围，以便在应用程序以不同的顺序命中请求时测试服务器上的负载。交错控制器在其下方的采样器进行替代选择。</p>
+<p>如果此块下有其他控制器（如 Simple Controller），则交错控制器授予从容器中为每个迭代选择一个采样器的权限。为了进一步解释它，见图</p>
+<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217162333245.png" alt="image-20211217162333245"></p>
+<p>Jmeter 将在每次迭代的控制器之间交替迭代。执行顺序为：<em>请求1 -&gt; 请求3 -&gt; 请求 5 – 请求2 -&gt; 请求4 -&gt; 请求6</em></p>
+<h6 id="随机控制器–random-controller"><a href="#随机控制器–random-controller" class="headerlink" title="随机控制器–random controller"></a>随机控制器–random controller</h6><p>顾名思义随机选择子控制器和其中的采样器。工作方式几乎与交错控制器类似，但不按顺序选取采样器。</p>
+<p>条件控制器–If controller</p>
+<p>if 控制器 以类似的方式工作，则以任何编程语言处理 IF 表达式。首先验证条件，然后执行此容器下的组件（如果条件为 TRUE），否则将执行 IF 控制器外部的元素。</p>
+<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217165030335.png" alt="image-20211217165030335"></p>
+<p>测试计划设计如下：如果 IF 条件被评估为<strong>False，</strong>则只有 Request3、Request4 和 Request5 将执行。</p>
+<h6 id="while-控制器"><a href="#while-控制器" class="headerlink" title="while 控制器"></a>while 控制器</h6><p>此控制器执行其下的组件，直到条件变为 false。</p>
+<h5 id="JMeter的记录模板"><a href="#JMeter的记录模板" class="headerlink" title="JMeter的记录模板"></a>JMeter的记录模板</h5><p>Jmeter的File目录选择template ，然后切换recording</p>
+<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217165849700.png" alt="image-20211217165849700"></p>
+<p>选择此录制模板后，会看到一些组件已添加到测试计划中。</p>
+<ul>
+<li>工作台下的 HTTP 脚本记录器</li>
+<li>HTTP 请求默认值和 HTTP Cookie 管理器</li>
+<li>“线程组”下的记录控制器。</li>
+<li><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217170049709.png" alt="image-20211217170049709"></li>
+</ul>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>性能测试</tag>
+        <tag>JMeter</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JMeter介绍</title>
     <url>/Echo/2021/11/20/JMeter%E4%BB%8B%E7%BB%8D/</url>
     <content><![CDATA[<p>在本文中我们将了解什么是性能测试、为什么选择 JMeter、JMeter 与 HP LoadRunner。</p>
@@ -1419,62 +1475,6 @@
       </categories>
       <tags>
         <tag>性能测试，JMeter</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JMeter处理器和控制器</title>
-    <url>/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/</url>
-    <content><![CDATA[<h5 id="预处理器–pre-processor"><a href="#预处理器–pre-processor" class="headerlink" title="预处理器–pre processor"></a>预处理器–pre processor</h5><p>执行采样器之前执行的元素。您可以将预处理器与要在请求中进行一些更改的采样器连接在一起。</p>
-<p>最简单的情况可能是在 HTTP 请求中添加”示例超时”预处理器，以便此请求仅运行定义的时间量。它还确保仅对父采样器执行此修改,以下是JMeter中的预处理器：</p>
-<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217094257136.png" alt="image-20211217094257136"></p>
-<h6 id="用户参数–-user-parameters"><a href="#用户参数–-user-parameters" class="headerlink" title="用户参数– user parameters"></a>用户参数– user parameters</h6><p>用户参数用于在取样器中使用变量之前定义变量的值。当JMeter执行此预处理器元素时，会将值存储在变量中，这些变量可由同一线程组中的任何取样器使用。</p>
-<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217100245301.png" alt="image-20211217100245301"></p>
-<p>示例超时–sample timeout</p>
-<p>用于定义请求的超时持续时间。例：如果将取样时间设置为 400 毫秒，则所有需要时间的请求&gt;400 都将具有失败的响应。请看下面的截图</p>
-<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217134259470.png" alt="image-20211217134259470"></p>
-<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217134313658.png" alt="image-20211217134313658"></p>
-<h5 id="控制器"><a href="#控制器" class="headerlink" title="控制器"></a>控制器</h5><p>控制器在构建实时JMeter测试计划方面十分重要，用于定义请求发送到服务器的顺序。JMeter中的控制器有以下：</p>
-<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217150511568.png" alt="image-20211217150511568"></p>
-<h6 id="简单控制器–simple-controller"><a href="#简单控制器–simple-controller" class="headerlink" title="简单控制器–simple controller"></a>简单控制器–simple controller</h6><p>简单的控制器不执行任何特定功能。它只是一种容器，您可以在其中保留类似的请求，以使测试计划易于理解。</p>
-<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217154100877.png" alt="image-20211217154100877"></p>
-<h6 id="循环控制器–Loop-Controller"><a href="#循环控制器–Loop-Controller" class="headerlink" title="循环控制器–Loop Controller"></a>循环控制器–Loop Controller</h6><p>如果希望某些特定请求运行的迭代次数多于”线程组”中指定的迭代次数，则可以将它们放在”循环控制器”下，然后在控制器设置中输入循环计数。</p>
-<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217154238730.png" alt="image-20211217154238730"></p>
-<p>图中的每个取样器将执行6次。</p>
-<h6 id="仅一次控制器–once-ONLY-controller"><a href="#仅一次控制器–once-ONLY-controller" class="headerlink" title="仅一次控制器–once ONLY controller"></a>仅一次控制器–once ONLY controller</h6><p>当您只想运行某个特定请求一次时，即使线程组中有多个线程，也会使用此控制器。可以考虑的最简单的例子是”获取网站主页”或”登录到Web应用程序”。实时方案希望它只发生一次，其他请求（如搜索或编辑&#x2F;删除某些内容）将多次发生。</p>
-<p>仅执行一次的请求可以放在”仅一次控制器”下。截图以供参考。一次 只有控制器设置绕过父线程组设置。</p>
-<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217160551520.png" alt="image-20211217160551520"></p>
-<h6 id="录制控制器–HTTP（S）-TEST-Script-Recorder"><a href="#录制控制器–HTTP（S）-TEST-Script-Recorder" class="headerlink" title="录制控制器–HTTP（S） TEST Script Recorder"></a>录制控制器–HTTP（S） TEST Script Recorder</h6><p>就像简单控制器一样，录制控制器不会修改发送到服务器的任何请求序列。它与HTTP（S）脚本记录器一起使用。使用此非测试元素记录的所有请求都保存在记录控制器下。需要指定目标控制器以保存对服务器发出的记录请求。</p>
-<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217160800045.png" alt="image-20211217160800045"></p>
-<h6 id="吞吐量控制器–Throughput-controller"><a href="#吞吐量控制器–Throughput-controller" class="headerlink" title="吞吐量控制器–Throughput controller"></a>吞吐量控制器–Throughput controller</h6><p>此控制器还用于控制执行流。如下图所示，该控制器进一步分为两部分：</p>
-<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217160905035.png" alt="image-20211217160905035"></p>
-<p>执行百分比–Percent Executions ： 选中后 Jmeter 将仅执行此控制器下采样器总迭代的一定百分比。也可以选中”每用户”复选框以在用户级别进行控制。</p>
-<p>执行总数– total Executions: 将允许用户直接为此控制器下包含的采样器指定迭代次数。</p>
-<h6 id="交错控制器–-interleave-controller"><a href="#交错控制器–-interleave-controller" class="headerlink" title="交错控制器– interleave controller"></a>交错控制器– interleave controller</h6><p>此控制器允许您通过以 n 种方式修改序列来增加性能测试的范围，以便在应用程序以不同的顺序命中请求时测试服务器上的负载。交错控制器在其下方的采样器进行替代选择。</p>
-<p>如果此块下有其他控制器（如 Simple Controller），则交错控制器授予从容器中为每个迭代选择一个采样器的权限。为了进一步解释它，见图</p>
-<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217162333245.png" alt="image-20211217162333245"></p>
-<p>Jmeter 将在每次迭代的控制器之间交替迭代。执行顺序为：<em>请求1 -&gt; 请求3 -&gt; 请求 5 – 请求2 -&gt; 请求4 -&gt; 请求6</em></p>
-<h6 id="随机控制器–random-controller"><a href="#随机控制器–random-controller" class="headerlink" title="随机控制器–random controller"></a>随机控制器–random controller</h6><p>顾名思义随机选择子控制器和其中的采样器。工作方式几乎与交错控制器类似，但不按顺序选取采样器。</p>
-<p>条件控制器–If controller</p>
-<p>if 控制器 以类似的方式工作，则以任何编程语言处理 IF 表达式。首先验证条件，然后执行此容器下的组件（如果条件为 TRUE），否则将执行 IF 控制器外部的元素。</p>
-<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217165030335.png" alt="image-20211217165030335"></p>
-<p>测试计划设计如下：如果 IF 条件被评估为<strong>False，</strong>则只有 Request3、Request4 和 Request5 将执行。</p>
-<h6 id="while-控制器"><a href="#while-控制器" class="headerlink" title="while 控制器"></a>while 控制器</h6><p>此控制器执行其下的组件，直到条件变为 false。</p>
-<h5 id="JMeter的记录模板"><a href="#JMeter的记录模板" class="headerlink" title="JMeter的记录模板"></a>JMeter的记录模板</h5><p>Jmeter的File目录选择template ，然后切换recording</p>
-<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217165849700.png" alt="image-20211217165849700"></p>
-<p>选择此录制模板后，会看到一些组件已添加到测试计划中。</p>
-<ul>
-<li>工作台下的 HTTP 脚本记录器</li>
-<li>HTTP 请求默认值和 HTTP Cookie 管理器</li>
-<li>“线程组”下的记录控制器。</li>
-<li><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217170049709.png" alt="image-20211217170049709"></li>
-</ul>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>性能测试</tag>
-        <tag>JMeter</tag>
       </tags>
   </entry>
   <entry>
@@ -2672,39 +2672,6 @@
       </tags>
   </entry>
   <entry>
-    <title>HBase shell命令</title>
-    <url>/Echo/2020/03/13/hbase%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<h4 id="HBase简介"><a href="#HBase简介" class="headerlink" title="HBase简介"></a>HBase简介</h4><p>HBase 命名的起源是 Hadoop database，Hadoop数据库，是NoSQL数据库，基于列式存储而非行式存储。</p>
-<p>HBase是一个分布式的、面向列的、基于Google Bigtable的开源实现。</p>
-<ul>
-<li>利用Hadoop HDFS作为其文件存储系统</li>
-<li>利用Hadoop MapReduce来处理HBase中的海量数据</li>
-<li>利用Zookeeper作为协同服务</li>
-</ul>
-<h4 id="HBase数据模型"><a href="#HBase数据模型" class="headerlink" title="HBase数据模型"></a>HBase数据模型</h4><p>HBase是一个稀疏、多维度、有序的映射表。表有行和列组成，列划分为若干个列族&#x2F;列簇(column family)，每个列族&#x2F;列簇下面可以有多个普通列。</p>
-<p><img src="/Echo/2020/03/13/hbase%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/5-1Z5091305564M.gif" alt="5-1Z5091305564M"></p>
-<h4 id="HBase-shell-命令"><a href="#HBase-shell-命令" class="headerlink" title="HBase shell 命令"></a>HBase shell 命令</h4><h5 id="进入-HBase-shell"><a href="#进入-HBase-shell" class="headerlink" title="进入 HBase shell"></a>进入 HBase shell</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hbase shell</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="HBase版本状态查看"><a href="#HBase版本状态查看" class="headerlink" title="HBase版本状态查看"></a>HBase版本状态查看</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查询状态</span></span><br><span class="line">status</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查询版本</span></span><br><span class="line">version</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看当前操作用户</span></span><br><span class="line">whoami</span><br><span class="line"><span class="meta">#</span><span class="bash"> 帮助命令</span></span><br><span class="line">help</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看hbase支持的工具</span></span><br><span class="line">tools</span><br></pre></td></tr></table></figure>
-
-<h5 id="DDL操作"><a href="#DDL操作" class="headerlink" title="DDL操作"></a>DDL操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建一个表</span></span><br><span class="line">create<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;column_famaly&#x27;</span>,<span class="string">&#x27;column_famaly1&#x27;</span>,<span class="string">&#x27;column_famaly2&#x27;</span></span><br><span class="line"><span class="comment"># 列出所有表</span></span><br><span class="line">list</span><br><span class="line"><span class="comment"># 获取表的描述</span></span><br><span class="line">describe<span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 删除一个列族</span></span><br><span class="line">alter<span class="string">&#x27;table&#x27;</span>,&#123;NAME=&gt;<span class="string">&#x27;column_famaly&#x27;</span>,METHOD=&gt;<span class="string">&#x27;delete&#x27;</span>&#125;</span><br><span class="line"><span class="comment"># 删除一个表</span></span><br><span class="line"><span class="comment"># ① 要删除的表设置为disable</span></span><br><span class="line"><span class="built_in">disable</span><span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># ② 删除表</span></span><br><span class="line">drop <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 查询表是否存在</span></span><br><span class="line">exists<span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 查看表是否可用</span></span><br><span class="line">is_enabled<span class="string">&#x27;table&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="DML操作"><a href="#DML操作" class="headerlink" title="DML操作"></a>DML操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 插入数据</span></span><br><span class="line">put<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span>,<span class="string">&#x27;name&#x27;</span></span><br><span class="line"><span class="comment"># 获取row1所有数据</span></span><br><span class="line">get <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span></span><br><span class="line"><span class="comment"># 获取表row1，col1所有数据</span></span><br><span class="line">get<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1&#x27;</span></span><br><span class="line"><span class="comment"># 更新一条数据</span></span><br><span class="line">put <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span>,<span class="string">&#x27;name1&#x27;</span></span><br><span class="line"><span class="comment"># 通过时间戳获取数据</span></span><br><span class="line">get <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,&#123;COLUMN=&gt;<span class="string">&#x27;col1:name&#x27;</span>,TIMESTAMP=&gt;1463055736277&#125;</span><br><span class="line"><span class="comment"># 扫描整张表（数据量大时不建议此操作）</span></span><br><span class="line">scan <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 删除一列</span></span><br><span class="line">delete <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span></span><br><span class="line"><span class="comment"># 删除行所有的数据</span></span><br><span class="line">deleteall <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span></span><br><span class="line"><span class="comment"># 统计表中的行数</span></span><br><span class="line">count <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 清空整张表（清空表后，表的分区设置会默认为1不建议）</span></span><br><span class="line">truncate <span class="string">&#x27;table&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="退出操作"><a href="#退出操作" class="headerlink" title="退出操作"></a>退出操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 退出</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment"># 关闭hbase集群（危险操作！！！）</span></span><br><span class="line">shutdown</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>大数据</category>
-      </categories>
-      <tags>
-        <tag>大数据</tag>
-        <tag>HBase</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>jekins环境搭建</title>
     <url>/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
     <content><![CDATA[<table>
@@ -3169,25 +3136,36 @@
       </tags>
   </entry>
   <entry>
-    <title>2015-2020工作日志</title>
-    <url>/Echo/2020/04/02/%E4%BA%94%E5%B9%B4%E5%B7%A5%E4%BD%9C%E6%84%9F%E6%82%9F/</url>
-    <content><![CDATA[<h5 id="学校生涯"><a href="#学校生涯" class="headerlink" title="学校生涯"></a>学校生涯</h5><p>​       我自身是河南人，不过有一颗不安分的心。高考志愿填报了大连交通大学，选了软件工程与信息管理与信息系统的双专业学位，学制五年。大三期间参与学校老师ERP沙盘模拟软件的编写工作。在这期间开始真正的接触项目，这时才知道学习与实战的差距。当时主要用的J2EE和java struct。项目做到大四完成。完成第一版之后在学校的校内ERP沙盘大赛和校内实践课程上已经开始运用了。听说现在还在使用中。</p>
-<h5 id="北京"><a href="#北京" class="headerlink" title="北京"></a>北京</h5><h6 id="培训"><a href="#培训" class="headerlink" title="培训"></a>培训</h6><p>​     因为一心想去一线城市看看，在择业期毫不犹豫的就选择了去北京。因为大学有项目而且大学主修课程有日语，很顺利的面上了北京利达智通。14年11月开始进入公司实习。在实习前三个月是在济南培训。培训这段时间感觉是最充实的。当时公司主要业务是野村证券。使用的大机语言（COBOL，在校也有相关的选修课还有证书可拿），主要是linux系统上进行开发。三个月的培训每天有作业每月有考核，压力大收获也大。在此期间学的linux和养成的编程习惯让我至今仍有受益。</p>
-<h6 id="第一个项目-野村证券MRF"><a href="#第一个项目-野村证券MRF" class="headerlink" title="第一个项目-野村证券MRF"></a>第一个项目-野村证券MRF</h6><p>这个项目主要是为日本野村证券新增一个青少年可以参与基金交易的功能。前一个月由师傅的带领开始正式的面向对象编程，不得不说日本人的式样书真详细。主要负责是功能模块各种数据连接层的处理以及数据库维护等工作。在这工作期间培养了自己的时间观念（某办法日本人特别在意这个）在dead line 前必须完成，好的一点是式样书（详设）写的真详细，不好的一点是没有自己发展的空间。还有个教训让我记忆深刻。在转正后，开始自己独立编写，结对测试的工作模式。由于当时对全角和半角的空格不敏感，这编程过程这个错误反复的犯，差点耽误项目进度。后来就给自己贴了便签，同样的错误绝不能犯第二次。</p>
-<h6 id="第二个项目-青森银行的住贷项目"><a href="#第二个项目-青森银行的住贷项目" class="headerlink" title="第二个项目-青森银行的住贷项目"></a>第二个项目-青森银行的住贷项目</h6><p>这个项目是公司开始转型的开始。主要编程语言为java，使用SSM框架来进行开发。这项目算是一个全新的项目从资料上传、申请、审批、贷后管理这房屋住贷全流程。（不同的有两点一、青森银行的住贷是有授权民间金融借贷来进行，二、放款时本人必须到场身份验证）。之前的项目一直用的COBOL，从2016年12月开始重新捡回java进行面向对象开发。从此开始CURD之路，主要是DAO层使用原生的JDBC连接数据库，然后实现CURD操作。除了承担CURD操作之外同时还承担这项目组的DBA的角色。主要有数据库权限分配与管理，数据表视图的创建，数据库表结构创建与维护等工作。项目大概到5月份就开始进行客户验收了，中间去日本青森县出差过1个月，作为现场技术支持。因为我本身有日语N3证书（目前已经过期，日语也忘得差不多了），同时本身的水平在项目组中还不错。过完十一后就日渐想河南老家。北京节假日回家真的太难了。</p>
-<h5 id="浪潮之旅"><a href="#浪潮之旅" class="headerlink" title="浪潮之旅"></a>浪潮之旅</h5><h6 id="济南-初识测试、自动化测试"><a href="#济南-初识测试、自动化测试" class="headerlink" title="济南-初识测试、自动化测试"></a>济南-初识测试、自动化测试</h6><p>17年10月开始面试，11月收到浪潮的offer。当时面上大厂，心情激动，这个也可以实现回郑州，只不过要先在济南工作一年左右。入职岗位是测试验证部-测试开发。当时浪潮因为自身要搞自动化测试平台的建设，因为有个目标要在19年4月完成5000+自动化脚本库已经自动化平台的建设。入职后开始搞自动化测试。我的任务主要是前台选择完用例后，我后台开始执行相关测试脚本同时获取脚本执行结果以及日志信息。在18年7月ITMS平台搭建完成，同年获得浪潮集团内部创新一等奖。后续开始除了用例撰写人员全部投入脚本编写工作，自此开始认识测试。从需求分析，用例设计，手工测试，自动化测试，bug回归，事后分析总结等全流程，认识了了解了，熟悉了测试以及自动化用例和脚本如何进行对应。</p>
-<h6 id="郑州-挑战与转变"><a href="#郑州-挑战与转变" class="headerlink" title="郑州-挑战与转变"></a>郑州-挑战与转变</h6><p>18年10月因为要在郑州成立大数据产品线。我和我的主管作为河南人，直接安排回到郑州工作。当时的一切都是刚刚开始。</p>
-<p>1、协助团队组建——跟随主管以及主管的主管进行人员面试工作，在19年7月完成20人角色完善的大数据测试团队，同时实验服务器等设备申请组装到位；</p>
-<p>2、自动化任务——①带领四位成员完成1632自动化脚本撰写任务；②优化ITMS平台脚本上传工作，通过rsync由原来的脚本全量同步变更为脚本增量同步，脚本上传时间缩短15%以上；③借鉴BMC WEB自动化框架完成大数据自动化框架搭建，并实现与ITMS平台的对接；</p>
-<p>3、专利负责人——超额完成团队財年指标20%；通过每周的头脑风暴挖掘专利点，共完成发明专利80个。</p>
-<p>在这一时期培养了自己如何提问题，如何回答问题。同时培养自己的owner意识，时不时和领导沟通自己项目进度。在大数据自动化搭建期间领悟到了设计优先原则。因为前期有BMC搭建经验，自然而然想直接引用却忽略了二者之间的不同，导致一个月时间的浪费。后来区分二者的相同和不同之处，针对性的设计并开发。在规定时间内及时完成框架搭建，并接入ITMS平台。</p>
-<h5 id="离开→新的起点"><a href="#离开→新的起点" class="headerlink" title="离开→新的起点"></a>离开→新的起点</h5><p>经过思考再三决定离开，因为在这里已经完成了大数据自动化框架的搭建，并完全适配ITMS平台。后续的工作不能再给个人带来更大的成长。在3月份开始面试，面试过阿里、腾讯、恒生等公司，因为自己在这里骄傲自满，技术与前言的有些脱节，算法几乎是两眼一抹黑。种种不顺利，在3月底，收到华为外包、阿里外包、网易外包、中电金信以及郑煤机的offer。目前纠结选择中。。。未完待续</p>
+    <title>HBase shell命令</title>
+    <url>/Echo/2020/03/13/hbase%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h4 id="HBase简介"><a href="#HBase简介" class="headerlink" title="HBase简介"></a>HBase简介</h4><p>HBase 命名的起源是 Hadoop database，Hadoop数据库，是NoSQL数据库，基于列式存储而非行式存储。</p>
+<p>HBase是一个分布式的、面向列的、基于Google Bigtable的开源实现。</p>
+<ul>
+<li>利用Hadoop HDFS作为其文件存储系统</li>
+<li>利用Hadoop MapReduce来处理HBase中的海量数据</li>
+<li>利用Zookeeper作为协同服务</li>
+</ul>
+<h4 id="HBase数据模型"><a href="#HBase数据模型" class="headerlink" title="HBase数据模型"></a>HBase数据模型</h4><p>HBase是一个稀疏、多维度、有序的映射表。表有行和列组成，列划分为若干个列族&#x2F;列簇(column family)，每个列族&#x2F;列簇下面可以有多个普通列。</p>
+<p><img src="/Echo/2020/03/13/hbase%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/5-1Z5091305564M.gif" alt="5-1Z5091305564M"></p>
+<h4 id="HBase-shell-命令"><a href="#HBase-shell-命令" class="headerlink" title="HBase shell 命令"></a>HBase shell 命令</h4><h5 id="进入-HBase-shell"><a href="#进入-HBase-shell" class="headerlink" title="进入 HBase shell"></a>进入 HBase shell</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hbase shell</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="HBase版本状态查看"><a href="#HBase版本状态查看" class="headerlink" title="HBase版本状态查看"></a>HBase版本状态查看</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查询状态</span></span><br><span class="line">status</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查询版本</span></span><br><span class="line">version</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看当前操作用户</span></span><br><span class="line">whoami</span><br><span class="line"><span class="meta">#</span><span class="bash"> 帮助命令</span></span><br><span class="line">help</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看hbase支持的工具</span></span><br><span class="line">tools</span><br></pre></td></tr></table></figure>
+
+<h5 id="DDL操作"><a href="#DDL操作" class="headerlink" title="DDL操作"></a>DDL操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建一个表</span></span><br><span class="line">create<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;column_famaly&#x27;</span>,<span class="string">&#x27;column_famaly1&#x27;</span>,<span class="string">&#x27;column_famaly2&#x27;</span></span><br><span class="line"><span class="comment"># 列出所有表</span></span><br><span class="line">list</span><br><span class="line"><span class="comment"># 获取表的描述</span></span><br><span class="line">describe<span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 删除一个列族</span></span><br><span class="line">alter<span class="string">&#x27;table&#x27;</span>,&#123;NAME=&gt;<span class="string">&#x27;column_famaly&#x27;</span>,METHOD=&gt;<span class="string">&#x27;delete&#x27;</span>&#125;</span><br><span class="line"><span class="comment"># 删除一个表</span></span><br><span class="line"><span class="comment"># ① 要删除的表设置为disable</span></span><br><span class="line"><span class="built_in">disable</span><span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># ② 删除表</span></span><br><span class="line">drop <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 查询表是否存在</span></span><br><span class="line">exists<span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 查看表是否可用</span></span><br><span class="line">is_enabled<span class="string">&#x27;table&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="DML操作"><a href="#DML操作" class="headerlink" title="DML操作"></a>DML操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 插入数据</span></span><br><span class="line">put<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span>,<span class="string">&#x27;name&#x27;</span></span><br><span class="line"><span class="comment"># 获取row1所有数据</span></span><br><span class="line">get <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span></span><br><span class="line"><span class="comment"># 获取表row1，col1所有数据</span></span><br><span class="line">get<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1&#x27;</span></span><br><span class="line"><span class="comment"># 更新一条数据</span></span><br><span class="line">put <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span>,<span class="string">&#x27;name1&#x27;</span></span><br><span class="line"><span class="comment"># 通过时间戳获取数据</span></span><br><span class="line">get <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,&#123;COLUMN=&gt;<span class="string">&#x27;col1:name&#x27;</span>,TIMESTAMP=&gt;1463055736277&#125;</span><br><span class="line"><span class="comment"># 扫描整张表（数据量大时不建议此操作）</span></span><br><span class="line">scan <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 删除一列</span></span><br><span class="line">delete <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span></span><br><span class="line"><span class="comment"># 删除行所有的数据</span></span><br><span class="line">deleteall <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span></span><br><span class="line"><span class="comment"># 统计表中的行数</span></span><br><span class="line">count <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 清空整张表（清空表后，表的分区设置会默认为1不建议）</span></span><br><span class="line">truncate <span class="string">&#x27;table&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="退出操作"><a href="#退出操作" class="headerlink" title="退出操作"></a>退出操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 退出</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment"># 关闭hbase集群（危险操作！！！）</span></span><br><span class="line">shutdown</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
-        <category>个人</category>
+        <category>大数据</category>
       </categories>
       <tags>
-        <tag>个人成长</tag>
+        <tag>大数据</tag>
+        <tag>HBase</tag>
       </tags>
   </entry>
   <entry>
@@ -3273,6 +3251,145 @@
       <tags>
         <tag>测试</tag>
         <tag>页面测试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2015-2020工作日志</title>
+    <url>/Echo/2020/04/02/%E4%BA%94%E5%B9%B4%E5%B7%A5%E4%BD%9C%E6%84%9F%E6%82%9F/</url>
+    <content><![CDATA[<h5 id="学校生涯"><a href="#学校生涯" class="headerlink" title="学校生涯"></a>学校生涯</h5><p>​       我自身是河南人，不过有一颗不安分的心。高考志愿填报了大连交通大学，选了软件工程与信息管理与信息系统的双专业学位，学制五年。大三期间参与学校老师ERP沙盘模拟软件的编写工作。在这期间开始真正的接触项目，这时才知道学习与实战的差距。当时主要用的J2EE和java struct。项目做到大四完成。完成第一版之后在学校的校内ERP沙盘大赛和校内实践课程上已经开始运用了。听说现在还在使用中。</p>
+<h5 id="北京"><a href="#北京" class="headerlink" title="北京"></a>北京</h5><h6 id="培训"><a href="#培训" class="headerlink" title="培训"></a>培训</h6><p>​     因为一心想去一线城市看看，在择业期毫不犹豫的就选择了去北京。因为大学有项目而且大学主修课程有日语，很顺利的面上了北京利达智通。14年11月开始进入公司实习。在实习前三个月是在济南培训。培训这段时间感觉是最充实的。当时公司主要业务是野村证券。使用的大机语言（COBOL，在校也有相关的选修课还有证书可拿），主要是linux系统上进行开发。三个月的培训每天有作业每月有考核，压力大收获也大。在此期间学的linux和养成的编程习惯让我至今仍有受益。</p>
+<h6 id="第一个项目-野村证券MRF"><a href="#第一个项目-野村证券MRF" class="headerlink" title="第一个项目-野村证券MRF"></a>第一个项目-野村证券MRF</h6><p>这个项目主要是为日本野村证券新增一个青少年可以参与基金交易的功能。前一个月由师傅的带领开始正式的面向对象编程，不得不说日本人的式样书真详细。主要负责是功能模块各种数据连接层的处理以及数据库维护等工作。在这工作期间培养了自己的时间观念（某办法日本人特别在意这个）在dead line 前必须完成，好的一点是式样书（详设）写的真详细，不好的一点是没有自己发展的空间。还有个教训让我记忆深刻。在转正后，开始自己独立编写，结对测试的工作模式。由于当时对全角和半角的空格不敏感，这编程过程这个错误反复的犯，差点耽误项目进度。后来就给自己贴了便签，同样的错误绝不能犯第二次。</p>
+<h6 id="第二个项目-青森银行的住贷项目"><a href="#第二个项目-青森银行的住贷项目" class="headerlink" title="第二个项目-青森银行的住贷项目"></a>第二个项目-青森银行的住贷项目</h6><p>这个项目是公司开始转型的开始。主要编程语言为java，使用SSM框架来进行开发。这项目算是一个全新的项目从资料上传、申请、审批、贷后管理这房屋住贷全流程。（不同的有两点一、青森银行的住贷是有授权民间金融借贷来进行，二、放款时本人必须到场身份验证）。之前的项目一直用的COBOL，从2016年12月开始重新捡回java进行面向对象开发。从此开始CURD之路，主要是DAO层使用原生的JDBC连接数据库，然后实现CURD操作。除了承担CURD操作之外同时还承担这项目组的DBA的角色。主要有数据库权限分配与管理，数据表视图的创建，数据库表结构创建与维护等工作。项目大概到5月份就开始进行客户验收了，中间去日本青森县出差过1个月，作为现场技术支持。因为我本身有日语N3证书（目前已经过期，日语也忘得差不多了），同时本身的水平在项目组中还不错。过完十一后就日渐想河南老家。北京节假日回家真的太难了。</p>
+<h5 id="浪潮之旅"><a href="#浪潮之旅" class="headerlink" title="浪潮之旅"></a>浪潮之旅</h5><h6 id="济南-初识测试、自动化测试"><a href="#济南-初识测试、自动化测试" class="headerlink" title="济南-初识测试、自动化测试"></a>济南-初识测试、自动化测试</h6><p>17年10月开始面试，11月收到浪潮的offer。当时面上大厂，心情激动，这个也可以实现回郑州，只不过要先在济南工作一年左右。入职岗位是测试验证部-测试开发。当时浪潮因为自身要搞自动化测试平台的建设，因为有个目标要在19年4月完成5000+自动化脚本库已经自动化平台的建设。入职后开始搞自动化测试。我的任务主要是前台选择完用例后，我后台开始执行相关测试脚本同时获取脚本执行结果以及日志信息。在18年7月ITMS平台搭建完成，同年获得浪潮集团内部创新一等奖。后续开始除了用例撰写人员全部投入脚本编写工作，自此开始认识测试。从需求分析，用例设计，手工测试，自动化测试，bug回归，事后分析总结等全流程，认识了了解了，熟悉了测试以及自动化用例和脚本如何进行对应。</p>
+<h6 id="郑州-挑战与转变"><a href="#郑州-挑战与转变" class="headerlink" title="郑州-挑战与转变"></a>郑州-挑战与转变</h6><p>18年10月因为要在郑州成立大数据产品线。我和我的主管作为河南人，直接安排回到郑州工作。当时的一切都是刚刚开始。</p>
+<p>1、协助团队组建——跟随主管以及主管的主管进行人员面试工作，在19年7月完成20人角色完善的大数据测试团队，同时实验服务器等设备申请组装到位；</p>
+<p>2、自动化任务——①带领四位成员完成1632自动化脚本撰写任务；②优化ITMS平台脚本上传工作，通过rsync由原来的脚本全量同步变更为脚本增量同步，脚本上传时间缩短15%以上；③借鉴BMC WEB自动化框架完成大数据自动化框架搭建，并实现与ITMS平台的对接；</p>
+<p>3、专利负责人——超额完成团队財年指标20%；通过每周的头脑风暴挖掘专利点，共完成发明专利80个。</p>
+<p>在这一时期培养了自己如何提问题，如何回答问题。同时培养自己的owner意识，时不时和领导沟通自己项目进度。在大数据自动化搭建期间领悟到了设计优先原则。因为前期有BMC搭建经验，自然而然想直接引用却忽略了二者之间的不同，导致一个月时间的浪费。后来区分二者的相同和不同之处，针对性的设计并开发。在规定时间内及时完成框架搭建，并接入ITMS平台。</p>
+<h5 id="离开→新的起点"><a href="#离开→新的起点" class="headerlink" title="离开→新的起点"></a>离开→新的起点</h5><p>经过思考再三决定离开，因为在这里已经完成了大数据自动化框架的搭建，并完全适配ITMS平台。后续的工作不能再给个人带来更大的成长。在3月份开始面试，面试过阿里、腾讯、恒生等公司，因为自己在这里骄傲自满，技术与前言的有些脱节，算法几乎是两眼一抹黑。种种不顺利，在3月底，收到华为外包、阿里外包、网易外包、中电金信以及郑煤机的offer。目前纠结选择中。。。未完待续</p>
+]]></content>
+      <categories>
+        <category>个人</category>
+      </categories>
+      <tags>
+        <tag>个人成长</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hadoop是什么？</title>
+    <url>/Echo/2021/12/27/%E4%BB%80%E4%B9%88%E6%98%AFhadoop%EF%BC%9F/</url>
+    <content><![CDATA[<p>Apache Hadoop是一个开源框架，用于管理所有类型的数据（结构化，非结构化和半结构化）。</p>
+<p>众所周知，如果我们想处理，存储和管理我们的数据，那么RDBMS是最好的解决方案。但是，数据应采用结构化格式，以便使用 RDBMS 进行处理。此外，如果数据大小增加，则RDBMS无法处理它，我们需要定期执行数据库清理。</p>
+<p>这可能会导致历史数据丢失，并且无法在某些行业（如天气预报，银行，保险，销售等）中生成准确可靠的结果。RDBMS的另一个问题是，如果主服务器出现故障，那么我们可能会丢失重要数据并遭受很多损失。</p>
+<p>在本教程中，我们将看到如何使用Apache Hadoop克服这些问题。</p>
+<p>Hadoop是一个分布式文件系统，可以存储大量数据（PB级和TB级数据）。数据处理速度也非常快，并且具有非常高的容错系统，因此可提供可靠的结果。</p>
+<p>Hadoop是一个基于Java的开源编程框架，支持在分布式计算环境中存储和处理大型数据集。</p>
+<p>Hadoop基于使用商用硬件的集群概念。它不需要任何复杂的配置，我们可以用更便宜，简单和轻量级的配置硬件建立Hadoop环境。</p>
+<p>简而言之，群集概念是以复制格式存储在多台计算机上的数据，因此，当数据所在的某个位置发生任何问题或灾难时，必须在另一个位置上安全地提供该数据的重复副本。</p>
+<h4 id="hadoop-VS-RDMBS"><a href="#hadoop-VS-RDMBS" class="headerlink" title="hadoop VS RDMBS"></a>hadoop VS RDMBS</h4><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Hadoop</th>
+<th>RDBMS</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>体系结构</strong></td>
+<td>Hadoop基于HDFS，MapReduce和YARN。</td>
+<td>RDBMS 基于 ACID 属性。</td>
+</tr>
+<tr>
+<td><strong>规模</strong></td>
+<td>可以处理大量数据。</td>
+<td>RDBMS 无法处理大量数据。</td>
+</tr>
+<tr>
+<td><strong>数据的种类&#x2F;类型</strong></td>
+<td>可以处理结构化，半结构化和非结构化数据，如视频，图像，CSV文件，xml等。</td>
+<td>仅处理结构化数据。</td>
+</tr>
+<tr>
+<td><strong>速度</strong></td>
+<td>快速处理大量数据。</td>
+<td>处理大量数据时非常慢。</td>
+</tr>
+<tr>
+<td><strong>吞吐量</strong></td>
+<td>高吞吐量。</td>
+<td>吞吐量低。</td>
+</tr>
+<tr>
+<td><strong>容错</strong></td>
+<td>非常好</td>
+<td>如果主服务器出现故障，则无法恢复丢失的数据。</td>
+</tr>
+<tr>
+<td><strong>存储</strong></td>
+<td>非常高的存储容量。</td>
+<td>无法存储大数据。</td>
+</tr>
+<tr>
+<td><strong>可靠性</strong></td>
+<td>非常可靠，可生成准确的历史和当前报告。</td>
+<td>在大数据方面不可靠。</td>
+</tr>
+</tbody></table>
+<h4 id="hadoop-功能"><a href="#hadoop-功能" class="headerlink" title="hadoop 功能"></a>hadoop 功能</h4><p>Hadoop框架</p>
+<p><img src="/Echo/2021/12/27/%E4%BB%80%E4%B9%88%E6%98%AFhadoop%EF%BC%9F/Hadoop-Features.webp" alt="Hadoop-Features"></p>
+<ul>
+<li>Hadoop yarn</li>
+<li>Hadoop common</li>
+<li>Hadoop HDFS(Hadoop Distributed File System)</li>
+<li>Hadoop Mapreduce</li>
+</ul>
+<p><strong>#1）Hadoop YARN：YARN</strong>代表**”Y**et <strong>A</strong>nother <strong>R</strong>esource <strong>N</strong>egotiator”，用于管理云的集群技术。它用于作业计划。</p>
+<p><strong>#2）Hadoop Common：</strong>这是用于与Hadoop的其他功能（如YARN，MapReduce和HDFS）进行通信的详细库或实用程序。</p>
+<p><strong>#3）Hadoop HDFS：</strong>分布式文件系统在Hadoop中用于存储和处理大量数据。此外，它还用于访问群集中的数据。</p>
+<p><strong>#4） Hadoop MapReduce：</strong> MapReduce是Hadoop的主要功能，负责处理集群中的数据。它用于作业调度和数据处理监控。</p>
+<h4 id="Hadoop-架构"><a href="#Hadoop-架构" class="headerlink" title="Hadoop 架构"></a>Hadoop 架构</h4><p>Hadoop组件：</p>
+<ul>
+<li>HDFS</li>
+<li>MapReduce</li>
+<li>YARN</li>
+</ul>
+<p><img src="/Echo/2021/12/27/%E4%BB%80%E4%B9%88%E6%98%AFhadoop%EF%BC%9F/Hadoop-framework.png" alt="Hadoop-framework"></p>
+<p>这些是Hadoop架构的三个重要组成部分。我们还应该了解架构的一些术语或概念，并了解它们是如何工作的。</p>
+<ol>
+<li>管理节点–manager node</li>
+<li>数据节点–data node</li>
+<li>辅助管理节点–secondary manager node </li>
+<li>块–blocks</li>
+</ol>
+<p>1）name node–管理节点</p>
+<p>管理节点是 HDFS 中的主节点。它包含HDFS的元数据，如文件信息，目录结构，块信息以及数据节点的所有信息等。管理节点仅负责从客户端访问的数据或文件。它跟踪文件中的所有事务或所做的更改。</p>
+<p>它主要适用于两个文件，即FsImage和EditLogs。Name Node有一个JobTracker，其中包含数据节点的所有详细信息，例如哪个数据节点具有什么任务，每个数据节点有多少块，每个数据节点的检测信号，群集中的作业计划详细信息等。</p>
+<p>简而言之，我们可以说 JobTracker 包含每个数据节点的 TaskTracker。</p>
+<p>2） data node – 数据节点</p>
+<p>数据节点是HDFS中的从节点。数据节点负责数据的实际存储和处理。它的主要任务是将作业划分为三个块，并将其存储在不同的数据节点中。之后开始处理数据。</p>
+<p>此外，它还具有TaskTracker，它具有每个块的完整信息，以及哪个块负责哪个任务，哪些块完成了任务等，并且在处理数据后，它将信息发送到manager Node。每次数据节点启动时，它都会再次将所有信息发送到管理节点。</p>
+<p>3）辅助管理节点–secondary manager node </p>
+<p>辅助管理节点用于容错情况。在两种情况下，管理节点已关闭，并且整个 Hadoop 结构将失败，因为管理节点是单点故障。</p>
+<p>（i）如果管理节点由于任何问题而重新启动，那么由于它具有大量数据而再次出现，那么恢复它需要时间。</p>
+<p>（ii）在管理节点崩溃的情况下，所有HDFS数据都将丢失并且无法再次恢复，因为管理节点是单点故障。因此，为了克服这些问题，辅助管理节点就在那里。它还包含与管理节点相同的命名空间映像和编辑日志。</p>
+<p>在一段时间后，它将复制命名空间映像，并从管理节点更新编辑日志。因此，在管理节点失败的情况下，辅助管理节点进入图片并表现得与主名称节点类似。由于此过程，它可以防止完全失败。</p>
+<p>4）blocks–块</p>
+<p>块是HDFS中最小的单位。Hadoop可以处理大量的文件，因为它将其分成小块。我们可以说，块只不过是一个大文件的数据。每个块的大小为128MB。这些块保存在数据节点中并处理数据。</p>
+<p><img src="/Echo/2021/12/27/%E4%BB%80%E4%B9%88%E6%98%AFhadoop%EF%BC%9F/Components-used-in-Hadoop.png" alt="Components-used-in-Hadoop"></p>
+<p>Hadoop 分布式文件系统 （HDFS） 是 Hadoop 集群中使用的文件系统。HDFS主要用于在集群中存储Hadoop数据。HDFS通常致力于顺序数据处理。正如我们已经知道的那样，它基于主从架构。</p>
+<p>集群的所有元数据都保存在 JobTracker 的 Name 节点上，实际数据存储在 TaskTracker 的 HDFS 的数据节点中。</p>
+<p>MapReduce负责数据的处理。每当任何文件进入集群进行处理时，第一个数据节点都会将其划分为块，每个块包含64MB的数据，它可以存储128MB。然后，每个块将复制两次，并存储在群集中任何位置的不同数据节点中。</p>
+<p>所有这些信息都将发送到名称节点，名称节点将以元数据的形式存储此信息。然后，数据的实际处理将启动数据节点，并将每三秒向名称节点发送一次检测信号，以便名称节点具有此数据节点正在处理的信息。</p>
+<p>如果数据节点中的任何人发送检测信号失败，则名称节点将再次在另一个数据节点上创建该块的副本并开始处理。</p>
+<p>所有这些信息或快照将存储在FsImage中，如果完成任何事务，则编辑日志合并新信息并始终保留日志的新副本。</p>
+<p>将采用首先完成任务的块，数据节点将向名称节点发送信息，名称节点将采取相应的操作。</p>
+<p>在整个过程中，YARN将支持并向系统提供所需的资源，因此不会影响数据处理和速度。处理数据后，结果将保存在HDFS中以供进一步分析。</p>
+]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>大数据，数据</tag>
       </tags>
   </entry>
   <entry>
@@ -3394,123 +3511,6 @@
       <tags>
         <tag>大数据</tag>
         <tag>yarn</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hadoop是什么？</title>
-    <url>/Echo/2021/12/27/%E4%BB%80%E4%B9%88%E6%98%AFhadoop%EF%BC%9F/</url>
-    <content><![CDATA[<p>Apache Hadoop是一个开源框架，用于管理所有类型的数据（结构化，非结构化和半结构化）。</p>
-<p>众所周知，如果我们想处理，存储和管理我们的数据，那么RDBMS是最好的解决方案。但是，数据应采用结构化格式，以便使用 RDBMS 进行处理。此外，如果数据大小增加，则RDBMS无法处理它，我们需要定期执行数据库清理。</p>
-<p>这可能会导致历史数据丢失，并且无法在某些行业（如天气预报，银行，保险，销售等）中生成准确可靠的结果。RDBMS的另一个问题是，如果主服务器出现故障，那么我们可能会丢失重要数据并遭受很多损失。</p>
-<p>在本教程中，我们将看到如何使用Apache Hadoop克服这些问题。</p>
-<p>Hadoop是一个分布式文件系统，可以存储大量数据（PB级和TB级数据）。数据处理速度也非常快，并且具有非常高的容错系统，因此可提供可靠的结果。</p>
-<p>Hadoop是一个基于Java的开源编程框架，支持在分布式计算环境中存储和处理大型数据集。</p>
-<p>Hadoop基于使用商用硬件的集群概念。它不需要任何复杂的配置，我们可以用更便宜，简单和轻量级的配置硬件建立Hadoop环境。</p>
-<p>简而言之，群集概念是以复制格式存储在多台计算机上的数据，因此，当数据所在的某个位置发生任何问题或灾难时，必须在另一个位置上安全地提供该数据的重复副本。</p>
-<h4 id="hadoop-VS-RDMBS"><a href="#hadoop-VS-RDMBS" class="headerlink" title="hadoop VS RDMBS"></a>hadoop VS RDMBS</h4><table>
-<thead>
-<tr>
-<th>Feature</th>
-<th>Hadoop</th>
-<th>RDBMS</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>体系结构</strong></td>
-<td>Hadoop基于HDFS，MapReduce和YARN。</td>
-<td>RDBMS 基于 ACID 属性。</td>
-</tr>
-<tr>
-<td><strong>规模</strong></td>
-<td>可以处理大量数据。</td>
-<td>RDBMS 无法处理大量数据。</td>
-</tr>
-<tr>
-<td><strong>数据的种类&#x2F;类型</strong></td>
-<td>可以处理结构化，半结构化和非结构化数据，如视频，图像，CSV文件，xml等。</td>
-<td>仅处理结构化数据。</td>
-</tr>
-<tr>
-<td><strong>速度</strong></td>
-<td>快速处理大量数据。</td>
-<td>处理大量数据时非常慢。</td>
-</tr>
-<tr>
-<td><strong>吞吐量</strong></td>
-<td>高吞吐量。</td>
-<td>吞吐量低。</td>
-</tr>
-<tr>
-<td><strong>容错</strong></td>
-<td>非常好</td>
-<td>如果主服务器出现故障，则无法恢复丢失的数据。</td>
-</tr>
-<tr>
-<td><strong>存储</strong></td>
-<td>非常高的存储容量。</td>
-<td>无法存储大数据。</td>
-</tr>
-<tr>
-<td><strong>可靠性</strong></td>
-<td>非常可靠，可生成准确的历史和当前报告。</td>
-<td>在大数据方面不可靠。</td>
-</tr>
-</tbody></table>
-<h4 id="hadoop-功能"><a href="#hadoop-功能" class="headerlink" title="hadoop 功能"></a>hadoop 功能</h4><p>Hadoop框架</p>
-<p><img src="/Echo/2021/12/27/%E4%BB%80%E4%B9%88%E6%98%AFhadoop%EF%BC%9F/Hadoop-Features.webp" alt="Hadoop-Features"></p>
-<ul>
-<li>Hadoop yarn</li>
-<li>Hadoop common</li>
-<li>Hadoop HDFS(Hadoop Distributed File System)</li>
-<li>Hadoop Mapreduce</li>
-</ul>
-<p><strong>#1）Hadoop YARN：YARN</strong>代表**”Y**et <strong>A</strong>nother <strong>R</strong>esource <strong>N</strong>egotiator”，用于管理云的集群技术。它用于作业计划。</p>
-<p><strong>#2）Hadoop Common：</strong>这是用于与Hadoop的其他功能（如YARN，MapReduce和HDFS）进行通信的详细库或实用程序。</p>
-<p><strong>#3）Hadoop HDFS：</strong>分布式文件系统在Hadoop中用于存储和处理大量数据。此外，它还用于访问群集中的数据。</p>
-<p><strong>#4） Hadoop MapReduce：</strong> MapReduce是Hadoop的主要功能，负责处理集群中的数据。它用于作业调度和数据处理监控。</p>
-<h4 id="Hadoop-架构"><a href="#Hadoop-架构" class="headerlink" title="Hadoop 架构"></a>Hadoop 架构</h4><p>Hadoop组件：</p>
-<ul>
-<li>HDFS</li>
-<li>MapReduce</li>
-<li>YARN</li>
-</ul>
-<p><img src="/Echo/2021/12/27/%E4%BB%80%E4%B9%88%E6%98%AFhadoop%EF%BC%9F/Hadoop-framework.png" alt="Hadoop-framework"></p>
-<p>这些是Hadoop架构的三个重要组成部分。我们还应该了解架构的一些术语或概念，并了解它们是如何工作的。</p>
-<ol>
-<li>管理节点–manager node</li>
-<li>数据节点–data node</li>
-<li>辅助管理节点–secondary manager node </li>
-<li>块–blocks</li>
-</ol>
-<p>1）name node–管理节点</p>
-<p>管理节点是 HDFS 中的主节点。它包含HDFS的元数据，如文件信息，目录结构，块信息以及数据节点的所有信息等。管理节点仅负责从客户端访问的数据或文件。它跟踪文件中的所有事务或所做的更改。</p>
-<p>它主要适用于两个文件，即FsImage和EditLogs。Name Node有一个JobTracker，其中包含数据节点的所有详细信息，例如哪个数据节点具有什么任务，每个数据节点有多少块，每个数据节点的检测信号，群集中的作业计划详细信息等。</p>
-<p>简而言之，我们可以说 JobTracker 包含每个数据节点的 TaskTracker。</p>
-<p>2） data node – 数据节点</p>
-<p>数据节点是HDFS中的从节点。数据节点负责数据的实际存储和处理。它的主要任务是将作业划分为三个块，并将其存储在不同的数据节点中。之后开始处理数据。</p>
-<p>此外，它还具有TaskTracker，它具有每个块的完整信息，以及哪个块负责哪个任务，哪些块完成了任务等，并且在处理数据后，它将信息发送到manager Node。每次数据节点启动时，它都会再次将所有信息发送到管理节点。</p>
-<p>3）辅助管理节点–secondary manager node </p>
-<p>辅助管理节点用于容错情况。在两种情况下，管理节点已关闭，并且整个 Hadoop 结构将失败，因为管理节点是单点故障。</p>
-<p>（i）如果管理节点由于任何问题而重新启动，那么由于它具有大量数据而再次出现，那么恢复它需要时间。</p>
-<p>（ii）在管理节点崩溃的情况下，所有HDFS数据都将丢失并且无法再次恢复，因为管理节点是单点故障。因此，为了克服这些问题，辅助管理节点就在那里。它还包含与管理节点相同的命名空间映像和编辑日志。</p>
-<p>在一段时间后，它将复制命名空间映像，并从管理节点更新编辑日志。因此，在管理节点失败的情况下，辅助管理节点进入图片并表现得与主名称节点类似。由于此过程，它可以防止完全失败。</p>
-<p>4）blocks–块</p>
-<p>块是HDFS中最小的单位。Hadoop可以处理大量的文件，因为它将其分成小块。我们可以说，块只不过是一个大文件的数据。每个块的大小为128MB。这些块保存在数据节点中并处理数据。</p>
-<p><img src="/Echo/2021/12/27/%E4%BB%80%E4%B9%88%E6%98%AFhadoop%EF%BC%9F/Components-used-in-Hadoop.png" alt="Components-used-in-Hadoop"></p>
-<p>Hadoop 分布式文件系统 （HDFS） 是 Hadoop 集群中使用的文件系统。HDFS主要用于在集群中存储Hadoop数据。HDFS通常致力于顺序数据处理。正如我们已经知道的那样，它基于主从架构。</p>
-<p>集群的所有元数据都保存在 JobTracker 的 Name 节点上，实际数据存储在 TaskTracker 的 HDFS 的数据节点中。</p>
-<p>MapReduce负责数据的处理。每当任何文件进入集群进行处理时，第一个数据节点都会将其划分为块，每个块包含64MB的数据，它可以存储128MB。然后，每个块将复制两次，并存储在群集中任何位置的不同数据节点中。</p>
-<p>所有这些信息都将发送到名称节点，名称节点将以元数据的形式存储此信息。然后，数据的实际处理将启动数据节点，并将每三秒向名称节点发送一次检测信号，以便名称节点具有此数据节点正在处理的信息。</p>
-<p>如果数据节点中的任何人发送检测信号失败，则名称节点将再次在另一个数据节点上创建该块的副本并开始处理。</p>
-<p>所有这些信息或快照将存储在FsImage中，如果完成任何事务，则编辑日志合并新信息并始终保留日志的新副本。</p>
-<p>将采用首先完成任务的块，数据节点将向名称节点发送信息，名称节点将采取相应的操作。</p>
-<p>在整个过程中，YARN将支持并向系统提供所需的资源，因此不会影响数据处理和速度。处理数据后，结果将保存在HDFS中以供进一步分析。</p>
-]]></content>
-      <categories>
-        <category>大数据</category>
-      </categories>
-      <tags>
-        <tag>大数据，数据</tag>
       </tags>
   </entry>
   <entry>
