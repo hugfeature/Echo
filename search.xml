@@ -1,43 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>20个实用软件测试技巧</title>
-    <url>/Echo/2021/05/01/20%E4%B8%AA%E5%AE%9E%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%8A%80%E5%B7%A7/</url>
-    <content><![CDATA[<p>以下是个人总结的20个软件测试过程中的技巧</p>
-<p>1、学会彻底分析测试结果。不要忽略任何测试结果。最终测试结果可能是”pass”或”fail”，但如果对”fail”的根本原因进行故障分析并提供问题的解决方案。如果测试人员不仅记录错误，而且还提供解决方案，那么待遇可想而知。</p>
-<p>2、了解如何在每次测试应用程序时最大限度地提高测试覆盖率。100%的测试覆盖率可能是不可能的，但是，总是可以尝试接近它。</p>
-<p>3、为了确保最大的测试覆盖率，请将被测应用程序 分解为较小的功能模块。在单个单元模块上编写测试用例。此外，如果可以的话，将这些模块分解成更小的部分，拆分到不能拆分为止。</p>
-<p>假设我们已将网站应用程序划分为多个模块，并且”添加用户信息”是其中一个模块。可以将此用户信息页面分解为较小的部分，用于编写测试用例：UI测试、安全测试、用户信息表单的功能测试等部分。在输入字段中应用所有形式的字段类型和大小测试、否定和验证测试，并编写所有此类测试用例以获得最大覆盖率。</p>
-<p>4、在编写测试用例时，我们必须首先为预期的功能编写测试用例，就是根据需求为正向条件编写测试用例。然后为反向或者无效条件编写测试用例。这些将涵盖受测应用程序的预期和意外行为。</p>
-<p>5、积极思考。开始测试应用程序，目的是查找bug&#x2F;错误。不要事先认为应用程序中不会有任何错误。如果以查找错误为目的测试应用程序，那么一定会成功找到这些微妙的bug。</p>
-<p>6、在需求分析和设计阶段编写测试用例。通过这种方式，您可以确保所有要求都是可测试的。</p>
-<p>7、在编写代码之前，使测试用例可供开发人员使用。不要一直等待获得最终的应用程序版本才开始编写测试用例进行测试，认为这样可以记录更多错误。让开发人员彻底分析测试用例，以开发高质量的应用程序。这也将节省返工时间。</p>
-<p>8、如果可以，对测试用例进行分组用以进行回归测试，将确保快速有效的手动回归测试。</p>
-<p>9、需要关键响应时间的应用程序应进行全面的性能测试。性能测试是许多应用程序的关键部分。对于手动测试测试人员来说这是最忽略的部分，因为在性能测试中缺乏所需的大量数据。寻找测试应用程序性能的方法。如果无法手动创建测试数据，请编写一些脚本来创建用于性能测试的测试数据，或要求开发人员为您编写一个。</p>
-<p>10、程序员不应该测试自己的代码。开发应用程序的基本单元测试应该足以让开发人员为测试人员发布应用程序。但是测试人员不应强迫开发人员发布产品进行测试。从测试领导到测试经理，每个人都知道模块&#x2F;更新何时发布进行测试，他们可以相应地估计测试时间。这在敏捷项目环境中是常见的。</p>
-<p>11、超越需求测试。测试应用程序不应执行的操作。</p>
-<p>12、在进行回归测试时，请使用 Bug 图（bug管理工具生成）。 bug 图可用于预测应用程序中最可能出现 bug 部分。</p>
-<p>13、记下在测试时学到的新术语和概念。在测试任何应用程序时保持文本文件处于打开状态。记录其中的测试进度和观察结果。在准备最终测试发布报告时使用记录的观察结果。这个习惯将帮助我们提供完整明确的测试报告和发布详细信息。</p>
-<p>14、很多时候，测试人员或开发人员会对受测应用程序的代码库进行更改。这是开发或测试环境中的必要步骤，避免像在银行项目中那样执行实时交易处理。记下为测试目的所做的所有此类代码更改，并在最终发布时确保已从最终的客户端部署文件资源中删除了所有这些更改。</p>
-<p>15、使开发人员远离测试环境。这是检测发布或部署文档中缺少的任何配置更改的必需步骤。有时，开发人员会进行一些系统或应用程序配置更改，但忘记在部署步骤中提及这些更改。如果开发人员无法访问测试环境，他们就不会意外地在测试环境中进行此类更改，以及如何在正确位置捕获的缺失内容。</p>
-<p>16、从软件需求和设计阶段开始让测试人员参与进来是一种很好的做法。通过这种方式，测试人员可以获得有关应用程序准确的信息，从而获得详细的测试覆盖率。如果您没有被要求参与此开发周期，那么您可以向您的主管或经理提出请求，让您的测试团队参与所有决策过程或会议。</p>
-<p>17、测试团队应与其组织中的其他团队分享最佳测试实践和经验。</p>
-<p>18、增加与开发人员的沟通，以了解有关产品的更多信息。尽可能进行面对面的沟通，以快速解决争议并避免任何误解。但是，当您了解要求或解决任何争议时，请确保以与电子邮件相同的覆盖通信方式进行沟通。不要相信任何口头内容。（这个要自己悟）</p>
-<p>19、不要没有时间去做优先级高的测试任务。将测试工作的优先级从高到低排序，并相应地规划您的工作。分析所有相关风险，确定工作的优先级。</p>
-<p>20、写一份清晰，描述性和明确的错误报告。不仅要提供详细bug描述和发现步骤，还要提供bug的影响和所有可能的解决方案。</p>
-<p>永远不要忘记，测试是一项创造性和具有挑战性的任务。这写完全取决于您如何处理这个挑战的技能和经验。</p>
-<p><strong>交给您：</strong></p>
-<p>在下面的评论中分享您自己的测试经验、想法或测试秘诀肯定会使本文更加有趣和有用！</p>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>测试技巧</tag>
-        <tag>测试经验</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2022年软件测试趋势</title>
     <url>/Echo/2022/02/06/2022%E5%B9%B4%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E8%B6%8B%E5%8A%BF/</url>
     <content><![CDATA[<p>技术呈指数级和前所未有的变化影响了组织开发、验证、交付和操作软件的方式。</p>
@@ -73,6 +36,43 @@
         <tag>自动化测试</tag>
         <tag>devops</tag>
         <tag>敏捷测试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>20个实用软件测试技巧</title>
+    <url>/Echo/2021/05/01/20%E4%B8%AA%E5%AE%9E%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%8A%80%E5%B7%A7/</url>
+    <content><![CDATA[<p>以下是个人总结的20个软件测试过程中的技巧</p>
+<p>1、学会彻底分析测试结果。不要忽略任何测试结果。最终测试结果可能是”pass”或”fail”，但如果对”fail”的根本原因进行故障分析并提供问题的解决方案。如果测试人员不仅记录错误，而且还提供解决方案，那么待遇可想而知。</p>
+<p>2、了解如何在每次测试应用程序时最大限度地提高测试覆盖率。100%的测试覆盖率可能是不可能的，但是，总是可以尝试接近它。</p>
+<p>3、为了确保最大的测试覆盖率，请将被测应用程序 分解为较小的功能模块。在单个单元模块上编写测试用例。此外，如果可以的话，将这些模块分解成更小的部分，拆分到不能拆分为止。</p>
+<p>假设我们已将网站应用程序划分为多个模块，并且”添加用户信息”是其中一个模块。可以将此用户信息页面分解为较小的部分，用于编写测试用例：UI测试、安全测试、用户信息表单的功能测试等部分。在输入字段中应用所有形式的字段类型和大小测试、否定和验证测试，并编写所有此类测试用例以获得最大覆盖率。</p>
+<p>4、在编写测试用例时，我们必须首先为预期的功能编写测试用例，就是根据需求为正向条件编写测试用例。然后为反向或者无效条件编写测试用例。这些将涵盖受测应用程序的预期和意外行为。</p>
+<p>5、积极思考。开始测试应用程序，目的是查找bug&#x2F;错误。不要事先认为应用程序中不会有任何错误。如果以查找错误为目的测试应用程序，那么一定会成功找到这些微妙的bug。</p>
+<p>6、在需求分析和设计阶段编写测试用例。通过这种方式，您可以确保所有要求都是可测试的。</p>
+<p>7、在编写代码之前，使测试用例可供开发人员使用。不要一直等待获得最终的应用程序版本才开始编写测试用例进行测试，认为这样可以记录更多错误。让开发人员彻底分析测试用例，以开发高质量的应用程序。这也将节省返工时间。</p>
+<p>8、如果可以，对测试用例进行分组用以进行回归测试，将确保快速有效的手动回归测试。</p>
+<p>9、需要关键响应时间的应用程序应进行全面的性能测试。性能测试是许多应用程序的关键部分。对于手动测试测试人员来说这是最忽略的部分，因为在性能测试中缺乏所需的大量数据。寻找测试应用程序性能的方法。如果无法手动创建测试数据，请编写一些脚本来创建用于性能测试的测试数据，或要求开发人员为您编写一个。</p>
+<p>10、程序员不应该测试自己的代码。开发应用程序的基本单元测试应该足以让开发人员为测试人员发布应用程序。但是测试人员不应强迫开发人员发布产品进行测试。从测试领导到测试经理，每个人都知道模块&#x2F;更新何时发布进行测试，他们可以相应地估计测试时间。这在敏捷项目环境中是常见的。</p>
+<p>11、超越需求测试。测试应用程序不应执行的操作。</p>
+<p>12、在进行回归测试时，请使用 Bug 图（bug管理工具生成）。 bug 图可用于预测应用程序中最可能出现 bug 部分。</p>
+<p>13、记下在测试时学到的新术语和概念。在测试任何应用程序时保持文本文件处于打开状态。记录其中的测试进度和观察结果。在准备最终测试发布报告时使用记录的观察结果。这个习惯将帮助我们提供完整明确的测试报告和发布详细信息。</p>
+<p>14、很多时候，测试人员或开发人员会对受测应用程序的代码库进行更改。这是开发或测试环境中的必要步骤，避免像在银行项目中那样执行实时交易处理。记下为测试目的所做的所有此类代码更改，并在最终发布时确保已从最终的客户端部署文件资源中删除了所有这些更改。</p>
+<p>15、使开发人员远离测试环境。这是检测发布或部署文档中缺少的任何配置更改的必需步骤。有时，开发人员会进行一些系统或应用程序配置更改，但忘记在部署步骤中提及这些更改。如果开发人员无法访问测试环境，他们就不会意外地在测试环境中进行此类更改，以及如何在正确位置捕获的缺失内容。</p>
+<p>16、从软件需求和设计阶段开始让测试人员参与进来是一种很好的做法。通过这种方式，测试人员可以获得有关应用程序准确的信息，从而获得详细的测试覆盖率。如果您没有被要求参与此开发周期，那么您可以向您的主管或经理提出请求，让您的测试团队参与所有决策过程或会议。</p>
+<p>17、测试团队应与其组织中的其他团队分享最佳测试实践和经验。</p>
+<p>18、增加与开发人员的沟通，以了解有关产品的更多信息。尽可能进行面对面的沟通，以快速解决争议并避免任何误解。但是，当您了解要求或解决任何争议时，请确保以与电子邮件相同的覆盖通信方式进行沟通。不要相信任何口头内容。（这个要自己悟）</p>
+<p>19、不要没有时间去做优先级高的测试任务。将测试工作的优先级从高到低排序，并相应地规划您的工作。分析所有相关风险，确定工作的优先级。</p>
+<p>20、写一份清晰，描述性和明确的错误报告。不仅要提供详细bug描述和发现步骤，还要提供bug的影响和所有可能的解决方案。</p>
+<p>永远不要忘记，测试是一项创造性和具有挑战性的任务。这写完全取决于您如何处理这个挑战的技能和经验。</p>
+<p><strong>交给您：</strong></p>
+<p>在下面的评论中分享您自己的测试经验、想法或测试秘诀肯定会使本文更加有趣和有用！</p>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>测试技巧</tag>
+        <tag>测试经验</tag>
       </tags>
   </entry>
   <entry>
@@ -1058,6 +1058,59 @@
       </tags>
   </entry>
   <entry>
+    <title>GitHub搜索技巧</title>
+    <url>/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/</url>
+    <content><![CDATA[<p>github是世界知名的代码托管平台，千万程序员的圣地。作为一个常逛github的程序员，你在github上搜索代码时，是怎样操作的呢？</p>
+<p>大家是不是也会像我一样搜索框直接输入关键字</p>
+<p><img src="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117104623233.png" alt="image-20211117104623233"></p>
+<p>然后改变 一下列表oder排序方式</p>
+<p><img src="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117104649103.png" alt="image-20211117104649103"></p>
+<p>但是找到了接近21万相关的开源项目，这时候的你是不是一脸懵呢！</p>
+<p>接下来我们一块掌握几个精确查找项目的方式（均以springboot为例）</p>
+<h6 id="1-项目名搜索"><a href="#1-项目名搜索" class="headerlink" title="1.项目名搜索"></a>1.项目名搜索</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:name 项目关键字</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117104831270.png" alt="image-20211117104831270"></p>
+<p>这时发现项目数据量已经少了一些，搜索到了16.5万个项目</p>
+<h6 id="2-项目描述搜索"><a href="#2-项目描述搜索" class="headerlink" title="2.项目描述搜索"></a>2.项目描述搜索</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:description 关键字</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117105101855.png" alt="image-20211117105101855"></p>
+<p>此时项目数量已经下降到了6.9万个</p>
+<h6 id="3-项目readMe搜索"><a href="#3-项目readMe搜索" class="headerlink" title="3.项目readMe搜索"></a>3.项目readMe搜索</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:readme 关键字</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117105323314.png" alt="image-20211117105323314"></p>
+<p>此时项目数量为12.6万个</p>
+<h6 id="4-关键字搜索，然后限制stars或者forks-数"><a href="#4-关键字搜索，然后限制stars或者forks-数" class="headerlink" title="4.关键字搜索，然后限制stars或者forks 数"></a>4.关键字搜索，然后限制stars或者forks 数</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:name 或者 description 或者 readme 关键字 stars:&gt;数字 forks:&gt;数字</span><br></pre></td></tr></table></figure>
+
+<p>stars 和 forks既可以单独使用，也可以组合使用</p>
+<p><img src="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117113707201.png" alt="image-20211117113707201"></p>
+<p>当增加上stars 数量大于10000时，项目数为23个</p>
+<h6 id="5-限制项目更新时间"><a href="#5-限制项目更新时间" class="headerlink" title="5.限制项目更新时间"></a>5.限制项目更新时间</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:name或description或readme 关键字  pushed:&gt;2021-02-01</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117113931148.png" alt="image-20211117113931148"></p>
+<p>此时项目数为4.4万个。这里还可以和stars或者forks组合使用</p>
+<h6 id="6-限制项目的语言"><a href="#6-限制项目的语言" class="headerlink" title="6.限制项目的语言"></a>6.限制项目的语言</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:name或description或readme 关键字  language:javascript</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117114146576.png" alt="image-20211117114146576"></p>
+<p>项目数为8.5万个。</p>
+<h6 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h6><p>如何高效的从GitHub上搜索开源项目，有下面的小技巧：</p>
+<ul>
+<li>项目名搜索: in:name 关键字</li>
+<li>项目描述搜索： in:description 关键字</li>
+<li>项目详细描述搜索： in: readme 关键字</li>
+<li>限制项目的火热程度： stars:&gt;数字 或者 forks:&gt;数字</li>
+<li>限制项目的更新时间：pushed:&gt; 时间</li>
+<li>限制项目的语言：language:语言</li>
+</ul>
+<p>所以以上github搜索的小技巧。你学废了吗？</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>HDFS架构及命令</title>
     <url>/Echo/2022/01/02/HDFS%E6%9E%B6%E6%9E%84%E5%8F%8A%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<h4 id="HDFS架构"><a href="#HDFS架构" class="headerlink" title="HDFS架构"></a>HDFS架构</h4><p><img src="/Echo/2022/01/02/HDFS%E6%9E%B6%E6%9E%84%E5%8F%8A%E5%91%BD%E4%BB%A4/HDFS-Architecture.jpg" alt="HDFS-Architecture"></p>
@@ -1271,59 +1324,6 @@
       <tags>
         <tag>HDFS</tag>
         <tag>大数据</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>GitHub搜索技巧</title>
-    <url>/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/</url>
-    <content><![CDATA[<p>github是世界知名的代码托管平台，千万程序员的圣地。作为一个常逛github的程序员，你在github上搜索代码时，是怎样操作的呢？</p>
-<p>大家是不是也会像我一样搜索框直接输入关键字</p>
-<p><img src="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117104623233.png" alt="image-20211117104623233"></p>
-<p>然后改变 一下列表oder排序方式</p>
-<p><img src="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117104649103.png" alt="image-20211117104649103"></p>
-<p>但是找到了接近21万相关的开源项目，这时候的你是不是一脸懵呢！</p>
-<p>接下来我们一块掌握几个精确查找项目的方式（均以springboot为例）</p>
-<h6 id="1-项目名搜索"><a href="#1-项目名搜索" class="headerlink" title="1.项目名搜索"></a>1.项目名搜索</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:name 项目关键字</span><br></pre></td></tr></table></figure>
-
-<p><img src="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117104831270.png" alt="image-20211117104831270"></p>
-<p>这时发现项目数据量已经少了一些，搜索到了16.5万个项目</p>
-<h6 id="2-项目描述搜索"><a href="#2-项目描述搜索" class="headerlink" title="2.项目描述搜索"></a>2.项目描述搜索</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:description 关键字</span><br></pre></td></tr></table></figure>
-
-<p><img src="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117105101855.png" alt="image-20211117105101855"></p>
-<p>此时项目数量已经下降到了6.9万个</p>
-<h6 id="3-项目readMe搜索"><a href="#3-项目readMe搜索" class="headerlink" title="3.项目readMe搜索"></a>3.项目readMe搜索</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:readme 关键字</span><br></pre></td></tr></table></figure>
-
-<p><img src="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117105323314.png" alt="image-20211117105323314"></p>
-<p>此时项目数量为12.6万个</p>
-<h6 id="4-关键字搜索，然后限制stars或者forks-数"><a href="#4-关键字搜索，然后限制stars或者forks-数" class="headerlink" title="4.关键字搜索，然后限制stars或者forks 数"></a>4.关键字搜索，然后限制stars或者forks 数</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:name 或者 description 或者 readme 关键字 stars:&gt;数字 forks:&gt;数字</span><br></pre></td></tr></table></figure>
-
-<p>stars 和 forks既可以单独使用，也可以组合使用</p>
-<p><img src="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117113707201.png" alt="image-20211117113707201"></p>
-<p>当增加上stars 数量大于10000时，项目数为23个</p>
-<h6 id="5-限制项目更新时间"><a href="#5-限制项目更新时间" class="headerlink" title="5.限制项目更新时间"></a>5.限制项目更新时间</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:name或description或readme 关键字  pushed:&gt;2021-02-01</span><br></pre></td></tr></table></figure>
-
-<p><img src="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117113931148.png" alt="image-20211117113931148"></p>
-<p>此时项目数为4.4万个。这里还可以和stars或者forks组合使用</p>
-<h6 id="6-限制项目的语言"><a href="#6-限制项目的语言" class="headerlink" title="6.限制项目的语言"></a>6.限制项目的语言</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:name或description或readme 关键字  language:javascript</span><br></pre></td></tr></table></figure>
-
-<p><img src="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117114146576.png" alt="image-20211117114146576"></p>
-<p>项目数为8.5万个。</p>
-<h6 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h6><p>如何高效的从GitHub上搜索开源项目，有下面的小技巧：</p>
-<ul>
-<li>项目名搜索: in:name 关键字</li>
-<li>项目描述搜索： in:description 关键字</li>
-<li>项目详细描述搜索： in: readme 关键字</li>
-<li>限制项目的火热程度： stars:&gt;数字 或者 forks:&gt;数字</li>
-<li>限制项目的更新时间：pushed:&gt; 时间</li>
-<li>限制项目的语言：language:语言</li>
-</ul>
-<p>所以以上github搜索的小技巧。你学废了吗？</p>
-]]></content>
-      <categories>
-        <category>学习</category>
-      </categories>
-      <tags>
-        <tag>github</tag>
       </tags>
   </entry>
   <entry>
@@ -1605,6 +1605,354 @@
       <tags>
         <tag>大数据</tag>
         <tag>kafka</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>cetnos 7.7单节点安装部署k8s（v1.18.2）</title>
+    <url>/Echo/2020/05/13/cetnos-7-7%E5%8D%95%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2k8s%EF%BC%88v1-18-2%EF%BC%89/</url>
+    <content><![CDATA[<h4 id="1-配置hosts文件"><a href="#1-配置hosts文件" class="headerlink" title="1.配置hosts文件"></a>1.配置hosts文件</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/hosts</span><br></pre></td></tr></table></figure>
+
+<p>本机ip  本机hostname 本机hostname</p>
+<h4 id="2-关闭防火墙-sawp等"><a href="#2-关闭防火墙-sawp等" class="headerlink" title="2.关闭防火墙, sawp等"></a>2.关闭防火墙, sawp等</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl <span class="built_in">disable</span> firewalld</span><br><span class="line">swapoff -a <span class="comment">#此处为临时关闭</span></span><br></pre></td></tr></table></figure>
+
+<p>#注释掉 &#x2F;etc&#x2F;fstab 里面这一行 &#x2F;dev&#x2F;mapper&#x2F;centos-swap swap                    swap    defaults        0 0</p>
+<h4 id="3-禁用selinux"><a href="#3-禁用selinux" class="headerlink" title="3.禁用selinux"></a>3.禁用selinux</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br><span class="line">SELINUX=disabled</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-修改iptables参数-RHEL-x2F-CentOS-7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题"><a href="#4-修改iptables参数-RHEL-x2F-CentOS-7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题" class="headerlink" title="4.修改iptables参数 :: RHEL &#x2F; CentOS 7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题"></a>4.修改iptables参数 :: RHEL &#x2F; CentOS 7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">cat &lt;&lt;<span class="string">EOF &gt;  /etc/sysctl.d/k8s.conf</span></span><br><span class="line"><span class="string">vm.swappiness = 0</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-ip6tables = 1</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-iptables = 1</span></span><br><span class="line"><span class="string">net.ipv4.ip_forward = 1</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"><span class="comment">#使配置生效</span></span><br><span class="line">modprobe br_netfilter</span><br><span class="line">sysctl -p /etc/sysctl.d/k8s.conf</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-安装docker-使用阿里镜像"><a href="#5-安装docker-使用阿里镜像" class="headerlink" title="5.安装docker(使用阿里镜像)"></a>5.安装docker(使用阿里镜像)</h4><h5 id="step-1-安装必要的一些系统工具"><a href="#step-1-安装必要的一些系统工具" class="headerlink" title="step 1: 安装必要的一些系统工具"></a>step 1: 安装必要的一些系统工具</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-2-添加软件源信息"><a href="#Step-2-添加软件源信息" class="headerlink" title="Step 2: 添加软件源信息"></a>Step 2: 添加软件源信息</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-3-更新并安装Docker-CE"><a href="#Step-3-更新并安装Docker-CE" class="headerlink" title="Step 3: 更新并安装Docker-CE"></a>Step 3: 更新并安装Docker-CE</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum makecache fast</span><br><span class="line">sudo yum -y install docker-ce</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-4-开启Docker服务"><a href="#Step-4-开启Docker服务" class="headerlink" title="Step 4: 开启Docker服务"></a>Step 4: 开启Docker服务</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-5-修改cgroupdriver-和镜像地址"><a href="#Step-5-修改cgroupdriver-和镜像地址" class="headerlink" title="Step 5: 修改cgroupdriver 和镜像地址"></a>Step 5: 修改cgroupdriver 和镜像地址</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/docker/daemon.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;exec-opts&quot;</span>: [<span class="string">&quot;native.cgroupdriver=systemd&quot;</span>],</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://e7l8pkuq.mirror.aliyuncs.com&quot;</span>,<span class="string">&quot;https://hub-mirror.c.163.com/&quot;</span>,<span class="string">&quot;https://reg-mirror.qiniu.com&quot;</span>]</span><br><span class="line">&#125;</span><br><span class="line"> <span class="comment"># 安装校验 docker version</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-6-安装kubernetes"><a href="#Step-6-安装kubernetes" class="headerlink" title="Step  6.安装kubernetes"></a>Step  6.安装kubernetes</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">cat &lt;&lt;<span class="string">EOF &gt; /etc/yum.repos.d/kubernetes.repo</span></span><br><span class="line"><span class="string">[kubernetes]</span></span><br><span class="line"><span class="string">name=Kubernetes</span></span><br><span class="line"><span class="string">baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64/</span></span><br><span class="line"><span class="string">enabled=1</span></span><br><span class="line"><span class="string">gpgcheck=1</span></span><br><span class="line"><span class="string">repo_gpgcheck=1</span></span><br><span class="line"><span class="string">gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line">setenforce 0</span><br><span class="line">yum install -y kubelet kubeadm kubectl</span><br><span class="line">systemctl <span class="built_in">enable</span> kubelet &amp;&amp; systemctl start kubelet</span><br><span class="line"> <span class="comment"># 出现索引lgpg检查失败时，请用yum install -y --nogpgcheck kubelet kubeadm kubectl</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="step-7-kubeadm初始化安装"><a href="#step-7-kubeadm初始化安装" class="headerlink" title="step 7.kubeadm初始化安装"></a>step 7.kubeadm初始化安装</h5><p>kubeadm init –apiserver-advertise-address&#x3D;本机IP –image-repository registry.aliyuncs.com&#x2F;google_containers –kubernetes-version 版本号 –pod-network-cidr&#x3D;10.244.0.0&#x2F;16</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubeadm init --apiserver-advertise-address=192.168.94.129 --image-repository registry.aliyuncs.com/google_containers --kubernetes-version 1.18.2 --pod-network-cidr=10.244.0.0/16</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-8-初始化安装成功后进行配置"><a href="#step-8-初始化安装成功后进行配置" class="headerlink" title="step 8.初始化安装成功后进行配置"></a>step 8.初始化安装成功后进行配置</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mkdir -p <span class="variable">$HOME</span>/.kube</span><br><span class="line">sudo cp -i /etc/kubernetes/admin.conf <span class="variable">$HOME</span>/.kube/config</span><br><span class="line">sudo chown $(id -u):$(id -g) <span class="variable">$HOME</span>/.kube/config</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-9-查看kubelet状态"><a href="#step-9-查看kubelet状态" class="headerlink" title="step 9.查看kubelet状态"></a>step 9.查看kubelet状态</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl status kubelet.service</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-10-确认每个组件的状态"><a href="#step-10-确认每个组件的状态" class="headerlink" title="step 10.确认每个组件的状态"></a>step 10.确认每个组件的状态</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl get cs</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-11-查看node状态，此时会发现处于NoReady"><a href="#step-11-查看node状态，此时会发现处于NoReady" class="headerlink" title="step 11.查看node状态，此时会发现处于NoReady"></a>step 11.查看node状态，此时会发现处于NoReady</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl get node</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-12-安装port-Network-flannel-k8s-cluster-工作-须安装pod网络，否则pod之间无法通信，k8s支持多种方案"><a href="#step-12-安装port-Network-flannel-k8s-cluster-工作-须安装pod网络，否则pod之间无法通信，k8s支持多种方案" class="headerlink" title="step 12.安装port Network( flannel )  : k8s cluster 工作 须安装pod网络，否则pod之间无法通信，k8s支持多种方案"></a>step 12.安装port Network( flannel )  : k8s cluster 工作 须安装pod网络，否则pod之间无法通信，k8s支持多种方案</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml</span><br></pre></td></tr></table></figure>
+
+<p>建议将kube-fannle文件拷贝至本地，将其中所需的镜像进行替换。</p>
+<h5 id="step-13-检查pod-确保每个pod都是running"><a href="#step-13-检查pod-确保每个pod都是running" class="headerlink" title="step 13.检查pod,确保每个pod都是running"></a>step 13.检查pod,确保每个pod都是running</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl get pod --all-namespaces -o wide</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>环境安装</category>
+      </categories>
+      <tags>
+        <tag>K8S</tag>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>cetnos 8.2单节点安装部署k8s（v1.18.2）</title>
+    <url>/Echo/2020/08/10/cetnos-8-2%E5%8D%95%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2k8s%EF%BC%88v1-18-2%EF%BC%89/</url>
+    <content><![CDATA[<h4 id="1-配置hosts文件"><a href="#1-配置hosts文件" class="headerlink" title="1.配置hosts文件"></a>1.配置hosts文件</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/hosts</span><br></pre></td></tr></table></figure>
+
+<p>本机ip  本机hostname 本机hostname</p>
+<h4 id="2-关闭防火墙-sawp等"><a href="#2-关闭防火墙-sawp等" class="headerlink" title="2.关闭防火墙, sawp等"></a>2.关闭防火墙, sawp等</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl <span class="built_in">disable</span> firewalld</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-关闭swap"><a href="#3-关闭swap" class="headerlink" title="3.关闭swap"></a>3.关闭swap</h4><h4 id="4-禁用selinux"><a href="#4-禁用selinux" class="headerlink" title="4.禁用selinux"></a>4.禁用selinux</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br><span class="line">SELINUX=disabled</span><br><span class="line">/usr/sbin/sestatus -v  <span class="comment"># 查看selinux状态</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="5-安装docker"><a href="#5-安装docker" class="headerlink" title="5.安装docker"></a>5.安装docker</h4><h5 id="step-1-安装必要的一些系统工具"><a href="#step-1-安装必要的一些系统工具" class="headerlink" title="step 1: 安装必要的一些系统工具"></a>step 1: 安装必要的一些系统工具</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-2-添加软件源信息"><a href="#Step-2-添加软件源信息" class="headerlink" title="Step 2: 添加软件源信息"></a>Step 2: 添加软件源信息</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-3-更新并安装Docker-CE"><a href="#Step-3-更新并安装Docker-CE" class="headerlink" title="Step 3: 更新并安装Docker-CE"></a>Step 3: 更新并安装Docker-CE</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum makecache --refresh</span><br><span class="line">sudo yum -y install docker-ce</span><br><span class="line"><span class="comment"># 发现报错：Problem: package docker-ce-3:19.03.12-3.el7.x86_64 requires containerd.io &gt;= 1.2.2-3, but none of the providers can be installed</span></span><br><span class="line"><span class="comment"># 因为containerd 版本过低</span></span><br><span class="line">dnf install container-selinux</span><br><span class="line">通过yum -y install https://download.docker.com/linux/centos/7/x86_64/edge/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm 升级即可</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-4-docker-修改Cgroup-Driver以及docker镜像拉取地址"><a href="#Step-4-docker-修改Cgroup-Driver以及docker镜像拉取地址" class="headerlink" title="Step 4: docker 修改Cgroup Driver以及docker镜像拉取地址"></a>Step 4: docker 修改Cgroup Driver以及docker镜像拉取地址</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"> cat /etc/docker/daemon.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://e7l8pkuq.mirror.aliyuncs.com&quot;</span>],</span><br><span class="line">  <span class="string">&quot;exec-opts&quot;</span>: [<span class="string">&quot;native.cgroupdriver=systemd&quot;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-5-开启Docker服务"><a href="#Step-5-开启Docker服务" class="headerlink" title="Step 5: 开启Docker服务"></a>Step 5: 开启Docker服务</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-安装kubectl"><a href="#6-安装kubectl" class="headerlink" title="6.安装kubectl"></a>6.安装kubectl</h4><h5 id="step-1：下载最新kubectl最新资源"><a href="#step-1：下载最新kubectl最新资源" class="headerlink" title="step 1：下载最新kubectl最新资源"></a>step 1：下载最新kubectl最新资源</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">curl -LO <span class="string">&quot;https://storage.googleapis.com/kubernetes-release/release/<span class="subst">$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)</span>/bin/linux/amd64/kubectl&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="step-2：添加执行权限"><a href="#step-2：添加执行权限" class="headerlink" title="step 2：添加执行权限"></a>step 2：添加执行权限</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">chmod +x ./kubectl</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-3：移动kubectl至bin路径"><a href="#step-3：移动kubectl至bin路径" class="headerlink" title="step 3：移动kubectl至bin路径"></a>step 3：移动kubectl至bin路径</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo mv ./kubectl /usr/<span class="built_in">local</span>/bin/kubectl</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-4：确认安装的版本"><a href="#step-4：确认安装的版本" class="headerlink" title="step 4：确认安装的版本"></a>step 4：确认安装的版本</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl version --client</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-安装minikube"><a href="#7-安装minikube" class="headerlink" title="7.安装minikube"></a>7.安装minikube</h4><h5 id="step-1：确认是否支持虚拟化"><a href="#step-1：确认是否支持虚拟化" class="headerlink" title="step 1：确认是否支持虚拟化"></a>step 1：确认是否支持虚拟化</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">grep -E --color <span class="string">&#x27;vmx|svm&#x27;</span> /proc/cpuinfo</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="step-2：下载minikube资源"><a href="#step-2：下载minikube资源" class="headerlink" title="step 2：下载minikube资源"></a>step 2：下载minikube资源</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \</span><br><span class="line">  &amp;&amp; chmod +x minikube</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="step-3：添加minikube进入系统命令"><a href="#step-3：添加minikube进入系统命令" class="headerlink" title="step 3：添加minikube进入系统命令"></a>step 3：添加minikube进入系统命令</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo mkdir -p /usr/<span class="built_in">local</span>/bin/</span><br><span class="line">sudo install minikube /usr/<span class="built_in">local</span>/bin/</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="step-4：启动-minikube（使用的VM安装的centos-8因此设置driver-x3D-none）"><a href="#step-4：启动-minikube（使用的VM安装的centos-8因此设置driver-x3D-none）" class="headerlink" title="step 4：启动 minikube（使用的VM安装的centos 8因此设置driver&#x3D;none）"></a>step 4：启动 minikube（使用的VM安装的centos 8因此设置driver&#x3D;none）</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">minikube start --driver=none --image-repository=registry.cn-hangzhou.aliyuncs.com/google_containers</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="step-5：确认minikube状态"><a href="#step-5：确认minikube状态" class="headerlink" title="step 5：确认minikube状态"></a>step 5：确认minikube状态</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">minikube status</span><br></pre></td></tr></table></figure>
+
+<p>8.istio安装</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">istioctl manifest apply --<span class="built_in">set</span> profile=demo</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>环境安装</category>
+      </categories>
+      <tags>
+        <tag>K8S</tag>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>emqtt_bench安装与压测MQTTbroker</title>
+    <url>/Echo/2021/12/15/emqtt-bench%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8E%8B%E6%B5%8BMQTTbroker/</url>
+    <content><![CDATA[<h4 id="EMQX"><a href="#EMQX" class="headerlink" title="EMQX"></a>EMQX</h4><p><em>EMQ X</em> (Erlang&#x2F;Enterprise&#x2F;Elastic MQTT Broker) 是基于 Erlang&#x2F;OTP 平台开发的开源物联网 MQTT 消息服务器。</p>
+<p>Erlang&#x2F;OTP是出色的软实时 (Soft-Realtime)、低延时 (Low-Latency)、分布式 (Distributed)的语言平台。</p>
+<p>MQTT 是轻量的 (Lightweight)、发布订阅模式 (PubSub) 的物联网消息协议。</p>
+<p>EMQ X 设计目标是实现高可靠，并支持承载海量物联网终端的MQTT连接，支持在海量物联网设备间低延时消息路由:</p>
+<ol>
+<li>稳定承载大规模的 MQTT 客户端连接，单服务器节点支持50万到100万连接。</li>
+<li>分布式节点集群，快速低延时的消息路由，单集群支持1000万规模的路由。</li>
+<li>消息服务器内扩展，支持定制多种认证方式、高效存储消息到后端数据库。</li>
+<li>完整物联网协议支持，MQTT、MQTT-SN、CoAP、LwM2M、WebSocket 或私有协议支持。</li>
+</ol>
+<h4 id="emqtt-bench"><a href="#emqtt-bench" class="headerlink" title="emqtt_bench"></a>emqtt_bench</h4><p><a href="https://github.com/emqx/emqtt_bench">emqtt_bench (opens new window)</a>是基于 Erlang 编写的，一个简洁强大的 MQTT 协议性能测试工具。</p>
+<h4 id="EMQX安装"><a href="#EMQX安装" class="headerlink" title="EMQX安装"></a>EMQX安装</h4><p>emqx安装比较简单，可以参照<a href="https://docs.emqx.cn/broker/v4.3/getting-started/install.html">安装 | EMQ Docs (emqx.cn)</a>进行。</p>
+<h4 id="emqtt-bench安装"><a href="#emqtt-bench安装" class="headerlink" title="emqtt_bench安装"></a>emqtt_bench安装</h4><p>结合官网介绍需要 Erlang&#x2F;OTP 22.3+以上，但是经过尝试最新版的Erlang不太兼容，所以还是老老实实用22.3了。</p>
+<h6 id="1-前提准备"><a href="#1-前提准备" class="headerlink" title="1.前提准备"></a>1.前提准备</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 各种依赖，缺乏可能会导致意外问题</span></span><br><span class="line">yum -y install ncurses-devel openssl-devel unixODBC-devel gcc-c++ perl</span><br></pre></td></tr></table></figure>
+
+<h6 id="2-安装Erlang-22-3"><a href="#2-安装Erlang-22-3" class="headerlink" title="2.安装Erlang 22.3"></a>2.安装Erlang 22.3</h6><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 切换到安装目录此处建议用opt文件夹</span></span><br><span class="line"><span class="built_in">cd</span> /opt</span><br><span class="line"><span class="comment"># 下载Erlang</span></span><br><span class="line">wget http://erlang.org/download/otp_src_22.3.tar.gz</span><br><span class="line"><span class="comment"># 解压</span></span><br><span class="line">tar -zxvf otp_src_22.3</span><br><span class="line">.tar.gz</span><br><span class="line"><span class="comment"># 切换到解压后的erlang安装包</span></span><br><span class="line"><span class="built_in">cd</span> otp_src_22.3</span><br><span class="line"><span class="comment"># 开始安装</span></span><br><span class="line">./configure &amp; make &amp; make install</span><br><span class="line"><span class="comment"># 查看版本</span></span><br><span class="line">erl</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Echo/2021/12/15/emqtt-bench%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8E%8B%E6%B5%8BMQTTbroker/image-20211216170648216.png" alt="image-20211216170648216"></p>
+<h6 id="3-安装新版git（因后续在emqtt-bench-make时centos7自带git版本较低导致问题）"><a href="#3-安装新版git（因后续在emqtt-bench-make时centos7自带git版本较低导致问题）" class="headerlink" title="3.安装新版git（因后续在emqtt_bench make时centos7自带git版本较低导致问题）"></a>3.安装新版git（因后续在emqtt_bench make时centos7自带git版本较低导致问题）</h6><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 更新系统资源包</span></span><br><span class="line">yum install http://opensource.wandisco.com/centos/7/git/x86_64/wandisco-git-release-7-2.noarch.rpm</span><br><span class="line"><span class="comment"># 安装git</span></span><br><span class="line">yum install -y git</span><br><span class="line"><span class="comment"># 查看git版本</span></span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
+
+<p>4.安装emqtt_bench</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装依赖</span></span><br><span class="line">yum install -y libatomic</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装</span></span><br><span class="line">git clone https://github.com/emqx/emqtt-bench</span><br><span class="line">cd emqtt-bench</span><br><span class="line"><span class="meta">#</span><span class="bash"> 因为QUIC目前不稳定所以选择禁用QUIC</span></span><br><span class="line">BUILD_WITHOUT_QUIC=1 make</span><br><span class="line"><span class="meta">#</span><span class="bash"> 验证</span></span><br><span class="line">./emqtt_bench</span><br></pre></td></tr></table></figure>
+
+<p>输出Usage: emqtt_bench pub | sub | conn [–help]即为安装成功</p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>安装中遇到的问题有以下两个</p>
+<h6 id="1-make失败（报错GUN版本）"><a href="#1-make失败（报错GUN版本）" class="headerlink" title="1.make失败（报错GUN版本）"></a>1.make失败（报错GUN版本）</h6><p>经排查此问题为QUIC功能不能使用导致，使用禁用模式make即可</p>
+<h6 id="2-有部分git资源下载失败"><a href="#2-有部分git资源下载失败" class="headerlink" title="2.有部分git资源下载失败"></a>2.有部分git资源下载失败</h6><p><img src="/Echo/2021/12/15/emqtt-bench%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8E%8B%E6%B5%8BMQTTbroker/image-20211216171321403.png" alt="image-20211216171321403"></p>
+<p><strong>cd &#x2F;opt&#x2F;emqtt-bench&#x2F;_build&#x2F;default&#x2F;lib&#x2F;quicer&#x2F;msquic&#x2F;submodules</strong></p>
+<p><strong>git clone git:&#x2F;&#x2F;github.com&#x2F;google&#x2F;googletest</strong></p>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p><code>emqtt_bench</code> 共三个子命令：</p>
+<ol>
+<li><code>pub</code>：用于创建大量客户端执行发布消息的操作。</li>
+<li><code>sub</code>：用于创建大量客户端执行订阅主题，并接受消息的操作。</li>
+<li><code>conn</code>：用于创建大量的连接</li>
+</ol>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>简写</th>
+<th>可选值</th>
+<th>默认值</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">–host</td>
+<td>-h</td>
+<td>-</td>
+<td>localhost</td>
+<td align="left">要连接的 MQTT 服务器地址</td>
+</tr>
+<tr>
+<td align="left">–port</td>
+<td>-p</td>
+<td>-</td>
+<td>1883</td>
+<td align="left">MQTT 服务端口</td>
+</tr>
+<tr>
+<td align="left">–version</td>
+<td>-V</td>
+<td>3 4 5</td>
+<td>5</td>
+<td align="left">使用的 MQTT 协议版本</td>
+</tr>
+<tr>
+<td align="left">–count</td>
+<td>-c</td>
+<td>-</td>
+<td>200</td>
+<td align="left">客户端总数</td>
+</tr>
+<tr>
+<td align="left">–startnumber</td>
+<td>-n</td>
+<td>-</td>
+<td>0</td>
+<td align="left">客户端数量起始值</td>
+</tr>
+<tr>
+<td align="left">–interval</td>
+<td>-i</td>
+<td>-</td>
+<td>10</td>
+<td align="left">每间隔多少时间创建一个客户端；单位：毫秒</td>
+</tr>
+<tr>
+<td align="left">–interval_of_msg</td>
+<td>-I</td>
+<td>-</td>
+<td>1000</td>
+<td align="left">每间隔多少时间发送一个消息</td>
+</tr>
+<tr>
+<td align="left">–username</td>
+<td>-u</td>
+<td>-</td>
+<td>无；非必选</td>
+<td align="left">客户端用户名</td>
+</tr>
+<tr>
+<td align="left">–password</td>
+<td>-P</td>
+<td>-</td>
+<td>无；非必选</td>
+<td align="left">客户端密码</td>
+</tr>
+<tr>
+<td align="left">–topic</td>
+<td>-t</td>
+<td>-</td>
+<td>无；必选</td>
+<td align="left">发布的主题；支持站位符： <code>%c</code>：表示 ClientId <code>%u</code>：表示 Username <code>%i</code>：表示客户端的序列数</td>
+</tr>
+<tr>
+<td align="left">–szie</td>
+<td>-s</td>
+<td>-</td>
+<td>256</td>
+<td align="left">消息 Payload 的大小；单位：字节</td>
+</tr>
+<tr>
+<td align="left">–qos</td>
+<td>-q</td>
+<td>-</td>
+<td>0</td>
+<td align="left">Qos 等级</td>
+</tr>
+<tr>
+<td align="left">–retain</td>
+<td>-r</td>
+<td>true false</td>
+<td>false</td>
+<td align="left">消息是否设置 Retain 标志</td>
+</tr>
+<tr>
+<td align="left">–keepalive</td>
+<td>-k</td>
+<td>-</td>
+<td>300</td>
+<td align="left">客户端心跳时间</td>
+</tr>
+<tr>
+<td align="left">–clean</td>
+<td>-C</td>
+<td>true false</td>
+<td>true</td>
+<td align="left">是否以清除会话的方式建立连接</td>
+</tr>
+<tr>
+<td align="left">–ssl</td>
+<td>-S</td>
+<td>true false</td>
+<td>false</td>
+<td align="left">是否启用 SSL</td>
+</tr>
+<tr>
+<td align="left">–certfile</td>
+<td>-</td>
+<td>-</td>
+<td>无</td>
+<td align="left">客户端 SSL 证书</td>
+</tr>
+<tr>
+<td align="left">–keyfile</td>
+<td>-</td>
+<td>-</td>
+<td>无</td>
+<td align="left">客户端 SSL 秘钥文件</td>
+</tr>
+<tr>
+<td align="left">–ws</td>
+<td>-</td>
+<td>true false</td>
+<td>false</td>
+<td align="left">是否以 Websocket 的方式建立连接</td>
+</tr>
+<tr>
+<td align="left">–ifaddr</td>
+<td>-</td>
+<td>-</td>
+<td>无</td>
+<td align="left">指定客户端连接使用的本地网卡</td>
+</tr>
+</tbody></table>
+<h4 id="吞吐量性能压测"><a href="#吞吐量性能压测" class="headerlink" title="吞吐量性能压测"></a>吞吐量性能压测</h4><p>bench1上执行</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">./emqtt_bench sub -t t -h EMQQserverIP -c 500</span><br></pre></td></tr></table></figure>
+
+<p>bench2 上执行</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">./emqtt_bench pub -t t -h EMQQserverIP -c 20 -I 100</span><br></pre></td></tr></table></figure>
+
+<p>在bench1上可以观察到</p>
+<p><strong>ecv(28006): total&#x3D;2102563, rate&#x3D;99725(msg&#x2F;sec）</strong></p>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>性能测试</tag>
+        <tag>mqtt</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HBase shell命令</title>
+    <url>/Echo/2020/03/13/hbase%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h4 id="HBase简介"><a href="#HBase简介" class="headerlink" title="HBase简介"></a>HBase简介</h4><p>HBase 命名的起源是 Hadoop database，Hadoop数据库，是NoSQL数据库，基于列式存储而非行式存储。</p>
+<p>HBase是一个分布式的、面向列的、基于Google Bigtable的开源实现。</p>
+<ul>
+<li>利用Hadoop HDFS作为其文件存储系统</li>
+<li>利用Hadoop MapReduce来处理HBase中的海量数据</li>
+<li>利用Zookeeper作为协同服务</li>
+</ul>
+<h4 id="HBase数据模型"><a href="#HBase数据模型" class="headerlink" title="HBase数据模型"></a>HBase数据模型</h4><p>HBase是一个稀疏、多维度、有序的映射表。表有行和列组成，列划分为若干个列族&#x2F;列簇(column family)，每个列族&#x2F;列簇下面可以有多个普通列。</p>
+<p><img src="/Echo/2020/03/13/hbase%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/5-1Z5091305564M.gif" alt="5-1Z5091305564M"></p>
+<h4 id="HBase-shell-命令"><a href="#HBase-shell-命令" class="headerlink" title="HBase shell 命令"></a>HBase shell 命令</h4><h5 id="进入-HBase-shell"><a href="#进入-HBase-shell" class="headerlink" title="进入 HBase shell"></a>进入 HBase shell</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hbase shell</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="HBase版本状态查看"><a href="#HBase版本状态查看" class="headerlink" title="HBase版本状态查看"></a>HBase版本状态查看</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查询状态</span></span><br><span class="line">status</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查询版本</span></span><br><span class="line">version</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看当前操作用户</span></span><br><span class="line">whoami</span><br><span class="line"><span class="meta">#</span><span class="bash"> 帮助命令</span></span><br><span class="line">help</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看hbase支持的工具</span></span><br><span class="line">tools</span><br></pre></td></tr></table></figure>
+
+<h5 id="DDL操作"><a href="#DDL操作" class="headerlink" title="DDL操作"></a>DDL操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建一个表</span></span><br><span class="line">create<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;column_famaly&#x27;</span>,<span class="string">&#x27;column_famaly1&#x27;</span>,<span class="string">&#x27;column_famaly2&#x27;</span></span><br><span class="line"><span class="comment"># 列出所有表</span></span><br><span class="line">list</span><br><span class="line"><span class="comment"># 获取表的描述</span></span><br><span class="line">describe<span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 删除一个列族</span></span><br><span class="line">alter<span class="string">&#x27;table&#x27;</span>,&#123;NAME=&gt;<span class="string">&#x27;column_famaly&#x27;</span>,METHOD=&gt;<span class="string">&#x27;delete&#x27;</span>&#125;</span><br><span class="line"><span class="comment"># 删除一个表</span></span><br><span class="line"><span class="comment"># ① 要删除的表设置为disable</span></span><br><span class="line"><span class="built_in">disable</span><span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># ② 删除表</span></span><br><span class="line">drop <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 查询表是否存在</span></span><br><span class="line">exists<span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 查看表是否可用</span></span><br><span class="line">is_enabled<span class="string">&#x27;table&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="DML操作"><a href="#DML操作" class="headerlink" title="DML操作"></a>DML操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 插入数据</span></span><br><span class="line">put<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span>,<span class="string">&#x27;name&#x27;</span></span><br><span class="line"><span class="comment"># 获取row1所有数据</span></span><br><span class="line">get <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span></span><br><span class="line"><span class="comment"># 获取表row1，col1所有数据</span></span><br><span class="line">get<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1&#x27;</span></span><br><span class="line"><span class="comment"># 更新一条数据</span></span><br><span class="line">put <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span>,<span class="string">&#x27;name1&#x27;</span></span><br><span class="line"><span class="comment"># 通过时间戳获取数据</span></span><br><span class="line">get <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,&#123;COLUMN=&gt;<span class="string">&#x27;col1:name&#x27;</span>,TIMESTAMP=&gt;1463055736277&#125;</span><br><span class="line"><span class="comment"># 扫描整张表（数据量大时不建议此操作）</span></span><br><span class="line">scan <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 删除一列</span></span><br><span class="line">delete <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span></span><br><span class="line"><span class="comment"># 删除行所有的数据</span></span><br><span class="line">deleteall <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span></span><br><span class="line"><span class="comment"># 统计表中的行数</span></span><br><span class="line">count <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 清空整张表（清空表后，表的分区设置会默认为1不建议）</span></span><br><span class="line">truncate <span class="string">&#x27;table&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="退出操作"><a href="#退出操作" class="headerlink" title="退出操作"></a>退出操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 退出</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment"># 关闭hbase集群（危险操作！！！）</span></span><br><span class="line">shutdown</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>大数据</tag>
+        <tag>HBase</tag>
       </tags>
   </entry>
   <entry>
@@ -2357,354 +2705,6 @@
       </tags>
   </entry>
   <entry>
-    <title>cetnos 7.7单节点安装部署k8s（v1.18.2）</title>
-    <url>/Echo/2020/05/13/cetnos-7-7%E5%8D%95%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2k8s%EF%BC%88v1-18-2%EF%BC%89/</url>
-    <content><![CDATA[<h4 id="1-配置hosts文件"><a href="#1-配置hosts文件" class="headerlink" title="1.配置hosts文件"></a>1.配置hosts文件</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/hosts</span><br></pre></td></tr></table></figure>
-
-<p>本机ip  本机hostname 本机hostname</p>
-<h4 id="2-关闭防火墙-sawp等"><a href="#2-关闭防火墙-sawp等" class="headerlink" title="2.关闭防火墙, sawp等"></a>2.关闭防火墙, sawp等</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl <span class="built_in">disable</span> firewalld</span><br><span class="line">swapoff -a <span class="comment">#此处为临时关闭</span></span><br></pre></td></tr></table></figure>
-
-<p>#注释掉 &#x2F;etc&#x2F;fstab 里面这一行 &#x2F;dev&#x2F;mapper&#x2F;centos-swap swap                    swap    defaults        0 0</p>
-<h4 id="3-禁用selinux"><a href="#3-禁用selinux" class="headerlink" title="3.禁用selinux"></a>3.禁用selinux</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br><span class="line">SELINUX=disabled</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-修改iptables参数-RHEL-x2F-CentOS-7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题"><a href="#4-修改iptables参数-RHEL-x2F-CentOS-7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题" class="headerlink" title="4.修改iptables参数 :: RHEL &#x2F; CentOS 7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题"></a>4.修改iptables参数 :: RHEL &#x2F; CentOS 7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">cat &lt;&lt;<span class="string">EOF &gt;  /etc/sysctl.d/k8s.conf</span></span><br><span class="line"><span class="string">vm.swappiness = 0</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-ip6tables = 1</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-iptables = 1</span></span><br><span class="line"><span class="string">net.ipv4.ip_forward = 1</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"><span class="comment">#使配置生效</span></span><br><span class="line">modprobe br_netfilter</span><br><span class="line">sysctl -p /etc/sysctl.d/k8s.conf</span><br></pre></td></tr></table></figure>
-
-<h4 id="5-安装docker-使用阿里镜像"><a href="#5-安装docker-使用阿里镜像" class="headerlink" title="5.安装docker(使用阿里镜像)"></a>5.安装docker(使用阿里镜像)</h4><h5 id="step-1-安装必要的一些系统工具"><a href="#step-1-安装必要的一些系统工具" class="headerlink" title="step 1: 安装必要的一些系统工具"></a>step 1: 安装必要的一些系统工具</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-2-添加软件源信息"><a href="#Step-2-添加软件源信息" class="headerlink" title="Step 2: 添加软件源信息"></a>Step 2: 添加软件源信息</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-3-更新并安装Docker-CE"><a href="#Step-3-更新并安装Docker-CE" class="headerlink" title="Step 3: 更新并安装Docker-CE"></a>Step 3: 更新并安装Docker-CE</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum makecache fast</span><br><span class="line">sudo yum -y install docker-ce</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-4-开启Docker服务"><a href="#Step-4-开启Docker服务" class="headerlink" title="Step 4: 开启Docker服务"></a>Step 4: 开启Docker服务</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-5-修改cgroupdriver-和镜像地址"><a href="#Step-5-修改cgroupdriver-和镜像地址" class="headerlink" title="Step 5: 修改cgroupdriver 和镜像地址"></a>Step 5: 修改cgroupdriver 和镜像地址</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/docker/daemon.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;exec-opts&quot;</span>: [<span class="string">&quot;native.cgroupdriver=systemd&quot;</span>],</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://e7l8pkuq.mirror.aliyuncs.com&quot;</span>,<span class="string">&quot;https://hub-mirror.c.163.com/&quot;</span>,<span class="string">&quot;https://reg-mirror.qiniu.com&quot;</span>]</span><br><span class="line">&#125;</span><br><span class="line"> <span class="comment"># 安装校验 docker version</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-6-安装kubernetes"><a href="#Step-6-安装kubernetes" class="headerlink" title="Step  6.安装kubernetes"></a>Step  6.安装kubernetes</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">cat &lt;&lt;<span class="string">EOF &gt; /etc/yum.repos.d/kubernetes.repo</span></span><br><span class="line"><span class="string">[kubernetes]</span></span><br><span class="line"><span class="string">name=Kubernetes</span></span><br><span class="line"><span class="string">baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64/</span></span><br><span class="line"><span class="string">enabled=1</span></span><br><span class="line"><span class="string">gpgcheck=1</span></span><br><span class="line"><span class="string">repo_gpgcheck=1</span></span><br><span class="line"><span class="string">gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line">setenforce 0</span><br><span class="line">yum install -y kubelet kubeadm kubectl</span><br><span class="line">systemctl <span class="built_in">enable</span> kubelet &amp;&amp; systemctl start kubelet</span><br><span class="line"> <span class="comment"># 出现索引lgpg检查失败时，请用yum install -y --nogpgcheck kubelet kubeadm kubectl</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="step-7-kubeadm初始化安装"><a href="#step-7-kubeadm初始化安装" class="headerlink" title="step 7.kubeadm初始化安装"></a>step 7.kubeadm初始化安装</h5><p>kubeadm init –apiserver-advertise-address&#x3D;本机IP –image-repository registry.aliyuncs.com&#x2F;google_containers –kubernetes-version 版本号 –pod-network-cidr&#x3D;10.244.0.0&#x2F;16</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubeadm init --apiserver-advertise-address=192.168.94.129 --image-repository registry.aliyuncs.com/google_containers --kubernetes-version 1.18.2 --pod-network-cidr=10.244.0.0/16</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-8-初始化安装成功后进行配置"><a href="#step-8-初始化安装成功后进行配置" class="headerlink" title="step 8.初始化安装成功后进行配置"></a>step 8.初始化安装成功后进行配置</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mkdir -p <span class="variable">$HOME</span>/.kube</span><br><span class="line">sudo cp -i /etc/kubernetes/admin.conf <span class="variable">$HOME</span>/.kube/config</span><br><span class="line">sudo chown $(id -u):$(id -g) <span class="variable">$HOME</span>/.kube/config</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-9-查看kubelet状态"><a href="#step-9-查看kubelet状态" class="headerlink" title="step 9.查看kubelet状态"></a>step 9.查看kubelet状态</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl status kubelet.service</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-10-确认每个组件的状态"><a href="#step-10-确认每个组件的状态" class="headerlink" title="step 10.确认每个组件的状态"></a>step 10.确认每个组件的状态</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl get cs</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-11-查看node状态，此时会发现处于NoReady"><a href="#step-11-查看node状态，此时会发现处于NoReady" class="headerlink" title="step 11.查看node状态，此时会发现处于NoReady"></a>step 11.查看node状态，此时会发现处于NoReady</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl get node</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-12-安装port-Network-flannel-k8s-cluster-工作-须安装pod网络，否则pod之间无法通信，k8s支持多种方案"><a href="#step-12-安装port-Network-flannel-k8s-cluster-工作-须安装pod网络，否则pod之间无法通信，k8s支持多种方案" class="headerlink" title="step 12.安装port Network( flannel )  : k8s cluster 工作 须安装pod网络，否则pod之间无法通信，k8s支持多种方案"></a>step 12.安装port Network( flannel )  : k8s cluster 工作 须安装pod网络，否则pod之间无法通信，k8s支持多种方案</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml</span><br></pre></td></tr></table></figure>
-
-<p>建议将kube-fannle文件拷贝至本地，将其中所需的镜像进行替换。</p>
-<h5 id="step-13-检查pod-确保每个pod都是running"><a href="#step-13-检查pod-确保每个pod都是running" class="headerlink" title="step 13.检查pod,确保每个pod都是running"></a>step 13.检查pod,确保每个pod都是running</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl get pod --all-namespaces -o wide</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>环境安装</category>
-      </categories>
-      <tags>
-        <tag>K8S</tag>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>cetnos 8.2单节点安装部署k8s（v1.18.2）</title>
-    <url>/Echo/2020/08/10/cetnos-8-2%E5%8D%95%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2k8s%EF%BC%88v1-18-2%EF%BC%89/</url>
-    <content><![CDATA[<h4 id="1-配置hosts文件"><a href="#1-配置hosts文件" class="headerlink" title="1.配置hosts文件"></a>1.配置hosts文件</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/hosts</span><br></pre></td></tr></table></figure>
-
-<p>本机ip  本机hostname 本机hostname</p>
-<h4 id="2-关闭防火墙-sawp等"><a href="#2-关闭防火墙-sawp等" class="headerlink" title="2.关闭防火墙, sawp等"></a>2.关闭防火墙, sawp等</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl <span class="built_in">disable</span> firewalld</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-关闭swap"><a href="#3-关闭swap" class="headerlink" title="3.关闭swap"></a>3.关闭swap</h4><h4 id="4-禁用selinux"><a href="#4-禁用selinux" class="headerlink" title="4.禁用selinux"></a>4.禁用selinux</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br><span class="line">SELINUX=disabled</span><br><span class="line">/usr/sbin/sestatus -v  <span class="comment"># 查看selinux状态</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="5-安装docker"><a href="#5-安装docker" class="headerlink" title="5.安装docker"></a>5.安装docker</h4><h5 id="step-1-安装必要的一些系统工具"><a href="#step-1-安装必要的一些系统工具" class="headerlink" title="step 1: 安装必要的一些系统工具"></a>step 1: 安装必要的一些系统工具</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-2-添加软件源信息"><a href="#Step-2-添加软件源信息" class="headerlink" title="Step 2: 添加软件源信息"></a>Step 2: 添加软件源信息</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-3-更新并安装Docker-CE"><a href="#Step-3-更新并安装Docker-CE" class="headerlink" title="Step 3: 更新并安装Docker-CE"></a>Step 3: 更新并安装Docker-CE</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum makecache --refresh</span><br><span class="line">sudo yum -y install docker-ce</span><br><span class="line"><span class="comment"># 发现报错：Problem: package docker-ce-3:19.03.12-3.el7.x86_64 requires containerd.io &gt;= 1.2.2-3, but none of the providers can be installed</span></span><br><span class="line"><span class="comment"># 因为containerd 版本过低</span></span><br><span class="line">dnf install container-selinux</span><br><span class="line">通过yum -y install https://download.docker.com/linux/centos/7/x86_64/edge/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm 升级即可</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-4-docker-修改Cgroup-Driver以及docker镜像拉取地址"><a href="#Step-4-docker-修改Cgroup-Driver以及docker镜像拉取地址" class="headerlink" title="Step 4: docker 修改Cgroup Driver以及docker镜像拉取地址"></a>Step 4: docker 修改Cgroup Driver以及docker镜像拉取地址</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"> cat /etc/docker/daemon.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://e7l8pkuq.mirror.aliyuncs.com&quot;</span>],</span><br><span class="line">  <span class="string">&quot;exec-opts&quot;</span>: [<span class="string">&quot;native.cgroupdriver=systemd&quot;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-5-开启Docker服务"><a href="#Step-5-开启Docker服务" class="headerlink" title="Step 5: 开启Docker服务"></a>Step 5: 开启Docker服务</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
-
-<h4 id="6-安装kubectl"><a href="#6-安装kubectl" class="headerlink" title="6.安装kubectl"></a>6.安装kubectl</h4><h5 id="step-1：下载最新kubectl最新资源"><a href="#step-1：下载最新kubectl最新资源" class="headerlink" title="step 1：下载最新kubectl最新资源"></a>step 1：下载最新kubectl最新资源</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">curl -LO <span class="string">&quot;https://storage.googleapis.com/kubernetes-release/release/<span class="subst">$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)</span>/bin/linux/amd64/kubectl&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="step-2：添加执行权限"><a href="#step-2：添加执行权限" class="headerlink" title="step 2：添加执行权限"></a>step 2：添加执行权限</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">chmod +x ./kubectl</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-3：移动kubectl至bin路径"><a href="#step-3：移动kubectl至bin路径" class="headerlink" title="step 3：移动kubectl至bin路径"></a>step 3：移动kubectl至bin路径</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo mv ./kubectl /usr/<span class="built_in">local</span>/bin/kubectl</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-4：确认安装的版本"><a href="#step-4：确认安装的版本" class="headerlink" title="step 4：确认安装的版本"></a>step 4：确认安装的版本</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl version --client</span><br></pre></td></tr></table></figure>
-
-<h4 id="7-安装minikube"><a href="#7-安装minikube" class="headerlink" title="7.安装minikube"></a>7.安装minikube</h4><h5 id="step-1：确认是否支持虚拟化"><a href="#step-1：确认是否支持虚拟化" class="headerlink" title="step 1：确认是否支持虚拟化"></a>step 1：确认是否支持虚拟化</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">grep -E --color <span class="string">&#x27;vmx|svm&#x27;</span> /proc/cpuinfo</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="step-2：下载minikube资源"><a href="#step-2：下载minikube资源" class="headerlink" title="step 2：下载minikube资源"></a>step 2：下载minikube资源</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \</span><br><span class="line">  &amp;&amp; chmod +x minikube</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="step-3：添加minikube进入系统命令"><a href="#step-3：添加minikube进入系统命令" class="headerlink" title="step 3：添加minikube进入系统命令"></a>step 3：添加minikube进入系统命令</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo mkdir -p /usr/<span class="built_in">local</span>/bin/</span><br><span class="line">sudo install minikube /usr/<span class="built_in">local</span>/bin/</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="step-4：启动-minikube（使用的VM安装的centos-8因此设置driver-x3D-none）"><a href="#step-4：启动-minikube（使用的VM安装的centos-8因此设置driver-x3D-none）" class="headerlink" title="step 4：启动 minikube（使用的VM安装的centos 8因此设置driver&#x3D;none）"></a>step 4：启动 minikube（使用的VM安装的centos 8因此设置driver&#x3D;none）</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">minikube start --driver=none --image-repository=registry.cn-hangzhou.aliyuncs.com/google_containers</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="step-5：确认minikube状态"><a href="#step-5：确认minikube状态" class="headerlink" title="step 5：确认minikube状态"></a>step 5：确认minikube状态</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">minikube status</span><br></pre></td></tr></table></figure>
-
-<p>8.istio安装</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">istioctl manifest apply --<span class="built_in">set</span> profile=demo</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>环境安装</category>
-      </categories>
-      <tags>
-        <tag>K8S</tag>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>emqtt_bench安装与压测MQTTbroker</title>
-    <url>/Echo/2021/12/15/emqtt-bench%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8E%8B%E6%B5%8BMQTTbroker/</url>
-    <content><![CDATA[<h4 id="EMQX"><a href="#EMQX" class="headerlink" title="EMQX"></a>EMQX</h4><p><em>EMQ X</em> (Erlang&#x2F;Enterprise&#x2F;Elastic MQTT Broker) 是基于 Erlang&#x2F;OTP 平台开发的开源物联网 MQTT 消息服务器。</p>
-<p>Erlang&#x2F;OTP是出色的软实时 (Soft-Realtime)、低延时 (Low-Latency)、分布式 (Distributed)的语言平台。</p>
-<p>MQTT 是轻量的 (Lightweight)、发布订阅模式 (PubSub) 的物联网消息协议。</p>
-<p>EMQ X 设计目标是实现高可靠，并支持承载海量物联网终端的MQTT连接，支持在海量物联网设备间低延时消息路由:</p>
-<ol>
-<li>稳定承载大规模的 MQTT 客户端连接，单服务器节点支持50万到100万连接。</li>
-<li>分布式节点集群，快速低延时的消息路由，单集群支持1000万规模的路由。</li>
-<li>消息服务器内扩展，支持定制多种认证方式、高效存储消息到后端数据库。</li>
-<li>完整物联网协议支持，MQTT、MQTT-SN、CoAP、LwM2M、WebSocket 或私有协议支持。</li>
-</ol>
-<h4 id="emqtt-bench"><a href="#emqtt-bench" class="headerlink" title="emqtt_bench"></a>emqtt_bench</h4><p><a href="https://github.com/emqx/emqtt_bench">emqtt_bench (opens new window)</a>是基于 Erlang 编写的，一个简洁强大的 MQTT 协议性能测试工具。</p>
-<h4 id="EMQX安装"><a href="#EMQX安装" class="headerlink" title="EMQX安装"></a>EMQX安装</h4><p>emqx安装比较简单，可以参照<a href="https://docs.emqx.cn/broker/v4.3/getting-started/install.html">安装 | EMQ Docs (emqx.cn)</a>进行。</p>
-<h4 id="emqtt-bench安装"><a href="#emqtt-bench安装" class="headerlink" title="emqtt_bench安装"></a>emqtt_bench安装</h4><p>结合官网介绍需要 Erlang&#x2F;OTP 22.3+以上，但是经过尝试最新版的Erlang不太兼容，所以还是老老实实用22.3了。</p>
-<h6 id="1-前提准备"><a href="#1-前提准备" class="headerlink" title="1.前提准备"></a>1.前提准备</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 各种依赖，缺乏可能会导致意外问题</span></span><br><span class="line">yum -y install ncurses-devel openssl-devel unixODBC-devel gcc-c++ perl</span><br></pre></td></tr></table></figure>
-
-<h6 id="2-安装Erlang-22-3"><a href="#2-安装Erlang-22-3" class="headerlink" title="2.安装Erlang 22.3"></a>2.安装Erlang 22.3</h6><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 切换到安装目录此处建议用opt文件夹</span></span><br><span class="line"><span class="built_in">cd</span> /opt</span><br><span class="line"><span class="comment"># 下载Erlang</span></span><br><span class="line">wget http://erlang.org/download/otp_src_22.3.tar.gz</span><br><span class="line"><span class="comment"># 解压</span></span><br><span class="line">tar -zxvf otp_src_22.3</span><br><span class="line">.tar.gz</span><br><span class="line"><span class="comment"># 切换到解压后的erlang安装包</span></span><br><span class="line"><span class="built_in">cd</span> otp_src_22.3</span><br><span class="line"><span class="comment"># 开始安装</span></span><br><span class="line">./configure &amp; make &amp; make install</span><br><span class="line"><span class="comment"># 查看版本</span></span><br><span class="line">erl</span><br></pre></td></tr></table></figure>
-
-<p><img src="/Echo/2021/12/15/emqtt-bench%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8E%8B%E6%B5%8BMQTTbroker/image-20211216170648216.png" alt="image-20211216170648216"></p>
-<h6 id="3-安装新版git（因后续在emqtt-bench-make时centos7自带git版本较低导致问题）"><a href="#3-安装新版git（因后续在emqtt-bench-make时centos7自带git版本较低导致问题）" class="headerlink" title="3.安装新版git（因后续在emqtt_bench make时centos7自带git版本较低导致问题）"></a>3.安装新版git（因后续在emqtt_bench make时centos7自带git版本较低导致问题）</h6><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 更新系统资源包</span></span><br><span class="line">yum install http://opensource.wandisco.com/centos/7/git/x86_64/wandisco-git-release-7-2.noarch.rpm</span><br><span class="line"><span class="comment"># 安装git</span></span><br><span class="line">yum install -y git</span><br><span class="line"><span class="comment"># 查看git版本</span></span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
-
-<p>4.安装emqtt_bench</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装依赖</span></span><br><span class="line">yum install -y libatomic</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装</span></span><br><span class="line">git clone https://github.com/emqx/emqtt-bench</span><br><span class="line">cd emqtt-bench</span><br><span class="line"><span class="meta">#</span><span class="bash"> 因为QUIC目前不稳定所以选择禁用QUIC</span></span><br><span class="line">BUILD_WITHOUT_QUIC=1 make</span><br><span class="line"><span class="meta">#</span><span class="bash"> 验证</span></span><br><span class="line">./emqtt_bench</span><br></pre></td></tr></table></figure>
-
-<p>输出Usage: emqtt_bench pub | sub | conn [–help]即为安装成功</p>
-<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>安装中遇到的问题有以下两个</p>
-<h6 id="1-make失败（报错GUN版本）"><a href="#1-make失败（报错GUN版本）" class="headerlink" title="1.make失败（报错GUN版本）"></a>1.make失败（报错GUN版本）</h6><p>经排查此问题为QUIC功能不能使用导致，使用禁用模式make即可</p>
-<h6 id="2-有部分git资源下载失败"><a href="#2-有部分git资源下载失败" class="headerlink" title="2.有部分git资源下载失败"></a>2.有部分git资源下载失败</h6><p><img src="/Echo/2021/12/15/emqtt-bench%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8E%8B%E6%B5%8BMQTTbroker/image-20211216171321403.png" alt="image-20211216171321403"></p>
-<p><strong>cd &#x2F;opt&#x2F;emqtt-bench&#x2F;_build&#x2F;default&#x2F;lib&#x2F;quicer&#x2F;msquic&#x2F;submodules</strong></p>
-<p><strong>git clone git:&#x2F;&#x2F;github.com&#x2F;google&#x2F;googletest</strong></p>
-<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p><code>emqtt_bench</code> 共三个子命令：</p>
-<ol>
-<li><code>pub</code>：用于创建大量客户端执行发布消息的操作。</li>
-<li><code>sub</code>：用于创建大量客户端执行订阅主题，并接受消息的操作。</li>
-<li><code>conn</code>：用于创建大量的连接</li>
-</ol>
-<p>参数</p>
-<table>
-<thead>
-<tr>
-<th align="left">参数</th>
-<th>简写</th>
-<th>可选值</th>
-<th>默认值</th>
-<th align="left">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">–host</td>
-<td>-h</td>
-<td>-</td>
-<td>localhost</td>
-<td align="left">要连接的 MQTT 服务器地址</td>
-</tr>
-<tr>
-<td align="left">–port</td>
-<td>-p</td>
-<td>-</td>
-<td>1883</td>
-<td align="left">MQTT 服务端口</td>
-</tr>
-<tr>
-<td align="left">–version</td>
-<td>-V</td>
-<td>3 4 5</td>
-<td>5</td>
-<td align="left">使用的 MQTT 协议版本</td>
-</tr>
-<tr>
-<td align="left">–count</td>
-<td>-c</td>
-<td>-</td>
-<td>200</td>
-<td align="left">客户端总数</td>
-</tr>
-<tr>
-<td align="left">–startnumber</td>
-<td>-n</td>
-<td>-</td>
-<td>0</td>
-<td align="left">客户端数量起始值</td>
-</tr>
-<tr>
-<td align="left">–interval</td>
-<td>-i</td>
-<td>-</td>
-<td>10</td>
-<td align="left">每间隔多少时间创建一个客户端；单位：毫秒</td>
-</tr>
-<tr>
-<td align="left">–interval_of_msg</td>
-<td>-I</td>
-<td>-</td>
-<td>1000</td>
-<td align="left">每间隔多少时间发送一个消息</td>
-</tr>
-<tr>
-<td align="left">–username</td>
-<td>-u</td>
-<td>-</td>
-<td>无；非必选</td>
-<td align="left">客户端用户名</td>
-</tr>
-<tr>
-<td align="left">–password</td>
-<td>-P</td>
-<td>-</td>
-<td>无；非必选</td>
-<td align="left">客户端密码</td>
-</tr>
-<tr>
-<td align="left">–topic</td>
-<td>-t</td>
-<td>-</td>
-<td>无；必选</td>
-<td align="left">发布的主题；支持站位符： <code>%c</code>：表示 ClientId <code>%u</code>：表示 Username <code>%i</code>：表示客户端的序列数</td>
-</tr>
-<tr>
-<td align="left">–szie</td>
-<td>-s</td>
-<td>-</td>
-<td>256</td>
-<td align="left">消息 Payload 的大小；单位：字节</td>
-</tr>
-<tr>
-<td align="left">–qos</td>
-<td>-q</td>
-<td>-</td>
-<td>0</td>
-<td align="left">Qos 等级</td>
-</tr>
-<tr>
-<td align="left">–retain</td>
-<td>-r</td>
-<td>true false</td>
-<td>false</td>
-<td align="left">消息是否设置 Retain 标志</td>
-</tr>
-<tr>
-<td align="left">–keepalive</td>
-<td>-k</td>
-<td>-</td>
-<td>300</td>
-<td align="left">客户端心跳时间</td>
-</tr>
-<tr>
-<td align="left">–clean</td>
-<td>-C</td>
-<td>true false</td>
-<td>true</td>
-<td align="left">是否以清除会话的方式建立连接</td>
-</tr>
-<tr>
-<td align="left">–ssl</td>
-<td>-S</td>
-<td>true false</td>
-<td>false</td>
-<td align="left">是否启用 SSL</td>
-</tr>
-<tr>
-<td align="left">–certfile</td>
-<td>-</td>
-<td>-</td>
-<td>无</td>
-<td align="left">客户端 SSL 证书</td>
-</tr>
-<tr>
-<td align="left">–keyfile</td>
-<td>-</td>
-<td>-</td>
-<td>无</td>
-<td align="left">客户端 SSL 秘钥文件</td>
-</tr>
-<tr>
-<td align="left">–ws</td>
-<td>-</td>
-<td>true false</td>
-<td>false</td>
-<td align="left">是否以 Websocket 的方式建立连接</td>
-</tr>
-<tr>
-<td align="left">–ifaddr</td>
-<td>-</td>
-<td>-</td>
-<td>无</td>
-<td align="left">指定客户端连接使用的本地网卡</td>
-</tr>
-</tbody></table>
-<h4 id="吞吐量性能压测"><a href="#吞吐量性能压测" class="headerlink" title="吞吐量性能压测"></a>吞吐量性能压测</h4><p>bench1上执行</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">./emqtt_bench sub -t t -h EMQQserverIP -c 500</span><br></pre></td></tr></table></figure>
-
-<p>bench2 上执行</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">./emqtt_bench pub -t t -h EMQQserverIP -c 20 -I 100</span><br></pre></td></tr></table></figure>
-
-<p>在bench1上可以观察到</p>
-<p><strong>ecv(28006): total&#x3D;2102563, rate&#x3D;99725(msg&#x2F;sec）</strong></p>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>性能测试</tag>
-        <tag>mqtt</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>HBase shell命令</title>
-    <url>/Echo/2020/03/13/hbase%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<h4 id="HBase简介"><a href="#HBase简介" class="headerlink" title="HBase简介"></a>HBase简介</h4><p>HBase 命名的起源是 Hadoop database，Hadoop数据库，是NoSQL数据库，基于列式存储而非行式存储。</p>
-<p>HBase是一个分布式的、面向列的、基于Google Bigtable的开源实现。</p>
-<ul>
-<li>利用Hadoop HDFS作为其文件存储系统</li>
-<li>利用Hadoop MapReduce来处理HBase中的海量数据</li>
-<li>利用Zookeeper作为协同服务</li>
-</ul>
-<h4 id="HBase数据模型"><a href="#HBase数据模型" class="headerlink" title="HBase数据模型"></a>HBase数据模型</h4><p>HBase是一个稀疏、多维度、有序的映射表。表有行和列组成，列划分为若干个列族&#x2F;列簇(column family)，每个列族&#x2F;列簇下面可以有多个普通列。</p>
-<p><img src="/Echo/2020/03/13/hbase%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/5-1Z5091305564M.gif" alt="5-1Z5091305564M"></p>
-<h4 id="HBase-shell-命令"><a href="#HBase-shell-命令" class="headerlink" title="HBase shell 命令"></a>HBase shell 命令</h4><h5 id="进入-HBase-shell"><a href="#进入-HBase-shell" class="headerlink" title="进入 HBase shell"></a>进入 HBase shell</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hbase shell</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="HBase版本状态查看"><a href="#HBase版本状态查看" class="headerlink" title="HBase版本状态查看"></a>HBase版本状态查看</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查询状态</span></span><br><span class="line">status</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查询版本</span></span><br><span class="line">version</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看当前操作用户</span></span><br><span class="line">whoami</span><br><span class="line"><span class="meta">#</span><span class="bash"> 帮助命令</span></span><br><span class="line">help</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看hbase支持的工具</span></span><br><span class="line">tools</span><br></pre></td></tr></table></figure>
-
-<h5 id="DDL操作"><a href="#DDL操作" class="headerlink" title="DDL操作"></a>DDL操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建一个表</span></span><br><span class="line">create<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;column_famaly&#x27;</span>,<span class="string">&#x27;column_famaly1&#x27;</span>,<span class="string">&#x27;column_famaly2&#x27;</span></span><br><span class="line"><span class="comment"># 列出所有表</span></span><br><span class="line">list</span><br><span class="line"><span class="comment"># 获取表的描述</span></span><br><span class="line">describe<span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 删除一个列族</span></span><br><span class="line">alter<span class="string">&#x27;table&#x27;</span>,&#123;NAME=&gt;<span class="string">&#x27;column_famaly&#x27;</span>,METHOD=&gt;<span class="string">&#x27;delete&#x27;</span>&#125;</span><br><span class="line"><span class="comment"># 删除一个表</span></span><br><span class="line"><span class="comment"># ① 要删除的表设置为disable</span></span><br><span class="line"><span class="built_in">disable</span><span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># ② 删除表</span></span><br><span class="line">drop <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 查询表是否存在</span></span><br><span class="line">exists<span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 查看表是否可用</span></span><br><span class="line">is_enabled<span class="string">&#x27;table&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="DML操作"><a href="#DML操作" class="headerlink" title="DML操作"></a>DML操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 插入数据</span></span><br><span class="line">put<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span>,<span class="string">&#x27;name&#x27;</span></span><br><span class="line"><span class="comment"># 获取row1所有数据</span></span><br><span class="line">get <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span></span><br><span class="line"><span class="comment"># 获取表row1，col1所有数据</span></span><br><span class="line">get<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1&#x27;</span></span><br><span class="line"><span class="comment"># 更新一条数据</span></span><br><span class="line">put <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span>,<span class="string">&#x27;name1&#x27;</span></span><br><span class="line"><span class="comment"># 通过时间戳获取数据</span></span><br><span class="line">get <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,&#123;COLUMN=&gt;<span class="string">&#x27;col1:name&#x27;</span>,TIMESTAMP=&gt;1463055736277&#125;</span><br><span class="line"><span class="comment"># 扫描整张表（数据量大时不建议此操作）</span></span><br><span class="line">scan <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 删除一列</span></span><br><span class="line">delete <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span></span><br><span class="line"><span class="comment"># 删除行所有的数据</span></span><br><span class="line">deleteall <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span></span><br><span class="line"><span class="comment"># 统计表中的行数</span></span><br><span class="line">count <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 清空整张表（清空表后，表的分区设置会默认为1不建议）</span></span><br><span class="line">truncate <span class="string">&#x27;table&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="退出操作"><a href="#退出操作" class="headerlink" title="退出操作"></a>退出操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 退出</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment"># 关闭hbase集群（危险操作！！！）</span></span><br><span class="line">shutdown</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>大数据</category>
-      </categories>
-      <tags>
-        <tag>大数据</tag>
-        <tag>HBase</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>jekins环境搭建</title>
     <url>/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
     <content><![CDATA[<table>
@@ -3254,6 +3254,28 @@
       </tags>
   </entry>
   <entry>
+    <title>2015-2020工作日志</title>
+    <url>/Echo/2020/04/02/%E4%BA%94%E5%B9%B4%E5%B7%A5%E4%BD%9C%E6%84%9F%E6%82%9F/</url>
+    <content><![CDATA[<h5 id="学校生涯"><a href="#学校生涯" class="headerlink" title="学校生涯"></a>学校生涯</h5><p>​       我自身是河南人，不过有一颗不安分的心。高考志愿填报了大连交通大学，选了软件工程与信息管理与信息系统的双专业学位，学制五年。大三期间参与学校老师ERP沙盘模拟软件的编写工作。在这期间开始真正的接触项目，这时才知道学习与实战的差距。当时主要用的J2EE和java struct。项目做到大四完成。完成第一版之后在学校的校内ERP沙盘大赛和校内实践课程上已经开始运用了。听说现在还在使用中。</p>
+<h5 id="北京"><a href="#北京" class="headerlink" title="北京"></a>北京</h5><h6 id="培训"><a href="#培训" class="headerlink" title="培训"></a>培训</h6><p>​     因为一心想去一线城市看看，在择业期毫不犹豫的就选择了去北京。因为大学有项目而且大学主修课程有日语，很顺利的面上了北京利达智通。14年11月开始进入公司实习。在实习前三个月是在济南培训。培训这段时间感觉是最充实的。当时公司主要业务是野村证券。使用的大机语言（COBOL，在校也有相关的选修课还有证书可拿），主要是linux系统上进行开发。三个月的培训每天有作业每月有考核，压力大收获也大。在此期间学的linux和养成的编程习惯让我至今仍有受益。</p>
+<h6 id="第一个项目-野村证券MRF"><a href="#第一个项目-野村证券MRF" class="headerlink" title="第一个项目-野村证券MRF"></a>第一个项目-野村证券MRF</h6><p>这个项目主要是为日本野村证券新增一个青少年可以参与基金交易的功能。前一个月由师傅的带领开始正式的面向对象编程，不得不说日本人的式样书真详细。主要负责是功能模块各种数据连接层的处理以及数据库维护等工作。在这工作期间培养了自己的时间观念（某办法日本人特别在意这个）在dead line 前必须完成，好的一点是式样书（详设）写的真详细，不好的一点是没有自己发展的空间。还有个教训让我记忆深刻。在转正后，开始自己独立编写，结对测试的工作模式。由于当时对全角和半角的空格不敏感，这编程过程这个错误反复的犯，差点耽误项目进度。后来就给自己贴了便签，同样的错误绝不能犯第二次。</p>
+<h6 id="第二个项目-青森银行的住贷项目"><a href="#第二个项目-青森银行的住贷项目" class="headerlink" title="第二个项目-青森银行的住贷项目"></a>第二个项目-青森银行的住贷项目</h6><p>这个项目是公司开始转型的开始。主要编程语言为java，使用SSM框架来进行开发。这项目算是一个全新的项目从资料上传、申请、审批、贷后管理这房屋住贷全流程。（不同的有两点一、青森银行的住贷是有授权民间金融借贷来进行，二、放款时本人必须到场身份验证）。之前的项目一直用的COBOL，从2016年12月开始重新捡回java进行面向对象开发。从此开始CURD之路，主要是DAO层使用原生的JDBC连接数据库，然后实现CURD操作。除了承担CURD操作之外同时还承担这项目组的DBA的角色。主要有数据库权限分配与管理，数据表视图的创建，数据库表结构创建与维护等工作。项目大概到5月份就开始进行客户验收了，中间去日本青森县出差过1个月，作为现场技术支持。因为我本身有日语N3证书（目前已经过期，日语也忘得差不多了），同时本身的水平在项目组中还不错。过完十一后就日渐想河南老家。北京节假日回家真的太难了。</p>
+<h5 id="浪潮之旅"><a href="#浪潮之旅" class="headerlink" title="浪潮之旅"></a>浪潮之旅</h5><h6 id="济南-初识测试、自动化测试"><a href="#济南-初识测试、自动化测试" class="headerlink" title="济南-初识测试、自动化测试"></a>济南-初识测试、自动化测试</h6><p>17年10月开始面试，11月收到浪潮的offer。当时面上大厂，心情激动，这个也可以实现回郑州，只不过要先在济南工作一年左右。入职岗位是测试验证部-测试开发。当时浪潮因为自身要搞自动化测试平台的建设，因为有个目标要在19年4月完成5000+自动化脚本库已经自动化平台的建设。入职后开始搞自动化测试。我的任务主要是前台选择完用例后，我后台开始执行相关测试脚本同时获取脚本执行结果以及日志信息。在18年7月ITMS平台搭建完成，同年获得浪潮集团内部创新一等奖。后续开始除了用例撰写人员全部投入脚本编写工作，自此开始认识测试。从需求分析，用例设计，手工测试，自动化测试，bug回归，事后分析总结等全流程，认识了了解了，熟悉了测试以及自动化用例和脚本如何进行对应。</p>
+<h6 id="郑州-挑战与转变"><a href="#郑州-挑战与转变" class="headerlink" title="郑州-挑战与转变"></a>郑州-挑战与转变</h6><p>18年10月因为要在郑州成立大数据产品线。我和我的主管作为河南人，直接安排回到郑州工作。当时的一切都是刚刚开始。</p>
+<p>1、协助团队组建——跟随主管以及主管的主管进行人员面试工作，在19年7月完成20人角色完善的大数据测试团队，同时实验服务器等设备申请组装到位；</p>
+<p>2、自动化任务——①带领四位成员完成1632自动化脚本撰写任务；②优化ITMS平台脚本上传工作，通过rsync由原来的脚本全量同步变更为脚本增量同步，脚本上传时间缩短15%以上；③借鉴BMC WEB自动化框架完成大数据自动化框架搭建，并实现与ITMS平台的对接；</p>
+<p>3、专利负责人——超额完成团队財年指标20%；通过每周的头脑风暴挖掘专利点，共完成发明专利80个。</p>
+<p>在这一时期培养了自己如何提问题，如何回答问题。同时培养自己的owner意识，时不时和领导沟通自己项目进度。在大数据自动化搭建期间领悟到了设计优先原则。因为前期有BMC搭建经验，自然而然想直接引用却忽略了二者之间的不同，导致一个月时间的浪费。后来区分二者的相同和不同之处，针对性的设计并开发。在规定时间内及时完成框架搭建，并接入ITMS平台。</p>
+<h5 id="离开→新的起点"><a href="#离开→新的起点" class="headerlink" title="离开→新的起点"></a>离开→新的起点</h5><p>经过思考再三决定离开，因为在这里已经完成了大数据自动化框架的搭建，并完全适配ITMS平台。后续的工作不能再给个人带来更大的成长。在3月份开始面试，面试过阿里、腾讯、恒生等公司，因为自己在这里骄傲自满，技术与前言的有些脱节，算法几乎是两眼一抹黑。种种不顺利，在3月底，收到华为外包、阿里外包、网易外包、中电金信以及郑煤机的offer。目前纠结选择中。。。未完待续</p>
+]]></content>
+      <categories>
+        <category>个人</category>
+      </categories>
+      <tags>
+        <tag>个人成长</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MapReduce是什么？</title>
     <url>/Echo/2022/01/03/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/</url>
     <content><![CDATA[<h4 id="为什么需要MapReduce？"><a href="#为什么需要MapReduce？" class="headerlink" title="为什么需要MapReduce？"></a>为什么需要MapReduce？</h4><p><img src="/Echo/2022/01/03/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/Map-Reduce.jpg" alt="Map-Reduce"></p>
@@ -3326,28 +3348,6 @@
       <tags>
         <tag>大数据</tag>
         <tag>MapReduce</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>2015-2020工作日志</title>
-    <url>/Echo/2020/04/02/%E4%BA%94%E5%B9%B4%E5%B7%A5%E4%BD%9C%E6%84%9F%E6%82%9F/</url>
-    <content><![CDATA[<h5 id="学校生涯"><a href="#学校生涯" class="headerlink" title="学校生涯"></a>学校生涯</h5><p>​       我自身是河南人，不过有一颗不安分的心。高考志愿填报了大连交通大学，选了软件工程与信息管理与信息系统的双专业学位，学制五年。大三期间参与学校老师ERP沙盘模拟软件的编写工作。在这期间开始真正的接触项目，这时才知道学习与实战的差距。当时主要用的J2EE和java struct。项目做到大四完成。完成第一版之后在学校的校内ERP沙盘大赛和校内实践课程上已经开始运用了。听说现在还在使用中。</p>
-<h5 id="北京"><a href="#北京" class="headerlink" title="北京"></a>北京</h5><h6 id="培训"><a href="#培训" class="headerlink" title="培训"></a>培训</h6><p>​     因为一心想去一线城市看看，在择业期毫不犹豫的就选择了去北京。因为大学有项目而且大学主修课程有日语，很顺利的面上了北京利达智通。14年11月开始进入公司实习。在实习前三个月是在济南培训。培训这段时间感觉是最充实的。当时公司主要业务是野村证券。使用的大机语言（COBOL，在校也有相关的选修课还有证书可拿），主要是linux系统上进行开发。三个月的培训每天有作业每月有考核，压力大收获也大。在此期间学的linux和养成的编程习惯让我至今仍有受益。</p>
-<h6 id="第一个项目-野村证券MRF"><a href="#第一个项目-野村证券MRF" class="headerlink" title="第一个项目-野村证券MRF"></a>第一个项目-野村证券MRF</h6><p>这个项目主要是为日本野村证券新增一个青少年可以参与基金交易的功能。前一个月由师傅的带领开始正式的面向对象编程，不得不说日本人的式样书真详细。主要负责是功能模块各种数据连接层的处理以及数据库维护等工作。在这工作期间培养了自己的时间观念（某办法日本人特别在意这个）在dead line 前必须完成，好的一点是式样书（详设）写的真详细，不好的一点是没有自己发展的空间。还有个教训让我记忆深刻。在转正后，开始自己独立编写，结对测试的工作模式。由于当时对全角和半角的空格不敏感，这编程过程这个错误反复的犯，差点耽误项目进度。后来就给自己贴了便签，同样的错误绝不能犯第二次。</p>
-<h6 id="第二个项目-青森银行的住贷项目"><a href="#第二个项目-青森银行的住贷项目" class="headerlink" title="第二个项目-青森银行的住贷项目"></a>第二个项目-青森银行的住贷项目</h6><p>这个项目是公司开始转型的开始。主要编程语言为java，使用SSM框架来进行开发。这项目算是一个全新的项目从资料上传、申请、审批、贷后管理这房屋住贷全流程。（不同的有两点一、青森银行的住贷是有授权民间金融借贷来进行，二、放款时本人必须到场身份验证）。之前的项目一直用的COBOL，从2016年12月开始重新捡回java进行面向对象开发。从此开始CURD之路，主要是DAO层使用原生的JDBC连接数据库，然后实现CURD操作。除了承担CURD操作之外同时还承担这项目组的DBA的角色。主要有数据库权限分配与管理，数据表视图的创建，数据库表结构创建与维护等工作。项目大概到5月份就开始进行客户验收了，中间去日本青森县出差过1个月，作为现场技术支持。因为我本身有日语N3证书（目前已经过期，日语也忘得差不多了），同时本身的水平在项目组中还不错。过完十一后就日渐想河南老家。北京节假日回家真的太难了。</p>
-<h5 id="浪潮之旅"><a href="#浪潮之旅" class="headerlink" title="浪潮之旅"></a>浪潮之旅</h5><h6 id="济南-初识测试、自动化测试"><a href="#济南-初识测试、自动化测试" class="headerlink" title="济南-初识测试、自动化测试"></a>济南-初识测试、自动化测试</h6><p>17年10月开始面试，11月收到浪潮的offer。当时面上大厂，心情激动，这个也可以实现回郑州，只不过要先在济南工作一年左右。入职岗位是测试验证部-测试开发。当时浪潮因为自身要搞自动化测试平台的建设，因为有个目标要在19年4月完成5000+自动化脚本库已经自动化平台的建设。入职后开始搞自动化测试。我的任务主要是前台选择完用例后，我后台开始执行相关测试脚本同时获取脚本执行结果以及日志信息。在18年7月ITMS平台搭建完成，同年获得浪潮集团内部创新一等奖。后续开始除了用例撰写人员全部投入脚本编写工作，自此开始认识测试。从需求分析，用例设计，手工测试，自动化测试，bug回归，事后分析总结等全流程，认识了了解了，熟悉了测试以及自动化用例和脚本如何进行对应。</p>
-<h6 id="郑州-挑战与转变"><a href="#郑州-挑战与转变" class="headerlink" title="郑州-挑战与转变"></a>郑州-挑战与转变</h6><p>18年10月因为要在郑州成立大数据产品线。我和我的主管作为河南人，直接安排回到郑州工作。当时的一切都是刚刚开始。</p>
-<p>1、协助团队组建——跟随主管以及主管的主管进行人员面试工作，在19年7月完成20人角色完善的大数据测试团队，同时实验服务器等设备申请组装到位；</p>
-<p>2、自动化任务——①带领四位成员完成1632自动化脚本撰写任务；②优化ITMS平台脚本上传工作，通过rsync由原来的脚本全量同步变更为脚本增量同步，脚本上传时间缩短15%以上；③借鉴BMC WEB自动化框架完成大数据自动化框架搭建，并实现与ITMS平台的对接；</p>
-<p>3、专利负责人——超额完成团队財年指标20%；通过每周的头脑风暴挖掘专利点，共完成发明专利80个。</p>
-<p>在这一时期培养了自己如何提问题，如何回答问题。同时培养自己的owner意识，时不时和领导沟通自己项目进度。在大数据自动化搭建期间领悟到了设计优先原则。因为前期有BMC搭建经验，自然而然想直接引用却忽略了二者之间的不同，导致一个月时间的浪费。后来区分二者的相同和不同之处，针对性的设计并开发。在规定时间内及时完成框架搭建，并接入ITMS平台。</p>
-<h5 id="离开→新的起点"><a href="#离开→新的起点" class="headerlink" title="离开→新的起点"></a>离开→新的起点</h5><p>经过思考再三决定离开，因为在这里已经完成了大数据自动化框架的搭建，并完全适配ITMS平台。后续的工作不能再给个人带来更大的成长。在3月份开始面试，面试过阿里、腾讯、恒生等公司，因为自己在这里骄傲自满，技术与前言的有些脱节，算法几乎是两眼一抹黑。种种不顺利，在3月底，收到华为外包、阿里外包、网易外包、中电金信以及郑煤机的offer。目前纠结选择中。。。未完待续</p>
-]]></content>
-      <categories>
-        <category>个人</category>
-      </categories>
-      <tags>
-        <tag>个人成长</tag>
       </tags>
   </entry>
   <entry>
@@ -3514,33 +3514,6 @@
       </tags>
   </entry>
   <entry>
-    <title>卸载centos自带的openjdk和MySQL</title>
-    <url>/Echo/2020/01/01/%E5%8D%B8%E8%BD%BDcentos%E8%87%AA%E5%B8%A6%E7%9A%84openjdk%E5%92%8CMySQL/</url>
-    <content><![CDATA[<h2 id="卸载openjdk"><a href="#卸载openjdk" class="headerlink" title="卸载openjdk"></a>卸载openjdk</h2><p>1.查看已经安装的jdk</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">rpm –qa|grep jdk</span><br><span class="line"></span><br><span class="line">java-1.7.0-openjdk-1.7.0.141-2.6.10.5.el7.x86_64</span><br><span class="line"></span><br><span class="line">java-1.8.0-openjdk-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">java-1.8.0-openjdk-headless-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">java-1.7.0-openjdk-headless-1.7.0.141-2.6.10.5.el7.x86_64</span><br><span class="line"></span><br><span class="line">ldap-4.19-1.el7.noarch</span><br><span class="line"></span><br><span class="line">copy-jdk-configs-2.2-3.el7.noarch</span><br></pre></td></tr></table></figure>
-
-<p>2.卸载命令</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum -y remove java-1.7.0-openjdk-1.7.0.141-2.6.10.5.el7.x86_64</span><br><span class="line"></span><br><span class="line">yum -y remove java-1.8.0-openjdk-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">yum -y remove java-1.8.0-openjdk-headless-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">yum -y remove java-1.7.0-openjdk-headless-1.7.0.141-2.6.10.5.el7.x86_64</span><br></pre></td></tr></table></figure>
-
-<p>.noarch文件不用</p>
-<p>3.用Java –version查看</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">提示如下： No such file or directoy</span><br></pre></td></tr></table></figure>
-
-<p>  卸载完成</p>
-<h2 id="卸载mysql"><a href="#卸载mysql" class="headerlink" title="卸载mysql"></a>卸载mysql</h2><p>执行命令</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum remove mariadb-libs</span><br></pre></td></tr></table></figure>
-
-<p>即可。</p>
-]]></content>
-      <categories>
-        <category>环境安装</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>JDK</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>大数据是什么？</title>
     <url>/Echo/2021/12/19/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%A7%E6%95%B0%E6%8D%AE/</url>
     <content><![CDATA[<h3 id="什么是大数据？"><a href="#什么是大数据？" class="headerlink" title="什么是大数据？"></a>什么是大数据？</h3><p>“巨大”这个词不足以解释大数据，某些特征将数据分类为大数据。</p>
@@ -3634,6 +3607,65 @@
       </tags>
   </entry>
   <entry>
+    <title>卸载centos自带的openjdk和MySQL</title>
+    <url>/Echo/2020/01/01/%E5%8D%B8%E8%BD%BDcentos%E8%87%AA%E5%B8%A6%E7%9A%84openjdk%E5%92%8CMySQL/</url>
+    <content><![CDATA[<h2 id="卸载openjdk"><a href="#卸载openjdk" class="headerlink" title="卸载openjdk"></a>卸载openjdk</h2><p>1.查看已经安装的jdk</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">rpm –qa|grep jdk</span><br><span class="line"></span><br><span class="line">java-1.7.0-openjdk-1.7.0.141-2.6.10.5.el7.x86_64</span><br><span class="line"></span><br><span class="line">java-1.8.0-openjdk-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">java-1.8.0-openjdk-headless-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">java-1.7.0-openjdk-headless-1.7.0.141-2.6.10.5.el7.x86_64</span><br><span class="line"></span><br><span class="line">ldap-4.19-1.el7.noarch</span><br><span class="line"></span><br><span class="line">copy-jdk-configs-2.2-3.el7.noarch</span><br></pre></td></tr></table></figure>
+
+<p>2.卸载命令</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum -y remove java-1.7.0-openjdk-1.7.0.141-2.6.10.5.el7.x86_64</span><br><span class="line"></span><br><span class="line">yum -y remove java-1.8.0-openjdk-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">yum -y remove java-1.8.0-openjdk-headless-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">yum -y remove java-1.7.0-openjdk-headless-1.7.0.141-2.6.10.5.el7.x86_64</span><br></pre></td></tr></table></figure>
+
+<p>.noarch文件不用</p>
+<p>3.用Java –version查看</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">提示如下： No such file or directoy</span><br></pre></td></tr></table></figure>
+
+<p>  卸载完成</p>
+<h2 id="卸载mysql"><a href="#卸载mysql" class="headerlink" title="卸载mysql"></a>卸载mysql</h2><p>执行命令</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum remove mariadb-libs</span><br></pre></td></tr></table></figure>
+
+<p>即可。</p>
+]]></content>
+      <categories>
+        <category>环境安装</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>JDK</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>大数据测试-测试类型</title>
+    <url>/Echo/2022/01/27/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%B5%8B%E8%AF%95-%E6%B5%8B%E8%AF%95%E7%B1%BB%E5%9E%8B/</url>
+    <content><![CDATA[<p>之前的文章写了大数据的存储或处理的一些程序，对于后续的这篇大数据如何测试，却迟迟无法落笔。因为每个公司都是根据自己的业务来使用大数据平台的一个或者多个功能的。这里随便聊下大数据测试！（就是想到哪里写到哪里）</p>
+<h4 id="大数据测试与传统测试的区别"><a href="#大数据测试与传统测试的区别" class="headerlink" title="大数据测试与传统测试的区别"></a>大数据测试与传统测试的区别</h4><p>传统测试：特定条件下运行的结果进行观察或者验证，构建上下文验证输出</p>
+<p>大数据测试：数据正确，系统正确仅仅是第一步，后边还有诸多额外工作，如数据计算后结果，系统性能等。</p>
+<h4 id="大数据测试的挑战"><a href="#大数据测试的挑战" class="headerlink" title="大数据测试的挑战"></a>大数据测试的挑战</h4><ol>
+<li>复杂的数据流，数据的多样性；</li>
+<li>集群规模大，数据量大</li>
+<li>复杂算法测试</li>
+<li>无明确的验收标准</li>
+</ol>
+<h4 id="大数据测试的测试类型"><a href="#大数据测试的测试类型" class="headerlink" title="大数据测试的测试类型"></a>大数据测试的测试类型</h4><h5 id="架构测试"><a href="#架构测试" class="headerlink" title="架构测试"></a>架构测试</h5><p>进行此测试是为了确保数据处理正确并符合要求。实际上，Hadoop系统处理大量数据，并且资源非常全面。如果体系结构不正确，则可能会降低性能，因此数据处理可能会中断并可能发生数据丢失。</p>
+<h5 id="数据库测试"><a href="#数据库测试" class="headerlink" title="数据库测试"></a>数据库测试</h5><p>需要确保从源数据库或本地数据库获取的数据必须是正确和适当的。需要检查源数据库中可用的数据是否与在Hadoop系统中输入的数据匹配。</p>
+<p><img src="/Echo/DataBase-Testing.jpg" alt="DataBase-Testing"></p>
+<p>需要验证Hadoop系统中的数据在处理后或转换后是否正确，并通过适当的验证和确认加载到客户端环境中。作为数据库测试的一部分，需要完成CRUD操作，即在本地数据库中创建数据，然后检索数据，需要搜索它，它应该在加载到数据仓库之前和之后在数据库中可用，并从数据仓库到客户端的环境。在存储或加载和处理数据的每个阶段验证任何更新的数据。删除任何损坏的数据或任何重复和空的数据。</p>
+<h5 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h5><p>作为性能测试的一部分，我们需要检查数据的加载和处理速度，例如IOPS（每秒输入输出）。</p>
+<p>需要检查输入数据或数据作为输入的速度，从各种数据库到数据仓库或Hadoop系统，以及从Hadoop系统或数据仓库到客户环境。</p>
+<p>还必须检查来自各种数据库的数据以及作为输出的数据仓库的速度。这就是我们所说的每秒输入输出或 IOPS。</p>
+<p>除此之外，另一个方面是检查数据吸收和数据分发的性能，以及数据仓库从各种数据库和客户端系统从Hadoop系统消耗数据的速度。</p>
+<p>此外，作为测试人员，我们需要检查数据分发的性能，例如，数据以多快的速度分发到Hadoop系统或数据仓库中可用的各种文件。同样，在将数据分发到客户端系统时也会发生相同的过程。</p>
+<p>Hadoop系统或数据仓库由多个组件组成，因此测试人员需要检查所有这些组件的性能，例如MapReduce作业，数据插入和使用，查询的响应时间及其性能以及搜索操作的性能。所有这些都包含在性能测试中。</p>
+<h4 id="功能测试"><a href="#功能测试" class="headerlink" title="功能测试"></a>功能测试</h4><p>功能测试包含对所有子组件，程序和脚本，用于执行存储或加载和处理操作的工具等的测试。对于测试人员来说，这是需要过滤数据的四个重要类型和阶段，以便客户端获得完美且无差错的数据。</p>
+]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>大数据</tag>
+        <tag>测试类型</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>kafka测试</title>
     <url>/Echo/2021/11/24/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%BB%84%E4%BB%B6kafka%E6%B5%8B%E8%AF%95/</url>
     <content><![CDATA[<h5 id="kafka是一个事件流平台"><a href="#kafka是一个事件流平台" class="headerlink" title="kafka是一个事件流平台"></a>kafka是一个事件流平台</h5><ul>
@@ -3682,38 +3714,6 @@
       </categories>
       <tags>
         <tag>kafka，大数据</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>大数据测试-测试类型</title>
-    <url>/Echo/2022/01/27/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%B5%8B%E8%AF%95-%E6%B5%8B%E8%AF%95%E7%B1%BB%E5%9E%8B/</url>
-    <content><![CDATA[<p>之前的文章写了大数据的存储或处理的一些程序，对于后续的这篇大数据如何测试，却迟迟无法落笔。因为每个公司都是根据自己的业务来使用大数据平台的一个或者多个功能的。这里随便聊下大数据测试！（就是想到哪里写到哪里）</p>
-<h4 id="大数据测试与传统测试的区别"><a href="#大数据测试与传统测试的区别" class="headerlink" title="大数据测试与传统测试的区别"></a>大数据测试与传统测试的区别</h4><p>传统测试：特定条件下运行的结果进行观察或者验证，构建上下文验证输出</p>
-<p>大数据测试：数据正确，系统正确仅仅是第一步，后边还有诸多额外工作，如数据计算后结果，系统性能等。</p>
-<h4 id="大数据测试的挑战"><a href="#大数据测试的挑战" class="headerlink" title="大数据测试的挑战"></a>大数据测试的挑战</h4><ol>
-<li>复杂的数据流，数据的多样性；</li>
-<li>集群规模大，数据量大</li>
-<li>复杂算法测试</li>
-<li>无明确的验收标准</li>
-</ol>
-<h4 id="大数据测试的测试类型"><a href="#大数据测试的测试类型" class="headerlink" title="大数据测试的测试类型"></a>大数据测试的测试类型</h4><h5 id="架构测试"><a href="#架构测试" class="headerlink" title="架构测试"></a>架构测试</h5><p>进行此测试是为了确保数据处理正确并符合要求。实际上，Hadoop系统处理大量数据，并且资源非常全面。如果体系结构不正确，则可能会降低性能，因此数据处理可能会中断并可能发生数据丢失。</p>
-<h5 id="数据库测试"><a href="#数据库测试" class="headerlink" title="数据库测试"></a>数据库测试</h5><p>需要确保从源数据库或本地数据库获取的数据必须是正确和适当的。需要检查源数据库中可用的数据是否与在Hadoop系统中输入的数据匹配。</p>
-<p><img src="/Echo/DataBase-Testing.jpg" alt="DataBase-Testing"></p>
-<p>需要验证Hadoop系统中的数据在处理后或转换后是否正确，并通过适当的验证和确认加载到客户端环境中。作为数据库测试的一部分，需要完成CRUD操作，即在本地数据库中创建数据，然后检索数据，需要搜索它，它应该在加载到数据仓库之前和之后在数据库中可用，并从数据仓库到客户端的环境。在存储或加载和处理数据的每个阶段验证任何更新的数据。删除任何损坏的数据或任何重复和空的数据。</p>
-<h5 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h5><p>作为性能测试的一部分，我们需要检查数据的加载和处理速度，例如IOPS（每秒输入输出）。</p>
-<p>需要检查输入数据或数据作为输入的速度，从各种数据库到数据仓库或Hadoop系统，以及从Hadoop系统或数据仓库到客户环境。</p>
-<p>还必须检查来自各种数据库的数据以及作为输出的数据仓库的速度。这就是我们所说的每秒输入输出或 IOPS。</p>
-<p>除此之外，另一个方面是检查数据吸收和数据分发的性能，以及数据仓库从各种数据库和客户端系统从Hadoop系统消耗数据的速度。</p>
-<p>此外，作为测试人员，我们需要检查数据分发的性能，例如，数据以多快的速度分发到Hadoop系统或数据仓库中可用的各种文件。同样，在将数据分发到客户端系统时也会发生相同的过程。</p>
-<p>Hadoop系统或数据仓库由多个组件组成，因此测试人员需要检查所有这些组件的性能，例如MapReduce作业，数据插入和使用，查询的响应时间及其性能以及搜索操作的性能。所有这些都包含在性能测试中。</p>
-<h4 id="功能测试"><a href="#功能测试" class="headerlink" title="功能测试"></a>功能测试</h4><p>功能测试包含对所有子组件，程序和脚本，用于执行存储或加载和处理操作的工具等的测试。对于测试人员来说，这是需要过滤数据的四个重要类型和阶段，以便客户端获得完美且无差错的数据。</p>
-]]></content>
-      <categories>
-        <category>大数据</category>
-      </categories>
-      <tags>
-        <tag>大数据</tag>
-        <tag>测试类型</tag>
       </tags>
   </entry>
   <entry>
