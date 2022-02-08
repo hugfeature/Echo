@@ -1327,6 +1327,62 @@
       </tags>
   </entry>
   <entry>
+    <title>JMeter处理器和控制器</title>
+    <url>/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/</url>
+    <content><![CDATA[<h5 id="预处理器–pre-processor"><a href="#预处理器–pre-processor" class="headerlink" title="预处理器–pre processor"></a>预处理器–pre processor</h5><p>执行采样器之前执行的元素。您可以将预处理器与要在请求中进行一些更改的采样器连接在一起。</p>
+<p>最简单的情况可能是在 HTTP 请求中添加”示例超时”预处理器，以便此请求仅运行定义的时间量。它还确保仅对父采样器执行此修改,以下是JMeter中的预处理器：</p>
+<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217094257136.png" alt="image-20211217094257136"></p>
+<h6 id="用户参数–-user-parameters"><a href="#用户参数–-user-parameters" class="headerlink" title="用户参数– user parameters"></a>用户参数– user parameters</h6><p>用户参数用于在取样器中使用变量之前定义变量的值。当JMeter执行此预处理器元素时，会将值存储在变量中，这些变量可由同一线程组中的任何取样器使用。</p>
+<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217100245301.png" alt="image-20211217100245301"></p>
+<p>示例超时–sample timeout</p>
+<p>用于定义请求的超时持续时间。例：如果将取样时间设置为 400 毫秒，则所有需要时间的请求&gt;400 都将具有失败的响应。请看下面的截图</p>
+<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217134259470.png" alt="image-20211217134259470"></p>
+<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217134313658.png" alt="image-20211217134313658"></p>
+<h5 id="控制器"><a href="#控制器" class="headerlink" title="控制器"></a>控制器</h5><p>控制器在构建实时JMeter测试计划方面十分重要，用于定义请求发送到服务器的顺序。JMeter中的控制器有以下：</p>
+<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217150511568.png" alt="image-20211217150511568"></p>
+<h6 id="简单控制器–simple-controller"><a href="#简单控制器–simple-controller" class="headerlink" title="简单控制器–simple controller"></a>简单控制器–simple controller</h6><p>简单的控制器不执行任何特定功能。它只是一种容器，您可以在其中保留类似的请求，以使测试计划易于理解。</p>
+<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217154100877.png" alt="image-20211217154100877"></p>
+<h6 id="循环控制器–Loop-Controller"><a href="#循环控制器–Loop-Controller" class="headerlink" title="循环控制器–Loop Controller"></a>循环控制器–Loop Controller</h6><p>如果希望某些特定请求运行的迭代次数多于”线程组”中指定的迭代次数，则可以将它们放在”循环控制器”下，然后在控制器设置中输入循环计数。</p>
+<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217154238730.png" alt="image-20211217154238730"></p>
+<p>图中的每个取样器将执行6次。</p>
+<h6 id="仅一次控制器–once-ONLY-controller"><a href="#仅一次控制器–once-ONLY-controller" class="headerlink" title="仅一次控制器–once ONLY controller"></a>仅一次控制器–once ONLY controller</h6><p>当您只想运行某个特定请求一次时，即使线程组中有多个线程，也会使用此控制器。可以考虑的最简单的例子是”获取网站主页”或”登录到Web应用程序”。实时方案希望它只发生一次，其他请求（如搜索或编辑&#x2F;删除某些内容）将多次发生。</p>
+<p>仅执行一次的请求可以放在”仅一次控制器”下。截图以供参考。一次 只有控制器设置绕过父线程组设置。</p>
+<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217160551520.png" alt="image-20211217160551520"></p>
+<h6 id="录制控制器–HTTP（S）-TEST-Script-Recorder"><a href="#录制控制器–HTTP（S）-TEST-Script-Recorder" class="headerlink" title="录制控制器–HTTP（S） TEST Script Recorder"></a>录制控制器–HTTP（S） TEST Script Recorder</h6><p>就像简单控制器一样，录制控制器不会修改发送到服务器的任何请求序列。它与HTTP（S）脚本记录器一起使用。使用此非测试元素记录的所有请求都保存在记录控制器下。需要指定目标控制器以保存对服务器发出的记录请求。</p>
+<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217160800045.png" alt="image-20211217160800045"></p>
+<h6 id="吞吐量控制器–Throughput-controller"><a href="#吞吐量控制器–Throughput-controller" class="headerlink" title="吞吐量控制器–Throughput controller"></a>吞吐量控制器–Throughput controller</h6><p>此控制器还用于控制执行流。如下图所示，该控制器进一步分为两部分：</p>
+<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217160905035.png" alt="image-20211217160905035"></p>
+<p>执行百分比–Percent Executions ： 选中后 Jmeter 将仅执行此控制器下采样器总迭代的一定百分比。也可以选中”每用户”复选框以在用户级别进行控制。</p>
+<p>执行总数– total Executions: 将允许用户直接为此控制器下包含的采样器指定迭代次数。</p>
+<h6 id="交错控制器–-interleave-controller"><a href="#交错控制器–-interleave-controller" class="headerlink" title="交错控制器– interleave controller"></a>交错控制器– interleave controller</h6><p>此控制器允许您通过以 n 种方式修改序列来增加性能测试的范围，以便在应用程序以不同的顺序命中请求时测试服务器上的负载。交错控制器在其下方的采样器进行替代选择。</p>
+<p>如果此块下有其他控制器（如 Simple Controller），则交错控制器授予从容器中为每个迭代选择一个采样器的权限。为了进一步解释它，见图</p>
+<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217162333245.png" alt="image-20211217162333245"></p>
+<p>Jmeter 将在每次迭代的控制器之间交替迭代。执行顺序为：<em>请求1 -&gt; 请求3 -&gt; 请求 5 – 请求2 -&gt; 请求4 -&gt; 请求6</em></p>
+<h6 id="随机控制器–random-controller"><a href="#随机控制器–random-controller" class="headerlink" title="随机控制器–random controller"></a>随机控制器–random controller</h6><p>顾名思义随机选择子控制器和其中的采样器。工作方式几乎与交错控制器类似，但不按顺序选取采样器。</p>
+<p>条件控制器–If controller</p>
+<p>if 控制器 以类似的方式工作，则以任何编程语言处理 IF 表达式。首先验证条件，然后执行此容器下的组件（如果条件为 TRUE），否则将执行 IF 控制器外部的元素。</p>
+<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217165030335.png" alt="image-20211217165030335"></p>
+<p>测试计划设计如下：如果 IF 条件被评估为<strong>False，</strong>则只有 Request3、Request4 和 Request5 将执行。</p>
+<h6 id="while-控制器"><a href="#while-控制器" class="headerlink" title="while 控制器"></a>while 控制器</h6><p>此控制器执行其下的组件，直到条件变为 false。</p>
+<h5 id="JMeter的记录模板"><a href="#JMeter的记录模板" class="headerlink" title="JMeter的记录模板"></a>JMeter的记录模板</h5><p>Jmeter的File目录选择template ，然后切换recording</p>
+<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217165849700.png" alt="image-20211217165849700"></p>
+<p>选择此录制模板后，会看到一些组件已添加到测试计划中。</p>
+<ul>
+<li>工作台下的 HTTP 脚本记录器</li>
+<li>HTTP 请求默认值和 HTTP Cookie 管理器</li>
+<li>“线程组”下的记录控制器。</li>
+<li><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217170049709.png" alt="image-20211217170049709"></li>
+</ul>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>性能测试</tag>
+        <tag>JMeter</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JMeter介绍</title>
     <url>/Echo/2021/11/20/JMeter%E4%BB%8B%E7%BB%8D/</url>
     <content><![CDATA[<p>在本文中我们将了解什么是性能测试、为什么选择 JMeter、JMeter 与 HP LoadRunner。</p>
@@ -1419,62 +1475,6 @@
       </categories>
       <tags>
         <tag>性能测试，JMeter</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JMeter处理器和控制器</title>
-    <url>/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/</url>
-    <content><![CDATA[<h5 id="预处理器–pre-processor"><a href="#预处理器–pre-processor" class="headerlink" title="预处理器–pre processor"></a>预处理器–pre processor</h5><p>执行采样器之前执行的元素。您可以将预处理器与要在请求中进行一些更改的采样器连接在一起。</p>
-<p>最简单的情况可能是在 HTTP 请求中添加”示例超时”预处理器，以便此请求仅运行定义的时间量。它还确保仅对父采样器执行此修改,以下是JMeter中的预处理器：</p>
-<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217094257136.png" alt="image-20211217094257136"></p>
-<h6 id="用户参数–-user-parameters"><a href="#用户参数–-user-parameters" class="headerlink" title="用户参数– user parameters"></a>用户参数– user parameters</h6><p>用户参数用于在取样器中使用变量之前定义变量的值。当JMeter执行此预处理器元素时，会将值存储在变量中，这些变量可由同一线程组中的任何取样器使用。</p>
-<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217100245301.png" alt="image-20211217100245301"></p>
-<p>示例超时–sample timeout</p>
-<p>用于定义请求的超时持续时间。例：如果将取样时间设置为 400 毫秒，则所有需要时间的请求&gt;400 都将具有失败的响应。请看下面的截图</p>
-<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217134259470.png" alt="image-20211217134259470"></p>
-<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217134313658.png" alt="image-20211217134313658"></p>
-<h5 id="控制器"><a href="#控制器" class="headerlink" title="控制器"></a>控制器</h5><p>控制器在构建实时JMeter测试计划方面十分重要，用于定义请求发送到服务器的顺序。JMeter中的控制器有以下：</p>
-<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217150511568.png" alt="image-20211217150511568"></p>
-<h6 id="简单控制器–simple-controller"><a href="#简单控制器–simple-controller" class="headerlink" title="简单控制器–simple controller"></a>简单控制器–simple controller</h6><p>简单的控制器不执行任何特定功能。它只是一种容器，您可以在其中保留类似的请求，以使测试计划易于理解。</p>
-<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217154100877.png" alt="image-20211217154100877"></p>
-<h6 id="循环控制器–Loop-Controller"><a href="#循环控制器–Loop-Controller" class="headerlink" title="循环控制器–Loop Controller"></a>循环控制器–Loop Controller</h6><p>如果希望某些特定请求运行的迭代次数多于”线程组”中指定的迭代次数，则可以将它们放在”循环控制器”下，然后在控制器设置中输入循环计数。</p>
-<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217154238730.png" alt="image-20211217154238730"></p>
-<p>图中的每个取样器将执行6次。</p>
-<h6 id="仅一次控制器–once-ONLY-controller"><a href="#仅一次控制器–once-ONLY-controller" class="headerlink" title="仅一次控制器–once ONLY controller"></a>仅一次控制器–once ONLY controller</h6><p>当您只想运行某个特定请求一次时，即使线程组中有多个线程，也会使用此控制器。可以考虑的最简单的例子是”获取网站主页”或”登录到Web应用程序”。实时方案希望它只发生一次，其他请求（如搜索或编辑&#x2F;删除某些内容）将多次发生。</p>
-<p>仅执行一次的请求可以放在”仅一次控制器”下。截图以供参考。一次 只有控制器设置绕过父线程组设置。</p>
-<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217160551520.png" alt="image-20211217160551520"></p>
-<h6 id="录制控制器–HTTP（S）-TEST-Script-Recorder"><a href="#录制控制器–HTTP（S）-TEST-Script-Recorder" class="headerlink" title="录制控制器–HTTP（S） TEST Script Recorder"></a>录制控制器–HTTP（S） TEST Script Recorder</h6><p>就像简单控制器一样，录制控制器不会修改发送到服务器的任何请求序列。它与HTTP（S）脚本记录器一起使用。使用此非测试元素记录的所有请求都保存在记录控制器下。需要指定目标控制器以保存对服务器发出的记录请求。</p>
-<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217160800045.png" alt="image-20211217160800045"></p>
-<h6 id="吞吐量控制器–Throughput-controller"><a href="#吞吐量控制器–Throughput-controller" class="headerlink" title="吞吐量控制器–Throughput controller"></a>吞吐量控制器–Throughput controller</h6><p>此控制器还用于控制执行流。如下图所示，该控制器进一步分为两部分：</p>
-<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217160905035.png" alt="image-20211217160905035"></p>
-<p>执行百分比–Percent Executions ： 选中后 Jmeter 将仅执行此控制器下采样器总迭代的一定百分比。也可以选中”每用户”复选框以在用户级别进行控制。</p>
-<p>执行总数– total Executions: 将允许用户直接为此控制器下包含的采样器指定迭代次数。</p>
-<h6 id="交错控制器–-interleave-controller"><a href="#交错控制器–-interleave-controller" class="headerlink" title="交错控制器– interleave controller"></a>交错控制器– interleave controller</h6><p>此控制器允许您通过以 n 种方式修改序列来增加性能测试的范围，以便在应用程序以不同的顺序命中请求时测试服务器上的负载。交错控制器在其下方的采样器进行替代选择。</p>
-<p>如果此块下有其他控制器（如 Simple Controller），则交错控制器授予从容器中为每个迭代选择一个采样器的权限。为了进一步解释它，见图</p>
-<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217162333245.png" alt="image-20211217162333245"></p>
-<p>Jmeter 将在每次迭代的控制器之间交替迭代。执行顺序为：<em>请求1 -&gt; 请求3 -&gt; 请求 5 – 请求2 -&gt; 请求4 -&gt; 请求6</em></p>
-<h6 id="随机控制器–random-controller"><a href="#随机控制器–random-controller" class="headerlink" title="随机控制器–random controller"></a>随机控制器–random controller</h6><p>顾名思义随机选择子控制器和其中的采样器。工作方式几乎与交错控制器类似，但不按顺序选取采样器。</p>
-<p>条件控制器–If controller</p>
-<p>if 控制器 以类似的方式工作，则以任何编程语言处理 IF 表达式。首先验证条件，然后执行此容器下的组件（如果条件为 TRUE），否则将执行 IF 控制器外部的元素。</p>
-<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217165030335.png" alt="image-20211217165030335"></p>
-<p>测试计划设计如下：如果 IF 条件被评估为<strong>False，</strong>则只有 Request3、Request4 和 Request5 将执行。</p>
-<h6 id="while-控制器"><a href="#while-控制器" class="headerlink" title="while 控制器"></a>while 控制器</h6><p>此控制器执行其下的组件，直到条件变为 false。</p>
-<h5 id="JMeter的记录模板"><a href="#JMeter的记录模板" class="headerlink" title="JMeter的记录模板"></a>JMeter的记录模板</h5><p>Jmeter的File目录选择template ，然后切换recording</p>
-<p><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217165849700.png" alt="image-20211217165849700"></p>
-<p>选择此录制模板后，会看到一些组件已添加到测试计划中。</p>
-<ul>
-<li>工作台下的 HTTP 脚本记录器</li>
-<li>HTTP 请求默认值和 HTTP Cookie 管理器</li>
-<li>“线程组”下的记录控制器。</li>
-<li><img src="/Echo/2021/12/16/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217170049709.png" alt="image-20211217170049709"></li>
-</ul>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>性能测试</tag>
-        <tag>JMeter</tag>
       </tags>
   </entry>
   <entry>
@@ -1655,304 +1655,6 @@
       <tags>
         <tag>K8S</tag>
         <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>cetnos 8.2单节点安装部署k8s（v1.18.2）</title>
-    <url>/Echo/2020/08/10/cetnos-8-2%E5%8D%95%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2k8s%EF%BC%88v1-18-2%EF%BC%89/</url>
-    <content><![CDATA[<h4 id="1-配置hosts文件"><a href="#1-配置hosts文件" class="headerlink" title="1.配置hosts文件"></a>1.配置hosts文件</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/hosts</span><br></pre></td></tr></table></figure>
-
-<p>本机ip  本机hostname 本机hostname</p>
-<h4 id="2-关闭防火墙-sawp等"><a href="#2-关闭防火墙-sawp等" class="headerlink" title="2.关闭防火墙, sawp等"></a>2.关闭防火墙, sawp等</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl <span class="built_in">disable</span> firewalld</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-关闭swap"><a href="#3-关闭swap" class="headerlink" title="3.关闭swap"></a>3.关闭swap</h4><h4 id="4-禁用selinux"><a href="#4-禁用selinux" class="headerlink" title="4.禁用selinux"></a>4.禁用selinux</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br><span class="line">SELINUX=disabled</span><br><span class="line">/usr/sbin/sestatus -v  <span class="comment"># 查看selinux状态</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="5-安装docker"><a href="#5-安装docker" class="headerlink" title="5.安装docker"></a>5.安装docker</h4><h5 id="step-1-安装必要的一些系统工具"><a href="#step-1-安装必要的一些系统工具" class="headerlink" title="step 1: 安装必要的一些系统工具"></a>step 1: 安装必要的一些系统工具</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-2-添加软件源信息"><a href="#Step-2-添加软件源信息" class="headerlink" title="Step 2: 添加软件源信息"></a>Step 2: 添加软件源信息</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-3-更新并安装Docker-CE"><a href="#Step-3-更新并安装Docker-CE" class="headerlink" title="Step 3: 更新并安装Docker-CE"></a>Step 3: 更新并安装Docker-CE</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum makecache --refresh</span><br><span class="line">sudo yum -y install docker-ce</span><br><span class="line"><span class="comment"># 发现报错：Problem: package docker-ce-3:19.03.12-3.el7.x86_64 requires containerd.io &gt;= 1.2.2-3, but none of the providers can be installed</span></span><br><span class="line"><span class="comment"># 因为containerd 版本过低</span></span><br><span class="line">dnf install container-selinux</span><br><span class="line">通过yum -y install https://download.docker.com/linux/centos/7/x86_64/edge/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm 升级即可</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-4-docker-修改Cgroup-Driver以及docker镜像拉取地址"><a href="#Step-4-docker-修改Cgroup-Driver以及docker镜像拉取地址" class="headerlink" title="Step 4: docker 修改Cgroup Driver以及docker镜像拉取地址"></a>Step 4: docker 修改Cgroup Driver以及docker镜像拉取地址</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"> cat /etc/docker/daemon.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://e7l8pkuq.mirror.aliyuncs.com&quot;</span>],</span><br><span class="line">  <span class="string">&quot;exec-opts&quot;</span>: [<span class="string">&quot;native.cgroupdriver=systemd&quot;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-5-开启Docker服务"><a href="#Step-5-开启Docker服务" class="headerlink" title="Step 5: 开启Docker服务"></a>Step 5: 开启Docker服务</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
-
-<h4 id="6-安装kubectl"><a href="#6-安装kubectl" class="headerlink" title="6.安装kubectl"></a>6.安装kubectl</h4><h5 id="step-1：下载最新kubectl最新资源"><a href="#step-1：下载最新kubectl最新资源" class="headerlink" title="step 1：下载最新kubectl最新资源"></a>step 1：下载最新kubectl最新资源</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">curl -LO <span class="string">&quot;https://storage.googleapis.com/kubernetes-release/release/<span class="subst">$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)</span>/bin/linux/amd64/kubectl&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="step-2：添加执行权限"><a href="#step-2：添加执行权限" class="headerlink" title="step 2：添加执行权限"></a>step 2：添加执行权限</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">chmod +x ./kubectl</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-3：移动kubectl至bin路径"><a href="#step-3：移动kubectl至bin路径" class="headerlink" title="step 3：移动kubectl至bin路径"></a>step 3：移动kubectl至bin路径</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo mv ./kubectl /usr/<span class="built_in">local</span>/bin/kubectl</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-4：确认安装的版本"><a href="#step-4：确认安装的版本" class="headerlink" title="step 4：确认安装的版本"></a>step 4：确认安装的版本</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl version --client</span><br></pre></td></tr></table></figure>
-
-<h4 id="7-安装minikube"><a href="#7-安装minikube" class="headerlink" title="7.安装minikube"></a>7.安装minikube</h4><h5 id="step-1：确认是否支持虚拟化"><a href="#step-1：确认是否支持虚拟化" class="headerlink" title="step 1：确认是否支持虚拟化"></a>step 1：确认是否支持虚拟化</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">grep -E --color <span class="string">&#x27;vmx|svm&#x27;</span> /proc/cpuinfo</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="step-2：下载minikube资源"><a href="#step-2：下载minikube资源" class="headerlink" title="step 2：下载minikube资源"></a>step 2：下载minikube资源</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \</span><br><span class="line">  &amp;&amp; chmod +x minikube</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="step-3：添加minikube进入系统命令"><a href="#step-3：添加minikube进入系统命令" class="headerlink" title="step 3：添加minikube进入系统命令"></a>step 3：添加minikube进入系统命令</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo mkdir -p /usr/<span class="built_in">local</span>/bin/</span><br><span class="line">sudo install minikube /usr/<span class="built_in">local</span>/bin/</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="step-4：启动-minikube（使用的VM安装的centos-8因此设置driver-x3D-none）"><a href="#step-4：启动-minikube（使用的VM安装的centos-8因此设置driver-x3D-none）" class="headerlink" title="step 4：启动 minikube（使用的VM安装的centos 8因此设置driver&#x3D;none）"></a>step 4：启动 minikube（使用的VM安装的centos 8因此设置driver&#x3D;none）</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">minikube start --driver=none --image-repository=registry.cn-hangzhou.aliyuncs.com/google_containers</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="step-5：确认minikube状态"><a href="#step-5：确认minikube状态" class="headerlink" title="step 5：确认minikube状态"></a>step 5：确认minikube状态</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">minikube status</span><br></pre></td></tr></table></figure>
-
-<p>8.istio安装</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">istioctl manifest apply --<span class="built_in">set</span> profile=demo</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>环境安装</category>
-      </categories>
-      <tags>
-        <tag>K8S</tag>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>emqtt_bench安装与压测MQTTbroker</title>
-    <url>/Echo/2021/12/15/emqtt-bench%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8E%8B%E6%B5%8BMQTTbroker/</url>
-    <content><![CDATA[<h4 id="EMQX"><a href="#EMQX" class="headerlink" title="EMQX"></a>EMQX</h4><p><em>EMQ X</em> (Erlang&#x2F;Enterprise&#x2F;Elastic MQTT Broker) 是基于 Erlang&#x2F;OTP 平台开发的开源物联网 MQTT 消息服务器。</p>
-<p>Erlang&#x2F;OTP是出色的软实时 (Soft-Realtime)、低延时 (Low-Latency)、分布式 (Distributed)的语言平台。</p>
-<p>MQTT 是轻量的 (Lightweight)、发布订阅模式 (PubSub) 的物联网消息协议。</p>
-<p>EMQ X 设计目标是实现高可靠，并支持承载海量物联网终端的MQTT连接，支持在海量物联网设备间低延时消息路由:</p>
-<ol>
-<li>稳定承载大规模的 MQTT 客户端连接，单服务器节点支持50万到100万连接。</li>
-<li>分布式节点集群，快速低延时的消息路由，单集群支持1000万规模的路由。</li>
-<li>消息服务器内扩展，支持定制多种认证方式、高效存储消息到后端数据库。</li>
-<li>完整物联网协议支持，MQTT、MQTT-SN、CoAP、LwM2M、WebSocket 或私有协议支持。</li>
-</ol>
-<h4 id="emqtt-bench"><a href="#emqtt-bench" class="headerlink" title="emqtt_bench"></a>emqtt_bench</h4><p><a href="https://github.com/emqx/emqtt_bench">emqtt_bench (opens new window)</a>是基于 Erlang 编写的，一个简洁强大的 MQTT 协议性能测试工具。</p>
-<h4 id="EMQX安装"><a href="#EMQX安装" class="headerlink" title="EMQX安装"></a>EMQX安装</h4><p>emqx安装比较简单，可以参照<a href="https://docs.emqx.cn/broker/v4.3/getting-started/install.html">安装 | EMQ Docs (emqx.cn)</a>进行。</p>
-<h4 id="emqtt-bench安装"><a href="#emqtt-bench安装" class="headerlink" title="emqtt_bench安装"></a>emqtt_bench安装</h4><p>结合官网介绍需要 Erlang&#x2F;OTP 22.3+以上，但是经过尝试最新版的Erlang不太兼容，所以还是老老实实用22.3了。</p>
-<h6 id="1-前提准备"><a href="#1-前提准备" class="headerlink" title="1.前提准备"></a>1.前提准备</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 各种依赖，缺乏可能会导致意外问题</span></span><br><span class="line">yum -y install ncurses-devel openssl-devel unixODBC-devel gcc-c++ perl</span><br></pre></td></tr></table></figure>
-
-<h6 id="2-安装Erlang-22-3"><a href="#2-安装Erlang-22-3" class="headerlink" title="2.安装Erlang 22.3"></a>2.安装Erlang 22.3</h6><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 切换到安装目录此处建议用opt文件夹</span></span><br><span class="line"><span class="built_in">cd</span> /opt</span><br><span class="line"><span class="comment"># 下载Erlang</span></span><br><span class="line">wget http://erlang.org/download/otp_src_22.3.tar.gz</span><br><span class="line"><span class="comment"># 解压</span></span><br><span class="line">tar -zxvf otp_src_22.3</span><br><span class="line">.tar.gz</span><br><span class="line"><span class="comment"># 切换到解压后的erlang安装包</span></span><br><span class="line"><span class="built_in">cd</span> otp_src_22.3</span><br><span class="line"><span class="comment"># 开始安装</span></span><br><span class="line">./configure &amp; make &amp; make install</span><br><span class="line"><span class="comment"># 查看版本</span></span><br><span class="line">erl</span><br></pre></td></tr></table></figure>
-
-<p><img src="/Echo/2021/12/15/emqtt-bench%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8E%8B%E6%B5%8BMQTTbroker/image-20211216170648216.png" alt="image-20211216170648216"></p>
-<h6 id="3-安装新版git（因后续在emqtt-bench-make时centos7自带git版本较低导致问题）"><a href="#3-安装新版git（因后续在emqtt-bench-make时centos7自带git版本较低导致问题）" class="headerlink" title="3.安装新版git（因后续在emqtt_bench make时centos7自带git版本较低导致问题）"></a>3.安装新版git（因后续在emqtt_bench make时centos7自带git版本较低导致问题）</h6><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 更新系统资源包</span></span><br><span class="line">yum install http://opensource.wandisco.com/centos/7/git/x86_64/wandisco-git-release-7-2.noarch.rpm</span><br><span class="line"><span class="comment"># 安装git</span></span><br><span class="line">yum install -y git</span><br><span class="line"><span class="comment"># 查看git版本</span></span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
-
-<p>4.安装emqtt_bench</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装依赖</span></span><br><span class="line">yum install -y libatomic</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装</span></span><br><span class="line">git clone https://github.com/emqx/emqtt-bench</span><br><span class="line">cd emqtt-bench</span><br><span class="line"><span class="meta">#</span><span class="bash"> 因为QUIC目前不稳定所以选择禁用QUIC</span></span><br><span class="line">BUILD_WITHOUT_QUIC=1 make</span><br><span class="line"><span class="meta">#</span><span class="bash"> 验证</span></span><br><span class="line">./emqtt_bench</span><br></pre></td></tr></table></figure>
-
-<p>输出Usage: emqtt_bench pub | sub | conn [–help]即为安装成功</p>
-<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>安装中遇到的问题有以下两个</p>
-<h6 id="1-make失败（报错GUN版本）"><a href="#1-make失败（报错GUN版本）" class="headerlink" title="1.make失败（报错GUN版本）"></a>1.make失败（报错GUN版本）</h6><p>经排查此问题为QUIC功能不能使用导致，使用禁用模式make即可</p>
-<h6 id="2-有部分git资源下载失败"><a href="#2-有部分git资源下载失败" class="headerlink" title="2.有部分git资源下载失败"></a>2.有部分git资源下载失败</h6><p><img src="/Echo/2021/12/15/emqtt-bench%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8E%8B%E6%B5%8BMQTTbroker/image-20211216171321403.png" alt="image-20211216171321403"></p>
-<p><strong>cd &#x2F;opt&#x2F;emqtt-bench&#x2F;_build&#x2F;default&#x2F;lib&#x2F;quicer&#x2F;msquic&#x2F;submodules</strong></p>
-<p><strong>git clone git:&#x2F;&#x2F;github.com&#x2F;google&#x2F;googletest</strong></p>
-<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p><code>emqtt_bench</code> 共三个子命令：</p>
-<ol>
-<li><code>pub</code>：用于创建大量客户端执行发布消息的操作。</li>
-<li><code>sub</code>：用于创建大量客户端执行订阅主题，并接受消息的操作。</li>
-<li><code>conn</code>：用于创建大量的连接</li>
-</ol>
-<p>参数</p>
-<table>
-<thead>
-<tr>
-<th align="left">参数</th>
-<th>简写</th>
-<th>可选值</th>
-<th>默认值</th>
-<th align="left">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">–host</td>
-<td>-h</td>
-<td>-</td>
-<td>localhost</td>
-<td align="left">要连接的 MQTT 服务器地址</td>
-</tr>
-<tr>
-<td align="left">–port</td>
-<td>-p</td>
-<td>-</td>
-<td>1883</td>
-<td align="left">MQTT 服务端口</td>
-</tr>
-<tr>
-<td align="left">–version</td>
-<td>-V</td>
-<td>3 4 5</td>
-<td>5</td>
-<td align="left">使用的 MQTT 协议版本</td>
-</tr>
-<tr>
-<td align="left">–count</td>
-<td>-c</td>
-<td>-</td>
-<td>200</td>
-<td align="left">客户端总数</td>
-</tr>
-<tr>
-<td align="left">–startnumber</td>
-<td>-n</td>
-<td>-</td>
-<td>0</td>
-<td align="left">客户端数量起始值</td>
-</tr>
-<tr>
-<td align="left">–interval</td>
-<td>-i</td>
-<td>-</td>
-<td>10</td>
-<td align="left">每间隔多少时间创建一个客户端；单位：毫秒</td>
-</tr>
-<tr>
-<td align="left">–interval_of_msg</td>
-<td>-I</td>
-<td>-</td>
-<td>1000</td>
-<td align="left">每间隔多少时间发送一个消息</td>
-</tr>
-<tr>
-<td align="left">–username</td>
-<td>-u</td>
-<td>-</td>
-<td>无；非必选</td>
-<td align="left">客户端用户名</td>
-</tr>
-<tr>
-<td align="left">–password</td>
-<td>-P</td>
-<td>-</td>
-<td>无；非必选</td>
-<td align="left">客户端密码</td>
-</tr>
-<tr>
-<td align="left">–topic</td>
-<td>-t</td>
-<td>-</td>
-<td>无；必选</td>
-<td align="left">发布的主题；支持站位符： <code>%c</code>：表示 ClientId <code>%u</code>：表示 Username <code>%i</code>：表示客户端的序列数</td>
-</tr>
-<tr>
-<td align="left">–szie</td>
-<td>-s</td>
-<td>-</td>
-<td>256</td>
-<td align="left">消息 Payload 的大小；单位：字节</td>
-</tr>
-<tr>
-<td align="left">–qos</td>
-<td>-q</td>
-<td>-</td>
-<td>0</td>
-<td align="left">Qos 等级</td>
-</tr>
-<tr>
-<td align="left">–retain</td>
-<td>-r</td>
-<td>true false</td>
-<td>false</td>
-<td align="left">消息是否设置 Retain 标志</td>
-</tr>
-<tr>
-<td align="left">–keepalive</td>
-<td>-k</td>
-<td>-</td>
-<td>300</td>
-<td align="left">客户端心跳时间</td>
-</tr>
-<tr>
-<td align="left">–clean</td>
-<td>-C</td>
-<td>true false</td>
-<td>true</td>
-<td align="left">是否以清除会话的方式建立连接</td>
-</tr>
-<tr>
-<td align="left">–ssl</td>
-<td>-S</td>
-<td>true false</td>
-<td>false</td>
-<td align="left">是否启用 SSL</td>
-</tr>
-<tr>
-<td align="left">–certfile</td>
-<td>-</td>
-<td>-</td>
-<td>无</td>
-<td align="left">客户端 SSL 证书</td>
-</tr>
-<tr>
-<td align="left">–keyfile</td>
-<td>-</td>
-<td>-</td>
-<td>无</td>
-<td align="left">客户端 SSL 秘钥文件</td>
-</tr>
-<tr>
-<td align="left">–ws</td>
-<td>-</td>
-<td>true false</td>
-<td>false</td>
-<td align="left">是否以 Websocket 的方式建立连接</td>
-</tr>
-<tr>
-<td align="left">–ifaddr</td>
-<td>-</td>
-<td>-</td>
-<td>无</td>
-<td align="left">指定客户端连接使用的本地网卡</td>
-</tr>
-</tbody></table>
-<h4 id="吞吐量性能压测"><a href="#吞吐量性能压测" class="headerlink" title="吞吐量性能压测"></a>吞吐量性能压测</h4><p>bench1上执行</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">./emqtt_bench sub -t t -h EMQQserverIP -c 500</span><br></pre></td></tr></table></figure>
-
-<p>bench2 上执行</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">./emqtt_bench pub -t t -h EMQQserverIP -c 20 -I 100</span><br></pre></td></tr></table></figure>
-
-<p>在bench1上可以观察到</p>
-<p><strong>ecv(28006): total&#x3D;2102563, rate&#x3D;99725(msg&#x2F;sec）</strong></p>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>性能测试</tag>
-        <tag>mqtt</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>HBase shell命令</title>
-    <url>/Echo/2020/03/13/hbase%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<h4 id="HBase简介"><a href="#HBase简介" class="headerlink" title="HBase简介"></a>HBase简介</h4><p>HBase 命名的起源是 Hadoop database，Hadoop数据库，是NoSQL数据库，基于列式存储而非行式存储。</p>
-<p>HBase是一个分布式的、面向列的、基于Google Bigtable的开源实现。</p>
-<ul>
-<li>利用Hadoop HDFS作为其文件存储系统</li>
-<li>利用Hadoop MapReduce来处理HBase中的海量数据</li>
-<li>利用Zookeeper作为协同服务</li>
-</ul>
-<h4 id="HBase数据模型"><a href="#HBase数据模型" class="headerlink" title="HBase数据模型"></a>HBase数据模型</h4><p>HBase是一个稀疏、多维度、有序的映射表。表有行和列组成，列划分为若干个列族&#x2F;列簇(column family)，每个列族&#x2F;列簇下面可以有多个普通列。</p>
-<p><img src="/Echo/2020/03/13/hbase%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/5-1Z5091305564M.gif" alt="5-1Z5091305564M"></p>
-<h4 id="HBase-shell-命令"><a href="#HBase-shell-命令" class="headerlink" title="HBase shell 命令"></a>HBase shell 命令</h4><h5 id="进入-HBase-shell"><a href="#进入-HBase-shell" class="headerlink" title="进入 HBase shell"></a>进入 HBase shell</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hbase shell</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="HBase版本状态查看"><a href="#HBase版本状态查看" class="headerlink" title="HBase版本状态查看"></a>HBase版本状态查看</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查询状态</span></span><br><span class="line">status</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查询版本</span></span><br><span class="line">version</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看当前操作用户</span></span><br><span class="line">whoami</span><br><span class="line"><span class="meta">#</span><span class="bash"> 帮助命令</span></span><br><span class="line">help</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看hbase支持的工具</span></span><br><span class="line">tools</span><br></pre></td></tr></table></figure>
-
-<h5 id="DDL操作"><a href="#DDL操作" class="headerlink" title="DDL操作"></a>DDL操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建一个表</span></span><br><span class="line">create<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;column_famaly&#x27;</span>,<span class="string">&#x27;column_famaly1&#x27;</span>,<span class="string">&#x27;column_famaly2&#x27;</span></span><br><span class="line"><span class="comment"># 列出所有表</span></span><br><span class="line">list</span><br><span class="line"><span class="comment"># 获取表的描述</span></span><br><span class="line">describe<span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 删除一个列族</span></span><br><span class="line">alter<span class="string">&#x27;table&#x27;</span>,&#123;NAME=&gt;<span class="string">&#x27;column_famaly&#x27;</span>,METHOD=&gt;<span class="string">&#x27;delete&#x27;</span>&#125;</span><br><span class="line"><span class="comment"># 删除一个表</span></span><br><span class="line"><span class="comment"># ① 要删除的表设置为disable</span></span><br><span class="line"><span class="built_in">disable</span><span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># ② 删除表</span></span><br><span class="line">drop <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 查询表是否存在</span></span><br><span class="line">exists<span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 查看表是否可用</span></span><br><span class="line">is_enabled<span class="string">&#x27;table&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="DML操作"><a href="#DML操作" class="headerlink" title="DML操作"></a>DML操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 插入数据</span></span><br><span class="line">put<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span>,<span class="string">&#x27;name&#x27;</span></span><br><span class="line"><span class="comment"># 获取row1所有数据</span></span><br><span class="line">get <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span></span><br><span class="line"><span class="comment"># 获取表row1，col1所有数据</span></span><br><span class="line">get<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1&#x27;</span></span><br><span class="line"><span class="comment"># 更新一条数据</span></span><br><span class="line">put <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span>,<span class="string">&#x27;name1&#x27;</span></span><br><span class="line"><span class="comment"># 通过时间戳获取数据</span></span><br><span class="line">get <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,&#123;COLUMN=&gt;<span class="string">&#x27;col1:name&#x27;</span>,TIMESTAMP=&gt;1463055736277&#125;</span><br><span class="line"><span class="comment"># 扫描整张表（数据量大时不建议此操作）</span></span><br><span class="line">scan <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 删除一列</span></span><br><span class="line">delete <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span></span><br><span class="line"><span class="comment"># 删除行所有的数据</span></span><br><span class="line">deleteall <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span></span><br><span class="line"><span class="comment"># 统计表中的行数</span></span><br><span class="line">count <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 清空整张表（清空表后，表的分区设置会默认为1不建议）</span></span><br><span class="line">truncate <span class="string">&#x27;table&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="退出操作"><a href="#退出操作" class="headerlink" title="退出操作"></a>退出操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 退出</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment"># 关闭hbase集群（危险操作！！！）</span></span><br><span class="line">shutdown</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>大数据</category>
-      </categories>
-      <tags>
-        <tag>大数据</tag>
-        <tag>HBase</tag>
       </tags>
   </entry>
   <entry>
@@ -2702,6 +2404,304 @@
       </categories>
       <tags>
         <tag>YARN，大数据</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>cetnos 8.2单节点安装部署k8s（v1.18.2）</title>
+    <url>/Echo/2020/08/10/cetnos-8-2%E5%8D%95%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2k8s%EF%BC%88v1-18-2%EF%BC%89/</url>
+    <content><![CDATA[<h4 id="1-配置hosts文件"><a href="#1-配置hosts文件" class="headerlink" title="1.配置hosts文件"></a>1.配置hosts文件</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/hosts</span><br></pre></td></tr></table></figure>
+
+<p>本机ip  本机hostname 本机hostname</p>
+<h4 id="2-关闭防火墙-sawp等"><a href="#2-关闭防火墙-sawp等" class="headerlink" title="2.关闭防火墙, sawp等"></a>2.关闭防火墙, sawp等</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl <span class="built_in">disable</span> firewalld</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-关闭swap"><a href="#3-关闭swap" class="headerlink" title="3.关闭swap"></a>3.关闭swap</h4><h4 id="4-禁用selinux"><a href="#4-禁用selinux" class="headerlink" title="4.禁用selinux"></a>4.禁用selinux</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br><span class="line">SELINUX=disabled</span><br><span class="line">/usr/sbin/sestatus -v  <span class="comment"># 查看selinux状态</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="5-安装docker"><a href="#5-安装docker" class="headerlink" title="5.安装docker"></a>5.安装docker</h4><h5 id="step-1-安装必要的一些系统工具"><a href="#step-1-安装必要的一些系统工具" class="headerlink" title="step 1: 安装必要的一些系统工具"></a>step 1: 安装必要的一些系统工具</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-2-添加软件源信息"><a href="#Step-2-添加软件源信息" class="headerlink" title="Step 2: 添加软件源信息"></a>Step 2: 添加软件源信息</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-3-更新并安装Docker-CE"><a href="#Step-3-更新并安装Docker-CE" class="headerlink" title="Step 3: 更新并安装Docker-CE"></a>Step 3: 更新并安装Docker-CE</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum makecache --refresh</span><br><span class="line">sudo yum -y install docker-ce</span><br><span class="line"><span class="comment"># 发现报错：Problem: package docker-ce-3:19.03.12-3.el7.x86_64 requires containerd.io &gt;= 1.2.2-3, but none of the providers can be installed</span></span><br><span class="line"><span class="comment"># 因为containerd 版本过低</span></span><br><span class="line">dnf install container-selinux</span><br><span class="line">通过yum -y install https://download.docker.com/linux/centos/7/x86_64/edge/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm 升级即可</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-4-docker-修改Cgroup-Driver以及docker镜像拉取地址"><a href="#Step-4-docker-修改Cgroup-Driver以及docker镜像拉取地址" class="headerlink" title="Step 4: docker 修改Cgroup Driver以及docker镜像拉取地址"></a>Step 4: docker 修改Cgroup Driver以及docker镜像拉取地址</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"> cat /etc/docker/daemon.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://e7l8pkuq.mirror.aliyuncs.com&quot;</span>],</span><br><span class="line">  <span class="string">&quot;exec-opts&quot;</span>: [<span class="string">&quot;native.cgroupdriver=systemd&quot;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-5-开启Docker服务"><a href="#Step-5-开启Docker服务" class="headerlink" title="Step 5: 开启Docker服务"></a>Step 5: 开启Docker服务</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-安装kubectl"><a href="#6-安装kubectl" class="headerlink" title="6.安装kubectl"></a>6.安装kubectl</h4><h5 id="step-1：下载最新kubectl最新资源"><a href="#step-1：下载最新kubectl最新资源" class="headerlink" title="step 1：下载最新kubectl最新资源"></a>step 1：下载最新kubectl最新资源</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">curl -LO <span class="string">&quot;https://storage.googleapis.com/kubernetes-release/release/<span class="subst">$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)</span>/bin/linux/amd64/kubectl&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="step-2：添加执行权限"><a href="#step-2：添加执行权限" class="headerlink" title="step 2：添加执行权限"></a>step 2：添加执行权限</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">chmod +x ./kubectl</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-3：移动kubectl至bin路径"><a href="#step-3：移动kubectl至bin路径" class="headerlink" title="step 3：移动kubectl至bin路径"></a>step 3：移动kubectl至bin路径</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo mv ./kubectl /usr/<span class="built_in">local</span>/bin/kubectl</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-4：确认安装的版本"><a href="#step-4：确认安装的版本" class="headerlink" title="step 4：确认安装的版本"></a>step 4：确认安装的版本</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl version --client</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-安装minikube"><a href="#7-安装minikube" class="headerlink" title="7.安装minikube"></a>7.安装minikube</h4><h5 id="step-1：确认是否支持虚拟化"><a href="#step-1：确认是否支持虚拟化" class="headerlink" title="step 1：确认是否支持虚拟化"></a>step 1：确认是否支持虚拟化</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">grep -E --color <span class="string">&#x27;vmx|svm&#x27;</span> /proc/cpuinfo</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="step-2：下载minikube资源"><a href="#step-2：下载minikube资源" class="headerlink" title="step 2：下载minikube资源"></a>step 2：下载minikube资源</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \</span><br><span class="line">  &amp;&amp; chmod +x minikube</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="step-3：添加minikube进入系统命令"><a href="#step-3：添加minikube进入系统命令" class="headerlink" title="step 3：添加minikube进入系统命令"></a>step 3：添加minikube进入系统命令</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo mkdir -p /usr/<span class="built_in">local</span>/bin/</span><br><span class="line">sudo install minikube /usr/<span class="built_in">local</span>/bin/</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="step-4：启动-minikube（使用的VM安装的centos-8因此设置driver-x3D-none）"><a href="#step-4：启动-minikube（使用的VM安装的centos-8因此设置driver-x3D-none）" class="headerlink" title="step 4：启动 minikube（使用的VM安装的centos 8因此设置driver&#x3D;none）"></a>step 4：启动 minikube（使用的VM安装的centos 8因此设置driver&#x3D;none）</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">minikube start --driver=none --image-repository=registry.cn-hangzhou.aliyuncs.com/google_containers</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="step-5：确认minikube状态"><a href="#step-5：确认minikube状态" class="headerlink" title="step 5：确认minikube状态"></a>step 5：确认minikube状态</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">minikube status</span><br></pre></td></tr></table></figure>
+
+<p>8.istio安装</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">istioctl manifest apply --<span class="built_in">set</span> profile=demo</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>环境安装</category>
+      </categories>
+      <tags>
+        <tag>K8S</tag>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>emqtt_bench安装与压测MQTTbroker</title>
+    <url>/Echo/2021/12/15/emqtt-bench%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8E%8B%E6%B5%8BMQTTbroker/</url>
+    <content><![CDATA[<h4 id="EMQX"><a href="#EMQX" class="headerlink" title="EMQX"></a>EMQX</h4><p><em>EMQ X</em> (Erlang&#x2F;Enterprise&#x2F;Elastic MQTT Broker) 是基于 Erlang&#x2F;OTP 平台开发的开源物联网 MQTT 消息服务器。</p>
+<p>Erlang&#x2F;OTP是出色的软实时 (Soft-Realtime)、低延时 (Low-Latency)、分布式 (Distributed)的语言平台。</p>
+<p>MQTT 是轻量的 (Lightweight)、发布订阅模式 (PubSub) 的物联网消息协议。</p>
+<p>EMQ X 设计目标是实现高可靠，并支持承载海量物联网终端的MQTT连接，支持在海量物联网设备间低延时消息路由:</p>
+<ol>
+<li>稳定承载大规模的 MQTT 客户端连接，单服务器节点支持50万到100万连接。</li>
+<li>分布式节点集群，快速低延时的消息路由，单集群支持1000万规模的路由。</li>
+<li>消息服务器内扩展，支持定制多种认证方式、高效存储消息到后端数据库。</li>
+<li>完整物联网协议支持，MQTT、MQTT-SN、CoAP、LwM2M、WebSocket 或私有协议支持。</li>
+</ol>
+<h4 id="emqtt-bench"><a href="#emqtt-bench" class="headerlink" title="emqtt_bench"></a>emqtt_bench</h4><p><a href="https://github.com/emqx/emqtt_bench">emqtt_bench (opens new window)</a>是基于 Erlang 编写的，一个简洁强大的 MQTT 协议性能测试工具。</p>
+<h4 id="EMQX安装"><a href="#EMQX安装" class="headerlink" title="EMQX安装"></a>EMQX安装</h4><p>emqx安装比较简单，可以参照<a href="https://docs.emqx.cn/broker/v4.3/getting-started/install.html">安装 | EMQ Docs (emqx.cn)</a>进行。</p>
+<h4 id="emqtt-bench安装"><a href="#emqtt-bench安装" class="headerlink" title="emqtt_bench安装"></a>emqtt_bench安装</h4><p>结合官网介绍需要 Erlang&#x2F;OTP 22.3+以上，但是经过尝试最新版的Erlang不太兼容，所以还是老老实实用22.3了。</p>
+<h6 id="1-前提准备"><a href="#1-前提准备" class="headerlink" title="1.前提准备"></a>1.前提准备</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 各种依赖，缺乏可能会导致意外问题</span></span><br><span class="line">yum -y install ncurses-devel openssl-devel unixODBC-devel gcc-c++ perl</span><br></pre></td></tr></table></figure>
+
+<h6 id="2-安装Erlang-22-3"><a href="#2-安装Erlang-22-3" class="headerlink" title="2.安装Erlang 22.3"></a>2.安装Erlang 22.3</h6><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 切换到安装目录此处建议用opt文件夹</span></span><br><span class="line"><span class="built_in">cd</span> /opt</span><br><span class="line"><span class="comment"># 下载Erlang</span></span><br><span class="line">wget http://erlang.org/download/otp_src_22.3.tar.gz</span><br><span class="line"><span class="comment"># 解压</span></span><br><span class="line">tar -zxvf otp_src_22.3</span><br><span class="line">.tar.gz</span><br><span class="line"><span class="comment"># 切换到解压后的erlang安装包</span></span><br><span class="line"><span class="built_in">cd</span> otp_src_22.3</span><br><span class="line"><span class="comment"># 开始安装</span></span><br><span class="line">./configure &amp; make &amp; make install</span><br><span class="line"><span class="comment"># 查看版本</span></span><br><span class="line">erl</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Echo/2021/12/15/emqtt-bench%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8E%8B%E6%B5%8BMQTTbroker/image-20211216170648216.png" alt="image-20211216170648216"></p>
+<h6 id="3-安装新版git（因后续在emqtt-bench-make时centos7自带git版本较低导致问题）"><a href="#3-安装新版git（因后续在emqtt-bench-make时centos7自带git版本较低导致问题）" class="headerlink" title="3.安装新版git（因后续在emqtt_bench make时centos7自带git版本较低导致问题）"></a>3.安装新版git（因后续在emqtt_bench make时centos7自带git版本较低导致问题）</h6><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 更新系统资源包</span></span><br><span class="line">yum install http://opensource.wandisco.com/centos/7/git/x86_64/wandisco-git-release-7-2.noarch.rpm</span><br><span class="line"><span class="comment"># 安装git</span></span><br><span class="line">yum install -y git</span><br><span class="line"><span class="comment"># 查看git版本</span></span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
+
+<p>4.安装emqtt_bench</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装依赖</span></span><br><span class="line">yum install -y libatomic</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装</span></span><br><span class="line">git clone https://github.com/emqx/emqtt-bench</span><br><span class="line">cd emqtt-bench</span><br><span class="line"><span class="meta">#</span><span class="bash"> 因为QUIC目前不稳定所以选择禁用QUIC</span></span><br><span class="line">BUILD_WITHOUT_QUIC=1 make</span><br><span class="line"><span class="meta">#</span><span class="bash"> 验证</span></span><br><span class="line">./emqtt_bench</span><br></pre></td></tr></table></figure>
+
+<p>输出Usage: emqtt_bench pub | sub | conn [–help]即为安装成功</p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>安装中遇到的问题有以下两个</p>
+<h6 id="1-make失败（报错GUN版本）"><a href="#1-make失败（报错GUN版本）" class="headerlink" title="1.make失败（报错GUN版本）"></a>1.make失败（报错GUN版本）</h6><p>经排查此问题为QUIC功能不能使用导致，使用禁用模式make即可</p>
+<h6 id="2-有部分git资源下载失败"><a href="#2-有部分git资源下载失败" class="headerlink" title="2.有部分git资源下载失败"></a>2.有部分git资源下载失败</h6><p><img src="/Echo/2021/12/15/emqtt-bench%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8E%8B%E6%B5%8BMQTTbroker/image-20211216171321403.png" alt="image-20211216171321403"></p>
+<p><strong>cd &#x2F;opt&#x2F;emqtt-bench&#x2F;_build&#x2F;default&#x2F;lib&#x2F;quicer&#x2F;msquic&#x2F;submodules</strong></p>
+<p><strong>git clone git:&#x2F;&#x2F;github.com&#x2F;google&#x2F;googletest</strong></p>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p><code>emqtt_bench</code> 共三个子命令：</p>
+<ol>
+<li><code>pub</code>：用于创建大量客户端执行发布消息的操作。</li>
+<li><code>sub</code>：用于创建大量客户端执行订阅主题，并接受消息的操作。</li>
+<li><code>conn</code>：用于创建大量的连接</li>
+</ol>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>简写</th>
+<th>可选值</th>
+<th>默认值</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">–host</td>
+<td>-h</td>
+<td>-</td>
+<td>localhost</td>
+<td align="left">要连接的 MQTT 服务器地址</td>
+</tr>
+<tr>
+<td align="left">–port</td>
+<td>-p</td>
+<td>-</td>
+<td>1883</td>
+<td align="left">MQTT 服务端口</td>
+</tr>
+<tr>
+<td align="left">–version</td>
+<td>-V</td>
+<td>3 4 5</td>
+<td>5</td>
+<td align="left">使用的 MQTT 协议版本</td>
+</tr>
+<tr>
+<td align="left">–count</td>
+<td>-c</td>
+<td>-</td>
+<td>200</td>
+<td align="left">客户端总数</td>
+</tr>
+<tr>
+<td align="left">–startnumber</td>
+<td>-n</td>
+<td>-</td>
+<td>0</td>
+<td align="left">客户端数量起始值</td>
+</tr>
+<tr>
+<td align="left">–interval</td>
+<td>-i</td>
+<td>-</td>
+<td>10</td>
+<td align="left">每间隔多少时间创建一个客户端；单位：毫秒</td>
+</tr>
+<tr>
+<td align="left">–interval_of_msg</td>
+<td>-I</td>
+<td>-</td>
+<td>1000</td>
+<td align="left">每间隔多少时间发送一个消息</td>
+</tr>
+<tr>
+<td align="left">–username</td>
+<td>-u</td>
+<td>-</td>
+<td>无；非必选</td>
+<td align="left">客户端用户名</td>
+</tr>
+<tr>
+<td align="left">–password</td>
+<td>-P</td>
+<td>-</td>
+<td>无；非必选</td>
+<td align="left">客户端密码</td>
+</tr>
+<tr>
+<td align="left">–topic</td>
+<td>-t</td>
+<td>-</td>
+<td>无；必选</td>
+<td align="left">发布的主题；支持站位符： <code>%c</code>：表示 ClientId <code>%u</code>：表示 Username <code>%i</code>：表示客户端的序列数</td>
+</tr>
+<tr>
+<td align="left">–szie</td>
+<td>-s</td>
+<td>-</td>
+<td>256</td>
+<td align="left">消息 Payload 的大小；单位：字节</td>
+</tr>
+<tr>
+<td align="left">–qos</td>
+<td>-q</td>
+<td>-</td>
+<td>0</td>
+<td align="left">Qos 等级</td>
+</tr>
+<tr>
+<td align="left">–retain</td>
+<td>-r</td>
+<td>true false</td>
+<td>false</td>
+<td align="left">消息是否设置 Retain 标志</td>
+</tr>
+<tr>
+<td align="left">–keepalive</td>
+<td>-k</td>
+<td>-</td>
+<td>300</td>
+<td align="left">客户端心跳时间</td>
+</tr>
+<tr>
+<td align="left">–clean</td>
+<td>-C</td>
+<td>true false</td>
+<td>true</td>
+<td align="left">是否以清除会话的方式建立连接</td>
+</tr>
+<tr>
+<td align="left">–ssl</td>
+<td>-S</td>
+<td>true false</td>
+<td>false</td>
+<td align="left">是否启用 SSL</td>
+</tr>
+<tr>
+<td align="left">–certfile</td>
+<td>-</td>
+<td>-</td>
+<td>无</td>
+<td align="left">客户端 SSL 证书</td>
+</tr>
+<tr>
+<td align="left">–keyfile</td>
+<td>-</td>
+<td>-</td>
+<td>无</td>
+<td align="left">客户端 SSL 秘钥文件</td>
+</tr>
+<tr>
+<td align="left">–ws</td>
+<td>-</td>
+<td>true false</td>
+<td>false</td>
+<td align="left">是否以 Websocket 的方式建立连接</td>
+</tr>
+<tr>
+<td align="left">–ifaddr</td>
+<td>-</td>
+<td>-</td>
+<td>无</td>
+<td align="left">指定客户端连接使用的本地网卡</td>
+</tr>
+</tbody></table>
+<h4 id="吞吐量性能压测"><a href="#吞吐量性能压测" class="headerlink" title="吞吐量性能压测"></a>吞吐量性能压测</h4><p>bench1上执行</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">./emqtt_bench sub -t t -h EMQQserverIP -c 500</span><br></pre></td></tr></table></figure>
+
+<p>bench2 上执行</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">./emqtt_bench pub -t t -h EMQQserverIP -c 20 -I 100</span><br></pre></td></tr></table></figure>
+
+<p>在bench1上可以观察到</p>
+<p><strong>ecv(28006): total&#x3D;2102563, rate&#x3D;99725(msg&#x2F;sec）</strong></p>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>性能测试</tag>
+        <tag>mqtt</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HBase shell命令</title>
+    <url>/Echo/2020/03/13/hbase%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h4 id="HBase简介"><a href="#HBase简介" class="headerlink" title="HBase简介"></a>HBase简介</h4><p>HBase 命名的起源是 Hadoop database，Hadoop数据库，是NoSQL数据库，基于列式存储而非行式存储。</p>
+<p>HBase是一个分布式的、面向列的、基于Google Bigtable的开源实现。</p>
+<ul>
+<li>利用Hadoop HDFS作为其文件存储系统</li>
+<li>利用Hadoop MapReduce来处理HBase中的海量数据</li>
+<li>利用Zookeeper作为协同服务</li>
+</ul>
+<h4 id="HBase数据模型"><a href="#HBase数据模型" class="headerlink" title="HBase数据模型"></a>HBase数据模型</h4><p>HBase是一个稀疏、多维度、有序的映射表。表有行和列组成，列划分为若干个列族&#x2F;列簇(column family)，每个列族&#x2F;列簇下面可以有多个普通列。</p>
+<p><img src="/Echo/2020/03/13/hbase%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/5-1Z5091305564M.gif" alt="5-1Z5091305564M"></p>
+<h4 id="HBase-shell-命令"><a href="#HBase-shell-命令" class="headerlink" title="HBase shell 命令"></a>HBase shell 命令</h4><h5 id="进入-HBase-shell"><a href="#进入-HBase-shell" class="headerlink" title="进入 HBase shell"></a>进入 HBase shell</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hbase shell</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="HBase版本状态查看"><a href="#HBase版本状态查看" class="headerlink" title="HBase版本状态查看"></a>HBase版本状态查看</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查询状态</span></span><br><span class="line">status</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查询版本</span></span><br><span class="line">version</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看当前操作用户</span></span><br><span class="line">whoami</span><br><span class="line"><span class="meta">#</span><span class="bash"> 帮助命令</span></span><br><span class="line">help</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看hbase支持的工具</span></span><br><span class="line">tools</span><br></pre></td></tr></table></figure>
+
+<h5 id="DDL操作"><a href="#DDL操作" class="headerlink" title="DDL操作"></a>DDL操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建一个表</span></span><br><span class="line">create<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;column_famaly&#x27;</span>,<span class="string">&#x27;column_famaly1&#x27;</span>,<span class="string">&#x27;column_famaly2&#x27;</span></span><br><span class="line"><span class="comment"># 列出所有表</span></span><br><span class="line">list</span><br><span class="line"><span class="comment"># 获取表的描述</span></span><br><span class="line">describe<span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 删除一个列族</span></span><br><span class="line">alter<span class="string">&#x27;table&#x27;</span>,&#123;NAME=&gt;<span class="string">&#x27;column_famaly&#x27;</span>,METHOD=&gt;<span class="string">&#x27;delete&#x27;</span>&#125;</span><br><span class="line"><span class="comment"># 删除一个表</span></span><br><span class="line"><span class="comment"># ① 要删除的表设置为disable</span></span><br><span class="line"><span class="built_in">disable</span><span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># ② 删除表</span></span><br><span class="line">drop <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 查询表是否存在</span></span><br><span class="line">exists<span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 查看表是否可用</span></span><br><span class="line">is_enabled<span class="string">&#x27;table&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="DML操作"><a href="#DML操作" class="headerlink" title="DML操作"></a>DML操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 插入数据</span></span><br><span class="line">put<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span>,<span class="string">&#x27;name&#x27;</span></span><br><span class="line"><span class="comment"># 获取row1所有数据</span></span><br><span class="line">get <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span></span><br><span class="line"><span class="comment"># 获取表row1，col1所有数据</span></span><br><span class="line">get<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1&#x27;</span></span><br><span class="line"><span class="comment"># 更新一条数据</span></span><br><span class="line">put <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span>,<span class="string">&#x27;name1&#x27;</span></span><br><span class="line"><span class="comment"># 通过时间戳获取数据</span></span><br><span class="line">get <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,&#123;COLUMN=&gt;<span class="string">&#x27;col1:name&#x27;</span>,TIMESTAMP=&gt;1463055736277&#125;</span><br><span class="line"><span class="comment"># 扫描整张表（数据量大时不建议此操作）</span></span><br><span class="line">scan <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 删除一列</span></span><br><span class="line">delete <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span></span><br><span class="line"><span class="comment"># 删除行所有的数据</span></span><br><span class="line">deleteall <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span></span><br><span class="line"><span class="comment"># 统计表中的行数</span></span><br><span class="line">count <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 清空整张表（清空表后，表的分区设置会默认为1不建议）</span></span><br><span class="line">truncate <span class="string">&#x27;table&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="退出操作"><a href="#退出操作" class="headerlink" title="退出操作"></a>退出操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 退出</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment"># 关闭hbase集群（危险操作！！！）</span></span><br><span class="line">shutdown</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>大数据</tag>
+        <tag>HBase</tag>
       </tags>
   </entry>
   <entry>
