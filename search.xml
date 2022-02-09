@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>20个实用软件测试技巧</title>
+    <url>/Echo/2021/05/01/20%E4%B8%AA%E5%AE%9E%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%8A%80%E5%B7%A7/</url>
+    <content><![CDATA[<p>以下是个人总结的20个软件测试过程中的技巧</p>
+<p>1、学会彻底分析测试结果。不要忽略任何测试结果。最终测试结果可能是”pass”或”fail”，但如果对”fail”的根本原因进行故障分析并提供问题的解决方案。如果测试人员不仅记录错误，而且还提供解决方案，那么待遇可想而知。</p>
+<p>2、了解如何在每次测试应用程序时最大限度地提高测试覆盖率。100%的测试覆盖率可能是不可能的，但是，总是可以尝试接近它。</p>
+<p>3、为了确保最大的测试覆盖率，请将被测应用程序 分解为较小的功能模块。在单个单元模块上编写测试用例。此外，如果可以的话，将这些模块分解成更小的部分，拆分到不能拆分为止。</p>
+<p>假设我们已将网站应用程序划分为多个模块，并且”添加用户信息”是其中一个模块。可以将此用户信息页面分解为较小的部分，用于编写测试用例：UI测试、安全测试、用户信息表单的功能测试等部分。在输入字段中应用所有形式的字段类型和大小测试、否定和验证测试，并编写所有此类测试用例以获得最大覆盖率。</p>
+<p>4、在编写测试用例时，我们必须首先为预期的功能编写测试用例，就是根据需求为正向条件编写测试用例。然后为反向或者无效条件编写测试用例。这些将涵盖受测应用程序的预期和意外行为。</p>
+<p>5、积极思考。开始测试应用程序，目的是查找bug&#x2F;错误。不要事先认为应用程序中不会有任何错误。如果以查找错误为目的测试应用程序，那么一定会成功找到这些微妙的bug。</p>
+<p>6、在需求分析和设计阶段编写测试用例。通过这种方式，您可以确保所有要求都是可测试的。</p>
+<p>7、在编写代码之前，使测试用例可供开发人员使用。不要一直等待获得最终的应用程序版本才开始编写测试用例进行测试，认为这样可以记录更多错误。让开发人员彻底分析测试用例，以开发高质量的应用程序。这也将节省返工时间。</p>
+<p>8、如果可以，对测试用例进行分组用以进行回归测试，将确保快速有效的手动回归测试。</p>
+<p>9、需要关键响应时间的应用程序应进行全面的性能测试。性能测试是许多应用程序的关键部分。对于手动测试测试人员来说这是最忽略的部分，因为在性能测试中缺乏所需的大量数据。寻找测试应用程序性能的方法。如果无法手动创建测试数据，请编写一些脚本来创建用于性能测试的测试数据，或要求开发人员为您编写一个。</p>
+<p>10、程序员不应该测试自己的代码。开发应用程序的基本单元测试应该足以让开发人员为测试人员发布应用程序。但是测试人员不应强迫开发人员发布产品进行测试。从测试领导到测试经理，每个人都知道模块&#x2F;更新何时发布进行测试，他们可以相应地估计测试时间。这在敏捷项目环境中是常见的。</p>
+<p>11、超越需求测试。测试应用程序不应执行的操作。</p>
+<p>12、在进行回归测试时，请使用 Bug 图（bug管理工具生成）。 bug 图可用于预测应用程序中最可能出现 bug 部分。</p>
+<p>13、记下在测试时学到的新术语和概念。在测试任何应用程序时保持文本文件处于打开状态。记录其中的测试进度和观察结果。在准备最终测试发布报告时使用记录的观察结果。这个习惯将帮助我们提供完整明确的测试报告和发布详细信息。</p>
+<p>14、很多时候，测试人员或开发人员会对受测应用程序的代码库进行更改。这是开发或测试环境中的必要步骤，避免像在银行项目中那样执行实时交易处理。记下为测试目的所做的所有此类代码更改，并在最终发布时确保已从最终的客户端部署文件资源中删除了所有这些更改。</p>
+<p>15、使开发人员远离测试环境。这是检测发布或部署文档中缺少的任何配置更改的必需步骤。有时，开发人员会进行一些系统或应用程序配置更改，但忘记在部署步骤中提及这些更改。如果开发人员无法访问测试环境，他们就不会意外地在测试环境中进行此类更改，以及如何在正确位置捕获的缺失内容。</p>
+<p>16、从软件需求和设计阶段开始让测试人员参与进来是一种很好的做法。通过这种方式，测试人员可以获得有关应用程序准确的信息，从而获得详细的测试覆盖率。如果您没有被要求参与此开发周期，那么您可以向您的主管或经理提出请求，让您的测试团队参与所有决策过程或会议。</p>
+<p>17、测试团队应与其组织中的其他团队分享最佳测试实践和经验。</p>
+<p>18、增加与开发人员的沟通，以了解有关产品的更多信息。尽可能进行面对面的沟通，以快速解决争议并避免任何误解。但是，当您了解要求或解决任何争议时，请确保以与电子邮件相同的覆盖通信方式进行沟通。不要相信任何口头内容。（这个要自己悟）</p>
+<p>19、不要没有时间去做优先级高的测试任务。将测试工作的优先级从高到低排序，并相应地规划您的工作。分析所有相关风险，确定工作的优先级。</p>
+<p>20、写一份清晰，描述性和明确的错误报告。不仅要提供详细bug描述和发现步骤，还要提供bug的影响和所有可能的解决方案。</p>
+<p>永远不要忘记，测试是一项创造性和具有挑战性的任务。这写完全取决于您如何处理这个挑战的技能和经验。</p>
+<p><strong>交给您：</strong></p>
+<p>在下面的评论中分享您自己的测试经验、想法或测试秘诀肯定会使本文更加有趣和有用！</p>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>测试技巧</tag>
+        <tag>测试经验</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2022年软件测试趋势</title>
     <url>/Echo/2022/02/06/2022%E5%B9%B4%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E8%B6%8B%E5%8A%BF/</url>
     <content><![CDATA[<p>技术呈指数级和前所未有的变化影响了组织开发、验证、交付和操作软件的方式。</p>
@@ -36,43 +73,6 @@
         <tag>自动化测试</tag>
         <tag>devops</tag>
         <tag>敏捷测试</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>20个实用软件测试技巧</title>
-    <url>/Echo/2021/05/01/20%E4%B8%AA%E5%AE%9E%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%8A%80%E5%B7%A7/</url>
-    <content><![CDATA[<p>以下是个人总结的20个软件测试过程中的技巧</p>
-<p>1、学会彻底分析测试结果。不要忽略任何测试结果。最终测试结果可能是”pass”或”fail”，但如果对”fail”的根本原因进行故障分析并提供问题的解决方案。如果测试人员不仅记录错误，而且还提供解决方案，那么待遇可想而知。</p>
-<p>2、了解如何在每次测试应用程序时最大限度地提高测试覆盖率。100%的测试覆盖率可能是不可能的，但是，总是可以尝试接近它。</p>
-<p>3、为了确保最大的测试覆盖率，请将被测应用程序 分解为较小的功能模块。在单个单元模块上编写测试用例。此外，如果可以的话，将这些模块分解成更小的部分，拆分到不能拆分为止。</p>
-<p>假设我们已将网站应用程序划分为多个模块，并且”添加用户信息”是其中一个模块。可以将此用户信息页面分解为较小的部分，用于编写测试用例：UI测试、安全测试、用户信息表单的功能测试等部分。在输入字段中应用所有形式的字段类型和大小测试、否定和验证测试，并编写所有此类测试用例以获得最大覆盖率。</p>
-<p>4、在编写测试用例时，我们必须首先为预期的功能编写测试用例，就是根据需求为正向条件编写测试用例。然后为反向或者无效条件编写测试用例。这些将涵盖受测应用程序的预期和意外行为。</p>
-<p>5、积极思考。开始测试应用程序，目的是查找bug&#x2F;错误。不要事先认为应用程序中不会有任何错误。如果以查找错误为目的测试应用程序，那么一定会成功找到这些微妙的bug。</p>
-<p>6、在需求分析和设计阶段编写测试用例。通过这种方式，您可以确保所有要求都是可测试的。</p>
-<p>7、在编写代码之前，使测试用例可供开发人员使用。不要一直等待获得最终的应用程序版本才开始编写测试用例进行测试，认为这样可以记录更多错误。让开发人员彻底分析测试用例，以开发高质量的应用程序。这也将节省返工时间。</p>
-<p>8、如果可以，对测试用例进行分组用以进行回归测试，将确保快速有效的手动回归测试。</p>
-<p>9、需要关键响应时间的应用程序应进行全面的性能测试。性能测试是许多应用程序的关键部分。对于手动测试测试人员来说这是最忽略的部分，因为在性能测试中缺乏所需的大量数据。寻找测试应用程序性能的方法。如果无法手动创建测试数据，请编写一些脚本来创建用于性能测试的测试数据，或要求开发人员为您编写一个。</p>
-<p>10、程序员不应该测试自己的代码。开发应用程序的基本单元测试应该足以让开发人员为测试人员发布应用程序。但是测试人员不应强迫开发人员发布产品进行测试。从测试领导到测试经理，每个人都知道模块&#x2F;更新何时发布进行测试，他们可以相应地估计测试时间。这在敏捷项目环境中是常见的。</p>
-<p>11、超越需求测试。测试应用程序不应执行的操作。</p>
-<p>12、在进行回归测试时，请使用 Bug 图（bug管理工具生成）。 bug 图可用于预测应用程序中最可能出现 bug 部分。</p>
-<p>13、记下在测试时学到的新术语和概念。在测试任何应用程序时保持文本文件处于打开状态。记录其中的测试进度和观察结果。在准备最终测试发布报告时使用记录的观察结果。这个习惯将帮助我们提供完整明确的测试报告和发布详细信息。</p>
-<p>14、很多时候，测试人员或开发人员会对受测应用程序的代码库进行更改。这是开发或测试环境中的必要步骤，避免像在银行项目中那样执行实时交易处理。记下为测试目的所做的所有此类代码更改，并在最终发布时确保已从最终的客户端部署文件资源中删除了所有这些更改。</p>
-<p>15、使开发人员远离测试环境。这是检测发布或部署文档中缺少的任何配置更改的必需步骤。有时，开发人员会进行一些系统或应用程序配置更改，但忘记在部署步骤中提及这些更改。如果开发人员无法访问测试环境，他们就不会意外地在测试环境中进行此类更改，以及如何在正确位置捕获的缺失内容。</p>
-<p>16、从软件需求和设计阶段开始让测试人员参与进来是一种很好的做法。通过这种方式，测试人员可以获得有关应用程序准确的信息，从而获得详细的测试覆盖率。如果您没有被要求参与此开发周期，那么您可以向您的主管或经理提出请求，让您的测试团队参与所有决策过程或会议。</p>
-<p>17、测试团队应与其组织中的其他团队分享最佳测试实践和经验。</p>
-<p>18、增加与开发人员的沟通，以了解有关产品的更多信息。尽可能进行面对面的沟通，以快速解决争议并避免任何误解。但是，当您了解要求或解决任何争议时，请确保以与电子邮件相同的覆盖通信方式进行沟通。不要相信任何口头内容。（这个要自己悟）</p>
-<p>19、不要没有时间去做优先级高的测试任务。将测试工作的优先级从高到低排序，并相应地规划您的工作。分析所有相关风险，确定工作的优先级。</p>
-<p>20、写一份清晰，描述性和明确的错误报告。不仅要提供详细bug描述和发现步骤，还要提供bug的影响和所有可能的解决方案。</p>
-<p>永远不要忘记，测试是一项创造性和具有挑战性的任务。这写完全取决于您如何处理这个挑战的技能和经验。</p>
-<p><strong>交给您：</strong></p>
-<p>在下面的评论中分享您自己的测试经验、想法或测试秘诀肯定会使本文更加有趣和有用！</p>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>测试技巧</tag>
-        <tag>测试经验</tag>
       </tags>
   </entry>
   <entry>
@@ -910,6 +910,55 @@
       </tags>
   </entry>
   <entry>
+    <title>BMCweb解释</title>
+    <url>/Echo/2020/01/17/BMCweb%E8%A7%A3%E9%87%8A/</url>
+    <content><![CDATA[<p><strong>UID****：</strong>定位作用，控制定位灯是否亮起，便于寻找机器</p>
+<p><strong>循环开机</strong>：服务器先关机再开机</p>
+<p><strong>重启</strong>：不关闭电源（热开机）的情况下重新启动系统</p>
+<p>**软关机:**先执行操作系统的关机再关闭系统</p>
+<p><strong>CPU****速率</strong>：cup主频，即CPU<a href="https://baike.baidu.com/item/%E5%86%85%E6%A0%B8">内核</a>工作的<a href="https://baike.baidu.com/item/%E6%97%B6%E9%92%9F%E9%A2%91%E7%8E%87/103708">时钟频率</a>。CPU的主频表示在CPU内数字<a href="https://baike.baidu.com/item/%E8%84%89%E5%86%B2">脉冲</a>信号震荡的速度，主频和实际的<a href="https://baike.baidu.com/item/%E8%BF%90%E7%AE%97%E9%80%9F%E5%BA%A6">运算速度</a>存在一定的关系，但没有一个定量，因为CPU的运算速度还要看CPU的流水线的各方面的性能指标（<a href="https://baike.baidu.com/item/%E7%BC%93%E5%AD%98">缓存</a>、<a href="https://baike.baidu.com/item/%E6%8C%87%E4%BB%A4%E9%9B%86">指令集</a>，CPU的<a href="https://baike.baidu.com/item/%E4%BD%8D%E6%95%B0">位数</a>等等）。</p>
+<p><strong>核心</strong>（Die）又称为内核，是CPU最重要的组成部分。CPU中心那块隆起的芯片就是核心， CPU所有的计算、接受&#x2F;存储命令、处理数据都由核心执行。各种CPU核心都具有固定的逻辑结构，一级缓存、二级缓存、执行单元、指令级单元和总线接口等逻辑单元都会有科学的布局。</p>
+<p><strong>CPU****的核心数</strong>是指物理上，也就是硬件上存在着几个核心。比如，双核就是包括2个相对独立的CPU核心单元组，四核就包含4个相对独立的CPU核心单元组。</p>
+<p><strong>TDP</strong>： Thermal Design Power——散热设计功耗</p>
+<p>大小：一级缓存&lt;二级缓存&lt;三级缓存</p>
+<p>速度：一级缓存&gt;二级缓存&gt;三级缓存</p>
+<p>当CPU需要写入内存的时候通常只更新<a href="http://www.baidu.com/s?wd=%E4%B8%89%E7%BA%A7%E7%BC%93%E5%AD%98&tn=SE_PcZhidaonwhc_ngpagmjz&rsv_dl=gh_pc_zhidao">三级缓存</a>，如果数据写入频繁将会更新到二级乃至一级缓存</p>
+<p><strong>网络控制器</strong>:网卡，又称<a href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E9%80%82%E9%85%8D%E5%99%A8/214428">网络适配器</a>或网络接口卡（NIC），英文名为Network Interface Card。</p>
+<p><strong>带宽</strong>：单位时间内能传输的数据量</p>
+<p><strong>硬盘：</strong>硬盘是集精密机械、微电子电路、电磁转换为一体的电脑存储设备，它存储着电脑系统资源和重要的信息及数据</p>
+<p><strong>额定功率</strong>：正常工作下的功率</p>
+<p><strong>错峰上电</strong>：设定一个时间让服务器随机开机</p>
+<p><strong>PIN</strong>：输入功率</p>
+<p><strong>POUT</strong>:输出功率</p>
+<p><strong>Iin</strong>：电源输入电流</p>
+<p><strong>Iout</strong>:电源电流输出</p>
+<p><strong>Vin</strong>:电源输入电压</p>
+<p><strong>Vout</strong>:电源输出电压</p>
+<p><strong>传感器</strong>（<a href="https://baike.baidu.com/item/%E8%8B%B1%E6%96%87">英文</a>名称：transducer&#x2F;sensor）是一种检测装置，能感受到被测量的信息，并能将感受到的信息，按一定规律变换成为电信号或其他所需形式的信息输出，以满足信息的传输、处理、存储、显示、记录和控制等要求。</p>
+<p><strong>KVM</strong>：就是Keyboard Video Mouse的缩写。KVM <a href="https://baike.baidu.com/item/%E4%BA%A4%E6%8D%A2%E6%9C%BA/103532">交换机</a>通过直接连接键盘、视频和鼠标 (KVM) 端口，让您能够访问和控制计算机。</p>
+<p>**VLAN(**Virtual LAN)， “虚拟局域网”，LAN是网络，VLAN所指的LAN特指使用路由器分割的网络——也就是广播域。</p>
+<p><strong>广播域</strong>，指的是广播帧(目标MAC地址全部为1)所能传递到的范围，亦即能够直接通信的范围。</p>
+<p><strong>域名</strong>：（Domain Name）网域，是由一串用点分隔的名字组成的<a href="https://baike.baidu.com/item/Internet">Internet</a>上某一台<a href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA/140338">计算机</a>或计算机组的名称，用于在数据传输时标识计算机的电子方位（有时也指地理位置）。</p>
+<p><strong>双工模式</strong>：1、全双工： 指可以同时（瞬时）进行信号的双向传输（A→B且B→A）。</p>
+<p>2、半双工：指一个时间内只有一个方向的信号传输（A→B或B→A）。</p>
+<p><strong>端口：</strong>分为逻辑端口和物理端口。物理端口指的是物理存在的端口，如ADSL Modem、<a href="https://baike.baidu.com/item/%E9%9B%86%E7%BA%BF%E5%99%A8">集线器</a>、<a href="https://baike.baidu.com/item/%E4%BA%A4%E6%8D%A2%E6%9C%BA">交换机</a>、<a href="https://baike.baidu.com/item/%E8%B7%AF%E7%94%B1%E5%99%A8">路由器</a>上用 于连接其他<a href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87">网络设备</a>的接口，如<a href="https://baike.baidu.com/item/RJ-45%E7%AB%AF%E5%8F%A3">RJ-45端口</a>、SC端口等等。逻辑端口是指逻辑意义上用于区分服务的端口，如<a href="https://baike.baidu.com/item/TCP%2FIP%E5%8D%8F%E8%AE%AE">TCP&#x2F;IP协议</a>中的服务端口，端口号的范围从0到65535，比如用于浏览网页服务的80端口，用于FTP服务的21端口等。端口号就是端口的编号。</p>
+<p><strong>NTP****服务器：</strong>【Network Time Protocol（NTP）】是用来使计算机<a href="https://baike.baidu.com/item/%E6%97%B6%E9%97%B4%E5%90%8C%E6%AD%A5">时间同步</a>化的一种协议，它可以使计算机对其服务器或时钟源（如石英钟，GPS等等)做同步化，它可以提供高精准度的时间校正，且可介由加密确认的方式来防止恶毒的协议攻击。</p>
+<p><strong>SMTP****：</strong>（Simple Mail Transfer Protocol）即<a href="https://baike.baidu.com/item/%E7%AE%80%E5%8D%95%E9%82%AE%E4%BB%B6%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE">简单邮件传输协议</a>,它是一组用于由源地址到目的地址传送<a href="https://baike.baidu.com/item/%E9%82%AE%E4%BB%B6">邮件</a>的规则，由它来控制信件的中转方式。<a href="https://baike.baidu.com/item/SMTP%E5%8D%8F%E8%AE%AE">SMTP协议</a>属于<a href="https://baike.baidu.com/item/TCP%2FIP%E5%8D%8F%E8%AE%AE%E7%B0%87">TCP&#x2F;IP协议簇</a>，它帮助每台<a href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA/140338">计算机</a>在发送或中转信件时找到下一个目的地。通过SMTP协议所指定的<a href="https://baike.baidu.com/item/%E6%9C%8D%E5%8A%A1%E5%99%A8">服务器</a>,就可以把E-mail寄到收信人的服务器上了，整个过程只要几分钟。SMTP<a href="https://baike.baidu.com/item/%E6%9C%8D%E5%8A%A1%E5%99%A8/100571">服务器</a>则是遵循SMTP协议的发送<a href="https://baike.baidu.com/item/%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8">邮件服务器</a>，用来发送或中转发出的<a href="https://baike.baidu.com/item/%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6/111106">电子邮件</a>。</p>
+<p><strong>网卡：</strong>是工作在链路层的网络组件，是局域网中连接计算机和传输介质的接口，不仅能实现与局域网传输介质之间的物理连接和电信号匹配，还涉及帧的发送与接收、帧的封装与拆封、介质访问控制、数据的编码与解码以及数据缓存的功能等。</p>
+<p><strong>LDAP****：</strong>是轻量<a href="https://baike.baidu.com/item/%E7%9B%AE%E5%BD%95%E8%AE%BF%E9%97%AE%E5%8D%8F%E8%AE%AE">目录访问协议</a>，以树状的层次结构来存储数据。</p>
+<p><strong>SSL</strong>(Secure Sockets Layer <a href="https://baike.baidu.com/item/%E5%AE%89%E5%85%A8%E5%A5%97%E6%8E%A5%E5%B1%82">安全套接层</a>),及其继任者<a href="https://baike.baidu.com/item/%E4%BC%A0%E8%BE%93%E5%B1%82%E5%AE%89%E5%85%A8">传输层安全</a>（Transport Layer Security，TLS）是为<a href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/9636548">网络通信</a>提供安全及<a href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7/110071">数据完整性</a>的一种安全协议。SSL通过互相认证、使用数字签名确保完整性、使用加密确保私密性，以实现客户端和服务器之间的安全通讯。该协议由两层组成：SSL记录协议和SSL握手协议。</p>
+<p><strong>TLS</strong>：(Transport Layer Security，传输层安全协议)，用于两个应用程序之间提供保密性和数据完整性。该协议由两层组成：TLS记录协议和TLS握手协议。</p>
+<p><strong>TLS****与SSL</strong>在<a href="https://baike.baidu.com/item/%E4%BC%A0%E8%BE%93%E5%B1%82/4329536">传输层</a>对网络连接进行加密。　位于可靠的面向连接的网络层协议和应用层协议之间的一种协议层。</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>BMC</tag>
+        <tag>服务器</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Cookie测试</title>
     <url>/Echo/2022/02/05/Cookie%E6%B5%8B%E8%AF%95/</url>
     <content><![CDATA[<h4 id="什么是Cookie？"><a href="#什么是Cookie？" class="headerlink" title="什么是Cookie？"></a>什么是Cookie？</h4><p> Cookie 是由网络服务器存储在用户硬盘上的文本文件中的一小段信息。Web 浏览器稍后将使用此信息从该计算机检索信息。</p>
@@ -978,55 +1027,6 @@
         <tag>页面测试</tag>
         <tag>安全测试</tag>
         <tag>cookie</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>BMCweb解释</title>
-    <url>/Echo/2020/01/17/BMCweb%E8%A7%A3%E9%87%8A/</url>
-    <content><![CDATA[<p><strong>UID****：</strong>定位作用，控制定位灯是否亮起，便于寻找机器</p>
-<p><strong>循环开机</strong>：服务器先关机再开机</p>
-<p><strong>重启</strong>：不关闭电源（热开机）的情况下重新启动系统</p>
-<p>**软关机:**先执行操作系统的关机再关闭系统</p>
-<p><strong>CPU****速率</strong>：cup主频，即CPU<a href="https://baike.baidu.com/item/%E5%86%85%E6%A0%B8">内核</a>工作的<a href="https://baike.baidu.com/item/%E6%97%B6%E9%92%9F%E9%A2%91%E7%8E%87/103708">时钟频率</a>。CPU的主频表示在CPU内数字<a href="https://baike.baidu.com/item/%E8%84%89%E5%86%B2">脉冲</a>信号震荡的速度，主频和实际的<a href="https://baike.baidu.com/item/%E8%BF%90%E7%AE%97%E9%80%9F%E5%BA%A6">运算速度</a>存在一定的关系，但没有一个定量，因为CPU的运算速度还要看CPU的流水线的各方面的性能指标（<a href="https://baike.baidu.com/item/%E7%BC%93%E5%AD%98">缓存</a>、<a href="https://baike.baidu.com/item/%E6%8C%87%E4%BB%A4%E9%9B%86">指令集</a>，CPU的<a href="https://baike.baidu.com/item/%E4%BD%8D%E6%95%B0">位数</a>等等）。</p>
-<p><strong>核心</strong>（Die）又称为内核，是CPU最重要的组成部分。CPU中心那块隆起的芯片就是核心， CPU所有的计算、接受&#x2F;存储命令、处理数据都由核心执行。各种CPU核心都具有固定的逻辑结构，一级缓存、二级缓存、执行单元、指令级单元和总线接口等逻辑单元都会有科学的布局。</p>
-<p><strong>CPU****的核心数</strong>是指物理上，也就是硬件上存在着几个核心。比如，双核就是包括2个相对独立的CPU核心单元组，四核就包含4个相对独立的CPU核心单元组。</p>
-<p><strong>TDP</strong>： Thermal Design Power——散热设计功耗</p>
-<p>大小：一级缓存&lt;二级缓存&lt;三级缓存</p>
-<p>速度：一级缓存&gt;二级缓存&gt;三级缓存</p>
-<p>当CPU需要写入内存的时候通常只更新<a href="http://www.baidu.com/s?wd=%E4%B8%89%E7%BA%A7%E7%BC%93%E5%AD%98&tn=SE_PcZhidaonwhc_ngpagmjz&rsv_dl=gh_pc_zhidao">三级缓存</a>，如果数据写入频繁将会更新到二级乃至一级缓存</p>
-<p><strong>网络控制器</strong>:网卡，又称<a href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E9%80%82%E9%85%8D%E5%99%A8/214428">网络适配器</a>或网络接口卡（NIC），英文名为Network Interface Card。</p>
-<p><strong>带宽</strong>：单位时间内能传输的数据量</p>
-<p><strong>硬盘：</strong>硬盘是集精密机械、微电子电路、电磁转换为一体的电脑存储设备，它存储着电脑系统资源和重要的信息及数据</p>
-<p><strong>额定功率</strong>：正常工作下的功率</p>
-<p><strong>错峰上电</strong>：设定一个时间让服务器随机开机</p>
-<p><strong>PIN</strong>：输入功率</p>
-<p><strong>POUT</strong>:输出功率</p>
-<p><strong>Iin</strong>：电源输入电流</p>
-<p><strong>Iout</strong>:电源电流输出</p>
-<p><strong>Vin</strong>:电源输入电压</p>
-<p><strong>Vout</strong>:电源输出电压</p>
-<p><strong>传感器</strong>（<a href="https://baike.baidu.com/item/%E8%8B%B1%E6%96%87">英文</a>名称：transducer&#x2F;sensor）是一种检测装置，能感受到被测量的信息，并能将感受到的信息，按一定规律变换成为电信号或其他所需形式的信息输出，以满足信息的传输、处理、存储、显示、记录和控制等要求。</p>
-<p><strong>KVM</strong>：就是Keyboard Video Mouse的缩写。KVM <a href="https://baike.baidu.com/item/%E4%BA%A4%E6%8D%A2%E6%9C%BA/103532">交换机</a>通过直接连接键盘、视频和鼠标 (KVM) 端口，让您能够访问和控制计算机。</p>
-<p>**VLAN(**Virtual LAN)， “虚拟局域网”，LAN是网络，VLAN所指的LAN特指使用路由器分割的网络——也就是广播域。</p>
-<p><strong>广播域</strong>，指的是广播帧(目标MAC地址全部为1)所能传递到的范围，亦即能够直接通信的范围。</p>
-<p><strong>域名</strong>：（Domain Name）网域，是由一串用点分隔的名字组成的<a href="https://baike.baidu.com/item/Internet">Internet</a>上某一台<a href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA/140338">计算机</a>或计算机组的名称，用于在数据传输时标识计算机的电子方位（有时也指地理位置）。</p>
-<p><strong>双工模式</strong>：1、全双工： 指可以同时（瞬时）进行信号的双向传输（A→B且B→A）。</p>
-<p>2、半双工：指一个时间内只有一个方向的信号传输（A→B或B→A）。</p>
-<p><strong>端口：</strong>分为逻辑端口和物理端口。物理端口指的是物理存在的端口，如ADSL Modem、<a href="https://baike.baidu.com/item/%E9%9B%86%E7%BA%BF%E5%99%A8">集线器</a>、<a href="https://baike.baidu.com/item/%E4%BA%A4%E6%8D%A2%E6%9C%BA">交换机</a>、<a href="https://baike.baidu.com/item/%E8%B7%AF%E7%94%B1%E5%99%A8">路由器</a>上用 于连接其他<a href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87">网络设备</a>的接口，如<a href="https://baike.baidu.com/item/RJ-45%E7%AB%AF%E5%8F%A3">RJ-45端口</a>、SC端口等等。逻辑端口是指逻辑意义上用于区分服务的端口，如<a href="https://baike.baidu.com/item/TCP%2FIP%E5%8D%8F%E8%AE%AE">TCP&#x2F;IP协议</a>中的服务端口，端口号的范围从0到65535，比如用于浏览网页服务的80端口，用于FTP服务的21端口等。端口号就是端口的编号。</p>
-<p><strong>NTP****服务器：</strong>【Network Time Protocol（NTP）】是用来使计算机<a href="https://baike.baidu.com/item/%E6%97%B6%E9%97%B4%E5%90%8C%E6%AD%A5">时间同步</a>化的一种协议，它可以使计算机对其服务器或时钟源（如石英钟，GPS等等)做同步化，它可以提供高精准度的时间校正，且可介由加密确认的方式来防止恶毒的协议攻击。</p>
-<p><strong>SMTP****：</strong>（Simple Mail Transfer Protocol）即<a href="https://baike.baidu.com/item/%E7%AE%80%E5%8D%95%E9%82%AE%E4%BB%B6%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE">简单邮件传输协议</a>,它是一组用于由源地址到目的地址传送<a href="https://baike.baidu.com/item/%E9%82%AE%E4%BB%B6">邮件</a>的规则，由它来控制信件的中转方式。<a href="https://baike.baidu.com/item/SMTP%E5%8D%8F%E8%AE%AE">SMTP协议</a>属于<a href="https://baike.baidu.com/item/TCP%2FIP%E5%8D%8F%E8%AE%AE%E7%B0%87">TCP&#x2F;IP协议簇</a>，它帮助每台<a href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA/140338">计算机</a>在发送或中转信件时找到下一个目的地。通过SMTP协议所指定的<a href="https://baike.baidu.com/item/%E6%9C%8D%E5%8A%A1%E5%99%A8">服务器</a>,就可以把E-mail寄到收信人的服务器上了，整个过程只要几分钟。SMTP<a href="https://baike.baidu.com/item/%E6%9C%8D%E5%8A%A1%E5%99%A8/100571">服务器</a>则是遵循SMTP协议的发送<a href="https://baike.baidu.com/item/%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8">邮件服务器</a>，用来发送或中转发出的<a href="https://baike.baidu.com/item/%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6/111106">电子邮件</a>。</p>
-<p><strong>网卡：</strong>是工作在链路层的网络组件，是局域网中连接计算机和传输介质的接口，不仅能实现与局域网传输介质之间的物理连接和电信号匹配，还涉及帧的发送与接收、帧的封装与拆封、介质访问控制、数据的编码与解码以及数据缓存的功能等。</p>
-<p><strong>LDAP****：</strong>是轻量<a href="https://baike.baidu.com/item/%E7%9B%AE%E5%BD%95%E8%AE%BF%E9%97%AE%E5%8D%8F%E8%AE%AE">目录访问协议</a>，以树状的层次结构来存储数据。</p>
-<p><strong>SSL</strong>(Secure Sockets Layer <a href="https://baike.baidu.com/item/%E5%AE%89%E5%85%A8%E5%A5%97%E6%8E%A5%E5%B1%82">安全套接层</a>),及其继任者<a href="https://baike.baidu.com/item/%E4%BC%A0%E8%BE%93%E5%B1%82%E5%AE%89%E5%85%A8">传输层安全</a>（Transport Layer Security，TLS）是为<a href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/9636548">网络通信</a>提供安全及<a href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7/110071">数据完整性</a>的一种安全协议。SSL通过互相认证、使用数字签名确保完整性、使用加密确保私密性，以实现客户端和服务器之间的安全通讯。该协议由两层组成：SSL记录协议和SSL握手协议。</p>
-<p><strong>TLS</strong>：(Transport Layer Security，传输层安全协议)，用于两个应用程序之间提供保密性和数据完整性。该协议由两层组成：TLS记录协议和TLS握手协议。</p>
-<p><strong>TLS****与SSL</strong>在<a href="https://baike.baidu.com/item/%E4%BC%A0%E8%BE%93%E5%B1%82/4329536">传输层</a>对网络连接进行加密。　位于可靠的面向连接的网络层协议和应用层协议之间的一种协议层。</p>
-]]></content>
-      <categories>
-        <category>学习</category>
-      </categories>
-      <tags>
-        <tag>BMC</tag>
-        <tag>服务器</tag>
       </tags>
   </entry>
   <entry>
@@ -1605,321 +1605,6 @@
       <tags>
         <tag>大数据</tag>
         <tag>kafka</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>cetnos 7.7单节点安装部署k8s（v1.18.2）</title>
-    <url>/Echo/2020/05/13/cetnos-7-7%E5%8D%95%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2k8s%EF%BC%88v1-18-2%EF%BC%89/</url>
-    <content><![CDATA[<h4 id="1-配置hosts文件"><a href="#1-配置hosts文件" class="headerlink" title="1.配置hosts文件"></a>1.配置hosts文件</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/hosts</span><br></pre></td></tr></table></figure>
-
-<p>本机ip  本机hostname 本机hostname</p>
-<h4 id="2-关闭防火墙-sawp等"><a href="#2-关闭防火墙-sawp等" class="headerlink" title="2.关闭防火墙, sawp等"></a>2.关闭防火墙, sawp等</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl <span class="built_in">disable</span> firewalld</span><br><span class="line">swapoff -a <span class="comment">#此处为临时关闭</span></span><br></pre></td></tr></table></figure>
-
-<p>#注释掉 &#x2F;etc&#x2F;fstab 里面这一行 &#x2F;dev&#x2F;mapper&#x2F;centos-swap swap                    swap    defaults        0 0</p>
-<h4 id="3-禁用selinux"><a href="#3-禁用selinux" class="headerlink" title="3.禁用selinux"></a>3.禁用selinux</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br><span class="line">SELINUX=disabled</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-修改iptables参数-RHEL-x2F-CentOS-7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题"><a href="#4-修改iptables参数-RHEL-x2F-CentOS-7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题" class="headerlink" title="4.修改iptables参数 :: RHEL &#x2F; CentOS 7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题"></a>4.修改iptables参数 :: RHEL &#x2F; CentOS 7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">cat &lt;&lt;<span class="string">EOF &gt;  /etc/sysctl.d/k8s.conf</span></span><br><span class="line"><span class="string">vm.swappiness = 0</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-ip6tables = 1</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-iptables = 1</span></span><br><span class="line"><span class="string">net.ipv4.ip_forward = 1</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"><span class="comment">#使配置生效</span></span><br><span class="line">modprobe br_netfilter</span><br><span class="line">sysctl -p /etc/sysctl.d/k8s.conf</span><br></pre></td></tr></table></figure>
-
-<h4 id="5-安装docker-使用阿里镜像"><a href="#5-安装docker-使用阿里镜像" class="headerlink" title="5.安装docker(使用阿里镜像)"></a>5.安装docker(使用阿里镜像)</h4><h5 id="step-1-安装必要的一些系统工具"><a href="#step-1-安装必要的一些系统工具" class="headerlink" title="step 1: 安装必要的一些系统工具"></a>step 1: 安装必要的一些系统工具</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-2-添加软件源信息"><a href="#Step-2-添加软件源信息" class="headerlink" title="Step 2: 添加软件源信息"></a>Step 2: 添加软件源信息</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-3-更新并安装Docker-CE"><a href="#Step-3-更新并安装Docker-CE" class="headerlink" title="Step 3: 更新并安装Docker-CE"></a>Step 3: 更新并安装Docker-CE</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum makecache fast</span><br><span class="line">sudo yum -y install docker-ce</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-4-开启Docker服务"><a href="#Step-4-开启Docker服务" class="headerlink" title="Step 4: 开启Docker服务"></a>Step 4: 开启Docker服务</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-5-修改cgroupdriver-和镜像地址"><a href="#Step-5-修改cgroupdriver-和镜像地址" class="headerlink" title="Step 5: 修改cgroupdriver 和镜像地址"></a>Step 5: 修改cgroupdriver 和镜像地址</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/docker/daemon.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;exec-opts&quot;</span>: [<span class="string">&quot;native.cgroupdriver=systemd&quot;</span>],</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://e7l8pkuq.mirror.aliyuncs.com&quot;</span>,<span class="string">&quot;https://hub-mirror.c.163.com/&quot;</span>,<span class="string">&quot;https://reg-mirror.qiniu.com&quot;</span>]</span><br><span class="line">&#125;</span><br><span class="line"> <span class="comment"># 安装校验 docker version</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-6-安装kubernetes"><a href="#Step-6-安装kubernetes" class="headerlink" title="Step  6.安装kubernetes"></a>Step  6.安装kubernetes</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">cat &lt;&lt;<span class="string">EOF &gt; /etc/yum.repos.d/kubernetes.repo</span></span><br><span class="line"><span class="string">[kubernetes]</span></span><br><span class="line"><span class="string">name=Kubernetes</span></span><br><span class="line"><span class="string">baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64/</span></span><br><span class="line"><span class="string">enabled=1</span></span><br><span class="line"><span class="string">gpgcheck=1</span></span><br><span class="line"><span class="string">repo_gpgcheck=1</span></span><br><span class="line"><span class="string">gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line">setenforce 0</span><br><span class="line">yum install -y kubelet kubeadm kubectl</span><br><span class="line">systemctl <span class="built_in">enable</span> kubelet &amp;&amp; systemctl start kubelet</span><br><span class="line"> <span class="comment"># 出现索引lgpg检查失败时，请用yum install -y --nogpgcheck kubelet kubeadm kubectl</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="step-7-kubeadm初始化安装"><a href="#step-7-kubeadm初始化安装" class="headerlink" title="step 7.kubeadm初始化安装"></a>step 7.kubeadm初始化安装</h5><p>kubeadm init –apiserver-advertise-address&#x3D;本机IP –image-repository registry.aliyuncs.com&#x2F;google_containers –kubernetes-version 版本号 –pod-network-cidr&#x3D;10.244.0.0&#x2F;16</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubeadm init --apiserver-advertise-address=192.168.94.129 --image-repository registry.aliyuncs.com/google_containers --kubernetes-version 1.18.2 --pod-network-cidr=10.244.0.0/16</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-8-初始化安装成功后进行配置"><a href="#step-8-初始化安装成功后进行配置" class="headerlink" title="step 8.初始化安装成功后进行配置"></a>step 8.初始化安装成功后进行配置</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mkdir -p <span class="variable">$HOME</span>/.kube</span><br><span class="line">sudo cp -i /etc/kubernetes/admin.conf <span class="variable">$HOME</span>/.kube/config</span><br><span class="line">sudo chown $(id -u):$(id -g) <span class="variable">$HOME</span>/.kube/config</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-9-查看kubelet状态"><a href="#step-9-查看kubelet状态" class="headerlink" title="step 9.查看kubelet状态"></a>step 9.查看kubelet状态</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl status kubelet.service</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-10-确认每个组件的状态"><a href="#step-10-确认每个组件的状态" class="headerlink" title="step 10.确认每个组件的状态"></a>step 10.确认每个组件的状态</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl get cs</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-11-查看node状态，此时会发现处于NoReady"><a href="#step-11-查看node状态，此时会发现处于NoReady" class="headerlink" title="step 11.查看node状态，此时会发现处于NoReady"></a>step 11.查看node状态，此时会发现处于NoReady</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl get node</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-12-安装port-Network-flannel-k8s-cluster-工作-须安装pod网络，否则pod之间无法通信，k8s支持多种方案"><a href="#step-12-安装port-Network-flannel-k8s-cluster-工作-须安装pod网络，否则pod之间无法通信，k8s支持多种方案" class="headerlink" title="step 12.安装port Network( flannel )  : k8s cluster 工作 须安装pod网络，否则pod之间无法通信，k8s支持多种方案"></a>step 12.安装port Network( flannel )  : k8s cluster 工作 须安装pod网络，否则pod之间无法通信，k8s支持多种方案</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml</span><br></pre></td></tr></table></figure>
-
-<p>建议将kube-fannle文件拷贝至本地，将其中所需的镜像进行替换。</p>
-<h5 id="step-13-检查pod-确保每个pod都是running"><a href="#step-13-检查pod-确保每个pod都是running" class="headerlink" title="step 13.检查pod,确保每个pod都是running"></a>step 13.检查pod,确保每个pod都是running</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl get pod --all-namespaces -o wide</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>环境安装</category>
-      </categories>
-      <tags>
-        <tag>K8S</tag>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>cetnos 8.2单节点安装部署k8s（v1.18.2）</title>
-    <url>/Echo/2020/08/10/cetnos-8-2%E5%8D%95%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2k8s%EF%BC%88v1-18-2%EF%BC%89/</url>
-    <content><![CDATA[<h4 id="1-配置hosts文件"><a href="#1-配置hosts文件" class="headerlink" title="1.配置hosts文件"></a>1.配置hosts文件</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/hosts</span><br></pre></td></tr></table></figure>
-
-<p>本机ip  本机hostname 本机hostname</p>
-<h4 id="2-关闭防火墙-sawp等"><a href="#2-关闭防火墙-sawp等" class="headerlink" title="2.关闭防火墙, sawp等"></a>2.关闭防火墙, sawp等</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl <span class="built_in">disable</span> firewalld</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-关闭swap"><a href="#3-关闭swap" class="headerlink" title="3.关闭swap"></a>3.关闭swap</h4><h4 id="4-禁用selinux"><a href="#4-禁用selinux" class="headerlink" title="4.禁用selinux"></a>4.禁用selinux</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br><span class="line">SELINUX=disabled</span><br><span class="line">/usr/sbin/sestatus -v  <span class="comment"># 查看selinux状态</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="5-安装docker"><a href="#5-安装docker" class="headerlink" title="5.安装docker"></a>5.安装docker</h4><h5 id="step-1-安装必要的一些系统工具"><a href="#step-1-安装必要的一些系统工具" class="headerlink" title="step 1: 安装必要的一些系统工具"></a>step 1: 安装必要的一些系统工具</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-2-添加软件源信息"><a href="#Step-2-添加软件源信息" class="headerlink" title="Step 2: 添加软件源信息"></a>Step 2: 添加软件源信息</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-3-更新并安装Docker-CE"><a href="#Step-3-更新并安装Docker-CE" class="headerlink" title="Step 3: 更新并安装Docker-CE"></a>Step 3: 更新并安装Docker-CE</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum makecache --refresh</span><br><span class="line">sudo yum -y install docker-ce</span><br><span class="line"><span class="comment"># 发现报错：Problem: package docker-ce-3:19.03.12-3.el7.x86_64 requires containerd.io &gt;= 1.2.2-3, but none of the providers can be installed</span></span><br><span class="line"><span class="comment"># 因为containerd 版本过低</span></span><br><span class="line">dnf install container-selinux</span><br><span class="line">通过yum -y install https://download.docker.com/linux/centos/7/x86_64/edge/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm 升级即可</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-4-docker-修改Cgroup-Driver以及docker镜像拉取地址"><a href="#Step-4-docker-修改Cgroup-Driver以及docker镜像拉取地址" class="headerlink" title="Step 4: docker 修改Cgroup Driver以及docker镜像拉取地址"></a>Step 4: docker 修改Cgroup Driver以及docker镜像拉取地址</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"> cat /etc/docker/daemon.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://e7l8pkuq.mirror.aliyuncs.com&quot;</span>],</span><br><span class="line">  <span class="string">&quot;exec-opts&quot;</span>: [<span class="string">&quot;native.cgroupdriver=systemd&quot;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-5-开启Docker服务"><a href="#Step-5-开启Docker服务" class="headerlink" title="Step 5: 开启Docker服务"></a>Step 5: 开启Docker服务</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
-
-<h4 id="6-安装kubectl"><a href="#6-安装kubectl" class="headerlink" title="6.安装kubectl"></a>6.安装kubectl</h4><h5 id="step-1：下载最新kubectl最新资源"><a href="#step-1：下载最新kubectl最新资源" class="headerlink" title="step 1：下载最新kubectl最新资源"></a>step 1：下载最新kubectl最新资源</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">curl -LO <span class="string">&quot;https://storage.googleapis.com/kubernetes-release/release/<span class="subst">$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)</span>/bin/linux/amd64/kubectl&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="step-2：添加执行权限"><a href="#step-2：添加执行权限" class="headerlink" title="step 2：添加执行权限"></a>step 2：添加执行权限</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">chmod +x ./kubectl</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-3：移动kubectl至bin路径"><a href="#step-3：移动kubectl至bin路径" class="headerlink" title="step 3：移动kubectl至bin路径"></a>step 3：移动kubectl至bin路径</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo mv ./kubectl /usr/<span class="built_in">local</span>/bin/kubectl</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-4：确认安装的版本"><a href="#step-4：确认安装的版本" class="headerlink" title="step 4：确认安装的版本"></a>step 4：确认安装的版本</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl version --client</span><br></pre></td></tr></table></figure>
-
-<h4 id="7-安装minikube"><a href="#7-安装minikube" class="headerlink" title="7.安装minikube"></a>7.安装minikube</h4><h5 id="step-1：确认是否支持虚拟化"><a href="#step-1：确认是否支持虚拟化" class="headerlink" title="step 1：确认是否支持虚拟化"></a>step 1：确认是否支持虚拟化</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">grep -E --color <span class="string">&#x27;vmx|svm&#x27;</span> /proc/cpuinfo</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="step-2：下载minikube资源"><a href="#step-2：下载minikube资源" class="headerlink" title="step 2：下载minikube资源"></a>step 2：下载minikube资源</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \</span><br><span class="line">  &amp;&amp; chmod +x minikube</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="step-3：添加minikube进入系统命令"><a href="#step-3：添加minikube进入系统命令" class="headerlink" title="step 3：添加minikube进入系统命令"></a>step 3：添加minikube进入系统命令</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo mkdir -p /usr/<span class="built_in">local</span>/bin/</span><br><span class="line">sudo install minikube /usr/<span class="built_in">local</span>/bin/</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="step-4：启动-minikube（使用的VM安装的centos-8因此设置driver-x3D-none）"><a href="#step-4：启动-minikube（使用的VM安装的centos-8因此设置driver-x3D-none）" class="headerlink" title="step 4：启动 minikube（使用的VM安装的centos 8因此设置driver&#x3D;none）"></a>step 4：启动 minikube（使用的VM安装的centos 8因此设置driver&#x3D;none）</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">minikube start --driver=none --image-repository=registry.cn-hangzhou.aliyuncs.com/google_containers</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="step-5：确认minikube状态"><a href="#step-5：确认minikube状态" class="headerlink" title="step 5：确认minikube状态"></a>step 5：确认minikube状态</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">minikube status</span><br></pre></td></tr></table></figure>
-
-<p>8.istio安装</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">istioctl manifest apply --<span class="built_in">set</span> profile=demo</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>环境安装</category>
-      </categories>
-      <tags>
-        <tag>K8S</tag>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>emqtt_bench安装与压测MQTTbroker</title>
-    <url>/Echo/2021/12/15/emqtt-bench%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8E%8B%E6%B5%8BMQTTbroker/</url>
-    <content><![CDATA[<h4 id="EMQX"><a href="#EMQX" class="headerlink" title="EMQX"></a>EMQX</h4><p><em>EMQ X</em> (Erlang&#x2F;Enterprise&#x2F;Elastic MQTT Broker) 是基于 Erlang&#x2F;OTP 平台开发的开源物联网 MQTT 消息服务器。</p>
-<p>Erlang&#x2F;OTP是出色的软实时 (Soft-Realtime)、低延时 (Low-Latency)、分布式 (Distributed)的语言平台。</p>
-<p>MQTT 是轻量的 (Lightweight)、发布订阅模式 (PubSub) 的物联网消息协议。</p>
-<p>EMQ X 设计目标是实现高可靠，并支持承载海量物联网终端的MQTT连接，支持在海量物联网设备间低延时消息路由:</p>
-<ol>
-<li>稳定承载大规模的 MQTT 客户端连接，单服务器节点支持50万到100万连接。</li>
-<li>分布式节点集群，快速低延时的消息路由，单集群支持1000万规模的路由。</li>
-<li>消息服务器内扩展，支持定制多种认证方式、高效存储消息到后端数据库。</li>
-<li>完整物联网协议支持，MQTT、MQTT-SN、CoAP、LwM2M、WebSocket 或私有协议支持。</li>
-</ol>
-<h4 id="emqtt-bench"><a href="#emqtt-bench" class="headerlink" title="emqtt_bench"></a>emqtt_bench</h4><p><a href="https://github.com/emqx/emqtt_bench">emqtt_bench (opens new window)</a>是基于 Erlang 编写的，一个简洁强大的 MQTT 协议性能测试工具。</p>
-<h4 id="EMQX安装"><a href="#EMQX安装" class="headerlink" title="EMQX安装"></a>EMQX安装</h4><p>emqx安装比较简单，可以参照<a href="https://docs.emqx.cn/broker/v4.3/getting-started/install.html">安装 | EMQ Docs (emqx.cn)</a>进行。</p>
-<h4 id="emqtt-bench安装"><a href="#emqtt-bench安装" class="headerlink" title="emqtt_bench安装"></a>emqtt_bench安装</h4><p>结合官网介绍需要 Erlang&#x2F;OTP 22.3+以上，但是经过尝试最新版的Erlang不太兼容，所以还是老老实实用22.3了。</p>
-<h6 id="1-前提准备"><a href="#1-前提准备" class="headerlink" title="1.前提准备"></a>1.前提准备</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 各种依赖，缺乏可能会导致意外问题</span></span><br><span class="line">yum -y install ncurses-devel openssl-devel unixODBC-devel gcc-c++ perl</span><br></pre></td></tr></table></figure>
-
-<h6 id="2-安装Erlang-22-3"><a href="#2-安装Erlang-22-3" class="headerlink" title="2.安装Erlang 22.3"></a>2.安装Erlang 22.3</h6><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 切换到安装目录此处建议用opt文件夹</span></span><br><span class="line"><span class="built_in">cd</span> /opt</span><br><span class="line"><span class="comment"># 下载Erlang</span></span><br><span class="line">wget http://erlang.org/download/otp_src_22.3.tar.gz</span><br><span class="line"><span class="comment"># 解压</span></span><br><span class="line">tar -zxvf otp_src_22.3</span><br><span class="line">.tar.gz</span><br><span class="line"><span class="comment"># 切换到解压后的erlang安装包</span></span><br><span class="line"><span class="built_in">cd</span> otp_src_22.3</span><br><span class="line"><span class="comment"># 开始安装</span></span><br><span class="line">./configure &amp; make &amp; make install</span><br><span class="line"><span class="comment"># 查看版本</span></span><br><span class="line">erl</span><br></pre></td></tr></table></figure>
-
-<p><img src="/Echo/2021/12/15/emqtt-bench%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8E%8B%E6%B5%8BMQTTbroker/image-20211216170648216.png" alt="image-20211216170648216"></p>
-<h6 id="3-安装新版git（因后续在emqtt-bench-make时centos7自带git版本较低导致问题）"><a href="#3-安装新版git（因后续在emqtt-bench-make时centos7自带git版本较低导致问题）" class="headerlink" title="3.安装新版git（因后续在emqtt_bench make时centos7自带git版本较低导致问题）"></a>3.安装新版git（因后续在emqtt_bench make时centos7自带git版本较低导致问题）</h6><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 更新系统资源包</span></span><br><span class="line">yum install http://opensource.wandisco.com/centos/7/git/x86_64/wandisco-git-release-7-2.noarch.rpm</span><br><span class="line"><span class="comment"># 安装git</span></span><br><span class="line">yum install -y git</span><br><span class="line"><span class="comment"># 查看git版本</span></span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
-
-<p>4.安装emqtt_bench</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装依赖</span></span><br><span class="line">yum install -y libatomic</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装</span></span><br><span class="line">git clone https://github.com/emqx/emqtt-bench</span><br><span class="line">cd emqtt-bench</span><br><span class="line"><span class="meta">#</span><span class="bash"> 因为QUIC目前不稳定所以选择禁用QUIC</span></span><br><span class="line">BUILD_WITHOUT_QUIC=1 make</span><br><span class="line"><span class="meta">#</span><span class="bash"> 验证</span></span><br><span class="line">./emqtt_bench</span><br></pre></td></tr></table></figure>
-
-<p>输出Usage: emqtt_bench pub | sub | conn [–help]即为安装成功</p>
-<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>安装中遇到的问题有以下两个</p>
-<h6 id="1-make失败（报错GUN版本）"><a href="#1-make失败（报错GUN版本）" class="headerlink" title="1.make失败（报错GUN版本）"></a>1.make失败（报错GUN版本）</h6><p>经排查此问题为QUIC功能不能使用导致，使用禁用模式make即可</p>
-<h6 id="2-有部分git资源下载失败"><a href="#2-有部分git资源下载失败" class="headerlink" title="2.有部分git资源下载失败"></a>2.有部分git资源下载失败</h6><p><img src="/Echo/2021/12/15/emqtt-bench%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8E%8B%E6%B5%8BMQTTbroker/image-20211216171321403.png" alt="image-20211216171321403"></p>
-<p><strong>cd &#x2F;opt&#x2F;emqtt-bench&#x2F;_build&#x2F;default&#x2F;lib&#x2F;quicer&#x2F;msquic&#x2F;submodules</strong></p>
-<p><strong>git clone git:&#x2F;&#x2F;github.com&#x2F;google&#x2F;googletest</strong></p>
-<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p><code>emqtt_bench</code> 共三个子命令：</p>
-<ol>
-<li><code>pub</code>：用于创建大量客户端执行发布消息的操作。</li>
-<li><code>sub</code>：用于创建大量客户端执行订阅主题，并接受消息的操作。</li>
-<li><code>conn</code>：用于创建大量的连接</li>
-</ol>
-<p>参数</p>
-<table>
-<thead>
-<tr>
-<th align="left">参数</th>
-<th>简写</th>
-<th>可选值</th>
-<th>默认值</th>
-<th align="left">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">–host</td>
-<td>-h</td>
-<td>-</td>
-<td>localhost</td>
-<td align="left">要连接的 MQTT 服务器地址</td>
-</tr>
-<tr>
-<td align="left">–port</td>
-<td>-p</td>
-<td>-</td>
-<td>1883</td>
-<td align="left">MQTT 服务端口</td>
-</tr>
-<tr>
-<td align="left">–version</td>
-<td>-V</td>
-<td>3 4 5</td>
-<td>5</td>
-<td align="left">使用的 MQTT 协议版本</td>
-</tr>
-<tr>
-<td align="left">–count</td>
-<td>-c</td>
-<td>-</td>
-<td>200</td>
-<td align="left">客户端总数</td>
-</tr>
-<tr>
-<td align="left">–startnumber</td>
-<td>-n</td>
-<td>-</td>
-<td>0</td>
-<td align="left">客户端数量起始值</td>
-</tr>
-<tr>
-<td align="left">–interval</td>
-<td>-i</td>
-<td>-</td>
-<td>10</td>
-<td align="left">每间隔多少时间创建一个客户端；单位：毫秒</td>
-</tr>
-<tr>
-<td align="left">–interval_of_msg</td>
-<td>-I</td>
-<td>-</td>
-<td>1000</td>
-<td align="left">每间隔多少时间发送一个消息</td>
-</tr>
-<tr>
-<td align="left">–username</td>
-<td>-u</td>
-<td>-</td>
-<td>无；非必选</td>
-<td align="left">客户端用户名</td>
-</tr>
-<tr>
-<td align="left">–password</td>
-<td>-P</td>
-<td>-</td>
-<td>无；非必选</td>
-<td align="left">客户端密码</td>
-</tr>
-<tr>
-<td align="left">–topic</td>
-<td>-t</td>
-<td>-</td>
-<td>无；必选</td>
-<td align="left">发布的主题；支持站位符： <code>%c</code>：表示 ClientId <code>%u</code>：表示 Username <code>%i</code>：表示客户端的序列数</td>
-</tr>
-<tr>
-<td align="left">–szie</td>
-<td>-s</td>
-<td>-</td>
-<td>256</td>
-<td align="left">消息 Payload 的大小；单位：字节</td>
-</tr>
-<tr>
-<td align="left">–qos</td>
-<td>-q</td>
-<td>-</td>
-<td>0</td>
-<td align="left">Qos 等级</td>
-</tr>
-<tr>
-<td align="left">–retain</td>
-<td>-r</td>
-<td>true false</td>
-<td>false</td>
-<td align="left">消息是否设置 Retain 标志</td>
-</tr>
-<tr>
-<td align="left">–keepalive</td>
-<td>-k</td>
-<td>-</td>
-<td>300</td>
-<td align="left">客户端心跳时间</td>
-</tr>
-<tr>
-<td align="left">–clean</td>
-<td>-C</td>
-<td>true false</td>
-<td>true</td>
-<td align="left">是否以清除会话的方式建立连接</td>
-</tr>
-<tr>
-<td align="left">–ssl</td>
-<td>-S</td>
-<td>true false</td>
-<td>false</td>
-<td align="left">是否启用 SSL</td>
-</tr>
-<tr>
-<td align="left">–certfile</td>
-<td>-</td>
-<td>-</td>
-<td>无</td>
-<td align="left">客户端 SSL 证书</td>
-</tr>
-<tr>
-<td align="left">–keyfile</td>
-<td>-</td>
-<td>-</td>
-<td>无</td>
-<td align="left">客户端 SSL 秘钥文件</td>
-</tr>
-<tr>
-<td align="left">–ws</td>
-<td>-</td>
-<td>true false</td>
-<td>false</td>
-<td align="left">是否以 Websocket 的方式建立连接</td>
-</tr>
-<tr>
-<td align="left">–ifaddr</td>
-<td>-</td>
-<td>-</td>
-<td>无</td>
-<td align="left">指定客户端连接使用的本地网卡</td>
-</tr>
-</tbody></table>
-<h4 id="吞吐量性能压测"><a href="#吞吐量性能压测" class="headerlink" title="吞吐量性能压测"></a>吞吐量性能压测</h4><p>bench1上执行</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">./emqtt_bench sub -t t -h EMQQserverIP -c 500</span><br></pre></td></tr></table></figure>
-
-<p>bench2 上执行</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">./emqtt_bench pub -t t -h EMQQserverIP -c 20 -I 100</span><br></pre></td></tr></table></figure>
-
-<p>在bench1上可以观察到</p>
-<p><strong>ecv(28006): total&#x3D;2102563, rate&#x3D;99725(msg&#x2F;sec）</strong></p>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>性能测试</tag>
-        <tag>mqtt</tag>
       </tags>
   </entry>
   <entry>
@@ -2672,6 +2357,321 @@
       </tags>
   </entry>
   <entry>
+    <title>cetnos 7.7单节点安装部署k8s（v1.18.2）</title>
+    <url>/Echo/2020/05/13/cetnos-7-7%E5%8D%95%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2k8s%EF%BC%88v1-18-2%EF%BC%89/</url>
+    <content><![CDATA[<h4 id="1-配置hosts文件"><a href="#1-配置hosts文件" class="headerlink" title="1.配置hosts文件"></a>1.配置hosts文件</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/hosts</span><br></pre></td></tr></table></figure>
+
+<p>本机ip  本机hostname 本机hostname</p>
+<h4 id="2-关闭防火墙-sawp等"><a href="#2-关闭防火墙-sawp等" class="headerlink" title="2.关闭防火墙, sawp等"></a>2.关闭防火墙, sawp等</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl <span class="built_in">disable</span> firewalld</span><br><span class="line">swapoff -a <span class="comment">#此处为临时关闭</span></span><br></pre></td></tr></table></figure>
+
+<p>#注释掉 &#x2F;etc&#x2F;fstab 里面这一行 &#x2F;dev&#x2F;mapper&#x2F;centos-swap swap                    swap    defaults        0 0</p>
+<h4 id="3-禁用selinux"><a href="#3-禁用selinux" class="headerlink" title="3.禁用selinux"></a>3.禁用selinux</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br><span class="line">SELINUX=disabled</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-修改iptables参数-RHEL-x2F-CentOS-7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题"><a href="#4-修改iptables参数-RHEL-x2F-CentOS-7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题" class="headerlink" title="4.修改iptables参数 :: RHEL &#x2F; CentOS 7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题"></a>4.修改iptables参数 :: RHEL &#x2F; CentOS 7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">cat &lt;&lt;<span class="string">EOF &gt;  /etc/sysctl.d/k8s.conf</span></span><br><span class="line"><span class="string">vm.swappiness = 0</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-ip6tables = 1</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-iptables = 1</span></span><br><span class="line"><span class="string">net.ipv4.ip_forward = 1</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"><span class="comment">#使配置生效</span></span><br><span class="line">modprobe br_netfilter</span><br><span class="line">sysctl -p /etc/sysctl.d/k8s.conf</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-安装docker-使用阿里镜像"><a href="#5-安装docker-使用阿里镜像" class="headerlink" title="5.安装docker(使用阿里镜像)"></a>5.安装docker(使用阿里镜像)</h4><h5 id="step-1-安装必要的一些系统工具"><a href="#step-1-安装必要的一些系统工具" class="headerlink" title="step 1: 安装必要的一些系统工具"></a>step 1: 安装必要的一些系统工具</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-2-添加软件源信息"><a href="#Step-2-添加软件源信息" class="headerlink" title="Step 2: 添加软件源信息"></a>Step 2: 添加软件源信息</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-3-更新并安装Docker-CE"><a href="#Step-3-更新并安装Docker-CE" class="headerlink" title="Step 3: 更新并安装Docker-CE"></a>Step 3: 更新并安装Docker-CE</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum makecache fast</span><br><span class="line">sudo yum -y install docker-ce</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-4-开启Docker服务"><a href="#Step-4-开启Docker服务" class="headerlink" title="Step 4: 开启Docker服务"></a>Step 4: 开启Docker服务</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-5-修改cgroupdriver-和镜像地址"><a href="#Step-5-修改cgroupdriver-和镜像地址" class="headerlink" title="Step 5: 修改cgroupdriver 和镜像地址"></a>Step 5: 修改cgroupdriver 和镜像地址</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/docker/daemon.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;exec-opts&quot;</span>: [<span class="string">&quot;native.cgroupdriver=systemd&quot;</span>],</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://e7l8pkuq.mirror.aliyuncs.com&quot;</span>,<span class="string">&quot;https://hub-mirror.c.163.com/&quot;</span>,<span class="string">&quot;https://reg-mirror.qiniu.com&quot;</span>]</span><br><span class="line">&#125;</span><br><span class="line"> <span class="comment"># 安装校验 docker version</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-6-安装kubernetes"><a href="#Step-6-安装kubernetes" class="headerlink" title="Step  6.安装kubernetes"></a>Step  6.安装kubernetes</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">cat &lt;&lt;<span class="string">EOF &gt; /etc/yum.repos.d/kubernetes.repo</span></span><br><span class="line"><span class="string">[kubernetes]</span></span><br><span class="line"><span class="string">name=Kubernetes</span></span><br><span class="line"><span class="string">baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64/</span></span><br><span class="line"><span class="string">enabled=1</span></span><br><span class="line"><span class="string">gpgcheck=1</span></span><br><span class="line"><span class="string">repo_gpgcheck=1</span></span><br><span class="line"><span class="string">gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line">setenforce 0</span><br><span class="line">yum install -y kubelet kubeadm kubectl</span><br><span class="line">systemctl <span class="built_in">enable</span> kubelet &amp;&amp; systemctl start kubelet</span><br><span class="line"> <span class="comment"># 出现索引lgpg检查失败时，请用yum install -y --nogpgcheck kubelet kubeadm kubectl</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="step-7-kubeadm初始化安装"><a href="#step-7-kubeadm初始化安装" class="headerlink" title="step 7.kubeadm初始化安装"></a>step 7.kubeadm初始化安装</h5><p>kubeadm init –apiserver-advertise-address&#x3D;本机IP –image-repository registry.aliyuncs.com&#x2F;google_containers –kubernetes-version 版本号 –pod-network-cidr&#x3D;10.244.0.0&#x2F;16</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubeadm init --apiserver-advertise-address=192.168.94.129 --image-repository registry.aliyuncs.com/google_containers --kubernetes-version 1.18.2 --pod-network-cidr=10.244.0.0/16</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-8-初始化安装成功后进行配置"><a href="#step-8-初始化安装成功后进行配置" class="headerlink" title="step 8.初始化安装成功后进行配置"></a>step 8.初始化安装成功后进行配置</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mkdir -p <span class="variable">$HOME</span>/.kube</span><br><span class="line">sudo cp -i /etc/kubernetes/admin.conf <span class="variable">$HOME</span>/.kube/config</span><br><span class="line">sudo chown $(id -u):$(id -g) <span class="variable">$HOME</span>/.kube/config</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-9-查看kubelet状态"><a href="#step-9-查看kubelet状态" class="headerlink" title="step 9.查看kubelet状态"></a>step 9.查看kubelet状态</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl status kubelet.service</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-10-确认每个组件的状态"><a href="#step-10-确认每个组件的状态" class="headerlink" title="step 10.确认每个组件的状态"></a>step 10.确认每个组件的状态</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl get cs</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-11-查看node状态，此时会发现处于NoReady"><a href="#step-11-查看node状态，此时会发现处于NoReady" class="headerlink" title="step 11.查看node状态，此时会发现处于NoReady"></a>step 11.查看node状态，此时会发现处于NoReady</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl get node</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-12-安装port-Network-flannel-k8s-cluster-工作-须安装pod网络，否则pod之间无法通信，k8s支持多种方案"><a href="#step-12-安装port-Network-flannel-k8s-cluster-工作-须安装pod网络，否则pod之间无法通信，k8s支持多种方案" class="headerlink" title="step 12.安装port Network( flannel )  : k8s cluster 工作 须安装pod网络，否则pod之间无法通信，k8s支持多种方案"></a>step 12.安装port Network( flannel )  : k8s cluster 工作 须安装pod网络，否则pod之间无法通信，k8s支持多种方案</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml</span><br></pre></td></tr></table></figure>
+
+<p>建议将kube-fannle文件拷贝至本地，将其中所需的镜像进行替换。</p>
+<h5 id="step-13-检查pod-确保每个pod都是running"><a href="#step-13-检查pod-确保每个pod都是running" class="headerlink" title="step 13.检查pod,确保每个pod都是running"></a>step 13.检查pod,确保每个pod都是running</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl get pod --all-namespaces -o wide</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>环境安装</category>
+      </categories>
+      <tags>
+        <tag>K8S</tag>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>cetnos 8.2单节点安装部署k8s（v1.18.2）</title>
+    <url>/Echo/2020/08/10/cetnos-8-2%E5%8D%95%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2k8s%EF%BC%88v1-18-2%EF%BC%89/</url>
+    <content><![CDATA[<h4 id="1-配置hosts文件"><a href="#1-配置hosts文件" class="headerlink" title="1.配置hosts文件"></a>1.配置hosts文件</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/hosts</span><br></pre></td></tr></table></figure>
+
+<p>本机ip  本机hostname 本机hostname</p>
+<h4 id="2-关闭防火墙-sawp等"><a href="#2-关闭防火墙-sawp等" class="headerlink" title="2.关闭防火墙, sawp等"></a>2.关闭防火墙, sawp等</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl <span class="built_in">disable</span> firewalld</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-关闭swap"><a href="#3-关闭swap" class="headerlink" title="3.关闭swap"></a>3.关闭swap</h4><h4 id="4-禁用selinux"><a href="#4-禁用selinux" class="headerlink" title="4.禁用selinux"></a>4.禁用selinux</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br><span class="line">SELINUX=disabled</span><br><span class="line">/usr/sbin/sestatus -v  <span class="comment"># 查看selinux状态</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="5-安装docker"><a href="#5-安装docker" class="headerlink" title="5.安装docker"></a>5.安装docker</h4><h5 id="step-1-安装必要的一些系统工具"><a href="#step-1-安装必要的一些系统工具" class="headerlink" title="step 1: 安装必要的一些系统工具"></a>step 1: 安装必要的一些系统工具</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-2-添加软件源信息"><a href="#Step-2-添加软件源信息" class="headerlink" title="Step 2: 添加软件源信息"></a>Step 2: 添加软件源信息</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-3-更新并安装Docker-CE"><a href="#Step-3-更新并安装Docker-CE" class="headerlink" title="Step 3: 更新并安装Docker-CE"></a>Step 3: 更新并安装Docker-CE</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum makecache --refresh</span><br><span class="line">sudo yum -y install docker-ce</span><br><span class="line"><span class="comment"># 发现报错：Problem: package docker-ce-3:19.03.12-3.el7.x86_64 requires containerd.io &gt;= 1.2.2-3, but none of the providers can be installed</span></span><br><span class="line"><span class="comment"># 因为containerd 版本过低</span></span><br><span class="line">dnf install container-selinux</span><br><span class="line">通过yum -y install https://download.docker.com/linux/centos/7/x86_64/edge/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm 升级即可</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-4-docker-修改Cgroup-Driver以及docker镜像拉取地址"><a href="#Step-4-docker-修改Cgroup-Driver以及docker镜像拉取地址" class="headerlink" title="Step 4: docker 修改Cgroup Driver以及docker镜像拉取地址"></a>Step 4: docker 修改Cgroup Driver以及docker镜像拉取地址</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"> cat /etc/docker/daemon.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://e7l8pkuq.mirror.aliyuncs.com&quot;</span>],</span><br><span class="line">  <span class="string">&quot;exec-opts&quot;</span>: [<span class="string">&quot;native.cgroupdriver=systemd&quot;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-5-开启Docker服务"><a href="#Step-5-开启Docker服务" class="headerlink" title="Step 5: 开启Docker服务"></a>Step 5: 开启Docker服务</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-安装kubectl"><a href="#6-安装kubectl" class="headerlink" title="6.安装kubectl"></a>6.安装kubectl</h4><h5 id="step-1：下载最新kubectl最新资源"><a href="#step-1：下载最新kubectl最新资源" class="headerlink" title="step 1：下载最新kubectl最新资源"></a>step 1：下载最新kubectl最新资源</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">curl -LO <span class="string">&quot;https://storage.googleapis.com/kubernetes-release/release/<span class="subst">$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)</span>/bin/linux/amd64/kubectl&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="step-2：添加执行权限"><a href="#step-2：添加执行权限" class="headerlink" title="step 2：添加执行权限"></a>step 2：添加执行权限</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">chmod +x ./kubectl</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-3：移动kubectl至bin路径"><a href="#step-3：移动kubectl至bin路径" class="headerlink" title="step 3：移动kubectl至bin路径"></a>step 3：移动kubectl至bin路径</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo mv ./kubectl /usr/<span class="built_in">local</span>/bin/kubectl</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-4：确认安装的版本"><a href="#step-4：确认安装的版本" class="headerlink" title="step 4：确认安装的版本"></a>step 4：确认安装的版本</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl version --client</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-安装minikube"><a href="#7-安装minikube" class="headerlink" title="7.安装minikube"></a>7.安装minikube</h4><h5 id="step-1：确认是否支持虚拟化"><a href="#step-1：确认是否支持虚拟化" class="headerlink" title="step 1：确认是否支持虚拟化"></a>step 1：确认是否支持虚拟化</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">grep -E --color <span class="string">&#x27;vmx|svm&#x27;</span> /proc/cpuinfo</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="step-2：下载minikube资源"><a href="#step-2：下载minikube资源" class="headerlink" title="step 2：下载minikube资源"></a>step 2：下载minikube资源</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \</span><br><span class="line">  &amp;&amp; chmod +x minikube</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="step-3：添加minikube进入系统命令"><a href="#step-3：添加minikube进入系统命令" class="headerlink" title="step 3：添加minikube进入系统命令"></a>step 3：添加minikube进入系统命令</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo mkdir -p /usr/<span class="built_in">local</span>/bin/</span><br><span class="line">sudo install minikube /usr/<span class="built_in">local</span>/bin/</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="step-4：启动-minikube（使用的VM安装的centos-8因此设置driver-x3D-none）"><a href="#step-4：启动-minikube（使用的VM安装的centos-8因此设置driver-x3D-none）" class="headerlink" title="step 4：启动 minikube（使用的VM安装的centos 8因此设置driver&#x3D;none）"></a>step 4：启动 minikube（使用的VM安装的centos 8因此设置driver&#x3D;none）</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">minikube start --driver=none --image-repository=registry.cn-hangzhou.aliyuncs.com/google_containers</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="step-5：确认minikube状态"><a href="#step-5：确认minikube状态" class="headerlink" title="step 5：确认minikube状态"></a>step 5：确认minikube状态</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">minikube status</span><br></pre></td></tr></table></figure>
+
+<p>8.istio安装</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">istioctl manifest apply --<span class="built_in">set</span> profile=demo</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>环境安装</category>
+      </categories>
+      <tags>
+        <tag>K8S</tag>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>emqtt_bench安装与压测MQTTbroker</title>
+    <url>/Echo/2021/12/15/emqtt-bench%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8E%8B%E6%B5%8BMQTTbroker/</url>
+    <content><![CDATA[<h4 id="EMQX"><a href="#EMQX" class="headerlink" title="EMQX"></a>EMQX</h4><p><em>EMQ X</em> (Erlang&#x2F;Enterprise&#x2F;Elastic MQTT Broker) 是基于 Erlang&#x2F;OTP 平台开发的开源物联网 MQTT 消息服务器。</p>
+<p>Erlang&#x2F;OTP是出色的软实时 (Soft-Realtime)、低延时 (Low-Latency)、分布式 (Distributed)的语言平台。</p>
+<p>MQTT 是轻量的 (Lightweight)、发布订阅模式 (PubSub) 的物联网消息协议。</p>
+<p>EMQ X 设计目标是实现高可靠，并支持承载海量物联网终端的MQTT连接，支持在海量物联网设备间低延时消息路由:</p>
+<ol>
+<li>稳定承载大规模的 MQTT 客户端连接，单服务器节点支持50万到100万连接。</li>
+<li>分布式节点集群，快速低延时的消息路由，单集群支持1000万规模的路由。</li>
+<li>消息服务器内扩展，支持定制多种认证方式、高效存储消息到后端数据库。</li>
+<li>完整物联网协议支持，MQTT、MQTT-SN、CoAP、LwM2M、WebSocket 或私有协议支持。</li>
+</ol>
+<h4 id="emqtt-bench"><a href="#emqtt-bench" class="headerlink" title="emqtt_bench"></a>emqtt_bench</h4><p><a href="https://github.com/emqx/emqtt_bench">emqtt_bench (opens new window)</a>是基于 Erlang 编写的，一个简洁强大的 MQTT 协议性能测试工具。</p>
+<h4 id="EMQX安装"><a href="#EMQX安装" class="headerlink" title="EMQX安装"></a>EMQX安装</h4><p>emqx安装比较简单，可以参照<a href="https://docs.emqx.cn/broker/v4.3/getting-started/install.html">安装 | EMQ Docs (emqx.cn)</a>进行。</p>
+<h4 id="emqtt-bench安装"><a href="#emqtt-bench安装" class="headerlink" title="emqtt_bench安装"></a>emqtt_bench安装</h4><p>结合官网介绍需要 Erlang&#x2F;OTP 22.3+以上，但是经过尝试最新版的Erlang不太兼容，所以还是老老实实用22.3了。</p>
+<h6 id="1-前提准备"><a href="#1-前提准备" class="headerlink" title="1.前提准备"></a>1.前提准备</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 各种依赖，缺乏可能会导致意外问题</span></span><br><span class="line">yum -y install ncurses-devel openssl-devel unixODBC-devel gcc-c++ perl</span><br></pre></td></tr></table></figure>
+
+<h6 id="2-安装Erlang-22-3"><a href="#2-安装Erlang-22-3" class="headerlink" title="2.安装Erlang 22.3"></a>2.安装Erlang 22.3</h6><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 切换到安装目录此处建议用opt文件夹</span></span><br><span class="line"><span class="built_in">cd</span> /opt</span><br><span class="line"><span class="comment"># 下载Erlang</span></span><br><span class="line">wget http://erlang.org/download/otp_src_22.3.tar.gz</span><br><span class="line"><span class="comment"># 解压</span></span><br><span class="line">tar -zxvf otp_src_22.3</span><br><span class="line">.tar.gz</span><br><span class="line"><span class="comment"># 切换到解压后的erlang安装包</span></span><br><span class="line"><span class="built_in">cd</span> otp_src_22.3</span><br><span class="line"><span class="comment"># 开始安装</span></span><br><span class="line">./configure &amp; make &amp; make install</span><br><span class="line"><span class="comment"># 查看版本</span></span><br><span class="line">erl</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Echo/2021/12/15/emqtt-bench%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8E%8B%E6%B5%8BMQTTbroker/image-20211216170648216.png" alt="image-20211216170648216"></p>
+<h6 id="3-安装新版git（因后续在emqtt-bench-make时centos7自带git版本较低导致问题）"><a href="#3-安装新版git（因后续在emqtt-bench-make时centos7自带git版本较低导致问题）" class="headerlink" title="3.安装新版git（因后续在emqtt_bench make时centos7自带git版本较低导致问题）"></a>3.安装新版git（因后续在emqtt_bench make时centos7自带git版本较低导致问题）</h6><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 更新系统资源包</span></span><br><span class="line">yum install http://opensource.wandisco.com/centos/7/git/x86_64/wandisco-git-release-7-2.noarch.rpm</span><br><span class="line"><span class="comment"># 安装git</span></span><br><span class="line">yum install -y git</span><br><span class="line"><span class="comment"># 查看git版本</span></span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
+
+<p>4.安装emqtt_bench</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装依赖</span></span><br><span class="line">yum install -y libatomic</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装</span></span><br><span class="line">git clone https://github.com/emqx/emqtt-bench</span><br><span class="line">cd emqtt-bench</span><br><span class="line"><span class="meta">#</span><span class="bash"> 因为QUIC目前不稳定所以选择禁用QUIC</span></span><br><span class="line">BUILD_WITHOUT_QUIC=1 make</span><br><span class="line"><span class="meta">#</span><span class="bash"> 验证</span></span><br><span class="line">./emqtt_bench</span><br></pre></td></tr></table></figure>
+
+<p>输出Usage: emqtt_bench pub | sub | conn [–help]即为安装成功</p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>安装中遇到的问题有以下两个</p>
+<h6 id="1-make失败（报错GUN版本）"><a href="#1-make失败（报错GUN版本）" class="headerlink" title="1.make失败（报错GUN版本）"></a>1.make失败（报错GUN版本）</h6><p>经排查此问题为QUIC功能不能使用导致，使用禁用模式make即可</p>
+<h6 id="2-有部分git资源下载失败"><a href="#2-有部分git资源下载失败" class="headerlink" title="2.有部分git资源下载失败"></a>2.有部分git资源下载失败</h6><p><img src="/Echo/2021/12/15/emqtt-bench%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8E%8B%E6%B5%8BMQTTbroker/image-20211216171321403.png" alt="image-20211216171321403"></p>
+<p><strong>cd &#x2F;opt&#x2F;emqtt-bench&#x2F;_build&#x2F;default&#x2F;lib&#x2F;quicer&#x2F;msquic&#x2F;submodules</strong></p>
+<p><strong>git clone git:&#x2F;&#x2F;github.com&#x2F;google&#x2F;googletest</strong></p>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p><code>emqtt_bench</code> 共三个子命令：</p>
+<ol>
+<li><code>pub</code>：用于创建大量客户端执行发布消息的操作。</li>
+<li><code>sub</code>：用于创建大量客户端执行订阅主题，并接受消息的操作。</li>
+<li><code>conn</code>：用于创建大量的连接</li>
+</ol>
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>简写</th>
+<th>可选值</th>
+<th>默认值</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">–host</td>
+<td>-h</td>
+<td>-</td>
+<td>localhost</td>
+<td align="left">要连接的 MQTT 服务器地址</td>
+</tr>
+<tr>
+<td align="left">–port</td>
+<td>-p</td>
+<td>-</td>
+<td>1883</td>
+<td align="left">MQTT 服务端口</td>
+</tr>
+<tr>
+<td align="left">–version</td>
+<td>-V</td>
+<td>3 4 5</td>
+<td>5</td>
+<td align="left">使用的 MQTT 协议版本</td>
+</tr>
+<tr>
+<td align="left">–count</td>
+<td>-c</td>
+<td>-</td>
+<td>200</td>
+<td align="left">客户端总数</td>
+</tr>
+<tr>
+<td align="left">–startnumber</td>
+<td>-n</td>
+<td>-</td>
+<td>0</td>
+<td align="left">客户端数量起始值</td>
+</tr>
+<tr>
+<td align="left">–interval</td>
+<td>-i</td>
+<td>-</td>
+<td>10</td>
+<td align="left">每间隔多少时间创建一个客户端；单位：毫秒</td>
+</tr>
+<tr>
+<td align="left">–interval_of_msg</td>
+<td>-I</td>
+<td>-</td>
+<td>1000</td>
+<td align="left">每间隔多少时间发送一个消息</td>
+</tr>
+<tr>
+<td align="left">–username</td>
+<td>-u</td>
+<td>-</td>
+<td>无；非必选</td>
+<td align="left">客户端用户名</td>
+</tr>
+<tr>
+<td align="left">–password</td>
+<td>-P</td>
+<td>-</td>
+<td>无；非必选</td>
+<td align="left">客户端密码</td>
+</tr>
+<tr>
+<td align="left">–topic</td>
+<td>-t</td>
+<td>-</td>
+<td>无；必选</td>
+<td align="left">发布的主题；支持站位符： <code>%c</code>：表示 ClientId <code>%u</code>：表示 Username <code>%i</code>：表示客户端的序列数</td>
+</tr>
+<tr>
+<td align="left">–szie</td>
+<td>-s</td>
+<td>-</td>
+<td>256</td>
+<td align="left">消息 Payload 的大小；单位：字节</td>
+</tr>
+<tr>
+<td align="left">–qos</td>
+<td>-q</td>
+<td>-</td>
+<td>0</td>
+<td align="left">Qos 等级</td>
+</tr>
+<tr>
+<td align="left">–retain</td>
+<td>-r</td>
+<td>true false</td>
+<td>false</td>
+<td align="left">消息是否设置 Retain 标志</td>
+</tr>
+<tr>
+<td align="left">–keepalive</td>
+<td>-k</td>
+<td>-</td>
+<td>300</td>
+<td align="left">客户端心跳时间</td>
+</tr>
+<tr>
+<td align="left">–clean</td>
+<td>-C</td>
+<td>true false</td>
+<td>true</td>
+<td align="left">是否以清除会话的方式建立连接</td>
+</tr>
+<tr>
+<td align="left">–ssl</td>
+<td>-S</td>
+<td>true false</td>
+<td>false</td>
+<td align="left">是否启用 SSL</td>
+</tr>
+<tr>
+<td align="left">–certfile</td>
+<td>-</td>
+<td>-</td>
+<td>无</td>
+<td align="left">客户端 SSL 证书</td>
+</tr>
+<tr>
+<td align="left">–keyfile</td>
+<td>-</td>
+<td>-</td>
+<td>无</td>
+<td align="left">客户端 SSL 秘钥文件</td>
+</tr>
+<tr>
+<td align="left">–ws</td>
+<td>-</td>
+<td>true false</td>
+<td>false</td>
+<td align="left">是否以 Websocket 的方式建立连接</td>
+</tr>
+<tr>
+<td align="left">–ifaddr</td>
+<td>-</td>
+<td>-</td>
+<td>无</td>
+<td align="left">指定客户端连接使用的本地网卡</td>
+</tr>
+</tbody></table>
+<h4 id="吞吐量性能压测"><a href="#吞吐量性能压测" class="headerlink" title="吞吐量性能压测"></a>吞吐量性能压测</h4><p>bench1上执行</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">./emqtt_bench sub -t t -h EMQQserverIP -c 500</span><br></pre></td></tr></table></figure>
+
+<p>bench2 上执行</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">./emqtt_bench pub -t t -h EMQQserverIP -c 20 -I 100</span><br></pre></td></tr></table></figure>
+
+<p>在bench1上可以观察到</p>
+<p><strong>ecv(28006): total&#x3D;2102563, rate&#x3D;99725(msg&#x2F;sec）</strong></p>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>性能测试</tag>
+        <tag>mqtt</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>HBase shell命令</title>
     <url>/Echo/2020/03/13/hbase%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<h4 id="HBase简介"><a href="#HBase简介" class="headerlink" title="HBase简介"></a>HBase简介</h4><p>HBase 命名的起源是 Hadoop database，Hadoop数据库，是NoSQL数据库，基于列式存储而非行式存储。</p>
@@ -3063,6 +3063,53 @@
       </tags>
   </entry>
   <entry>
+    <title>web应用程序安全测试</title>
+    <url>/Echo/2022/02/05/web%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%AE%89%E5%85%A8%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<h4 id="什么是安全测试？"><a href="#什么是安全测试？" class="headerlink" title="什么是安全测试？"></a>什么是安全测试？</h4><p>安全测试是一个检查机密数据是否保密的过程（即，它不会暴露给不适合它的个人&#x2F;实体），并且用户只能执行他们有权执行的任务。</p>
+<p><strong>例</strong>用户不应能够拒绝其他用户使用网站的功能，或者用户不应能够以意外的方式更改Web应用程序的功能等。</p>
+<h4 id="安全测试中的术语"><a href="#安全测试中的术语" class="headerlink" title="安全测试中的术语"></a>安全测试中的术语</h4><p><strong>“漏洞”</strong></p>
+<p>这是 Web 应用程序中的一个弱点。”漏洞”的原因可能是由于应用程序中的错误，注入（SQL &#x2F;脚本代码）或病毒的存在。</p>
+<p><strong>“网址操作”</strong></p>
+<p>某些 Web 应用程序在 URL 中的客户端（浏览器）和服务器之间传递其他信息。更改 URL 中的某些信息有时可能会导致服务器出现意外行为，这称为 URL 操作。</p>
+<p><strong>“SQL注入”</strong></p>
+<p>这是通过 Web 应用程序用户界面将 SQL 语句插入到某个查询中，然后由服务器执行的过程。</p>
+<p><strong>“XSS（跨站点脚本）”</strong></p>
+<p>当用户在 Web 应用程序的用户界面中插入 HTML&#x2F;客户端脚本时，此插入对其他用户可见，称为 <em>XSS</em>。</p>
+<p><strong>“欺骗”</strong></p>
+<p>欺骗是创建类似恶作剧的网站和电子邮件。</p>
+<h4 id="web安全测试的方法"><a href="#web安全测试的方法" class="headerlink" title="web安全测试的方法"></a>web安全测试的方法</h4><h5 id="密码破解"><a href="#密码破解" class="headerlink" title="密码破解"></a>密码破解</h5><p>Web应用程序的安全测试可以通过”密码破解”开始。为了登录到应用程序的私人区域，人们可以猜测用户名&#x2F;密码或使用一些密码破解工具。常见的用户名和密码列表以及开源密码破解程序一起可用。</p>
+<p>如果 Web 应用程序不强制实施复杂密码（<strong>例</strong>使用字母、数字和特殊字符或至少具有所需数量的字符），则破解用户名和密码可能不会花费很长时间。</p>
+<p>如果用户名或密码存储在 Cookie 中而未经过加密，则攻击者可以使用不同的方法来窃取 Cookie 以及存储在 Cookie 中的信息（如用户名和密码）。</p>
+<h5 id="通过HTTP-GET方法进行URL操作"><a href="#通过HTTP-GET方法进行URL操作" class="headerlink" title="通过HTTP GET方法进行URL操作"></a>通过HTTP GET方法进行URL操作</h5><p>测试人员应检查应用程序是否传递查询字符串中的重要信息。当应用程序使用 HTTP GET 方法在客户端和服务器之间传递信息时，会发生这种情况。</p>
+<p>信息通过查询字符串中的参数传递。测试人员可以修改查询字符串中的参数值，以检查服务器是否接受它。</p>
+<p>通过HTTP GET请求将用户信息传递到服务器进行身份验证或获取数据。攻击者可以操纵从此 GET 请求传递到服务器的每个输入变量，以获取所需信息或损坏数据。在这种情况下，应用程序或 Web 服务器的任何异常行为都是攻击者进入应用程序的入口。</p>
+<h5 id="SQL-注入"><a href="#SQL-注入" class="headerlink" title="SQL 注入"></a>SQL 注入</h5><p>应该检查的下一个因素是SQL注入。在任何文本框中输入单引号 （’） 应被应用程序拒绝。相反，如果测试人员遇到数据库错误，则意味着用户输入入到某个查询中，然后由应用程序执行。在这种情况下，应用程序容易受到 SQL 注入的影响。</p>
+<p>SQL注入攻击非常关键，因为攻击者可以从服务器数据库中获取重要信息。若要检查 Web 应用程序中的 SQL 注入入口点，请从代码库中找出代码，其中通过接受某些用户输入在数据库上执行直接 MySQL 查询。</p>
+<p>如果在 SQL 查询中精心编制用户输入数据以查询数据库，则攻击者可以将 SQL 语句或部分 SQL 语句作为用户输入注入，以从数据库中提取重要信息。</p>
+<p>即使攻击者成功使应用程序崩溃，攻击者也可以从浏览器上显示的 SQL 查询错误中获取他们要查找的信息。在这种情况下，应正确处理&#x2F;转义用户输入中的特殊字符。</p>
+<h5 id="跨站点脚本-（XSS）"><a href="#跨站点脚本-（XSS）" class="headerlink" title="跨站点脚本 （XSS）"></a>跨站点脚本 （XSS）</h5><p>测试人员还应检查 Web 应用程序中是否有 XSS（跨站点脚本）。任何 HTML <strong>如</strong><HTML> 或任何脚本 <strong>如</strong><SCRIPT>不应被应用程序接受。如果是，则应用程序可能容易受到跨站点脚本的攻击。</p>
+<p>攻击者可以使用此方法在受害者的浏览器上执行恶意脚本或URL。使用跨站点脚本，攻击者可以使用 JavaScript 等脚本来窃取用户 Cookie 和存储在 Cookie 中的信息。</p>
+<p>许多Web应用程序获取一些有用的信息，并将此信息传递给来自不同页面的某些变量。</p>
+<p><strong>例</strong> <a href="http://www.examplesite.com/index.php?userid=123&amp;query=xyz">http://www.examplesite.com/index.php?userid=123&amp;query=xyz</a></p>
+<p>攻击者可以很容易地将一些恶意输入或<script>作为"&query"参数传递，该参数可以探索浏览器上的重要用户/服务器数据。</p>
+<p>在安全测试期间，测试人员应非常小心，不应修改以下任何内容：</p>
+<ul>
+<li>应用程序或服务器的配置。</li>
+<li>服务器上运行的服务。</li>
+<li>应用程序托管的现有用户或客户数据。</li>
+</ul>
+<p>此外，应避免在生产系统中进行安全测试。</p>
+</SCRIPT></HTML></p>]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+        <tag>页面测试</tag>
+        <tag>安全测试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>springboot整合shiro和JWT使用指北</title>
     <url>/Echo/2021/11/09/springboot%E6%95%B4%E5%90%88shiro%E5%92%8CJWT%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8C%97/</url>
     <content><![CDATA[<h3 id="shiro是什么？"><a href="#shiro是什么？" class="headerlink" title="shiro是什么？"></a>shiro是什么？</h3><p><code>Shiro</code> 是一个强大的简单易用的 <code>Java</code> 安全框架，主要用来更便捷的 <code>认证，授权，加密，会话管理</code>。<code>Shiro</code> 首要的和最重要的目标就是容易使用并且容易理解，通过 <code>Shiro</code> 易于理解的<code>API</code>，您可以快速、轻松地获得任何应用程序——从最小的移动应用程序最大的网络和企业应用程序。</p>
@@ -3119,53 +3166,6 @@
       <tags>
         <tag>java</tag>
         <tag>springboot</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>web应用程序安全测试</title>
-    <url>/Echo/2022/02/05/web%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%AE%89%E5%85%A8%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<h4 id="什么是安全测试？"><a href="#什么是安全测试？" class="headerlink" title="什么是安全测试？"></a>什么是安全测试？</h4><p>安全测试是一个检查机密数据是否保密的过程（即，它不会暴露给不适合它的个人&#x2F;实体），并且用户只能执行他们有权执行的任务。</p>
-<p><strong>例</strong>用户不应能够拒绝其他用户使用网站的功能，或者用户不应能够以意外的方式更改Web应用程序的功能等。</p>
-<h4 id="安全测试中的术语"><a href="#安全测试中的术语" class="headerlink" title="安全测试中的术语"></a>安全测试中的术语</h4><p><strong>“漏洞”</strong></p>
-<p>这是 Web 应用程序中的一个弱点。”漏洞”的原因可能是由于应用程序中的错误，注入（SQL &#x2F;脚本代码）或病毒的存在。</p>
-<p><strong>“网址操作”</strong></p>
-<p>某些 Web 应用程序在 URL 中的客户端（浏览器）和服务器之间传递其他信息。更改 URL 中的某些信息有时可能会导致服务器出现意外行为，这称为 URL 操作。</p>
-<p><strong>“SQL注入”</strong></p>
-<p>这是通过 Web 应用程序用户界面将 SQL 语句插入到某个查询中，然后由服务器执行的过程。</p>
-<p><strong>“XSS（跨站点脚本）”</strong></p>
-<p>当用户在 Web 应用程序的用户界面中插入 HTML&#x2F;客户端脚本时，此插入对其他用户可见，称为 <em>XSS</em>。</p>
-<p><strong>“欺骗”</strong></p>
-<p>欺骗是创建类似恶作剧的网站和电子邮件。</p>
-<h4 id="web安全测试的方法"><a href="#web安全测试的方法" class="headerlink" title="web安全测试的方法"></a>web安全测试的方法</h4><h5 id="密码破解"><a href="#密码破解" class="headerlink" title="密码破解"></a>密码破解</h5><p>Web应用程序的安全测试可以通过”密码破解”开始。为了登录到应用程序的私人区域，人们可以猜测用户名&#x2F;密码或使用一些密码破解工具。常见的用户名和密码列表以及开源密码破解程序一起可用。</p>
-<p>如果 Web 应用程序不强制实施复杂密码（<strong>例</strong>使用字母、数字和特殊字符或至少具有所需数量的字符），则破解用户名和密码可能不会花费很长时间。</p>
-<p>如果用户名或密码存储在 Cookie 中而未经过加密，则攻击者可以使用不同的方法来窃取 Cookie 以及存储在 Cookie 中的信息（如用户名和密码）。</p>
-<h5 id="通过HTTP-GET方法进行URL操作"><a href="#通过HTTP-GET方法进行URL操作" class="headerlink" title="通过HTTP GET方法进行URL操作"></a>通过HTTP GET方法进行URL操作</h5><p>测试人员应检查应用程序是否传递查询字符串中的重要信息。当应用程序使用 HTTP GET 方法在客户端和服务器之间传递信息时，会发生这种情况。</p>
-<p>信息通过查询字符串中的参数传递。测试人员可以修改查询字符串中的参数值，以检查服务器是否接受它。</p>
-<p>通过HTTP GET请求将用户信息传递到服务器进行身份验证或获取数据。攻击者可以操纵从此 GET 请求传递到服务器的每个输入变量，以获取所需信息或损坏数据。在这种情况下，应用程序或 Web 服务器的任何异常行为都是攻击者进入应用程序的入口。</p>
-<h5 id="SQL-注入"><a href="#SQL-注入" class="headerlink" title="SQL 注入"></a>SQL 注入</h5><p>应该检查的下一个因素是SQL注入。在任何文本框中输入单引号 （’） 应被应用程序拒绝。相反，如果测试人员遇到数据库错误，则意味着用户输入入到某个查询中，然后由应用程序执行。在这种情况下，应用程序容易受到 SQL 注入的影响。</p>
-<p>SQL注入攻击非常关键，因为攻击者可以从服务器数据库中获取重要信息。若要检查 Web 应用程序中的 SQL 注入入口点，请从代码库中找出代码，其中通过接受某些用户输入在数据库上执行直接 MySQL 查询。</p>
-<p>如果在 SQL 查询中精心编制用户输入数据以查询数据库，则攻击者可以将 SQL 语句或部分 SQL 语句作为用户输入注入，以从数据库中提取重要信息。</p>
-<p>即使攻击者成功使应用程序崩溃，攻击者也可以从浏览器上显示的 SQL 查询错误中获取他们要查找的信息。在这种情况下，应正确处理&#x2F;转义用户输入中的特殊字符。</p>
-<h5 id="跨站点脚本-（XSS）"><a href="#跨站点脚本-（XSS）" class="headerlink" title="跨站点脚本 （XSS）"></a>跨站点脚本 （XSS）</h5><p>测试人员还应检查 Web 应用程序中是否有 XSS（跨站点脚本）。任何 HTML <strong>如</strong><HTML> 或任何脚本 <strong>如</strong><SCRIPT>不应被应用程序接受。如果是，则应用程序可能容易受到跨站点脚本的攻击。</p>
-<p>攻击者可以使用此方法在受害者的浏览器上执行恶意脚本或URL。使用跨站点脚本，攻击者可以使用 JavaScript 等脚本来窃取用户 Cookie 和存储在 Cookie 中的信息。</p>
-<p>许多Web应用程序获取一些有用的信息，并将此信息传递给来自不同页面的某些变量。</p>
-<p><strong>例</strong> <a href="http://www.examplesite.com/index.php?userid=123&amp;query=xyz">http://www.examplesite.com/index.php?userid=123&amp;query=xyz</a></p>
-<p>攻击者可以很容易地将一些恶意输入或<script>作为"&query"参数传递，该参数可以探索浏览器上的重要用户/服务器数据。</p>
-<p>在安全测试期间，测试人员应非常小心，不应修改以下任何内容：</p>
-<ul>
-<li>应用程序或服务器的配置。</li>
-<li>服务器上运行的服务。</li>
-<li>应用程序托管的现有用户或客户数据。</li>
-</ul>
-<p>此外，应避免在生产系统中进行安全测试。</p>
-</SCRIPT></HTML></p>]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>测试</tag>
-        <tag>页面测试</tag>
-        <tag>安全测试</tag>
       </tags>
   </entry>
   <entry>
@@ -3926,88 +3926,6 @@
       </tags>
   </entry>
   <entry>
-    <title>拥有未来的能力——“自学”</title>
-    <url>/Echo/2021/11/09/%E8%87%AA%E5%AD%A6/</url>
-    <content><![CDATA[<h2 id="为什么一定要掌握自学能力？"><a href="#为什么一定要掌握自学能力？" class="headerlink" title="为什么一定要掌握自学能力？"></a>为什么一定要掌握自学能力？</h2><p>最近一直在讨论延长退休年龄，我们的父辈在五十岁就退休了。再过去的几十年里，人类的平均寿命预期增长的十分惊人！拿中国地区做例子，1949年，中国人均预期寿命不足35岁。 2021年，这个数字达到77.3岁。  72年，人均预期寿命长一倍还多。所以，各位，我们的未来还有很长。曾经有一家机构做过这样一个调查，人们的职业与自己大学所学专业的相符的比例不足20%。因为这世界变化太快了，因为大多数教育机构与世界发展脱钩的程度越来越严重。你的未来日子还有很长，这世界进步的这么快，你有让自己有在未来安身立命的一技之长吗？自学能力是唯一值得被不断磨练的长技，没有自学能力的人是没有未来的，这样我们才能在很长的未来中不被世界所抛弃。</p>
-<h2 id="自学需要的元素"><a href="#自学需要的元素" class="headerlink" title="自学需要的元素"></a>自学需要的元素</h2><p>自学过程我们要经历以下四个阶段：学、练、用、造。</p>
-<ul>
-<li>学：重复学，多次重复学，特别是面对“过早引用”的知识结构时；反复学，锻炼我们归纳总结的能力。</li>
-<li>练：在接触用的过程中，我们就开始接触练。无论你之前学了多少遍，一旦开始练，我们就会遇到各种各样的问题。每次自学时，我们都要放空自己，保持空杯的心态。</li>
-<li>用：只要有时间或者只要有需求我们就要用我们自学的知识，重复反复大量的用，在用的过程中练习；</li>
-<li>造：这个阶段我目前还没达到</li>
-</ul>
-<h3 id="耐心"><a href="#耐心" class="headerlink" title="耐心"></a>耐心</h3><p>在开始一门新知识的自学之前，我们要有足够的心理预期建设。我们要明白两点：</p>
-<p>1、这个时间要比你想象的长的多</p>
-<p>2、自学过程中，什么都要重复很多遍，学，练，用都需要大量的重复过程</p>
-<p>大多数人缺乏耐心的根源是“没有准备这么多的时间和精力”。这就需要我们有预算观念。</p>
-<p>预算观念——这个观念存在与否，成熟与否，基本决定了一个人未来的盈利能力。</p>
-<p>我们恪守一个原则，未来就很有可能超过大多数人：绝对不做预算不够的事。</p>
-<p>在自学的过程中，我们学的时候比别人重复的多，练的时候比别人重复的多，到最后用得比别人多。再开始自学的过程中，我总是觉得时间不够用，后来我越来越淡定了，因为早已习惯投入大量时间换取新的技能。</p>
-<h3 id="刻意练习"><a href="#刻意练习" class="headerlink" title="刻意练习"></a>刻意练习</h3><p>在自学的过程中，有一些部分是要刻意练习的。好比小时候我们学写字，老师为什么总是让我们写很多遍？还有卖油翁的故事大家还记得吗？手艺这个是需要刻意反复练习，主要是靠时间。在这过程中也需要我们刻意练习，如果卖油翁总是很随意，油撒的很多，想必他很快干不下去了。需要刻意练习的地方，是因人而异的，那就是对于自己来说很难比较容易出错的地方。经过大量的重复的联系，最终我们达到无他，唯手熟尔！</p>
-<h3 id="琢磨"><a href="#琢磨" class="headerlink" title="琢磨"></a>琢磨</h3><p>论语中有这样一句话“学而不思则罔”在学习的过程中我们要多思考。琢磨就是刻意的去思考!在我们的学习过程中最有价值的琢磨就是“这个东西刻意用在哪里？”</p>
-<h2 id="自学过程要打破的几个幻觉"><a href="#自学过程要打破的几个幻觉" class="headerlink" title="自学过程要打破的几个幻觉"></a>自学过程要打破的几个幻觉</h2><p>感觉总是我们人生中最大的坑。每次考试完是不是总感觉自己考的不错，学习过程也总感觉自己学会了，其实带最后发现自己啥也不会。很多人的自学能力都是被“自己的感觉”给耽误了。</p>
-<h3 id="刚需幻觉"><a href="#刚需幻觉" class="headerlink" title="刚需幻觉"></a>刚需幻觉</h3><p>“刚需幻觉”的根本原因就是感觉，你不会的东西对你来说感觉很难。18岁时你感觉英语很难，22岁有个外企机会，你没把握住；16岁时你感觉游泳很难，18岁时，心中的女神约你去游泳你只能说自己没时间！一项技能在你没有学会它的时候，你不可能觉得那是个刚需（就像房子，你不结婚，永远不会觉得这是刚需）。所以我们在开始学习一个新技能时，这么告诉自己不要问学它有什么用，学就是了。如何客服刚需幻觉？这要我们学习一个策略，让自己成为一个自驱动的人！自驱动说起来很简单就是“找活干”。</p>
-<h3 id="时间幻觉"><a href="#时间幻觉" class="headerlink" title="时间幻觉"></a>时间幻觉</h3><p>我们很多时候都受时间幻觉的拖累。玩游戏时你总是觉得时间很短，然后一整天就过去了；我在写这篇文章时总感觉时间还有很多，然后这周就过到周五了。时间从来都是匀速的，每个人的时间都是24小时的。在学习一个技能时，最大幻觉就是总是以为“时间不够了”。回头看看，回头想一想，五年前，十年前的自己在做什么？有没有一转眼时间就过去了。每年的毕业季是否总是有人很多人感叹，自己怎么就毕业了辣么久了！如何客服时间幻觉呢？只管坚持着做，坚持着学。时间会给你答案的。</p>
-<h3 id="困难幻觉"><a href="#困难幻觉" class="headerlink" title="困难幻觉"></a>困难幻觉</h3><p>无论做什么都是有难点的，有瓶颈期。当我们客服难点后，发现原来不过如此–这就是困难幻觉。古人早就有总结：“世上无难事，只怕有心人”。把一件事当成手艺看，就像开车一样，你开的多就会了，这样带来的好处之一就是心态平和。因为我们知道这事和天分智商关系不大，它靠的是不混时间（你如何对待时间的，时间也将如何对待你）、琢磨（刻意思考）、刻意练习。阅读难点在于起初的时候它是非常枯燥的。刚识字、刚上学的时候，由于理解能力有限，又由于年龄的关系于是耐心有限，所以，那时需要老师耐心陪伴、悉心引导。这就好像小朋友刚出生的时候，没有牙齿，所以只能喝奶差不多…… 然而，到了一定程度之后一定要断奶，是不是？可绝大多数人的实际情况却是，小学的时候爱上了  “奶嘴”（有人带着阅读），而后一生没有奶嘴就吃不下任何东西。</p>
-<p>他们必须去 “上课”，需要有人给他们讲书。不仅如此，讲得 “不生动”、“不幽默”  还不行；就算那职业提供奶嘴的人（这是非常令人遗憾的真相：很多的时候，所谓的 “老师” 本质上只不过就是奶妈而已）帅气漂亮、生动幽默、尽职尽力…… 最终还是一样的结果 —— 绝大多数人依然没有完整掌握所有应该掌握的细节。</p>
-<h2 id="自学过程需要的几项技能"><a href="#自学过程需要的几项技能" class="headerlink" title="自学过程需要的几项技能"></a>自学过程需要的几项技能</h2><h3 id="拆解"><a href="#拆解" class="headerlink" title="拆解"></a>拆解</h3><p>在自学的过程中遇到难点，复杂的。我们不妨拆解他们，拆解成一个一个的小问题予以突破。把那些很难的任务无限拆分——直到每个子任务都很小，小到我们可以唾手可得为止。当我们习惯了这么做之后，就会发现一切任务（不仅有自学还有别的）其实都是不难的，只是复杂繁琐而已。很多人失败的原因是什么，就是不懂拆分任务，要么就是怕麻烦！有句话不知道大家听过没——人活着，其实就挺麻烦的。。。。</p>
-<h3 id="专注"><a href="#专注" class="headerlink" title="专注"></a>专注</h3><p>现在这个网络时代，大家有没有发现自己的注意力经常莫名的就被转移了。比如，你本来只不过就想着去 Google  一个编程错误信息的解读，结果不知道怎么就 “注意到” 了另外一个东西，比如，“某编辑器的皮肤”，然后你就 “顺手” 把它下载下来，然后  “很自然地顺手把它装上”，而后又看了看，觉得有点必要于是 “顺手做了点定制”…… 然后欣赏了一会儿，并自我得意一番之后 “突然发现”  自己还没有解决两小时之前要解决的问题！好奇心越重的人，越是容易被注意力漂移所拖累。</p>
-<p>好奇心是好东西，而且是必须认真呵护的东西 —— 几乎最重要、最强劲的自学动力，都混合着好奇心出现并持续。</p>
-<p>如何专注，我们列一个清单。把我们首要做的事情放在第一位，并牢牢地记住它。一旦发现自己的注意力没有集中在这上面的关键之时，一旦发现自己的注意力已经漂移到其它当前并不重要的事项上，就马上纠正。</p>
-<h3 id="沟通"><a href="#沟通" class="headerlink" title="沟通"></a>沟通</h3><p>普遍认为，手艺人的特征是缺乏沟通能力，或者沟通能力差 —— 也许是因为平时把所有的时间精力都投入到磨练手艺上去了罢。</p>
-<p><strong>教是最好的学习方法</strong></p>
-<p>讲课、写教程，甚至写书 —— 这是最高效的提升沟通能力的刻意练习手段。</p>
-<p>沟通要注意以下几点</p>
-<h4 id="内容第一"><a href="#内容第一" class="headerlink" title="内容第一"></a>内容第一</h4><p>无论是平日里讲话、还是台上讲课，抑或是写篇文章、写本书，永远都是内容第一，至于形式，并非不重要，但绝对不能喧宾夺主。</p>
-<p>通常，我们用 “干货” 来描述内容的重要性。第一步就是准备干货，至于修辞啊、笑点啊、酷炫幻灯片啊等等等等，都必须是次要的，否则就是喧宾夺主。干货不够好，其它的做得越多、越好，最终越是容易露怯 —— 这很可怕。</p>
-<h4 id="内容质量"><a href="#内容质量" class="headerlink" title="内容质量"></a>内容质量</h4><h5 id="重点突出"><a href="#重点突出" class="headerlink" title="重点突出"></a>重点突出</h5><p>“重点突出”，是最简单朴素、成本最低的 “优秀结构”。</p>
-<p>既然是沟通，就要了解对方。在绝大多数情况下，对方想要的才是重点。</p>
-<p>可问题在于，我们平日里面对单个人的时候都觉得 “了解对方很困难”，我们又如何判断 “一个群体”  呢？与很多人想象得相反，判断群体远比判断个体容易得多…… 因为你可以用粗暴分类，比如，你把听众或读者划分为 “小白” 和  “专家”，那你就知道了，你面对的群体中，更可能  “大部分是小白，小部分是专家”。于是，你就可以思考，“小白们最想知道的是什么？”，“专家们最重视的是什么？”，于是，你就可以在脑子里对所谓的  “重点” 有应对策略。</p>
-<h5 id="例证生动"><a href="#例证生动" class="headerlink" title="例证生动"></a>例证生动</h5><p>寻找好例子，是需要很多时间精力的事情 —— 从来就没有任何 “信手拈来” 的生动例子。信手拈来，是读者或者听众的感觉而已，对你来说，肯定是举重若轻的 —— 你明明是在举重，却被认为 “如若举轻”。在第一部分，<a href="https://link.juejin.cn/?target=https://render.githubusercontent.com/view/Part.1.E.7.files.ipynb">讲文件的那一章</a>里，我举了个 “我自己费尽心机找好例子” 的例子，相信你读过之后，一定有所感触。</p>
-<h5 id="消除歧义"><a href="#消除歧义" class="headerlink" title="消除歧义"></a>消除歧义</h5><p>消除<strong>一切</strong>歧义。这是真功夫，因为这东西很难把自己关在屋子里自顾自练成。并且，每个人有自己的 “容易引发误解” 的特殊属性，大家各不相同 —— 于是，只能靠自己探索。</p>
-<h2 id="自学者的终点"><a href="#自学者的终点" class="headerlink" title="自学者的终点"></a>自学者的终点</h2><p>必须学会一个没人教、没人带、甚至没有书可以参考技能！尽量只靠阅读获得一项新技能！</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
-<li>你一定要想办法启动自学，否则你没有未来；</li>
-<li>你把自学当作一门手艺，长期反复磨练它；</li>
-<li>你懂得学、练、用、造各个阶段之间的不同，以及针对每个阶段的对应策略；</li>
-<li>面对 “过早引用” 过多的世界，你有你的应对方式；</li>
-<li>你会 “囫囵吞枣”，你会 “重复重复再重复”，你深刻理解 “读书百遍其义自见”；</li>
-<li>以后你最擅长的技能之一就是拆解拆解再拆解；</li>
-<li>你用你的拆解手艺把所有遇到的难点都拆解成能搞定的小任务；</li>
-<li>自学任何一门手艺之前你都不会去问 “有什么用”，而是清楚地知道，无论是什么只要学会了就只能也必然天天去用；</li>
-<li>你没有刚需幻觉，你也没有时间幻觉，你更没有困难幻觉，反正你就是相对更清醒；</li>
-<li>不管你新学什么手艺，你都知道只要假以时日你就肯定能做好，因为所有的手艺精湛，靠的只不过是充足的预算；</li>
-<li>你知道如何不浪费生命，因为只要不是在刻意练习、不是在刻意思考，那就是在 “混时间”；</li>
-<li>你总是在琢磨你能做个什么新作品；</li>
-<li>你刻意地使用你的作品作为有效社交工具，也用作品去过滤无效社交；</li>
-<li>你乐于分享，乐于阅读也更乐于写作 —— 因为这世界怎么帮助你的，你就想着要怎样回报；</li>
-<li>你把全面和完整当作最高衡量标准，也用这个标准去克制、应对自己的注意力漂移；</li>
-<li>你会不断自学新的手艺，因为你越来越理解单一技能的脆弱，越来越理解多项技能的综合威力；</li>
-<li>你越来越依赖互联网，它是你最喜欢的 “书”，而 Google 是你最好的朋友 —— 他总是能帮你找到更好的老师；</li>
-<li>偶尔，你会学会没人教、没人带、甚至没书可参考的手艺，别人都说你 “悟性” 高，可你自己清楚地知道那其实是怎么回事；</li>
-<li>你越来越明白，其实没什么 “秘密”，越简单、越朴素的道理越值得重视；</li>
-<li>你发现你用来思考的时间越来越多 —— 准确地讲，是 “琢磨”…… 只不过是因为你真会琢磨了 —— 你很清楚你应该花时间琢磨的是什么。</li>
-</ul>
-<p><strong>没什么不能自学的，反正都只不过是手艺</strong> —— 只不过，我们每个人都受限于自己的时间精力而已。</p>
-<p>自学不过是一门手艺，而且还是谁都能掌握的。不要 “试试” 而已，而是 “直接开干” —— 这样才好。</p>
-<h3 id="自学过程还需要"><a href="#自学过程还需要" class="headerlink" title="自学过程还需要"></a>自学过程还需要</h3><ul>
-<li><strong>心理建设——没什么可怕的！</strong></li>
-<li><strong>不懂也要硬着头皮读完，然后重复读很多遍</strong></li>
-<li><strong>磨练 “只字不差地阅读” 的能力</strong></li>
-<li><strong>就算不明白也要先记住——“好记性不如烂笔头”，不是记在笔记本上是要记在脑子里</strong></li>
-<li><strong>尽早开始归纳总结</strong></li>
-<li><strong>先用起来，在研究怎么用的</strong></li>
-<li><strong>多听老人言——多听前辈的经验和总结，但不要盲从</strong></li>
-</ul>
-]]></content>
-      <categories>
-        <category>个人</category>
-      </categories>
-      <tags>
-        <tag>成长</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>网站测试要考虑的点</title>
     <url>/Echo/2022/02/05/%E7%BD%91%E7%AB%99%E6%B5%8B%E8%AF%95%E8%A6%81%E8%80%83%E8%99%91%E7%9A%84%E7%82%B9/</url>
     <content><![CDATA[<p>网站本质上都是B&#x2F;S架构的应用程序-具有service和browser。</p>
@@ -4149,6 +4067,88 @@
       <tags>
         <tag>测试</tag>
         <tag>页面测试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>拥有未来的能力——“自学”</title>
+    <url>/Echo/2021/11/09/%E8%87%AA%E5%AD%A6/</url>
+    <content><![CDATA[<h2 id="为什么一定要掌握自学能力？"><a href="#为什么一定要掌握自学能力？" class="headerlink" title="为什么一定要掌握自学能力？"></a>为什么一定要掌握自学能力？</h2><p>最近一直在讨论延长退休年龄，我们的父辈在五十岁就退休了。再过去的几十年里，人类的平均寿命预期增长的十分惊人！拿中国地区做例子，1949年，中国人均预期寿命不足35岁。 2021年，这个数字达到77.3岁。  72年，人均预期寿命长一倍还多。所以，各位，我们的未来还有很长。曾经有一家机构做过这样一个调查，人们的职业与自己大学所学专业的相符的比例不足20%。因为这世界变化太快了，因为大多数教育机构与世界发展脱钩的程度越来越严重。你的未来日子还有很长，这世界进步的这么快，你有让自己有在未来安身立命的一技之长吗？自学能力是唯一值得被不断磨练的长技，没有自学能力的人是没有未来的，这样我们才能在很长的未来中不被世界所抛弃。</p>
+<h2 id="自学需要的元素"><a href="#自学需要的元素" class="headerlink" title="自学需要的元素"></a>自学需要的元素</h2><p>自学过程我们要经历以下四个阶段：学、练、用、造。</p>
+<ul>
+<li>学：重复学，多次重复学，特别是面对“过早引用”的知识结构时；反复学，锻炼我们归纳总结的能力。</li>
+<li>练：在接触用的过程中，我们就开始接触练。无论你之前学了多少遍，一旦开始练，我们就会遇到各种各样的问题。每次自学时，我们都要放空自己，保持空杯的心态。</li>
+<li>用：只要有时间或者只要有需求我们就要用我们自学的知识，重复反复大量的用，在用的过程中练习；</li>
+<li>造：这个阶段我目前还没达到</li>
+</ul>
+<h3 id="耐心"><a href="#耐心" class="headerlink" title="耐心"></a>耐心</h3><p>在开始一门新知识的自学之前，我们要有足够的心理预期建设。我们要明白两点：</p>
+<p>1、这个时间要比你想象的长的多</p>
+<p>2、自学过程中，什么都要重复很多遍，学，练，用都需要大量的重复过程</p>
+<p>大多数人缺乏耐心的根源是“没有准备这么多的时间和精力”。这就需要我们有预算观念。</p>
+<p>预算观念——这个观念存在与否，成熟与否，基本决定了一个人未来的盈利能力。</p>
+<p>我们恪守一个原则，未来就很有可能超过大多数人：绝对不做预算不够的事。</p>
+<p>在自学的过程中，我们学的时候比别人重复的多，练的时候比别人重复的多，到最后用得比别人多。再开始自学的过程中，我总是觉得时间不够用，后来我越来越淡定了，因为早已习惯投入大量时间换取新的技能。</p>
+<h3 id="刻意练习"><a href="#刻意练习" class="headerlink" title="刻意练习"></a>刻意练习</h3><p>在自学的过程中，有一些部分是要刻意练习的。好比小时候我们学写字，老师为什么总是让我们写很多遍？还有卖油翁的故事大家还记得吗？手艺这个是需要刻意反复练习，主要是靠时间。在这过程中也需要我们刻意练习，如果卖油翁总是很随意，油撒的很多，想必他很快干不下去了。需要刻意练习的地方，是因人而异的，那就是对于自己来说很难比较容易出错的地方。经过大量的重复的联系，最终我们达到无他，唯手熟尔！</p>
+<h3 id="琢磨"><a href="#琢磨" class="headerlink" title="琢磨"></a>琢磨</h3><p>论语中有这样一句话“学而不思则罔”在学习的过程中我们要多思考。琢磨就是刻意的去思考!在我们的学习过程中最有价值的琢磨就是“这个东西刻意用在哪里？”</p>
+<h2 id="自学过程要打破的几个幻觉"><a href="#自学过程要打破的几个幻觉" class="headerlink" title="自学过程要打破的几个幻觉"></a>自学过程要打破的几个幻觉</h2><p>感觉总是我们人生中最大的坑。每次考试完是不是总感觉自己考的不错，学习过程也总感觉自己学会了，其实带最后发现自己啥也不会。很多人的自学能力都是被“自己的感觉”给耽误了。</p>
+<h3 id="刚需幻觉"><a href="#刚需幻觉" class="headerlink" title="刚需幻觉"></a>刚需幻觉</h3><p>“刚需幻觉”的根本原因就是感觉，你不会的东西对你来说感觉很难。18岁时你感觉英语很难，22岁有个外企机会，你没把握住；16岁时你感觉游泳很难，18岁时，心中的女神约你去游泳你只能说自己没时间！一项技能在你没有学会它的时候，你不可能觉得那是个刚需（就像房子，你不结婚，永远不会觉得这是刚需）。所以我们在开始学习一个新技能时，这么告诉自己不要问学它有什么用，学就是了。如何客服刚需幻觉？这要我们学习一个策略，让自己成为一个自驱动的人！自驱动说起来很简单就是“找活干”。</p>
+<h3 id="时间幻觉"><a href="#时间幻觉" class="headerlink" title="时间幻觉"></a>时间幻觉</h3><p>我们很多时候都受时间幻觉的拖累。玩游戏时你总是觉得时间很短，然后一整天就过去了；我在写这篇文章时总感觉时间还有很多，然后这周就过到周五了。时间从来都是匀速的，每个人的时间都是24小时的。在学习一个技能时，最大幻觉就是总是以为“时间不够了”。回头看看，回头想一想，五年前，十年前的自己在做什么？有没有一转眼时间就过去了。每年的毕业季是否总是有人很多人感叹，自己怎么就毕业了辣么久了！如何客服时间幻觉呢？只管坚持着做，坚持着学。时间会给你答案的。</p>
+<h3 id="困难幻觉"><a href="#困难幻觉" class="headerlink" title="困难幻觉"></a>困难幻觉</h3><p>无论做什么都是有难点的，有瓶颈期。当我们客服难点后，发现原来不过如此–这就是困难幻觉。古人早就有总结：“世上无难事，只怕有心人”。把一件事当成手艺看，就像开车一样，你开的多就会了，这样带来的好处之一就是心态平和。因为我们知道这事和天分智商关系不大，它靠的是不混时间（你如何对待时间的，时间也将如何对待你）、琢磨（刻意思考）、刻意练习。阅读难点在于起初的时候它是非常枯燥的。刚识字、刚上学的时候，由于理解能力有限，又由于年龄的关系于是耐心有限，所以，那时需要老师耐心陪伴、悉心引导。这就好像小朋友刚出生的时候，没有牙齿，所以只能喝奶差不多…… 然而，到了一定程度之后一定要断奶，是不是？可绝大多数人的实际情况却是，小学的时候爱上了  “奶嘴”（有人带着阅读），而后一生没有奶嘴就吃不下任何东西。</p>
+<p>他们必须去 “上课”，需要有人给他们讲书。不仅如此，讲得 “不生动”、“不幽默”  还不行；就算那职业提供奶嘴的人（这是非常令人遗憾的真相：很多的时候，所谓的 “老师” 本质上只不过就是奶妈而已）帅气漂亮、生动幽默、尽职尽力…… 最终还是一样的结果 —— 绝大多数人依然没有完整掌握所有应该掌握的细节。</p>
+<h2 id="自学过程需要的几项技能"><a href="#自学过程需要的几项技能" class="headerlink" title="自学过程需要的几项技能"></a>自学过程需要的几项技能</h2><h3 id="拆解"><a href="#拆解" class="headerlink" title="拆解"></a>拆解</h3><p>在自学的过程中遇到难点，复杂的。我们不妨拆解他们，拆解成一个一个的小问题予以突破。把那些很难的任务无限拆分——直到每个子任务都很小，小到我们可以唾手可得为止。当我们习惯了这么做之后，就会发现一切任务（不仅有自学还有别的）其实都是不难的，只是复杂繁琐而已。很多人失败的原因是什么，就是不懂拆分任务，要么就是怕麻烦！有句话不知道大家听过没——人活着，其实就挺麻烦的。。。。</p>
+<h3 id="专注"><a href="#专注" class="headerlink" title="专注"></a>专注</h3><p>现在这个网络时代，大家有没有发现自己的注意力经常莫名的就被转移了。比如，你本来只不过就想着去 Google  一个编程错误信息的解读，结果不知道怎么就 “注意到” 了另外一个东西，比如，“某编辑器的皮肤”，然后你就 “顺手” 把它下载下来，然后  “很自然地顺手把它装上”，而后又看了看，觉得有点必要于是 “顺手做了点定制”…… 然后欣赏了一会儿，并自我得意一番之后 “突然发现”  自己还没有解决两小时之前要解决的问题！好奇心越重的人，越是容易被注意力漂移所拖累。</p>
+<p>好奇心是好东西，而且是必须认真呵护的东西 —— 几乎最重要、最强劲的自学动力，都混合着好奇心出现并持续。</p>
+<p>如何专注，我们列一个清单。把我们首要做的事情放在第一位，并牢牢地记住它。一旦发现自己的注意力没有集中在这上面的关键之时，一旦发现自己的注意力已经漂移到其它当前并不重要的事项上，就马上纠正。</p>
+<h3 id="沟通"><a href="#沟通" class="headerlink" title="沟通"></a>沟通</h3><p>普遍认为，手艺人的特征是缺乏沟通能力，或者沟通能力差 —— 也许是因为平时把所有的时间精力都投入到磨练手艺上去了罢。</p>
+<p><strong>教是最好的学习方法</strong></p>
+<p>讲课、写教程，甚至写书 —— 这是最高效的提升沟通能力的刻意练习手段。</p>
+<p>沟通要注意以下几点</p>
+<h4 id="内容第一"><a href="#内容第一" class="headerlink" title="内容第一"></a>内容第一</h4><p>无论是平日里讲话、还是台上讲课，抑或是写篇文章、写本书，永远都是内容第一，至于形式，并非不重要，但绝对不能喧宾夺主。</p>
+<p>通常，我们用 “干货” 来描述内容的重要性。第一步就是准备干货，至于修辞啊、笑点啊、酷炫幻灯片啊等等等等，都必须是次要的，否则就是喧宾夺主。干货不够好，其它的做得越多、越好，最终越是容易露怯 —— 这很可怕。</p>
+<h4 id="内容质量"><a href="#内容质量" class="headerlink" title="内容质量"></a>内容质量</h4><h5 id="重点突出"><a href="#重点突出" class="headerlink" title="重点突出"></a>重点突出</h5><p>“重点突出”，是最简单朴素、成本最低的 “优秀结构”。</p>
+<p>既然是沟通，就要了解对方。在绝大多数情况下，对方想要的才是重点。</p>
+<p>可问题在于，我们平日里面对单个人的时候都觉得 “了解对方很困难”，我们又如何判断 “一个群体”  呢？与很多人想象得相反，判断群体远比判断个体容易得多…… 因为你可以用粗暴分类，比如，你把听众或读者划分为 “小白” 和  “专家”，那你就知道了，你面对的群体中，更可能  “大部分是小白，小部分是专家”。于是，你就可以思考，“小白们最想知道的是什么？”，“专家们最重视的是什么？”，于是，你就可以在脑子里对所谓的  “重点” 有应对策略。</p>
+<h5 id="例证生动"><a href="#例证生动" class="headerlink" title="例证生动"></a>例证生动</h5><p>寻找好例子，是需要很多时间精力的事情 —— 从来就没有任何 “信手拈来” 的生动例子。信手拈来，是读者或者听众的感觉而已，对你来说，肯定是举重若轻的 —— 你明明是在举重，却被认为 “如若举轻”。在第一部分，<a href="https://link.juejin.cn/?target=https://render.githubusercontent.com/view/Part.1.E.7.files.ipynb">讲文件的那一章</a>里，我举了个 “我自己费尽心机找好例子” 的例子，相信你读过之后，一定有所感触。</p>
+<h5 id="消除歧义"><a href="#消除歧义" class="headerlink" title="消除歧义"></a>消除歧义</h5><p>消除<strong>一切</strong>歧义。这是真功夫，因为这东西很难把自己关在屋子里自顾自练成。并且，每个人有自己的 “容易引发误解” 的特殊属性，大家各不相同 —— 于是，只能靠自己探索。</p>
+<h2 id="自学者的终点"><a href="#自学者的终点" class="headerlink" title="自学者的终点"></a>自学者的终点</h2><p>必须学会一个没人教、没人带、甚至没有书可以参考技能！尽量只靠阅读获得一项新技能！</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>你一定要想办法启动自学，否则你没有未来；</li>
+<li>你把自学当作一门手艺，长期反复磨练它；</li>
+<li>你懂得学、练、用、造各个阶段之间的不同，以及针对每个阶段的对应策略；</li>
+<li>面对 “过早引用” 过多的世界，你有你的应对方式；</li>
+<li>你会 “囫囵吞枣”，你会 “重复重复再重复”，你深刻理解 “读书百遍其义自见”；</li>
+<li>以后你最擅长的技能之一就是拆解拆解再拆解；</li>
+<li>你用你的拆解手艺把所有遇到的难点都拆解成能搞定的小任务；</li>
+<li>自学任何一门手艺之前你都不会去问 “有什么用”，而是清楚地知道，无论是什么只要学会了就只能也必然天天去用；</li>
+<li>你没有刚需幻觉，你也没有时间幻觉，你更没有困难幻觉，反正你就是相对更清醒；</li>
+<li>不管你新学什么手艺，你都知道只要假以时日你就肯定能做好，因为所有的手艺精湛，靠的只不过是充足的预算；</li>
+<li>你知道如何不浪费生命，因为只要不是在刻意练习、不是在刻意思考，那就是在 “混时间”；</li>
+<li>你总是在琢磨你能做个什么新作品；</li>
+<li>你刻意地使用你的作品作为有效社交工具，也用作品去过滤无效社交；</li>
+<li>你乐于分享，乐于阅读也更乐于写作 —— 因为这世界怎么帮助你的，你就想着要怎样回报；</li>
+<li>你把全面和完整当作最高衡量标准，也用这个标准去克制、应对自己的注意力漂移；</li>
+<li>你会不断自学新的手艺，因为你越来越理解单一技能的脆弱，越来越理解多项技能的综合威力；</li>
+<li>你越来越依赖互联网，它是你最喜欢的 “书”，而 Google 是你最好的朋友 —— 他总是能帮你找到更好的老师；</li>
+<li>偶尔，你会学会没人教、没人带、甚至没书可参考的手艺，别人都说你 “悟性” 高，可你自己清楚地知道那其实是怎么回事；</li>
+<li>你越来越明白，其实没什么 “秘密”，越简单、越朴素的道理越值得重视；</li>
+<li>你发现你用来思考的时间越来越多 —— 准确地讲，是 “琢磨”…… 只不过是因为你真会琢磨了 —— 你很清楚你应该花时间琢磨的是什么。</li>
+</ul>
+<p><strong>没什么不能自学的，反正都只不过是手艺</strong> —— 只不过，我们每个人都受限于自己的时间精力而已。</p>
+<p>自学不过是一门手艺，而且还是谁都能掌握的。不要 “试试” 而已，而是 “直接开干” —— 这样才好。</p>
+<h3 id="自学过程还需要"><a href="#自学过程还需要" class="headerlink" title="自学过程还需要"></a>自学过程还需要</h3><ul>
+<li><strong>心理建设——没什么可怕的！</strong></li>
+<li><strong>不懂也要硬着头皮读完，然后重复读很多遍</strong></li>
+<li><strong>磨练 “只字不差地阅读” 的能力</strong></li>
+<li><strong>就算不明白也要先记住——“好记性不如烂笔头”，不是记在笔记本上是要记在脑子里</strong></li>
+<li><strong>尽早开始归纳总结</strong></li>
+<li><strong>先用起来，在研究怎么用的</strong></li>
+<li><strong>多听老人言——多听前辈的经验和总结，但不要盲从</strong></li>
+</ul>
+]]></content>
+      <categories>
+        <category>个人</category>
+      </categories>
+      <tags>
+        <tag>成长</tag>
       </tags>
   </entry>
 </search>
