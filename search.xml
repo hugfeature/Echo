@@ -1,6 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>2022年软件测试趋势</title>
+    <url>/Echo/2022/02/06/2022%E5%B9%B4%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E8%B6%8B%E5%8A%BF/</url>
+    <content><![CDATA[<p>技术呈指数级和前所未有的变化影响了组织开发、验证、交付和操作软件的方式。</p>
+<p>因此，这些组织必须通过寻找解决方案来不断创新和改造自己，以优化实践和工具，以快速开发和交付高质量的软件。</p>
+<p>软件测试约占项目总工作量的30%，是更改和改进的重要焦点。测试实践和工具需要不断发展，以应对在系统、环境和数据日益复杂的情况下实现**”快速测试”**的挑战。</p>
+<p>在下面介绍了软件测试的主要趋势，其中许多趋势在过去几年中已经出现。我们观察到，敏捷和DevOps、测试自动化、用于测试的人工智能和API测试自动化是2022年和未来几年最引人注目的趋势。</p>
+<h4 id="1、敏捷和Devops"><a href="#1、敏捷和Devops" class="headerlink" title="1、敏捷和Devops"></a>1、敏捷和Devops</h4><p>敏捷已经视为对快速变化的需求的回应，并将DevOps视为对速度需求的响应。</p>
+<p>DevOps 涉及实践、规则、流程和工具，有助于集成开发和运营活动，从而缩短从开发到运营的时间。DevOps已成为组织广泛接受的解决方案，这些组织正在寻找缩短从开发到交付和运营的软件生命周期的方法。</p>
+<p>敏捷和DevOps的采用有助于团队更快地开发和交付高质量的软件，这反过来又被称为”速度的测试”。这种采用在过去五年中引起了很大的兴趣，并且在未来几年也将继续加强。</p>
+<h4 id="2、测试自动化"><a href="#2、测试自动化" class="headerlink" title="2、测试自动化"></a>2、测试自动化</h4><p>为了有效地实施 DevOps 实践，软件团队不能忽视测试自动化，因为它是 DevOps 流程的基本要素。</p>
+<p>需要找到机会，用自动化测试取代手动测试。由于测试自动化被认为是DevOps的重要瓶颈，因此至少大多数回归测试都应该是自动化的。</p>
+<p>鉴于DevOps的普及以及测试自动化未得到充分利用的事实，只有不到20%的测试是自动化的，因此在组织中增加测试自动化的采用空间很大。应该出现更先进的方法和工具，以便在项目中更好地利用测试自动化。</p>
+<h4 id="3、-API和服务自动化测试"><a href="#3、-API和服务自动化测试" class="headerlink" title="3、 API和服务自动化测试"></a>3、 API和服务自动化测试</h4><p>将客户端和服务器分离是设计 Web 和移动应用程序的当前趋势。</p>
+<p>API 和服务在多个应用程序或组件中重用。反过来，这些更改要求团队独立于使用它们的应用程序测试 API 和服务。</p>
+<p>当跨客户端应用程序和组件使用 API 和服务时，测试它们比测试客户端更有效和高效。趋势是对API和服务测试自动化的需求继续增加，可能超过最终用户在用户界面上使用的功能。</p>
+<p>为 API 自动化测试提供正确的流程、工具和解决方案比以往任何时候都更加重要。</p>
+<h4 id="4、用于测试AI和ML"><a href="#4、用于测试AI和ML" class="headerlink" title="4、用于测试AI和ML"></a>4、用于测试AI和ML</h4><p>尽管应用人工智能和机器学习（AI &#x2F; ML）方法来解决软件测试中的挑战在软件研究社区中并不新鲜，但AI &#x2F; ML的最新进展以及大量可用的数据为在测试中应用AI &#x2F; ML提供了新的机会。</p>
+<p>然而，AI&#x2F;ML在测试中的应用仍处于早期阶段。扔在寻找在AI &#x2F; ML中优化其测试实践的方法。</p>
+<p>AI&#x2F;ML 算法旨在生成更好的测试用例、测试脚本、测试数据和报告。预测模型将有助于决定在何处、做什么以及何时进行测试。智能分析和可视化支持团队检测故障，了解测试覆盖范围，高风险区域等。</p>
+<p>希望在未来几年看到AI &#x2F; ML在解决质量预测，测试用例优先级，故障分类和分配等问题中的更多应用。</p>
+<h4 id="5、移动测试自动化"><a href="#5、移动测试自动化" class="headerlink" title="5、移动测试自动化"></a>5、移动测试自动化</h4><p>随着移动设备的功能越来越强大，移动应用程序开发的趋势继续增长。</p>
+<p>要完全支持 DevOps，移动测试自动化必须是 DevOps 工具链的一部分。然而，目前移动测试自动化的利用率非常低，部分原因是缺乏方法和工具。</p>
+<p>移动应用的自动化测试趋势持续增加。这种趋势是由缩短上市时间的需求以及用于移动测试自动化的更高级方法和工具所驱动的。</p>
+<h4 id="6、测试环境和测试数据"><a href="#6、测试环境和测试数据" class="headerlink" title="6、测试环境和测试数据"></a>6、测试环境和测试数据</h4><p>物联网（IoT）的快速增长）意味着更多的软件系统在众多不同的环境中运行。这给测试团队带来了确保正确级别的测试覆盖率的挑战。事实上，在敏捷项目中申请测试时，缺乏测试环境和数据是最大的挑战。</p>
+<p>将看到在提供和使用基于云的容器化测试环境方面的增长。AI&#x2F;ML在生成测试数据方面的应用和数据项目的增长，是解决测试数据不足的一些解决方案。</p>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+        <tag>软件测试</tag>
+        <tag>自动化测试</tag>
+        <tag>devops</tag>
+        <tag>敏捷测试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>20个实用软件测试技巧</title>
     <url>/Echo/2021/05/01/20%E4%B8%AA%E5%AE%9E%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%8A%80%E5%B7%A7/</url>
     <content><![CDATA[<p>以下是个人总结的20个软件测试过程中的技巧</p>
@@ -38,41 +76,124 @@
       </tags>
   </entry>
   <entry>
-    <title>2022年软件测试趋势</title>
-    <url>/Echo/2022/02/06/2022%E5%B9%B4%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E8%B6%8B%E5%8A%BF/</url>
-    <content><![CDATA[<p>技术呈指数级和前所未有的变化影响了组织开发、验证、交付和操作软件的方式。</p>
-<p>因此，这些组织必须通过寻找解决方案来不断创新和改造自己，以优化实践和工具，以快速开发和交付高质量的软件。</p>
-<p>软件测试约占项目总工作量的30%，是更改和改进的重要焦点。测试实践和工具需要不断发展，以应对在系统、环境和数据日益复杂的情况下实现**”快速测试”**的挑战。</p>
-<p>在下面介绍了软件测试的主要趋势，其中许多趋势在过去几年中已经出现。我们观察到，敏捷和DevOps、测试自动化、用于测试的人工智能和API测试自动化是2022年和未来几年最引人注目的趋势。</p>
-<h4 id="1、敏捷和Devops"><a href="#1、敏捷和Devops" class="headerlink" title="1、敏捷和Devops"></a>1、敏捷和Devops</h4><p>敏捷已经视为对快速变化的需求的回应，并将DevOps视为对速度需求的响应。</p>
-<p>DevOps 涉及实践、规则、流程和工具，有助于集成开发和运营活动，从而缩短从开发到运营的时间。DevOps已成为组织广泛接受的解决方案，这些组织正在寻找缩短从开发到交付和运营的软件生命周期的方法。</p>
-<p>敏捷和DevOps的采用有助于团队更快地开发和交付高质量的软件，这反过来又被称为”速度的测试”。这种采用在过去五年中引起了很大的兴趣，并且在未来几年也将继续加强。</p>
-<h4 id="2、测试自动化"><a href="#2、测试自动化" class="headerlink" title="2、测试自动化"></a>2、测试自动化</h4><p>为了有效地实施 DevOps 实践，软件团队不能忽视测试自动化，因为它是 DevOps 流程的基本要素。</p>
-<p>需要找到机会，用自动化测试取代手动测试。由于测试自动化被认为是DevOps的重要瓶颈，因此至少大多数回归测试都应该是自动化的。</p>
-<p>鉴于DevOps的普及以及测试自动化未得到充分利用的事实，只有不到20%的测试是自动化的，因此在组织中增加测试自动化的采用空间很大。应该出现更先进的方法和工具，以便在项目中更好地利用测试自动化。</p>
-<h4 id="3、-API和服务自动化测试"><a href="#3、-API和服务自动化测试" class="headerlink" title="3、 API和服务自动化测试"></a>3、 API和服务自动化测试</h4><p>将客户端和服务器分离是设计 Web 和移动应用程序的当前趋势。</p>
-<p>API 和服务在多个应用程序或组件中重用。反过来，这些更改要求团队独立于使用它们的应用程序测试 API 和服务。</p>
-<p>当跨客户端应用程序和组件使用 API 和服务时，测试它们比测试客户端更有效和高效。趋势是对API和服务测试自动化的需求继续增加，可能超过最终用户在用户界面上使用的功能。</p>
-<p>为 API 自动化测试提供正确的流程、工具和解决方案比以往任何时候都更加重要。</p>
-<h4 id="4、用于测试AI和ML"><a href="#4、用于测试AI和ML" class="headerlink" title="4、用于测试AI和ML"></a>4、用于测试AI和ML</h4><p>尽管应用人工智能和机器学习（AI &#x2F; ML）方法来解决软件测试中的挑战在软件研究社区中并不新鲜，但AI &#x2F; ML的最新进展以及大量可用的数据为在测试中应用AI &#x2F; ML提供了新的机会。</p>
-<p>然而，AI&#x2F;ML在测试中的应用仍处于早期阶段。扔在寻找在AI &#x2F; ML中优化其测试实践的方法。</p>
-<p>AI&#x2F;ML 算法旨在生成更好的测试用例、测试脚本、测试数据和报告。预测模型将有助于决定在何处、做什么以及何时进行测试。智能分析和可视化支持团队检测故障，了解测试覆盖范围，高风险区域等。</p>
-<p>希望在未来几年看到AI &#x2F; ML在解决质量预测，测试用例优先级，故障分类和分配等问题中的更多应用。</p>
-<h4 id="5、移动测试自动化"><a href="#5、移动测试自动化" class="headerlink" title="5、移动测试自动化"></a>5、移动测试自动化</h4><p>随着移动设备的功能越来越强大，移动应用程序开发的趋势继续增长。</p>
-<p>要完全支持 DevOps，移动测试自动化必须是 DevOps 工具链的一部分。然而，目前移动测试自动化的利用率非常低，部分原因是缺乏方法和工具。</p>
-<p>移动应用的自动化测试趋势持续增加。这种趋势是由缩短上市时间的需求以及用于移动测试自动化的更高级方法和工具所驱动的。</p>
-<h4 id="6、测试环境和测试数据"><a href="#6、测试环境和测试数据" class="headerlink" title="6、测试环境和测试数据"></a>6、测试环境和测试数据</h4><p>物联网（IoT）的快速增长）意味着更多的软件系统在众多不同的环境中运行。这给测试团队带来了确保正确级别的测试覆盖率的挑战。事实上，在敏捷项目中申请测试时，缺乏测试环境和数据是最大的挑战。</p>
-<p>将看到在提供和使用基于云的容器化测试环境方面的增长。AI&#x2F;ML在生成测试数据方面的应用和数据项目的增长，是解决测试数据不足的一些解决方案。</p>
+    <title>B/S架构如何测试</title>
+    <url>/Echo/2022/02/04/B-S%E6%9E%B6%E6%9E%84%E5%A6%82%E4%BD%95%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<p>随着信息技术的发展，人们越来越习惯与在网上搜索信息来做出决定，因此网站已经是各类企业的必备之选。但是仅仅拥有一个网站还不够，还需要提供一个信息丰富、可访问和用户友好的网站。为了实现这样的功能，网站要经过良好的测试，这样的测试测试成为B&#x2F;S架构测试即页面测试。</p>
+<h4 id="什么是页面测试？"><a href="#什么是页面测试？" class="headerlink" title="什么是页面测试？"></a>什么是页面测试？</h4><p>页面测试是软件测试中的一种，用于测试网站或者web类应用程序是否存在一些问题。在上线之前要对基于页面的应用程序进行完整测试。</p>
+<p>基于页面的系统在面向最终用户上线之前，需要进行端到端的全面的测试。</p>
+<p>通过页面测试，可以确保基于页面的系统正常运行，且可以被用户接受，UI测试和功能测试是页面测试的首选。</p>
+<h4 id="常见的页面测试类型"><a href="#常见的页面测试类型" class="headerlink" title="常见的页面测试类型"></a>常见的页面测试类型</h4><ul>
+<li>功能测试</li>
+<li>可用性测试</li>
+<li>接口测试</li>
+<li>兼容性测试</li>
+<li>性能测试</li>
+<li>安全测试</li>
+</ul>
+<h5 id="功能测试"><a href="#功能测试" class="headerlink" title="功能测试"></a>功能测试</h5><p>测试页面中所有的链接，数据库连接，页面中用于提交或获取用户信息的表单，Cookie测试等</p>
+<h6 id="链接测试"><a href="#链接测试" class="headerlink" title="链接测试"></a>链接测试</h6><ul>
+<li>测试从所有页面到受测特定域的传出链接。</li>
+<li>测试所有内部链接。</li>
+<li>测试链接跳转到同一页面。</li>
+<li>测试链接用于从网页向管理员或其他用户发送电子邮件。</li>
+<li>测试以查看是否存在任何孤立页面。</li>
+<li>最后，链接检查包括，检查上述所有链接中的断开链接。</li>
+</ul>
+<h6 id="表单测试"><a href="#表单测试" class="headerlink" title="表单测试"></a>表单测试</h6><p>表单在任何网站都是不可或缺的，一般用于接收来自用户信息。如何进行表单测试呢？</p>
+<ul>
+<li>首先，检查每个字段的所有验证。</li>
+<li>检查字段中的默认值。</li>
+<li>表单中对表单中字段的错误输入。</li>
+<li>用于创建表单的选项（如果有）、表单删除、查看或修改表单。</li>
+</ul>
+<h6 id="cookie测试"><a href="#cookie测试" class="headerlink" title="cookie测试"></a>cookie测试</h6><p>Cookie 是存储在用户计算机上的小文件。这些基本上用于维护会话 - 主要是登录会话。通过在浏览器选项中启用或禁用 Cookie 来测试应用程序。</p>
+<p>在写入用户计算机之前，测试 Cookie 是否已加密。如果您正在测试会话 Cookie（即在会话结束后过期的 Cookie），请在会话结束后检查登录会话和用户统计信息。通过删除 Cookie 来检查对应用程序安全的影响。</p>
+<h6 id="HTML-x2F-CSS测试"><a href="#HTML-x2F-CSS测试" class="headerlink" title="HTML&#x2F;CSS测试"></a>HTML&#x2F;CSS测试</h6><p>如果您正在为搜索引擎优化您的网站，那么HTML &#x2F; CSS验证是最重要的。主要验证网站的HTML语法错误。检查该网站是否可被不同的搜索引擎抓取。</p>
+<h6 id="数据库连接测试"><a href="#数据库连接测试" class="headerlink" title="数据库连接测试"></a>数据库连接测试</h6><p>数据一致性在 Web 应用程序中也非常重要。在编辑、删除、修改表单或执行任何与数据库相关的功能时检查数据完整性和错误。</p>
+<p>检查是否正确执行了所有数据库查询，检索了数据并正确更新了数据。有关数据库测试的更多信息可能是数据库上的负载，我们将在下面的Web负载或性能测试中解决此问题。</p>
+<p>在测试网站功能时，还应该测试以下内容：</p>
+<h6 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h6><p>i. 内部链接<br>ii.外部链接<br>iii.邮件链接<br>iv.断开的链接</p>
+<h6 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h6><ol>
+<li>字段验证</li>
+<li>错误输入的错误消息</li>
+<li>可选和必填字段</li>
+</ol>
+<h6 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h6><p>测试将针对数据库完整性进行。</p>
+<h5 id="可用性测试"><a href="#可用性测试" class="headerlink" title="可用性测试"></a>可用性测试</h5><p>可用性测试是测量系统的人机交互特性，并确定不足以进行纠正。</p>
+<h5 id="导航测试"><a href="#导航测试" class="headerlink" title="导航测试"></a>导航测试</h5><p>导航是指用户如何浏览网页、不同的控件（如按钮、框）或用户如何使用页面上的链接浏览不同的页面。</p>
+<h6 id="可用性测试应包括以下内容"><a href="#可用性测试应包括以下内容" class="headerlink" title="可用性测试应包括以下内容"></a>可用性测试应包括以下内容</h6><ul>
+<li>该网站应易于使用。</li>
+<li>所提供的说明应非常清楚。</li>
+<li>检查提供的说明是否完全符合其目的。</li>
+<li>每个页面上都应提供主菜单。</li>
+<li>它应该足够一致。</li>
+</ul>
+<h6 id="内容检查"><a href="#内容检查" class="headerlink" title="内容检查"></a>内容检查</h6><p>内容应符合逻辑且易于理解。检查拼写错误。深色背景使用会让用户不喜欢，不应在网站主题中使用。应该遵循一些用于网页和内容构建的标准颜色。这些是普遍接受的标准。内容应该是有意义的。所有锚文本链接都应正常工作。图像应以适当的尺寸正确放置。这些是页面开发中应遵循的一些基本重要标准。你的任务是验证所有内容以进行 UI 测试。</p>
+<h6 id="用于帮助用户搜索信息"><a href="#用于帮助用户搜索信息" class="headerlink" title="用于帮助用户搜索信息"></a>用于帮助用户搜索信息</h6><p>与搜索选项一样，站点地图也有助于处理文件等。站点地图应与网站上的所有链接一起提供，并具有正确的导航树视图。检查站点地图上的所有链接。</p>
+<p>“在网站中搜索”选项将帮助用户轻松快速地找到他们正在寻找的内容页面。这些都是可选项目，如果存在，则应对其进行验证。</p>
+<h5 id="接口测试"><a href="#接口测试" class="headerlink" title="接口测试"></a>接口测试</h5><p>在页面测试中，应测试服务器端接口。这可以通过验证通信是否正确完成。应测试服务器与软件、硬件、网络和数据库的兼容性。</p>
+<p>主要接口有：</p>
+<ul>
+<li>页面服务器和应用程序服务器接口</li>
+<li>应用程序服务器和数据库服务器接口。</li>
+</ul>
+<p>检查这些服务器之间的所有交互是否都已执行，错误是否得到正确处理。如果数据库或 Web 服务器为应用程序服务器的任何查询返回错误消息，那么应用程序服务器应捕获这些错误消息并将其适当地显示给用户。</p>
+<p>检查如果用户中断其中的任何事务会发生什么情况？检查如果与Web服务器的连接在两者之间重置会发生什么？</p>
+<h5 id="兼容性测试"><a href="#兼容性测试" class="headerlink" title="兼容性测试"></a>兼容性测试</h5><p>网站的兼容性是一个非常重要的测试方面。查看要执行的兼容性测试：</p>
+<ul>
+<li>浏览器兼容性</li>
+<li>操作系统兼容性</li>
+<li>移动浏览</li>
+<li>打印选项</li>
+</ul>
+<h6 id="浏览器兼容性："><a href="#浏览器兼容性：" class="headerlink" title="浏览器兼容性："></a>浏览器兼容性：</h6><p>在我的网络测试生涯中，我经历过这是网站测试中最具影响力的部分。<br>某些应用程序非常依赖于浏览器。不同的浏览器具有不同的配置和设置，您的网页应与之兼容。</p>
+<p>您的网站编码应该是跨浏览器平台兼容的。如果您正在使用 Java 脚本或 AJAX 调用 UI 功能，则执行安全检查或验证会给页面应用程序的浏览器兼容性测试带来更多压力。</p>
+<p>在不同的浏览器上测试页面应用程序，如Edge，Firefox，Chrome，Netscape Navigator，AOL，Safari，Opera浏览器和不同版本。</p>
+<h6 id="操作系统兼容性："><a href="#操作系统兼容性：" class="headerlink" title="操作系统兼容性："></a>操作系统兼容性：</h6><p>Web 应用程序中的某些功能是它可能不与所有操作系统兼容。Web开发中使用的所有新技术，如图形设计和界面调用（如不同的API）可能并非在所有操作系统中都可用。</p>
+<p>因此，在具有不同操作系统风格的Windows，Unix，MAC，Linux，Solaris等不同操作系统上测试您的Web应用程序。</p>
+<h6 id="移动浏览："><a href="#移动浏览：" class="headerlink" title="移动浏览："></a>移动浏览：</h6><p>在移动浏览器上测试网页。移动设备上也可能存在兼容性问题。</p>
+<h6 id="打印选项："><a href="#打印选项：" class="headerlink" title="打印选项："></a>打印选项：</h6><p>如果要提供页面打印选项，请确保字体，页面对齐方式，页面图形等正确打印。页面应适合纸张大小或根据打印选项中提到的大小。</p>
+<h5 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h5><p>页面 应用程序应承受重负载。页面性能测试应包括：</p>
+<ul>
+<li>网络负载测试</li>
+<li>网络压力测试</li>
+</ul>
+<p>在不同的互联网连接速度下测试应用程序性能。</p>
+<p>页面负载测试：需要测试是否有多个用户正在访问或请求同一页面。系统能否维持峰值负载时间？站点应处理许多并发用户请求、来自用户的大量输入数据、同时连接到数据库、特定页面上的重负载等。</p>
+<p>网络压力测试：通常，应力意味着将系统拉伸到其指定的限值之外。执行页面压力测试以通过施加压力来破坏站点，并检查系统如何对压力做出反应以及如何从崩溃中恢复。压力通常放在输入字段，登录和注册区域。</p>
+<p>在页面性能中，在不同操作系统和不同硬件平台上测试网站功能时，会检查软件和硬件内存泄漏错误。</p>
+<p>性能测试可用于了解网站的可伸缩性，或对第三方产品（如服务器和中间件）环境中的性能进行基准测试，以便进行潜在购买。</p>
+<h6 id="连接速度"><a href="#连接速度" class="headerlink" title="连接速度"></a>连接速度</h6><p>在各种网络上经过测试，如拨号，ISDN等。</p>
+<h6 id="页面加载"><a href="#页面加载" class="headerlink" title="页面加载"></a>页面加载</h6><p>页面加载性能可以用Lighthouse进行测试。</p>
+<p>i.每次最多承受用户数？<br>ii. 检查峰值负载和系统的行为方式</p>
+<p>iii.用户访问的大量数据</p>
+<h6 id="压力测试"><a href="#压力测试" class="headerlink" title="压力测试"></a>压力测试</h6><p>i. 连续载荷<br>ii.内存、CPU、文件处理等性能</p>
+<h5 id="安全测试"><a href="#安全测试" class="headerlink" title="安全测试"></a>安全测试</h5><p>以下是页面安全测试的一些测试用例：</p>
+<ul>
+<li>通过将内部 URL 直接粘贴到浏览器地址栏中而不登录来进行测试。不应打开内部页面。</li>
+<li>如果您使用用户名和密码登录并浏览内部页面，请尝试直接更改URL选项。即，如果您正在检查一些发布者站点统计信息，则发布者站点 ID &#x3D; 123。尝试直接将 URL 站点 ID 参数更改为与登录用户无关的其他站点 ID。应拒绝此用户查看其他人的统计信息的访问权限。</li>
+<li>尝试在输入字段中输入一些无效的输入，例如登录用户名，密码，输入文本框等。检查系统对所有无效输入的反应。</li>
+<li>页面目录和文件不应直接访问，除非为它们提供了下载选项。</li>
+<li>测试验证码以自动执行脚本登录。</li>
+<li>测试 SSL 是否用于安全措施。如果使用，当用户从不安全的页面HTTP:&#x2F;&#x2F;切换到安全 HTTPS:&#x2F;&#x2F; 页面时，应显示正确的消息，反之亦然。</li>
+<li>所有事务、错误消息和安全漏洞尝试都应记录在服务器上某个位置的日志文件中。</li>
+</ul>
+<p>测试页面安全性的主要原因是识别潜在的漏洞并随后修复它们。</p>
+<ul>
+<li>网络扫描</li>
+<li>漏洞扫描</li>
+<li>密码破解</li>
+<li>日志审查</li>
+<li>完整性检查器</li>
+<li>病毒检测</li>
+</ul>
 ]]></content>
       <categories>
         <category>测试</category>
       </categories>
       <tags>
         <tag>测试</tag>
-        <tag>软件测试</tag>
-        <tag>自动化测试</tag>
-        <tag>devops</tag>
-        <tag>敏捷测试</tag>
+        <tag>页面测试</tag>
       </tags>
   </entry>
   <entry>
@@ -789,127 +910,6 @@
       </tags>
   </entry>
   <entry>
-    <title>B/S架构如何测试</title>
-    <url>/Echo/2022/02/04/B-S%E6%9E%B6%E6%9E%84%E5%A6%82%E4%BD%95%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<p>随着信息技术的发展，人们越来越习惯与在网上搜索信息来做出决定，因此网站已经是各类企业的必备之选。但是仅仅拥有一个网站还不够，还需要提供一个信息丰富、可访问和用户友好的网站。为了实现这样的功能，网站要经过良好的测试，这样的测试测试成为B&#x2F;S架构测试即页面测试。</p>
-<h4 id="什么是页面测试？"><a href="#什么是页面测试？" class="headerlink" title="什么是页面测试？"></a>什么是页面测试？</h4><p>页面测试是软件测试中的一种，用于测试网站或者web类应用程序是否存在一些问题。在上线之前要对基于页面的应用程序进行完整测试。</p>
-<p>基于页面的系统在面向最终用户上线之前，需要进行端到端的全面的测试。</p>
-<p>通过页面测试，可以确保基于页面的系统正常运行，且可以被用户接受，UI测试和功能测试是页面测试的首选。</p>
-<h4 id="常见的页面测试类型"><a href="#常见的页面测试类型" class="headerlink" title="常见的页面测试类型"></a>常见的页面测试类型</h4><ul>
-<li>功能测试</li>
-<li>可用性测试</li>
-<li>接口测试</li>
-<li>兼容性测试</li>
-<li>性能测试</li>
-<li>安全测试</li>
-</ul>
-<h5 id="功能测试"><a href="#功能测试" class="headerlink" title="功能测试"></a>功能测试</h5><p>测试页面中所有的链接，数据库连接，页面中用于提交或获取用户信息的表单，Cookie测试等</p>
-<h6 id="链接测试"><a href="#链接测试" class="headerlink" title="链接测试"></a>链接测试</h6><ul>
-<li>测试从所有页面到受测特定域的传出链接。</li>
-<li>测试所有内部链接。</li>
-<li>测试链接跳转到同一页面。</li>
-<li>测试链接用于从网页向管理员或其他用户发送电子邮件。</li>
-<li>测试以查看是否存在任何孤立页面。</li>
-<li>最后，链接检查包括，检查上述所有链接中的断开链接。</li>
-</ul>
-<h6 id="表单测试"><a href="#表单测试" class="headerlink" title="表单测试"></a>表单测试</h6><p>表单在任何网站都是不可或缺的，一般用于接收来自用户信息。如何进行表单测试呢？</p>
-<ul>
-<li>首先，检查每个字段的所有验证。</li>
-<li>检查字段中的默认值。</li>
-<li>表单中对表单中字段的错误输入。</li>
-<li>用于创建表单的选项（如果有）、表单删除、查看或修改表单。</li>
-</ul>
-<h6 id="cookie测试"><a href="#cookie测试" class="headerlink" title="cookie测试"></a>cookie测试</h6><p>Cookie 是存储在用户计算机上的小文件。这些基本上用于维护会话 - 主要是登录会话。通过在浏览器选项中启用或禁用 Cookie 来测试应用程序。</p>
-<p>在写入用户计算机之前，测试 Cookie 是否已加密。如果您正在测试会话 Cookie（即在会话结束后过期的 Cookie），请在会话结束后检查登录会话和用户统计信息。通过删除 Cookie 来检查对应用程序安全的影响。</p>
-<h6 id="HTML-x2F-CSS测试"><a href="#HTML-x2F-CSS测试" class="headerlink" title="HTML&#x2F;CSS测试"></a>HTML&#x2F;CSS测试</h6><p>如果您正在为搜索引擎优化您的网站，那么HTML &#x2F; CSS验证是最重要的。主要验证网站的HTML语法错误。检查该网站是否可被不同的搜索引擎抓取。</p>
-<h6 id="数据库连接测试"><a href="#数据库连接测试" class="headerlink" title="数据库连接测试"></a>数据库连接测试</h6><p>数据一致性在 Web 应用程序中也非常重要。在编辑、删除、修改表单或执行任何与数据库相关的功能时检查数据完整性和错误。</p>
-<p>检查是否正确执行了所有数据库查询，检索了数据并正确更新了数据。有关数据库测试的更多信息可能是数据库上的负载，我们将在下面的Web负载或性能测试中解决此问题。</p>
-<p>在测试网站功能时，还应该测试以下内容：</p>
-<h6 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h6><p>i. 内部链接<br>ii.外部链接<br>iii.邮件链接<br>iv.断开的链接</p>
-<h6 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h6><ol>
-<li>字段验证</li>
-<li>错误输入的错误消息</li>
-<li>可选和必填字段</li>
-</ol>
-<h6 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h6><p>测试将针对数据库完整性进行。</p>
-<h5 id="可用性测试"><a href="#可用性测试" class="headerlink" title="可用性测试"></a>可用性测试</h5><p>可用性测试是测量系统的人机交互特性，并确定不足以进行纠正。</p>
-<h5 id="导航测试"><a href="#导航测试" class="headerlink" title="导航测试"></a>导航测试</h5><p>导航是指用户如何浏览网页、不同的控件（如按钮、框）或用户如何使用页面上的链接浏览不同的页面。</p>
-<h6 id="可用性测试应包括以下内容"><a href="#可用性测试应包括以下内容" class="headerlink" title="可用性测试应包括以下内容"></a>可用性测试应包括以下内容</h6><ul>
-<li>该网站应易于使用。</li>
-<li>所提供的说明应非常清楚。</li>
-<li>检查提供的说明是否完全符合其目的。</li>
-<li>每个页面上都应提供主菜单。</li>
-<li>它应该足够一致。</li>
-</ul>
-<h6 id="内容检查"><a href="#内容检查" class="headerlink" title="内容检查"></a>内容检查</h6><p>内容应符合逻辑且易于理解。检查拼写错误。深色背景使用会让用户不喜欢，不应在网站主题中使用。应该遵循一些用于网页和内容构建的标准颜色。这些是普遍接受的标准。内容应该是有意义的。所有锚文本链接都应正常工作。图像应以适当的尺寸正确放置。这些是页面开发中应遵循的一些基本重要标准。你的任务是验证所有内容以进行 UI 测试。</p>
-<h6 id="用于帮助用户搜索信息"><a href="#用于帮助用户搜索信息" class="headerlink" title="用于帮助用户搜索信息"></a>用于帮助用户搜索信息</h6><p>与搜索选项一样，站点地图也有助于处理文件等。站点地图应与网站上的所有链接一起提供，并具有正确的导航树视图。检查站点地图上的所有链接。</p>
-<p>“在网站中搜索”选项将帮助用户轻松快速地找到他们正在寻找的内容页面。这些都是可选项目，如果存在，则应对其进行验证。</p>
-<h5 id="接口测试"><a href="#接口测试" class="headerlink" title="接口测试"></a>接口测试</h5><p>在页面测试中，应测试服务器端接口。这可以通过验证通信是否正确完成。应测试服务器与软件、硬件、网络和数据库的兼容性。</p>
-<p>主要接口有：</p>
-<ul>
-<li>页面服务器和应用程序服务器接口</li>
-<li>应用程序服务器和数据库服务器接口。</li>
-</ul>
-<p>检查这些服务器之间的所有交互是否都已执行，错误是否得到正确处理。如果数据库或 Web 服务器为应用程序服务器的任何查询返回错误消息，那么应用程序服务器应捕获这些错误消息并将其适当地显示给用户。</p>
-<p>检查如果用户中断其中的任何事务会发生什么情况？检查如果与Web服务器的连接在两者之间重置会发生什么？</p>
-<h5 id="兼容性测试"><a href="#兼容性测试" class="headerlink" title="兼容性测试"></a>兼容性测试</h5><p>网站的兼容性是一个非常重要的测试方面。查看要执行的兼容性测试：</p>
-<ul>
-<li>浏览器兼容性</li>
-<li>操作系统兼容性</li>
-<li>移动浏览</li>
-<li>打印选项</li>
-</ul>
-<h6 id="浏览器兼容性："><a href="#浏览器兼容性：" class="headerlink" title="浏览器兼容性："></a>浏览器兼容性：</h6><p>在我的网络测试生涯中，我经历过这是网站测试中最具影响力的部分。<br>某些应用程序非常依赖于浏览器。不同的浏览器具有不同的配置和设置，您的网页应与之兼容。</p>
-<p>您的网站编码应该是跨浏览器平台兼容的。如果您正在使用 Java 脚本或 AJAX 调用 UI 功能，则执行安全检查或验证会给页面应用程序的浏览器兼容性测试带来更多压力。</p>
-<p>在不同的浏览器上测试页面应用程序，如Edge，Firefox，Chrome，Netscape Navigator，AOL，Safari，Opera浏览器和不同版本。</p>
-<h6 id="操作系统兼容性："><a href="#操作系统兼容性：" class="headerlink" title="操作系统兼容性："></a>操作系统兼容性：</h6><p>Web 应用程序中的某些功能是它可能不与所有操作系统兼容。Web开发中使用的所有新技术，如图形设计和界面调用（如不同的API）可能并非在所有操作系统中都可用。</p>
-<p>因此，在具有不同操作系统风格的Windows，Unix，MAC，Linux，Solaris等不同操作系统上测试您的Web应用程序。</p>
-<h6 id="移动浏览："><a href="#移动浏览：" class="headerlink" title="移动浏览："></a>移动浏览：</h6><p>在移动浏览器上测试网页。移动设备上也可能存在兼容性问题。</p>
-<h6 id="打印选项："><a href="#打印选项：" class="headerlink" title="打印选项："></a>打印选项：</h6><p>如果要提供页面打印选项，请确保字体，页面对齐方式，页面图形等正确打印。页面应适合纸张大小或根据打印选项中提到的大小。</p>
-<h5 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h5><p>页面 应用程序应承受重负载。页面性能测试应包括：</p>
-<ul>
-<li>网络负载测试</li>
-<li>网络压力测试</li>
-</ul>
-<p>在不同的互联网连接速度下测试应用程序性能。</p>
-<p>页面负载测试：需要测试是否有多个用户正在访问或请求同一页面。系统能否维持峰值负载时间？站点应处理许多并发用户请求、来自用户的大量输入数据、同时连接到数据库、特定页面上的重负载等。</p>
-<p>网络压力测试：通常，应力意味着将系统拉伸到其指定的限值之外。执行页面压力测试以通过施加压力来破坏站点，并检查系统如何对压力做出反应以及如何从崩溃中恢复。压力通常放在输入字段，登录和注册区域。</p>
-<p>在页面性能中，在不同操作系统和不同硬件平台上测试网站功能时，会检查软件和硬件内存泄漏错误。</p>
-<p>性能测试可用于了解网站的可伸缩性，或对第三方产品（如服务器和中间件）环境中的性能进行基准测试，以便进行潜在购买。</p>
-<h6 id="连接速度"><a href="#连接速度" class="headerlink" title="连接速度"></a>连接速度</h6><p>在各种网络上经过测试，如拨号，ISDN等。</p>
-<h6 id="页面加载"><a href="#页面加载" class="headerlink" title="页面加载"></a>页面加载</h6><p>页面加载性能可以用Lighthouse进行测试。</p>
-<p>i.每次最多承受用户数？<br>ii. 检查峰值负载和系统的行为方式</p>
-<p>iii.用户访问的大量数据</p>
-<h6 id="压力测试"><a href="#压力测试" class="headerlink" title="压力测试"></a>压力测试</h6><p>i. 连续载荷<br>ii.内存、CPU、文件处理等性能</p>
-<h5 id="安全测试"><a href="#安全测试" class="headerlink" title="安全测试"></a>安全测试</h5><p>以下是页面安全测试的一些测试用例：</p>
-<ul>
-<li>通过将内部 URL 直接粘贴到浏览器地址栏中而不登录来进行测试。不应打开内部页面。</li>
-<li>如果您使用用户名和密码登录并浏览内部页面，请尝试直接更改URL选项。即，如果您正在检查一些发布者站点统计信息，则发布者站点 ID &#x3D; 123。尝试直接将 URL 站点 ID 参数更改为与登录用户无关的其他站点 ID。应拒绝此用户查看其他人的统计信息的访问权限。</li>
-<li>尝试在输入字段中输入一些无效的输入，例如登录用户名，密码，输入文本框等。检查系统对所有无效输入的反应。</li>
-<li>页面目录和文件不应直接访问，除非为它们提供了下载选项。</li>
-<li>测试验证码以自动执行脚本登录。</li>
-<li>测试 SSL 是否用于安全措施。如果使用，当用户从不安全的页面HTTP:&#x2F;&#x2F;切换到安全 HTTPS:&#x2F;&#x2F; 页面时，应显示正确的消息，反之亦然。</li>
-<li>所有事务、错误消息和安全漏洞尝试都应记录在服务器上某个位置的日志文件中。</li>
-</ul>
-<p>测试页面安全性的主要原因是识别潜在的漏洞并随后修复它们。</p>
-<ul>
-<li>网络扫描</li>
-<li>漏洞扫描</li>
-<li>密码破解</li>
-<li>日志审查</li>
-<li>完整性检查器</li>
-<li>病毒检测</li>
-</ul>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>测试</tag>
-        <tag>页面测试</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>BMCweb解释</title>
     <url>/Echo/2020/01/17/BMCweb%E8%A7%A3%E9%87%8A/</url>
     <content><![CDATA[<p><strong>UID****：</strong>定位作用，控制定位灯是否亮起，便于寻找机器</p>
@@ -1605,6 +1605,114 @@
       <tags>
         <tag>大数据</tag>
         <tag>kafka</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>cetnos 7.7单节点安装部署k8s（v1.18.2）</title>
+    <url>/Echo/2020/05/13/cetnos-7-7%E5%8D%95%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2k8s%EF%BC%88v1-18-2%EF%BC%89/</url>
+    <content><![CDATA[<h4 id="1-配置hosts文件"><a href="#1-配置hosts文件" class="headerlink" title="1.配置hosts文件"></a>1.配置hosts文件</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/hosts</span><br></pre></td></tr></table></figure>
+
+<p>本机ip  本机hostname 本机hostname</p>
+<h4 id="2-关闭防火墙-sawp等"><a href="#2-关闭防火墙-sawp等" class="headerlink" title="2.关闭防火墙, sawp等"></a>2.关闭防火墙, sawp等</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl <span class="built_in">disable</span> firewalld</span><br><span class="line">swapoff -a <span class="comment">#此处为临时关闭</span></span><br></pre></td></tr></table></figure>
+
+<p>#注释掉 &#x2F;etc&#x2F;fstab 里面这一行 &#x2F;dev&#x2F;mapper&#x2F;centos-swap swap                    swap    defaults        0 0</p>
+<h4 id="3-禁用selinux"><a href="#3-禁用selinux" class="headerlink" title="3.禁用selinux"></a>3.禁用selinux</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br><span class="line">SELINUX=disabled</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-修改iptables参数-RHEL-x2F-CentOS-7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题"><a href="#4-修改iptables参数-RHEL-x2F-CentOS-7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题" class="headerlink" title="4.修改iptables参数 :: RHEL &#x2F; CentOS 7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题"></a>4.修改iptables参数 :: RHEL &#x2F; CentOS 7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">cat &lt;&lt;<span class="string">EOF &gt;  /etc/sysctl.d/k8s.conf</span></span><br><span class="line"><span class="string">vm.swappiness = 0</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-ip6tables = 1</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-iptables = 1</span></span><br><span class="line"><span class="string">net.ipv4.ip_forward = 1</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"><span class="comment">#使配置生效</span></span><br><span class="line">modprobe br_netfilter</span><br><span class="line">sysctl -p /etc/sysctl.d/k8s.conf</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-安装docker-使用阿里镜像"><a href="#5-安装docker-使用阿里镜像" class="headerlink" title="5.安装docker(使用阿里镜像)"></a>5.安装docker(使用阿里镜像)</h4><h5 id="step-1-安装必要的一些系统工具"><a href="#step-1-安装必要的一些系统工具" class="headerlink" title="step 1: 安装必要的一些系统工具"></a>step 1: 安装必要的一些系统工具</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-2-添加软件源信息"><a href="#Step-2-添加软件源信息" class="headerlink" title="Step 2: 添加软件源信息"></a>Step 2: 添加软件源信息</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-3-更新并安装Docker-CE"><a href="#Step-3-更新并安装Docker-CE" class="headerlink" title="Step 3: 更新并安装Docker-CE"></a>Step 3: 更新并安装Docker-CE</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum makecache fast</span><br><span class="line">sudo yum -y install docker-ce</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-4-开启Docker服务"><a href="#Step-4-开启Docker服务" class="headerlink" title="Step 4: 开启Docker服务"></a>Step 4: 开启Docker服务</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-5-修改cgroupdriver-和镜像地址"><a href="#Step-5-修改cgroupdriver-和镜像地址" class="headerlink" title="Step 5: 修改cgroupdriver 和镜像地址"></a>Step 5: 修改cgroupdriver 和镜像地址</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/docker/daemon.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;exec-opts&quot;</span>: [<span class="string">&quot;native.cgroupdriver=systemd&quot;</span>],</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://e7l8pkuq.mirror.aliyuncs.com&quot;</span>,<span class="string">&quot;https://hub-mirror.c.163.com/&quot;</span>,<span class="string">&quot;https://reg-mirror.qiniu.com&quot;</span>]</span><br><span class="line">&#125;</span><br><span class="line"> <span class="comment"># 安装校验 docker version</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-6-安装kubernetes"><a href="#Step-6-安装kubernetes" class="headerlink" title="Step  6.安装kubernetes"></a>Step  6.安装kubernetes</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">cat &lt;&lt;<span class="string">EOF &gt; /etc/yum.repos.d/kubernetes.repo</span></span><br><span class="line"><span class="string">[kubernetes]</span></span><br><span class="line"><span class="string">name=Kubernetes</span></span><br><span class="line"><span class="string">baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64/</span></span><br><span class="line"><span class="string">enabled=1</span></span><br><span class="line"><span class="string">gpgcheck=1</span></span><br><span class="line"><span class="string">repo_gpgcheck=1</span></span><br><span class="line"><span class="string">gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line">setenforce 0</span><br><span class="line">yum install -y kubelet kubeadm kubectl</span><br><span class="line">systemctl <span class="built_in">enable</span> kubelet &amp;&amp; systemctl start kubelet</span><br><span class="line"> <span class="comment"># 出现索引lgpg检查失败时，请用yum install -y --nogpgcheck kubelet kubeadm kubectl</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="step-7-kubeadm初始化安装"><a href="#step-7-kubeadm初始化安装" class="headerlink" title="step 7.kubeadm初始化安装"></a>step 7.kubeadm初始化安装</h5><p>kubeadm init –apiserver-advertise-address&#x3D;本机IP –image-repository registry.aliyuncs.com&#x2F;google_containers –kubernetes-version 版本号 –pod-network-cidr&#x3D;10.244.0.0&#x2F;16</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubeadm init --apiserver-advertise-address=192.168.94.129 --image-repository registry.aliyuncs.com/google_containers --kubernetes-version 1.18.2 --pod-network-cidr=10.244.0.0/16</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-8-初始化安装成功后进行配置"><a href="#step-8-初始化安装成功后进行配置" class="headerlink" title="step 8.初始化安装成功后进行配置"></a>step 8.初始化安装成功后进行配置</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mkdir -p <span class="variable">$HOME</span>/.kube</span><br><span class="line">sudo cp -i /etc/kubernetes/admin.conf <span class="variable">$HOME</span>/.kube/config</span><br><span class="line">sudo chown $(id -u):$(id -g) <span class="variable">$HOME</span>/.kube/config</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-9-查看kubelet状态"><a href="#step-9-查看kubelet状态" class="headerlink" title="step 9.查看kubelet状态"></a>step 9.查看kubelet状态</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl status kubelet.service</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-10-确认每个组件的状态"><a href="#step-10-确认每个组件的状态" class="headerlink" title="step 10.确认每个组件的状态"></a>step 10.确认每个组件的状态</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl get cs</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-11-查看node状态，此时会发现处于NoReady"><a href="#step-11-查看node状态，此时会发现处于NoReady" class="headerlink" title="step 11.查看node状态，此时会发现处于NoReady"></a>step 11.查看node状态，此时会发现处于NoReady</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl get node</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-12-安装port-Network-flannel-k8s-cluster-工作-须安装pod网络，否则pod之间无法通信，k8s支持多种方案"><a href="#step-12-安装port-Network-flannel-k8s-cluster-工作-须安装pod网络，否则pod之间无法通信，k8s支持多种方案" class="headerlink" title="step 12.安装port Network( flannel )  : k8s cluster 工作 须安装pod网络，否则pod之间无法通信，k8s支持多种方案"></a>step 12.安装port Network( flannel )  : k8s cluster 工作 须安装pod网络，否则pod之间无法通信，k8s支持多种方案</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml</span><br></pre></td></tr></table></figure>
+
+<p>建议将kube-fannle文件拷贝至本地，将其中所需的镜像进行替换。</p>
+<h5 id="step-13-检查pod-确保每个pod都是running"><a href="#step-13-检查pod-确保每个pod都是running" class="headerlink" title="step 13.检查pod,确保每个pod都是running"></a>step 13.检查pod,确保每个pod都是running</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl get pod --all-namespaces -o wide</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>环境安装</category>
+      </categories>
+      <tags>
+        <tag>K8S</tag>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>cetnos 8.2单节点安装部署k8s（v1.18.2）</title>
+    <url>/Echo/2020/08/10/cetnos-8-2%E5%8D%95%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2k8s%EF%BC%88v1-18-2%EF%BC%89/</url>
+    <content><![CDATA[<h4 id="1-配置hosts文件"><a href="#1-配置hosts文件" class="headerlink" title="1.配置hosts文件"></a>1.配置hosts文件</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/hosts</span><br></pre></td></tr></table></figure>
+
+<p>本机ip  本机hostname 本机hostname</p>
+<h4 id="2-关闭防火墙-sawp等"><a href="#2-关闭防火墙-sawp等" class="headerlink" title="2.关闭防火墙, sawp等"></a>2.关闭防火墙, sawp等</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl <span class="built_in">disable</span> firewalld</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-关闭swap"><a href="#3-关闭swap" class="headerlink" title="3.关闭swap"></a>3.关闭swap</h4><h4 id="4-禁用selinux"><a href="#4-禁用selinux" class="headerlink" title="4.禁用selinux"></a>4.禁用selinux</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br><span class="line">SELINUX=disabled</span><br><span class="line">/usr/sbin/sestatus -v  <span class="comment"># 查看selinux状态</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="5-安装docker"><a href="#5-安装docker" class="headerlink" title="5.安装docker"></a>5.安装docker</h4><h5 id="step-1-安装必要的一些系统工具"><a href="#step-1-安装必要的一些系统工具" class="headerlink" title="step 1: 安装必要的一些系统工具"></a>step 1: 安装必要的一些系统工具</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-2-添加软件源信息"><a href="#Step-2-添加软件源信息" class="headerlink" title="Step 2: 添加软件源信息"></a>Step 2: 添加软件源信息</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-3-更新并安装Docker-CE"><a href="#Step-3-更新并安装Docker-CE" class="headerlink" title="Step 3: 更新并安装Docker-CE"></a>Step 3: 更新并安装Docker-CE</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum makecache --refresh</span><br><span class="line">sudo yum -y install docker-ce</span><br><span class="line"><span class="comment"># 发现报错：Problem: package docker-ce-3:19.03.12-3.el7.x86_64 requires containerd.io &gt;= 1.2.2-3, but none of the providers can be installed</span></span><br><span class="line"><span class="comment"># 因为containerd 版本过低</span></span><br><span class="line">dnf install container-selinux</span><br><span class="line">通过yum -y install https://download.docker.com/linux/centos/7/x86_64/edge/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm 升级即可</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-4-docker-修改Cgroup-Driver以及docker镜像拉取地址"><a href="#Step-4-docker-修改Cgroup-Driver以及docker镜像拉取地址" class="headerlink" title="Step 4: docker 修改Cgroup Driver以及docker镜像拉取地址"></a>Step 4: docker 修改Cgroup Driver以及docker镜像拉取地址</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"> cat /etc/docker/daemon.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://e7l8pkuq.mirror.aliyuncs.com&quot;</span>],</span><br><span class="line">  <span class="string">&quot;exec-opts&quot;</span>: [<span class="string">&quot;native.cgroupdriver=systemd&quot;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-5-开启Docker服务"><a href="#Step-5-开启Docker服务" class="headerlink" title="Step 5: 开启Docker服务"></a>Step 5: 开启Docker服务</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-安装kubectl"><a href="#6-安装kubectl" class="headerlink" title="6.安装kubectl"></a>6.安装kubectl</h4><h5 id="step-1：下载最新kubectl最新资源"><a href="#step-1：下载最新kubectl最新资源" class="headerlink" title="step 1：下载最新kubectl最新资源"></a>step 1：下载最新kubectl最新资源</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">curl -LO <span class="string">&quot;https://storage.googleapis.com/kubernetes-release/release/<span class="subst">$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)</span>/bin/linux/amd64/kubectl&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="step-2：添加执行权限"><a href="#step-2：添加执行权限" class="headerlink" title="step 2：添加执行权限"></a>step 2：添加执行权限</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">chmod +x ./kubectl</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-3：移动kubectl至bin路径"><a href="#step-3：移动kubectl至bin路径" class="headerlink" title="step 3：移动kubectl至bin路径"></a>step 3：移动kubectl至bin路径</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo mv ./kubectl /usr/<span class="built_in">local</span>/bin/kubectl</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-4：确认安装的版本"><a href="#step-4：确认安装的版本" class="headerlink" title="step 4：确认安装的版本"></a>step 4：确认安装的版本</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl version --client</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-安装minikube"><a href="#7-安装minikube" class="headerlink" title="7.安装minikube"></a>7.安装minikube</h4><h5 id="step-1：确认是否支持虚拟化"><a href="#step-1：确认是否支持虚拟化" class="headerlink" title="step 1：确认是否支持虚拟化"></a>step 1：确认是否支持虚拟化</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">grep -E --color <span class="string">&#x27;vmx|svm&#x27;</span> /proc/cpuinfo</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="step-2：下载minikube资源"><a href="#step-2：下载minikube资源" class="headerlink" title="step 2：下载minikube资源"></a>step 2：下载minikube资源</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \</span><br><span class="line">  &amp;&amp; chmod +x minikube</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="step-3：添加minikube进入系统命令"><a href="#step-3：添加minikube进入系统命令" class="headerlink" title="step 3：添加minikube进入系统命令"></a>step 3：添加minikube进入系统命令</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo mkdir -p /usr/<span class="built_in">local</span>/bin/</span><br><span class="line">sudo install minikube /usr/<span class="built_in">local</span>/bin/</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="step-4：启动-minikube（使用的VM安装的centos-8因此设置driver-x3D-none）"><a href="#step-4：启动-minikube（使用的VM安装的centos-8因此设置driver-x3D-none）" class="headerlink" title="step 4：启动 minikube（使用的VM安装的centos 8因此设置driver&#x3D;none）"></a>step 4：启动 minikube（使用的VM安装的centos 8因此设置driver&#x3D;none）</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">minikube start --driver=none --image-repository=registry.cn-hangzhou.aliyuncs.com/google_containers</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="step-5：确认minikube状态"><a href="#step-5：确认minikube状态" class="headerlink" title="step 5：确认minikube状态"></a>step 5：确认minikube状态</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">minikube status</span><br></pre></td></tr></table></figure>
+
+<p>8.istio安装</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">istioctl manifest apply --<span class="built_in">set</span> profile=demo</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>环境安装</category>
+      </categories>
+      <tags>
+        <tag>K8S</tag>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -2357,114 +2465,6 @@
       </tags>
   </entry>
   <entry>
-    <title>cetnos 7.7单节点安装部署k8s（v1.18.2）</title>
-    <url>/Echo/2020/05/13/cetnos-7-7%E5%8D%95%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2k8s%EF%BC%88v1-18-2%EF%BC%89/</url>
-    <content><![CDATA[<h4 id="1-配置hosts文件"><a href="#1-配置hosts文件" class="headerlink" title="1.配置hosts文件"></a>1.配置hosts文件</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/hosts</span><br></pre></td></tr></table></figure>
-
-<p>本机ip  本机hostname 本机hostname</p>
-<h4 id="2-关闭防火墙-sawp等"><a href="#2-关闭防火墙-sawp等" class="headerlink" title="2.关闭防火墙, sawp等"></a>2.关闭防火墙, sawp等</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl <span class="built_in">disable</span> firewalld</span><br><span class="line">swapoff -a <span class="comment">#此处为临时关闭</span></span><br></pre></td></tr></table></figure>
-
-<p>#注释掉 &#x2F;etc&#x2F;fstab 里面这一行 &#x2F;dev&#x2F;mapper&#x2F;centos-swap swap                    swap    defaults        0 0</p>
-<h4 id="3-禁用selinux"><a href="#3-禁用selinux" class="headerlink" title="3.禁用selinux"></a>3.禁用selinux</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br><span class="line">SELINUX=disabled</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-修改iptables参数-RHEL-x2F-CentOS-7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题"><a href="#4-修改iptables参数-RHEL-x2F-CentOS-7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题" class="headerlink" title="4.修改iptables参数 :: RHEL &#x2F; CentOS 7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题"></a>4.修改iptables参数 :: RHEL &#x2F; CentOS 7上的一些用户报告了由于iptables被绕过而导致流量路由不正确的问题</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">cat &lt;&lt;<span class="string">EOF &gt;  /etc/sysctl.d/k8s.conf</span></span><br><span class="line"><span class="string">vm.swappiness = 0</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-ip6tables = 1</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-iptables = 1</span></span><br><span class="line"><span class="string">net.ipv4.ip_forward = 1</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"><span class="comment">#使配置生效</span></span><br><span class="line">modprobe br_netfilter</span><br><span class="line">sysctl -p /etc/sysctl.d/k8s.conf</span><br></pre></td></tr></table></figure>
-
-<h4 id="5-安装docker-使用阿里镜像"><a href="#5-安装docker-使用阿里镜像" class="headerlink" title="5.安装docker(使用阿里镜像)"></a>5.安装docker(使用阿里镜像)</h4><h5 id="step-1-安装必要的一些系统工具"><a href="#step-1-安装必要的一些系统工具" class="headerlink" title="step 1: 安装必要的一些系统工具"></a>step 1: 安装必要的一些系统工具</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-2-添加软件源信息"><a href="#Step-2-添加软件源信息" class="headerlink" title="Step 2: 添加软件源信息"></a>Step 2: 添加软件源信息</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-3-更新并安装Docker-CE"><a href="#Step-3-更新并安装Docker-CE" class="headerlink" title="Step 3: 更新并安装Docker-CE"></a>Step 3: 更新并安装Docker-CE</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum makecache fast</span><br><span class="line">sudo yum -y install docker-ce</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-4-开启Docker服务"><a href="#Step-4-开启Docker服务" class="headerlink" title="Step 4: 开启Docker服务"></a>Step 4: 开启Docker服务</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-5-修改cgroupdriver-和镜像地址"><a href="#Step-5-修改cgroupdriver-和镜像地址" class="headerlink" title="Step 5: 修改cgroupdriver 和镜像地址"></a>Step 5: 修改cgroupdriver 和镜像地址</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/docker/daemon.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;exec-opts&quot;</span>: [<span class="string">&quot;native.cgroupdriver=systemd&quot;</span>],</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://e7l8pkuq.mirror.aliyuncs.com&quot;</span>,<span class="string">&quot;https://hub-mirror.c.163.com/&quot;</span>,<span class="string">&quot;https://reg-mirror.qiniu.com&quot;</span>]</span><br><span class="line">&#125;</span><br><span class="line"> <span class="comment"># 安装校验 docker version</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-6-安装kubernetes"><a href="#Step-6-安装kubernetes" class="headerlink" title="Step  6.安装kubernetes"></a>Step  6.安装kubernetes</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">cat &lt;&lt;<span class="string">EOF &gt; /etc/yum.repos.d/kubernetes.repo</span></span><br><span class="line"><span class="string">[kubernetes]</span></span><br><span class="line"><span class="string">name=Kubernetes</span></span><br><span class="line"><span class="string">baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64/</span></span><br><span class="line"><span class="string">enabled=1</span></span><br><span class="line"><span class="string">gpgcheck=1</span></span><br><span class="line"><span class="string">repo_gpgcheck=1</span></span><br><span class="line"><span class="string">gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line">setenforce 0</span><br><span class="line">yum install -y kubelet kubeadm kubectl</span><br><span class="line">systemctl <span class="built_in">enable</span> kubelet &amp;&amp; systemctl start kubelet</span><br><span class="line"> <span class="comment"># 出现索引lgpg检查失败时，请用yum install -y --nogpgcheck kubelet kubeadm kubectl</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="step-7-kubeadm初始化安装"><a href="#step-7-kubeadm初始化安装" class="headerlink" title="step 7.kubeadm初始化安装"></a>step 7.kubeadm初始化安装</h5><p>kubeadm init –apiserver-advertise-address&#x3D;本机IP –image-repository registry.aliyuncs.com&#x2F;google_containers –kubernetes-version 版本号 –pod-network-cidr&#x3D;10.244.0.0&#x2F;16</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubeadm init --apiserver-advertise-address=192.168.94.129 --image-repository registry.aliyuncs.com/google_containers --kubernetes-version 1.18.2 --pod-network-cidr=10.244.0.0/16</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-8-初始化安装成功后进行配置"><a href="#step-8-初始化安装成功后进行配置" class="headerlink" title="step 8.初始化安装成功后进行配置"></a>step 8.初始化安装成功后进行配置</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mkdir -p <span class="variable">$HOME</span>/.kube</span><br><span class="line">sudo cp -i /etc/kubernetes/admin.conf <span class="variable">$HOME</span>/.kube/config</span><br><span class="line">sudo chown $(id -u):$(id -g) <span class="variable">$HOME</span>/.kube/config</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-9-查看kubelet状态"><a href="#step-9-查看kubelet状态" class="headerlink" title="step 9.查看kubelet状态"></a>step 9.查看kubelet状态</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl status kubelet.service</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-10-确认每个组件的状态"><a href="#step-10-确认每个组件的状态" class="headerlink" title="step 10.确认每个组件的状态"></a>step 10.确认每个组件的状态</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl get cs</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-11-查看node状态，此时会发现处于NoReady"><a href="#step-11-查看node状态，此时会发现处于NoReady" class="headerlink" title="step 11.查看node状态，此时会发现处于NoReady"></a>step 11.查看node状态，此时会发现处于NoReady</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl get node</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-12-安装port-Network-flannel-k8s-cluster-工作-须安装pod网络，否则pod之间无法通信，k8s支持多种方案"><a href="#step-12-安装port-Network-flannel-k8s-cluster-工作-须安装pod网络，否则pod之间无法通信，k8s支持多种方案" class="headerlink" title="step 12.安装port Network( flannel )  : k8s cluster 工作 须安装pod网络，否则pod之间无法通信，k8s支持多种方案"></a>step 12.安装port Network( flannel )  : k8s cluster 工作 须安装pod网络，否则pod之间无法通信，k8s支持多种方案</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml</span><br></pre></td></tr></table></figure>
-
-<p>建议将kube-fannle文件拷贝至本地，将其中所需的镜像进行替换。</p>
-<h5 id="step-13-检查pod-确保每个pod都是running"><a href="#step-13-检查pod-确保每个pod都是running" class="headerlink" title="step 13.检查pod,确保每个pod都是running"></a>step 13.检查pod,确保每个pod都是running</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl get pod --all-namespaces -o wide</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>环境安装</category>
-      </categories>
-      <tags>
-        <tag>K8S</tag>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>cetnos 8.2单节点安装部署k8s（v1.18.2）</title>
-    <url>/Echo/2020/08/10/cetnos-8-2%E5%8D%95%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2k8s%EF%BC%88v1-18-2%EF%BC%89/</url>
-    <content><![CDATA[<h4 id="1-配置hosts文件"><a href="#1-配置hosts文件" class="headerlink" title="1.配置hosts文件"></a>1.配置hosts文件</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/hosts</span><br></pre></td></tr></table></figure>
-
-<p>本机ip  本机hostname 本机hostname</p>
-<h4 id="2-关闭防火墙-sawp等"><a href="#2-关闭防火墙-sawp等" class="headerlink" title="2.关闭防火墙, sawp等"></a>2.关闭防火墙, sawp等</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl <span class="built_in">disable</span> firewalld</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-关闭swap"><a href="#3-关闭swap" class="headerlink" title="3.关闭swap"></a>3.关闭swap</h4><h4 id="4-禁用selinux"><a href="#4-禁用selinux" class="headerlink" title="4.禁用selinux"></a>4.禁用selinux</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br><span class="line">SELINUX=disabled</span><br><span class="line">/usr/sbin/sestatus -v  <span class="comment"># 查看selinux状态</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="5-安装docker"><a href="#5-安装docker" class="headerlink" title="5.安装docker"></a>5.安装docker</h4><h5 id="step-1-安装必要的一些系统工具"><a href="#step-1-安装必要的一些系统工具" class="headerlink" title="step 1: 安装必要的一些系统工具"></a>step 1: 安装必要的一些系统工具</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-2-添加软件源信息"><a href="#Step-2-添加软件源信息" class="headerlink" title="Step 2: 添加软件源信息"></a>Step 2: 添加软件源信息</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-3-更新并安装Docker-CE"><a href="#Step-3-更新并安装Docker-CE" class="headerlink" title="Step 3: 更新并安装Docker-CE"></a>Step 3: 更新并安装Docker-CE</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum makecache --refresh</span><br><span class="line">sudo yum -y install docker-ce</span><br><span class="line"><span class="comment"># 发现报错：Problem: package docker-ce-3:19.03.12-3.el7.x86_64 requires containerd.io &gt;= 1.2.2-3, but none of the providers can be installed</span></span><br><span class="line"><span class="comment"># 因为containerd 版本过低</span></span><br><span class="line">dnf install container-selinux</span><br><span class="line">通过yum -y install https://download.docker.com/linux/centos/7/x86_64/edge/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm 升级即可</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-4-docker-修改Cgroup-Driver以及docker镜像拉取地址"><a href="#Step-4-docker-修改Cgroup-Driver以及docker镜像拉取地址" class="headerlink" title="Step 4: docker 修改Cgroup Driver以及docker镜像拉取地址"></a>Step 4: docker 修改Cgroup Driver以及docker镜像拉取地址</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"> cat /etc/docker/daemon.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://e7l8pkuq.mirror.aliyuncs.com&quot;</span>],</span><br><span class="line">  <span class="string">&quot;exec-opts&quot;</span>: [<span class="string">&quot;native.cgroupdriver=systemd&quot;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-5-开启Docker服务"><a href="#Step-5-开启Docker服务" class="headerlink" title="Step 5: 开启Docker服务"></a>Step 5: 开启Docker服务</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
-
-<h4 id="6-安装kubectl"><a href="#6-安装kubectl" class="headerlink" title="6.安装kubectl"></a>6.安装kubectl</h4><h5 id="step-1：下载最新kubectl最新资源"><a href="#step-1：下载最新kubectl最新资源" class="headerlink" title="step 1：下载最新kubectl最新资源"></a>step 1：下载最新kubectl最新资源</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">curl -LO <span class="string">&quot;https://storage.googleapis.com/kubernetes-release/release/<span class="subst">$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)</span>/bin/linux/amd64/kubectl&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="step-2：添加执行权限"><a href="#step-2：添加执行权限" class="headerlink" title="step 2：添加执行权限"></a>step 2：添加执行权限</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">chmod +x ./kubectl</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-3：移动kubectl至bin路径"><a href="#step-3：移动kubectl至bin路径" class="headerlink" title="step 3：移动kubectl至bin路径"></a>step 3：移动kubectl至bin路径</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo mv ./kubectl /usr/<span class="built_in">local</span>/bin/kubectl</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-4：确认安装的版本"><a href="#step-4：确认安装的版本" class="headerlink" title="step 4：确认安装的版本"></a>step 4：确认安装的版本</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl version --client</span><br></pre></td></tr></table></figure>
-
-<h4 id="7-安装minikube"><a href="#7-安装minikube" class="headerlink" title="7.安装minikube"></a>7.安装minikube</h4><h5 id="step-1：确认是否支持虚拟化"><a href="#step-1：确认是否支持虚拟化" class="headerlink" title="step 1：确认是否支持虚拟化"></a>step 1：确认是否支持虚拟化</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">grep -E --color <span class="string">&#x27;vmx|svm&#x27;</span> /proc/cpuinfo</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="step-2：下载minikube资源"><a href="#step-2：下载minikube资源" class="headerlink" title="step 2：下载minikube资源"></a>step 2：下载minikube资源</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \</span><br><span class="line">  &amp;&amp; chmod +x minikube</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="step-3：添加minikube进入系统命令"><a href="#step-3：添加minikube进入系统命令" class="headerlink" title="step 3：添加minikube进入系统命令"></a>step 3：添加minikube进入系统命令</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo mkdir -p /usr/<span class="built_in">local</span>/bin/</span><br><span class="line">sudo install minikube /usr/<span class="built_in">local</span>/bin/</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="step-4：启动-minikube（使用的VM安装的centos-8因此设置driver-x3D-none）"><a href="#step-4：启动-minikube（使用的VM安装的centos-8因此设置driver-x3D-none）" class="headerlink" title="step 4：启动 minikube（使用的VM安装的centos 8因此设置driver&#x3D;none）"></a>step 4：启动 minikube（使用的VM安装的centos 8因此设置driver&#x3D;none）</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">minikube start --driver=none --image-repository=registry.cn-hangzhou.aliyuncs.com/google_containers</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="step-5：确认minikube状态"><a href="#step-5：确认minikube状态" class="headerlink" title="step 5：确认minikube状态"></a>step 5：确认minikube状态</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">minikube status</span><br></pre></td></tr></table></figure>
-
-<p>8.istio安装</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">istioctl manifest apply --<span class="built_in">set</span> profile=demo</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>环境安装</category>
-      </categories>
-      <tags>
-        <tag>K8S</tag>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>emqtt_bench安装与压测MQTTbroker</title>
     <url>/Echo/2021/12/15/emqtt-bench%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8E%8B%E6%B5%8BMQTTbroker/</url>
     <content><![CDATA[<h4 id="EMQX"><a href="#EMQX" class="headerlink" title="EMQX"></a>EMQX</h4><p><em>EMQ X</em> (Erlang&#x2F;Enterprise&#x2F;Elastic MQTT Broker) 是基于 Erlang&#x2F;OTP 平台开发的开源物联网 MQTT 消息服务器。</p>
@@ -2705,86 +2705,6 @@
       </tags>
   </entry>
   <entry>
-    <title>jekins环境搭建</title>
-    <url>/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
-    <content><![CDATA[<table>
-<thead>
-<tr>
-<th>环境</th>
-<th>版本</th>
-<th>包</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>JDK</td>
-<td>11.0.2</td>
-<td>jdk-11.0.2_linux-x64_bin.tar.gz</td>
-</tr>
-<tr>
-<td>Maven</td>
-<td>3.8.1</td>
-<td>apache-maven-3.8.1-bin.tar.gz</td>
-</tr>
-<tr>
-<td>Git</td>
-<td>2.9.5</td>
-<td>git-2.9.5.tar.gz</td>
-</tr>
-<tr>
-<td>Jenkins</td>
-<td>2.303.1 LTS</td>
-<td>jenkins.war</td>
-</tr>
-</tbody></table>
-<p>注：Jenkins的中英文系统跟随操作系统保持一致，如果想使用中文Jenkins，操作系统需要设置中文：<strong>zh_CN.UTF-8</strong></p>
-<h1 id="1-JDK安装部署"><a href="#1-JDK安装部署" class="headerlink" title="1.JDK安装部署"></a>1.JDK安装部署</h1><h2 id="1-1-旧JDK卸载"><a href="#1-1-旧JDK卸载" class="headerlink" title="1.1 旧JDK卸载"></a>1.1 旧JDK卸载</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">rpm -qa | grep -i java | xargs -n1 sudo rpm -e --nodeps</span><br><span class="line">rpm -qa：表示查询所有已经安装的软件包</span><br><span class="line">grep -i：表示过滤时不区分大小写</span><br><span class="line">xargs -n1：表示一次获取上次执行结果的一个值</span><br><span class="line">rpm -e --nodeps：表示卸载软件</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="1-2-安装指定JDK"><a href="#1-2-安装指定JDK" class="headerlink" title="1.2 安装指定JDK"></a>1.2 安装指定JDK</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 创建节点安装服务目录</span><br><span class="line">mkdir /opt/software</span><br><span class="line"># 解压JDK</span><br><span class="line">tar -zxvf jdk-11.0.2_linux-x64_bin.tar.gz -C /opt/software/</span><br><span class="line"># 配置环境变量</span><br><span class="line">vim /etc/profile</span><br><span class="line">export JAVA_HOME=/opt/software/jdk-11.0.2</span><br><span class="line">export PATH=$PATH:$JAVA_HOME/bin</span><br><span class="line">source /etc/profile</span><br><span class="line"># 验证JDK安装</span><br><span class="line">java -version</span><br></pre></td></tr></table></figure>
-
-<h1 id="2-关闭防火墙"><a href="#2-关闭防火墙" class="headerlink" title="2.关闭防火墙"></a>2.关闭防火墙</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl status firewalld		# 查看防火墙的状态</span><br><span class="line">systemctl stop firewalld		# 关闭防火墙</span><br><span class="line">systemctl disable firewalld		# 设置开机不启动</span><br><span class="line">systemctl is-enabled firewalld	# 查看防火墙服务是否设置开机启动</span><br></pre></td></tr></table></figure>
-
-<h1 id="3-安装Maven"><a href="#3-安装Maven" class="headerlink" title="3.安装Maven"></a>3.安装Maven</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 解压maven</span><br><span class="line">tar -zxvf apache-maven-3.8.1-bin.tar.gz -C /opt/software/</span><br><span class="line"># 配置环境变量</span><br><span class="line">vim /etc/profile</span><br><span class="line">export JAVA_HOME=/opt/software/jdk-11.0.2</span><br><span class="line">export MAVNE_HOME=/opt/software/apache-maven-3.8.1</span><br><span class="line">export PATH=$PATH:$JAVA_HOME/bin:$MAVNE_HOME/bin</span><br><span class="line">source /etc/profile</span><br><span class="line"># 检查maven安装</span><br><span class="line">mvn -version</span><br></pre></td></tr></table></figure>
-
-<h1 id="4-安装Git"><a href="#4-安装Git" class="headerlink" title="4.安装Git"></a>4.安装Git</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 1.安装编译 git 时需要的包</span><br><span class="line">yum install -y curl-devel expat-devel gettext-devel openssl-devel zlib-devel</span><br><span class="line">yum install -y gcc perl-ExtUtils-MakeMaker</span><br><span class="line"># 2.删除已有的 git</span><br><span class="line">yum remove -y git</span><br><span class="line"># 3.Git 官网下载 Git 最新版 tar 包，解压到/opt/software目录下</span><br><span class="line">tar -zxvf git-2.9.5.tar.gz -C /opt/software/</span><br><span class="line"># 4.编译安装</span><br><span class="line">cd /opt/software/git-2.9.5/</span><br><span class="line">make prefix=/usr/local/git all</span><br><span class="line">make prefix=/usr/local/git install</span><br><span class="line">echo &quot;export PATH=$PATH:/usr/local/git/bin&quot; &gt;&gt; /etc/bashrc</span><br><span class="line">source /etc/bashrc</span><br><span class="line"># 5.检查一下版本号</span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
-
-<h1 id="5-搭建Jenkins"><a href="#5-搭建Jenkins" class="headerlink" title="5.搭建Jenkins"></a>5.搭建Jenkins</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yum install -y fontconfig</span><br><span class="line"># Jenkins可以直接运行</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">nohup /usr/bin/java -jar /root/jenkins.war  --logfile=/var/<span class="built_in">log</span>/jenkins_server.log --httpPort=8088 &gt;  /root/jenkins_server.log 2&gt;&amp; 1 &amp;**</span><br></pre></td></tr></table></figure>
-
-<p>设置开机启动<br> vim &#x2F;etc&#x2F;rc.local</p>
-<h2 id="5-1-访问jekins"><a href="#5-1-访问jekins" class="headerlink" title="5.1 访问jekins"></a>5.1 访问jekins</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://yellow.bigdata:8088</span><br></pre></td></tr></table></figure>
-
-<h2 id="5-2-解锁Jenkins"><a href="#5-2-解锁Jenkins" class="headerlink" title="5.2 解锁Jenkins"></a>5.2 解锁Jenkins</h2><p>依据提示，查看&#x2F;root&#x2F;.jenkins&#x2F;secrets&#x2F;initialAdminPassword文件中内容，填入文本框，这里填写的密码，也是admin账号的密码</p>
-<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113151335779.png" alt="image-20211113151335779"></p>
-<h2 id="5-3-选择插件安装模式"><a href="#5-3-选择插件安装模式" class="headerlink" title="5.3 选择插件安装模式"></a>5.3 选择插件安装模式</h2><p>选择哪种插件的安装方式都可以，对后续操作没有太大影响，若后面有需要可以有针对性的安装插件，本次选择 “<strong>安装推荐的插件</strong>”，此时安装插件节点必须能够联网。</p>
-<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153312956.png" alt="image-20211113153312956"></p>
-<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153332209.png" alt="image-20211113153332209"></p>
-<p>打×的插件是由于网络传输导致的安装失败，后面再重新安装即可</p>
-<h2 id="5-4-新建账号或以管理员身份继续"><a href="#5-4-新建账号或以管理员身份继续" class="headerlink" title="5.4 新建账号或以管理员身份继续"></a>5.4 新建账号或以管理员身份继续</h2><p>可以选择使用admin账户继续，后面仍然有机会注册新账户</p>
-<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153358671.png" alt="image-20211113153358671"></p>
-<h2 id="5-5-实例配置"><a href="#5-5-实例配置" class="headerlink" title="5.5 实例配置"></a>5.5 实例配置</h2><p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153424306.png" alt="image-20211113153424306"></p>
-<h2 id="5-6-开始使用Jenkins"><a href="#5-6-开始使用Jenkins" class="headerlink" title="5.6 开始使用Jenkins"></a>5.6 开始使用Jenkins</h2><p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153454866.png" alt="image-20211113153454866"></p>
-<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153524832.png" alt="image-20211113153524832"></p>
-<h2 id="5-7-Jenkins设置中文"><a href="#5-7-Jenkins设置中文" class="headerlink" title="5.7 Jenkins设置中文"></a>5.7 Jenkins设置中文</h2><p>安装插件 Locale plugin , Localization: Chinese (Simplified) , Localization Support Plugin，如果失败就再安装一次</p>
-<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153552830.png" alt="image-20211113153552830"></p>
-<p>重启：<a href="http://yellow.bigdata:8088/restart">http://yellow.bigdata:8088/restart</a><br> 如果出现部分汉化，部分没有汉化，则卸载插件，重新安装插件<br> 如果还是存在部分汉化，部分没有汉化的现象，则如下操作：<br> 1.先设置Default Language：zh_US（含义：英文）<br> 2.重启Jenkins<br> 3.再设置Default Language：zh_CN（含义：中文）<br> 4.刷新即可</p>
-<h1 id="6-Jenkins系统管理初始化设置"><a href="#6-Jenkins系统管理初始化设置" class="headerlink" title="6.Jenkins系统管理初始化设置"></a>6.Jenkins系统管理初始化设置</h1><h2 id="6-1-全局工具配置"><a href="#6-1-全局工具配置" class="headerlink" title="6.1 全局工具配置"></a>6.1 全局工具配置</h2><p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153642733.png" alt="image-20211113153642733"></p>
-<p>JDK</p>
-<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153701355.png" alt="image-20211113153701355"></p>
-<p>Git</p>
-<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153722363.png" alt="image-20211113153722363"></p>
-<p>Maven</p>
-<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153742157.png" alt="image-20211113153742157"></p>
-]]></content>
-      <categories>
-        <category>环境安装</category>
-      </categories>
-      <tags>
-        <tag>jekins</tag>
-        <tag>CI/CD</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>kubeadm安装K8S（V1.22）</title>
     <url>/Echo/2022/01/18/kubeadm%E5%AE%89%E8%A3%85K8S%EF%BC%88V1-22%EF%BC%89/</url>
     <content><![CDATA[<h2 id="一-K8S1-20-x的重要更新"><a href="#一-K8S1-20-x的重要更新" class="headerlink" title="一.K8S1.20.x的重要更新"></a>一.K8S1.20.x的重要更新</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">1、Kubectl debug 设置一个临时容器</span><br><span class="line">2、Sidecar </span><br><span class="line">3、Volume：更改目录权限，fsGroup</span><br><span class="line">4、ConfigMap和Secret</span><br><span class="line"></span><br><span class="line">K8S官网：https://kubernetes.io/docs/setup/</span><br><span class="line">最新版高可用安装：https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/high-availability/</span><br></pre></td></tr></table></figure>
@@ -2933,6 +2853,86 @@
       </tags>
   </entry>
   <entry>
+    <title>jekins环境搭建</title>
+    <url>/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr>
+<th>环境</th>
+<th>版本</th>
+<th>包</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>JDK</td>
+<td>11.0.2</td>
+<td>jdk-11.0.2_linux-x64_bin.tar.gz</td>
+</tr>
+<tr>
+<td>Maven</td>
+<td>3.8.1</td>
+<td>apache-maven-3.8.1-bin.tar.gz</td>
+</tr>
+<tr>
+<td>Git</td>
+<td>2.9.5</td>
+<td>git-2.9.5.tar.gz</td>
+</tr>
+<tr>
+<td>Jenkins</td>
+<td>2.303.1 LTS</td>
+<td>jenkins.war</td>
+</tr>
+</tbody></table>
+<p>注：Jenkins的中英文系统跟随操作系统保持一致，如果想使用中文Jenkins，操作系统需要设置中文：<strong>zh_CN.UTF-8</strong></p>
+<h1 id="1-JDK安装部署"><a href="#1-JDK安装部署" class="headerlink" title="1.JDK安装部署"></a>1.JDK安装部署</h1><h2 id="1-1-旧JDK卸载"><a href="#1-1-旧JDK卸载" class="headerlink" title="1.1 旧JDK卸载"></a>1.1 旧JDK卸载</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">rpm -qa | grep -i java | xargs -n1 sudo rpm -e --nodeps</span><br><span class="line">rpm -qa：表示查询所有已经安装的软件包</span><br><span class="line">grep -i：表示过滤时不区分大小写</span><br><span class="line">xargs -n1：表示一次获取上次执行结果的一个值</span><br><span class="line">rpm -e --nodeps：表示卸载软件</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="1-2-安装指定JDK"><a href="#1-2-安装指定JDK" class="headerlink" title="1.2 安装指定JDK"></a>1.2 安装指定JDK</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 创建节点安装服务目录</span><br><span class="line">mkdir /opt/software</span><br><span class="line"># 解压JDK</span><br><span class="line">tar -zxvf jdk-11.0.2_linux-x64_bin.tar.gz -C /opt/software/</span><br><span class="line"># 配置环境变量</span><br><span class="line">vim /etc/profile</span><br><span class="line">export JAVA_HOME=/opt/software/jdk-11.0.2</span><br><span class="line">export PATH=$PATH:$JAVA_HOME/bin</span><br><span class="line">source /etc/profile</span><br><span class="line"># 验证JDK安装</span><br><span class="line">java -version</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-关闭防火墙"><a href="#2-关闭防火墙" class="headerlink" title="2.关闭防火墙"></a>2.关闭防火墙</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl status firewalld		# 查看防火墙的状态</span><br><span class="line">systemctl stop firewalld		# 关闭防火墙</span><br><span class="line">systemctl disable firewalld		# 设置开机不启动</span><br><span class="line">systemctl is-enabled firewalld	# 查看防火墙服务是否设置开机启动</span><br></pre></td></tr></table></figure>
+
+<h1 id="3-安装Maven"><a href="#3-安装Maven" class="headerlink" title="3.安装Maven"></a>3.安装Maven</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 解压maven</span><br><span class="line">tar -zxvf apache-maven-3.8.1-bin.tar.gz -C /opt/software/</span><br><span class="line"># 配置环境变量</span><br><span class="line">vim /etc/profile</span><br><span class="line">export JAVA_HOME=/opt/software/jdk-11.0.2</span><br><span class="line">export MAVNE_HOME=/opt/software/apache-maven-3.8.1</span><br><span class="line">export PATH=$PATH:$JAVA_HOME/bin:$MAVNE_HOME/bin</span><br><span class="line">source /etc/profile</span><br><span class="line"># 检查maven安装</span><br><span class="line">mvn -version</span><br></pre></td></tr></table></figure>
+
+<h1 id="4-安装Git"><a href="#4-安装Git" class="headerlink" title="4.安装Git"></a>4.安装Git</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 1.安装编译 git 时需要的包</span><br><span class="line">yum install -y curl-devel expat-devel gettext-devel openssl-devel zlib-devel</span><br><span class="line">yum install -y gcc perl-ExtUtils-MakeMaker</span><br><span class="line"># 2.删除已有的 git</span><br><span class="line">yum remove -y git</span><br><span class="line"># 3.Git 官网下载 Git 最新版 tar 包，解压到/opt/software目录下</span><br><span class="line">tar -zxvf git-2.9.5.tar.gz -C /opt/software/</span><br><span class="line"># 4.编译安装</span><br><span class="line">cd /opt/software/git-2.9.5/</span><br><span class="line">make prefix=/usr/local/git all</span><br><span class="line">make prefix=/usr/local/git install</span><br><span class="line">echo &quot;export PATH=$PATH:/usr/local/git/bin&quot; &gt;&gt; /etc/bashrc</span><br><span class="line">source /etc/bashrc</span><br><span class="line"># 5.检查一下版本号</span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
+
+<h1 id="5-搭建Jenkins"><a href="#5-搭建Jenkins" class="headerlink" title="5.搭建Jenkins"></a>5.搭建Jenkins</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yum install -y fontconfig</span><br><span class="line"># Jenkins可以直接运行</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">nohup /usr/bin/java -jar /root/jenkins.war  --logfile=/var/<span class="built_in">log</span>/jenkins_server.log --httpPort=8088 &gt;  /root/jenkins_server.log 2&gt;&amp; 1 &amp;**</span><br></pre></td></tr></table></figure>
+
+<p>设置开机启动<br> vim &#x2F;etc&#x2F;rc.local</p>
+<h2 id="5-1-访问jekins"><a href="#5-1-访问jekins" class="headerlink" title="5.1 访问jekins"></a>5.1 访问jekins</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://yellow.bigdata:8088</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-2-解锁Jenkins"><a href="#5-2-解锁Jenkins" class="headerlink" title="5.2 解锁Jenkins"></a>5.2 解锁Jenkins</h2><p>依据提示，查看&#x2F;root&#x2F;.jenkins&#x2F;secrets&#x2F;initialAdminPassword文件中内容，填入文本框，这里填写的密码，也是admin账号的密码</p>
+<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113151335779.png" alt="image-20211113151335779"></p>
+<h2 id="5-3-选择插件安装模式"><a href="#5-3-选择插件安装模式" class="headerlink" title="5.3 选择插件安装模式"></a>5.3 选择插件安装模式</h2><p>选择哪种插件的安装方式都可以，对后续操作没有太大影响，若后面有需要可以有针对性的安装插件，本次选择 “<strong>安装推荐的插件</strong>”，此时安装插件节点必须能够联网。</p>
+<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153312956.png" alt="image-20211113153312956"></p>
+<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153332209.png" alt="image-20211113153332209"></p>
+<p>打×的插件是由于网络传输导致的安装失败，后面再重新安装即可</p>
+<h2 id="5-4-新建账号或以管理员身份继续"><a href="#5-4-新建账号或以管理员身份继续" class="headerlink" title="5.4 新建账号或以管理员身份继续"></a>5.4 新建账号或以管理员身份继续</h2><p>可以选择使用admin账户继续，后面仍然有机会注册新账户</p>
+<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153358671.png" alt="image-20211113153358671"></p>
+<h2 id="5-5-实例配置"><a href="#5-5-实例配置" class="headerlink" title="5.5 实例配置"></a>5.5 实例配置</h2><p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153424306.png" alt="image-20211113153424306"></p>
+<h2 id="5-6-开始使用Jenkins"><a href="#5-6-开始使用Jenkins" class="headerlink" title="5.6 开始使用Jenkins"></a>5.6 开始使用Jenkins</h2><p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153454866.png" alt="image-20211113153454866"></p>
+<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153524832.png" alt="image-20211113153524832"></p>
+<h2 id="5-7-Jenkins设置中文"><a href="#5-7-Jenkins设置中文" class="headerlink" title="5.7 Jenkins设置中文"></a>5.7 Jenkins设置中文</h2><p>安装插件 Locale plugin , Localization: Chinese (Simplified) , Localization Support Plugin，如果失败就再安装一次</p>
+<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153552830.png" alt="image-20211113153552830"></p>
+<p>重启：<a href="http://yellow.bigdata:8088/restart">http://yellow.bigdata:8088/restart</a><br> 如果出现部分汉化，部分没有汉化，则卸载插件，重新安装插件<br> 如果还是存在部分汉化，部分没有汉化的现象，则如下操作：<br> 1.先设置Default Language：zh_US（含义：英文）<br> 2.重启Jenkins<br> 3.再设置Default Language：zh_CN（含义：中文）<br> 4.刷新即可</p>
+<h1 id="6-Jenkins系统管理初始化设置"><a href="#6-Jenkins系统管理初始化设置" class="headerlink" title="6.Jenkins系统管理初始化设置"></a>6.Jenkins系统管理初始化设置</h1><h2 id="6-1-全局工具配置"><a href="#6-1-全局工具配置" class="headerlink" title="6.1 全局工具配置"></a>6.1 全局工具配置</h2><p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153642733.png" alt="image-20211113153642733"></p>
+<p>JDK</p>
+<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153701355.png" alt="image-20211113153701355"></p>
+<p>Git</p>
+<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153722363.png" alt="image-20211113153722363"></p>
+<p>Maven</p>
+<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153742157.png" alt="image-20211113153742157"></p>
+]]></content>
+      <categories>
+        <category>环境安装</category>
+      </categories>
+      <tags>
+        <tag>jekins</tag>
+        <tag>CI/CD</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>kubekey安装K8S集群</title>
     <url>/Echo/2022/01/19/kubekey%E5%AE%89%E8%A3%85K8S%E9%9B%86%E7%BE%A4/</url>
     <content><![CDATA[<h2 id="一-K8S1-20-x的重要更新"><a href="#一-K8S1-20-x的重要更新" class="headerlink" title="一.K8S1.20.x的重要更新"></a>一.K8S1.20.x的重要更新</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">1、Kubectl debug 设置一个临时容器</span><br><span class="line">2、Sidecar </span><br><span class="line">3、Volume：更改目录权限，fsGroup</span><br><span class="line">4、ConfigMap和Secret</span><br><span class="line"></span><br><span class="line">K8S官网：https://kubernetes.io/docs/setup/</span><br><span class="line">最新版高可用安装：https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/high-availability/</span><br></pre></td></tr></table></figure>
@@ -3063,53 +3063,6 @@
       </tags>
   </entry>
   <entry>
-    <title>web应用程序安全测试</title>
-    <url>/Echo/2022/02/05/web%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%AE%89%E5%85%A8%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<h4 id="什么是安全测试？"><a href="#什么是安全测试？" class="headerlink" title="什么是安全测试？"></a>什么是安全测试？</h4><p>安全测试是一个检查机密数据是否保密的过程（即，它不会暴露给不适合它的个人&#x2F;实体），并且用户只能执行他们有权执行的任务。</p>
-<p><strong>例</strong>用户不应能够拒绝其他用户使用网站的功能，或者用户不应能够以意外的方式更改Web应用程序的功能等。</p>
-<h4 id="安全测试中的术语"><a href="#安全测试中的术语" class="headerlink" title="安全测试中的术语"></a>安全测试中的术语</h4><p><strong>“漏洞”</strong></p>
-<p>这是 Web 应用程序中的一个弱点。”漏洞”的原因可能是由于应用程序中的错误，注入（SQL &#x2F;脚本代码）或病毒的存在。</p>
-<p><strong>“网址操作”</strong></p>
-<p>某些 Web 应用程序在 URL 中的客户端（浏览器）和服务器之间传递其他信息。更改 URL 中的某些信息有时可能会导致服务器出现意外行为，这称为 URL 操作。</p>
-<p><strong>“SQL注入”</strong></p>
-<p>这是通过 Web 应用程序用户界面将 SQL 语句插入到某个查询中，然后由服务器执行的过程。</p>
-<p><strong>“XSS（跨站点脚本）”</strong></p>
-<p>当用户在 Web 应用程序的用户界面中插入 HTML&#x2F;客户端脚本时，此插入对其他用户可见，称为 <em>XSS</em>。</p>
-<p><strong>“欺骗”</strong></p>
-<p>欺骗是创建类似恶作剧的网站和电子邮件。</p>
-<h4 id="web安全测试的方法"><a href="#web安全测试的方法" class="headerlink" title="web安全测试的方法"></a>web安全测试的方法</h4><h5 id="密码破解"><a href="#密码破解" class="headerlink" title="密码破解"></a>密码破解</h5><p>Web应用程序的安全测试可以通过”密码破解”开始。为了登录到应用程序的私人区域，人们可以猜测用户名&#x2F;密码或使用一些密码破解工具。常见的用户名和密码列表以及开源密码破解程序一起可用。</p>
-<p>如果 Web 应用程序不强制实施复杂密码（<strong>例</strong>使用字母、数字和特殊字符或至少具有所需数量的字符），则破解用户名和密码可能不会花费很长时间。</p>
-<p>如果用户名或密码存储在 Cookie 中而未经过加密，则攻击者可以使用不同的方法来窃取 Cookie 以及存储在 Cookie 中的信息（如用户名和密码）。</p>
-<h5 id="通过HTTP-GET方法进行URL操作"><a href="#通过HTTP-GET方法进行URL操作" class="headerlink" title="通过HTTP GET方法进行URL操作"></a>通过HTTP GET方法进行URL操作</h5><p>测试人员应检查应用程序是否传递查询字符串中的重要信息。当应用程序使用 HTTP GET 方法在客户端和服务器之间传递信息时，会发生这种情况。</p>
-<p>信息通过查询字符串中的参数传递。测试人员可以修改查询字符串中的参数值，以检查服务器是否接受它。</p>
-<p>通过HTTP GET请求将用户信息传递到服务器进行身份验证或获取数据。攻击者可以操纵从此 GET 请求传递到服务器的每个输入变量，以获取所需信息或损坏数据。在这种情况下，应用程序或 Web 服务器的任何异常行为都是攻击者进入应用程序的入口。</p>
-<h5 id="SQL-注入"><a href="#SQL-注入" class="headerlink" title="SQL 注入"></a>SQL 注入</h5><p>应该检查的下一个因素是SQL注入。在任何文本框中输入单引号 （’） 应被应用程序拒绝。相反，如果测试人员遇到数据库错误，则意味着用户输入入到某个查询中，然后由应用程序执行。在这种情况下，应用程序容易受到 SQL 注入的影响。</p>
-<p>SQL注入攻击非常关键，因为攻击者可以从服务器数据库中获取重要信息。若要检查 Web 应用程序中的 SQL 注入入口点，请从代码库中找出代码，其中通过接受某些用户输入在数据库上执行直接 MySQL 查询。</p>
-<p>如果在 SQL 查询中精心编制用户输入数据以查询数据库，则攻击者可以将 SQL 语句或部分 SQL 语句作为用户输入注入，以从数据库中提取重要信息。</p>
-<p>即使攻击者成功使应用程序崩溃，攻击者也可以从浏览器上显示的 SQL 查询错误中获取他们要查找的信息。在这种情况下，应正确处理&#x2F;转义用户输入中的特殊字符。</p>
-<h5 id="跨站点脚本-（XSS）"><a href="#跨站点脚本-（XSS）" class="headerlink" title="跨站点脚本 （XSS）"></a>跨站点脚本 （XSS）</h5><p>测试人员还应检查 Web 应用程序中是否有 XSS（跨站点脚本）。任何 HTML <strong>如</strong><HTML> 或任何脚本 <strong>如</strong><SCRIPT>不应被应用程序接受。如果是，则应用程序可能容易受到跨站点脚本的攻击。</p>
-<p>攻击者可以使用此方法在受害者的浏览器上执行恶意脚本或URL。使用跨站点脚本，攻击者可以使用 JavaScript 等脚本来窃取用户 Cookie 和存储在 Cookie 中的信息。</p>
-<p>许多Web应用程序获取一些有用的信息，并将此信息传递给来自不同页面的某些变量。</p>
-<p><strong>例</strong> <a href="http://www.examplesite.com/index.php?userid=123&amp;query=xyz">http://www.examplesite.com/index.php?userid=123&amp;query=xyz</a></p>
-<p>攻击者可以很容易地将一些恶意输入或<script>作为"&query"参数传递，该参数可以探索浏览器上的重要用户/服务器数据。</p>
-<p>在安全测试期间，测试人员应非常小心，不应修改以下任何内容：</p>
-<ul>
-<li>应用程序或服务器的配置。</li>
-<li>服务器上运行的服务。</li>
-<li>应用程序托管的现有用户或客户数据。</li>
-</ul>
-<p>此外，应避免在生产系统中进行安全测试。</p>
-</SCRIPT></HTML></p>]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>测试</tag>
-        <tag>页面测试</tag>
-        <tag>安全测试</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>springboot整合shiro和JWT使用指北</title>
     <url>/Echo/2021/11/09/springboot%E6%95%B4%E5%90%88shiro%E5%92%8CJWT%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8C%97/</url>
     <content><![CDATA[<h3 id="shiro是什么？"><a href="#shiro是什么？" class="headerlink" title="shiro是什么？"></a>shiro是什么？</h3><p><code>Shiro</code> 是一个强大的简单易用的 <code>Java</code> 安全框架，主要用来更便捷的 <code>认证，授权，加密，会话管理</code>。<code>Shiro</code> 首要的和最重要的目标就是容易使用并且容易理解，通过 <code>Shiro</code> 易于理解的<code>API</code>，您可以快速、轻松地获得任何应用程序——从最小的移动应用程序最大的网络和企业应用程序。</p>
@@ -3166,6 +3119,53 @@
       <tags>
         <tag>java</tag>
         <tag>springboot</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>web应用程序安全测试</title>
+    <url>/Echo/2022/02/05/web%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%AE%89%E5%85%A8%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<h4 id="什么是安全测试？"><a href="#什么是安全测试？" class="headerlink" title="什么是安全测试？"></a>什么是安全测试？</h4><p>安全测试是一个检查机密数据是否保密的过程（即，它不会暴露给不适合它的个人&#x2F;实体），并且用户只能执行他们有权执行的任务。</p>
+<p><strong>例</strong>用户不应能够拒绝其他用户使用网站的功能，或者用户不应能够以意外的方式更改Web应用程序的功能等。</p>
+<h4 id="安全测试中的术语"><a href="#安全测试中的术语" class="headerlink" title="安全测试中的术语"></a>安全测试中的术语</h4><p><strong>“漏洞”</strong></p>
+<p>这是 Web 应用程序中的一个弱点。”漏洞”的原因可能是由于应用程序中的错误，注入（SQL &#x2F;脚本代码）或病毒的存在。</p>
+<p><strong>“网址操作”</strong></p>
+<p>某些 Web 应用程序在 URL 中的客户端（浏览器）和服务器之间传递其他信息。更改 URL 中的某些信息有时可能会导致服务器出现意外行为，这称为 URL 操作。</p>
+<p><strong>“SQL注入”</strong></p>
+<p>这是通过 Web 应用程序用户界面将 SQL 语句插入到某个查询中，然后由服务器执行的过程。</p>
+<p><strong>“XSS（跨站点脚本）”</strong></p>
+<p>当用户在 Web 应用程序的用户界面中插入 HTML&#x2F;客户端脚本时，此插入对其他用户可见，称为 <em>XSS</em>。</p>
+<p><strong>“欺骗”</strong></p>
+<p>欺骗是创建类似恶作剧的网站和电子邮件。</p>
+<h4 id="web安全测试的方法"><a href="#web安全测试的方法" class="headerlink" title="web安全测试的方法"></a>web安全测试的方法</h4><h5 id="密码破解"><a href="#密码破解" class="headerlink" title="密码破解"></a>密码破解</h5><p>Web应用程序的安全测试可以通过”密码破解”开始。为了登录到应用程序的私人区域，人们可以猜测用户名&#x2F;密码或使用一些密码破解工具。常见的用户名和密码列表以及开源密码破解程序一起可用。</p>
+<p>如果 Web 应用程序不强制实施复杂密码（<strong>例</strong>使用字母、数字和特殊字符或至少具有所需数量的字符），则破解用户名和密码可能不会花费很长时间。</p>
+<p>如果用户名或密码存储在 Cookie 中而未经过加密，则攻击者可以使用不同的方法来窃取 Cookie 以及存储在 Cookie 中的信息（如用户名和密码）。</p>
+<h5 id="通过HTTP-GET方法进行URL操作"><a href="#通过HTTP-GET方法进行URL操作" class="headerlink" title="通过HTTP GET方法进行URL操作"></a>通过HTTP GET方法进行URL操作</h5><p>测试人员应检查应用程序是否传递查询字符串中的重要信息。当应用程序使用 HTTP GET 方法在客户端和服务器之间传递信息时，会发生这种情况。</p>
+<p>信息通过查询字符串中的参数传递。测试人员可以修改查询字符串中的参数值，以检查服务器是否接受它。</p>
+<p>通过HTTP GET请求将用户信息传递到服务器进行身份验证或获取数据。攻击者可以操纵从此 GET 请求传递到服务器的每个输入变量，以获取所需信息或损坏数据。在这种情况下，应用程序或 Web 服务器的任何异常行为都是攻击者进入应用程序的入口。</p>
+<h5 id="SQL-注入"><a href="#SQL-注入" class="headerlink" title="SQL 注入"></a>SQL 注入</h5><p>应该检查的下一个因素是SQL注入。在任何文本框中输入单引号 （’） 应被应用程序拒绝。相反，如果测试人员遇到数据库错误，则意味着用户输入入到某个查询中，然后由应用程序执行。在这种情况下，应用程序容易受到 SQL 注入的影响。</p>
+<p>SQL注入攻击非常关键，因为攻击者可以从服务器数据库中获取重要信息。若要检查 Web 应用程序中的 SQL 注入入口点，请从代码库中找出代码，其中通过接受某些用户输入在数据库上执行直接 MySQL 查询。</p>
+<p>如果在 SQL 查询中精心编制用户输入数据以查询数据库，则攻击者可以将 SQL 语句或部分 SQL 语句作为用户输入注入，以从数据库中提取重要信息。</p>
+<p>即使攻击者成功使应用程序崩溃，攻击者也可以从浏览器上显示的 SQL 查询错误中获取他们要查找的信息。在这种情况下，应正确处理&#x2F;转义用户输入中的特殊字符。</p>
+<h5 id="跨站点脚本-（XSS）"><a href="#跨站点脚本-（XSS）" class="headerlink" title="跨站点脚本 （XSS）"></a>跨站点脚本 （XSS）</h5><p>测试人员还应检查 Web 应用程序中是否有 XSS（跨站点脚本）。任何 HTML <strong>如</strong><HTML> 或任何脚本 <strong>如</strong><SCRIPT>不应被应用程序接受。如果是，则应用程序可能容易受到跨站点脚本的攻击。</p>
+<p>攻击者可以使用此方法在受害者的浏览器上执行恶意脚本或URL。使用跨站点脚本，攻击者可以使用 JavaScript 等脚本来窃取用户 Cookie 和存储在 Cookie 中的信息。</p>
+<p>许多Web应用程序获取一些有用的信息，并将此信息传递给来自不同页面的某些变量。</p>
+<p><strong>例</strong> <a href="http://www.examplesite.com/index.php?userid=123&amp;query=xyz">http://www.examplesite.com/index.php?userid=123&amp;query=xyz</a></p>
+<p>攻击者可以很容易地将一些恶意输入或<script>作为"&query"参数传递，该参数可以探索浏览器上的重要用户/服务器数据。</p>
+<p>在安全测试期间，测试人员应非常小心，不应修改以下任何内容：</p>
+<ul>
+<li>应用程序或服务器的配置。</li>
+<li>服务器上运行的服务。</li>
+<li>应用程序托管的现有用户或客户数据。</li>
+</ul>
+<p>此外，应避免在生产系统中进行安全测试。</p>
+</SCRIPT></HTML></p>]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+        <tag>页面测试</tag>
+        <tag>安全测试</tag>
       </tags>
   </entry>
   <entry>
@@ -3869,7 +3869,54 @@
     <title>接口测试</title>
     <url>/Echo/2022/02/09/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/</url>
     <content><![CDATA[<h4 id="什么是接口？"><a href="#什么是接口？" class="headerlink" title="什么是接口？"></a>什么是接口？</h4><p>当开发应用程序或者网站时，会有不同组件进行集成，集成并促进这些组件之间通信的连接成为接口。简而言之，接口是由一组命令，消息等组成的软件。这些不同组件之间的通信会影响整体性能，因此需要进行测试和验证。</p>
-<h4 id="什么是接口测试？"><a href="#什么是接口测试？" class="headerlink" title="什么是接口测试？"></a>什么是接口测试？</h4>]]></content>
+<h4 id="什么是接口测试？"><a href="#什么是接口测试？" class="headerlink" title="什么是接口测试？"></a>什么是接口测试？</h4><p>为验证接口功能而进行的测试称为接口测试</p>
+<p><img src="/Echo/2022/02/09/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/Interface-Testing-Flow.jpg" alt="Interface-Testing-Flow"></p>
+<p>接口测试中常见的组件：</p>
+<ul>
+<li>web服务和应用程序之间的接口</li>
+<li>数据库服务和应用程序之间的接口</li>
+</ul>
+<h4 id="我们何时以及如何测试接口？"><a href="#我们何时以及如何测试接口？" class="headerlink" title="我们何时以及如何测试接口？"></a>我们何时以及如何测试接口？</h4><p><img src="/Echo/nterface-Testing_component.jpg" alt="Interface-Testing_component"></p>
+<p>接口测试的3个阶段</p>
+<ol>
+<li>配置</li>
+</ol>
+<p>开发配置完接口后，根据需求验证配置；</p>
+<ol start="2">
+<li>验证</li>
+</ol>
+<p>开发完成后，对接口进行验证，这一部分也可以作为单元测试来进行。</p>
+<p>  3.维护</p>
+<p>整个软件准备就绪，部署完成并正常工作后，需要监控性能，由于系统做出更改或者性能调整可能会引入一些新问题。</p>
+<p>接口测试主要是为了：</p>
+<ul>
+<li>服务器执行是否正确</li>
+<li>错误信息处理并正常展示</li>
+<li>与服务器连接重置时检查结果</li>
+<li>组建内部通信的安全性检查</li>
+<li>网络故障对组件之间通信的影响</li>
+</ul>
+<h4 id="接口测试的类型"><a href="#接口测试的类型" class="headerlink" title="接口测试的类型"></a>接口测试的类型</h4><p>接口测试基本是在系统架构的消息传递层完成的，主要涉及使用json，XML，rest API，SOAP web。</p>
+<p>接口测试一般涉及以下做法：</p>
+<p>单元测试：测试每个单独操作的功能（函数）</p>
+<p>功能测试：测试相关接口要实现的功能</p>
+<p>负载测试：验证负载下接口的性能</p>
+<p>安全测试：测试安全机制，包含渗透测试，访问控制，加密等</p>
+<p>运行时错误检测：监视程序运行时资源的争用、泄漏等问题</p>
+<p>工作流测试：接口引擎是否按照预期处理工作流</p>
+<p>单个系统测试：验证每个系统可以独立运行</p>
+<h4 id="接口测试中注意清单"><a href="#接口测试中注意清单" class="headerlink" title="接口测试中注意清单"></a>接口测试中注意清单</h4><ul>
+<li>测试中应包含4XX和5XX错误，有助于验证客户端和服务端错误处理，显示适当消息而不是代码错误。</li>
+<li>使用HTTP身份验证验证用户</li>
+<li>验证API中常用的使用方法，如get，put，delete，post等</li>
+<li>验证从json到xml格式的转换，反之亦然</li>
+<li>验证接口上的批量操作是否在获取正确的预期结果</li>
+<li>验证API时区与地理时区是否匹配</li>
+<li>验证未经授权的访问是否报错</li>
+<li>验证连接中断的处理</li>
+<li>验证从程序中删除部分组件，接口不再与之发生交互</li>
+</ul>
+]]></content>
       <categories>
         <category>测试</category>
       </categories>
