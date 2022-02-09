@@ -452,20 +452,6 @@
   </url>
   
   <url>
-    <loc>https://hugfeature.github.io/Echo/tags/BMC/</loc>
-    <lastmod>2022-02-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hugfeature.github.io/Echo/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
-    <lastmod>2022-02-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://hugfeature.github.io/Echo/tags/%E9%A1%B5%E9%9D%A2%E6%B5%8B%E8%AF%95/</loc>
     <lastmod>2022-02-09</lastmod>
     <changefreq>weekly</changefreq>
@@ -481,6 +467,20 @@
   
   <url>
     <loc>https://hugfeature.github.io/Echo/tags/cookie/</loc>
+    <lastmod>2022-02-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hugfeature.github.io/Echo/tags/BMC/</loc>
+    <lastmod>2022-02-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hugfeature.github.io/Echo/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
     <lastmod>2022-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -508,6 +508,13 @@
   </url>
   
   <url>
+    <loc>https://hugfeature.github.io/Echo/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%EF%BC%8CHDFS/</loc>
+    <lastmod>2022-02-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://hugfeature.github.io/Echo/tags/HDFS/</loc>
     <lastmod>2022-02-09</lastmod>
     <changefreq>weekly</changefreq>
@@ -516,13 +523,6 @@
   
   <url>
     <loc>https://hugfeature.github.io/Echo/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
-    <lastmod>2022-02-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hugfeature.github.io/Echo/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%EF%BC%8CHDFS/</loc>
     <lastmod>2022-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -578,14 +578,14 @@
   </url>
   
   <url>
-    <loc>https://hugfeature.github.io/Echo/tags/HBase/</loc>
+    <loc>https://hugfeature.github.io/Echo/tags/YARN%EF%BC%8C%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
     <lastmod>2022-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://hugfeature.github.io/Echo/tags/YARN%EF%BC%8C%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
+    <loc>https://hugfeature.github.io/Echo/tags/HBase/</loc>
     <lastmod>2022-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -613,6 +613,13 @@
   </url>
   
   <url>
+    <loc>https://hugfeature.github.io/Echo/tags/%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/</loc>
+    <lastmod>2022-02-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://hugfeature.github.io/Echo/tags/java/</loc>
     <lastmod>2022-02-09</lastmod>
     <changefreq>weekly</changefreq>
@@ -621,13 +628,6 @@
   
   <url>
     <loc>https://hugfeature.github.io/Echo/tags/springboot/</loc>
-    <lastmod>2022-02-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hugfeature.github.io/Echo/tags/%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/</loc>
     <lastmod>2022-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -705,6 +705,20 @@
   
   <url>
     <loc>https://hugfeature.github.io/Echo/tags/%E4%B8%AA%E4%BA%BA/</loc>
+    <lastmod>2022-02-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hugfeature.github.io/Echo/tags/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/</loc>
+    <lastmod>2022-02-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hugfeature.github.io/Echo/tags/%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2022-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
