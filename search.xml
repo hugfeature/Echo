@@ -1,44 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>2022年软件测试趋势</title>
-    <url>/Echo/2022/02/06/2022%E5%B9%B4%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E8%B6%8B%E5%8A%BF/</url>
-    <content><![CDATA[<p>技术呈指数级和前所未有的变化影响了组织开发、验证、交付和操作软件的方式。</p>
-<p>因此，这些组织必须通过寻找解决方案来不断创新和改造自己，以优化实践和工具，以快速开发和交付高质量的软件。</p>
-<p>软件测试约占项目总工作量的30%，是更改和改进的重要焦点。测试实践和工具需要不断发展，以应对在系统、环境和数据日益复杂的情况下实现**”快速测试”**的挑战。</p>
-<p>在下面介绍了软件测试的主要趋势，其中许多趋势在过去几年中已经出现。我们观察到，敏捷和DevOps、测试自动化、用于测试的人工智能和API测试自动化是2022年和未来几年最引人注目的趋势。</p>
-<h4 id="1、敏捷和Devops"><a href="#1、敏捷和Devops" class="headerlink" title="1、敏捷和Devops"></a>1、敏捷和Devops</h4><p>敏捷已经视为对快速变化的需求的回应，并将DevOps视为对速度需求的响应。</p>
-<p>DevOps 涉及实践、规则、流程和工具，有助于集成开发和运营活动，从而缩短从开发到运营的时间。DevOps已成为组织广泛接受的解决方案，这些组织正在寻找缩短从开发到交付和运营的软件生命周期的方法。</p>
-<p>敏捷和DevOps的采用有助于团队更快地开发和交付高质量的软件，这反过来又被称为”速度的测试”。这种采用在过去五年中引起了很大的兴趣，并且在未来几年也将继续加强。</p>
-<h4 id="2、测试自动化"><a href="#2、测试自动化" class="headerlink" title="2、测试自动化"></a>2、测试自动化</h4><p>为了有效地实施 DevOps 实践，软件团队不能忽视测试自动化，因为它是 DevOps 流程的基本要素。</p>
-<p>需要找到机会，用自动化测试取代手动测试。由于测试自动化被认为是DevOps的重要瓶颈，因此至少大多数回归测试都应该是自动化的。</p>
-<p>鉴于DevOps的普及以及测试自动化未得到充分利用的事实，只有不到20%的测试是自动化的，因此在组织中增加测试自动化的采用空间很大。应该出现更先进的方法和工具，以便在项目中更好地利用测试自动化。</p>
-<h4 id="3、-API和服务自动化测试"><a href="#3、-API和服务自动化测试" class="headerlink" title="3、 API和服务自动化测试"></a>3、 API和服务自动化测试</h4><p>将客户端和服务器分离是设计 Web 和移动应用程序的当前趋势。</p>
-<p>API 和服务在多个应用程序或组件中重用。反过来，这些更改要求团队独立于使用它们的应用程序测试 API 和服务。</p>
-<p>当跨客户端应用程序和组件使用 API 和服务时，测试它们比测试客户端更有效和高效。趋势是对API和服务测试自动化的需求继续增加，可能超过最终用户在用户界面上使用的功能。</p>
-<p>为 API 自动化测试提供正确的流程、工具和解决方案比以往任何时候都更加重要。</p>
-<h4 id="4、用于测试AI和ML"><a href="#4、用于测试AI和ML" class="headerlink" title="4、用于测试AI和ML"></a>4、用于测试AI和ML</h4><p>尽管应用人工智能和机器学习（AI &#x2F; ML）方法来解决软件测试中的挑战在软件研究社区中并不新鲜，但AI &#x2F; ML的最新进展以及大量可用的数据为在测试中应用AI &#x2F; ML提供了新的机会。</p>
-<p>然而，AI&#x2F;ML在测试中的应用仍处于早期阶段。扔在寻找在AI &#x2F; ML中优化其测试实践的方法。</p>
-<p>AI&#x2F;ML 算法旨在生成更好的测试用例、测试脚本、测试数据和报告。预测模型将有助于决定在何处、做什么以及何时进行测试。智能分析和可视化支持团队检测故障，了解测试覆盖范围，高风险区域等。</p>
-<p>希望在未来几年看到AI &#x2F; ML在解决质量预测，测试用例优先级，故障分类和分配等问题中的更多应用。</p>
-<h4 id="5、移动测试自动化"><a href="#5、移动测试自动化" class="headerlink" title="5、移动测试自动化"></a>5、移动测试自动化</h4><p>随着移动设备的功能越来越强大，移动应用程序开发的趋势继续增长。</p>
-<p>要完全支持 DevOps，移动测试自动化必须是 DevOps 工具链的一部分。然而，目前移动测试自动化的利用率非常低，部分原因是缺乏方法和工具。</p>
-<p>移动应用的自动化测试趋势持续增加。这种趋势是由缩短上市时间的需求以及用于移动测试自动化的更高级方法和工具所驱动的。</p>
-<h4 id="6、测试环境和测试数据"><a href="#6、测试环境和测试数据" class="headerlink" title="6、测试环境和测试数据"></a>6、测试环境和测试数据</h4><p>物联网（IoT）的快速增长）意味着更多的软件系统在众多不同的环境中运行。这给测试团队带来了确保正确级别的测试覆盖率的挑战。事实上，在敏捷项目中申请测试时，缺乏测试环境和数据是最大的挑战。</p>
-<p>将看到在提供和使用基于云的容器化测试环境方面的增长。AI&#x2F;ML在生成测试数据方面的应用和数据项目的增长，是解决测试数据不足的一些解决方案。</p>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>测试</tag>
-        <tag>软件测试</tag>
-        <tag>自动化测试</tag>
-        <tag>devops</tag>
-        <tag>敏捷测试</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>20个实用软件测试技巧</title>
     <url>/Echo/2021/05/01/20%E4%B8%AA%E5%AE%9E%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%8A%80%E5%B7%A7/</url>
     <content><![CDATA[<p>以下是个人总结的20个软件测试过程中的技巧</p>
@@ -76,124 +38,41 @@
       </tags>
   </entry>
   <entry>
-    <title>B/S架构如何测试</title>
-    <url>/Echo/2022/02/04/B-S%E6%9E%B6%E6%9E%84%E5%A6%82%E4%BD%95%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<p>随着信息技术的发展，人们越来越习惯与在网上搜索信息来做出决定，因此网站已经是各类企业的必备之选。但是仅仅拥有一个网站还不够，还需要提供一个信息丰富、可访问和用户友好的网站。为了实现这样的功能，网站要经过良好的测试，这样的测试测试成为B&#x2F;S架构测试即页面测试。</p>
-<h4 id="什么是页面测试？"><a href="#什么是页面测试？" class="headerlink" title="什么是页面测试？"></a>什么是页面测试？</h4><p>页面测试是软件测试中的一种，用于测试网站或者web类应用程序是否存在一些问题。在上线之前要对基于页面的应用程序进行完整测试。</p>
-<p>基于页面的系统在面向最终用户上线之前，需要进行端到端的全面的测试。</p>
-<p>通过页面测试，可以确保基于页面的系统正常运行，且可以被用户接受，UI测试和功能测试是页面测试的首选。</p>
-<h4 id="常见的页面测试类型"><a href="#常见的页面测试类型" class="headerlink" title="常见的页面测试类型"></a>常见的页面测试类型</h4><ul>
-<li>功能测试</li>
-<li>可用性测试</li>
-<li>接口测试</li>
-<li>兼容性测试</li>
-<li>性能测试</li>
-<li>安全测试</li>
-</ul>
-<h5 id="功能测试"><a href="#功能测试" class="headerlink" title="功能测试"></a>功能测试</h5><p>测试页面中所有的链接，数据库连接，页面中用于提交或获取用户信息的表单，Cookie测试等</p>
-<h6 id="链接测试"><a href="#链接测试" class="headerlink" title="链接测试"></a>链接测试</h6><ul>
-<li>测试从所有页面到受测特定域的传出链接。</li>
-<li>测试所有内部链接。</li>
-<li>测试链接跳转到同一页面。</li>
-<li>测试链接用于从网页向管理员或其他用户发送电子邮件。</li>
-<li>测试以查看是否存在任何孤立页面。</li>
-<li>最后，链接检查包括，检查上述所有链接中的断开链接。</li>
-</ul>
-<h6 id="表单测试"><a href="#表单测试" class="headerlink" title="表单测试"></a>表单测试</h6><p>表单在任何网站都是不可或缺的，一般用于接收来自用户信息。如何进行表单测试呢？</p>
-<ul>
-<li>首先，检查每个字段的所有验证。</li>
-<li>检查字段中的默认值。</li>
-<li>表单中对表单中字段的错误输入。</li>
-<li>用于创建表单的选项（如果有）、表单删除、查看或修改表单。</li>
-</ul>
-<h6 id="cookie测试"><a href="#cookie测试" class="headerlink" title="cookie测试"></a>cookie测试</h6><p>Cookie 是存储在用户计算机上的小文件。这些基本上用于维护会话 - 主要是登录会话。通过在浏览器选项中启用或禁用 Cookie 来测试应用程序。</p>
-<p>在写入用户计算机之前，测试 Cookie 是否已加密。如果您正在测试会话 Cookie（即在会话结束后过期的 Cookie），请在会话结束后检查登录会话和用户统计信息。通过删除 Cookie 来检查对应用程序安全的影响。</p>
-<h6 id="HTML-x2F-CSS测试"><a href="#HTML-x2F-CSS测试" class="headerlink" title="HTML&#x2F;CSS测试"></a>HTML&#x2F;CSS测试</h6><p>如果您正在为搜索引擎优化您的网站，那么HTML &#x2F; CSS验证是最重要的。主要验证网站的HTML语法错误。检查该网站是否可被不同的搜索引擎抓取。</p>
-<h6 id="数据库连接测试"><a href="#数据库连接测试" class="headerlink" title="数据库连接测试"></a>数据库连接测试</h6><p>数据一致性在 Web 应用程序中也非常重要。在编辑、删除、修改表单或执行任何与数据库相关的功能时检查数据完整性和错误。</p>
-<p>检查是否正确执行了所有数据库查询，检索了数据并正确更新了数据。有关数据库测试的更多信息可能是数据库上的负载，我们将在下面的Web负载或性能测试中解决此问题。</p>
-<p>在测试网站功能时，还应该测试以下内容：</p>
-<h6 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h6><p>i. 内部链接<br>ii.外部链接<br>iii.邮件链接<br>iv.断开的链接</p>
-<h6 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h6><ol>
-<li>字段验证</li>
-<li>错误输入的错误消息</li>
-<li>可选和必填字段</li>
-</ol>
-<h6 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h6><p>测试将针对数据库完整性进行。</p>
-<h5 id="可用性测试"><a href="#可用性测试" class="headerlink" title="可用性测试"></a>可用性测试</h5><p>可用性测试是测量系统的人机交互特性，并确定不足以进行纠正。</p>
-<h5 id="导航测试"><a href="#导航测试" class="headerlink" title="导航测试"></a>导航测试</h5><p>导航是指用户如何浏览网页、不同的控件（如按钮、框）或用户如何使用页面上的链接浏览不同的页面。</p>
-<h6 id="可用性测试应包括以下内容"><a href="#可用性测试应包括以下内容" class="headerlink" title="可用性测试应包括以下内容"></a>可用性测试应包括以下内容</h6><ul>
-<li>该网站应易于使用。</li>
-<li>所提供的说明应非常清楚。</li>
-<li>检查提供的说明是否完全符合其目的。</li>
-<li>每个页面上都应提供主菜单。</li>
-<li>它应该足够一致。</li>
-</ul>
-<h6 id="内容检查"><a href="#内容检查" class="headerlink" title="内容检查"></a>内容检查</h6><p>内容应符合逻辑且易于理解。检查拼写错误。深色背景使用会让用户不喜欢，不应在网站主题中使用。应该遵循一些用于网页和内容构建的标准颜色。这些是普遍接受的标准。内容应该是有意义的。所有锚文本链接都应正常工作。图像应以适当的尺寸正确放置。这些是页面开发中应遵循的一些基本重要标准。你的任务是验证所有内容以进行 UI 测试。</p>
-<h6 id="用于帮助用户搜索信息"><a href="#用于帮助用户搜索信息" class="headerlink" title="用于帮助用户搜索信息"></a>用于帮助用户搜索信息</h6><p>与搜索选项一样，站点地图也有助于处理文件等。站点地图应与网站上的所有链接一起提供，并具有正确的导航树视图。检查站点地图上的所有链接。</p>
-<p>“在网站中搜索”选项将帮助用户轻松快速地找到他们正在寻找的内容页面。这些都是可选项目，如果存在，则应对其进行验证。</p>
-<h5 id="接口测试"><a href="#接口测试" class="headerlink" title="接口测试"></a>接口测试</h5><p>在页面测试中，应测试服务器端接口。这可以通过验证通信是否正确完成。应测试服务器与软件、硬件、网络和数据库的兼容性。</p>
-<p>主要接口有：</p>
-<ul>
-<li>页面服务器和应用程序服务器接口</li>
-<li>应用程序服务器和数据库服务器接口。</li>
-</ul>
-<p>检查这些服务器之间的所有交互是否都已执行，错误是否得到正确处理。如果数据库或 Web 服务器为应用程序服务器的任何查询返回错误消息，那么应用程序服务器应捕获这些错误消息并将其适当地显示给用户。</p>
-<p>检查如果用户中断其中的任何事务会发生什么情况？检查如果与Web服务器的连接在两者之间重置会发生什么？</p>
-<h5 id="兼容性测试"><a href="#兼容性测试" class="headerlink" title="兼容性测试"></a>兼容性测试</h5><p>网站的兼容性是一个非常重要的测试方面。查看要执行的兼容性测试：</p>
-<ul>
-<li>浏览器兼容性</li>
-<li>操作系统兼容性</li>
-<li>移动浏览</li>
-<li>打印选项</li>
-</ul>
-<h6 id="浏览器兼容性："><a href="#浏览器兼容性：" class="headerlink" title="浏览器兼容性："></a>浏览器兼容性：</h6><p>在我的网络测试生涯中，我经历过这是网站测试中最具影响力的部分。<br>某些应用程序非常依赖于浏览器。不同的浏览器具有不同的配置和设置，您的网页应与之兼容。</p>
-<p>您的网站编码应该是跨浏览器平台兼容的。如果您正在使用 Java 脚本或 AJAX 调用 UI 功能，则执行安全检查或验证会给页面应用程序的浏览器兼容性测试带来更多压力。</p>
-<p>在不同的浏览器上测试页面应用程序，如Edge，Firefox，Chrome，Netscape Navigator，AOL，Safari，Opera浏览器和不同版本。</p>
-<h6 id="操作系统兼容性："><a href="#操作系统兼容性：" class="headerlink" title="操作系统兼容性："></a>操作系统兼容性：</h6><p>Web 应用程序中的某些功能是它可能不与所有操作系统兼容。Web开发中使用的所有新技术，如图形设计和界面调用（如不同的API）可能并非在所有操作系统中都可用。</p>
-<p>因此，在具有不同操作系统风格的Windows，Unix，MAC，Linux，Solaris等不同操作系统上测试您的Web应用程序。</p>
-<h6 id="移动浏览："><a href="#移动浏览：" class="headerlink" title="移动浏览："></a>移动浏览：</h6><p>在移动浏览器上测试网页。移动设备上也可能存在兼容性问题。</p>
-<h6 id="打印选项："><a href="#打印选项：" class="headerlink" title="打印选项："></a>打印选项：</h6><p>如果要提供页面打印选项，请确保字体，页面对齐方式，页面图形等正确打印。页面应适合纸张大小或根据打印选项中提到的大小。</p>
-<h5 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h5><p>页面 应用程序应承受重负载。页面性能测试应包括：</p>
-<ul>
-<li>网络负载测试</li>
-<li>网络压力测试</li>
-</ul>
-<p>在不同的互联网连接速度下测试应用程序性能。</p>
-<p>页面负载测试：需要测试是否有多个用户正在访问或请求同一页面。系统能否维持峰值负载时间？站点应处理许多并发用户请求、来自用户的大量输入数据、同时连接到数据库、特定页面上的重负载等。</p>
-<p>网络压力测试：通常，应力意味着将系统拉伸到其指定的限值之外。执行页面压力测试以通过施加压力来破坏站点，并检查系统如何对压力做出反应以及如何从崩溃中恢复。压力通常放在输入字段，登录和注册区域。</p>
-<p>在页面性能中，在不同操作系统和不同硬件平台上测试网站功能时，会检查软件和硬件内存泄漏错误。</p>
-<p>性能测试可用于了解网站的可伸缩性，或对第三方产品（如服务器和中间件）环境中的性能进行基准测试，以便进行潜在购买。</p>
-<h6 id="连接速度"><a href="#连接速度" class="headerlink" title="连接速度"></a>连接速度</h6><p>在各种网络上经过测试，如拨号，ISDN等。</p>
-<h6 id="页面加载"><a href="#页面加载" class="headerlink" title="页面加载"></a>页面加载</h6><p>页面加载性能可以用Lighthouse进行测试。</p>
-<p>i.每次最多承受用户数？<br>ii. 检查峰值负载和系统的行为方式</p>
-<p>iii.用户访问的大量数据</p>
-<h6 id="压力测试"><a href="#压力测试" class="headerlink" title="压力测试"></a>压力测试</h6><p>i. 连续载荷<br>ii.内存、CPU、文件处理等性能</p>
-<h5 id="安全测试"><a href="#安全测试" class="headerlink" title="安全测试"></a>安全测试</h5><p>以下是页面安全测试的一些测试用例：</p>
-<ul>
-<li>通过将内部 URL 直接粘贴到浏览器地址栏中而不登录来进行测试。不应打开内部页面。</li>
-<li>如果您使用用户名和密码登录并浏览内部页面，请尝试直接更改URL选项。即，如果您正在检查一些发布者站点统计信息，则发布者站点 ID &#x3D; 123。尝试直接将 URL 站点 ID 参数更改为与登录用户无关的其他站点 ID。应拒绝此用户查看其他人的统计信息的访问权限。</li>
-<li>尝试在输入字段中输入一些无效的输入，例如登录用户名，密码，输入文本框等。检查系统对所有无效输入的反应。</li>
-<li>页面目录和文件不应直接访问，除非为它们提供了下载选项。</li>
-<li>测试验证码以自动执行脚本登录。</li>
-<li>测试 SSL 是否用于安全措施。如果使用，当用户从不安全的页面HTTP:&#x2F;&#x2F;切换到安全 HTTPS:&#x2F;&#x2F; 页面时，应显示正确的消息，反之亦然。</li>
-<li>所有事务、错误消息和安全漏洞尝试都应记录在服务器上某个位置的日志文件中。</li>
-</ul>
-<p>测试页面安全性的主要原因是识别潜在的漏洞并随后修复它们。</p>
-<ul>
-<li>网络扫描</li>
-<li>漏洞扫描</li>
-<li>密码破解</li>
-<li>日志审查</li>
-<li>完整性检查器</li>
-<li>病毒检测</li>
-</ul>
+    <title>2022年软件测试趋势</title>
+    <url>/Echo/2022/02/06/2022%E5%B9%B4%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E8%B6%8B%E5%8A%BF/</url>
+    <content><![CDATA[<p>技术呈指数级和前所未有的变化影响了组织开发、验证、交付和操作软件的方式。</p>
+<p>因此，这些组织必须通过寻找解决方案来不断创新和改造自己，以优化实践和工具，以快速开发和交付高质量的软件。</p>
+<p>软件测试约占项目总工作量的30%，是更改和改进的重要焦点。测试实践和工具需要不断发展，以应对在系统、环境和数据日益复杂的情况下实现**”快速测试”**的挑战。</p>
+<p>在下面介绍了软件测试的主要趋势，其中许多趋势在过去几年中已经出现。我们观察到，敏捷和DevOps、测试自动化、用于测试的人工智能和API测试自动化是2022年和未来几年最引人注目的趋势。</p>
+<h4 id="1、敏捷和Devops"><a href="#1、敏捷和Devops" class="headerlink" title="1、敏捷和Devops"></a>1、敏捷和Devops</h4><p>敏捷已经视为对快速变化的需求的回应，并将DevOps视为对速度需求的响应。</p>
+<p>DevOps 涉及实践、规则、流程和工具，有助于集成开发和运营活动，从而缩短从开发到运营的时间。DevOps已成为组织广泛接受的解决方案，这些组织正在寻找缩短从开发到交付和运营的软件生命周期的方法。</p>
+<p>敏捷和DevOps的采用有助于团队更快地开发和交付高质量的软件，这反过来又被称为”速度的测试”。这种采用在过去五年中引起了很大的兴趣，并且在未来几年也将继续加强。</p>
+<h4 id="2、测试自动化"><a href="#2、测试自动化" class="headerlink" title="2、测试自动化"></a>2、测试自动化</h4><p>为了有效地实施 DevOps 实践，软件团队不能忽视测试自动化，因为它是 DevOps 流程的基本要素。</p>
+<p>需要找到机会，用自动化测试取代手动测试。由于测试自动化被认为是DevOps的重要瓶颈，因此至少大多数回归测试都应该是自动化的。</p>
+<p>鉴于DevOps的普及以及测试自动化未得到充分利用的事实，只有不到20%的测试是自动化的，因此在组织中增加测试自动化的采用空间很大。应该出现更先进的方法和工具，以便在项目中更好地利用测试自动化。</p>
+<h4 id="3、-API和服务自动化测试"><a href="#3、-API和服务自动化测试" class="headerlink" title="3、 API和服务自动化测试"></a>3、 API和服务自动化测试</h4><p>将客户端和服务器分离是设计 Web 和移动应用程序的当前趋势。</p>
+<p>API 和服务在多个应用程序或组件中重用。反过来，这些更改要求团队独立于使用它们的应用程序测试 API 和服务。</p>
+<p>当跨客户端应用程序和组件使用 API 和服务时，测试它们比测试客户端更有效和高效。趋势是对API和服务测试自动化的需求继续增加，可能超过最终用户在用户界面上使用的功能。</p>
+<p>为 API 自动化测试提供正确的流程、工具和解决方案比以往任何时候都更加重要。</p>
+<h4 id="4、用于测试AI和ML"><a href="#4、用于测试AI和ML" class="headerlink" title="4、用于测试AI和ML"></a>4、用于测试AI和ML</h4><p>尽管应用人工智能和机器学习（AI &#x2F; ML）方法来解决软件测试中的挑战在软件研究社区中并不新鲜，但AI &#x2F; ML的最新进展以及大量可用的数据为在测试中应用AI &#x2F; ML提供了新的机会。</p>
+<p>然而，AI&#x2F;ML在测试中的应用仍处于早期阶段。扔在寻找在AI &#x2F; ML中优化其测试实践的方法。</p>
+<p>AI&#x2F;ML 算法旨在生成更好的测试用例、测试脚本、测试数据和报告。预测模型将有助于决定在何处、做什么以及何时进行测试。智能分析和可视化支持团队检测故障，了解测试覆盖范围，高风险区域等。</p>
+<p>希望在未来几年看到AI &#x2F; ML在解决质量预测，测试用例优先级，故障分类和分配等问题中的更多应用。</p>
+<h4 id="5、移动测试自动化"><a href="#5、移动测试自动化" class="headerlink" title="5、移动测试自动化"></a>5、移动测试自动化</h4><p>随着移动设备的功能越来越强大，移动应用程序开发的趋势继续增长。</p>
+<p>要完全支持 DevOps，移动测试自动化必须是 DevOps 工具链的一部分。然而，目前移动测试自动化的利用率非常低，部分原因是缺乏方法和工具。</p>
+<p>移动应用的自动化测试趋势持续增加。这种趋势是由缩短上市时间的需求以及用于移动测试自动化的更高级方法和工具所驱动的。</p>
+<h4 id="6、测试环境和测试数据"><a href="#6、测试环境和测试数据" class="headerlink" title="6、测试环境和测试数据"></a>6、测试环境和测试数据</h4><p>物联网（IoT）的快速增长）意味着更多的软件系统在众多不同的环境中运行。这给测试团队带来了确保正确级别的测试覆盖率的挑战。事实上，在敏捷项目中申请测试时，缺乏测试环境和数据是最大的挑战。</p>
+<p>将看到在提供和使用基于云的容器化测试环境方面的增长。AI&#x2F;ML在生成测试数据方面的应用和数据项目的增长，是解决测试数据不足的一些解决方案。</p>
 ]]></content>
       <categories>
         <category>测试</category>
       </categories>
       <tags>
         <tag>测试</tag>
-        <tag>页面测试</tag>
+        <tag>软件测试</tag>
+        <tag>自动化测试</tag>
+        <tag>devops</tag>
+        <tag>敏捷测试</tag>
       </tags>
   </entry>
   <entry>
@@ -910,6 +789,127 @@
       </tags>
   </entry>
   <entry>
+    <title>B/S架构如何测试</title>
+    <url>/Echo/2022/02/04/B-S%E6%9E%B6%E6%9E%84%E5%A6%82%E4%BD%95%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<p>随着信息技术的发展，人们越来越习惯与在网上搜索信息来做出决定，因此网站已经是各类企业的必备之选。但是仅仅拥有一个网站还不够，还需要提供一个信息丰富、可访问和用户友好的网站。为了实现这样的功能，网站要经过良好的测试，这样的测试测试成为B&#x2F;S架构测试即页面测试。</p>
+<h4 id="什么是页面测试？"><a href="#什么是页面测试？" class="headerlink" title="什么是页面测试？"></a>什么是页面测试？</h4><p>页面测试是软件测试中的一种，用于测试网站或者web类应用程序是否存在一些问题。在上线之前要对基于页面的应用程序进行完整测试。</p>
+<p>基于页面的系统在面向最终用户上线之前，需要进行端到端的全面的测试。</p>
+<p>通过页面测试，可以确保基于页面的系统正常运行，且可以被用户接受，UI测试和功能测试是页面测试的首选。</p>
+<h4 id="常见的页面测试类型"><a href="#常见的页面测试类型" class="headerlink" title="常见的页面测试类型"></a>常见的页面测试类型</h4><ul>
+<li>功能测试</li>
+<li>可用性测试</li>
+<li>接口测试</li>
+<li>兼容性测试</li>
+<li>性能测试</li>
+<li>安全测试</li>
+</ul>
+<h5 id="功能测试"><a href="#功能测试" class="headerlink" title="功能测试"></a>功能测试</h5><p>测试页面中所有的链接，数据库连接，页面中用于提交或获取用户信息的表单，Cookie测试等</p>
+<h6 id="链接测试"><a href="#链接测试" class="headerlink" title="链接测试"></a>链接测试</h6><ul>
+<li>测试从所有页面到受测特定域的传出链接。</li>
+<li>测试所有内部链接。</li>
+<li>测试链接跳转到同一页面。</li>
+<li>测试链接用于从网页向管理员或其他用户发送电子邮件。</li>
+<li>测试以查看是否存在任何孤立页面。</li>
+<li>最后，链接检查包括，检查上述所有链接中的断开链接。</li>
+</ul>
+<h6 id="表单测试"><a href="#表单测试" class="headerlink" title="表单测试"></a>表单测试</h6><p>表单在任何网站都是不可或缺的，一般用于接收来自用户信息。如何进行表单测试呢？</p>
+<ul>
+<li>首先，检查每个字段的所有验证。</li>
+<li>检查字段中的默认值。</li>
+<li>表单中对表单中字段的错误输入。</li>
+<li>用于创建表单的选项（如果有）、表单删除、查看或修改表单。</li>
+</ul>
+<h6 id="cookie测试"><a href="#cookie测试" class="headerlink" title="cookie测试"></a>cookie测试</h6><p>Cookie 是存储在用户计算机上的小文件。这些基本上用于维护会话 - 主要是登录会话。通过在浏览器选项中启用或禁用 Cookie 来测试应用程序。</p>
+<p>在写入用户计算机之前，测试 Cookie 是否已加密。如果您正在测试会话 Cookie（即在会话结束后过期的 Cookie），请在会话结束后检查登录会话和用户统计信息。通过删除 Cookie 来检查对应用程序安全的影响。</p>
+<h6 id="HTML-x2F-CSS测试"><a href="#HTML-x2F-CSS测试" class="headerlink" title="HTML&#x2F;CSS测试"></a>HTML&#x2F;CSS测试</h6><p>如果您正在为搜索引擎优化您的网站，那么HTML &#x2F; CSS验证是最重要的。主要验证网站的HTML语法错误。检查该网站是否可被不同的搜索引擎抓取。</p>
+<h6 id="数据库连接测试"><a href="#数据库连接测试" class="headerlink" title="数据库连接测试"></a>数据库连接测试</h6><p>数据一致性在 Web 应用程序中也非常重要。在编辑、删除、修改表单或执行任何与数据库相关的功能时检查数据完整性和错误。</p>
+<p>检查是否正确执行了所有数据库查询，检索了数据并正确更新了数据。有关数据库测试的更多信息可能是数据库上的负载，我们将在下面的Web负载或性能测试中解决此问题。</p>
+<p>在测试网站功能时，还应该测试以下内容：</p>
+<h6 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h6><p>i. 内部链接<br>ii.外部链接<br>iii.邮件链接<br>iv.断开的链接</p>
+<h6 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h6><ol>
+<li>字段验证</li>
+<li>错误输入的错误消息</li>
+<li>可选和必填字段</li>
+</ol>
+<h6 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h6><p>测试将针对数据库完整性进行。</p>
+<h5 id="可用性测试"><a href="#可用性测试" class="headerlink" title="可用性测试"></a>可用性测试</h5><p>可用性测试是测量系统的人机交互特性，并确定不足以进行纠正。</p>
+<h5 id="导航测试"><a href="#导航测试" class="headerlink" title="导航测试"></a>导航测试</h5><p>导航是指用户如何浏览网页、不同的控件（如按钮、框）或用户如何使用页面上的链接浏览不同的页面。</p>
+<h6 id="可用性测试应包括以下内容"><a href="#可用性测试应包括以下内容" class="headerlink" title="可用性测试应包括以下内容"></a>可用性测试应包括以下内容</h6><ul>
+<li>该网站应易于使用。</li>
+<li>所提供的说明应非常清楚。</li>
+<li>检查提供的说明是否完全符合其目的。</li>
+<li>每个页面上都应提供主菜单。</li>
+<li>它应该足够一致。</li>
+</ul>
+<h6 id="内容检查"><a href="#内容检查" class="headerlink" title="内容检查"></a>内容检查</h6><p>内容应符合逻辑且易于理解。检查拼写错误。深色背景使用会让用户不喜欢，不应在网站主题中使用。应该遵循一些用于网页和内容构建的标准颜色。这些是普遍接受的标准。内容应该是有意义的。所有锚文本链接都应正常工作。图像应以适当的尺寸正确放置。这些是页面开发中应遵循的一些基本重要标准。你的任务是验证所有内容以进行 UI 测试。</p>
+<h6 id="用于帮助用户搜索信息"><a href="#用于帮助用户搜索信息" class="headerlink" title="用于帮助用户搜索信息"></a>用于帮助用户搜索信息</h6><p>与搜索选项一样，站点地图也有助于处理文件等。站点地图应与网站上的所有链接一起提供，并具有正确的导航树视图。检查站点地图上的所有链接。</p>
+<p>“在网站中搜索”选项将帮助用户轻松快速地找到他们正在寻找的内容页面。这些都是可选项目，如果存在，则应对其进行验证。</p>
+<h5 id="接口测试"><a href="#接口测试" class="headerlink" title="接口测试"></a>接口测试</h5><p>在页面测试中，应测试服务器端接口。这可以通过验证通信是否正确完成。应测试服务器与软件、硬件、网络和数据库的兼容性。</p>
+<p>主要接口有：</p>
+<ul>
+<li>页面服务器和应用程序服务器接口</li>
+<li>应用程序服务器和数据库服务器接口。</li>
+</ul>
+<p>检查这些服务器之间的所有交互是否都已执行，错误是否得到正确处理。如果数据库或 Web 服务器为应用程序服务器的任何查询返回错误消息，那么应用程序服务器应捕获这些错误消息并将其适当地显示给用户。</p>
+<p>检查如果用户中断其中的任何事务会发生什么情况？检查如果与Web服务器的连接在两者之间重置会发生什么？</p>
+<h5 id="兼容性测试"><a href="#兼容性测试" class="headerlink" title="兼容性测试"></a>兼容性测试</h5><p>网站的兼容性是一个非常重要的测试方面。查看要执行的兼容性测试：</p>
+<ul>
+<li>浏览器兼容性</li>
+<li>操作系统兼容性</li>
+<li>移动浏览</li>
+<li>打印选项</li>
+</ul>
+<h6 id="浏览器兼容性："><a href="#浏览器兼容性：" class="headerlink" title="浏览器兼容性："></a>浏览器兼容性：</h6><p>在我的网络测试生涯中，我经历过这是网站测试中最具影响力的部分。<br>某些应用程序非常依赖于浏览器。不同的浏览器具有不同的配置和设置，您的网页应与之兼容。</p>
+<p>您的网站编码应该是跨浏览器平台兼容的。如果您正在使用 Java 脚本或 AJAX 调用 UI 功能，则执行安全检查或验证会给页面应用程序的浏览器兼容性测试带来更多压力。</p>
+<p>在不同的浏览器上测试页面应用程序，如Edge，Firefox，Chrome，Netscape Navigator，AOL，Safari，Opera浏览器和不同版本。</p>
+<h6 id="操作系统兼容性："><a href="#操作系统兼容性：" class="headerlink" title="操作系统兼容性："></a>操作系统兼容性：</h6><p>Web 应用程序中的某些功能是它可能不与所有操作系统兼容。Web开发中使用的所有新技术，如图形设计和界面调用（如不同的API）可能并非在所有操作系统中都可用。</p>
+<p>因此，在具有不同操作系统风格的Windows，Unix，MAC，Linux，Solaris等不同操作系统上测试您的Web应用程序。</p>
+<h6 id="移动浏览："><a href="#移动浏览：" class="headerlink" title="移动浏览："></a>移动浏览：</h6><p>在移动浏览器上测试网页。移动设备上也可能存在兼容性问题。</p>
+<h6 id="打印选项："><a href="#打印选项：" class="headerlink" title="打印选项："></a>打印选项：</h6><p>如果要提供页面打印选项，请确保字体，页面对齐方式，页面图形等正确打印。页面应适合纸张大小或根据打印选项中提到的大小。</p>
+<h5 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h5><p>页面 应用程序应承受重负载。页面性能测试应包括：</p>
+<ul>
+<li>网络负载测试</li>
+<li>网络压力测试</li>
+</ul>
+<p>在不同的互联网连接速度下测试应用程序性能。</p>
+<p>页面负载测试：需要测试是否有多个用户正在访问或请求同一页面。系统能否维持峰值负载时间？站点应处理许多并发用户请求、来自用户的大量输入数据、同时连接到数据库、特定页面上的重负载等。</p>
+<p>网络压力测试：通常，应力意味着将系统拉伸到其指定的限值之外。执行页面压力测试以通过施加压力来破坏站点，并检查系统如何对压力做出反应以及如何从崩溃中恢复。压力通常放在输入字段，登录和注册区域。</p>
+<p>在页面性能中，在不同操作系统和不同硬件平台上测试网站功能时，会检查软件和硬件内存泄漏错误。</p>
+<p>性能测试可用于了解网站的可伸缩性，或对第三方产品（如服务器和中间件）环境中的性能进行基准测试，以便进行潜在购买。</p>
+<h6 id="连接速度"><a href="#连接速度" class="headerlink" title="连接速度"></a>连接速度</h6><p>在各种网络上经过测试，如拨号，ISDN等。</p>
+<h6 id="页面加载"><a href="#页面加载" class="headerlink" title="页面加载"></a>页面加载</h6><p>页面加载性能可以用Lighthouse进行测试。</p>
+<p>i.每次最多承受用户数？<br>ii. 检查峰值负载和系统的行为方式</p>
+<p>iii.用户访问的大量数据</p>
+<h6 id="压力测试"><a href="#压力测试" class="headerlink" title="压力测试"></a>压力测试</h6><p>i. 连续载荷<br>ii.内存、CPU、文件处理等性能</p>
+<h5 id="安全测试"><a href="#安全测试" class="headerlink" title="安全测试"></a>安全测试</h5><p>以下是页面安全测试的一些测试用例：</p>
+<ul>
+<li>通过将内部 URL 直接粘贴到浏览器地址栏中而不登录来进行测试。不应打开内部页面。</li>
+<li>如果您使用用户名和密码登录并浏览内部页面，请尝试直接更改URL选项。即，如果您正在检查一些发布者站点统计信息，则发布者站点 ID &#x3D; 123。尝试直接将 URL 站点 ID 参数更改为与登录用户无关的其他站点 ID。应拒绝此用户查看其他人的统计信息的访问权限。</li>
+<li>尝试在输入字段中输入一些无效的输入，例如登录用户名，密码，输入文本框等。检查系统对所有无效输入的反应。</li>
+<li>页面目录和文件不应直接访问，除非为它们提供了下载选项。</li>
+<li>测试验证码以自动执行脚本登录。</li>
+<li>测试 SSL 是否用于安全措施。如果使用，当用户从不安全的页面HTTP:&#x2F;&#x2F;切换到安全 HTTPS:&#x2F;&#x2F; 页面时，应显示正确的消息，反之亦然。</li>
+<li>所有事务、错误消息和安全漏洞尝试都应记录在服务器上某个位置的日志文件中。</li>
+</ul>
+<p>测试页面安全性的主要原因是识别潜在的漏洞并随后修复它们。</p>
+<ul>
+<li>网络扫描</li>
+<li>漏洞扫描</li>
+<li>密码破解</li>
+<li>日志审查</li>
+<li>完整性检查器</li>
+<li>病毒检测</li>
+</ul>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+        <tag>页面测试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>BMCweb解释</title>
     <url>/Echo/2020/01/17/BMCweb%E8%A7%A3%E9%87%8A/</url>
     <content><![CDATA[<p><strong>UID****：</strong>定位作用，控制定位灯是否亮起，便于寻找机器</p>
@@ -956,6 +956,34 @@
       <tags>
         <tag>BMC</tag>
         <tag>服务器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Flume日志采集框架学习</title>
+    <url>/Echo/2021/11/14/Flume%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h4 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h4><ul>
+<li>Flume 是一个<code>分布式</code>、<code>可靠</code>、<code>高可用</code>的海量<code>日志采集</code>、<code>聚合</code>和<code>传输</code>的系统；</li>
+<li>Flume 可以采集文件、socket数据包、文件、目录、Kafka等<code>各种形式数据源</code>，又可以将采集到的数据（下沉 sink）输出到 HDFS、HBase、Hive、Kafka等<code>众多外部存储系统</code>中；</li>
+<li>一般的采集需求，通过对 Flume 的简单配置即可实现；</li>
+<li>Flume 针对特殊场景也具备良好的自定义扩展能力，因此，Flume 适用于大部分的日常数据采集场景；</li>
+</ul>
+<h4 id="2-运行机制"><a href="#2-运行机制" class="headerlink" title="2. 运行机制"></a>2. 运行机制</h4><p>Flume 分布式系统中最<code>核心的角色是 agent</code>，Flume 采集系统就是由一个个 agent 所连接起来形成的；</p>
+<p><img src="/Echo/2021/11/14/Flume%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/image-20211114152336278.png" alt="image-20211114152336278"></p>
+<p> 每一个 agent 相当于一个数据传递员，内部有三个组件：</p>
+<ul>
+<li>Source：&#96; 采集组件，用于与众多数据源对接，以获取数据；</li>
+<li>Channel：&#96; 传输通道组件，用于从 Source 将数据传递到 Sink；</li>
+<li>Sink：&#96; 下沉组件，用于往下一级 agent 传递数据 或者 往最终存储系统传递数据；</li>
+</ul>
+<h4 id="3-单个agent采集数据"><a href="#3-单个agent采集数据" class="headerlink" title="3.单个agent采集数据"></a>3.单个agent采集数据</h4><p><img src="/Echo/2021/11/14/Flume%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/image-20211114152023931.png" alt="image-20211114152023931"></p>
+<h4 id="4-多个agent采集数据"><a href="#4-多个agent采集数据" class="headerlink" title="4.多个agent采集数据"></a>4.多个agent采集数据</h4><p><img src="/Echo/2021/11/14/Flume%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/image-20211114152057458.png" alt="image-20211114152057458"></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>日志</tag>
+        <tag>flume</tag>
       </tags>
   </entry>
   <entry>
@@ -1027,87 +1055,6 @@
         <tag>页面测试</tag>
         <tag>安全测试</tag>
         <tag>cookie</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Flume日志采集框架学习</title>
-    <url>/Echo/2021/11/14/Flume%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<h4 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h4><ul>
-<li>Flume 是一个<code>分布式</code>、<code>可靠</code>、<code>高可用</code>的海量<code>日志采集</code>、<code>聚合</code>和<code>传输</code>的系统；</li>
-<li>Flume 可以采集文件、socket数据包、文件、目录、Kafka等<code>各种形式数据源</code>，又可以将采集到的数据（下沉 sink）输出到 HDFS、HBase、Hive、Kafka等<code>众多外部存储系统</code>中；</li>
-<li>一般的采集需求，通过对 Flume 的简单配置即可实现；</li>
-<li>Flume 针对特殊场景也具备良好的自定义扩展能力，因此，Flume 适用于大部分的日常数据采集场景；</li>
-</ul>
-<h4 id="2-运行机制"><a href="#2-运行机制" class="headerlink" title="2. 运行机制"></a>2. 运行机制</h4><p>Flume 分布式系统中最<code>核心的角色是 agent</code>，Flume 采集系统就是由一个个 agent 所连接起来形成的；</p>
-<p><img src="/Echo/2021/11/14/Flume%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/image-20211114152336278.png" alt="image-20211114152336278"></p>
-<p> 每一个 agent 相当于一个数据传递员，内部有三个组件：</p>
-<ul>
-<li>Source：&#96; 采集组件，用于与众多数据源对接，以获取数据；</li>
-<li>Channel：&#96; 传输通道组件，用于从 Source 将数据传递到 Sink；</li>
-<li>Sink：&#96; 下沉组件，用于往下一级 agent 传递数据 或者 往最终存储系统传递数据；</li>
-</ul>
-<h4 id="3-单个agent采集数据"><a href="#3-单个agent采集数据" class="headerlink" title="3.单个agent采集数据"></a>3.单个agent采集数据</h4><p><img src="/Echo/2021/11/14/Flume%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/image-20211114152023931.png" alt="image-20211114152023931"></p>
-<h4 id="4-多个agent采集数据"><a href="#4-多个agent采集数据" class="headerlink" title="4.多个agent采集数据"></a>4.多个agent采集数据</h4><p><img src="/Echo/2021/11/14/Flume%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/image-20211114152057458.png" alt="image-20211114152057458"></p>
-]]></content>
-      <categories>
-        <category>学习</category>
-      </categories>
-      <tags>
-        <tag>日志</tag>
-        <tag>flume</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>GitHub搜索技巧</title>
-    <url>/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/</url>
-    <content><![CDATA[<p>github是世界知名的代码托管平台，千万程序员的圣地。作为一个常逛github的程序员，你在github上搜索代码时，是怎样操作的呢？</p>
-<p>大家是不是也会像我一样搜索框直接输入关键字</p>
-<p><img src="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117104623233.png" alt="image-20211117104623233"></p>
-<p>然后改变 一下列表oder排序方式</p>
-<p><img src="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117104649103.png" alt="image-20211117104649103"></p>
-<p>但是找到了接近21万相关的开源项目，这时候的你是不是一脸懵呢！</p>
-<p>接下来我们一块掌握几个精确查找项目的方式（均以springboot为例）</p>
-<h6 id="1-项目名搜索"><a href="#1-项目名搜索" class="headerlink" title="1.项目名搜索"></a>1.项目名搜索</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:name 项目关键字</span><br></pre></td></tr></table></figure>
-
-<p><img src="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117104831270.png" alt="image-20211117104831270"></p>
-<p>这时发现项目数据量已经少了一些，搜索到了16.5万个项目</p>
-<h6 id="2-项目描述搜索"><a href="#2-项目描述搜索" class="headerlink" title="2.项目描述搜索"></a>2.项目描述搜索</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:description 关键字</span><br></pre></td></tr></table></figure>
-
-<p><img src="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117105101855.png" alt="image-20211117105101855"></p>
-<p>此时项目数量已经下降到了6.9万个</p>
-<h6 id="3-项目readMe搜索"><a href="#3-项目readMe搜索" class="headerlink" title="3.项目readMe搜索"></a>3.项目readMe搜索</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:readme 关键字</span><br></pre></td></tr></table></figure>
-
-<p><img src="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117105323314.png" alt="image-20211117105323314"></p>
-<p>此时项目数量为12.6万个</p>
-<h6 id="4-关键字搜索，然后限制stars或者forks-数"><a href="#4-关键字搜索，然后限制stars或者forks-数" class="headerlink" title="4.关键字搜索，然后限制stars或者forks 数"></a>4.关键字搜索，然后限制stars或者forks 数</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:name 或者 description 或者 readme 关键字 stars:&gt;数字 forks:&gt;数字</span><br></pre></td></tr></table></figure>
-
-<p>stars 和 forks既可以单独使用，也可以组合使用</p>
-<p><img src="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117113707201.png" alt="image-20211117113707201"></p>
-<p>当增加上stars 数量大于10000时，项目数为23个</p>
-<h6 id="5-限制项目更新时间"><a href="#5-限制项目更新时间" class="headerlink" title="5.限制项目更新时间"></a>5.限制项目更新时间</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:name或description或readme 关键字  pushed:&gt;2021-02-01</span><br></pre></td></tr></table></figure>
-
-<p><img src="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117113931148.png" alt="image-20211117113931148"></p>
-<p>此时项目数为4.4万个。这里还可以和stars或者forks组合使用</p>
-<h6 id="6-限制项目的语言"><a href="#6-限制项目的语言" class="headerlink" title="6.限制项目的语言"></a>6.限制项目的语言</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:name或description或readme 关键字  language:javascript</span><br></pre></td></tr></table></figure>
-
-<p><img src="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117114146576.png" alt="image-20211117114146576"></p>
-<p>项目数为8.5万个。</p>
-<h6 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h6><p>如何高效的从GitHub上搜索开源项目，有下面的小技巧：</p>
-<ul>
-<li>项目名搜索: in:name 关键字</li>
-<li>项目描述搜索： in:description 关键字</li>
-<li>项目详细描述搜索： in: readme 关键字</li>
-<li>限制项目的火热程度： stars:&gt;数字 或者 forks:&gt;数字</li>
-<li>限制项目的更新时间：pushed:&gt; 时间</li>
-<li>限制项目的语言：language:语言</li>
-</ul>
-<p>所以以上github搜索的小技巧。你学废了吗？</p>
-]]></content>
-      <categories>
-        <category>学习</category>
-      </categories>
-      <tags>
-        <tag>github</tag>
       </tags>
   </entry>
   <entry>
@@ -1238,6 +1185,59 @@
       </categories>
       <tags>
         <tag>大数据，HDFS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>GitHub搜索技巧</title>
+    <url>/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/</url>
+    <content><![CDATA[<p>github是世界知名的代码托管平台，千万程序员的圣地。作为一个常逛github的程序员，你在github上搜索代码时，是怎样操作的呢？</p>
+<p>大家是不是也会像我一样搜索框直接输入关键字</p>
+<p><img src="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117104623233.png" alt="image-20211117104623233"></p>
+<p>然后改变 一下列表oder排序方式</p>
+<p><img src="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117104649103.png" alt="image-20211117104649103"></p>
+<p>但是找到了接近21万相关的开源项目，这时候的你是不是一脸懵呢！</p>
+<p>接下来我们一块掌握几个精确查找项目的方式（均以springboot为例）</p>
+<h6 id="1-项目名搜索"><a href="#1-项目名搜索" class="headerlink" title="1.项目名搜索"></a>1.项目名搜索</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:name 项目关键字</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117104831270.png" alt="image-20211117104831270"></p>
+<p>这时发现项目数据量已经少了一些，搜索到了16.5万个项目</p>
+<h6 id="2-项目描述搜索"><a href="#2-项目描述搜索" class="headerlink" title="2.项目描述搜索"></a>2.项目描述搜索</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:description 关键字</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117105101855.png" alt="image-20211117105101855"></p>
+<p>此时项目数量已经下降到了6.9万个</p>
+<h6 id="3-项目readMe搜索"><a href="#3-项目readMe搜索" class="headerlink" title="3.项目readMe搜索"></a>3.项目readMe搜索</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:readme 关键字</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117105323314.png" alt="image-20211117105323314"></p>
+<p>此时项目数量为12.6万个</p>
+<h6 id="4-关键字搜索，然后限制stars或者forks-数"><a href="#4-关键字搜索，然后限制stars或者forks-数" class="headerlink" title="4.关键字搜索，然后限制stars或者forks 数"></a>4.关键字搜索，然后限制stars或者forks 数</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:name 或者 description 或者 readme 关键字 stars:&gt;数字 forks:&gt;数字</span><br></pre></td></tr></table></figure>
+
+<p>stars 和 forks既可以单独使用，也可以组合使用</p>
+<p><img src="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117113707201.png" alt="image-20211117113707201"></p>
+<p>当增加上stars 数量大于10000时，项目数为23个</p>
+<h6 id="5-限制项目更新时间"><a href="#5-限制项目更新时间" class="headerlink" title="5.限制项目更新时间"></a>5.限制项目更新时间</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:name或description或readme 关键字  pushed:&gt;2021-02-01</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117113931148.png" alt="image-20211117113931148"></p>
+<p>此时项目数为4.4万个。这里还可以和stars或者forks组合使用</p>
+<h6 id="6-限制项目的语言"><a href="#6-限制项目的语言" class="headerlink" title="6.限制项目的语言"></a>6.限制项目的语言</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:name或description或readme 关键字  language:javascript</span><br></pre></td></tr></table></figure>
+
+<p><img src="/Echo/2021/03/17/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117114146576.png" alt="image-20211117114146576"></p>
+<p>项目数为8.5万个。</p>
+<h6 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h6><p>如何高效的从GitHub上搜索开源项目，有下面的小技巧：</p>
+<ul>
+<li>项目名搜索: in:name 关键字</li>
+<li>项目描述搜索： in:description 关键字</li>
+<li>项目详细描述搜索： in: readme 关键字</li>
+<li>限制项目的火热程度： stars:&gt;数字 或者 forks:&gt;数字</li>
+<li>限制项目的更新时间：pushed:&gt; 时间</li>
+<li>限制项目的语言：language:语言</li>
+</ul>
+<p>所以以上github搜索的小技巧。你学废了吗？</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>github</tag>
       </tags>
   </entry>
   <entry>
@@ -1650,10 +1650,13 @@
 
 ]]></content>
       <categories>
-        <category>环境安装</category>
+        <category>Kubernetes</category>
       </categories>
       <tags>
+        <tag>环境安装</tag>
         <tag>K8S</tag>
+        <tag>Kubernetes</tag>
+        <tag>centos</tag>
         <tag>linux</tag>
       </tags>
   </entry>
@@ -1708,10 +1711,13 @@
 
 ]]></content>
       <categories>
-        <category>环境安装</category>
+        <category>Kubernetes</category>
       </categories>
       <tags>
+        <tag>环境安装</tag>
         <tag>K8S</tag>
+        <tag>Kubernetes</tag>
+        <tag>centos</tag>
         <tag>linux</tag>
       </tags>
   </entry>
@@ -2705,6 +2711,145 @@
       </tags>
   </entry>
   <entry>
+    <title>jekins环境搭建</title>
+    <url>/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr>
+<th>环境</th>
+<th>版本</th>
+<th>包</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>JDK</td>
+<td>11.0.2</td>
+<td>jdk-11.0.2_linux-x64_bin.tar.gz</td>
+</tr>
+<tr>
+<td>Maven</td>
+<td>3.8.1</td>
+<td>apache-maven-3.8.1-bin.tar.gz</td>
+</tr>
+<tr>
+<td>Git</td>
+<td>2.9.5</td>
+<td>git-2.9.5.tar.gz</td>
+</tr>
+<tr>
+<td>Jenkins</td>
+<td>2.303.1 LTS</td>
+<td>jenkins.war</td>
+</tr>
+</tbody></table>
+<p>注：Jenkins的中英文系统跟随操作系统保持一致，如果想使用中文Jenkins，操作系统需要设置中文：<strong>zh_CN.UTF-8</strong></p>
+<h1 id="1-JDK安装部署"><a href="#1-JDK安装部署" class="headerlink" title="1.JDK安装部署"></a>1.JDK安装部署</h1><h2 id="1-1-旧JDK卸载"><a href="#1-1-旧JDK卸载" class="headerlink" title="1.1 旧JDK卸载"></a>1.1 旧JDK卸载</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">rpm -qa | grep -i java | xargs -n1 sudo rpm -e --nodeps</span><br><span class="line">rpm -qa：表示查询所有已经安装的软件包</span><br><span class="line">grep -i：表示过滤时不区分大小写</span><br><span class="line">xargs -n1：表示一次获取上次执行结果的一个值</span><br><span class="line">rpm -e --nodeps：表示卸载软件</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="1-2-安装指定JDK"><a href="#1-2-安装指定JDK" class="headerlink" title="1.2 安装指定JDK"></a>1.2 安装指定JDK</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 创建节点安装服务目录</span><br><span class="line">mkdir /opt/software</span><br><span class="line"># 解压JDK</span><br><span class="line">tar -zxvf jdk-11.0.2_linux-x64_bin.tar.gz -C /opt/software/</span><br><span class="line"># 配置环境变量</span><br><span class="line">vim /etc/profile</span><br><span class="line">export JAVA_HOME=/opt/software/jdk-11.0.2</span><br><span class="line">export PATH=$PATH:$JAVA_HOME/bin</span><br><span class="line">source /etc/profile</span><br><span class="line"># 验证JDK安装</span><br><span class="line">java -version</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-关闭防火墙"><a href="#2-关闭防火墙" class="headerlink" title="2.关闭防火墙"></a>2.关闭防火墙</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl status firewalld		# 查看防火墙的状态</span><br><span class="line">systemctl stop firewalld		# 关闭防火墙</span><br><span class="line">systemctl disable firewalld		# 设置开机不启动</span><br><span class="line">systemctl is-enabled firewalld	# 查看防火墙服务是否设置开机启动</span><br></pre></td></tr></table></figure>
+
+<h1 id="3-安装Maven"><a href="#3-安装Maven" class="headerlink" title="3.安装Maven"></a>3.安装Maven</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 解压maven</span><br><span class="line">tar -zxvf apache-maven-3.8.1-bin.tar.gz -C /opt/software/</span><br><span class="line"># 配置环境变量</span><br><span class="line">vim /etc/profile</span><br><span class="line">export JAVA_HOME=/opt/software/jdk-11.0.2</span><br><span class="line">export MAVNE_HOME=/opt/software/apache-maven-3.8.1</span><br><span class="line">export PATH=$PATH:$JAVA_HOME/bin:$MAVNE_HOME/bin</span><br><span class="line">source /etc/profile</span><br><span class="line"># 检查maven安装</span><br><span class="line">mvn -version</span><br></pre></td></tr></table></figure>
+
+<h1 id="4-安装Git"><a href="#4-安装Git" class="headerlink" title="4.安装Git"></a>4.安装Git</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 1.安装编译 git 时需要的包</span><br><span class="line">yum install -y curl-devel expat-devel gettext-devel openssl-devel zlib-devel</span><br><span class="line">yum install -y gcc perl-ExtUtils-MakeMaker</span><br><span class="line"># 2.删除已有的 git</span><br><span class="line">yum remove -y git</span><br><span class="line"># 3.Git 官网下载 Git 最新版 tar 包，解压到/opt/software目录下</span><br><span class="line">tar -zxvf git-2.9.5.tar.gz -C /opt/software/</span><br><span class="line"># 4.编译安装</span><br><span class="line">cd /opt/software/git-2.9.5/</span><br><span class="line">make prefix=/usr/local/git all</span><br><span class="line">make prefix=/usr/local/git install</span><br><span class="line">echo &quot;export PATH=$PATH:/usr/local/git/bin&quot; &gt;&gt; /etc/bashrc</span><br><span class="line">source /etc/bashrc</span><br><span class="line"># 5.检查一下版本号</span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
+
+<h1 id="5-搭建Jenkins"><a href="#5-搭建Jenkins" class="headerlink" title="5.搭建Jenkins"></a>5.搭建Jenkins</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yum install -y fontconfig</span><br><span class="line"># Jenkins可以直接运行</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">nohup /usr/bin/java -jar /root/jenkins.war  --logfile=/var/<span class="built_in">log</span>/jenkins_server.log --httpPort=8088 &gt;  /root/jenkins_server.log 2&gt;&amp; 1 &amp;**</span><br></pre></td></tr></table></figure>
+
+<p>设置开机启动<br> vim &#x2F;etc&#x2F;rc.local</p>
+<h2 id="5-1-访问jekins"><a href="#5-1-访问jekins" class="headerlink" title="5.1 访问jekins"></a>5.1 访问jekins</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://yellow.bigdata:8088</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-2-解锁Jenkins"><a href="#5-2-解锁Jenkins" class="headerlink" title="5.2 解锁Jenkins"></a>5.2 解锁Jenkins</h2><p>依据提示，查看&#x2F;root&#x2F;.jenkins&#x2F;secrets&#x2F;initialAdminPassword文件中内容，填入文本框，这里填写的密码，也是admin账号的密码</p>
+<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113151335779.png" alt="image-20211113151335779"></p>
+<h2 id="5-3-选择插件安装模式"><a href="#5-3-选择插件安装模式" class="headerlink" title="5.3 选择插件安装模式"></a>5.3 选择插件安装模式</h2><p>选择哪种插件的安装方式都可以，对后续操作没有太大影响，若后面有需要可以有针对性的安装插件，本次选择 “<strong>安装推荐的插件</strong>”，此时安装插件节点必须能够联网。</p>
+<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153312956.png" alt="image-20211113153312956"></p>
+<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153332209.png" alt="image-20211113153332209"></p>
+<p>打×的插件是由于网络传输导致的安装失败，后面再重新安装即可</p>
+<h2 id="5-4-新建账号或以管理员身份继续"><a href="#5-4-新建账号或以管理员身份继续" class="headerlink" title="5.4 新建账号或以管理员身份继续"></a>5.4 新建账号或以管理员身份继续</h2><p>可以选择使用admin账户继续，后面仍然有机会注册新账户</p>
+<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153358671.png" alt="image-20211113153358671"></p>
+<h2 id="5-5-实例配置"><a href="#5-5-实例配置" class="headerlink" title="5.5 实例配置"></a>5.5 实例配置</h2><p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153424306.png" alt="image-20211113153424306"></p>
+<h2 id="5-6-开始使用Jenkins"><a href="#5-6-开始使用Jenkins" class="headerlink" title="5.6 开始使用Jenkins"></a>5.6 开始使用Jenkins</h2><p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153454866.png" alt="image-20211113153454866"></p>
+<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153524832.png" alt="image-20211113153524832"></p>
+<h2 id="5-7-Jenkins设置中文"><a href="#5-7-Jenkins设置中文" class="headerlink" title="5.7 Jenkins设置中文"></a>5.7 Jenkins设置中文</h2><p>安装插件 Locale plugin , Localization: Chinese (Simplified) , Localization Support Plugin，如果失败就再安装一次</p>
+<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153552830.png" alt="image-20211113153552830"></p>
+<p>重启：<a href="http://yellow.bigdata:8088/restart">http://yellow.bigdata:8088/restart</a><br> 如果出现部分汉化，部分没有汉化，则卸载插件，重新安装插件<br> 如果还是存在部分汉化，部分没有汉化的现象，则如下操作：<br> 1.先设置Default Language：zh_US（含义：英文）<br> 2.重启Jenkins<br> 3.再设置Default Language：zh_CN（含义：中文）<br> 4.刷新即可</p>
+<h1 id="6-Jenkins系统管理初始化设置"><a href="#6-Jenkins系统管理初始化设置" class="headerlink" title="6.Jenkins系统管理初始化设置"></a>6.Jenkins系统管理初始化设置</h1><h2 id="6-1-全局工具配置"><a href="#6-1-全局工具配置" class="headerlink" title="6.1 全局工具配置"></a>6.1 全局工具配置</h2><p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153642733.png" alt="image-20211113153642733"></p>
+<p>JDK</p>
+<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153701355.png" alt="image-20211113153701355"></p>
+<p>Git</p>
+<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153722363.png" alt="image-20211113153722363"></p>
+<p>Maven</p>
+<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153742157.png" alt="image-20211113153742157"></p>
+]]></content>
+      <categories>
+        <category>环境安装</category>
+      </categories>
+      <tags>
+        <tag>jekins</tag>
+        <tag>CI/CD</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>springboot整合shiro和JWT使用指北</title>
+    <url>/Echo/2021/11/09/springboot%E6%95%B4%E5%90%88shiro%E5%92%8CJWT%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8C%97/</url>
+    <content><![CDATA[<h3 id="shiro是什么？"><a href="#shiro是什么？" class="headerlink" title="shiro是什么？"></a>shiro是什么？</h3><p><code>Shiro</code> 是一个强大的简单易用的 <code>Java</code> 安全框架，主要用来更便捷的 <code>认证，授权，加密，会话管理</code>。<code>Shiro</code> 首要的和最重要的目标就是容易使用并且容易理解，通过 <code>Shiro</code> 易于理解的<code>API</code>，您可以快速、轻松地获得任何应用程序——从最小的移动应用程序最大的网络和企业应用程序。</p>
+<h3 id="shiro的功能"><a href="#shiro的功能" class="headerlink" title="shiro的功能"></a>shiro的功能</h3><ol>
+<li>Authentication:身份认证、登录，验证用户是不是拥有相应的身份;\</li>
+<li>Authorization:授权，即权限验证，验证某个已认证的用户是否拥有某个权限，即判断用户能否进行什么操作，如:验证某个用户是否拥有某个角色，或者细粒度的验证某个用户对某个资源是否具有某个权限!\</li>
+<li>Session Manager:会话管理，即用户登录后就是第一次会话，在没有退出之前，它的所有信息都在会话中;会话可以是普通的JavaSE环境，也可以是Web环境;\</li>
+<li>Cryptography:加密，保护数据的安全性，如密码加密存储到数据库中，而不是明文存储;\</li>
+<li>Web Support: Web支持，可以非常容易的集成到Web环境;\</li>
+<li>Caching:缓存，比如用户登录后，其用户信息，拥有的角色、权限不必每次去查，这样可以提高效率\</li>
+<li>Concurrency: Shiro支持多线程应用的并发验证，即，如在一个线程中开启另一个线程，能把权限自动的传播过去Testing:提供测试支持;\</li>
+<li>Run As:允许一个用户假装为另一个用户（如果他们允许）的身份进行访问;\</li>
+<li>Remember Me:记住我，这个是非常常见的功能，即一次登录后，下次再来的话不用登录了\</li>
+</ol>
+<h3 id="JWT是什么？"><a href="#JWT是什么？" class="headerlink" title="JWT是什么？"></a>JWT是什么？</h3><p>JWT ：JWT（JSON Web Token）是一种身份认证的方式，JWT 本质上就一段签名的 JSON 格式的数据。由于它是带有签名的，因此接收者便可以验证它的真实性。可以理解为对 token 这一技术提出一套规范，是在 <a href="https://link.juejin.cn/?target=https://tools.ietf.org/html/rfc7519">RFC 7519</a> 中提出的。</p>
+<h3 id="JWT的组成和优缺点"><a href="#JWT的组成和优缺点" class="headerlink" title="JWT的组成和优缺点"></a>JWT的组成和优缺点</h3><p>本文在这里仅简单介绍JWT的组成和优缺点。详细分析可以在相关搜索引擎中搜索。</p>
+<h4 id="JWT的组成"><a href="#JWT的组成" class="headerlink" title="JWT的组成"></a>JWT的组成</h4><p>一个JWT token是一个字符串，它由头部、载荷、与签名中间有.分割组成；</p>
+<p>头部（header）：由令牌的类型和正在使用的签名算法组成；</p>
+<p>载荷（playload）：放置了token的一些基本信息，以帮助接收服务器理解，同时还有用户自定义信息，支持用户信息交换；</p>
+<p>签名（Signature）：主要是将前面的头部和载荷进行加密。</p>
+<h4 id="JWT的优缺点"><a href="#JWT的优缺点" class="headerlink" title="JWT的优缺点"></a>JWT的优缺点</h4><p>JWT的优点：</p>
+<ul>
+<li>防CSRF：CSRF（Cross Site Request Forgery）跨站伪造请求。使用JWT登录成功后，会存放在本地local storage中；\</li>
+<li>适合移动端：使用session需要服务端保存一份信息，使用token不需要只要请求携带token，还可跨语言使用；\</li>
+<li>无状态：token中有身份验证的所有信息，增加了系统的可用性和伸缩性也带了同样的问题（在缺点中会介绍）；\</li>
+<li>单点登录友好：使用session需要我们把所有session信息存在一台电脑上，使用token的话token保存在客户端。\</li>
+</ul>
+<p>JWT的缺点：</p>
+<ul>
+<li>无状态导致在注销、退出登录、修改密码、修改角色||权限等场景下token依旧有效；\</li>
+<li>token续签问题：即token过期后如何动态刷新token。\</li>
+</ul>
+<h4 id="shiro-JWT-使用"><a href="#shiro-JWT-使用" class="headerlink" title="shiro + JWT 使用"></a>shiro + JWT 使用</h4><h5 id="JWTtoken-令牌"><a href="#JWTtoken-令牌" class="headerlink" title="JWTtoken 令牌"></a>JWTtoken 令牌</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.apache.shiro.authc.AuthenticationToken;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JwtToken</span> <span class="keyword">implements</span> <span class="title">AuthenticationToken</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> String token;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">JwtToken</span><span class="params">(String jwt)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">this</span>.token = jwt;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> Object <span class="title">getCredentials</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> token;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> Object <span class="title">getPrincipal</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> token;</span><br><span class="line"></span><br><span class="line"> &#125;  </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="jwtutils-JWT工具类主要是生成token设置过期时间"><a href="#jwtutils-JWT工具类主要是生成token设置过期时间" class="headerlink" title="jwtutils JWT工具类主要是生成token设置过期时间"></a>jwtutils JWT工具类主要是生成token设置过期时间</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.context.properties.ConfigurationProperties;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> io.jsonwebtoken.Claims;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> io.jsonwebtoken.Jwts;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> io.jsonwebtoken.SignatureAlgorithm;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> lombok.Data;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> lombok.extern.slf4j.Slf4j;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@ConfigurationProperties(prefix = &quot;blogspringback.jwt&quot;)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JwtUtils</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String secret;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">long</span> expire;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> String header;</span><br><span class="line"></span><br><span class="line">\</span><br><span class="line"></span><br><span class="line">/</span><br><span class="line"></span><br><span class="line"> <span class="meta">@description</span>: 生成token</span><br><span class="line"></span><br><span class="line">  <span class="meta">@param</span> &#123;<span class="keyword">long</span>&#125; userId</span><br><span class="line"></span><br><span class="line">  <span class="meta">@return</span> &#123;JWT token&#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Author</span>: 丑牛</span><br><span class="line"></span><br><span class="line">/</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">generateToken</span><span class="params">(<span class="keyword">long</span> userId)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 过期时间</span></span><br><span class="line"></span><br><span class="line">  Date dateNow = <span class="keyword">new</span> Date();</span><br><span class="line"></span><br><span class="line">  Date dateExpire =  <span class="keyword">new</span> Date(dateNow.getTime() + expire  <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> Jwts.builder()</span><br><span class="line"></span><br><span class="line">    .setHeaderParam(<span class="string">&quot;type&quot;</span>, <span class="string">&quot;JWT&quot;</span>)</span><br><span class="line"></span><br><span class="line">     .setSubject(userId + <span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line">     .setIssuedAt(dateNow)</span><br><span class="line"></span><br><span class="line">     .setExpiration(dateExpire)</span><br><span class="line"></span><br><span class="line">     .signWith(SignatureAlgorithm.HS512, secret)</span><br><span class="line"></span><br><span class="line">     .compact();</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Claims <span class="title">getClaimsByToken</span><span class="params">(String token)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> Jwts.parser()</span><br><span class="line"></span><br><span class="line">  .setSigningKey(secret)</span><br><span class="line"></span><br><span class="line"> .parseClaimsJws(token)</span><br><span class="line"></span><br><span class="line">.getBody();</span><br><span class="line"></span><br><span class="line">  &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line"></span><br><span class="line">   log.debug(<span class="string">&quot;token error&quot;</span>, e);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">/</span><br><span class="line"></span><br><span class="line"> <span class="meta">@description</span>: 判断token是否过期</span><br><span class="line"></span><br><span class="line">  <span class="meta">@param</span> &#123;Date&#125; expeiration</span><br><span class="line"></span><br><span class="line">  <span class="meta">@return</span> <span class="keyword">true</span>:过期；<span class="keyword">false</span>：未过期</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Author</span>: 丑牛</span><br><span class="line"></span><br><span class="line">/</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isTokenExpired</span><span class="params">(Date expeiration)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> expeiration.before(<span class="keyword">new</span> Date());</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">&#125;`</span><br><span class="line"></span><br><span class="line">##### JWTFilter 拦截请求</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Jwtfilter</span> <span class="keyword">extends</span> <span class="title">AuthenticatingFilter</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Autowired</span></span><br><span class="line"></span><br><span class="line"> JwtUtils jwtUtils;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">protected</span> AuthenticationToken <span class="title">createToken</span><span class="params">(ServletRequest servletRequest, ServletResponse serverResponse)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"></span><br><span class="line">  HttpServletRequest request = (HttpServletRequest) servletRequest;</span><br><span class="line"></span><br><span class="line">  String jwt = request.getHeader(<span class="string">&quot;Authorization&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (ObjectUtils.isEmpty(jwt))&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> JwtToken(jwt);</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">boolean</span> <span class="title">onAccessDenied</span><span class="params">(ServletRequest servletRequest, ServletResponse serverResponse)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"></span><br><span class="line">  HttpServletRequest request = (HttpServletRequest) servletRequest;</span><br><span class="line"></span><br><span class="line">  String jwt = request.getHeader(<span class="string">&quot;Authorization&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (ObjectUtils.isEmpty(jwt)) &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">   Claims claim = JwtUtils.getClaimsByToken(jwt);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (claim == <span class="keyword">null</span> || jwtUtils.isTokenExpired(claim.getExpiration())) &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">throw</span> <span class="keyword">new</span> ExpiredCredentialsException(<span class="string">&quot;token失效，请重新登录&quot;</span>);</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> executeLogin(servletRequest, serverResponse);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">boolean</span> <span class="title">onLoginFailure</span><span class="params">(AuthenticationToken token, AuthenticationException e, ServletRequest request, ServletResponse response)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">  HttpServletResponse httpServletResponse = (HttpServletResponse) response;</span><br><span class="line"></span><br><span class="line">  Throwable throwable = e.getCause() == <span class="keyword">null</span> ? e : e.getCause();</span><br><span class="line"></span><br><span class="line">  Result result = Result.fail(throwable.getMessage());</span><br><span class="line"></span><br><span class="line">  String json = JSONUtil.toJsonStr(result);</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line"></span><br><span class="line">   httpServletResponse.getWriter().print(json);</span><br><span class="line"></span><br><span class="line">  &#125; <span class="keyword">catch</span> (IOException ioException) &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">\</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">boolean</span> <span class="title">preHandle</span><span class="params">(ServletRequest request, ServletResponse response)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"></span><br><span class="line">  HttpServletRequest httpServletRequest = WebUtils.toHttp(request);</span><br><span class="line"></span><br><span class="line">  HttpServletResponse httpServletResponse = WebUtils.toHttp(response);</span><br><span class="line"></span><br><span class="line">  httpServletResponse.setHeader(<span class="string">&quot;Access-control-Allow-Origin&quot;</span>, httpServletRequest.getHeader(<span class="string">&quot;Origin&quot;</span>));</span><br><span class="line"></span><br><span class="line">  httpServletResponse.setHeader(<span class="string">&quot;Access-Control-Allow-Methods&quot;</span>, <span class="string">&quot;GET,POST,OPTIONS,PUT,DELETE&quot;</span>);</span><br><span class="line"></span><br><span class="line">  httpServletResponse.setHeader(<span class="string">&quot;Access-Control-Allow-Headers&quot;</span>,  httpServletRequest.getHeader(<span class="string">&quot;Access-Control-Request-Headers&quot;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 跨域时会首先发送一个OPTIONS请求，这里我们给OPTIONS请求直接返回正常状态</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (httpServletRequest.getMethod().equals(RequestMethod.OPTIONS.name())) &#123;</span><br><span class="line"></span><br><span class="line">   httpServletResponse.setStatus(org.springframework.http.HttpStatus.OK.value());</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">super</span>.preHandle(request, response);</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="shiro-config-设置自定义的filter"><a href="#shiro-config-设置自定义的filter" class="headerlink" title="shiro config 设置自定义的filter"></a>shiro config 设置自定义的filter</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ShiroConfig</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Autowired</span></span><br><span class="line"></span><br><span class="line"> Jwtfilter jwtFilter;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Bean</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> SessionManager <span class="title">sessionManager</span><span class="params">(RedisSessionDAO redisSessionDAO)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  DefaultSessionManager sessionManager = <span class="keyword">new</span> DefaultSessionManager();</span><br><span class="line"></span><br><span class="line">  sessionManager.setSessionDAO(redisSessionDAO);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> sessionManager;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Bean</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> DefaultWebSecurityManager <span class="title">securityManager</span><span class="params">(AccountRealm accountRealm, SessionManager sessionManager,</span></span></span><br><span class="line"><span class="params"><span class="function"></span></span></span><br><span class="line"><span class="params"><span class="function">   RedisCacheManager redisCacheManager)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  DefaultWebSecurityManager securityManager = <span class="keyword">new</span> DefaultWebSecurityManager(accountRealm);</span><br><span class="line"></span><br><span class="line"><span class="comment">// inject sessionManager</span></span><br><span class="line"></span><br><span class="line">  securityManager.setSessionManager(sessionManager);</span><br><span class="line"></span><br><span class="line"><span class="comment">// inject redisCacheManager</span></span><br><span class="line"></span><br><span class="line">  securityManager.setCacheManager(redisCacheManager);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> securityManager;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Bean</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> ShiroFilterChainDefinition <span class="title">shiroFilterChainDefinition</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  DefaultShiroFilterChainDefinition chainDefinition = <span class="keyword">new</span> DefaultShiroFilterChainDefinition();</span><br><span class="line"></span><br><span class="line">  Map &lt; String, String &gt; filterMap = <span class="keyword">new</span> LinkedHashMap &lt;&gt; ();</span><br><span class="line"></span><br><span class="line">  filterMap.put(<span class="string">&quot;/&quot;</span>, <span class="string">&quot;jwt&quot;</span>);</span><br><span class="line"></span><br><span class="line">  chainDefinition.addPathDefinitions(filterMap);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> chainDefinition;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Bean(&quot;shiroFilterFactoryBean&quot;)</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> ShiroFilterFactoryBean <span class="title">shiroFilterFactoryBean</span><span class="params">(org.apache.shiro.mgt.SecurityManager securityManager,</span></span></span><br><span class="line"><span class="params"><span class="function"></span></span></span><br><span class="line"><span class="params"><span class="function">              ShiroFilterChainDefinition shiroFilterChainDefinition)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  ShiroFilterFactoryBean shiroFilter = <span class="keyword">new</span> ShiroFilterFactoryBean();</span><br><span class="line"></span><br><span class="line">  shiroFilter.setSecurityManager(securityManager);</span><br><span class="line"></span><br><span class="line">  Map &lt; String, Filter &gt; filters = <span class="keyword">new</span> HashMap &lt;&gt; ();</span><br><span class="line"></span><br><span class="line">  filters.put(<span class="string">&quot;jwt&quot;</span>, jwtFilter);</span><br><span class="line"></span><br><span class="line">  shiroFilter.setFilters(filters);</span><br><span class="line"></span><br><span class="line">  Map &lt; String, String &gt; filterMap = shiroFilterChainDefinition.getFilterChainMap();</span><br><span class="line"></span><br><span class="line">  shiroFilter.setFilterChainDefinitionMap(filterMap);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> shiroFilter;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="shiro工具类-获取当前用户登录信息"><a href="#shiro工具类-获取当前用户登录信息" class="headerlink" title="shiro工具类 获取当前用户登录信息"></a>shiro工具类 获取当前用户登录信息</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ShiroUtil</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> AccountProfile <span class="title">getProfile</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> (AccountProfile) SecurityUtils.getSubject().getPrincipal();</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="realm类-实现认证与授权"><a href="#realm类-实现认证与授权" class="headerlink" title="realm类 实现认证与授权"></a>realm类 实现认证与授权</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AccountRealm</span> <span class="keyword">extends</span> <span class="title">AuthorizingRealm</span></span>&#123;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Autowired</span></span><br><span class="line"></span><br><span class="line"> JwtUtils jwtUtils;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Autowired</span></span><br><span class="line"></span><br><span class="line"> UserService userService;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">supports</span><span class="params">(AuthenticationToken token)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> token <span class="keyword">instanceof</span> JwtToken;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">protected</span> AuthorizationInfo <span class="title">doGetAuthorizationInfo</span><span class="params">(PrincipalCollection principals)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">protected</span> AuthenticationInfo <span class="title">doGetAuthenticationInfo</span><span class="params">(AuthenticationToken token)</span> <span class="keyword">throws</span> AuthenticationException </span>&#123;</span><br><span class="line"></span><br><span class="line">  JwtToken jwtToken = (JwtToken) token;</span><br><span class="line"></span><br><span class="line">  String userId = JwtUtils.getClaimsByToken((String) jwtToken.getPrincipal()).getSubject();</span><br><span class="line"></span><br><span class="line">  User user = userService.getById(Long.valueOf(userId));</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (user == <span class="keyword">null</span>) &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">throw</span> <span class="keyword">new</span> UnknownAccountException(<span class="string">&quot;账户不存在&quot;</span>);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (user.getStatus() == -<span class="number">1</span>) &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">throw</span> <span class="keyword">new</span> LockedAccountException(<span class="string">&quot;账户已被锁定&quot;</span>);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  AccountProfile profile = <span class="keyword">new</span> AccountProfile();</span><br><span class="line"></span><br><span class="line">  BeanUtil.copyProperties(user, profile);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> SimpleAuthenticationInfo(profile, jwtToken.getCredentials(), getName());</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>PS <a href="https://github.com/hugfeature/spring-example/tree/main/blog-spring-back">demo地址</a></p>
+]]></content>
+      <categories>
+        <category>测试开发</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>springboot</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>kubeadm安装K8S（V1.22）</title>
     <url>/Echo/2022/01/18/kubeadm%E5%AE%89%E8%A3%85K8S%EF%BC%88V1-22%EF%BC%89/</url>
     <content><![CDATA[<h2 id="一-K8S1-20-x的重要更新"><a href="#一-K8S1-20-x的重要更新" class="headerlink" title="一.K8S1.20.x的重要更新"></a>一.K8S1.20.x的重要更新</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">1、Kubectl debug 设置一个临时容器</span><br><span class="line">2、Sidecar </span><br><span class="line">3、Volume：更改目录权限，fsGroup</span><br><span class="line">4、ConfigMap和Secret</span><br><span class="line"></span><br><span class="line">K8S官网：https://kubernetes.io/docs/setup/</span><br><span class="line">最新版高可用安装：https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/high-availability/</span><br></pre></td></tr></table></figure>
@@ -2846,90 +2991,59 @@
 
 ]]></content>
       <categories>
-        <category>环境安装</category>
+        <category>Kubernetes</category>
       </categories>
       <tags>
-        <tag>环境安装，K8S</tag>
+        <tag>环境安装</tag>
+        <tag>K8S</tag>
+        <tag>Kubernetes</tag>
       </tags>
   </entry>
   <entry>
-    <title>jekins环境搭建</title>
-    <url>/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
-    <content><![CDATA[<table>
-<thead>
-<tr>
-<th>环境</th>
-<th>版本</th>
-<th>包</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>JDK</td>
-<td>11.0.2</td>
-<td>jdk-11.0.2_linux-x64_bin.tar.gz</td>
-</tr>
-<tr>
-<td>Maven</td>
-<td>3.8.1</td>
-<td>apache-maven-3.8.1-bin.tar.gz</td>
-</tr>
-<tr>
-<td>Git</td>
-<td>2.9.5</td>
-<td>git-2.9.5.tar.gz</td>
-</tr>
-<tr>
-<td>Jenkins</td>
-<td>2.303.1 LTS</td>
-<td>jenkins.war</td>
-</tr>
-</tbody></table>
-<p>注：Jenkins的中英文系统跟随操作系统保持一致，如果想使用中文Jenkins，操作系统需要设置中文：<strong>zh_CN.UTF-8</strong></p>
-<h1 id="1-JDK安装部署"><a href="#1-JDK安装部署" class="headerlink" title="1.JDK安装部署"></a>1.JDK安装部署</h1><h2 id="1-1-旧JDK卸载"><a href="#1-1-旧JDK卸载" class="headerlink" title="1.1 旧JDK卸载"></a>1.1 旧JDK卸载</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">rpm -qa | grep -i java | xargs -n1 sudo rpm -e --nodeps</span><br><span class="line">rpm -qa：表示查询所有已经安装的软件包</span><br><span class="line">grep -i：表示过滤时不区分大小写</span><br><span class="line">xargs -n1：表示一次获取上次执行结果的一个值</span><br><span class="line">rpm -e --nodeps：表示卸载软件</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="1-2-安装指定JDK"><a href="#1-2-安装指定JDK" class="headerlink" title="1.2 安装指定JDK"></a>1.2 安装指定JDK</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 创建节点安装服务目录</span><br><span class="line">mkdir /opt/software</span><br><span class="line"># 解压JDK</span><br><span class="line">tar -zxvf jdk-11.0.2_linux-x64_bin.tar.gz -C /opt/software/</span><br><span class="line"># 配置环境变量</span><br><span class="line">vim /etc/profile</span><br><span class="line">export JAVA_HOME=/opt/software/jdk-11.0.2</span><br><span class="line">export PATH=$PATH:$JAVA_HOME/bin</span><br><span class="line">source /etc/profile</span><br><span class="line"># 验证JDK安装</span><br><span class="line">java -version</span><br></pre></td></tr></table></figure>
-
-<h1 id="2-关闭防火墙"><a href="#2-关闭防火墙" class="headerlink" title="2.关闭防火墙"></a>2.关闭防火墙</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl status firewalld		# 查看防火墙的状态</span><br><span class="line">systemctl stop firewalld		# 关闭防火墙</span><br><span class="line">systemctl disable firewalld		# 设置开机不启动</span><br><span class="line">systemctl is-enabled firewalld	# 查看防火墙服务是否设置开机启动</span><br></pre></td></tr></table></figure>
-
-<h1 id="3-安装Maven"><a href="#3-安装Maven" class="headerlink" title="3.安装Maven"></a>3.安装Maven</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 解压maven</span><br><span class="line">tar -zxvf apache-maven-3.8.1-bin.tar.gz -C /opt/software/</span><br><span class="line"># 配置环境变量</span><br><span class="line">vim /etc/profile</span><br><span class="line">export JAVA_HOME=/opt/software/jdk-11.0.2</span><br><span class="line">export MAVNE_HOME=/opt/software/apache-maven-3.8.1</span><br><span class="line">export PATH=$PATH:$JAVA_HOME/bin:$MAVNE_HOME/bin</span><br><span class="line">source /etc/profile</span><br><span class="line"># 检查maven安装</span><br><span class="line">mvn -version</span><br></pre></td></tr></table></figure>
-
-<h1 id="4-安装Git"><a href="#4-安装Git" class="headerlink" title="4.安装Git"></a>4.安装Git</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 1.安装编译 git 时需要的包</span><br><span class="line">yum install -y curl-devel expat-devel gettext-devel openssl-devel zlib-devel</span><br><span class="line">yum install -y gcc perl-ExtUtils-MakeMaker</span><br><span class="line"># 2.删除已有的 git</span><br><span class="line">yum remove -y git</span><br><span class="line"># 3.Git 官网下载 Git 最新版 tar 包，解压到/opt/software目录下</span><br><span class="line">tar -zxvf git-2.9.5.tar.gz -C /opt/software/</span><br><span class="line"># 4.编译安装</span><br><span class="line">cd /opt/software/git-2.9.5/</span><br><span class="line">make prefix=/usr/local/git all</span><br><span class="line">make prefix=/usr/local/git install</span><br><span class="line">echo &quot;export PATH=$PATH:/usr/local/git/bin&quot; &gt;&gt; /etc/bashrc</span><br><span class="line">source /etc/bashrc</span><br><span class="line"># 5.检查一下版本号</span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
-
-<h1 id="5-搭建Jenkins"><a href="#5-搭建Jenkins" class="headerlink" title="5.搭建Jenkins"></a>5.搭建Jenkins</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yum install -y fontconfig</span><br><span class="line"># Jenkins可以直接运行</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">nohup /usr/bin/java -jar /root/jenkins.war  --logfile=/var/<span class="built_in">log</span>/jenkins_server.log --httpPort=8088 &gt;  /root/jenkins_server.log 2&gt;&amp; 1 &amp;**</span><br></pre></td></tr></table></figure>
-
-<p>设置开机启动<br> vim &#x2F;etc&#x2F;rc.local</p>
-<h2 id="5-1-访问jekins"><a href="#5-1-访问jekins" class="headerlink" title="5.1 访问jekins"></a>5.1 访问jekins</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://yellow.bigdata:8088</span><br></pre></td></tr></table></figure>
-
-<h2 id="5-2-解锁Jenkins"><a href="#5-2-解锁Jenkins" class="headerlink" title="5.2 解锁Jenkins"></a>5.2 解锁Jenkins</h2><p>依据提示，查看&#x2F;root&#x2F;.jenkins&#x2F;secrets&#x2F;initialAdminPassword文件中内容，填入文本框，这里填写的密码，也是admin账号的密码</p>
-<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113151335779.png" alt="image-20211113151335779"></p>
-<h2 id="5-3-选择插件安装模式"><a href="#5-3-选择插件安装模式" class="headerlink" title="5.3 选择插件安装模式"></a>5.3 选择插件安装模式</h2><p>选择哪种插件的安装方式都可以，对后续操作没有太大影响，若后面有需要可以有针对性的安装插件，本次选择 “<strong>安装推荐的插件</strong>”，此时安装插件节点必须能够联网。</p>
-<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153312956.png" alt="image-20211113153312956"></p>
-<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153332209.png" alt="image-20211113153332209"></p>
-<p>打×的插件是由于网络传输导致的安装失败，后面再重新安装即可</p>
-<h2 id="5-4-新建账号或以管理员身份继续"><a href="#5-4-新建账号或以管理员身份继续" class="headerlink" title="5.4 新建账号或以管理员身份继续"></a>5.4 新建账号或以管理员身份继续</h2><p>可以选择使用admin账户继续，后面仍然有机会注册新账户</p>
-<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153358671.png" alt="image-20211113153358671"></p>
-<h2 id="5-5-实例配置"><a href="#5-5-实例配置" class="headerlink" title="5.5 实例配置"></a>5.5 实例配置</h2><p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153424306.png" alt="image-20211113153424306"></p>
-<h2 id="5-6-开始使用Jenkins"><a href="#5-6-开始使用Jenkins" class="headerlink" title="5.6 开始使用Jenkins"></a>5.6 开始使用Jenkins</h2><p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153454866.png" alt="image-20211113153454866"></p>
-<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153524832.png" alt="image-20211113153524832"></p>
-<h2 id="5-7-Jenkins设置中文"><a href="#5-7-Jenkins设置中文" class="headerlink" title="5.7 Jenkins设置中文"></a>5.7 Jenkins设置中文</h2><p>安装插件 Locale plugin , Localization: Chinese (Simplified) , Localization Support Plugin，如果失败就再安装一次</p>
-<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153552830.png" alt="image-20211113153552830"></p>
-<p>重启：<a href="http://yellow.bigdata:8088/restart">http://yellow.bigdata:8088/restart</a><br> 如果出现部分汉化，部分没有汉化，则卸载插件，重新安装插件<br> 如果还是存在部分汉化，部分没有汉化的现象，则如下操作：<br> 1.先设置Default Language：zh_US（含义：英文）<br> 2.重启Jenkins<br> 3.再设置Default Language：zh_CN（含义：中文）<br> 4.刷新即可</p>
-<h1 id="6-Jenkins系统管理初始化设置"><a href="#6-Jenkins系统管理初始化设置" class="headerlink" title="6.Jenkins系统管理初始化设置"></a>6.Jenkins系统管理初始化设置</h1><h2 id="6-1-全局工具配置"><a href="#6-1-全局工具配置" class="headerlink" title="6.1 全局工具配置"></a>6.1 全局工具配置</h2><p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153642733.png" alt="image-20211113153642733"></p>
-<p>JDK</p>
-<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153701355.png" alt="image-20211113153701355"></p>
-<p>Git</p>
-<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153722363.png" alt="image-20211113153722363"></p>
-<p>Maven</p>
-<p><img src="/Echo/2021/08/31/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153742157.png" alt="image-20211113153742157"></p>
-]]></content>
+    <title>web应用程序安全测试</title>
+    <url>/Echo/2022/02/05/web%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%AE%89%E5%85%A8%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<h4 id="什么是安全测试？"><a href="#什么是安全测试？" class="headerlink" title="什么是安全测试？"></a>什么是安全测试？</h4><p>安全测试是一个检查机密数据是否保密的过程（即，它不会暴露给不适合它的个人&#x2F;实体），并且用户只能执行他们有权执行的任务。</p>
+<p><strong>例</strong>用户不应能够拒绝其他用户使用网站的功能，或者用户不应能够以意外的方式更改Web应用程序的功能等。</p>
+<h4 id="安全测试中的术语"><a href="#安全测试中的术语" class="headerlink" title="安全测试中的术语"></a>安全测试中的术语</h4><p><strong>“漏洞”</strong></p>
+<p>这是 Web 应用程序中的一个弱点。”漏洞”的原因可能是由于应用程序中的错误，注入（SQL &#x2F;脚本代码）或病毒的存在。</p>
+<p><strong>“网址操作”</strong></p>
+<p>某些 Web 应用程序在 URL 中的客户端（浏览器）和服务器之间传递其他信息。更改 URL 中的某些信息有时可能会导致服务器出现意外行为，这称为 URL 操作。</p>
+<p><strong>“SQL注入”</strong></p>
+<p>这是通过 Web 应用程序用户界面将 SQL 语句插入到某个查询中，然后由服务器执行的过程。</p>
+<p><strong>“XSS（跨站点脚本）”</strong></p>
+<p>当用户在 Web 应用程序的用户界面中插入 HTML&#x2F;客户端脚本时，此插入对其他用户可见，称为 <em>XSS</em>。</p>
+<p><strong>“欺骗”</strong></p>
+<p>欺骗是创建类似恶作剧的网站和电子邮件。</p>
+<h4 id="web安全测试的方法"><a href="#web安全测试的方法" class="headerlink" title="web安全测试的方法"></a>web安全测试的方法</h4><h5 id="密码破解"><a href="#密码破解" class="headerlink" title="密码破解"></a>密码破解</h5><p>Web应用程序的安全测试可以通过”密码破解”开始。为了登录到应用程序的私人区域，人们可以猜测用户名&#x2F;密码或使用一些密码破解工具。常见的用户名和密码列表以及开源密码破解程序一起可用。</p>
+<p>如果 Web 应用程序不强制实施复杂密码（<strong>例</strong>使用字母、数字和特殊字符或至少具有所需数量的字符），则破解用户名和密码可能不会花费很长时间。</p>
+<p>如果用户名或密码存储在 Cookie 中而未经过加密，则攻击者可以使用不同的方法来窃取 Cookie 以及存储在 Cookie 中的信息（如用户名和密码）。</p>
+<h5 id="通过HTTP-GET方法进行URL操作"><a href="#通过HTTP-GET方法进行URL操作" class="headerlink" title="通过HTTP GET方法进行URL操作"></a>通过HTTP GET方法进行URL操作</h5><p>测试人员应检查应用程序是否传递查询字符串中的重要信息。当应用程序使用 HTTP GET 方法在客户端和服务器之间传递信息时，会发生这种情况。</p>
+<p>信息通过查询字符串中的参数传递。测试人员可以修改查询字符串中的参数值，以检查服务器是否接受它。</p>
+<p>通过HTTP GET请求将用户信息传递到服务器进行身份验证或获取数据。攻击者可以操纵从此 GET 请求传递到服务器的每个输入变量，以获取所需信息或损坏数据。在这种情况下，应用程序或 Web 服务器的任何异常行为都是攻击者进入应用程序的入口。</p>
+<h5 id="SQL-注入"><a href="#SQL-注入" class="headerlink" title="SQL 注入"></a>SQL 注入</h5><p>应该检查的下一个因素是SQL注入。在任何文本框中输入单引号 （’） 应被应用程序拒绝。相反，如果测试人员遇到数据库错误，则意味着用户输入入到某个查询中，然后由应用程序执行。在这种情况下，应用程序容易受到 SQL 注入的影响。</p>
+<p>SQL注入攻击非常关键，因为攻击者可以从服务器数据库中获取重要信息。若要检查 Web 应用程序中的 SQL 注入入口点，请从代码库中找出代码，其中通过接受某些用户输入在数据库上执行直接 MySQL 查询。</p>
+<p>如果在 SQL 查询中精心编制用户输入数据以查询数据库，则攻击者可以将 SQL 语句或部分 SQL 语句作为用户输入注入，以从数据库中提取重要信息。</p>
+<p>即使攻击者成功使应用程序崩溃，攻击者也可以从浏览器上显示的 SQL 查询错误中获取他们要查找的信息。在这种情况下，应正确处理&#x2F;转义用户输入中的特殊字符。</p>
+<h5 id="跨站点脚本-（XSS）"><a href="#跨站点脚本-（XSS）" class="headerlink" title="跨站点脚本 （XSS）"></a>跨站点脚本 （XSS）</h5><p>测试人员还应检查 Web 应用程序中是否有 XSS（跨站点脚本）。任何 HTML <strong>如</strong><HTML> 或任何脚本 <strong>如</strong><SCRIPT>不应被应用程序接受。如果是，则应用程序可能容易受到跨站点脚本的攻击。</p>
+<p>攻击者可以使用此方法在受害者的浏览器上执行恶意脚本或URL。使用跨站点脚本，攻击者可以使用 JavaScript 等脚本来窃取用户 Cookie 和存储在 Cookie 中的信息。</p>
+<p>许多Web应用程序获取一些有用的信息，并将此信息传递给来自不同页面的某些变量。</p>
+<p><strong>例</strong> <a href="http://www.examplesite.com/index.php?userid=123&amp;query=xyz">http://www.examplesite.com/index.php?userid=123&amp;query=xyz</a></p>
+<p>攻击者可以很容易地将一些恶意输入或<script>作为"&query"参数传递，该参数可以探索浏览器上的重要用户/服务器数据。</p>
+<p>在安全测试期间，测试人员应非常小心，不应修改以下任何内容：</p>
+<ul>
+<li>应用程序或服务器的配置。</li>
+<li>服务器上运行的服务。</li>
+<li>应用程序托管的现有用户或客户数据。</li>
+</ul>
+<p>此外，应避免在生产系统中进行安全测试。</p>
+</SCRIPT></HTML></p>]]></content>
       <categories>
-        <category>环境安装</category>
+        <category>测试</category>
       </categories>
       <tags>
-        <tag>jekins</tag>
-        <tag>CI/CD</tag>
+        <tag>测试</tag>
+        <tag>页面测试</tag>
+        <tag>安全测试</tag>
       </tags>
   </entry>
   <entry>
@@ -3055,117 +3169,12 @@
 
 ]]></content>
       <categories>
-        <category>环境安装</category>
+        <category>Kubernetes</category>
       </categories>
       <tags>
-        <tag>K8S</tag>
         <tag>环境安装</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>springboot整合shiro和JWT使用指北</title>
-    <url>/Echo/2021/11/09/springboot%E6%95%B4%E5%90%88shiro%E5%92%8CJWT%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8C%97/</url>
-    <content><![CDATA[<h3 id="shiro是什么？"><a href="#shiro是什么？" class="headerlink" title="shiro是什么？"></a>shiro是什么？</h3><p><code>Shiro</code> 是一个强大的简单易用的 <code>Java</code> 安全框架，主要用来更便捷的 <code>认证，授权，加密，会话管理</code>。<code>Shiro</code> 首要的和最重要的目标就是容易使用并且容易理解，通过 <code>Shiro</code> 易于理解的<code>API</code>，您可以快速、轻松地获得任何应用程序——从最小的移动应用程序最大的网络和企业应用程序。</p>
-<h3 id="shiro的功能"><a href="#shiro的功能" class="headerlink" title="shiro的功能"></a>shiro的功能</h3><ol>
-<li>Authentication:身份认证、登录，验证用户是不是拥有相应的身份;\</li>
-<li>Authorization:授权，即权限验证，验证某个已认证的用户是否拥有某个权限，即判断用户能否进行什么操作，如:验证某个用户是否拥有某个角色，或者细粒度的验证某个用户对某个资源是否具有某个权限!\</li>
-<li>Session Manager:会话管理，即用户登录后就是第一次会话，在没有退出之前，它的所有信息都在会话中;会话可以是普通的JavaSE环境，也可以是Web环境;\</li>
-<li>Cryptography:加密，保护数据的安全性，如密码加密存储到数据库中，而不是明文存储;\</li>
-<li>Web Support: Web支持，可以非常容易的集成到Web环境;\</li>
-<li>Caching:缓存，比如用户登录后，其用户信息，拥有的角色、权限不必每次去查，这样可以提高效率\</li>
-<li>Concurrency: Shiro支持多线程应用的并发验证，即，如在一个线程中开启另一个线程，能把权限自动的传播过去Testing:提供测试支持;\</li>
-<li>Run As:允许一个用户假装为另一个用户（如果他们允许）的身份进行访问;\</li>
-<li>Remember Me:记住我，这个是非常常见的功能，即一次登录后，下次再来的话不用登录了\</li>
-</ol>
-<h3 id="JWT是什么？"><a href="#JWT是什么？" class="headerlink" title="JWT是什么？"></a>JWT是什么？</h3><p>JWT ：JWT（JSON Web Token）是一种身份认证的方式，JWT 本质上就一段签名的 JSON 格式的数据。由于它是带有签名的，因此接收者便可以验证它的真实性。可以理解为对 token 这一技术提出一套规范，是在 <a href="https://link.juejin.cn/?target=https://tools.ietf.org/html/rfc7519">RFC 7519</a> 中提出的。</p>
-<h3 id="JWT的组成和优缺点"><a href="#JWT的组成和优缺点" class="headerlink" title="JWT的组成和优缺点"></a>JWT的组成和优缺点</h3><p>本文在这里仅简单介绍JWT的组成和优缺点。详细分析可以在相关搜索引擎中搜索。</p>
-<h4 id="JWT的组成"><a href="#JWT的组成" class="headerlink" title="JWT的组成"></a>JWT的组成</h4><p>一个JWT token是一个字符串，它由头部、载荷、与签名中间有.分割组成；</p>
-<p>头部（header）：由令牌的类型和正在使用的签名算法组成；</p>
-<p>载荷（playload）：放置了token的一些基本信息，以帮助接收服务器理解，同时还有用户自定义信息，支持用户信息交换；</p>
-<p>签名（Signature）：主要是将前面的头部和载荷进行加密。</p>
-<h4 id="JWT的优缺点"><a href="#JWT的优缺点" class="headerlink" title="JWT的优缺点"></a>JWT的优缺点</h4><p>JWT的优点：</p>
-<ul>
-<li>防CSRF：CSRF（Cross Site Request Forgery）跨站伪造请求。使用JWT登录成功后，会存放在本地local storage中；\</li>
-<li>适合移动端：使用session需要服务端保存一份信息，使用token不需要只要请求携带token，还可跨语言使用；\</li>
-<li>无状态：token中有身份验证的所有信息，增加了系统的可用性和伸缩性也带了同样的问题（在缺点中会介绍）；\</li>
-<li>单点登录友好：使用session需要我们把所有session信息存在一台电脑上，使用token的话token保存在客户端。\</li>
-</ul>
-<p>JWT的缺点：</p>
-<ul>
-<li>无状态导致在注销、退出登录、修改密码、修改角色||权限等场景下token依旧有效；\</li>
-<li>token续签问题：即token过期后如何动态刷新token。\</li>
-</ul>
-<h4 id="shiro-JWT-使用"><a href="#shiro-JWT-使用" class="headerlink" title="shiro + JWT 使用"></a>shiro + JWT 使用</h4><h5 id="JWTtoken-令牌"><a href="#JWTtoken-令牌" class="headerlink" title="JWTtoken 令牌"></a>JWTtoken 令牌</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.apache.shiro.authc.AuthenticationToken;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JwtToken</span> <span class="keyword">implements</span> <span class="title">AuthenticationToken</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> String token;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">JwtToken</span><span class="params">(String jwt)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">this</span>.token = jwt;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> Object <span class="title">getCredentials</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> token;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> Object <span class="title">getPrincipal</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> token;</span><br><span class="line"></span><br><span class="line"> &#125;  </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="jwtutils-JWT工具类主要是生成token设置过期时间"><a href="#jwtutils-JWT工具类主要是生成token设置过期时间" class="headerlink" title="jwtutils JWT工具类主要是生成token设置过期时间"></a>jwtutils JWT工具类主要是生成token设置过期时间</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.context.properties.ConfigurationProperties;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> io.jsonwebtoken.Claims;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> io.jsonwebtoken.Jwts;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> io.jsonwebtoken.SignatureAlgorithm;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> lombok.Data;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> lombok.extern.slf4j.Slf4j;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@ConfigurationProperties(prefix = &quot;blogspringback.jwt&quot;)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JwtUtils</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String secret;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">long</span> expire;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> String header;</span><br><span class="line"></span><br><span class="line">\</span><br><span class="line"></span><br><span class="line">/</span><br><span class="line"></span><br><span class="line"> <span class="meta">@description</span>: 生成token</span><br><span class="line"></span><br><span class="line">  <span class="meta">@param</span> &#123;<span class="keyword">long</span>&#125; userId</span><br><span class="line"></span><br><span class="line">  <span class="meta">@return</span> &#123;JWT token&#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Author</span>: 丑牛</span><br><span class="line"></span><br><span class="line">/</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">generateToken</span><span class="params">(<span class="keyword">long</span> userId)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 过期时间</span></span><br><span class="line"></span><br><span class="line">  Date dateNow = <span class="keyword">new</span> Date();</span><br><span class="line"></span><br><span class="line">  Date dateExpire =  <span class="keyword">new</span> Date(dateNow.getTime() + expire  <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> Jwts.builder()</span><br><span class="line"></span><br><span class="line">    .setHeaderParam(<span class="string">&quot;type&quot;</span>, <span class="string">&quot;JWT&quot;</span>)</span><br><span class="line"></span><br><span class="line">     .setSubject(userId + <span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line">     .setIssuedAt(dateNow)</span><br><span class="line"></span><br><span class="line">     .setExpiration(dateExpire)</span><br><span class="line"></span><br><span class="line">     .signWith(SignatureAlgorithm.HS512, secret)</span><br><span class="line"></span><br><span class="line">     .compact();</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Claims <span class="title">getClaimsByToken</span><span class="params">(String token)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> Jwts.parser()</span><br><span class="line"></span><br><span class="line">  .setSigningKey(secret)</span><br><span class="line"></span><br><span class="line"> .parseClaimsJws(token)</span><br><span class="line"></span><br><span class="line">.getBody();</span><br><span class="line"></span><br><span class="line">  &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line"></span><br><span class="line">   log.debug(<span class="string">&quot;token error&quot;</span>, e);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">/</span><br><span class="line"></span><br><span class="line"> <span class="meta">@description</span>: 判断token是否过期</span><br><span class="line"></span><br><span class="line">  <span class="meta">@param</span> &#123;Date&#125; expeiration</span><br><span class="line"></span><br><span class="line">  <span class="meta">@return</span> <span class="keyword">true</span>:过期；<span class="keyword">false</span>：未过期</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Author</span>: 丑牛</span><br><span class="line"></span><br><span class="line">/</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isTokenExpired</span><span class="params">(Date expeiration)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> expeiration.before(<span class="keyword">new</span> Date());</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">&#125;`</span><br><span class="line"></span><br><span class="line">##### JWTFilter 拦截请求</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Jwtfilter</span> <span class="keyword">extends</span> <span class="title">AuthenticatingFilter</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Autowired</span></span><br><span class="line"></span><br><span class="line"> JwtUtils jwtUtils;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">protected</span> AuthenticationToken <span class="title">createToken</span><span class="params">(ServletRequest servletRequest, ServletResponse serverResponse)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"></span><br><span class="line">  HttpServletRequest request = (HttpServletRequest) servletRequest;</span><br><span class="line"></span><br><span class="line">  String jwt = request.getHeader(<span class="string">&quot;Authorization&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (ObjectUtils.isEmpty(jwt))&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> JwtToken(jwt);</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">boolean</span> <span class="title">onAccessDenied</span><span class="params">(ServletRequest servletRequest, ServletResponse serverResponse)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"></span><br><span class="line">  HttpServletRequest request = (HttpServletRequest) servletRequest;</span><br><span class="line"></span><br><span class="line">  String jwt = request.getHeader(<span class="string">&quot;Authorization&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (ObjectUtils.isEmpty(jwt)) &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">   Claims claim = JwtUtils.getClaimsByToken(jwt);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (claim == <span class="keyword">null</span> || jwtUtils.isTokenExpired(claim.getExpiration())) &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">throw</span> <span class="keyword">new</span> ExpiredCredentialsException(<span class="string">&quot;token失效，请重新登录&quot;</span>);</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> executeLogin(servletRequest, serverResponse);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">boolean</span> <span class="title">onLoginFailure</span><span class="params">(AuthenticationToken token, AuthenticationException e, ServletRequest request, ServletResponse response)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">  HttpServletResponse httpServletResponse = (HttpServletResponse) response;</span><br><span class="line"></span><br><span class="line">  Throwable throwable = e.getCause() == <span class="keyword">null</span> ? e : e.getCause();</span><br><span class="line"></span><br><span class="line">  Result result = Result.fail(throwable.getMessage());</span><br><span class="line"></span><br><span class="line">  String json = JSONUtil.toJsonStr(result);</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line"></span><br><span class="line">   httpServletResponse.getWriter().print(json);</span><br><span class="line"></span><br><span class="line">  &#125; <span class="keyword">catch</span> (IOException ioException) &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">\</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">boolean</span> <span class="title">preHandle</span><span class="params">(ServletRequest request, ServletResponse response)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"></span><br><span class="line">  HttpServletRequest httpServletRequest = WebUtils.toHttp(request);</span><br><span class="line"></span><br><span class="line">  HttpServletResponse httpServletResponse = WebUtils.toHttp(response);</span><br><span class="line"></span><br><span class="line">  httpServletResponse.setHeader(<span class="string">&quot;Access-control-Allow-Origin&quot;</span>, httpServletRequest.getHeader(<span class="string">&quot;Origin&quot;</span>));</span><br><span class="line"></span><br><span class="line">  httpServletResponse.setHeader(<span class="string">&quot;Access-Control-Allow-Methods&quot;</span>, <span class="string">&quot;GET,POST,OPTIONS,PUT,DELETE&quot;</span>);</span><br><span class="line"></span><br><span class="line">  httpServletResponse.setHeader(<span class="string">&quot;Access-Control-Allow-Headers&quot;</span>,  httpServletRequest.getHeader(<span class="string">&quot;Access-Control-Request-Headers&quot;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 跨域时会首先发送一个OPTIONS请求，这里我们给OPTIONS请求直接返回正常状态</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (httpServletRequest.getMethod().equals(RequestMethod.OPTIONS.name())) &#123;</span><br><span class="line"></span><br><span class="line">   httpServletResponse.setStatus(org.springframework.http.HttpStatus.OK.value());</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">super</span>.preHandle(request, response);</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="shiro-config-设置自定义的filter"><a href="#shiro-config-设置自定义的filter" class="headerlink" title="shiro config 设置自定义的filter"></a>shiro config 设置自定义的filter</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ShiroConfig</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Autowired</span></span><br><span class="line"></span><br><span class="line"> Jwtfilter jwtFilter;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Bean</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> SessionManager <span class="title">sessionManager</span><span class="params">(RedisSessionDAO redisSessionDAO)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  DefaultSessionManager sessionManager = <span class="keyword">new</span> DefaultSessionManager();</span><br><span class="line"></span><br><span class="line">  sessionManager.setSessionDAO(redisSessionDAO);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> sessionManager;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Bean</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> DefaultWebSecurityManager <span class="title">securityManager</span><span class="params">(AccountRealm accountRealm, SessionManager sessionManager,</span></span></span><br><span class="line"><span class="params"><span class="function"></span></span></span><br><span class="line"><span class="params"><span class="function">   RedisCacheManager redisCacheManager)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  DefaultWebSecurityManager securityManager = <span class="keyword">new</span> DefaultWebSecurityManager(accountRealm);</span><br><span class="line"></span><br><span class="line"><span class="comment">// inject sessionManager</span></span><br><span class="line"></span><br><span class="line">  securityManager.setSessionManager(sessionManager);</span><br><span class="line"></span><br><span class="line"><span class="comment">// inject redisCacheManager</span></span><br><span class="line"></span><br><span class="line">  securityManager.setCacheManager(redisCacheManager);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> securityManager;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Bean</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> ShiroFilterChainDefinition <span class="title">shiroFilterChainDefinition</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  DefaultShiroFilterChainDefinition chainDefinition = <span class="keyword">new</span> DefaultShiroFilterChainDefinition();</span><br><span class="line"></span><br><span class="line">  Map &lt; String, String &gt; filterMap = <span class="keyword">new</span> LinkedHashMap &lt;&gt; ();</span><br><span class="line"></span><br><span class="line">  filterMap.put(<span class="string">&quot;/&quot;</span>, <span class="string">&quot;jwt&quot;</span>);</span><br><span class="line"></span><br><span class="line">  chainDefinition.addPathDefinitions(filterMap);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> chainDefinition;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Bean(&quot;shiroFilterFactoryBean&quot;)</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> ShiroFilterFactoryBean <span class="title">shiroFilterFactoryBean</span><span class="params">(org.apache.shiro.mgt.SecurityManager securityManager,</span></span></span><br><span class="line"><span class="params"><span class="function"></span></span></span><br><span class="line"><span class="params"><span class="function">              ShiroFilterChainDefinition shiroFilterChainDefinition)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  ShiroFilterFactoryBean shiroFilter = <span class="keyword">new</span> ShiroFilterFactoryBean();</span><br><span class="line"></span><br><span class="line">  shiroFilter.setSecurityManager(securityManager);</span><br><span class="line"></span><br><span class="line">  Map &lt; String, Filter &gt; filters = <span class="keyword">new</span> HashMap &lt;&gt; ();</span><br><span class="line"></span><br><span class="line">  filters.put(<span class="string">&quot;jwt&quot;</span>, jwtFilter);</span><br><span class="line"></span><br><span class="line">  shiroFilter.setFilters(filters);</span><br><span class="line"></span><br><span class="line">  Map &lt; String, String &gt; filterMap = shiroFilterChainDefinition.getFilterChainMap();</span><br><span class="line"></span><br><span class="line">  shiroFilter.setFilterChainDefinitionMap(filterMap);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> shiroFilter;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="shiro工具类-获取当前用户登录信息"><a href="#shiro工具类-获取当前用户登录信息" class="headerlink" title="shiro工具类 获取当前用户登录信息"></a>shiro工具类 获取当前用户登录信息</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ShiroUtil</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> AccountProfile <span class="title">getProfile</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> (AccountProfile) SecurityUtils.getSubject().getPrincipal();</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="realm类-实现认证与授权"><a href="#realm类-实现认证与授权" class="headerlink" title="realm类 实现认证与授权"></a>realm类 实现认证与授权</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AccountRealm</span> <span class="keyword">extends</span> <span class="title">AuthorizingRealm</span></span>&#123;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Autowired</span></span><br><span class="line"></span><br><span class="line"> JwtUtils jwtUtils;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Autowired</span></span><br><span class="line"></span><br><span class="line"> UserService userService;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">supports</span><span class="params">(AuthenticationToken token)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> token <span class="keyword">instanceof</span> JwtToken;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">protected</span> AuthorizationInfo <span class="title">doGetAuthorizationInfo</span><span class="params">(PrincipalCollection principals)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">protected</span> AuthenticationInfo <span class="title">doGetAuthenticationInfo</span><span class="params">(AuthenticationToken token)</span> <span class="keyword">throws</span> AuthenticationException </span>&#123;</span><br><span class="line"></span><br><span class="line">  JwtToken jwtToken = (JwtToken) token;</span><br><span class="line"></span><br><span class="line">  String userId = JwtUtils.getClaimsByToken((String) jwtToken.getPrincipal()).getSubject();</span><br><span class="line"></span><br><span class="line">  User user = userService.getById(Long.valueOf(userId));</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (user == <span class="keyword">null</span>) &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">throw</span> <span class="keyword">new</span> UnknownAccountException(<span class="string">&quot;账户不存在&quot;</span>);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (user.getStatus() == -<span class="number">1</span>) &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">throw</span> <span class="keyword">new</span> LockedAccountException(<span class="string">&quot;账户已被锁定&quot;</span>);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  AccountProfile profile = <span class="keyword">new</span> AccountProfile();</span><br><span class="line"></span><br><span class="line">  BeanUtil.copyProperties(user, profile);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> SimpleAuthenticationInfo(profile, jwtToken.getCredentials(), getName());</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>PS <a href="https://github.com/hugfeature/spring-example/tree/main/blog-spring-back">demo地址</a></p>
-]]></content>
-      <categories>
-        <category>测试开发</category>
-      </categories>
-      <tags>
-        <tag>java</tag>
-        <tag>springboot</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>web应用程序安全测试</title>
-    <url>/Echo/2022/02/05/web%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%AE%89%E5%85%A8%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<h4 id="什么是安全测试？"><a href="#什么是安全测试？" class="headerlink" title="什么是安全测试？"></a>什么是安全测试？</h4><p>安全测试是一个检查机密数据是否保密的过程（即，它不会暴露给不适合它的个人&#x2F;实体），并且用户只能执行他们有权执行的任务。</p>
-<p><strong>例</strong>用户不应能够拒绝其他用户使用网站的功能，或者用户不应能够以意外的方式更改Web应用程序的功能等。</p>
-<h4 id="安全测试中的术语"><a href="#安全测试中的术语" class="headerlink" title="安全测试中的术语"></a>安全测试中的术语</h4><p><strong>“漏洞”</strong></p>
-<p>这是 Web 应用程序中的一个弱点。”漏洞”的原因可能是由于应用程序中的错误，注入（SQL &#x2F;脚本代码）或病毒的存在。</p>
-<p><strong>“网址操作”</strong></p>
-<p>某些 Web 应用程序在 URL 中的客户端（浏览器）和服务器之间传递其他信息。更改 URL 中的某些信息有时可能会导致服务器出现意外行为，这称为 URL 操作。</p>
-<p><strong>“SQL注入”</strong></p>
-<p>这是通过 Web 应用程序用户界面将 SQL 语句插入到某个查询中，然后由服务器执行的过程。</p>
-<p><strong>“XSS（跨站点脚本）”</strong></p>
-<p>当用户在 Web 应用程序的用户界面中插入 HTML&#x2F;客户端脚本时，此插入对其他用户可见，称为 <em>XSS</em>。</p>
-<p><strong>“欺骗”</strong></p>
-<p>欺骗是创建类似恶作剧的网站和电子邮件。</p>
-<h4 id="web安全测试的方法"><a href="#web安全测试的方法" class="headerlink" title="web安全测试的方法"></a>web安全测试的方法</h4><h5 id="密码破解"><a href="#密码破解" class="headerlink" title="密码破解"></a>密码破解</h5><p>Web应用程序的安全测试可以通过”密码破解”开始。为了登录到应用程序的私人区域，人们可以猜测用户名&#x2F;密码或使用一些密码破解工具。常见的用户名和密码列表以及开源密码破解程序一起可用。</p>
-<p>如果 Web 应用程序不强制实施复杂密码（<strong>例</strong>使用字母、数字和特殊字符或至少具有所需数量的字符），则破解用户名和密码可能不会花费很长时间。</p>
-<p>如果用户名或密码存储在 Cookie 中而未经过加密，则攻击者可以使用不同的方法来窃取 Cookie 以及存储在 Cookie 中的信息（如用户名和密码）。</p>
-<h5 id="通过HTTP-GET方法进行URL操作"><a href="#通过HTTP-GET方法进行URL操作" class="headerlink" title="通过HTTP GET方法进行URL操作"></a>通过HTTP GET方法进行URL操作</h5><p>测试人员应检查应用程序是否传递查询字符串中的重要信息。当应用程序使用 HTTP GET 方法在客户端和服务器之间传递信息时，会发生这种情况。</p>
-<p>信息通过查询字符串中的参数传递。测试人员可以修改查询字符串中的参数值，以检查服务器是否接受它。</p>
-<p>通过HTTP GET请求将用户信息传递到服务器进行身份验证或获取数据。攻击者可以操纵从此 GET 请求传递到服务器的每个输入变量，以获取所需信息或损坏数据。在这种情况下，应用程序或 Web 服务器的任何异常行为都是攻击者进入应用程序的入口。</p>
-<h5 id="SQL-注入"><a href="#SQL-注入" class="headerlink" title="SQL 注入"></a>SQL 注入</h5><p>应该检查的下一个因素是SQL注入。在任何文本框中输入单引号 （’） 应被应用程序拒绝。相反，如果测试人员遇到数据库错误，则意味着用户输入入到某个查询中，然后由应用程序执行。在这种情况下，应用程序容易受到 SQL 注入的影响。</p>
-<p>SQL注入攻击非常关键，因为攻击者可以从服务器数据库中获取重要信息。若要检查 Web 应用程序中的 SQL 注入入口点，请从代码库中找出代码，其中通过接受某些用户输入在数据库上执行直接 MySQL 查询。</p>
-<p>如果在 SQL 查询中精心编制用户输入数据以查询数据库，则攻击者可以将 SQL 语句或部分 SQL 语句作为用户输入注入，以从数据库中提取重要信息。</p>
-<p>即使攻击者成功使应用程序崩溃，攻击者也可以从浏览器上显示的 SQL 查询错误中获取他们要查找的信息。在这种情况下，应正确处理&#x2F;转义用户输入中的特殊字符。</p>
-<h5 id="跨站点脚本-（XSS）"><a href="#跨站点脚本-（XSS）" class="headerlink" title="跨站点脚本 （XSS）"></a>跨站点脚本 （XSS）</h5><p>测试人员还应检查 Web 应用程序中是否有 XSS（跨站点脚本）。任何 HTML <strong>如</strong><HTML> 或任何脚本 <strong>如</strong><SCRIPT>不应被应用程序接受。如果是，则应用程序可能容易受到跨站点脚本的攻击。</p>
-<p>攻击者可以使用此方法在受害者的浏览器上执行恶意脚本或URL。使用跨站点脚本，攻击者可以使用 JavaScript 等脚本来窃取用户 Cookie 和存储在 Cookie 中的信息。</p>
-<p>许多Web应用程序获取一些有用的信息，并将此信息传递给来自不同页面的某些变量。</p>
-<p><strong>例</strong> <a href="http://www.examplesite.com/index.php?userid=123&amp;query=xyz">http://www.examplesite.com/index.php?userid=123&amp;query=xyz</a></p>
-<p>攻击者可以很容易地将一些恶意输入或<script>作为"&query"参数传递，该参数可以探索浏览器上的重要用户/服务器数据。</p>
-<p>在安全测试期间，测试人员应非常小心，不应修改以下任何内容：</p>
-<ul>
-<li>应用程序或服务器的配置。</li>
-<li>服务器上运行的服务。</li>
-<li>应用程序托管的现有用户或客户数据。</li>
-</ul>
-<p>此外，应避免在生产系统中进行安全测试。</p>
-</SCRIPT></HTML></p>]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>测试</tag>
-        <tag>页面测试</tag>
-        <tag>安全测试</tag>
+        <tag>K8S</tag>
+        <tag>Kubernetes</tag>
       </tags>
   </entry>
   <entry>
@@ -3276,6 +3285,31 @@
       </tags>
   </entry>
   <entry>
+    <title>什么是Kubernetes</title>
+    <url>/Echo/2022/02/19/%E4%BB%80%E4%B9%88%E6%98%AFKubernetes/</url>
+    <content><![CDATA[<p>近期开始学习Kubernetes，后续会将学习中整理的一些知识通过QA的方式记录在个人博客中。后续文章中Kubernetes简称为K8S。</p>
+<h5 id="Q1、K8S是什么？"><a href="#Q1、K8S是什么？" class="headerlink" title="Q1、K8S是什么？"></a>Q1、K8S是什么？</h5><p>K8S是基于容器技术的分布式架构领先方案。它是谷歌十几年以来大规模应用容器化技术的经验积累和升华的重要成果。K8S是站Brog系统的肩膀上，汲取了brog过去的经验与教训，所以K8S现世时，让一众架构师为之疯狂。</p>
+<h5 id="Q2、系统设计遵循了K8S的设计思想会带来什么？"><a href="#Q2、系统设计遵循了K8S的设计思想会带来什么？" class="headerlink" title="Q2、系统设计遵循了K8S的设计思想会带来什么？"></a>Q2、系统设计遵循了K8S的设计思想会带来什么？</h5><p>传统系统架构中和业务没有多大关系的底层代码或功能模块，都将消失在眼前，也不需要花费时间在负载均衡器的选型和部署实施问题，不需要考虑服务治理框架，不必在为服务监控和故障处理模块的开发而头疼。业内认为使用K8S可以减少30%，可以将精力更集中于业务本身，同时K8S提供了强大的自动化机制，后期的运维难度和运维成本大大降低。</p>
+<h5 id="Q3、K8S有语言限制吗？"><a href="#Q3、K8S有语言限制吗？" class="headerlink" title="Q3、K8S有语言限制吗？"></a>Q3、K8S有语言限制吗？</h5><p>K8S没有语言限制，是一个开放的平台。不局限于任何一种语言，没有限定编程接口。不管使用什么语言编写的服务都可以映射在K8S的service里面，通过标准的TCP协议进行交互。K8S平台对现有的编程语言、编程框架、中间件没有任何侵入性。</p>
+<h5 id="Q4、K8S有什么功能？"><a href="#Q4、K8S有什么功能？" class="headerlink" title="Q4、K8S有什么功能？"></a>Q4、K8S有什么功能？</h5><p>K8S有完备的集群管理能力，有多层次的安全防护和准入机制、多租用应用支撑、透明的服务注册、服务发现机制、自能负载均衡器、故障发现和自我修复能力、服务滚动升级、在线扩容、资源自动调度、多粒度资源配额管理能力。</p>
+<h5 id="Q5-K8S会带来什么好处？"><a href="#Q5-K8S会带来什么好处？" class="headerlink" title="Q5 K8S会带来什么好处？"></a>Q5 K8S会带来什么好处？</h5><p>① 复杂系统可以模块化开发。以前很多技术大牛一起分工协作完成的分布式系统，现在仅需要一个架构师负责服务中组件的设计，几个业务人员负责业务代码开发，一个运维负责部署服务到K8S上，其他的K8S会帮我们完成。</p>
+<p>②我们可以全面的拥抱微服务架构。微服务架构的核心是将一个巨大的单体应用分解为很多小的互相连接的微服务，一个微服务可能由多个实例副本支撑，副本的数量可以随着系统的负荷变化进行调整。微服务架构使得每个服务都可以独立开发、升级和扩展，因此系统具备很高的稳定性和快速迭代能力，开发者也可以自由选择开发技术。</p>
+<p>③可以随时将系统整体的搬到云上。K8S的架构方案中完全屏蔽了底层网络的细节，基于Service的虚拟IP地址（Cluster IP）的设计思路让架构与底层的硬件拓扑无关，无须改变运行期的配置文件，就能将系统从现有的物理机环境无缝迁移到云上。</p>
+<p>④K8S内在弹性扩容机制轻松应对突发流量。12306会在节假日租用阿里云的服务进行扩容，来满足用户需求。</p>
+<p>⑤K8S超强的横向扩容能力让竞争力大大提升。对于公司来说，用户规模等同于有价资产，基于此，横向扩容能力是衡量企业尤其是互联网企业的竞争力的关键指标。K8S提供的工具，不用修改代码，就能将一个K8S集群从只包含几个Node的小集群平滑扩展到拥有上百个Node的大集群，甚至可以在线完成集群扩容。只要微服务架构设计得合理，能够在多个云环境中进行弹性伸缩，系统就能够承受大量用户并发访问带来的巨大压力。</p>
+<h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><p>K8S是一个全新的基于容器化的分布式架构解决方案，并且是一个一站式的完备的分布式系统开发和支撑平台。能让公司更加专注于业务，而减轻架构和运维的要求，缩短产品上线周期。</p>
+<p>后续会介绍K8S的相关概念和术语。和大家一起来学习K8S。</p>
+]]></content>
+      <categories>
+        <category>Kubernetes</category>
+      </categories>
+      <tags>
+        <tag>K8S</tag>
+        <tag>Kubernetes</tag>
+        <tag>容器化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MapReduce是什么？</title>
     <url>/Echo/2022/01/03/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/</url>
     <content><![CDATA[<h4 id="为什么需要MapReduce？"><a href="#为什么需要MapReduce？" class="headerlink" title="为什么需要MapReduce？"></a>为什么需要MapReduce？</h4><p><img src="/Echo/2022/01/03/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/Map-Reduce.jpg" alt="Map-Reduce"></p>
@@ -3348,52 +3382,6 @@
       <tags>
         <tag>大数据</tag>
         <tag>MapReduce</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>YARN原理及工作流？</title>
-    <url>/Echo/2022/01/08/%E4%BB%80%E4%B9%88%E6%98%AFYARN/</url>
-    <content><![CDATA[<h4 id="YRAN是什么？"><a href="#YRAN是什么？" class="headerlink" title="YRAN是什么？"></a>YRAN是什么？</h4><p>YARN是hadoop集群中另一个资源管理者，为需要在Hadoop集群上执行的各种作业分配资源。在Hadoop 2.0中引入的。在Hadoop 2.0中引入了YARN，使用它能够超越MapReduce。</p>
-<p><img src="/Echo/2022/01/08/%E4%BB%80%E4%B9%88%E6%98%AFYARN/Framework-Supported-by-YARN.jpg" alt="Framework-Supported-by-YARN"></p>
-<p>正如你在图中看到的，我们在两者之间的底部有HDFS，我们有YARN并使用YARN，很多框架都能够连接和利用HDFS。因此，即使MapReduce也用于使用YARN进行连接以请求资源，并且只有这样它才能通过HDFS（即Hadoop Cluster）执行作业。</p>
-<p>同样;SPARK，STORM和其他搜索引擎可以连接到HDFS。HBase是一个No SQL数据库也可以连接它。因此，HDFS的应用变得庞大，因为YARN能够为其他框架和其他大数据分析工具更好的分配资源。</p>
-<h4 id="Hadoop-2-x-守护进程"><a href="#Hadoop-2-x-守护进程" class="headerlink" title="Hadoop 2.x 守护进程"></a>Hadoop 2.x 守护进程</h4><p>让我们快速看一下Hadoop 2.0中新引入的守护进程，它们运行组件，即存储和处理。</p>
-<p>在HDFS一文中，我们详细理解了守护进程，即NameNode和DataNode。在此，我们将了解资源管理器和节点管理器如何在 Hadoop 2.x 群集中工作，以管理需要在 Hadoop 群集中执行的处理和作业。</p>
-<p><img src="/Echo/2022/01/08/%E4%BB%80%E4%B9%88%E6%98%AFYARN/Hadoop-2-Daemons.jpg" alt="Hadoop-2-Daemons"></p>
-<p>什么是资源管理器？资源管理器是在主计算机或 NameNode（高端计算机）上运行的主守护程序。另一方面，节点管理器是在从属机器或DataNodes上运行的守护进程，或者与DataNode进程一起运行。</p>
-<h4 id="Hadoop-2-x-MapReduce-YARN-组件"><a href="#Hadoop-2-x-MapReduce-YARN-组件" class="headerlink" title="Hadoop 2.x MapReduce YARN 组件"></a>Hadoop 2.x MapReduce YARN 组件</h4><p>首先我们探讨下YARN的其他组件：</p>
-<ul>
-<li><strong>客户端：</strong>它是一个提交类似作业的命令行界面 （CLI） 的单元，客户端可以是 JAVA 应用程序。</li>
-<li><strong>资源管理器：</strong>它是一个主守护程序，所有作业都从客户端提交到该守护程序，并且是分配所有群集级别资源以执行特定作业的主守护程序。它运行在具有高质量硬件和良好配置的高端计算机上，因为它是必须管理群集上所有内容的主计算机。</li>
-<li><strong>节点管理器</strong>：它是一个在从属机器或DataNode上运行的从属守护进程，因此每个从属机器都有一个运行的节点管理器。它监视特定 DataNode 的资源，资源管理器管理群集资源，节点管理器管理 DataNode 资源。</li>
-<li><strong>作业历史记录服务器：</strong>它是跟踪已在群集上执行或已提交到群集的所有作业的单元。它还跟踪状态，并保留在Hadoop集群上发生的每次执行的日志文件。</li>
-<li><strong>应用程序主</strong>设备：它是一个通过节点计算机（从属计算机）执行的组件，由资源管理器创建以执行和管理作业。它是从资源管理器协商资源并最终与节点管理器协调以执行任务的那个。</li>
-<li><strong>容器：</strong>它由节点管理器本身创建，该节点管理器已由资源管理器分配，所有作业最终在容器中执行。</li>
-</ul>
-<h4 id="YARN工作流程"><a href="#YARN工作流程" class="headerlink" title="YARN工作流程"></a>YARN工作流程</h4><p><img src="/Echo/2022/01/08/%E4%BB%80%E4%B9%88%E6%98%AFYARN/YARN-Work-Flow.jpg" alt="YARN-Work-Flow"></p>
-<p>如上图所示，有一个资源管理器，所有作业都已提交到该管理器，并且有一个群集，其中有从属计算机，并且在每台从属计算机上，都有一个节点管理器正在运行。</p>
-<p>资源管理器有两个组件，即计划程序和应用程序管理器。</p>
-<p>应用程序主服务器和应用程序管理器之间有什么区别？</p>
-<p>应用程序管理器是资源管理器的一个组件，可确保执行每个任务并为其创建应用程序主节点。另一方面，应用程序主服务器是执行任务并请求需要执行的所有资源的人员。</p>
-<p>假设作业已提交到资源管理器，一旦作业提交，计划程序就会计划该作业。一旦计划程序计划要执行的作业，应用程序管理器将在其中一个DataNode 中创建一个容器，并且在此容器中，将启动应用程序主节点。</p>
-<p>然后，此应用程序主机将向资源管理器注册，并请求容器来执行任务。分配容器后，应用程序主节点现在将与节点管理器连接，并请求启动容器。</p>
-<p>正如我们所看到的，应用程序主节点被分配给DataNodes D和E，现在这个应用程序主节点请求节点管理器启动DataNode D和DataNode E的容器。</p>
-<p>一旦容器启动，应用程序主服务器将在容器内执行任务，结果将发送回客户端。</p>
-<h4 id="作业执行流程"><a href="#作业执行流程" class="headerlink" title="作业执行流程"></a>作业执行流程</h4><p>我们以一种顺序的方式理解资源申请流程。</p>
-<p><img src="/Echo/2022/01/08/%E4%BB%80%E4%B9%88%E6%98%AFYARN/Sequence-of-Execution.jpg" alt="Sequence-of-Execution"></p>
-<p>图中有四个组件，一个是客户端（client），一个是资源管理器（resource manager），一个是节点管理器（node manager），一个是程序主节点（application master）</p>
-<p>第一步是将作业提交给资源管理器的客户端，在第二步中，资源管理器分配一个容器以启动从属计算机上的应用程序主站;第三步是应用程序主机向资源管理器注册。</p>
-<p>一旦它注册，它就会请求容器执行任务，即第四步。在步骤 5 中，应用程序主机通知需要在其上启动容器的节点管理器。</p>
-<p>在第六步中，节点管理器启动容器后，应用程序主机将在这些容器中执行代码。</p>
-<p>最后，在第七步中，客户端联系资源管理器或应用程序主机以监视应用程序状态。</p>
-<p>最后，应用程序主机将从资源管理器中注销自身，并将结果返回给客户端。因此，这是一个简单的顺序流，说明如何使用YARN框架执行MapReduce程序。</p>
-]]></content>
-      <categories>
-        <category>大数据</category>
-      </categories>
-      <tags>
-        <tag>大数据</tag>
-        <tag>yarn</tag>
       </tags>
   </entry>
   <entry>
@@ -3514,6 +3502,162 @@
       </tags>
   </entry>
   <entry>
+    <title>YARN原理及工作流？</title>
+    <url>/Echo/2022/01/08/%E4%BB%80%E4%B9%88%E6%98%AFYARN/</url>
+    <content><![CDATA[<h4 id="YRAN是什么？"><a href="#YRAN是什么？" class="headerlink" title="YRAN是什么？"></a>YRAN是什么？</h4><p>YARN是hadoop集群中另一个资源管理者，为需要在Hadoop集群上执行的各种作业分配资源。在Hadoop 2.0中引入的。在Hadoop 2.0中引入了YARN，使用它能够超越MapReduce。</p>
+<p><img src="/Echo/2022/01/08/%E4%BB%80%E4%B9%88%E6%98%AFYARN/Framework-Supported-by-YARN.jpg" alt="Framework-Supported-by-YARN"></p>
+<p>正如你在图中看到的，我们在两者之间的底部有HDFS，我们有YARN并使用YARN，很多框架都能够连接和利用HDFS。因此，即使MapReduce也用于使用YARN进行连接以请求资源，并且只有这样它才能通过HDFS（即Hadoop Cluster）执行作业。</p>
+<p>同样;SPARK，STORM和其他搜索引擎可以连接到HDFS。HBase是一个No SQL数据库也可以连接它。因此，HDFS的应用变得庞大，因为YARN能够为其他框架和其他大数据分析工具更好的分配资源。</p>
+<h4 id="Hadoop-2-x-守护进程"><a href="#Hadoop-2-x-守护进程" class="headerlink" title="Hadoop 2.x 守护进程"></a>Hadoop 2.x 守护进程</h4><p>让我们快速看一下Hadoop 2.0中新引入的守护进程，它们运行组件，即存储和处理。</p>
+<p>在HDFS一文中，我们详细理解了守护进程，即NameNode和DataNode。在此，我们将了解资源管理器和节点管理器如何在 Hadoop 2.x 群集中工作，以管理需要在 Hadoop 群集中执行的处理和作业。</p>
+<p><img src="/Echo/2022/01/08/%E4%BB%80%E4%B9%88%E6%98%AFYARN/Hadoop-2-Daemons.jpg" alt="Hadoop-2-Daemons"></p>
+<p>什么是资源管理器？资源管理器是在主计算机或 NameNode（高端计算机）上运行的主守护程序。另一方面，节点管理器是在从属机器或DataNodes上运行的守护进程，或者与DataNode进程一起运行。</p>
+<h4 id="Hadoop-2-x-MapReduce-YARN-组件"><a href="#Hadoop-2-x-MapReduce-YARN-组件" class="headerlink" title="Hadoop 2.x MapReduce YARN 组件"></a>Hadoop 2.x MapReduce YARN 组件</h4><p>首先我们探讨下YARN的其他组件：</p>
+<ul>
+<li><strong>客户端：</strong>它是一个提交类似作业的命令行界面 （CLI） 的单元，客户端可以是 JAVA 应用程序。</li>
+<li><strong>资源管理器：</strong>它是一个主守护程序，所有作业都从客户端提交到该守护程序，并且是分配所有群集级别资源以执行特定作业的主守护程序。它运行在具有高质量硬件和良好配置的高端计算机上，因为它是必须管理群集上所有内容的主计算机。</li>
+<li><strong>节点管理器</strong>：它是一个在从属机器或DataNode上运行的从属守护进程，因此每个从属机器都有一个运行的节点管理器。它监视特定 DataNode 的资源，资源管理器管理群集资源，节点管理器管理 DataNode 资源。</li>
+<li><strong>作业历史记录服务器：</strong>它是跟踪已在群集上执行或已提交到群集的所有作业的单元。它还跟踪状态，并保留在Hadoop集群上发生的每次执行的日志文件。</li>
+<li><strong>应用程序主</strong>设备：它是一个通过节点计算机（从属计算机）执行的组件，由资源管理器创建以执行和管理作业。它是从资源管理器协商资源并最终与节点管理器协调以执行任务的那个。</li>
+<li><strong>容器：</strong>它由节点管理器本身创建，该节点管理器已由资源管理器分配，所有作业最终在容器中执行。</li>
+</ul>
+<h4 id="YARN工作流程"><a href="#YARN工作流程" class="headerlink" title="YARN工作流程"></a>YARN工作流程</h4><p><img src="/Echo/2022/01/08/%E4%BB%80%E4%B9%88%E6%98%AFYARN/YARN-Work-Flow.jpg" alt="YARN-Work-Flow"></p>
+<p>如上图所示，有一个资源管理器，所有作业都已提交到该管理器，并且有一个群集，其中有从属计算机，并且在每台从属计算机上，都有一个节点管理器正在运行。</p>
+<p>资源管理器有两个组件，即计划程序和应用程序管理器。</p>
+<p>应用程序主服务器和应用程序管理器之间有什么区别？</p>
+<p>应用程序管理器是资源管理器的一个组件，可确保执行每个任务并为其创建应用程序主节点。另一方面，应用程序主服务器是执行任务并请求需要执行的所有资源的人员。</p>
+<p>假设作业已提交到资源管理器，一旦作业提交，计划程序就会计划该作业。一旦计划程序计划要执行的作业，应用程序管理器将在其中一个DataNode 中创建一个容器，并且在此容器中，将启动应用程序主节点。</p>
+<p>然后，此应用程序主机将向资源管理器注册，并请求容器来执行任务。分配容器后，应用程序主节点现在将与节点管理器连接，并请求启动容器。</p>
+<p>正如我们所看到的，应用程序主节点被分配给DataNodes D和E，现在这个应用程序主节点请求节点管理器启动DataNode D和DataNode E的容器。</p>
+<p>一旦容器启动，应用程序主服务器将在容器内执行任务，结果将发送回客户端。</p>
+<h4 id="作业执行流程"><a href="#作业执行流程" class="headerlink" title="作业执行流程"></a>作业执行流程</h4><p>我们以一种顺序的方式理解资源申请流程。</p>
+<p><img src="/Echo/2022/01/08/%E4%BB%80%E4%B9%88%E6%98%AFYARN/Sequence-of-Execution.jpg" alt="Sequence-of-Execution"></p>
+<p>图中有四个组件，一个是客户端（client），一个是资源管理器（resource manager），一个是节点管理器（node manager），一个是程序主节点（application master）</p>
+<p>第一步是将作业提交给资源管理器的客户端，在第二步中，资源管理器分配一个容器以启动从属计算机上的应用程序主站;第三步是应用程序主机向资源管理器注册。</p>
+<p>一旦它注册，它就会请求容器执行任务，即第四步。在步骤 5 中，应用程序主机通知需要在其上启动容器的节点管理器。</p>
+<p>在第六步中，节点管理器启动容器后，应用程序主机将在这些容器中执行代码。</p>
+<p>最后，在第七步中，客户端联系资源管理器或应用程序主机以监视应用程序状态。</p>
+<p>最后，应用程序主机将从资源管理器中注销自身，并将结果返回给客户端。因此，这是一个简单的顺序流，说明如何使用YARN框架执行MapReduce程序。</p>
+]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>大数据</tag>
+        <tag>yarn</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>大数据测试-测试类型</title>
+    <url>/Echo/2022/01/27/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%B5%8B%E8%AF%95-%E6%B5%8B%E8%AF%95%E7%B1%BB%E5%9E%8B/</url>
+    <content><![CDATA[<p>之前的文章写了大数据的存储或处理的一些程序，对于后续的这篇大数据如何测试，却迟迟无法落笔。因为每个公司都是根据自己的业务来使用大数据平台的一个或者多个功能的。这里随便聊下大数据测试！（就是想到哪里写到哪里）</p>
+<h4 id="大数据测试与传统测试的区别"><a href="#大数据测试与传统测试的区别" class="headerlink" title="大数据测试与传统测试的区别"></a>大数据测试与传统测试的区别</h4><p>传统测试：特定条件下运行的结果进行观察或者验证，构建上下文验证输出</p>
+<p>大数据测试：数据正确，系统正确仅仅是第一步，后边还有诸多额外工作，如数据计算后结果，系统性能等。</p>
+<h4 id="大数据测试的挑战"><a href="#大数据测试的挑战" class="headerlink" title="大数据测试的挑战"></a>大数据测试的挑战</h4><ol>
+<li>复杂的数据流，数据的多样性；</li>
+<li>集群规模大，数据量大</li>
+<li>复杂算法测试</li>
+<li>无明确的验收标准</li>
+</ol>
+<h4 id="大数据测试的测试类型"><a href="#大数据测试的测试类型" class="headerlink" title="大数据测试的测试类型"></a>大数据测试的测试类型</h4><h5 id="架构测试"><a href="#架构测试" class="headerlink" title="架构测试"></a>架构测试</h5><p>进行此测试是为了确保数据处理正确并符合要求。实际上，Hadoop系统处理大量数据，并且资源非常全面。如果体系结构不正确，则可能会降低性能，因此数据处理可能会中断并可能发生数据丢失。</p>
+<h5 id="数据库测试"><a href="#数据库测试" class="headerlink" title="数据库测试"></a>数据库测试</h5><p>需要确保从源数据库或本地数据库获取的数据必须是正确和适当的。需要检查源数据库中可用的数据是否与在Hadoop系统中输入的数据匹配。</p>
+<p><img src="/Echo/DataBase-Testing.jpg" alt="DataBase-Testing"></p>
+<p>需要验证Hadoop系统中的数据在处理后或转换后是否正确，并通过适当的验证和确认加载到客户端环境中。作为数据库测试的一部分，需要完成CRUD操作，即在本地数据库中创建数据，然后检索数据，需要搜索它，它应该在加载到数据仓库之前和之后在数据库中可用，并从数据仓库到客户端的环境。在存储或加载和处理数据的每个阶段验证任何更新的数据。删除任何损坏的数据或任何重复和空的数据。</p>
+<h5 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h5><p>作为性能测试的一部分，我们需要检查数据的加载和处理速度，例如IOPS（每秒输入输出）。</p>
+<p>需要检查输入数据或数据作为输入的速度，从各种数据库到数据仓库或Hadoop系统，以及从Hadoop系统或数据仓库到客户环境。</p>
+<p>还必须检查来自各种数据库的数据以及作为输出的数据仓库的速度。这就是我们所说的每秒输入输出或 IOPS。</p>
+<p>除此之外，另一个方面是检查数据吸收和数据分发的性能，以及数据仓库从各种数据库和客户端系统从Hadoop系统消耗数据的速度。</p>
+<p>此外，作为测试人员，我们需要检查数据分发的性能，例如，数据以多快的速度分发到Hadoop系统或数据仓库中可用的各种文件。同样，在将数据分发到客户端系统时也会发生相同的过程。</p>
+<p>Hadoop系统或数据仓库由多个组件组成，因此测试人员需要检查所有这些组件的性能，例如MapReduce作业，数据插入和使用，查询的响应时间及其性能以及搜索操作的性能。所有这些都包含在性能测试中。</p>
+<h4 id="功能测试"><a href="#功能测试" class="headerlink" title="功能测试"></a>功能测试</h4><p>功能测试包含对所有子组件，程序和脚本，用于执行存储或加载和处理操作的工具等的测试。对于测试人员来说，这是需要过滤数据的四个重要类型和阶段，以便客户端获得完美且无差错的数据。</p>
+]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>大数据</tag>
+        <tag>测试类型</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>卸载centos自带的openjdk和MySQL</title>
+    <url>/Echo/2020/01/01/%E5%8D%B8%E8%BD%BDcentos%E8%87%AA%E5%B8%A6%E7%9A%84openjdk%E5%92%8CMySQL/</url>
+    <content><![CDATA[<h2 id="卸载openjdk"><a href="#卸载openjdk" class="headerlink" title="卸载openjdk"></a>卸载openjdk</h2><p>1.查看已经安装的jdk</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">rpm –qa|grep jdk</span><br><span class="line"></span><br><span class="line">java-1.7.0-openjdk-1.7.0.141-2.6.10.5.el7.x86_64</span><br><span class="line"></span><br><span class="line">java-1.8.0-openjdk-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">java-1.8.0-openjdk-headless-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">java-1.7.0-openjdk-headless-1.7.0.141-2.6.10.5.el7.x86_64</span><br><span class="line"></span><br><span class="line">ldap-4.19-1.el7.noarch</span><br><span class="line"></span><br><span class="line">copy-jdk-configs-2.2-3.el7.noarch</span><br></pre></td></tr></table></figure>
+
+<p>2.卸载命令</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum -y remove java-1.7.0-openjdk-1.7.0.141-2.6.10.5.el7.x86_64</span><br><span class="line"></span><br><span class="line">yum -y remove java-1.8.0-openjdk-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">yum -y remove java-1.8.0-openjdk-headless-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">yum -y remove java-1.7.0-openjdk-headless-1.7.0.141-2.6.10.5.el7.x86_64</span><br></pre></td></tr></table></figure>
+
+<p>.noarch文件不用</p>
+<p>3.用Java –version查看</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">提示如下： No such file or directoy</span><br></pre></td></tr></table></figure>
+
+<p>  卸载完成</p>
+<h2 id="卸载mysql"><a href="#卸载mysql" class="headerlink" title="卸载mysql"></a>卸载mysql</h2><p>执行命令</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum remove mariadb-libs</span><br></pre></td></tr></table></figure>
+
+<p>即可。</p>
+]]></content>
+      <categories>
+        <category>环境安装</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>JDK</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>kafka测试</title>
+    <url>/Echo/2021/11/24/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%BB%84%E4%BB%B6kafka%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<h5 id="kafka是一个事件流平台"><a href="#kafka是一个事件流平台" class="headerlink" title="kafka是一个事件流平台"></a>kafka是一个事件流平台</h5><ul>
+<li><p>什么事件流？，事件流是从事件源实时捕获数据的做法 如数据库、传感器、移动设备、云服务和流形式的软件应用程序 事件； 持久地存储这些事件流以供以后检索； 操作、处理和反应 实时和可追溯​​的事件流； 并将事件流路由到不同的 根据需要使用目标技术。 事件流因此确保了连续的流和解释 数据，以便正确的信息在正确的时间出现在正确的位置。</p>
+</li>
+<li><p>kafka的功能？</p>
+<ol>
+<li><p>要 发布 （写）和 订阅 （读取）的事件流，包括连续的导入&#x2F;导出 您来自其他系统的数据。</p>
+</li>
+<li><p>持久并可靠存储你想要的事件流</p>
+</li>
+<li><p><strong>处理</strong> 事件发生时或追溯性 事件流。</p>
+</li>
+</ol>
+<h5 id="kafka基本概念了解"><a href="#kafka基本概念了解" class="headerlink" title="kafka基本概念了解"></a>kafka基本概念了解</h5></li>
+<li><p>生产者：<strong>生产者</strong> 是那些向 Kafka 发布（写入）事件的客户端应用程序</p>
+</li>
+<li><p>消费者：订阅（读取和处理）这些事件的</p>
+</li>
+<li><p>主题：主题类似于文件系统中的文件夹，事件就是该文件夹中的文件</p>
+</li>
+<li><p>分区：主题是 <strong>分区的</strong> ，一个主题可以分布在位于不同 Kafka 代理的多个“桶”上。</p>
+</li>
+<li><p>broker：一个 Kafka 服务器也称为 Broker，它接受生产者发送的消息并存入磁盘；Broker 同时服务消费者拉取分区消息的请求，返回目前已经提交的消息一个 Kafka 服务器也称为 Broker，它接受生产者发送的消息并存入磁盘；Broker 同时服务消费者拉取分区消息的请求，返回目前已经提交的消息</p>
+</li>
+</ul>
+<h5 id="kafka功能测试-如何验证数据的一致性和有序性"><a href="#kafka功能测试-如何验证数据的一致性和有序性" class="headerlink" title="kafka功能测试-如何验证数据的一致性和有序性"></a>kafka功能测试-如何验证数据的一致性和有序性</h5><p>可以创建一个单分区的Topic，然后自己写一个生产者程序，程序发送的事件流可以从设定值从1到N自增长；写一个消费者程序，单线程消费，将消费到的数据写进文件中，观测有序性；还可以对kafka服务进程直接杀死，进行故障模拟。</p>
+<h5 id="kafka性能测试"><a href="#kafka性能测试" class="headerlink" title="kafka性能测试"></a>kafka性能测试</h5><p>性能压测是系统性问题，需要考量对整体业务的掌握程序，以及对kafka的熟悉程度。压测过程中涉及压测工具选取，监测kafka，压测结果分析。</p>
+<ul>
+<li><p>明确压测场景：明确要压测的场景</p>
+</li>
+<li><p>测试环境准备：在服务器选择，kafka版本，kafka架构以及相关配置参数、业务数据等尽可能与线上环境保持一致</p>
+</li>
+<li><p>压测工具选取：生产者压测使用kafka自带的测试工具kafka-producer-perf-test.sh来进行测试，发送数据推荐使用线上数据导出到本地文件，随机读取进行</p>
+</li>
+<li><p>压测过程观测：首先开启kafka的JMX端口，①可以使用滴滴的Logikm(但是需要自己搭建部署)；②自己通过JMX端口以及官方原生API获取相关指标，CPU、内存、网络等监测可以使用nomn或者top命令来监测</p>
+</li>
+<li><p>压测结果分析：理想状态是系统资源使用达到瓶颈，如未达到则寻找软件资源瓶颈，配合堆栈分析，发现线程阻塞点。</p>
+</li>
+<li><p>压测报告呈现：一般有测试环境说明、测试场景说明、测试过程说明、测试结论（在当前场景下的最佳资源使用以及配置）。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>kafka，大数据</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>大数据是什么？</title>
     <url>/Echo/2021/12/19/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%A7%E6%95%B0%E6%8D%AE/</url>
     <content><![CDATA[<h3 id="什么是大数据？"><a href="#什么是大数据？" class="headerlink" title="什么是大数据？"></a>什么是大数据？</h3><p>“巨大”这个词不足以解释大数据，某些特征将数据分类为大数据。</p>
@@ -3607,116 +3751,6 @@
       </tags>
   </entry>
   <entry>
-    <title>卸载centos自带的openjdk和MySQL</title>
-    <url>/Echo/2020/01/01/%E5%8D%B8%E8%BD%BDcentos%E8%87%AA%E5%B8%A6%E7%9A%84openjdk%E5%92%8CMySQL/</url>
-    <content><![CDATA[<h2 id="卸载openjdk"><a href="#卸载openjdk" class="headerlink" title="卸载openjdk"></a>卸载openjdk</h2><p>1.查看已经安装的jdk</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">rpm –qa|grep jdk</span><br><span class="line"></span><br><span class="line">java-1.7.0-openjdk-1.7.0.141-2.6.10.5.el7.x86_64</span><br><span class="line"></span><br><span class="line">java-1.8.0-openjdk-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">java-1.8.0-openjdk-headless-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">java-1.7.0-openjdk-headless-1.7.0.141-2.6.10.5.el7.x86_64</span><br><span class="line"></span><br><span class="line">ldap-4.19-1.el7.noarch</span><br><span class="line"></span><br><span class="line">copy-jdk-configs-2.2-3.el7.noarch</span><br></pre></td></tr></table></figure>
-
-<p>2.卸载命令</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum -y remove java-1.7.0-openjdk-1.7.0.141-2.6.10.5.el7.x86_64</span><br><span class="line"></span><br><span class="line">yum -y remove java-1.8.0-openjdk-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">yum -y remove java-1.8.0-openjdk-headless-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">yum -y remove java-1.7.0-openjdk-headless-1.7.0.141-2.6.10.5.el7.x86_64</span><br></pre></td></tr></table></figure>
-
-<p>.noarch文件不用</p>
-<p>3.用Java –version查看</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">提示如下： No such file or directoy</span><br></pre></td></tr></table></figure>
-
-<p>  卸载完成</p>
-<h2 id="卸载mysql"><a href="#卸载mysql" class="headerlink" title="卸载mysql"></a>卸载mysql</h2><p>执行命令</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum remove mariadb-libs</span><br></pre></td></tr></table></figure>
-
-<p>即可。</p>
-]]></content>
-      <categories>
-        <category>环境安装</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>JDK</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>大数据测试-测试类型</title>
-    <url>/Echo/2022/01/27/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%B5%8B%E8%AF%95-%E6%B5%8B%E8%AF%95%E7%B1%BB%E5%9E%8B/</url>
-    <content><![CDATA[<p>之前的文章写了大数据的存储或处理的一些程序，对于后续的这篇大数据如何测试，却迟迟无法落笔。因为每个公司都是根据自己的业务来使用大数据平台的一个或者多个功能的。这里随便聊下大数据测试！（就是想到哪里写到哪里）</p>
-<h4 id="大数据测试与传统测试的区别"><a href="#大数据测试与传统测试的区别" class="headerlink" title="大数据测试与传统测试的区别"></a>大数据测试与传统测试的区别</h4><p>传统测试：特定条件下运行的结果进行观察或者验证，构建上下文验证输出</p>
-<p>大数据测试：数据正确，系统正确仅仅是第一步，后边还有诸多额外工作，如数据计算后结果，系统性能等。</p>
-<h4 id="大数据测试的挑战"><a href="#大数据测试的挑战" class="headerlink" title="大数据测试的挑战"></a>大数据测试的挑战</h4><ol>
-<li>复杂的数据流，数据的多样性；</li>
-<li>集群规模大，数据量大</li>
-<li>复杂算法测试</li>
-<li>无明确的验收标准</li>
-</ol>
-<h4 id="大数据测试的测试类型"><a href="#大数据测试的测试类型" class="headerlink" title="大数据测试的测试类型"></a>大数据测试的测试类型</h4><h5 id="架构测试"><a href="#架构测试" class="headerlink" title="架构测试"></a>架构测试</h5><p>进行此测试是为了确保数据处理正确并符合要求。实际上，Hadoop系统处理大量数据，并且资源非常全面。如果体系结构不正确，则可能会降低性能，因此数据处理可能会中断并可能发生数据丢失。</p>
-<h5 id="数据库测试"><a href="#数据库测试" class="headerlink" title="数据库测试"></a>数据库测试</h5><p>需要确保从源数据库或本地数据库获取的数据必须是正确和适当的。需要检查源数据库中可用的数据是否与在Hadoop系统中输入的数据匹配。</p>
-<p><img src="/Echo/DataBase-Testing.jpg" alt="DataBase-Testing"></p>
-<p>需要验证Hadoop系统中的数据在处理后或转换后是否正确，并通过适当的验证和确认加载到客户端环境中。作为数据库测试的一部分，需要完成CRUD操作，即在本地数据库中创建数据，然后检索数据，需要搜索它，它应该在加载到数据仓库之前和之后在数据库中可用，并从数据仓库到客户端的环境。在存储或加载和处理数据的每个阶段验证任何更新的数据。删除任何损坏的数据或任何重复和空的数据。</p>
-<h5 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h5><p>作为性能测试的一部分，我们需要检查数据的加载和处理速度，例如IOPS（每秒输入输出）。</p>
-<p>需要检查输入数据或数据作为输入的速度，从各种数据库到数据仓库或Hadoop系统，以及从Hadoop系统或数据仓库到客户环境。</p>
-<p>还必须检查来自各种数据库的数据以及作为输出的数据仓库的速度。这就是我们所说的每秒输入输出或 IOPS。</p>
-<p>除此之外，另一个方面是检查数据吸收和数据分发的性能，以及数据仓库从各种数据库和客户端系统从Hadoop系统消耗数据的速度。</p>
-<p>此外，作为测试人员，我们需要检查数据分发的性能，例如，数据以多快的速度分发到Hadoop系统或数据仓库中可用的各种文件。同样，在将数据分发到客户端系统时也会发生相同的过程。</p>
-<p>Hadoop系统或数据仓库由多个组件组成，因此测试人员需要检查所有这些组件的性能，例如MapReduce作业，数据插入和使用，查询的响应时间及其性能以及搜索操作的性能。所有这些都包含在性能测试中。</p>
-<h4 id="功能测试"><a href="#功能测试" class="headerlink" title="功能测试"></a>功能测试</h4><p>功能测试包含对所有子组件，程序和脚本，用于执行存储或加载和处理操作的工具等的测试。对于测试人员来说，这是需要过滤数据的四个重要类型和阶段，以便客户端获得完美且无差错的数据。</p>
-]]></content>
-      <categories>
-        <category>大数据</category>
-      </categories>
-      <tags>
-        <tag>大数据</tag>
-        <tag>测试类型</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>kafka测试</title>
-    <url>/Echo/2021/11/24/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%BB%84%E4%BB%B6kafka%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<h5 id="kafka是一个事件流平台"><a href="#kafka是一个事件流平台" class="headerlink" title="kafka是一个事件流平台"></a>kafka是一个事件流平台</h5><ul>
-<li><p>什么事件流？，事件流是从事件源实时捕获数据的做法 如数据库、传感器、移动设备、云服务和流形式的软件应用程序 事件； 持久地存储这些事件流以供以后检索； 操作、处理和反应 实时和可追溯​​的事件流； 并将事件流路由到不同的 根据需要使用目标技术。 事件流因此确保了连续的流和解释 数据，以便正确的信息在正确的时间出现在正确的位置。</p>
-</li>
-<li><p>kafka的功能？</p>
-<ol>
-<li><p>要 发布 （写）和 订阅 （读取）的事件流，包括连续的导入&#x2F;导出 您来自其他系统的数据。</p>
-</li>
-<li><p>持久并可靠存储你想要的事件流</p>
-</li>
-<li><p><strong>处理</strong> 事件发生时或追溯性 事件流。</p>
-</li>
-</ol>
-<h5 id="kafka基本概念了解"><a href="#kafka基本概念了解" class="headerlink" title="kafka基本概念了解"></a>kafka基本概念了解</h5></li>
-<li><p>生产者：<strong>生产者</strong> 是那些向 Kafka 发布（写入）事件的客户端应用程序</p>
-</li>
-<li><p>消费者：订阅（读取和处理）这些事件的</p>
-</li>
-<li><p>主题：主题类似于文件系统中的文件夹，事件就是该文件夹中的文件</p>
-</li>
-<li><p>分区：主题是 <strong>分区的</strong> ，一个主题可以分布在位于不同 Kafka 代理的多个“桶”上。</p>
-</li>
-<li><p>broker：一个 Kafka 服务器也称为 Broker，它接受生产者发送的消息并存入磁盘；Broker 同时服务消费者拉取分区消息的请求，返回目前已经提交的消息一个 Kafka 服务器也称为 Broker，它接受生产者发送的消息并存入磁盘；Broker 同时服务消费者拉取分区消息的请求，返回目前已经提交的消息</p>
-</li>
-</ul>
-<h5 id="kafka功能测试-如何验证数据的一致性和有序性"><a href="#kafka功能测试-如何验证数据的一致性和有序性" class="headerlink" title="kafka功能测试-如何验证数据的一致性和有序性"></a>kafka功能测试-如何验证数据的一致性和有序性</h5><p>可以创建一个单分区的Topic，然后自己写一个生产者程序，程序发送的事件流可以从设定值从1到N自增长；写一个消费者程序，单线程消费，将消费到的数据写进文件中，观测有序性；还可以对kafka服务进程直接杀死，进行故障模拟。</p>
-<h5 id="kafka性能测试"><a href="#kafka性能测试" class="headerlink" title="kafka性能测试"></a>kafka性能测试</h5><p>性能压测是系统性问题，需要考量对整体业务的掌握程序，以及对kafka的熟悉程度。压测过程中涉及压测工具选取，监测kafka，压测结果分析。</p>
-<ul>
-<li><p>明确压测场景：明确要压测的场景</p>
-</li>
-<li><p>测试环境准备：在服务器选择，kafka版本，kafka架构以及相关配置参数、业务数据等尽可能与线上环境保持一致</p>
-</li>
-<li><p>压测工具选取：生产者压测使用kafka自带的测试工具kafka-producer-perf-test.sh来进行测试，发送数据推荐使用线上数据导出到本地文件，随机读取进行</p>
-</li>
-<li><p>压测过程观测：首先开启kafka的JMX端口，①可以使用滴滴的Logikm(但是需要自己搭建部署)；②自己通过JMX端口以及官方原生API获取相关指标，CPU、内存、网络等监测可以使用nomn或者top命令来监测</p>
-</li>
-<li><p>压测结果分析：理想状态是系统资源使用达到瓶颈，如未达到则寻找软件资源瓶颈，配合堆栈分析，发现线程阻塞点。</p>
-</li>
-<li><p>压测报告呈现：一般有测试环境说明、测试场景说明、测试过程说明、测试结论（在当前场景下的最佳资源使用以及配置）。</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>大数据</category>
-      </categories>
-      <tags>
-        <tag>kafka，大数据</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>如何编写有效的测试用例</title>
     <url>/Echo/2022/01/15/%E5%A6%82%E4%BD%95%E7%BC%96%E5%86%99%E6%9C%89%E6%95%88%E7%9A%84%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B/</url>
     <content><![CDATA[<h4 id="什么是测试用例？"><a href="#什么是测试用例？" class="headerlink" title="什么是测试用例？"></a>什么是测试用例？</h4><p>测试用例包含描述输入、动作或事件以及预期响应的组件，以确定应用程序的功能是否正常工作。</p>
@@ -3769,6 +3803,38 @@
       </categories>
       <tags>
         <tag>测试，测试基本</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>技术人如何申请专利</title>
+    <url>/Echo/2020/03/01/%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%A6%82%E4%BD%95%E7%94%B3%E8%AF%B7%E4%B8%93%E5%88%A9/</url>
+    <content><![CDATA[<h4 id="什么是专利？"><a href="#什么是专利？" class="headerlink" title="什么是专利？"></a>什么是专利？</h4><p>专利一般是由政府机关或者代表若干国家的区域性组织根据申请而颁发的一种文件，这种文件记载了发明创造的内容，并且在一定时期内产生这样一种法律状态，即获得专利的发明创造在一般情况下他人只有经专利权人许可才能予以实施。在我国，专利分为发明、实用新型和外观设计三种类型。</p>
+<h4 id="有什么好处？"><a href="#有什么好处？" class="headerlink" title="有什么好处？"></a>有什么好处？</h4><p>专利权人可以提高自身资质、获得收益、提高竞争力； 发明人可以获得收益、提高个人竞争力、获得成就感。</p>
+<h4 id="专利说明书长啥样？"><a href="#专利说明书长啥样？" class="headerlink" title="专利说明书长啥样？"></a>专利说明书长啥样？</h4><p><img src="/Echo/2020/03/01/%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%A6%82%E4%BD%95%E7%94%B3%E8%AF%B7%E4%B8%93%E5%88%A9/%E5%8F%91%E6%98%8E%E4%B8%93%E5%88%A9%E8%AF%B4%E6%98%8E%E4%B9%A6.png" alt="发明专利说明书"></p>
+<h5 id="扉页"><a href="#扉页" class="headerlink" title="扉页"></a>扉页</h5><p>专利说明书中的扉页是揭示每件专利的基本信息的文件部分。扉页揭示的基本专利信息包括：专利申请的时间、申请的号码、申请人或专利权人、发明人、发明创造名称、发明创造简要介绍及主图（机械图、电路图、化学结构式等）、发明所属技术领域分类号、公布或授权的时间、文献号、出版专利文件的国家机构等。</p>
+<h5 id="权利要求书"><a href="#权利要求书" class="headerlink" title="权利要求书"></a>权利要求书</h5><p>权利要求书是专利文件中限定专利保护范围的文件部分。权利要求书中至少有一项独立权利要求，还可以有从属权利要求。</p>
+<h5 id="说明书"><a href="#说明书" class="headerlink" title="说明书"></a>说明书</h5><p>说明书是清楚完整地描述发明创造的技术内容的文件部分，附图则用于对说明书文字部分的补充。各国对说明书中发明描述的规定大体相同，以中国专利说明书为例，说明书部分包括：技术领域，背景技术，发明内容，附图说明，实施条例等。</p>
+<h5 id="检索报告"><a href="#检索报告" class="headerlink" title="检索报告"></a>检索报告</h5><p>有些机构出版的专利说明书还附有检索报告。检索报告是专利审查员通过对专利申请所涉及的发明创造进行现有技术检索，找到可进行专利性对比的文件，向专利申请人及公众展示检索结果的一种文件。附有检索报告的专利文件均为申请公布说明书，即未经审查尚未授予专利权的专利文件。检索报告以表格式报告书的形式出版。</p>
+<h4 id="专利申请的要求？"><a href="#专利申请的要求？" class="headerlink" title="专利申请的要求？"></a>专利申请的要求？</h4><p>1、新颖性：是指在申请日以前没有同样的发明或者实用新型在国内外出版物上公开发表过，没有在国内公开使用过或者以其他方式为公众所知，也没有同样的发明或者实用新型由他人向国家专利行政部门提出过申请并且记载在申请日以后公布的专利申请文件中。</p>
+<p>2、创造性：是指同申请日以前已有的技术相比，该实用新型有实质性特点和进步。</p>
+<p>3、实用性：是指该实用新型能够制造或者使用，并且能够产生积极效果。</p>
+<p>4、非智力活动或者规则</p>
+<h4 id="写专利前要想清楚的？"><a href="#写专利前要想清楚的？" class="headerlink" title="写专利前要想清楚的？"></a>写专利前要想清楚的？</h4><p>专利的背景：当前市场上有什么技术，当前技术存在的难点与痛点。（非常重要） 核心创新与收益：你的创新点在哪里，就是牛在哪里？创造的收益如何的。（最好能与专利背景中的难点与痛点互相匹配起来）； 流程：文字+流程图描述最为合适（专利接口人可能并无此方面专业知识</p>
+<h4 id="背景和现有技术怎么写？"><a href="#背景和现有技术怎么写？" class="headerlink" title="背景和现有技术怎么写？"></a>背景和现有技术怎么写？</h4><p>目的 — 说明此专利存在的意义</p>
+<ol>
+<li>关键术语定义：公知术语（如 Java 反射）的定义，多列一些，每个给链接；</li>
+<li>背景技术：泛泛介绍大背景和大前提（实践场景），以助理解为宜，不用过多着墨；</li>
+<li>现有技术：找出最具代表的进行客观的简述，说清缺陷。可提供链接；</li>
+<li>发明目的：针对上述缺陷，可用什么手段来解决它。简述；</li>
+<li>收益：实施本发明（解决问题）后能带来什么收益（指标、效果等）。</li>
+</ol>
+<h4 id="技术关键点和保护点"><a href="#技术关键点和保护点" class="headerlink" title="技术关键点和保护点"></a>技术关键点和保护点</h4><p>1.关键技术点罗列； 2.具体实施过程–说清楚“技术关键点”的具体实现 ① 实现步骤&amp;流程：总流程→细化→再细化 ② 总分结构：类、接口、方法及关系→各方法的描述、总结构→细化 （尽量用图来展示）</p>
+]]></content>
+      <categories>
+        <category>个人</category>
+      </categories>
+      <tags>
+        <tag>个人</tag>
       </tags>
   </entry>
   <entry>
@@ -3831,38 +3897,6 @@
         <tag>自动化测试</tag>
         <tag>devops</tag>
         <tag>测试策略</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>技术人如何申请专利</title>
-    <url>/Echo/2020/03/01/%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%A6%82%E4%BD%95%E7%94%B3%E8%AF%B7%E4%B8%93%E5%88%A9/</url>
-    <content><![CDATA[<h4 id="什么是专利？"><a href="#什么是专利？" class="headerlink" title="什么是专利？"></a>什么是专利？</h4><p>专利一般是由政府机关或者代表若干国家的区域性组织根据申请而颁发的一种文件，这种文件记载了发明创造的内容，并且在一定时期内产生这样一种法律状态，即获得专利的发明创造在一般情况下他人只有经专利权人许可才能予以实施。在我国，专利分为发明、实用新型和外观设计三种类型。</p>
-<h4 id="有什么好处？"><a href="#有什么好处？" class="headerlink" title="有什么好处？"></a>有什么好处？</h4><p>专利权人可以提高自身资质、获得收益、提高竞争力； 发明人可以获得收益、提高个人竞争力、获得成就感。</p>
-<h4 id="专利说明书长啥样？"><a href="#专利说明书长啥样？" class="headerlink" title="专利说明书长啥样？"></a>专利说明书长啥样？</h4><p><img src="/Echo/2020/03/01/%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%A6%82%E4%BD%95%E7%94%B3%E8%AF%B7%E4%B8%93%E5%88%A9/%E5%8F%91%E6%98%8E%E4%B8%93%E5%88%A9%E8%AF%B4%E6%98%8E%E4%B9%A6.png" alt="发明专利说明书"></p>
-<h5 id="扉页"><a href="#扉页" class="headerlink" title="扉页"></a>扉页</h5><p>专利说明书中的扉页是揭示每件专利的基本信息的文件部分。扉页揭示的基本专利信息包括：专利申请的时间、申请的号码、申请人或专利权人、发明人、发明创造名称、发明创造简要介绍及主图（机械图、电路图、化学结构式等）、发明所属技术领域分类号、公布或授权的时间、文献号、出版专利文件的国家机构等。</p>
-<h5 id="权利要求书"><a href="#权利要求书" class="headerlink" title="权利要求书"></a>权利要求书</h5><p>权利要求书是专利文件中限定专利保护范围的文件部分。权利要求书中至少有一项独立权利要求，还可以有从属权利要求。</p>
-<h5 id="说明书"><a href="#说明书" class="headerlink" title="说明书"></a>说明书</h5><p>说明书是清楚完整地描述发明创造的技术内容的文件部分，附图则用于对说明书文字部分的补充。各国对说明书中发明描述的规定大体相同，以中国专利说明书为例，说明书部分包括：技术领域，背景技术，发明内容，附图说明，实施条例等。</p>
-<h5 id="检索报告"><a href="#检索报告" class="headerlink" title="检索报告"></a>检索报告</h5><p>有些机构出版的专利说明书还附有检索报告。检索报告是专利审查员通过对专利申请所涉及的发明创造进行现有技术检索，找到可进行专利性对比的文件，向专利申请人及公众展示检索结果的一种文件。附有检索报告的专利文件均为申请公布说明书，即未经审查尚未授予专利权的专利文件。检索报告以表格式报告书的形式出版。</p>
-<h4 id="专利申请的要求？"><a href="#专利申请的要求？" class="headerlink" title="专利申请的要求？"></a>专利申请的要求？</h4><p>1、新颖性：是指在申请日以前没有同样的发明或者实用新型在国内外出版物上公开发表过，没有在国内公开使用过或者以其他方式为公众所知，也没有同样的发明或者实用新型由他人向国家专利行政部门提出过申请并且记载在申请日以后公布的专利申请文件中。</p>
-<p>2、创造性：是指同申请日以前已有的技术相比，该实用新型有实质性特点和进步。</p>
-<p>3、实用性：是指该实用新型能够制造或者使用，并且能够产生积极效果。</p>
-<p>4、非智力活动或者规则</p>
-<h4 id="写专利前要想清楚的？"><a href="#写专利前要想清楚的？" class="headerlink" title="写专利前要想清楚的？"></a>写专利前要想清楚的？</h4><p>专利的背景：当前市场上有什么技术，当前技术存在的难点与痛点。（非常重要） 核心创新与收益：你的创新点在哪里，就是牛在哪里？创造的收益如何的。（最好能与专利背景中的难点与痛点互相匹配起来）； 流程：文字+流程图描述最为合适（专利接口人可能并无此方面专业知识</p>
-<h4 id="背景和现有技术怎么写？"><a href="#背景和现有技术怎么写？" class="headerlink" title="背景和现有技术怎么写？"></a>背景和现有技术怎么写？</h4><p>目的 — 说明此专利存在的意义</p>
-<ol>
-<li>关键术语定义：公知术语（如 Java 反射）的定义，多列一些，每个给链接；</li>
-<li>背景技术：泛泛介绍大背景和大前提（实践场景），以助理解为宜，不用过多着墨；</li>
-<li>现有技术：找出最具代表的进行客观的简述，说清缺陷。可提供链接；</li>
-<li>发明目的：针对上述缺陷，可用什么手段来解决它。简述；</li>
-<li>收益：实施本发明（解决问题）后能带来什么收益（指标、效果等）。</li>
-</ol>
-<h4 id="技术关键点和保护点"><a href="#技术关键点和保护点" class="headerlink" title="技术关键点和保护点"></a>技术关键点和保护点</h4><p>1.关键技术点罗列； 2.具体实施过程–说清楚“技术关键点”的具体实现 ① 实现步骤&amp;流程：总流程→细化→再细化 ② 总分结构：类、接口、方法及关系→各方法的描述、总结构→细化 （尽量用图来展示）</p>
-]]></content>
-      <categories>
-        <category>个人</category>
-      </categories>
-      <tags>
-        <tag>个人</tag>
       </tags>
   </entry>
   <entry>
@@ -3970,6 +4004,88 @@
       </categories>
       <tags>
         <tag>测试，测试基本</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>拥有未来的能力——“自学”</title>
+    <url>/Echo/2021/11/09/%E8%87%AA%E5%AD%A6/</url>
+    <content><![CDATA[<h2 id="为什么一定要掌握自学能力？"><a href="#为什么一定要掌握自学能力？" class="headerlink" title="为什么一定要掌握自学能力？"></a>为什么一定要掌握自学能力？</h2><p>最近一直在讨论延长退休年龄，我们的父辈在五十岁就退休了。再过去的几十年里，人类的平均寿命预期增长的十分惊人！拿中国地区做例子，1949年，中国人均预期寿命不足35岁。 2021年，这个数字达到77.3岁。  72年，人均预期寿命长一倍还多。所以，各位，我们的未来还有很长。曾经有一家机构做过这样一个调查，人们的职业与自己大学所学专业的相符的比例不足20%。因为这世界变化太快了，因为大多数教育机构与世界发展脱钩的程度越来越严重。你的未来日子还有很长，这世界进步的这么快，你有让自己有在未来安身立命的一技之长吗？自学能力是唯一值得被不断磨练的长技，没有自学能力的人是没有未来的，这样我们才能在很长的未来中不被世界所抛弃。</p>
+<h2 id="自学需要的元素"><a href="#自学需要的元素" class="headerlink" title="自学需要的元素"></a>自学需要的元素</h2><p>自学过程我们要经历以下四个阶段：学、练、用、造。</p>
+<ul>
+<li>学：重复学，多次重复学，特别是面对“过早引用”的知识结构时；反复学，锻炼我们归纳总结的能力。</li>
+<li>练：在接触用的过程中，我们就开始接触练。无论你之前学了多少遍，一旦开始练，我们就会遇到各种各样的问题。每次自学时，我们都要放空自己，保持空杯的心态。</li>
+<li>用：只要有时间或者只要有需求我们就要用我们自学的知识，重复反复大量的用，在用的过程中练习；</li>
+<li>造：这个阶段我目前还没达到</li>
+</ul>
+<h3 id="耐心"><a href="#耐心" class="headerlink" title="耐心"></a>耐心</h3><p>在开始一门新知识的自学之前，我们要有足够的心理预期建设。我们要明白两点：</p>
+<p>1、这个时间要比你想象的长的多</p>
+<p>2、自学过程中，什么都要重复很多遍，学，练，用都需要大量的重复过程</p>
+<p>大多数人缺乏耐心的根源是“没有准备这么多的时间和精力”。这就需要我们有预算观念。</p>
+<p>预算观念——这个观念存在与否，成熟与否，基本决定了一个人未来的盈利能力。</p>
+<p>我们恪守一个原则，未来就很有可能超过大多数人：绝对不做预算不够的事。</p>
+<p>在自学的过程中，我们学的时候比别人重复的多，练的时候比别人重复的多，到最后用得比别人多。再开始自学的过程中，我总是觉得时间不够用，后来我越来越淡定了，因为早已习惯投入大量时间换取新的技能。</p>
+<h3 id="刻意练习"><a href="#刻意练习" class="headerlink" title="刻意练习"></a>刻意练习</h3><p>在自学的过程中，有一些部分是要刻意练习的。好比小时候我们学写字，老师为什么总是让我们写很多遍？还有卖油翁的故事大家还记得吗？手艺这个是需要刻意反复练习，主要是靠时间。在这过程中也需要我们刻意练习，如果卖油翁总是很随意，油撒的很多，想必他很快干不下去了。需要刻意练习的地方，是因人而异的，那就是对于自己来说很难比较容易出错的地方。经过大量的重复的联系，最终我们达到无他，唯手熟尔！</p>
+<h3 id="琢磨"><a href="#琢磨" class="headerlink" title="琢磨"></a>琢磨</h3><p>论语中有这样一句话“学而不思则罔”在学习的过程中我们要多思考。琢磨就是刻意的去思考!在我们的学习过程中最有价值的琢磨就是“这个东西刻意用在哪里？”</p>
+<h2 id="自学过程要打破的几个幻觉"><a href="#自学过程要打破的几个幻觉" class="headerlink" title="自学过程要打破的几个幻觉"></a>自学过程要打破的几个幻觉</h2><p>感觉总是我们人生中最大的坑。每次考试完是不是总感觉自己考的不错，学习过程也总感觉自己学会了，其实带最后发现自己啥也不会。很多人的自学能力都是被“自己的感觉”给耽误了。</p>
+<h3 id="刚需幻觉"><a href="#刚需幻觉" class="headerlink" title="刚需幻觉"></a>刚需幻觉</h3><p>“刚需幻觉”的根本原因就是感觉，你不会的东西对你来说感觉很难。18岁时你感觉英语很难，22岁有个外企机会，你没把握住；16岁时你感觉游泳很难，18岁时，心中的女神约你去游泳你只能说自己没时间！一项技能在你没有学会它的时候，你不可能觉得那是个刚需（就像房子，你不结婚，永远不会觉得这是刚需）。所以我们在开始学习一个新技能时，这么告诉自己不要问学它有什么用，学就是了。如何客服刚需幻觉？这要我们学习一个策略，让自己成为一个自驱动的人！自驱动说起来很简单就是“找活干”。</p>
+<h3 id="时间幻觉"><a href="#时间幻觉" class="headerlink" title="时间幻觉"></a>时间幻觉</h3><p>我们很多时候都受时间幻觉的拖累。玩游戏时你总是觉得时间很短，然后一整天就过去了；我在写这篇文章时总感觉时间还有很多，然后这周就过到周五了。时间从来都是匀速的，每个人的时间都是24小时的。在学习一个技能时，最大幻觉就是总是以为“时间不够了”。回头看看，回头想一想，五年前，十年前的自己在做什么？有没有一转眼时间就过去了。每年的毕业季是否总是有人很多人感叹，自己怎么就毕业了辣么久了！如何客服时间幻觉呢？只管坚持着做，坚持着学。时间会给你答案的。</p>
+<h3 id="困难幻觉"><a href="#困难幻觉" class="headerlink" title="困难幻觉"></a>困难幻觉</h3><p>无论做什么都是有难点的，有瓶颈期。当我们客服难点后，发现原来不过如此–这就是困难幻觉。古人早就有总结：“世上无难事，只怕有心人”。把一件事当成手艺看，就像开车一样，你开的多就会了，这样带来的好处之一就是心态平和。因为我们知道这事和天分智商关系不大，它靠的是不混时间（你如何对待时间的，时间也将如何对待你）、琢磨（刻意思考）、刻意练习。阅读难点在于起初的时候它是非常枯燥的。刚识字、刚上学的时候，由于理解能力有限，又由于年龄的关系于是耐心有限，所以，那时需要老师耐心陪伴、悉心引导。这就好像小朋友刚出生的时候，没有牙齿，所以只能喝奶差不多…… 然而，到了一定程度之后一定要断奶，是不是？可绝大多数人的实际情况却是，小学的时候爱上了  “奶嘴”（有人带着阅读），而后一生没有奶嘴就吃不下任何东西。</p>
+<p>他们必须去 “上课”，需要有人给他们讲书。不仅如此，讲得 “不生动”、“不幽默”  还不行；就算那职业提供奶嘴的人（这是非常令人遗憾的真相：很多的时候，所谓的 “老师” 本质上只不过就是奶妈而已）帅气漂亮、生动幽默、尽职尽力…… 最终还是一样的结果 —— 绝大多数人依然没有完整掌握所有应该掌握的细节。</p>
+<h2 id="自学过程需要的几项技能"><a href="#自学过程需要的几项技能" class="headerlink" title="自学过程需要的几项技能"></a>自学过程需要的几项技能</h2><h3 id="拆解"><a href="#拆解" class="headerlink" title="拆解"></a>拆解</h3><p>在自学的过程中遇到难点，复杂的。我们不妨拆解他们，拆解成一个一个的小问题予以突破。把那些很难的任务无限拆分——直到每个子任务都很小，小到我们可以唾手可得为止。当我们习惯了这么做之后，就会发现一切任务（不仅有自学还有别的）其实都是不难的，只是复杂繁琐而已。很多人失败的原因是什么，就是不懂拆分任务，要么就是怕麻烦！有句话不知道大家听过没——人活着，其实就挺麻烦的。。。。</p>
+<h3 id="专注"><a href="#专注" class="headerlink" title="专注"></a>专注</h3><p>现在这个网络时代，大家有没有发现自己的注意力经常莫名的就被转移了。比如，你本来只不过就想着去 Google  一个编程错误信息的解读，结果不知道怎么就 “注意到” 了另外一个东西，比如，“某编辑器的皮肤”，然后你就 “顺手” 把它下载下来，然后  “很自然地顺手把它装上”，而后又看了看，觉得有点必要于是 “顺手做了点定制”…… 然后欣赏了一会儿，并自我得意一番之后 “突然发现”  自己还没有解决两小时之前要解决的问题！好奇心越重的人，越是容易被注意力漂移所拖累。</p>
+<p>好奇心是好东西，而且是必须认真呵护的东西 —— 几乎最重要、最强劲的自学动力，都混合着好奇心出现并持续。</p>
+<p>如何专注，我们列一个清单。把我们首要做的事情放在第一位，并牢牢地记住它。一旦发现自己的注意力没有集中在这上面的关键之时，一旦发现自己的注意力已经漂移到其它当前并不重要的事项上，就马上纠正。</p>
+<h3 id="沟通"><a href="#沟通" class="headerlink" title="沟通"></a>沟通</h3><p>普遍认为，手艺人的特征是缺乏沟通能力，或者沟通能力差 —— 也许是因为平时把所有的时间精力都投入到磨练手艺上去了罢。</p>
+<p><strong>教是最好的学习方法</strong></p>
+<p>讲课、写教程，甚至写书 —— 这是最高效的提升沟通能力的刻意练习手段。</p>
+<p>沟通要注意以下几点</p>
+<h4 id="内容第一"><a href="#内容第一" class="headerlink" title="内容第一"></a>内容第一</h4><p>无论是平日里讲话、还是台上讲课，抑或是写篇文章、写本书，永远都是内容第一，至于形式，并非不重要，但绝对不能喧宾夺主。</p>
+<p>通常，我们用 “干货” 来描述内容的重要性。第一步就是准备干货，至于修辞啊、笑点啊、酷炫幻灯片啊等等等等，都必须是次要的，否则就是喧宾夺主。干货不够好，其它的做得越多、越好，最终越是容易露怯 —— 这很可怕。</p>
+<h4 id="内容质量"><a href="#内容质量" class="headerlink" title="内容质量"></a>内容质量</h4><h5 id="重点突出"><a href="#重点突出" class="headerlink" title="重点突出"></a>重点突出</h5><p>“重点突出”，是最简单朴素、成本最低的 “优秀结构”。</p>
+<p>既然是沟通，就要了解对方。在绝大多数情况下，对方想要的才是重点。</p>
+<p>可问题在于，我们平日里面对单个人的时候都觉得 “了解对方很困难”，我们又如何判断 “一个群体”  呢？与很多人想象得相反，判断群体远比判断个体容易得多…… 因为你可以用粗暴分类，比如，你把听众或读者划分为 “小白” 和  “专家”，那你就知道了，你面对的群体中，更可能  “大部分是小白，小部分是专家”。于是，你就可以思考，“小白们最想知道的是什么？”，“专家们最重视的是什么？”，于是，你就可以在脑子里对所谓的  “重点” 有应对策略。</p>
+<h5 id="例证生动"><a href="#例证生动" class="headerlink" title="例证生动"></a>例证生动</h5><p>寻找好例子，是需要很多时间精力的事情 —— 从来就没有任何 “信手拈来” 的生动例子。信手拈来，是读者或者听众的感觉而已，对你来说，肯定是举重若轻的 —— 你明明是在举重，却被认为 “如若举轻”。在第一部分，<a href="https://link.juejin.cn/?target=https://render.githubusercontent.com/view/Part.1.E.7.files.ipynb">讲文件的那一章</a>里，我举了个 “我自己费尽心机找好例子” 的例子，相信你读过之后，一定有所感触。</p>
+<h5 id="消除歧义"><a href="#消除歧义" class="headerlink" title="消除歧义"></a>消除歧义</h5><p>消除<strong>一切</strong>歧义。这是真功夫，因为这东西很难把自己关在屋子里自顾自练成。并且，每个人有自己的 “容易引发误解” 的特殊属性，大家各不相同 —— 于是，只能靠自己探索。</p>
+<h2 id="自学者的终点"><a href="#自学者的终点" class="headerlink" title="自学者的终点"></a>自学者的终点</h2><p>必须学会一个没人教、没人带、甚至没有书可以参考技能！尽量只靠阅读获得一项新技能！</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>你一定要想办法启动自学，否则你没有未来；</li>
+<li>你把自学当作一门手艺，长期反复磨练它；</li>
+<li>你懂得学、练、用、造各个阶段之间的不同，以及针对每个阶段的对应策略；</li>
+<li>面对 “过早引用” 过多的世界，你有你的应对方式；</li>
+<li>你会 “囫囵吞枣”，你会 “重复重复再重复”，你深刻理解 “读书百遍其义自见”；</li>
+<li>以后你最擅长的技能之一就是拆解拆解再拆解；</li>
+<li>你用你的拆解手艺把所有遇到的难点都拆解成能搞定的小任务；</li>
+<li>自学任何一门手艺之前你都不会去问 “有什么用”，而是清楚地知道，无论是什么只要学会了就只能也必然天天去用；</li>
+<li>你没有刚需幻觉，你也没有时间幻觉，你更没有困难幻觉，反正你就是相对更清醒；</li>
+<li>不管你新学什么手艺，你都知道只要假以时日你就肯定能做好，因为所有的手艺精湛，靠的只不过是充足的预算；</li>
+<li>你知道如何不浪费生命，因为只要不是在刻意练习、不是在刻意思考，那就是在 “混时间”；</li>
+<li>你总是在琢磨你能做个什么新作品；</li>
+<li>你刻意地使用你的作品作为有效社交工具，也用作品去过滤无效社交；</li>
+<li>你乐于分享，乐于阅读也更乐于写作 —— 因为这世界怎么帮助你的，你就想着要怎样回报；</li>
+<li>你把全面和完整当作最高衡量标准，也用这个标准去克制、应对自己的注意力漂移；</li>
+<li>你会不断自学新的手艺，因为你越来越理解单一技能的脆弱，越来越理解多项技能的综合威力；</li>
+<li>你越来越依赖互联网，它是你最喜欢的 “书”，而 Google 是你最好的朋友 —— 他总是能帮你找到更好的老师；</li>
+<li>偶尔，你会学会没人教、没人带、甚至没书可参考的手艺，别人都说你 “悟性” 高，可你自己清楚地知道那其实是怎么回事；</li>
+<li>你越来越明白，其实没什么 “秘密”，越简单、越朴素的道理越值得重视；</li>
+<li>你发现你用来思考的时间越来越多 —— 准确地讲，是 “琢磨”…… 只不过是因为你真会琢磨了 —— 你很清楚你应该花时间琢磨的是什么。</li>
+</ul>
+<p><strong>没什么不能自学的，反正都只不过是手艺</strong> —— 只不过，我们每个人都受限于自己的时间精力而已。</p>
+<p>自学不过是一门手艺，而且还是谁都能掌握的。不要 “试试” 而已，而是 “直接开干” —— 这样才好。</p>
+<h3 id="自学过程还需要"><a href="#自学过程还需要" class="headerlink" title="自学过程还需要"></a>自学过程还需要</h3><ul>
+<li><strong>心理建设——没什么可怕的！</strong></li>
+<li><strong>不懂也要硬着头皮读完，然后重复读很多遍</strong></li>
+<li><strong>磨练 “只字不差地阅读” 的能力</strong></li>
+<li><strong>就算不明白也要先记住——“好记性不如烂笔头”，不是记在笔记本上是要记在脑子里</strong></li>
+<li><strong>尽早开始归纳总结</strong></li>
+<li><strong>先用起来，在研究怎么用的</strong></li>
+<li><strong>多听老人言——多听前辈的经验和总结，但不要盲从</strong></li>
+</ul>
+]]></content>
+      <categories>
+        <category>个人</category>
+      </categories>
+      <tags>
+        <tag>成长</tag>
       </tags>
   </entry>
   <entry>
@@ -4114,88 +4230,6 @@
       <tags>
         <tag>测试</tag>
         <tag>页面测试</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>拥有未来的能力——“自学”</title>
-    <url>/Echo/2021/11/09/%E8%87%AA%E5%AD%A6/</url>
-    <content><![CDATA[<h2 id="为什么一定要掌握自学能力？"><a href="#为什么一定要掌握自学能力？" class="headerlink" title="为什么一定要掌握自学能力？"></a>为什么一定要掌握自学能力？</h2><p>最近一直在讨论延长退休年龄，我们的父辈在五十岁就退休了。再过去的几十年里，人类的平均寿命预期增长的十分惊人！拿中国地区做例子，1949年，中国人均预期寿命不足35岁。 2021年，这个数字达到77.3岁。  72年，人均预期寿命长一倍还多。所以，各位，我们的未来还有很长。曾经有一家机构做过这样一个调查，人们的职业与自己大学所学专业的相符的比例不足20%。因为这世界变化太快了，因为大多数教育机构与世界发展脱钩的程度越来越严重。你的未来日子还有很长，这世界进步的这么快，你有让自己有在未来安身立命的一技之长吗？自学能力是唯一值得被不断磨练的长技，没有自学能力的人是没有未来的，这样我们才能在很长的未来中不被世界所抛弃。</p>
-<h2 id="自学需要的元素"><a href="#自学需要的元素" class="headerlink" title="自学需要的元素"></a>自学需要的元素</h2><p>自学过程我们要经历以下四个阶段：学、练、用、造。</p>
-<ul>
-<li>学：重复学，多次重复学，特别是面对“过早引用”的知识结构时；反复学，锻炼我们归纳总结的能力。</li>
-<li>练：在接触用的过程中，我们就开始接触练。无论你之前学了多少遍，一旦开始练，我们就会遇到各种各样的问题。每次自学时，我们都要放空自己，保持空杯的心态。</li>
-<li>用：只要有时间或者只要有需求我们就要用我们自学的知识，重复反复大量的用，在用的过程中练习；</li>
-<li>造：这个阶段我目前还没达到</li>
-</ul>
-<h3 id="耐心"><a href="#耐心" class="headerlink" title="耐心"></a>耐心</h3><p>在开始一门新知识的自学之前，我们要有足够的心理预期建设。我们要明白两点：</p>
-<p>1、这个时间要比你想象的长的多</p>
-<p>2、自学过程中，什么都要重复很多遍，学，练，用都需要大量的重复过程</p>
-<p>大多数人缺乏耐心的根源是“没有准备这么多的时间和精力”。这就需要我们有预算观念。</p>
-<p>预算观念——这个观念存在与否，成熟与否，基本决定了一个人未来的盈利能力。</p>
-<p>我们恪守一个原则，未来就很有可能超过大多数人：绝对不做预算不够的事。</p>
-<p>在自学的过程中，我们学的时候比别人重复的多，练的时候比别人重复的多，到最后用得比别人多。再开始自学的过程中，我总是觉得时间不够用，后来我越来越淡定了，因为早已习惯投入大量时间换取新的技能。</p>
-<h3 id="刻意练习"><a href="#刻意练习" class="headerlink" title="刻意练习"></a>刻意练习</h3><p>在自学的过程中，有一些部分是要刻意练习的。好比小时候我们学写字，老师为什么总是让我们写很多遍？还有卖油翁的故事大家还记得吗？手艺这个是需要刻意反复练习，主要是靠时间。在这过程中也需要我们刻意练习，如果卖油翁总是很随意，油撒的很多，想必他很快干不下去了。需要刻意练习的地方，是因人而异的，那就是对于自己来说很难比较容易出错的地方。经过大量的重复的联系，最终我们达到无他，唯手熟尔！</p>
-<h3 id="琢磨"><a href="#琢磨" class="headerlink" title="琢磨"></a>琢磨</h3><p>论语中有这样一句话“学而不思则罔”在学习的过程中我们要多思考。琢磨就是刻意的去思考!在我们的学习过程中最有价值的琢磨就是“这个东西刻意用在哪里？”</p>
-<h2 id="自学过程要打破的几个幻觉"><a href="#自学过程要打破的几个幻觉" class="headerlink" title="自学过程要打破的几个幻觉"></a>自学过程要打破的几个幻觉</h2><p>感觉总是我们人生中最大的坑。每次考试完是不是总感觉自己考的不错，学习过程也总感觉自己学会了，其实带最后发现自己啥也不会。很多人的自学能力都是被“自己的感觉”给耽误了。</p>
-<h3 id="刚需幻觉"><a href="#刚需幻觉" class="headerlink" title="刚需幻觉"></a>刚需幻觉</h3><p>“刚需幻觉”的根本原因就是感觉，你不会的东西对你来说感觉很难。18岁时你感觉英语很难，22岁有个外企机会，你没把握住；16岁时你感觉游泳很难，18岁时，心中的女神约你去游泳你只能说自己没时间！一项技能在你没有学会它的时候，你不可能觉得那是个刚需（就像房子，你不结婚，永远不会觉得这是刚需）。所以我们在开始学习一个新技能时，这么告诉自己不要问学它有什么用，学就是了。如何客服刚需幻觉？这要我们学习一个策略，让自己成为一个自驱动的人！自驱动说起来很简单就是“找活干”。</p>
-<h3 id="时间幻觉"><a href="#时间幻觉" class="headerlink" title="时间幻觉"></a>时间幻觉</h3><p>我们很多时候都受时间幻觉的拖累。玩游戏时你总是觉得时间很短，然后一整天就过去了；我在写这篇文章时总感觉时间还有很多，然后这周就过到周五了。时间从来都是匀速的，每个人的时间都是24小时的。在学习一个技能时，最大幻觉就是总是以为“时间不够了”。回头看看，回头想一想，五年前，十年前的自己在做什么？有没有一转眼时间就过去了。每年的毕业季是否总是有人很多人感叹，自己怎么就毕业了辣么久了！如何客服时间幻觉呢？只管坚持着做，坚持着学。时间会给你答案的。</p>
-<h3 id="困难幻觉"><a href="#困难幻觉" class="headerlink" title="困难幻觉"></a>困难幻觉</h3><p>无论做什么都是有难点的，有瓶颈期。当我们客服难点后，发现原来不过如此–这就是困难幻觉。古人早就有总结：“世上无难事，只怕有心人”。把一件事当成手艺看，就像开车一样，你开的多就会了，这样带来的好处之一就是心态平和。因为我们知道这事和天分智商关系不大，它靠的是不混时间（你如何对待时间的，时间也将如何对待你）、琢磨（刻意思考）、刻意练习。阅读难点在于起初的时候它是非常枯燥的。刚识字、刚上学的时候，由于理解能力有限，又由于年龄的关系于是耐心有限，所以，那时需要老师耐心陪伴、悉心引导。这就好像小朋友刚出生的时候，没有牙齿，所以只能喝奶差不多…… 然而，到了一定程度之后一定要断奶，是不是？可绝大多数人的实际情况却是，小学的时候爱上了  “奶嘴”（有人带着阅读），而后一生没有奶嘴就吃不下任何东西。</p>
-<p>他们必须去 “上课”，需要有人给他们讲书。不仅如此，讲得 “不生动”、“不幽默”  还不行；就算那职业提供奶嘴的人（这是非常令人遗憾的真相：很多的时候，所谓的 “老师” 本质上只不过就是奶妈而已）帅气漂亮、生动幽默、尽职尽力…… 最终还是一样的结果 —— 绝大多数人依然没有完整掌握所有应该掌握的细节。</p>
-<h2 id="自学过程需要的几项技能"><a href="#自学过程需要的几项技能" class="headerlink" title="自学过程需要的几项技能"></a>自学过程需要的几项技能</h2><h3 id="拆解"><a href="#拆解" class="headerlink" title="拆解"></a>拆解</h3><p>在自学的过程中遇到难点，复杂的。我们不妨拆解他们，拆解成一个一个的小问题予以突破。把那些很难的任务无限拆分——直到每个子任务都很小，小到我们可以唾手可得为止。当我们习惯了这么做之后，就会发现一切任务（不仅有自学还有别的）其实都是不难的，只是复杂繁琐而已。很多人失败的原因是什么，就是不懂拆分任务，要么就是怕麻烦！有句话不知道大家听过没——人活着，其实就挺麻烦的。。。。</p>
-<h3 id="专注"><a href="#专注" class="headerlink" title="专注"></a>专注</h3><p>现在这个网络时代，大家有没有发现自己的注意力经常莫名的就被转移了。比如，你本来只不过就想着去 Google  一个编程错误信息的解读，结果不知道怎么就 “注意到” 了另外一个东西，比如，“某编辑器的皮肤”，然后你就 “顺手” 把它下载下来，然后  “很自然地顺手把它装上”，而后又看了看，觉得有点必要于是 “顺手做了点定制”…… 然后欣赏了一会儿，并自我得意一番之后 “突然发现”  自己还没有解决两小时之前要解决的问题！好奇心越重的人，越是容易被注意力漂移所拖累。</p>
-<p>好奇心是好东西，而且是必须认真呵护的东西 —— 几乎最重要、最强劲的自学动力，都混合着好奇心出现并持续。</p>
-<p>如何专注，我们列一个清单。把我们首要做的事情放在第一位，并牢牢地记住它。一旦发现自己的注意力没有集中在这上面的关键之时，一旦发现自己的注意力已经漂移到其它当前并不重要的事项上，就马上纠正。</p>
-<h3 id="沟通"><a href="#沟通" class="headerlink" title="沟通"></a>沟通</h3><p>普遍认为，手艺人的特征是缺乏沟通能力，或者沟通能力差 —— 也许是因为平时把所有的时间精力都投入到磨练手艺上去了罢。</p>
-<p><strong>教是最好的学习方法</strong></p>
-<p>讲课、写教程，甚至写书 —— 这是最高效的提升沟通能力的刻意练习手段。</p>
-<p>沟通要注意以下几点</p>
-<h4 id="内容第一"><a href="#内容第一" class="headerlink" title="内容第一"></a>内容第一</h4><p>无论是平日里讲话、还是台上讲课，抑或是写篇文章、写本书，永远都是内容第一，至于形式，并非不重要，但绝对不能喧宾夺主。</p>
-<p>通常，我们用 “干货” 来描述内容的重要性。第一步就是准备干货，至于修辞啊、笑点啊、酷炫幻灯片啊等等等等，都必须是次要的，否则就是喧宾夺主。干货不够好，其它的做得越多、越好，最终越是容易露怯 —— 这很可怕。</p>
-<h4 id="内容质量"><a href="#内容质量" class="headerlink" title="内容质量"></a>内容质量</h4><h5 id="重点突出"><a href="#重点突出" class="headerlink" title="重点突出"></a>重点突出</h5><p>“重点突出”，是最简单朴素、成本最低的 “优秀结构”。</p>
-<p>既然是沟通，就要了解对方。在绝大多数情况下，对方想要的才是重点。</p>
-<p>可问题在于，我们平日里面对单个人的时候都觉得 “了解对方很困难”，我们又如何判断 “一个群体”  呢？与很多人想象得相反，判断群体远比判断个体容易得多…… 因为你可以用粗暴分类，比如，你把听众或读者划分为 “小白” 和  “专家”，那你就知道了，你面对的群体中，更可能  “大部分是小白，小部分是专家”。于是，你就可以思考，“小白们最想知道的是什么？”，“专家们最重视的是什么？”，于是，你就可以在脑子里对所谓的  “重点” 有应对策略。</p>
-<h5 id="例证生动"><a href="#例证生动" class="headerlink" title="例证生动"></a>例证生动</h5><p>寻找好例子，是需要很多时间精力的事情 —— 从来就没有任何 “信手拈来” 的生动例子。信手拈来，是读者或者听众的感觉而已，对你来说，肯定是举重若轻的 —— 你明明是在举重，却被认为 “如若举轻”。在第一部分，<a href="https://link.juejin.cn/?target=https://render.githubusercontent.com/view/Part.1.E.7.files.ipynb">讲文件的那一章</a>里，我举了个 “我自己费尽心机找好例子” 的例子，相信你读过之后，一定有所感触。</p>
-<h5 id="消除歧义"><a href="#消除歧义" class="headerlink" title="消除歧义"></a>消除歧义</h5><p>消除<strong>一切</strong>歧义。这是真功夫，因为这东西很难把自己关在屋子里自顾自练成。并且，每个人有自己的 “容易引发误解” 的特殊属性，大家各不相同 —— 于是，只能靠自己探索。</p>
-<h2 id="自学者的终点"><a href="#自学者的终点" class="headerlink" title="自学者的终点"></a>自学者的终点</h2><p>必须学会一个没人教、没人带、甚至没有书可以参考技能！尽量只靠阅读获得一项新技能！</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
-<li>你一定要想办法启动自学，否则你没有未来；</li>
-<li>你把自学当作一门手艺，长期反复磨练它；</li>
-<li>你懂得学、练、用、造各个阶段之间的不同，以及针对每个阶段的对应策略；</li>
-<li>面对 “过早引用” 过多的世界，你有你的应对方式；</li>
-<li>你会 “囫囵吞枣”，你会 “重复重复再重复”，你深刻理解 “读书百遍其义自见”；</li>
-<li>以后你最擅长的技能之一就是拆解拆解再拆解；</li>
-<li>你用你的拆解手艺把所有遇到的难点都拆解成能搞定的小任务；</li>
-<li>自学任何一门手艺之前你都不会去问 “有什么用”，而是清楚地知道，无论是什么只要学会了就只能也必然天天去用；</li>
-<li>你没有刚需幻觉，你也没有时间幻觉，你更没有困难幻觉，反正你就是相对更清醒；</li>
-<li>不管你新学什么手艺，你都知道只要假以时日你就肯定能做好，因为所有的手艺精湛，靠的只不过是充足的预算；</li>
-<li>你知道如何不浪费生命，因为只要不是在刻意练习、不是在刻意思考，那就是在 “混时间”；</li>
-<li>你总是在琢磨你能做个什么新作品；</li>
-<li>你刻意地使用你的作品作为有效社交工具，也用作品去过滤无效社交；</li>
-<li>你乐于分享，乐于阅读也更乐于写作 —— 因为这世界怎么帮助你的，你就想着要怎样回报；</li>
-<li>你把全面和完整当作最高衡量标准，也用这个标准去克制、应对自己的注意力漂移；</li>
-<li>你会不断自学新的手艺，因为你越来越理解单一技能的脆弱，越来越理解多项技能的综合威力；</li>
-<li>你越来越依赖互联网，它是你最喜欢的 “书”，而 Google 是你最好的朋友 —— 他总是能帮你找到更好的老师；</li>
-<li>偶尔，你会学会没人教、没人带、甚至没书可参考的手艺，别人都说你 “悟性” 高，可你自己清楚地知道那其实是怎么回事；</li>
-<li>你越来越明白，其实没什么 “秘密”，越简单、越朴素的道理越值得重视；</li>
-<li>你发现你用来思考的时间越来越多 —— 准确地讲，是 “琢磨”…… 只不过是因为你真会琢磨了 —— 你很清楚你应该花时间琢磨的是什么。</li>
-</ul>
-<p><strong>没什么不能自学的，反正都只不过是手艺</strong> —— 只不过，我们每个人都受限于自己的时间精力而已。</p>
-<p>自学不过是一门手艺，而且还是谁都能掌握的。不要 “试试” 而已，而是 “直接开干” —— 这样才好。</p>
-<h3 id="自学过程还需要"><a href="#自学过程还需要" class="headerlink" title="自学过程还需要"></a>自学过程还需要</h3><ul>
-<li><strong>心理建设——没什么可怕的！</strong></li>
-<li><strong>不懂也要硬着头皮读完，然后重复读很多遍</strong></li>
-<li><strong>磨练 “只字不差地阅读” 的能力</strong></li>
-<li><strong>就算不明白也要先记住——“好记性不如烂笔头”，不是记在笔记本上是要记在脑子里</strong></li>
-<li><strong>尽早开始归纳总结</strong></li>
-<li><strong>先用起来，在研究怎么用的</strong></li>
-<li><strong>多听老人言——多听前辈的经验和总结，但不要盲从</strong></li>
-</ul>
-]]></content>
-      <categories>
-        <category>个人</category>
-      </categories>
-      <tags>
-        <tag>成长</tag>
       </tags>
   </entry>
 </search>
