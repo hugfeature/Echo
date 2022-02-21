@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/Echo/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Echo/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Echo/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/Echo/images/logo.svg" color="#222">
+  <meta name="msvalidate.01" content="58AE2D56435A76DA1BF1341C2E6930C1">
+
+<link rel="stylesheet" href="/Echo/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"hugfeature.github.io","root":"/Echo/","images":"/Echo/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/Echo/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Echo/js/config.js"></script>
+<meta name="description" content="什么是大数据？“巨大”这个词不足以解释大数据，某些特征将数据分类为大数据。 我们有大数据的三个主要特征，如果任何数据满足这些特征，那么它将被视为大数据。它是下面提到的三个 V 的组合：  volume：体积 velocity：速度 variety：多样性   volume：应该是巨大体积的数据。大数据具有维护大量数据的解决方案，这些数据以TB或PB为单位。我们可以轻松有效地对大数据执行CRUD（创">
+<meta property="og:type" content="article">
+<meta property="og:title" content="大数据是什么？">
+<meta property="og:url" content="https://hugfeature.github.io/Echo/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%A7%E6%95%B0%E6%8D%AE/">
+<meta property="og:site_name" content="测试的名义">
+<meta property="og:description" content="什么是大数据？“巨大”这个词不足以解释大数据，某些特征将数据分类为大数据。 我们有大数据的三个主要特征，如果任何数据满足这些特征，那么它将被视为大数据。它是下面提到的三个 V 的组合：  volume：体积 velocity：速度 variety：多样性   volume：应该是巨大体积的数据。大数据具有维护大量数据的解决方案，这些数据以TB或PB为单位。我们可以轻松有效地对大数据执行CRUD（创">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%A7%E6%95%B0%E6%8D%AE/Three-Vs.png">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%A7%E6%95%B0%E6%8D%AE/Challenges-of-Traditional-Databases.png">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%A7%E6%95%B0%E6%8D%AE/Advantages-of-BigData-over-Traditional-database.png">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%A7%E6%95%B0%E6%8D%AE/Organization-Data-WareHouse.jpg">
+<meta property="article:published_time" content="2021-12-19T06:24:32.000Z">
+<meta property="article:modified_time" content="2021-12-19T06:24:32.000Z">
+<meta property="article:author" content="丑牛">
+<meta property="article:tag" content="大数据">
+<meta property="article:tag" content="数据">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hugfeature.github.io/Echo/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%A7%E6%95%B0%E6%8D%AE/Three-Vs.png">
+
+
+<link rel="canonical" href="https://hugfeature.github.io/Echo/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%A7%E6%95%B0%E6%8D%AE/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://hugfeature.github.io/Echo/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%A7%E6%95%B0%E6%8D%AE/","path":"什么是大数据/","title":"大数据是什么？"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>大数据是什么？ | 测试的名义</title>
+  
+
+
+
+
+  <script async src="https://www.clarity.ms/tag/myblog"></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/Echo/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/Echo/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">测试的名义</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Stay hungry, Stay foolish</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/Echo/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/Echo/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-categories"><a href="/Echo/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-commonweal"><a href="/Echo/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%A7%E6%95%B0%E6%8D%AE%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">什么是大数据？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%A0%E7%BB%9F%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E6%8C%91%E6%88%98"><span class="nav-number">1.1.</span> <span class="nav-text">传统数据库的挑战</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8E%E4%BC%A0%E7%BB%9F%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9B%B8%E6%AF%94%EF%BC%8C%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%9A%84%E4%BC%98%E5%8A%BF"><span class="nav-number">1.2.</span> <span class="nav-text">与传统数据库相比，大数据的优势</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%AD%E7%9A%84%E6%8C%91%E6%88%98%E5%92%8C%E9%A3%8E%E9%99%A9"><span class="nav-number">1.3.</span> <span class="nav-text">大数据中的挑战和风险</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF"><span class="nav-number">1.4.</span> <span class="nav-text">大数据技术</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%92%8C%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93"><span class="nav-number">1.5.</span> <span class="nav-text">大数据和数据仓库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OLTP-%E5%92%8C-OLAP"><span class="nav-number">1.6.</span> <span class="nav-text">OLTP 和 OLAP</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%BB%8E%E4%BD%95%E8%80%8C%E6%9D%A5%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">大数据从何而来？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">丑牛</p>
+  <div class="site-description" itemprop="description">曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-categories">
+          <a href="/Echo/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/Echo/tags/">
+        <span class="site-state-item-count">51</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hugfeature/" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hugfeature&#x2F;" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/hugfeature" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%A7%E6%95%B0%E6%8D%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Echo/images/avatar.gif">
+      <meta itemprop="name" content="丑牛">
+      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="测试的名义">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          大数据是什么？
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-12-19 14:24:32" itemprop="dateCreated datePublished" datetime="2021-12-19T14:24:32+08:00">2021-12-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Echo/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="什么是大数据？"><a href="#什么是大数据？" class="headerlink" title="什么是大数据？"></a>什么是大数据？</h3><p>“巨大”这个词不足以解释大数据，某些特征将数据分类为大数据。</p>
+<p>我们有大数据的三个主要特征，如果任何数据满足这些特征，那么它将被视为大数据。它是下面提到的三个 V 的组合：</p>
+<ul>
+<li>volume：体积</li>
+<li>velocity：速度</li>
+<li>variety：多样性</li>
+</ul>
+<p><img src="/Echo/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%A7%E6%95%B0%E6%8D%AE/Three-Vs.png"></p>
+<p>volume：应该是巨大体积的数据。大数据具有维护大量数据的解决方案，这些数据以TB或PB为单位。我们可以轻松有效地对大数据执行CRUD（创建，读取，更新和删除）操作。</p>
+<p>volecity：更快地访问数据。如今的社交媒体需要在很短的时间内快速交换数据，而大数据是它的最佳解决方案。因此，速度是另一个特征，它是数据的处理速度。</p>
+<p>variety：在社交媒体上，我们正在处理非结构化数据，如音频或视频记录，图像等。此外，银行领域等各个行业都需要结构化和半结构化数据。大数据是在一个地方维护两种类型的数据的解决方案。</p>
+<p>多样性意味着不同类型的数据，如多个来源的结构化&#x2F;非结构化数据。</p>
+<p><strong>结构化数据</strong>：具有适当结构的数据或可以轻松存储在任何关系数据库中（如Oracle，SQL Server或MySQL）中的表格形式的数据称为结构化数据。我们可以轻松有效地处理或分析它。</p>
+<p>结构化数据的一个例子是存储在关系数据库中的数据，可以使用SQL（结构化查询语言）进行管理。<strong>例如</strong>员工数据（姓名、ID、职称和薪水）可以以表格格式存储。</p>
+<p>在传统数据库中，只有在非结构化或半结构化数据格式化或适合关系数据库后，我们才能执行操作或处理数据。结构化数据<strong>的示例</strong>包括 ERP、CRM 等。</p>
+<p><strong>半结构化数据：</strong>半结构化数据是未完全格式化的数据。它不存储在数据表或任何数据库中。但是，我们仍然可以轻松准备和处理它，因为此数据包含标记或逗号分隔值等。半结构化数据的示例：XML文件，CSV文件等。</p>
+<p><strong>非结构化数据：</strong>非结构化数据是没有任何结构的数据。它可以是任何形式，没有预定义的数据模型。我们无法将其存储在传统数据库中。搜索和处理它很复杂。</p>
+<p>此外，非结构化数据的数量也非常高。非结构化数据的示例：电子邮件正文、音频、视频、图像、实现的文档等。</p>
+<h4 id="传统数据库的挑战"><a href="#传统数据库的挑战" class="headerlink" title="传统数据库的挑战"></a>传统数据库的挑战</h4><p><img src="/Echo/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%A7%E6%95%B0%E6%8D%AE/Challenges-of-Traditional-Databases.png" alt="Challenges-of-Traditional-Databases"></p>
+<ul>
+<li>传统数据库不支持各种数据，即它无法处理非结构化和半结构化数据。</li>
+<li>传统数据库在处理大量数据时速度很慢。</li>
+<li>在传统数据库中，处理或分析大量数据非常困难。</li>
+<li>传统数据库能够存储以 TB 或 PB 为单位的数据。</li>
+<li>传统数据库无法处理历史数据和报告。</li>
+<li>经过一定时间后，需要对数据库进行数据清理。</li>
+<li>使用传统数据库，维护大量数据的成本非常高。</li>
+<li>传统数据库中的数据准确性较低，因为其中未维护完整的历史数据。</li>
+</ul>
+<h4 id="与传统数据库相比，大数据的优势"><a href="#与传统数据库相比，大数据的优势" class="headerlink" title="与传统数据库相比，大数据的优势"></a>与传统数据库相比，大数据的优势</h4><p><img src="/Echo/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%A7%E6%95%B0%E6%8D%AE/Advantages-of-BigData-over-Traditional-database.png" alt="Advantages-of-BigData-over-Traditional-database"></p>
+<ul>
+<li>大数据负责处理、管理和处理不同类型的数据，如结构化、半结构化和非结构化数据。</li>
+<li>它在维护大量数据方面具有成本效益。它适用于分布式数据库系统。</li>
+<li>我们可以使用大数据技术长时间保存大量数据。因此，处理历史数据和生成准确报告很容易。</li>
+<li>数据处理速度非常快，因此社交媒体正在使用大数据技术。</li>
+<li>数据准确性是大数据的一大优势。</li>
+<li>它允许用户根据当前和历史数据为其业务做出有效的决策。</li>
+<li>错误处理、版本控制和客户体验在大数据中非常有效。</li>
+</ul>
+<h4 id="大数据中的挑战和风险"><a href="#大数据中的挑战和风险" class="headerlink" title="大数据中的挑战和风险"></a>大数据中的挑战和风险</h4><p><strong>挑战：</strong></p>
+<ol>
+<li>大数据面临的主要挑战之一是管理大量数据。如今，数据来自各种来源的系统，种类繁多。因此，对于公司来说，妥善管理它是一个非常大的挑战。如，要生成包含过去 20 年数据的报告，它需要保存和维护系统过去 20 年的数据。为了提供准确的报告，有必要仅将相关数据放入系统。它不应该包含不相关或不必要的数据，否则保持如此大量的数据对公司来说将是一个巨大的挑战。</li>
+<li>该技术的另一个挑战是各种类型数据的同步。众所周知，大数据支持来自不同来源的结构化、非结构化和半结构化数据，因此同步数据并获得数据的一致性非常困难。</li>
+<li>公司面临的下一个挑战是专家的差距，他们可以帮助和实施他们在系统中面临的问题。这个领域的人才缺口很大。</li>
+<li>处理合规性方面成本高昂。</li>
+<li>大数据的数据收集、聚合、存储、分析和报告具有巨大的成本。组织应该能够管理所有这些成本。</li>
+</ol>
+<p><strong>风险：</strong></p>
+<ol>
+<li>它可以处理各种数据，但如果公司无法正确理解需求并控制数据源，那么它将提供有缺陷的结果。因此，它将需要大量的时间和金钱来调查和纠正结果。</li>
+<li>数据安全是大数据的另一个风险。由于数据量很大，因此有人窃取数据的可能性更高。数据黑客可能会窃取和出售公司的重要信息（包括历史数据）。</li>
+<li>此外，数据隐私是大数据的另一个风险。如果我们想保护个人和敏感数据免受黑客攻击，那么它应该受到保护，并且必须通过所有隐私政策。</li>
+</ol>
+<h4 id="大数据技术"><a href="#大数据技术" class="headerlink" title="大数据技术"></a>大数据技术</h4><ol>
+<li>Apache Hadoop</li>
+<li>Microsoft HDInsight</li>
+<li>No SQL</li>
+<li>Hive</li>
+<li>Sqoop</li>
+<li>BigData in Excel</li>
+</ol>
+<h4 id="大数据和数据仓库"><a href="#大数据和数据仓库" class="headerlink" title="大数据和数据仓库"></a>大数据和数据仓库</h4><p>数据仓库是我们在讨论Hadoop或大数据测试之前需要了解的基本概念。</p>
+<p>让我们从实时示例中了解数据仓库。<strong>例如</strong>，有一家公司在三个不同的国家建立了分支机构，让我们假设在印度，澳大利亚和日本设有分支机构。</p>
+<p>在每个分支机构中，整个客户数据存储在本地数据库中。这些本地数据库可以是普通的经典RDBMS，如Oracle或MySQL或SQL Server等，所有客户数据都将每天存储在其中。</p>
+<p>现在，每个季度、每半年或每年，组织都希望分析这些数据以进行业务开发。为了做同样的事情，组织将从多个来源收集所有这些数据，然后将其放在一个地方，这个地方被称为**”数据仓库”。**</p>
+<p>数据仓库是一种数据库，它包含通过**”ETL”（<strong>即 E xtract、T ransform 和</strong>L**oad）过程从多个源或多个数据库类型中提取的所有数据。数据在数据仓库中准备就绪后，我们可以将其用于分析目的。</p>
+<p>因此，为了进行分析，我们可以根据数据仓库中的可用数据生成报告。可以使用商业智能工具生成多个图表和报告。</p>
+<p>我们需要数据仓库用于分析目的，以发展业务并为组织做出适当的决策。</p>
+<p><img src="/Echo/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%A7%E6%95%B0%E6%8D%AE/Organization-Data-WareHouse.jpg" alt="Organization-Data-WareHouse"></p>
+<p>在此过程中发生了三件事，首先是我们从多个源中提取数据，并将其放在数据仓库的单个位置。</p>
+<p>在这里，我们使用”ETL”过程，因此在将数据从多个源加载到一个地方时，我们将在转换根中应用它，然后我们可以在这里使用各种ETL工具。</p>
+<p>一旦数据准备好进入数据仓库，我们就可以生成各种报告，以使用商业智能（BI）工具分析业务数据，或者我们称之为报告工具。Tableau 或 Cognos 等工具可用于生成报告和 DashBoard，用于分析业务数据。</p>
+<h4 id="OLTP-和-OLAP"><a href="#OLTP-和-OLAP" class="headerlink" title="OLTP 和 OLAP"></a>OLTP 和 OLAP</h4><p>本地维护并用于事务目的的数据库称为<strong>OLTP，即联机事务处理。</strong>日常事务将存储在此处并立即更新，这就是为什么我们称它们为OLTP系统。</p>
+<p>在这里，我们使用传统数据库，我们有多个表，并且有关系，因此一切都是根据数据库系统地规划的。我们不会将这些数据用于分析目的。在这里，我们可以使用经典的RDMBS数据库，如Oracle，MySQL，SQL Server等。</p>
+<p>当我们进入数据仓库部分时，我们使用Teradata或Hadoop系统，它们也是一种数据库，但DataWarehouse中的数据通常用于分析目的，称为<strong>OLAP</strong>或<strong>在线分析处理。</strong></p>
+<p>在这里，数据可以每季度，每半年或每年更新一次。有时数据也会”Offerly”更新，其中Offerly表示根据客户要求更新和获取数据以进行分析。</p>
+<p>此外，用于分析的数据不会每天更新，因为我们将按计划从多个来源获取数据，并且可以执行此 ETL 任务。这就是在线分析处理系统的工作原理。</p>
+<p>同样，BI工具或报告工具可以生成报告以及仪表板，并且基于此，业务人员将做出改进其业务的决策。</p>
+<h3 id="大数据从何而来？"><a href="#大数据从何而来？" class="headerlink" title="大数据从何而来？"></a>大数据从何而来？</h3><p>大数据是超出传统数据库的存储和处理能力的数据，它采用结构化和非结构化格式，因此无法由本地RDBMS系统处理。</p>
+<p>这种数据将以TB（TB）或PB或更高速率生成，并且现在正在迅速增加。有多个来源可以获得这种数据，例如Facebook，WhatsApp（与社交网络有关）;亚马逊，与电子商务相关的Flipkart;Gmail，Yahoo，Rediff与电子邮件和Google等搜索引擎有关。我们还从手机中获取大数据，例如SMS数据，通话记录，通话记录等。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>大数据是高效、安全地处理大量数据的解决方案。它还负责维护历史数据。这项技术有很多优点，这就是为什么每家公司都想转向大数据</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>丑牛
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://hugfeature.github.io/Echo/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%A7%E6%95%B0%E6%8D%AE/" title="大数据是什么？">https://hugfeature.github.io/Echo/什么是大数据/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/Echo/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" rel="tag"># 大数据</a>
+              <a href="/Echo/tags/%E6%95%B0%E6%8D%AE/" rel="tag"># 数据</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/" rel="prev" title="JMeter处理器和控制器">
+                  <i class="fa fa-chevron-left"></i> JMeter处理器和控制器
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Echo/%E4%BB%80%E4%B9%88%E6%98%AFhadoop%EF%BC%9F/" rel="next" title="hadoop是什么？">
+                  hadoop是什么？ <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">丑牛</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/Echo/js/comments.js"></script><script src="/Echo/js/utils.js"></script><script src="/Echo/js/motion.js"></script><script src="/Echo/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/Echo/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"hugfeature","repo":"myBlogTalk","client_id":"f4b1fae431a4943a75f3","client_secret":"2b6995c484ff0a0a920d65ac7fd5bb1bf13fb2f2","admin_user":null,"distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"000efac0c5495a22aaaff1467adc9bf2"}</script>
+<script src="/Echo/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
