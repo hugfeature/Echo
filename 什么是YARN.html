@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/Echo/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Echo/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Echo/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/Echo/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="5ZQ9pmEjPOsQmbBYQoUK41fLaMMyEK5pDRa34TE8fW4">
+  <meta name="msvalidate.01" content="58AE2D56435A76DA1BF1341C2E6930C1">
+
+<link rel="stylesheet" href="/Echo/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"hugfeature.github.io","root":"/Echo/","images":"/Echo/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/Echo/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Echo/js/config.js"></script>
+<meta name="description" content="YRAN是什么？YARN是hadoop集群中另一个资源管理者，为需要在Hadoop集群上执行的各种作业分配资源。在Hadoop 2.0中引入的。在Hadoop 2.0中引入了YARN，使用它能够超越MapReduce。  正如你在图中看到的，我们在两者之间的底部有HDFS，我们有YARN并使用YARN，很多框架都能够连接和利用HDFS。因此，即使MapReduce也用于使用YARN进行连接以请求资">
+<meta property="og:type" content="article">
+<meta property="og:title" content="YARN原理及工作流？">
+<meta property="og:url" content="https://hugfeature.github.io/Echo/%E4%BB%80%E4%B9%88%E6%98%AFYARN.html">
+<meta property="og:site_name" content="测试的名义">
+<meta property="og:description" content="YRAN是什么？YARN是hadoop集群中另一个资源管理者，为需要在Hadoop集群上执行的各种作业分配资源。在Hadoop 2.0中引入的。在Hadoop 2.0中引入了YARN，使用它能够超越MapReduce。  正如你在图中看到的，我们在两者之间的底部有HDFS，我们有YARN并使用YARN，很多框架都能够连接和利用HDFS。因此，即使MapReduce也用于使用YARN进行连接以请求资">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/%E4%BB%80%E4%B9%88%E6%98%AFYARN/Framework-Supported-by-YARN.jpg">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/%E4%BB%80%E4%B9%88%E6%98%AFYARN/Hadoop-2-Daemons.jpg">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/%E4%BB%80%E4%B9%88%E6%98%AFYARN/YARN-Work-Flow.jpg">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/%E4%BB%80%E4%B9%88%E6%98%AFYARN/Sequence-of-Execution.jpg">
+<meta property="article:published_time" content="2022-01-07T22:55:01.000Z">
+<meta property="article:modified_time" content="2022-01-07T22:55:01.000Z">
+<meta property="article:author" content="丑牛">
+<meta property="article:tag" content="大数据">
+<meta property="article:tag" content="yarn">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hugfeature.github.io/Echo/%E4%BB%80%E4%B9%88%E6%98%AFYARN/Framework-Supported-by-YARN.jpg">
+
+
+<link rel="canonical" href="https://hugfeature.github.io/Echo/%E4%BB%80%E4%B9%88%E6%98%AFYARN.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://hugfeature.github.io/Echo/%E4%BB%80%E4%B9%88%E6%98%AFYARN.html","path":"什么是YARN.html","title":"YARN原理及工作流？"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>YARN原理及工作流？ | 测试的名义</title>
+  
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-SY6RK3NESF","only_pageview":true}</script>
+  <script src="/Echo/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+  <script async src="https://www.clarity.ms/tag/myblog"></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/Echo/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/Echo/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">测试的名义</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Stay hungry, Stay foolish</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/Echo/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/Echo/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-categories"><a href="/Echo/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-commonweal"><a href="/Echo/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#YRAN%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">YRAN是什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hadoop-2-x-%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">Hadoop 2.x 守护进程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hadoop-2-x-MapReduce-YARN-%E7%BB%84%E4%BB%B6"><span class="nav-number">3.</span> <span class="nav-text">Hadoop 2.x MapReduce YARN 组件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#YARN%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="nav-number">4.</span> <span class="nav-text">YARN工作流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%9C%E4%B8%9A%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B"><span class="nav-number">5.</span> <span class="nav-text">作业执行流程</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">丑牛</p>
+  <div class="site-description" itemprop="description">曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-categories">
+          <a href="/Echo/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/Echo/tags/">
+        <span class="site-state-item-count">51</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hugfeature/" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hugfeature&#x2F;" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/hugfeature" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/%E4%BB%80%E4%B9%88%E6%98%AFYARN.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Echo/images/avatar.gif">
+      <meta itemprop="name" content="丑牛">
+      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="测试的名义">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          YARN原理及工作流？
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-01-08 06:55:01" itemprop="dateCreated datePublished" datetime="2022-01-08T06:55:01+08:00">2022-01-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Echo/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h4 id="YRAN是什么？"><a href="#YRAN是什么？" class="headerlink" title="YRAN是什么？"></a>YRAN是什么？</h4><p>YARN是hadoop集群中另一个资源管理者，为需要在Hadoop集群上执行的各种作业分配资源。在Hadoop 2.0中引入的。在Hadoop 2.0中引入了YARN，使用它能够超越MapReduce。</p>
+<p><img src="/Echo/%E4%BB%80%E4%B9%88%E6%98%AFYARN/Framework-Supported-by-YARN.jpg" alt="Framework-Supported-by-YARN"></p>
+<p>正如你在图中看到的，我们在两者之间的底部有HDFS，我们有YARN并使用YARN，很多框架都能够连接和利用HDFS。因此，即使MapReduce也用于使用YARN进行连接以请求资源，并且只有这样它才能通过HDFS（即Hadoop Cluster）执行作业。</p>
+<p>同样;SPARK，STORM和其他搜索引擎可以连接到HDFS。HBase是一个No SQL数据库也可以连接它。因此，HDFS的应用变得庞大，因为YARN能够为其他框架和其他大数据分析工具更好的分配资源。</p>
+<h4 id="Hadoop-2-x-守护进程"><a href="#Hadoop-2-x-守护进程" class="headerlink" title="Hadoop 2.x 守护进程"></a>Hadoop 2.x 守护进程</h4><p>让我们快速看一下Hadoop 2.0中新引入的守护进程，它们运行组件，即存储和处理。</p>
+<p>在HDFS一文中，我们详细理解了守护进程，即NameNode和DataNode。在此，我们将了解资源管理器和节点管理器如何在 Hadoop 2.x 群集中工作，以管理需要在 Hadoop 群集中执行的处理和作业。</p>
+<p><img src="/Echo/%E4%BB%80%E4%B9%88%E6%98%AFYARN/Hadoop-2-Daemons.jpg" alt="Hadoop-2-Daemons"></p>
+<p>什么是资源管理器？资源管理器是在主计算机或 NameNode（高端计算机）上运行的主守护程序。另一方面，节点管理器是在从属机器或DataNodes上运行的守护进程，或者与DataNode进程一起运行。</p>
+<h4 id="Hadoop-2-x-MapReduce-YARN-组件"><a href="#Hadoop-2-x-MapReduce-YARN-组件" class="headerlink" title="Hadoop 2.x MapReduce YARN 组件"></a>Hadoop 2.x MapReduce YARN 组件</h4><p>首先我们探讨下YARN的其他组件：</p>
+<ul>
+<li><strong>客户端：</strong>它是一个提交类似作业的命令行界面 （CLI） 的单元，客户端可以是 JAVA 应用程序。</li>
+<li><strong>资源管理器：</strong>它是一个主守护程序，所有作业都从客户端提交到该守护程序，并且是分配所有群集级别资源以执行特定作业的主守护程序。它运行在具有高质量硬件和良好配置的高端计算机上，因为它是必须管理群集上所有内容的主计算机。</li>
+<li><strong>节点管理器</strong>：它是一个在从属机器或DataNode上运行的从属守护进程，因此每个从属机器都有一个运行的节点管理器。它监视特定 DataNode 的资源，资源管理器管理群集资源，节点管理器管理 DataNode 资源。</li>
+<li><strong>作业历史记录服务器：</strong>它是跟踪已在群集上执行或已提交到群集的所有作业的单元。它还跟踪状态，并保留在Hadoop集群上发生的每次执行的日志文件。</li>
+<li><strong>应用程序主</strong>设备：它是一个通过节点计算机（从属计算机）执行的组件，由资源管理器创建以执行和管理作业。它是从资源管理器协商资源并最终与节点管理器协调以执行任务的那个。</li>
+<li><strong>容器：</strong>它由节点管理器本身创建，该节点管理器已由资源管理器分配，所有作业最终在容器中执行。</li>
+</ul>
+<h4 id="YARN工作流程"><a href="#YARN工作流程" class="headerlink" title="YARN工作流程"></a>YARN工作流程</h4><p><img src="/Echo/%E4%BB%80%E4%B9%88%E6%98%AFYARN/YARN-Work-Flow.jpg" alt="YARN-Work-Flow"></p>
+<p>如上图所示，有一个资源管理器，所有作业都已提交到该管理器，并且有一个群集，其中有从属计算机，并且在每台从属计算机上，都有一个节点管理器正在运行。</p>
+<p>资源管理器有两个组件，即计划程序和应用程序管理器。</p>
+<p>应用程序主服务器和应用程序管理器之间有什么区别？</p>
+<p>应用程序管理器是资源管理器的一个组件，可确保执行每个任务并为其创建应用程序主节点。另一方面，应用程序主服务器是执行任务并请求需要执行的所有资源的人员。</p>
+<p>假设作业已提交到资源管理器，一旦作业提交，计划程序就会计划该作业。一旦计划程序计划要执行的作业，应用程序管理器将在其中一个DataNode 中创建一个容器，并且在此容器中，将启动应用程序主节点。</p>
+<p>然后，此应用程序主机将向资源管理器注册，并请求容器来执行任务。分配容器后，应用程序主节点现在将与节点管理器连接，并请求启动容器。</p>
+<p>正如我们所看到的，应用程序主节点被分配给DataNodes D和E，现在这个应用程序主节点请求节点管理器启动DataNode D和DataNode E的容器。</p>
+<p>一旦容器启动，应用程序主服务器将在容器内执行任务，结果将发送回客户端。</p>
+<h4 id="作业执行流程"><a href="#作业执行流程" class="headerlink" title="作业执行流程"></a>作业执行流程</h4><p>我们以一种顺序的方式理解资源申请流程。</p>
+<p><img src="/Echo/%E4%BB%80%E4%B9%88%E6%98%AFYARN/Sequence-of-Execution.jpg" alt="Sequence-of-Execution"></p>
+<p>图中有四个组件，一个是客户端（client），一个是资源管理器（resource manager），一个是节点管理器（node manager），一个是程序主节点（application master）</p>
+<p>第一步是将作业提交给资源管理器的客户端，在第二步中，资源管理器分配一个容器以启动从属计算机上的应用程序主站;第三步是应用程序主机向资源管理器注册。</p>
+<p>一旦它注册，它就会请求容器执行任务，即第四步。在步骤 5 中，应用程序主机通知需要在其上启动容器的节点管理器。</p>
+<p>在第六步中，节点管理器启动容器后，应用程序主机将在这些容器中执行代码。</p>
+<p>最后，在第七步中，客户端联系资源管理器或应用程序主机以监视应用程序状态。</p>
+<p>最后，应用程序主机将从资源管理器中注销自身，并将结果返回给客户端。因此，这是一个简单的顺序流，说明如何使用YARN框架执行MapReduce程序。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>丑牛
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://hugfeature.github.io/Echo/%E4%BB%80%E4%B9%88%E6%98%AFYARN.html" title="YARN原理及工作流？">https://hugfeature.github.io/Echo/什么是YARN.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/Echo/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" rel="tag"># 大数据</a>
+              <a href="/Echo/tags/yarn/" rel="tag"># yarn</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Echo/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce.html" rel="prev" title="MapReduce是什么？">
+                  <i class="fa fa-chevron-left"></i> MapReduce是什么？
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Echo/%E5%A6%82%E4%BD%95%E7%BC%96%E5%86%99%E6%9C%89%E6%95%88%E7%9A%84%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B.html" rel="next" title="如何编写有效的测试用例">
+                  如何编写有效的测试用例 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">丑牛</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/Echo/js/comments.js"></script><script src="/Echo/js/utils.js"></script><script src="/Echo/js/motion.js"></script><script src="/Echo/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/Echo/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"hugfeature","repo":"myBlogTalk","client_id":"f4b1fae431a4943a75f3","client_secret":"2b6995c484ff0a0a920d65ac7fd5bb1bf13fb2f2","admin_user":null,"distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"2c6986f5427a44ece7642e6dad2ed276"}</script>
+<script src="/Echo/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

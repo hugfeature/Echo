@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/Echo/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Echo/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Echo/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/Echo/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="5ZQ9pmEjPOsQmbBYQoUK41fLaMMyEK5pDRa34TE8fW4">
+  <meta name="msvalidate.01" content="58AE2D56435A76DA1BF1341C2E6930C1">
+
+<link rel="stylesheet" href="/Echo/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"hugfeature.github.io","root":"/Echo/","images":"/Echo/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/Echo/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Echo/js/config.js"></script>
+<meta name="description" content="近期开始学习Kubernetes，后续会将学习中整理的一些知识通过QA的方式记录在个人博客中。后续文章中Kubernetes简称为K8S。 Q1、K8S是什么？K8S是基于容器技术的分布式架构领先方案。它是谷歌十几年以来大规模应用容器化技术的经验积累和升华的重要成果。K8S是站Brog系统的肩膀上，汲取了brog过去的经验与教训，所以K8S现世时，让一众架构师为之疯狂。 Q2、系统设计遵循了K8S">
+<meta property="og:type" content="article">
+<meta property="og:title" content="什么是Kubernetes">
+<meta property="og:url" content="https://hugfeature.github.io/Echo/%E4%BB%80%E4%B9%88%E6%98%AFKubernetes.html">
+<meta property="og:site_name" content="测试的名义">
+<meta property="og:description" content="近期开始学习Kubernetes，后续会将学习中整理的一些知识通过QA的方式记录在个人博客中。后续文章中Kubernetes简称为K8S。 Q1、K8S是什么？K8S是基于容器技术的分布式架构领先方案。它是谷歌十几年以来大规模应用容器化技术的经验积累和升华的重要成果。K8S是站Brog系统的肩膀上，汲取了brog过去的经验与教训，所以K8S现世时，让一众架构师为之疯狂。 Q2、系统设计遵循了K8S">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-02-18T17:46:10.000Z">
+<meta property="article:modified_time" content="2022-02-18T17:46:10.000Z">
+<meta property="article:author" content="丑牛">
+<meta property="article:tag" content="K8S">
+<meta property="article:tag" content="Kubernetes">
+<meta property="article:tag" content="容器化">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://hugfeature.github.io/Echo/%E4%BB%80%E4%B9%88%E6%98%AFKubernetes.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://hugfeature.github.io/Echo/%E4%BB%80%E4%B9%88%E6%98%AFKubernetes.html","path":"什么是Kubernetes.html","title":"什么是Kubernetes"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>什么是Kubernetes | 测试的名义</title>
+  
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-SY6RK3NESF","only_pageview":true}</script>
+  <script src="/Echo/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+  <script async src="https://www.clarity.ms/tag/myblog"></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/Echo/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/Echo/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">测试的名义</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Stay hungry, Stay foolish</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/Echo/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/Echo/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-categories"><a href="/Echo/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-commonweal"><a href="/Echo/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#Q1%E3%80%81K8S%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">Q1、K8S是什么？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Q2%E3%80%81%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E9%81%B5%E5%BE%AA%E4%BA%86K8S%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3%E4%BC%9A%E5%B8%A6%E6%9D%A5%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">Q2、系统设计遵循了K8S的设计思想会带来什么？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Q3%E3%80%81K8S%E6%9C%89%E8%AF%AD%E8%A8%80%E9%99%90%E5%88%B6%E5%90%97%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">Q3、K8S有语言限制吗？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Q4%E3%80%81K8S%E6%9C%89%E4%BB%80%E4%B9%88%E5%8A%9F%E8%83%BD%EF%BC%9F"><span class="nav-number">4.</span> <span class="nav-text">Q4、K8S有什么功能？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Q5-K8S%E4%BC%9A%E5%B8%A6%E6%9D%A5%E4%BB%80%E4%B9%88%E5%A5%BD%E5%A4%84%EF%BC%9F"><span class="nav-number">5.</span> <span class="nav-text">Q5 K8S会带来什么好处？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">丑牛</p>
+  <div class="site-description" itemprop="description">曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-categories">
+          <a href="/Echo/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/Echo/tags/">
+        <span class="site-state-item-count">51</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hugfeature/" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hugfeature&#x2F;" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/hugfeature" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/%E4%BB%80%E4%B9%88%E6%98%AFKubernetes.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Echo/images/avatar.gif">
+      <meta itemprop="name" content="丑牛">
+      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="测试的名义">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          什么是Kubernetes
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-02-19 01:46:10" itemprop="dateCreated datePublished" datetime="2022-02-19T01:46:10+08:00">2022-02-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Echo/categories/Kubernetes/" itemprop="url" rel="index"><span itemprop="name">Kubernetes</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>近期开始学习Kubernetes，后续会将学习中整理的一些知识通过QA的方式记录在个人博客中。后续文章中Kubernetes简称为K8S。</p>
+<h5 id="Q1、K8S是什么？"><a href="#Q1、K8S是什么？" class="headerlink" title="Q1、K8S是什么？"></a>Q1、K8S是什么？</h5><p>K8S是基于容器技术的分布式架构领先方案。它是谷歌十几年以来大规模应用容器化技术的经验积累和升华的重要成果。K8S是站Brog系统的肩膀上，汲取了brog过去的经验与教训，所以K8S现世时，让一众架构师为之疯狂。</p>
+<h5 id="Q2、系统设计遵循了K8S的设计思想会带来什么？"><a href="#Q2、系统设计遵循了K8S的设计思想会带来什么？" class="headerlink" title="Q2、系统设计遵循了K8S的设计思想会带来什么？"></a>Q2、系统设计遵循了K8S的设计思想会带来什么？</h5><p>传统系统架构中和业务没有多大关系的底层代码或功能模块，都将消失在眼前，也不需要花费时间在负载均衡器的选型和部署实施问题，不需要考虑服务治理框架，不必在为服务监控和故障处理模块的开发而头疼。业内认为使用K8S可以减少30%，可以将精力更集中于业务本身，同时K8S提供了强大的自动化机制，后期的运维难度和运维成本大大降低。</p>
+<h5 id="Q3、K8S有语言限制吗？"><a href="#Q3、K8S有语言限制吗？" class="headerlink" title="Q3、K8S有语言限制吗？"></a>Q3、K8S有语言限制吗？</h5><p>K8S没有语言限制，是一个开放的平台。不局限于任何一种语言，没有限定编程接口。不管使用什么语言编写的服务都可以映射在K8S的service里面，通过标准的TCP协议进行交互。K8S平台对现有的编程语言、编程框架、中间件没有任何侵入性。</p>
+<h5 id="Q4、K8S有什么功能？"><a href="#Q4、K8S有什么功能？" class="headerlink" title="Q4、K8S有什么功能？"></a>Q4、K8S有什么功能？</h5><p>K8S有完备的集群管理能力，有多层次的安全防护和准入机制、多租用应用支撑、透明的服务注册、服务发现机制、自能负载均衡器、故障发现和自我修复能力、服务滚动升级、在线扩容、资源自动调度、多粒度资源配额管理能力。</p>
+<h5 id="Q5-K8S会带来什么好处？"><a href="#Q5-K8S会带来什么好处？" class="headerlink" title="Q5 K8S会带来什么好处？"></a>Q5 K8S会带来什么好处？</h5><p>① 复杂系统可以模块化开发。以前很多技术大牛一起分工协作完成的分布式系统，现在仅需要一个架构师负责服务中组件的设计，几个业务人员负责业务代码开发，一个运维负责部署服务到K8S上，其他的K8S会帮我们完成。</p>
+<p>②我们可以全面的拥抱微服务架构。微服务架构的核心是将一个巨大的单体应用分解为很多小的互相连接的微服务，一个微服务可能由多个实例副本支撑，副本的数量可以随着系统的负荷变化进行调整。微服务架构使得每个服务都可以独立开发、升级和扩展，因此系统具备很高的稳定性和快速迭代能力，开发者也可以自由选择开发技术。</p>
+<p>③可以随时将系统整体的搬到云上。K8S的架构方案中完全屏蔽了底层网络的细节，基于Service的虚拟IP地址（Cluster IP）的设计思路让架构与底层的硬件拓扑无关，无须改变运行期的配置文件，就能将系统从现有的物理机环境无缝迁移到云上。</p>
+<p>④K8S内在弹性扩容机制轻松应对突发流量。12306会在节假日租用阿里云的服务进行扩容，来满足用户需求。</p>
+<p>⑤K8S超强的横向扩容能力让竞争力大大提升。对于公司来说，用户规模等同于有价资产，基于此，横向扩容能力是衡量企业尤其是互联网企业的竞争力的关键指标。K8S提供的工具，不用修改代码，就能将一个K8S集群从只包含几个Node的小集群平滑扩展到拥有上百个Node的大集群，甚至可以在线完成集群扩容。只要微服务架构设计得合理，能够在多个云环境中进行弹性伸缩，系统就能够承受大量用户并发访问带来的巨大压力。</p>
+<h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><p>K8S是一个全新的基于容器化的分布式架构解决方案，并且是一个一站式的完备的分布式系统开发和支撑平台。能让公司更加专注于业务，而减轻架构和运维的要求，缩短产品上线周期。</p>
+<p>后续会介绍K8S的相关概念和术语。和大家一起来学习K8S。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>丑牛
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://hugfeature.github.io/Echo/%E4%BB%80%E4%B9%88%E6%98%AFKubernetes.html" title="什么是Kubernetes">https://hugfeature.github.io/Echo/什么是Kubernetes.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/Echo/tags/K8S/" rel="tag"># K8S</a>
+              <a href="/Echo/tags/Kubernetes/" rel="tag"># Kubernetes</a>
+              <a href="/Echo/tags/%E5%AE%B9%E5%99%A8%E5%8C%96/" rel="tag"># 容器化</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Echo/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95.html" rel="prev" title="接口测试">
+                  <i class="fa fa-chevron-left"></i> 接口测试
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">丑牛</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/Echo/js/comments.js"></script><script src="/Echo/js/utils.js"></script><script src="/Echo/js/motion.js"></script><script src="/Echo/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/Echo/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"hugfeature","repo":"myBlogTalk","client_id":"f4b1fae431a4943a75f3","client_secret":"2b6995c484ff0a0a920d65ac7fd5bb1bf13fb2f2","admin_user":null,"distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"3408f186d71e581d4b142a91312bf015"}</script>
+<script src="/Echo/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

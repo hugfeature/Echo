@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/Echo/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Echo/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Echo/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/Echo/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="5ZQ9pmEjPOsQmbBYQoUK41fLaMMyEK5pDRa34TE8fW4">
+  <meta name="msvalidate.01" content="58AE2D56435A76DA1BF1341C2E6930C1">
+
+<link rel="stylesheet" href="/Echo/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"hugfeature.github.io","root":"/Echo/","images":"/Echo/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/Echo/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Echo/js/config.js"></script>
+<meta name="description" content="预处理器–pre processor执行采样器之前执行的元素。您可以将预处理器与要在请求中进行一些更改的采样器连接在一起。 最简单的情况可能是在 HTTP 请求中添加”示例超时”预处理器，以便此请求仅运行定义的时间量。它还确保仅对父采样器执行此修改,以下是JMeter中的预处理器：  用户参数– user parameters用户参数用于在取样器中使用变量之前定义变量的值。当JMeter执行此预处">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JMeter处理器和控制器">
+<meta property="og:url" content="https://hugfeature.github.io/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8.html">
+<meta property="og:site_name" content="测试的名义">
+<meta property="og:description" content="预处理器–pre processor执行采样器之前执行的元素。您可以将预处理器与要在请求中进行一些更改的采样器连接在一起。 最简单的情况可能是在 HTTP 请求中添加”示例超时”预处理器，以便此请求仅运行定义的时间量。它还确保仅对父采样器执行此修改,以下是JMeter中的预处理器：  用户参数– user parameters用户参数用于在取样器中使用变量之前定义变量的值。当JMeter执行此预处">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217094257136.png">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217100245301.png">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217134259470.png">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217134313658.png">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217150511568.png">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217154100877.png">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217154238730.png">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217160551520.png">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217160800045.png">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217160905035.png">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217162333245.png">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217165030335.png">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217165849700.png">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217170049709.png">
+<meta property="article:published_time" content="2021-12-16T12:50:10.000Z">
+<meta property="article:modified_time" content="2021-12-16T12:50:10.000Z">
+<meta property="article:author" content="丑牛">
+<meta property="article:tag" content="性能测试">
+<meta property="article:tag" content="JMeter">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hugfeature.github.io/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217094257136.png">
+
+
+<link rel="canonical" href="https://hugfeature.github.io/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://hugfeature.github.io/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8.html","path":"JMeter处理器和控制器.html","title":"JMeter处理器和控制器"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>JMeter处理器和控制器 | 测试的名义</title>
+  
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-SY6RK3NESF","only_pageview":true}</script>
+  <script src="/Echo/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+  <script async src="https://www.clarity.ms/tag/myblog"></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/Echo/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/Echo/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">测试的名义</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Stay hungry, Stay foolish</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/Echo/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/Echo/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-categories"><a href="/Echo/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-commonweal"><a href="/Echo/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8%E2%80%93pre-processor"><span class="nav-number">1.</span> <span class="nav-text">预处理器–pre processor</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E5%8F%82%E6%95%B0%E2%80%93-user-parameters"><span class="nav-number">1.1.</span> <span class="nav-text">用户参数– user parameters</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">控制器</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E6%8E%A7%E5%88%B6%E5%99%A8%E2%80%93simple-controller"><span class="nav-number">2.1.</span> <span class="nav-text">简单控制器–simple controller</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF%E6%8E%A7%E5%88%B6%E5%99%A8%E2%80%93Loop-Controller"><span class="nav-number">2.2.</span> <span class="nav-text">循环控制器–Loop Controller</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BB%85%E4%B8%80%E6%AC%A1%E6%8E%A7%E5%88%B6%E5%99%A8%E2%80%93once-ONLY-controller"><span class="nav-number">2.3.</span> <span class="nav-text">仅一次控制器–once ONLY controller</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%BD%95%E5%88%B6%E6%8E%A7%E5%88%B6%E5%99%A8%E2%80%93HTTP%EF%BC%88S%EF%BC%89-TEST-Script-Recorder"><span class="nav-number">2.4.</span> <span class="nav-text">录制控制器–HTTP（S） TEST Script Recorder</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%90%9E%E5%90%90%E9%87%8F%E6%8E%A7%E5%88%B6%E5%99%A8%E2%80%93Throughput-controller"><span class="nav-number">2.5.</span> <span class="nav-text">吞吐量控制器–Throughput controller</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BA%A4%E9%94%99%E6%8E%A7%E5%88%B6%E5%99%A8%E2%80%93-interleave-controller"><span class="nav-number">2.6.</span> <span class="nav-text">交错控制器– interleave controller</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E6%8E%A7%E5%88%B6%E5%99%A8%E2%80%93random-controller"><span class="nav-number">2.7.</span> <span class="nav-text">随机控制器–random controller</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#while-%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="nav-number">2.8.</span> <span class="nav-text">while 控制器</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#JMeter%E7%9A%84%E8%AE%B0%E5%BD%95%E6%A8%A1%E6%9D%BF"><span class="nav-number">3.</span> <span class="nav-text">JMeter的记录模板</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">丑牛</p>
+  <div class="site-description" itemprop="description">曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-categories">
+          <a href="/Echo/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/Echo/tags/">
+        <span class="site-state-item-count">51</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hugfeature/" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hugfeature&#x2F;" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/hugfeature" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Echo/images/avatar.gif">
+      <meta itemprop="name" content="丑牛">
+      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="测试的名义">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JMeter处理器和控制器
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-12-16 20:50:10" itemprop="dateCreated datePublished" datetime="2021-12-16T20:50:10+08:00">2021-12-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Echo/categories/%E6%B5%8B%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">测试</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h5 id="预处理器–pre-processor"><a href="#预处理器–pre-processor" class="headerlink" title="预处理器–pre processor"></a>预处理器–pre processor</h5><p>执行采样器之前执行的元素。您可以将预处理器与要在请求中进行一些更改的采样器连接在一起。</p>
+<p>最简单的情况可能是在 HTTP 请求中添加”示例超时”预处理器，以便此请求仅运行定义的时间量。它还确保仅对父采样器执行此修改,以下是JMeter中的预处理器：</p>
+<p><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217094257136.png" alt="image-20211217094257136"></p>
+<h6 id="用户参数–-user-parameters"><a href="#用户参数–-user-parameters" class="headerlink" title="用户参数– user parameters"></a>用户参数– user parameters</h6><p>用户参数用于在取样器中使用变量之前定义变量的值。当JMeter执行此预处理器元素时，会将值存储在变量中，这些变量可由同一线程组中的任何取样器使用。</p>
+<p><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217100245301.png" alt="image-20211217100245301"></p>
+<p>示例超时–sample timeout</p>
+<p>用于定义请求的超时持续时间。例：如果将取样时间设置为 400 毫秒，则所有需要时间的请求&gt;400 都将具有失败的响应。请看下面的截图</p>
+<p><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217134259470.png" alt="image-20211217134259470"></p>
+<p><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217134313658.png" alt="image-20211217134313658"></p>
+<h5 id="控制器"><a href="#控制器" class="headerlink" title="控制器"></a>控制器</h5><p>控制器在构建实时JMeter测试计划方面十分重要，用于定义请求发送到服务器的顺序。JMeter中的控制器有以下：</p>
+<p><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217150511568.png" alt="image-20211217150511568"></p>
+<h6 id="简单控制器–simple-controller"><a href="#简单控制器–simple-controller" class="headerlink" title="简单控制器–simple controller"></a>简单控制器–simple controller</h6><p>简单的控制器不执行任何特定功能。它只是一种容器，您可以在其中保留类似的请求，以使测试计划易于理解。</p>
+<p><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217154100877.png" alt="image-20211217154100877"></p>
+<h6 id="循环控制器–Loop-Controller"><a href="#循环控制器–Loop-Controller" class="headerlink" title="循环控制器–Loop Controller"></a>循环控制器–Loop Controller</h6><p>如果希望某些特定请求运行的迭代次数多于”线程组”中指定的迭代次数，则可以将它们放在”循环控制器”下，然后在控制器设置中输入循环计数。</p>
+<p><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217154238730.png" alt="image-20211217154238730"></p>
+<p>图中的每个取样器将执行6次。</p>
+<h6 id="仅一次控制器–once-ONLY-controller"><a href="#仅一次控制器–once-ONLY-controller" class="headerlink" title="仅一次控制器–once ONLY controller"></a>仅一次控制器–once ONLY controller</h6><p>当您只想运行某个特定请求一次时，即使线程组中有多个线程，也会使用此控制器。可以考虑的最简单的例子是”获取网站主页”或”登录到Web应用程序”。实时方案希望它只发生一次，其他请求（如搜索或编辑&#x2F;删除某些内容）将多次发生。</p>
+<p>仅执行一次的请求可以放在”仅一次控制器”下。截图以供参考。一次 只有控制器设置绕过父线程组设置。</p>
+<p><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217160551520.png" alt="image-20211217160551520"></p>
+<h6 id="录制控制器–HTTP（S）-TEST-Script-Recorder"><a href="#录制控制器–HTTP（S）-TEST-Script-Recorder" class="headerlink" title="录制控制器–HTTP（S） TEST Script Recorder"></a>录制控制器–HTTP（S） TEST Script Recorder</h6><p>就像简单控制器一样，录制控制器不会修改发送到服务器的任何请求序列。它与HTTP（S）脚本记录器一起使用。使用此非测试元素记录的所有请求都保存在记录控制器下。需要指定目标控制器以保存对服务器发出的记录请求。</p>
+<p><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217160800045.png" alt="image-20211217160800045"></p>
+<h6 id="吞吐量控制器–Throughput-controller"><a href="#吞吐量控制器–Throughput-controller" class="headerlink" title="吞吐量控制器–Throughput controller"></a>吞吐量控制器–Throughput controller</h6><p>此控制器还用于控制执行流。如下图所示，该控制器进一步分为两部分：</p>
+<p><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217160905035.png" alt="image-20211217160905035"></p>
+<p>执行百分比–Percent Executions ： 选中后 Jmeter 将仅执行此控制器下采样器总迭代的一定百分比。也可以选中”每用户”复选框以在用户级别进行控制。</p>
+<p>执行总数– total Executions: 将允许用户直接为此控制器下包含的采样器指定迭代次数。</p>
+<h6 id="交错控制器–-interleave-controller"><a href="#交错控制器–-interleave-controller" class="headerlink" title="交错控制器– interleave controller"></a>交错控制器– interleave controller</h6><p>此控制器允许您通过以 n 种方式修改序列来增加性能测试的范围，以便在应用程序以不同的顺序命中请求时测试服务器上的负载。交错控制器在其下方的采样器进行替代选择。</p>
+<p>如果此块下有其他控制器（如 Simple Controller），则交错控制器授予从容器中为每个迭代选择一个采样器的权限。为了进一步解释它，见图</p>
+<p><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217162333245.png" alt="image-20211217162333245"></p>
+<p>Jmeter 将在每次迭代的控制器之间交替迭代。执行顺序为：<em>请求1 -&gt; 请求3 -&gt; 请求 5 – 请求2 -&gt; 请求4 -&gt; 请求6</em></p>
+<h6 id="随机控制器–random-controller"><a href="#随机控制器–random-controller" class="headerlink" title="随机控制器–random controller"></a>随机控制器–random controller</h6><p>顾名思义随机选择子控制器和其中的采样器。工作方式几乎与交错控制器类似，但不按顺序选取采样器。</p>
+<p>条件控制器–If controller</p>
+<p>if 控制器 以类似的方式工作，则以任何编程语言处理 IF 表达式。首先验证条件，然后执行此容器下的组件（如果条件为 TRUE），否则将执行 IF 控制器外部的元素。</p>
+<p><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217165030335.png" alt="image-20211217165030335"></p>
+<p>测试计划设计如下：如果 IF 条件被评估为<strong>False，</strong>则只有 Request3、Request4 和 Request5 将执行。</p>
+<h6 id="while-控制器"><a href="#while-控制器" class="headerlink" title="while 控制器"></a>while 控制器</h6><p>此控制器执行其下的组件，直到条件变为 false。</p>
+<h5 id="JMeter的记录模板"><a href="#JMeter的记录模板" class="headerlink" title="JMeter的记录模板"></a>JMeter的记录模板</h5><p>Jmeter的File目录选择template ，然后切换recording</p>
+<p><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217165849700.png" alt="image-20211217165849700"></p>
+<p>选择此录制模板后，会看到一些组件已添加到测试计划中。</p>
+<ul>
+<li>工作台下的 HTTP 脚本记录器</li>
+<li>HTTP 请求默认值和 HTTP Cookie 管理器</li>
+<li>“线程组”下的记录控制器。</li>
+<li><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217170049709.png" alt="image-20211217170049709"></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>丑牛
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://hugfeature.github.io/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8.html" title="JMeter处理器和控制器">https://hugfeature.github.io/Echo/JMeter处理器和控制器.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/Echo/tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" rel="tag"># 性能测试</a>
+              <a href="/Echo/tags/JMeter/" rel="tag"># JMeter</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Echo/emqtt-bench%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8E%8B%E6%B5%8BMQTTbroker.html" rel="prev" title="emqtt_bench安装与压测MQTTbroker">
+                  <i class="fa fa-chevron-left"></i> emqtt_bench安装与压测MQTTbroker
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Echo/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%A7%E6%95%B0%E6%8D%AE.html" rel="next" title="大数据是什么？">
+                  大数据是什么？ <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">丑牛</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/Echo/js/comments.js"></script><script src="/Echo/js/utils.js"></script><script src="/Echo/js/motion.js"></script><script src="/Echo/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/Echo/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"hugfeature","repo":"myBlogTalk","client_id":"f4b1fae431a4943a75f3","client_secret":"2b6995c484ff0a0a920d65ac7fd5bb1bf13fb2f2","admin_user":null,"distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"465e0f4e6b77fa5b4df2c3d06876300e"}</script>
+<script src="/Echo/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/Echo/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Echo/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Echo/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/Echo/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="5ZQ9pmEjPOsQmbBYQoUK41fLaMMyEK5pDRa34TE8fW4">
+  <meta name="msvalidate.01" content="58AE2D56435A76DA1BF1341C2E6930C1">
+
+<link rel="stylesheet" href="/Echo/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"hugfeature.github.io","root":"/Echo/","images":"/Echo/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/Echo/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Echo/js/config.js"></script>
+<meta name="description" content="kafka是一个事件流平台 什么事件流？，事件流是从事件源实时捕获数据的做法 如数据库、传感器、移动设备、云服务和流形式的软件应用程序 事件； 持久地存储这些事件流以供以后检索； 操作、处理和反应 实时和可追溯​​的事件流； 并将事件流路由到不同的 根据需要使用目标技术。 事件流因此确保了连续的流和解释 数据，以便正确的信息在正确的时间出现在正确的位置。  kafka的功能？  要 发布 （写）和">
+<meta property="og:type" content="article">
+<meta property="og:title" content="kafka测试">
+<meta property="og:url" content="https://hugfeature.github.io/Echo/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%BB%84%E4%BB%B6kafka%E6%B5%8B%E8%AF%95.html">
+<meta property="og:site_name" content="测试的名义">
+<meta property="og:description" content="kafka是一个事件流平台 什么事件流？，事件流是从事件源实时捕获数据的做法 如数据库、传感器、移动设备、云服务和流形式的软件应用程序 事件； 持久地存储这些事件流以供以后检索； 操作、处理和反应 实时和可追溯​​的事件流； 并将事件流路由到不同的 根据需要使用目标技术。 事件流因此确保了连续的流和解释 数据，以便正确的信息在正确的时间出现在正确的位置。  kafka的功能？  要 发布 （写）和">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-11-24T07:19:11.000Z">
+<meta property="article:modified_time" content="2021-11-24T07:19:11.000Z">
+<meta property="article:author" content="丑牛">
+<meta property="article:tag" content="kafka，大数据">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://hugfeature.github.io/Echo/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%BB%84%E4%BB%B6kafka%E6%B5%8B%E8%AF%95.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://hugfeature.github.io/Echo/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%BB%84%E4%BB%B6kafka%E6%B5%8B%E8%AF%95.html","path":"大数据组件kafka测试.html","title":"kafka测试"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>kafka测试 | 测试的名义</title>
+  
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-SY6RK3NESF","only_pageview":true}</script>
+  <script src="/Echo/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+  <script async src="https://www.clarity.ms/tag/myblog"></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/Echo/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/Echo/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">测试的名义</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Stay hungry, Stay foolish</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/Echo/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/Echo/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-categories"><a href="/Echo/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-commonweal"><a href="/Echo/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#kafka%E6%98%AF%E4%B8%80%E4%B8%AA%E4%BA%8B%E4%BB%B6%E6%B5%81%E5%B9%B3%E5%8F%B0"><span class="nav-number">1.</span> <span class="nav-text">kafka是一个事件流平台</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#kafka%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%BA%86%E8%A7%A3"><span class="nav-number">2.</span> <span class="nav-text">kafka基本概念了解</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#kafka%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95-%E5%A6%82%E4%BD%95%E9%AA%8C%E8%AF%81%E6%95%B0%E6%8D%AE%E7%9A%84%E4%B8%80%E8%87%B4%E6%80%A7%E5%92%8C%E6%9C%89%E5%BA%8F%E6%80%A7"><span class="nav-number">3.</span> <span class="nav-text">kafka功能测试-如何验证数据的一致性和有序性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#kafka%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95"><span class="nav-number">4.</span> <span class="nav-text">kafka性能测试</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">丑牛</p>
+  <div class="site-description" itemprop="description">曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-categories">
+          <a href="/Echo/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/Echo/tags/">
+        <span class="site-state-item-count">51</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hugfeature/" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hugfeature&#x2F;" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/hugfeature" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%BB%84%E4%BB%B6kafka%E6%B5%8B%E8%AF%95.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Echo/images/avatar.gif">
+      <meta itemprop="name" content="丑牛">
+      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="测试的名义">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          kafka测试
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-11-24 15:19:11" itemprop="dateCreated datePublished" datetime="2021-11-24T15:19:11+08:00">2021-11-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Echo/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h5 id="kafka是一个事件流平台"><a href="#kafka是一个事件流平台" class="headerlink" title="kafka是一个事件流平台"></a>kafka是一个事件流平台</h5><ul>
+<li><p>什么事件流？，事件流是从事件源实时捕获数据的做法 如数据库、传感器、移动设备、云服务和流形式的软件应用程序 事件； 持久地存储这些事件流以供以后检索； 操作、处理和反应 实时和可追溯​​的事件流； 并将事件流路由到不同的 根据需要使用目标技术。 事件流因此确保了连续的流和解释 数据，以便正确的信息在正确的时间出现在正确的位置。</p>
+</li>
+<li><p>kafka的功能？</p>
+<ol>
+<li><p>要 发布 （写）和 订阅 （读取）的事件流，包括连续的导入&#x2F;导出 您来自其他系统的数据。</p>
+</li>
+<li><p>持久并可靠存储你想要的事件流</p>
+</li>
+<li><p><strong>处理</strong> 事件发生时或追溯性 事件流。</p>
+</li>
+</ol>
+<h5 id="kafka基本概念了解"><a href="#kafka基本概念了解" class="headerlink" title="kafka基本概念了解"></a>kafka基本概念了解</h5></li>
+<li><p>生产者：<strong>生产者</strong> 是那些向 Kafka 发布（写入）事件的客户端应用程序</p>
+</li>
+<li><p>消费者：订阅（读取和处理）这些事件的</p>
+</li>
+<li><p>主题：主题类似于文件系统中的文件夹，事件就是该文件夹中的文件</p>
+</li>
+<li><p>分区：主题是 <strong>分区的</strong> ，一个主题可以分布在位于不同 Kafka 代理的多个“桶”上。</p>
+</li>
+<li><p>broker：一个 Kafka 服务器也称为 Broker，它接受生产者发送的消息并存入磁盘；Broker 同时服务消费者拉取分区消息的请求，返回目前已经提交的消息一个 Kafka 服务器也称为 Broker，它接受生产者发送的消息并存入磁盘；Broker 同时服务消费者拉取分区消息的请求，返回目前已经提交的消息</p>
+</li>
+</ul>
+<h5 id="kafka功能测试-如何验证数据的一致性和有序性"><a href="#kafka功能测试-如何验证数据的一致性和有序性" class="headerlink" title="kafka功能测试-如何验证数据的一致性和有序性"></a>kafka功能测试-如何验证数据的一致性和有序性</h5><p>可以创建一个单分区的Topic，然后自己写一个生产者程序，程序发送的事件流可以从设定值从1到N自增长；写一个消费者程序，单线程消费，将消费到的数据写进文件中，观测有序性；还可以对kafka服务进程直接杀死，进行故障模拟。</p>
+<h5 id="kafka性能测试"><a href="#kafka性能测试" class="headerlink" title="kafka性能测试"></a>kafka性能测试</h5><p>性能压测是系统性问题，需要考量对整体业务的掌握程序，以及对kafka的熟悉程度。压测过程中涉及压测工具选取，监测kafka，压测结果分析。</p>
+<ul>
+<li><p>明确压测场景：明确要压测的场景</p>
+</li>
+<li><p>测试环境准备：在服务器选择，kafka版本，kafka架构以及相关配置参数、业务数据等尽可能与线上环境保持一致</p>
+</li>
+<li><p>压测工具选取：生产者压测使用kafka自带的测试工具kafka-producer-perf-test.sh来进行测试，发送数据推荐使用线上数据导出到本地文件，随机读取进行</p>
+</li>
+<li><p>压测过程观测：首先开启kafka的JMX端口，①可以使用滴滴的Logikm(但是需要自己搭建部署)；②自己通过JMX端口以及官方原生API获取相关指标，CPU、内存、网络等监测可以使用nomn或者top命令来监测</p>
+</li>
+<li><p>压测结果分析：理想状态是系统资源使用达到瓶颈，如未达到则寻找软件资源瓶颈，配合堆栈分析，发现线程阻塞点。</p>
+</li>
+<li><p>压测报告呈现：一般有测试环境说明、测试场景说明、测试过程说明、测试结论（在当前场景下的最佳资源使用以及配置）。</p>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>丑牛
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://hugfeature.github.io/Echo/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%BB%84%E4%BB%B6kafka%E6%B5%8B%E8%AF%95.html" title="kafka测试">https://hugfeature.github.io/Echo/大数据组件kafka测试.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/Echo/tags/kafka%EF%BC%8C%E5%A4%A7%E6%95%B0%E6%8D%AE/" rel="tag"># kafka，大数据</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Echo/JMeter%E4%BB%8B%E7%BB%8D.html" rel="prev" title="JMeter介绍">
+                  <i class="fa fa-chevron-left"></i> JMeter介绍
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Echo/JMeter%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D.html" rel="next" title="JMeter组件介绍">
+                  JMeter组件介绍 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">丑牛</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/Echo/js/comments.js"></script><script src="/Echo/js/utils.js"></script><script src="/Echo/js/motion.js"></script><script src="/Echo/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/Echo/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"hugfeature","repo":"myBlogTalk","client_id":"f4b1fae431a4943a75f3","client_secret":"2b6995c484ff0a0a920d65ac7fd5bb1bf13fb2f2","admin_user":null,"distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"c960f0b187f708735c61816d5a58aacf"}</script>
+<script src="/Echo/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

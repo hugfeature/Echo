@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/Echo/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Echo/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Echo/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/Echo/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="5ZQ9pmEjPOsQmbBYQoUK41fLaMMyEK5pDRa34TE8fW4">
+  <meta name="msvalidate.01" content="58AE2D56435A76DA1BF1341C2E6930C1">
+
+<link rel="stylesheet" href="/Echo/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"hugfeature.github.io","root":"/Echo/","images":"/Echo/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/Echo/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Echo/js/config.js"></script>
+<meta name="description" content="为什么需要MapReduce？ MapReduce是**”处理单元”，**使用此组件，我们可以处理存储在Hadoop HDFS上的大数据。 但确切的要求是为什么我们需要Hadoop的这个组件？ 存储在Hadoop HDFS上的大数据和传统存储不一样。数据被划分为存储在各个DataNodes中的数据块。因此，整个数据不会存储在一个集中的位置。 因此，像Java这样的本机客户端应用程序或任何此类应用程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MapReduce是什么？">
+<meta property="og:url" content="https://hugfeature.github.io/Echo/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce.html">
+<meta property="og:site_name" content="测试的名义">
+<meta property="og:description" content="为什么需要MapReduce？ MapReduce是**”处理单元”，**使用此组件，我们可以处理存储在Hadoop HDFS上的大数据。 但确切的要求是为什么我们需要Hadoop的这个组件？ 存储在Hadoop HDFS上的大数据和传统存储不一样。数据被划分为存储在各个DataNodes中的数据块。因此，整个数据不会存储在一个集中的位置。 因此，像Java这样的本机客户端应用程序或任何此类应用程">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/Map-Reduce.jpg">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/NutShell-MapReduce.jpg">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/Advantage.jpg">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/Traditional-way-1.jpg">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/Traditional-way-2.jpg">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/MapReduce-Way.jpg">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/MapReduce-in-Detail.jpg">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/Anatomy-of-MapReduce.jpg">
+<meta property="article:published_time" content="2022-01-03T01:01:16.000Z">
+<meta property="article:modified_time" content="2022-01-03T01:01:16.000Z">
+<meta property="article:author" content="丑牛">
+<meta property="article:tag" content="大数据">
+<meta property="article:tag" content="MapReduce">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hugfeature.github.io/Echo/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/Map-Reduce.jpg">
+
+
+<link rel="canonical" href="https://hugfeature.github.io/Echo/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://hugfeature.github.io/Echo/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce.html","path":"什么是MapReduce.html","title":"MapReduce是什么？"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>MapReduce是什么？ | 测试的名义</title>
+  
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-SY6RK3NESF","only_pageview":true}</script>
+  <script src="/Echo/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+  <script async src="https://www.clarity.ms/tag/myblog"></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/Echo/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/Echo/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">测试的名义</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Stay hungry, Stay foolish</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/Echo/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/Echo/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-categories"><a href="/Echo/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-commonweal"><a href="/Echo/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81MapReduce%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">为什么需要MapReduce？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MapReduce%E7%AE%80%E8%BF%B0"><span class="nav-number">2.</span> <span class="nav-text">MapReduce简述</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#MapReduce%E7%9A%84%E4%BC%98%E7%82%B9"><span class="nav-number">2.1.</span> <span class="nav-text">MapReduce的优点</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%A0%E7%BB%9F%E6%96%B9%E5%BC%8FVSMapReduce%E6%96%B9%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">传统方式VSMapReduce方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MapReduce%E8%BF%90%E8%A1%8C%E5%8E%9F%E7%90%86"><span class="nav-number">4.</span> <span class="nav-text">MapReduce运行原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E5%B0%BE"><span class="nav-number">5.</span> <span class="nav-text">结尾</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">丑牛</p>
+  <div class="site-description" itemprop="description">曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-categories">
+          <a href="/Echo/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/Echo/tags/">
+        <span class="site-state-item-count">51</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hugfeature/" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hugfeature&#x2F;" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/hugfeature" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Echo/images/avatar.gif">
+      <meta itemprop="name" content="丑牛">
+      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="测试的名义">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          MapReduce是什么？
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-01-03 09:01:16" itemprop="dateCreated datePublished" datetime="2022-01-03T09:01:16+08:00">2022-01-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Echo/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h4 id="为什么需要MapReduce？"><a href="#为什么需要MapReduce？" class="headerlink" title="为什么需要MapReduce？"></a>为什么需要MapReduce？</h4><p><img src="/Echo/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/Map-Reduce.jpg" alt="Map-Reduce"></p>
+<p>MapReduce是**”处理单元”，**使用此组件，我们可以处理存储在Hadoop HDFS上的大数据。</p>
+<p>但确切的要求是为什么我们需要Hadoop的这个组件？</p>
+<p>存储在Hadoop HDFS上的大数据和传统存储不一样。数据被划分为存储在各个DataNodes中的数据块。因此，整个数据不会存储在一个集中的位置。</p>
+<p>因此，像Java这样的本机客户端应用程序或任何此类应用程序无法以当前格式处理数据，我们需要一个特殊的框架来处理存储在各个DataNodes中的碎片化数据块。</p>
+<p>处理是使用Hadoop MapReduce处理完成的。</p>
+<h4 id="MapReduce简述"><a href="#MapReduce简述" class="headerlink" title="MapReduce简述"></a>MapReduce简述</h4><p><img src="/Echo/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/NutShell-MapReduce.jpg" alt="NutShell-MapReduce"></p>
+<p>如图所示显示了MapReduce的功能和用途。</p>
+<p>让我们从MapReduce的应用程序开始及如何应用。它用于分类器，索引和搜索，以及在电子商务网站（Flipkart，Amazon等）上创建推荐引擎。它也被几家公司用作分析。</p>
+<p>当我们从功能的角度来看，它是一个编程模型，可以用于像Hadoop HDFS这样的大规模分布式模型，并且具有并行编程的功能，使其非常有用。</p>
+<p>当我们在Map Reduce中看到函数时，会执行两个函数，即Map Function和Reduce函数。</p>
+<p>这项技术已经由谷歌，雅虎，Facebook等主要组织实施，也被Apache Hadoop采用，如HDFS，PIG，HIVE，并使用HBase存储数据或执行和处理大数据，也称为No-SQL。</p>
+<h5 id="MapReduce的优点"><a href="#MapReduce的优点" class="headerlink" title="MapReduce的优点"></a>MapReduce的优点</h5><p>1、并行处理</p>
+<p><img src="/Echo/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/Advantage.jpg" alt="Advantage"></p>
+<p>整个数据块被Hadoop HDFS分成HDFS块，MapReduce并行处理这些数据块，因此处理变得很快。</p>
+<p>2、数据局部性</p>
+<p>这是Hadoop MapReduce给出的一个多功能的东西，即我们可以在它所在的位置处理数据。</p>
+<p><em><strong>这是什么意思？</strong></em></p>
+<p>在之前的HDFS教程中，我们了解到我们移动到Hadoop Cluster中的数据被划分为HDFS块，这些块被保存到SlaveMachines或DataNodes中。Map-Reduce将处理和逻辑感知到数据驻留在HDFS块中的相应从节点或DataNodes。</p>
+<p>处理在多个位置的较小数据块上并行执行。这节省了大量时间以及将大数据从一个位置移动到另一个位置所需的网络带宽。</p>
+<p>请记住，我们正在处理的数据是分解成块的大数据，如果我们开始将大数据直接通过分配的网络通道移动到集中式计算机中并对其进行处理，那么它将不会给我们带来任何优势，因为我们将消耗整个带宽将数据移动到集中式服务器。</p>
+<p>因此，使用Hadoop MapReduce，我们不只是在进行”并行处理”，我们还将数据处理到存在数据块的相应从节点或DataNodes上，因此我们也”节省了大量网络带宽”，这是非常有益的。</p>
+<p>最后，SlaveMachines完成了对存储在SlaveMachines的数据的处理，它们将结果发送回主机器，因为结果不如SlaveMachines上存储的块大。因此，它不会占用大量带宽。</p>
+<p>从属计算机将结果发送回主计算机，这些结果将聚合在一起，最终结果将发送回提交作业的客户端计算机。</p>
+<p><em><strong>如何决定哪些数据应该在哪个DataNode上处理？</strong></em></p>
+<p>客户端将作业提交给资源管理器，资源管理器是提供在数据所在的相应 DataNode 上执行作业的方向的资源管理器，它根据最近的可用 DataNode 做出决定，以便不会使用大量网络带宽。</p>
+<h4 id="传统方式VSMapReduce方式"><a href="#传统方式VSMapReduce方式" class="headerlink" title="传统方式VSMapReduce方式"></a>传统方式VSMapReduce方式</h4><p>假设有五个保险公司分支机构，人们来申请人寿保险单。现在，还有一家保险公司的总部，该总部拥有有关可用和所在分支机构的所有信息。</p>
+<p>但是，当人们来各自的分行A，B，C，D，E申请人寿保险时，保单申请保留在各自的分行本身，并且该信息不会与保险公司总部共享。</p>
+<p>1、传统方式</p>
+<p>传统为了上解决这个问题，所有申请将被转移到保险公司总部，然后申请过程将开始。</p>
+<p>在这种情况下，我们需要将所有申请转移到保险公司总部，这是一件代价高昂的事情，即必须从保险公司分支机构收集所有申请并将其带到保险公司总部。</p>
+<p>这就是成本以及进行此活动的巨大努力的方式。</p>
+<p><img src="/Echo/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/Traditional-way-1.jpg" alt="Traditional-way-1"></p>
+<p><img src="/Echo/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/Traditional-way-2.jpg" alt="Traditional-way-2"></p>
+<p>另一个方面是保险公司总部负担过重，因为它必须处理人民在各自分支机构申请保单的所有申请。</p>
+<p>由于保险公司正在处理所有分支机构都适用的申请，因此需要很长时间。最后，这个过程效果不是很好。</p>
+<p>2、MapReduce方式</p>
+<p>MapReduce遵循Data Locality，即它不会将所有应用程序带到保险公司总部，而是并行处理各个分支机构本身的应用程序。</p>
+<p><img src="/Echo/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/MapReduce-Way.jpg" alt="MapReduce-Way"></p>
+<p>一旦应用于每个分支机构的申请得到处理，他们就会将处理后的详细信息发回保险公司总部。</p>
+<p>现在，保险公司总部只需要汇总从各自分支机构发送的已处理申请的数量，并将详细信息保存在各自的数据库或存储中心。</p>
+<p>通过这种方式，处理将非常容易和快速，保单持有人可以立即获得福利。</p>
+<h4 id="MapReduce运行原理"><a href="#MapReduce运行原理" class="headerlink" title="MapReduce运行原理"></a>MapReduce运行原理</h4><p>在前面的示例中，我们有一个分布在各个分支之间的输入（应用程序），每个输入都由相应的 Map 函数处理。</p>
+<p>我们知道MapReduce有两个函数，即Map Function和Reduce Function。</p>
+<p>在各个分支上完成的处理部分由 Map 函数完成。因此，每个分支机构中的每个输入（应用程序）都使用Map函数进行处理，之后处理后的详细信息被发送到保险公司总部，聚合部分由Reduce功能完成。</p>
+<p>聚合的已处理应用程序详细信息作为输出提供。</p>
+<p><img src="/Echo/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/MapReduce-in-Detail.jpg" alt="MapReduce-in-Detail"></p>
+<p>这就是我们前面的例子中发生的事情。整个过程分为map任务和reduce任务。</p>
+<p>映射任务获取输入，映射任务的输出作为输入提供给 Reduce 任务，此 Reduce 任务最终将输出提供给客户端。</p>
+<p>为了更好地理解它，让我们来了解一下MapReduce的解剖结构。</p>
+<p><img src="/Echo/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/Anatomy-of-MapReduce.jpg" alt="Anatomy-of-MapReduce"></p>
+<p>MapReduce任务在键值对上工作，因此当我们谈论Map时，Map将输入作为键值，并将输出作为键值列表给出。此键值列表将经历随机播放阶段，键的输入和值列表将转到化简器。</p>
+<p>最后，Reducer 为我们提供了键值对的列表。</p>
+<h4 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h4><ul>
+<li>Hadoop Map Reduce是Hadoop的”处理单元”。</li>
+<li>为了处理Hadoop HDFS存储的大数据，我们使用Hadoop Map Reduce。</li>
+<li>它用于搜索和索引，分类，推荐和分析。</li>
+<li>它具有编程模型，并行编程和大规模分布式模型等功能。</li>
+<li>MapReduce的设计模式是：汇总，热门记录的分类，排序和分析，如连接和选择。</li>
+<li>它只有两个功能，即mapper功能和reducer功能。</li>
+<li>并行处理和数据局部性是Hadoop MapReduce的良好优势。</li>
+<li>MapReduce的过程分为六个阶段，即输入，拆分，映射，洗牌，减少和最终结果</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>丑牛
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://hugfeature.github.io/Echo/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce.html" title="MapReduce是什么？">https://hugfeature.github.io/Echo/什么是MapReduce.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/Echo/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" rel="tag"># 大数据</a>
+              <a href="/Echo/tags/MapReduce/" rel="tag"># MapReduce</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Echo/HDFS%E6%9E%B6%E6%9E%84%E5%8F%8A%E5%91%BD%E4%BB%A4.html" rel="prev" title="HDFS架构及命令">
+                  <i class="fa fa-chevron-left"></i> HDFS架构及命令
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Echo/%E4%BB%80%E4%B9%88%E6%98%AFYARN.html" rel="next" title="YARN原理及工作流？">
+                  YARN原理及工作流？ <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">丑牛</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/Echo/js/comments.js"></script><script src="/Echo/js/utils.js"></script><script src="/Echo/js/motion.js"></script><script src="/Echo/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/Echo/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"hugfeature","repo":"myBlogTalk","client_id":"f4b1fae431a4943a75f3","client_secret":"2b6995c484ff0a0a920d65ac7fd5bb1bf13fb2f2","admin_user":null,"distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"a7300be103bf7ad473da1c6f4fbae549"}</script>
+<script src="/Echo/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
