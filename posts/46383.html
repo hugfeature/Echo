@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/Echo/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Echo/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Echo/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/Echo/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="5ZQ9pmEjPOsQmbBYQoUK41fLaMMyEK5pDRa34TE8fW4">
+  <meta name="msvalidate.01" content="58AE2D56435A76DA1BF1341C2E6930C1">
+
+<link rel="stylesheet" href="/Echo/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"hugfeature.github.io","root":"/Echo/","images":"/Echo/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/Echo/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Echo/js/config.js"></script>
+<meta name="description" content="HDFS架构 如图所示，有NameNode，因为已经知道哪个是HDFS架构中的主守护进程，它存储集群中存在的所有DataNode的元数据以及每个DataNode中存在的所有块的信息。 有像Rack-1这样的机架，它有三个DataNodes，Rack-2有两个DataNodes，如图所示。 还有一个应用于所有节点的复制因子。现在有一个客户端可以从DataNode读取数据，还有另一个客户端可以将数据写">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HDFS架构及命令">
+<meta property="og:url" content="https://hugfeature.github.io/Echo/posts/46383.html">
+<meta property="og:site_name" content="测试的名义">
+<meta property="og:description" content="HDFS架构 如图所示，有NameNode，因为已经知道哪个是HDFS架构中的主守护进程，它存储集群中存在的所有DataNode的元数据以及每个DataNode中存在的所有块的信息。 有像Rack-1这样的机架，它有三个DataNodes，Rack-2有两个DataNodes，如图所示。 还有一个应用于所有节点的复制因子。现在有一个客户端可以从DataNode读取数据，还有另一个客户端可以将数据写">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/posts/46383/HDFS-Architecture.jpg">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/posts/46383/Write-Mechanism-in-HDFS.jpg">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/posts/46383/HDFS-Write-PipeLine.jpg">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/posts/46383/HDFS-Multi-Block-Write-Pipeline.jpg">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/posts/46383/HDFS-Read-Mechanism.jpg">
+<meta property="article:published_time" content="2022-01-02T06:53:07.000Z">
+<meta property="article:modified_time" content="2022-01-02T06:53:07.000Z">
+<meta property="article:author" content="丑牛">
+<meta property="article:tag" content="大数据，HDFS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hugfeature.github.io/Echo/posts/46383/HDFS-Architecture.jpg">
+
+
+<link rel="canonical" href="https://hugfeature.github.io/Echo/posts/46383.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://hugfeature.github.io/Echo/posts/46383.html","path":"posts/46383.html","title":"HDFS架构及命令"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>HDFS架构及命令 | 测试的名义</title>
+  
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-SY6RK3NESF","only_pageview":true}</script>
+  <script src="/Echo/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+  <script async src="https://www.clarity.ms/tag/myblog"></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/Echo/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/Echo/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">测试的名义</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Stay hungry, Stay foolish</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/Echo/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/Echo/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-categories"><a href="/Echo/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-commonweal"><a href="/Echo/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#HDFS%E6%9E%B6%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">HDFS架构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HDFS%E8%AF%BB%E5%86%99%E6%9C%BA%E5%88%B6"><span class="nav-number">2.</span> <span class="nav-text">HDFS读写机制</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%86%99"><span class="nav-number">2.1.</span> <span class="nav-text">写</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%AF%BB"><span class="nav-number">2.2.</span> <span class="nav-text">读</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HDFS%E5%91%BD%E4%BB%A4"><span class="nav-number">3.</span> <span class="nav-text">HDFS命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E5%B0%BE"><span class="nav-number">4.</span> <span class="nav-text">结尾</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">丑牛</p>
+  <div class="site-description" itemprop="description">曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-categories">
+          <a href="/Echo/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/Echo/tags/">
+        <span class="site-state-item-count">51</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hugfeature/" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hugfeature&#x2F;" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/hugfeature" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/posts/46383.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Echo/images/avatar.gif">
+      <meta itemprop="name" content="丑牛">
+      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="测试的名义">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          HDFS架构及命令
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-01-02 14:53:07" itemprop="dateCreated datePublished" datetime="2022-01-02T14:53:07+08:00">2022-01-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Echo/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h4 id="HDFS架构"><a href="#HDFS架构" class="headerlink" title="HDFS架构"></a>HDFS架构</h4><p><img src="/Echo/posts/46383/HDFS-Architecture.jpg" alt="HDFS-Architecture"></p>
+<p>如图所示，有NameNode，因为已经知道哪个是HDFS架构中的主守护进程，它存储集群中存在的所有DataNode的元数据以及每个DataNode中存在的所有块的信息。</p>
+<p>有像Rack-1这样的机架，它有三个DataNodes，Rack-2有两个DataNodes，如图所示。</p>
+<p>还有一个应用于所有节点的复制因子。现在有一个客户端可以从DataNode读取数据，还有另一个客户端可以将数据写入这些数据节点。</p>
+<p>因此，本质上两种机制是并行的，即读取机制，它是客户端为读取数据而生成的请求，而写入机制是为客户端写入数据而生成的。这就是客户端将数据移动到DataNode或Hadoop 集群中的方式。</p>
+<h4 id="HDFS读写机制"><a href="#HDFS读写机制" class="headerlink" title="HDFS读写机制"></a>HDFS读写机制</h4><h5 id="写"><a href="#写" class="headerlink" title="写"></a>写</h5><p><img src="/Echo/posts/46383/Write-Mechanism-in-HDFS.jpg" alt="Write-Mechanism-in-HDFS"></p>
+<p>如图所示HDFS写入机制，客户端可以提出写入文件或读取文件的请求。步骤1表示客户端为块A生成的写入请求NameNode，NameNode的作用是它感知客户端可以写入块的IP地址列表，即块A。</p>
+<p>现在，此客户端连接到交换机，然后最终向 DataNode 1、DataNode 4 和 DataNode 6 发送通知，为什么此 DataNode 本身，是因为这些是由 NameNode、NameNode 指定的 DataNode 发送的数据节点，数据必须写入 DataNode 1、4 和 6 中，这就是为什么客户端同时连接到所有这三个 DataNode 的原因。</p>
+<p><img src="/Echo/posts/46383/HDFS-Write-PipeLine.jpg" alt="HDFS-Write-PipeLine"></p>
+<p>在第一步中，客户端从所有这些 DataNode 中获取确认，无论它们是否准备好对它们执行写入操作。它可能就像DataNode正在执行任务一样，目前还不可用。因此，第一步是接受他们的承认。</p>
+<p>一旦他们说他们准备好了，写入管道就会创建。现在，客户端在 DataNode 1、4 和 6 上感知到写入请求，并且第一个副本是在 DataNode 1 中创建的，即在 DataNode 1 中创建&#x2F;存储或写入的块 A。</p>
+<p>然后，下一个副本由 DataNode 1 本身在 DataNode 4 中创建，正如您可以看到核心交换机的箭头所示，首先副本是在 DataNode 1 中创建的，DataNode 1 在 DataNode 4 中创建第二个副本。</p>
+<p>现在不是客户端在做这项工作，而是DataNode实际在DataNode 4中创建副本，最后，DataNode 4在DataNode 6上创建副本，即块A的第三个副本。</p>
+<p>在 DataNode 6 上创建第三个副本后，它会向 DataNode 4 发送回确认，DataNode 4 会将确认发回 DataNode 1，同样，DataNode 1 会将确认发送回客户端，最后客户端会将成功写回 NameNode 的消息作为确认。</p>
+<p>一旦您通过NameNode获得成功消息，它就会在其末端更新元数据，即它将存储块A已存储在DataNode 1，4和6中的信息。因此，当我们谈论块A时，这是整个写入机制，这是按顺序发生的，即按顺序创建副本的副本。</p>
+<p><img src="/Echo/posts/46383/HDFS-Multi-Block-Write-Pipeline.jpg" alt="HDFS-Multi-Block-Write-Pipeline"></p>
+<p>当有多个块时，它会变得有点复杂。上图显示，当有多个块（即块 A 和块 B）时，它将遵循相同的过程，就像客户端向 NameNode 发送请求一样。</p>
+<p>NameNode 会将 DataNode 的列表返回给客户端，然后客户端将连接到核心交换机。当客户端连接到核心交换机时，它将并行写入两个块的第一个副本。</p>
+<p>只需尝试理解这一点，您就可以看到1A和1B，即复制块A和块B的第一步，现在看到2A和2B向机架1的交换机发送请求，并将其他交换机发送到机架5的交换机，现在此交换机（机架1）连接到DataNode 1并创建块A的副本。</p>
+<p>同时，客户端还在DataNode 7中创建了块B的副本，因此每个块的第一个副本，即块A和块B，即使有更多的块，块的第一个副本也将并行创建，而不是按顺序创建。</p>
+<p>创建第一个副本后，将按顺序创建复制副本。首先，我们将看到块 A，DataNode 1 与 Rack 4 的数据节点 4 中的另一个块 A 副本一起按顺序创建。</p>
+<p>创建此副本后，将在同一机架 4 的 DataNode 6 中创建块 A 的另一个副本。同样，块 B 是在 DataNode 9 中创建的，并且将根据发送到交换机的请求，在机架 1 的数据节点 3 中按顺序创建下一个副本。</p>
+<p>如果您看到并行创建或写入HDFS的每个块的第一个副本，而这些块的副本由其后续DataNodes本身按顺序创建。</p>
+<h5 id="读"><a href="#读" class="headerlink" title="读"></a>读</h5><p>阅读机制更容易理解，因为它非常简单。因此，客户端是发出所有请求的人，就像编写一样，它将从NameNode请求特定块。NameNode将通过存储这些特定块的数据节点发送。</p>
+<p><img src="/Echo/posts/46383/HDFS-Read-Mechanism.jpg" alt="HDFS-Read-Mechanism"></p>
+<p>如图所示，客户端已从NameNode请求块A和B，NameNode将DN1（即DataNode 1和DN3，即DataNode 3）的地址发送回客户端计算机。</p>
+<p>现在，此客户端计算机将与核心交换机建立连接，它将从 DataNode 1 读取块 A，从 DataNode 3 读取块 B，并将核心交换机设置的此数据发送回客户端计算机。客户端可以将这些数据用于所需的任何目的。</p>
+<p>NameNode将确保客户端没有分配用于获取数据或读取数据的工作。</p>
+<p>它将确保存储实际数据的DataNodes非常接近，并且客户端不必消耗大量网络带宽来读取数据。这是一件非常关键的事情，由NameNode负责，它有很大帮助。</p>
+<h4 id="HDFS命令"><a href="#HDFS命令" class="headerlink" title="HDFS命令"></a>HDFS命令</h4><p>下面列出的是常用的 Hadoop&#x2F;HDFS 命令。我们需要 FsShell 系统来运行这些命令。首先，从命令提示符转到主目录或工作目录，然后编写命令。</p>
+<p><strong>#1）查看HDFS中可用命令的列表。</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$hadoopfs–help</span><br></pre></td></tr></table></figure>
+
+<p><strong>#2）在HDFS中创建目录。</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$hadoopfs-mkdir &lt;path&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>#3）查看特定目录下的内容。</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$hadoopfs–ls</span><br></pre></td></tr></table></figure>
+
+<p><strong>此外，我们可以将 -d、-h 或 –r 与 ls 命令一起使用。</strong></p>
+<ul>
+<li>-d 目录列为普通文件。</li>
+<li>-h 以人类可读的方式（而不是字节数）格式化文件大小。</li>
+<li>-R 递归列出目录的内容</li>
+</ul>
+<p><strong>#4）查看文件的内容。</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hadoopfs -cat&lt;Path of file&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>#5）将文件从本地文件系统复制到HDFS。</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$hadoopfs-put &lt;source-path&gt;&lt;destination-path&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>此外，我们可以将 –p 或 –f 与 cat 命令一起使用。</strong></p>
+<ul>
+<li>-p 保留访问和修改时间。</li>
+<li>-f 覆盖目标。</li>
+</ul>
+<p>或</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ Hadoop fs –copyFromLocal &lt;source-path&gt;&lt;destination-path&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>#6）将文件从HDFS复制到本地。</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$hadoopfs-put &lt;source-hadoop-path&gt;&lt;destination-local-path&gt;</span><br></pre></td></tr></table></figure>
+
+<p>或</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ Hadoop fs –copyToLocal &lt;source-hadoop-path&gt;&lt;destination-local-path&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>#7） 删除由路径标识的文件或空目录。</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hadoopfs -rm &lt;File Path&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>#8）将src标识的文件或目录复制到HDFS中。</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hadoopfs cp &lt;src&gt;&lt;dest&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>#9）将src指示的文件或目录移动到HDFS中的dest。</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hadoopfs mv &lt;src&gt;&lt;dest&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>#10） 显示磁盘使用情况，以字节为单位。</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hadoopfsdu &lt;path&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>#11） 将所有给定本地文件的内容追加到 HDFS 上的给定目标文件中。</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$hadoopfs-appendToFile&lt;local files separated by space&gt;&lt;hdfs destination file&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>#12） 显示文件的最后 1KB。</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hadoopfs -tail &lt;filename&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>#13）在HDFS中创建长度为零的文件。</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$hadoopfs-touchz &lt;path&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>#14） 将文件的复制因子更改为特定名称，而不是 HDFS 中其余文件的复制因子的默认值。</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$hadoopfs-setrep&lt;replication factor number&gt;&lt;file/path name&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>此外，我们可以将 -r 或 -w 与 -setrep 一起使用。</strong></p>
+<ul>
+<li>-w 请求命令等待复制完成。</li>
+<li>-R 被接受为向后兼容性。</li>
+</ul>
+<p><strong>#15） 将 HDFS 上一个目录中的文件列表合并到本地文件系统上的单个文件中。</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hadoopfs getmerge &lt;src&gt;&lt;localDest&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>#16） 计算路径下的目录、文件和字节数。</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hadoopfs -count &lt;path&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>#17）显示空间量，以字节为单位。</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hadoopfs -du &lt;path&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>此外，我们可以将 -s 或 -h 与 du 命令一起使用。</strong></p>
+<ul>
+<li>-s 显示总（摘要）大小。</li>
+<li>-h 以人类可读的方式格式化文件大小</li>
+</ul>
+<p><strong>#18） 更改文件的权限。</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hadoopfs chmod [-R] mode,mode,... &lt;path&gt;...</span><br></pre></td></tr></table></figure>
+
+<p>此处，-R 以递归方式修改文件。</p>
+<p><strong>#19） 更改文件或路径的组。</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hadoopfs -chgrp [-R] groupname&lt;path&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>#20） 更改文件的所有者和组。</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hadoop fs -chown [-R] [OWNER][:[GROUP]] PATH</span><br></pre></td></tr></table></figure>
+
+<h4 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h4><p>Hadoop的文件存储结构以及读写机制我们已经了解完成了，下一篇文章，我们会了解下MapReduce数据处理机制。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>丑牛
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://hugfeature.github.io/Echo/posts/46383.html" title="HDFS架构及命令">https://hugfeature.github.io/Echo/posts/46383.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/Echo/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%EF%BC%8CHDFS/" rel="tag"># 大数据，HDFS</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Echo/posts/19906.html" rel="prev" title="HDFS简介">
+                  <i class="fa fa-chevron-left"></i> HDFS简介
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Echo/posts/26749.html" rel="next" title="MapReduce是什么？">
+                  MapReduce是什么？ <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">丑牛</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/Echo/js/comments.js"></script><script src="/Echo/js/utils.js"></script><script src="/Echo/js/motion.js"></script><script src="/Echo/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/Echo/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"hugfeature","repo":"myBlogTalk","client_id":"f4b1fae431a4943a75f3","client_secret":"2b6995c484ff0a0a920d65ac7fd5bb1bf13fb2f2","admin_user":null,"distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"b5fda17cd822c80f9672c41c20886fcf"}</script>
+<script src="/Echo/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

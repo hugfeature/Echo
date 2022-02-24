@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/Echo/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Echo/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Echo/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/Echo/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="5ZQ9pmEjPOsQmbBYQoUK41fLaMMyEK5pDRa34TE8fW4">
+  <meta name="msvalidate.01" content="58AE2D56435A76DA1BF1341C2E6930C1">
+
+<link rel="stylesheet" href="/Echo/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"hugfeature.github.io","root":"/Echo/","images":"/Echo/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/Echo/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Echo/js/config.js"></script>
+<meta name="description" content="手工测试与自动化测试的区别手工测试：顾名思义就是测试人员自己手动执行所有测试步骤，以便在应用程序发布之前查找错误。 自动化测试：测试人员编写自动化脚本以自动化工具自动执行测试步骤。测试人员将测试脚本存储起来作为资产来进行重用，从而为重复执行节省大量时间和精力。 为什么要从手工测试转到自动化测试自动化测试可以克服许多手工测试中遇到的挑战，在敏捷项目中尤为重要。 1、测试可重用性 自动化测试用例和测">
+<meta property="og:type" content="article">
+<meta property="og:title" content="手工测试如何过渡到自动化测试">
+<meta property="og:url" content="https://hugfeature.github.io/Echo/posts/42873.html">
+<meta property="og:site_name" content="测试的名义">
+<meta property="og:description" content="手工测试与自动化测试的区别手工测试：顾名思义就是测试人员自己手动执行所有测试步骤，以便在应用程序发布之前查找错误。 自动化测试：测试人员编写自动化脚本以自动化工具自动执行测试步骤。测试人员将测试脚本存储起来作为资产来进行重用，从而为重复执行节省大量时间和精力。 为什么要从手工测试转到自动化测试自动化测试可以克服许多手工测试中遇到的挑战，在敏捷项目中尤为重要。 1、测试可重用性 自动化测试用例和测">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/posts/42873/Transition-from-Manual-to-Automated-Testing-Banner.png">
+<meta property="article:published_time" content="2022-02-06T13:44:55.000Z">
+<meta property="article:modified_time" content="2022-02-06T13:44:55.000Z">
+<meta property="article:author" content="丑牛">
+<meta property="article:tag" content="测试">
+<meta property="article:tag" content="自动化测试">
+<meta property="article:tag" content="devops">
+<meta property="article:tag" content="测试策略">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hugfeature.github.io/Echo/posts/42873/Transition-from-Manual-to-Automated-Testing-Banner.png">
+
+
+<link rel="canonical" href="https://hugfeature.github.io/Echo/posts/42873.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://hugfeature.github.io/Echo/posts/42873.html","path":"posts/42873.html","title":"手工测试如何过渡到自动化测试"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>手工测试如何过渡到自动化测试 | 测试的名义</title>
+  
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-SY6RK3NESF","only_pageview":true}</script>
+  <script src="/Echo/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+  <script async src="https://www.clarity.ms/tag/myblog"></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/Echo/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/Echo/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">测试的名义</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Stay hungry, Stay foolish</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/Echo/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/Echo/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-categories"><a href="/Echo/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-commonweal"><a href="/Echo/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%8B%E5%B7%A5%E6%B5%8B%E8%AF%95%E4%B8%8E%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.</span> <span class="nav-text">手工测试与自动化测试的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BB%8E%E6%89%8B%E5%B7%A5%E6%B5%8B%E8%AF%95%E8%BD%AC%E5%88%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95"><span class="nav-number">2.</span> <span class="nav-text">为什么要从手工测试转到自动化测试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%83%85%E5%86%B5%E4%B8%8D%E5%80%BC%E5%BE%97%E5%BC%80%E5%B1%95%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">什么情况不值得开展自动化测试？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%8E%E6%89%8B%E5%B7%A5%E6%B5%8B%E8%AF%95%E8%BF%87%E6%B8%A1%E5%88%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95"><span class="nav-number">4.</span> <span class="nav-text">从手工测试过渡到自动化测试</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Step1%E3%80%81%E8%AE%BE%E8%AE%A1%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%AD%96%E7%95%A5"><span class="nav-number">4.1.</span> <span class="nav-text">Step1、设计自动化测试策略</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Setp2%E3%80%81%E4%B8%B0%E5%AF%8C%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80"><span class="nav-number">4.2.</span> <span class="nav-text">Setp2、丰富自动化测试基础</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Step3%E3%80%81-%E7%BC%96%E7%A8%8B%E6%8A%80%E8%83%BD"><span class="nav-number">4.3.</span> <span class="nav-text">Step3、 编程技能</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Step4%E3%80%81-%E9%80%89%E6%8B%A9%E9%80%82%E5%90%88%E8%87%AA%E5%B7%B1%E7%9A%84%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7"><span class="nav-number">4.4.</span> <span class="nav-text">Step4、 选择适合自己的测试工具</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Setp5%E3%80%81-%E5%B0%8Fdemo%E8%BF%90%E8%A1%8C%EF%BC%8C%E8%87%AA%E4%BF%A1%E6%89%A9%E5%B1%95"><span class="nav-number">4.5.</span> <span class="nav-text">Setp5、 小demo运行，自信扩展</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-End"><span class="nav-number">5.</span> <span class="nav-text">The End</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">丑牛</p>
+  <div class="site-description" itemprop="description">曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-categories">
+          <a href="/Echo/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/Echo/tags/">
+        <span class="site-state-item-count">51</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hugfeature/" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hugfeature&#x2F;" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/hugfeature" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/posts/42873.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Echo/images/avatar.gif">
+      <meta itemprop="name" content="丑牛">
+      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="测试的名义">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          手工测试如何过渡到自动化测试
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-02-06 21:44:55" itemprop="dateCreated datePublished" datetime="2022-02-06T21:44:55+08:00">2022-02-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Echo/categories/%E6%B5%8B%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">测试</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><img src="/Echo/posts/42873/Transition-from-Manual-to-Automated-Testing-Banner.png" alt="Transition-from-Manual-to-Automated-Testing-Banner"></p>
+<h4 id="手工测试与自动化测试的区别"><a href="#手工测试与自动化测试的区别" class="headerlink" title="手工测试与自动化测试的区别"></a>手工测试与自动化测试的区别</h4><p>手工测试：顾名思义就是测试人员自己手动执行所有测试步骤，以便在应用程序发布之前查找错误。</p>
+<p>自动化测试：测试人员编写自动化脚本以自动化工具自动执行测试步骤。测试人员将测试脚本存储起来作为资产来进行重用，从而为重复执行节省大量时间和精力。</p>
+<h4 id="为什么要从手工测试转到自动化测试"><a href="#为什么要从手工测试转到自动化测试" class="headerlink" title="为什么要从手工测试转到自动化测试"></a>为什么要从手工测试转到自动化测试</h4><p>自动化测试可以克服许多手工测试中遇到的挑战，在敏捷项目中尤为重要。</p>
+<p>1、测试可重用性</p>
+<p>自动化测试用例和测试套件可以在不同的测试周期和测试环境中多次重用。因此，每次应用程序更改时，您都可以运行自动回归测试套件来检查回归错误，从而避免重复手动执行回归测试。这是自动化降低操作故障风险的最重要优势之一。</p>
+<p>2、更高的测试覆盖率</p>
+<p>由于测试是自动执行的，因此有更多时间专注于新的测试方案，并编写更自动化的测试用例来验证和确认受测应用程序 （AUT）。可以自由地进行更多的探索性测试，以确保产品质量。</p>
+<p>自动测试也可以在不同的平台和设备上同时或并行执行。执行的测试越多，意味着可能会发现更多的回归错误，并确认更多的业务需求。</p>
+<p>3、更早的错误检测和反馈</p>
+<p>在生产环境中发现的 Bug 在时间、金钱和精力等方面修复成本更高。这就是为什么团队正在向左移动，更早地发现错误以最大限度地降低成本。</p>
+<p>如果自动化测试做得好，可以在开发阶段开始后立即开始。开发人员可以在将代码提交到版本控制系统之前在其本地计算机上执行单元测试。</p>
+<p>单元测试也可以集成到 CI 管道中。提交代码后，将触发管道以运行自动化单元测试，然后运行集成或系统测试。通过这种方式，开发人员可以更快地接收反馈，检测和修复错误，防止bug潜入后期阶段。</p>
+<p>4、超越手工测试</p>
+<p>测试自动化可以完成手动测试可能难以实现的工作，特别是对于需要大量精力和资源（如性能测试）的特定测试。它可以模拟来自不同平台和设备对AUT服务器端的数千个同时请求，这几乎不可能手动完成。</p>
+<p>在并行执行方面，自动化工具的工作速度比人类快，精度更高。机器不会像人类那样感到无聊或疲惫，可以避免类似人类的错误。因此，测试结果是可靠且快速接收的。（PS：要记住的一件事是，长远来看，自动化测试是有效的，但是自动化测试初始成本较高，需要时间和设备将所有内容落实到位，才会带来可观的效果并降低成本效益比）。</p>
+<h4 id="什么情况不值得开展自动化测试？"><a href="#什么情况不值得开展自动化测试？" class="headerlink" title="什么情况不值得开展自动化测试？"></a>什么情况不值得开展自动化测试？</h4><p>以下四种情况，要开展自动化测试前请慎重、慎重、慎重考虑</p>
+<ul>
+<li>短期的项目</li>
+<li>开发在4-6月内完成的简单应用程序</li>
+<li>不经常运行测试</li>
+<li>测试许多手工执行起来更容易的复杂方案</li>
+</ul>
+<h4 id="从手工测试过渡到自动化测试"><a href="#从手工测试过渡到自动化测试" class="headerlink" title="从手工测试过渡到自动化测试"></a>从手工测试过渡到自动化测试</h4><h5 id="Step1、设计自动化测试策略"><a href="#Step1、设计自动化测试策略" class="headerlink" title="Step1、设计自动化测试策略"></a>Step1、设计自动化测试策略</h5><p>许多团队通常都很挣扎，因为他们没有面向目标的测试自动化策略。它使所有团队成员都在同一页面上。它告知并传达预先定义的目标和计划，每个人都可以从中了解他们所做的事情是对还是错，并调整下一步行动。</p>
+<p>如果没有清晰的愿景战略，团队很容易改变方向，选择错误的解决方案，并且无法以有助于实现业务价值的方式使用自动化测试。</p>
+<p>自动化测试就像构建并拥有自己的软件来测试其他应用程序一样。它应该以与软件开发相同的方式以清晰的愿景和计划进行管理。</p>
+<h5 id="Setp2、丰富自动化测试基础"><a href="#Setp2、丰富自动化测试基础" class="headerlink" title="Setp2、丰富自动化测试基础"></a>Setp2、丰富自动化测试基础</h5><p>了解测试自动化的所有基础知识至关重要，从敏捷和 DevOps 方法、框架构建、自动化金字塔、架构、自动化方法到报告和指标。没有良好的基础，团队几乎无法执行其战略。</p>
+<p>此外，还应该检查特定的自动化解决方案或测试工具，它们需要哪些技能，它们解决了什么问题，以及它们在实践中是如何做到的。并保持学习过程不间断。</p>
+<p>许多团队只是在一段时间后停止更新其知识库。随着新技术、新趋势和新解决方案的出现，行业发展迅速，停止学习和培训只能意味着落后于竞争对手。</p>
+<h5 id="Step3、-编程技能"><a href="#Step3、-编程技能" class="headerlink" title="Step3、 编程技能"></a>Step3、 编程技能</h5><p>许多测试自动化解决方案需要编程技能来构建框架和编写自动化测试脚本。为了克服这些障碍，许多团队的目标是使用配备低代码功能的现成测试工具。</p>
+<p>但是，没有编程技能，测试人员只能使用内置的关键字、录制和播放功能，或者具有直观 UI 的手动模式来创建自动测试。事情会永远这么简单吗？</p>
+<p>从长远来看，要编写更复杂的测试用例、修改脚本、构建自定义关键字、维护测试或调试失败的测试，团队中至少应该有一个熟悉编码和编程的自动化测试人员或一个开发人员来支持。</p>
+<p>因此，如果团队想要从手动测试切换到自动测试，请考虑雇用具有编程背景的测试人员，或者让团队成员学习和提高他们的编码技能。</p>
+<h5 id="Step4、-选择适合自己的测试工具"><a href="#Step4、-选择适合自己的测试工具" class="headerlink" title="Step4、 选择适合自己的测试工具"></a>Step4、 选择适合自己的测试工具</h5><p>工具选择可能非常棘手，因为市场上有数千种可用选项。仅根据其他人的成功来选择他们的工具。但是，一个工具对其他工具有效并不一定意味着它对你有同样的作用。</p>
+<p>考虑团队的特定需求和资源。也就是说，这里有一些问题需要评估和选择最合适的解决方案：</p>
+<ul>
+<li><strong>想解决什么问题？</strong>确定要应用自动测试的 AUT（Web、桌面或移动应用程序）以及所需的功能（用于测试创建、执行、报告等）。</li>
+<li><strong>谁使用该工具？</strong> 如果他们是手动测试人员，那么低代码解决方案将更合适。</li>
+<li><strong>能否融入团队的现有流程和工具链？</strong>寻找具有本机集成的自动化工具，以减少变通方法的时间。</li>
+<li><strong>是否面向未来？</strong>为避免从一个工具切换到另一个工具，请考虑团队的可伸缩性，并选择可以满足未来需求的工具。</li>
+<li><strong>预算是多少？</strong> 开源是免费的，但需要时间来设置和开发测试自动化工具，而商业工具可以快速启动且易于使用。</li>
+<li><strong>从哪里可以获得支持？</strong>良好的客户支持或活跃的社区可以在处理技术问题时真正帮助您并节省时间。</li>
+</ul>
+<p><strong>提示</strong>：从手动起点开始，最好选择一个现成的工具，它具有低代码和脚本选项，如<a target="_blank" rel="noopener" href="https://www.softwaretestinghelp.com/katalon-studio-tutorial/">Katalon Studio</a>。它将为您节省大量时间来构建框架和功能，这是启动测试自动化时压力最大的部分。</p>
+<p>借助”录制”和”回放”等低代码功能，手动测试人员可以快速开始自动执行测试用例并捕获测试对象。之后，当拥有更多的编码经验时，他们可以继续编写测试脚本，构建更多的自定义关键字，并利用更高级的功能。</p>
+<p>选择工具后，请记住进行概念验证。在工具上运行快速冲刺，让所有团队成员参与进来。然后，在冲刺 （sprint） 结束时，收集所有反馈并评估该工具是否能够满足团队的所有标准要求。</p>
+<h5 id="Setp5、-小demo运行，自信扩展"><a href="#Setp5、-小demo运行，自信扩展" class="headerlink" title="Setp5、 小demo运行，自信扩展"></a>Setp5、 小demo运行，自信扩展</h5><p>从小项目的特定小目标开始，例如在一段时间内达到某个自动化测试用例。保持错误小，从中吸取教训，并逐步扩大团队测试自动化的规模。不要因为过于雄心勃勃致使事情复杂化而延迟过渡。</p>
+<h4 id="The-End"><a href="#The-End" class="headerlink" title="The End"></a>The End</h4><p>从手动自动化转向测试自动化可能是一个困难的长期过程。没有仔细的规划，缺乏所需的技能组合以及不合适的解决方案是导致团队挣扎的一些最常见的根本原因。欢迎在下边的讨论区我们一起交流。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>丑牛
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://hugfeature.github.io/Echo/posts/42873.html" title="手工测试如何过渡到自动化测试">https://hugfeature.github.io/Echo/posts/42873.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/Echo/tags/%E6%B5%8B%E8%AF%95/" rel="tag"># 测试</a>
+              <a href="/Echo/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/" rel="tag"># 自动化测试</a>
+              <a href="/Echo/tags/devops/" rel="tag"># devops</a>
+              <a href="/Echo/tags/%E6%B5%8B%E8%AF%95%E7%AD%96%E7%95%A5/" rel="tag"># 测试策略</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Echo/posts/59445.html" rel="prev" title="2022年软件测试趋势">
+                  <i class="fa fa-chevron-left"></i> 2022年软件测试趋势
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Echo/posts/25505.html" rel="next" title="接口测试">
+                  接口测试 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">丑牛</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/Echo/js/comments.js"></script><script src="/Echo/js/utils.js"></script><script src="/Echo/js/motion.js"></script><script src="/Echo/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/Echo/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"hugfeature","repo":"myBlogTalk","client_id":"f4b1fae431a4943a75f3","client_secret":"2b6995c484ff0a0a920d65ac7fd5bb1bf13fb2f2","admin_user":null,"distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"419a0333685e03b4aa3ed8068e77f1b6"}</script>
+<script src="/Echo/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

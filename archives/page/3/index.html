@@ -216,7 +216,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8.html">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/posts/21888.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/Echo/images/avatar.gif">
@@ -229,7 +229,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8.html" class="post-title-link" itemprop="url">JMeter处理器和控制器</a>
+          <a href="/Echo/posts/21888.html" class="post-title-link" itemprop="url">JMeter处理器和控制器</a>
         </h2>
 
         <div class="post-meta-container">
@@ -264,47 +264,47 @@
     <div class="post-body" itemprop="articleBody">
           <h5 id="预处理器–pre-processor"><a href="#预处理器–pre-processor" class="headerlink" title="预处理器–pre processor"></a>预处理器–pre processor</h5><p>执行采样器之前执行的元素。您可以将预处理器与要在请求中进行一些更改的采样器连接在一起。</p>
 <p>最简单的情况可能是在 HTTP 请求中添加”示例超时”预处理器，以便此请求仅运行定义的时间量。它还确保仅对父采样器执行此修改,以下是JMeter中的预处理器：</p>
-<p><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217094257136.png" alt="image-20211217094257136"></p>
+<p><img src="/Echo/posts/21888/image-20211217094257136.png" alt="image-20211217094257136"></p>
 <h6 id="用户参数–-user-parameters"><a href="#用户参数–-user-parameters" class="headerlink" title="用户参数– user parameters"></a>用户参数– user parameters</h6><p>用户参数用于在取样器中使用变量之前定义变量的值。当JMeter执行此预处理器元素时，会将值存储在变量中，这些变量可由同一线程组中的任何取样器使用。</p>
-<p><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217100245301.png" alt="image-20211217100245301"></p>
+<p><img src="/Echo/posts/21888/image-20211217100245301.png" alt="image-20211217100245301"></p>
 <p>示例超时–sample timeout</p>
 <p>用于定义请求的超时持续时间。例：如果将取样时间设置为 400 毫秒，则所有需要时间的请求&gt;400 都将具有失败的响应。请看下面的截图</p>
-<p><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217134259470.png" alt="image-20211217134259470"></p>
-<p><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217134313658.png" alt="image-20211217134313658"></p>
+<p><img src="/Echo/posts/21888/image-20211217134259470.png" alt="image-20211217134259470"></p>
+<p><img src="/Echo/posts/21888/image-20211217134313658.png" alt="image-20211217134313658"></p>
 <h5 id="控制器"><a href="#控制器" class="headerlink" title="控制器"></a>控制器</h5><p>控制器在构建实时JMeter测试计划方面十分重要，用于定义请求发送到服务器的顺序。JMeter中的控制器有以下：</p>
-<p><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217150511568.png" alt="image-20211217150511568"></p>
+<p><img src="/Echo/posts/21888/image-20211217150511568.png" alt="image-20211217150511568"></p>
 <h6 id="简单控制器–simple-controller"><a href="#简单控制器–simple-controller" class="headerlink" title="简单控制器–simple controller"></a>简单控制器–simple controller</h6><p>简单的控制器不执行任何特定功能。它只是一种容器，您可以在其中保留类似的请求，以使测试计划易于理解。</p>
-<p><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217154100877.png" alt="image-20211217154100877"></p>
+<p><img src="/Echo/posts/21888/image-20211217154100877.png" alt="image-20211217154100877"></p>
 <h6 id="循环控制器–Loop-Controller"><a href="#循环控制器–Loop-Controller" class="headerlink" title="循环控制器–Loop Controller"></a>循环控制器–Loop Controller</h6><p>如果希望某些特定请求运行的迭代次数多于”线程组”中指定的迭代次数，则可以将它们放在”循环控制器”下，然后在控制器设置中输入循环计数。</p>
-<p><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217154238730.png" alt="image-20211217154238730"></p>
+<p><img src="/Echo/posts/21888/image-20211217154238730.png" alt="image-20211217154238730"></p>
 <p>图中的每个取样器将执行6次。</p>
 <h6 id="仅一次控制器–once-ONLY-controller"><a href="#仅一次控制器–once-ONLY-controller" class="headerlink" title="仅一次控制器–once ONLY controller"></a>仅一次控制器–once ONLY controller</h6><p>当您只想运行某个特定请求一次时，即使线程组中有多个线程，也会使用此控制器。可以考虑的最简单的例子是”获取网站主页”或”登录到Web应用程序”。实时方案希望它只发生一次，其他请求（如搜索或编辑&#x2F;删除某些内容）将多次发生。</p>
 <p>仅执行一次的请求可以放在”仅一次控制器”下。截图以供参考。一次 只有控制器设置绕过父线程组设置。</p>
-<p><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217160551520.png" alt="image-20211217160551520"></p>
+<p><img src="/Echo/posts/21888/image-20211217160551520.png" alt="image-20211217160551520"></p>
 <h6 id="录制控制器–HTTP（S）-TEST-Script-Recorder"><a href="#录制控制器–HTTP（S）-TEST-Script-Recorder" class="headerlink" title="录制控制器–HTTP（S） TEST Script Recorder"></a>录制控制器–HTTP（S） TEST Script Recorder</h6><p>就像简单控制器一样，录制控制器不会修改发送到服务器的任何请求序列。它与HTTP（S）脚本记录器一起使用。使用此非测试元素记录的所有请求都保存在记录控制器下。需要指定目标控制器以保存对服务器发出的记录请求。</p>
-<p><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217160800045.png" alt="image-20211217160800045"></p>
+<p><img src="/Echo/posts/21888/image-20211217160800045.png" alt="image-20211217160800045"></p>
 <h6 id="吞吐量控制器–Throughput-controller"><a href="#吞吐量控制器–Throughput-controller" class="headerlink" title="吞吐量控制器–Throughput controller"></a>吞吐量控制器–Throughput controller</h6><p>此控制器还用于控制执行流。如下图所示，该控制器进一步分为两部分：</p>
-<p><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217160905035.png" alt="image-20211217160905035"></p>
+<p><img src="/Echo/posts/21888/image-20211217160905035.png" alt="image-20211217160905035"></p>
 <p>执行百分比–Percent Executions ： 选中后 Jmeter 将仅执行此控制器下采样器总迭代的一定百分比。也可以选中”每用户”复选框以在用户级别进行控制。</p>
 <p>执行总数– total Executions: 将允许用户直接为此控制器下包含的采样器指定迭代次数。</p>
 <h6 id="交错控制器–-interleave-controller"><a href="#交错控制器–-interleave-controller" class="headerlink" title="交错控制器– interleave controller"></a>交错控制器– interleave controller</h6><p>此控制器允许您通过以 n 种方式修改序列来增加性能测试的范围，以便在应用程序以不同的顺序命中请求时测试服务器上的负载。交错控制器在其下方的采样器进行替代选择。</p>
 <p>如果此块下有其他控制器（如 Simple Controller），则交错控制器授予从容器中为每个迭代选择一个采样器的权限。为了进一步解释它，见图</p>
-<p><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217162333245.png" alt="image-20211217162333245"></p>
+<p><img src="/Echo/posts/21888/image-20211217162333245.png" alt="image-20211217162333245"></p>
 <p>Jmeter 将在每次迭代的控制器之间交替迭代。执行顺序为：<em>请求1 -&gt; 请求3 -&gt; 请求 5 – 请求2 -&gt; 请求4 -&gt; 请求6</em></p>
 <h6 id="随机控制器–random-controller"><a href="#随机控制器–random-controller" class="headerlink" title="随机控制器–random controller"></a>随机控制器–random controller</h6><p>顾名思义随机选择子控制器和其中的采样器。工作方式几乎与交错控制器类似，但不按顺序选取采样器。</p>
 <p>条件控制器–If controller</p>
 <p>if 控制器 以类似的方式工作，则以任何编程语言处理 IF 表达式。首先验证条件，然后执行此容器下的组件（如果条件为 TRUE），否则将执行 IF 控制器外部的元素。</p>
-<p><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217165030335.png" alt="image-20211217165030335"></p>
+<p><img src="/Echo/posts/21888/image-20211217165030335.png" alt="image-20211217165030335"></p>
 <p>测试计划设计如下：如果 IF 条件被评估为<strong>False，</strong>则只有 Request3、Request4 和 Request5 将执行。</p>
 <h6 id="while-控制器"><a href="#while-控制器" class="headerlink" title="while 控制器"></a>while 控制器</h6><p>此控制器执行其下的组件，直到条件变为 false。</p>
 <h5 id="JMeter的记录模板"><a href="#JMeter的记录模板" class="headerlink" title="JMeter的记录模板"></a>JMeter的记录模板</h5><p>Jmeter的File目录选择template ，然后切换recording</p>
-<p><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217165849700.png" alt="image-20211217165849700"></p>
+<p><img src="/Echo/posts/21888/image-20211217165849700.png" alt="image-20211217165849700"></p>
 <p>选择此录制模板后，会看到一些组件已添加到测试计划中。</p>
 <ul>
 <li>工作台下的 HTTP 脚本记录器</li>
 <li>HTTP 请求默认值和 HTTP Cookie 管理器</li>
 <li>“线程组”下的记录控制器。</li>
-<li><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217170049709.png" alt="image-20211217170049709"></li>
+<li><img src="/Echo/posts/21888/image-20211217170049709.png" alt="image-20211217170049709"></li>
 </ul>
 
       
@@ -332,7 +332,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/emqtt-bench%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8E%8B%E6%B5%8BMQTTbroker.html">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/posts/38672.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/Echo/images/avatar.gif">
@@ -345,7 +345,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/Echo/emqtt-bench%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8E%8B%E6%B5%8BMQTTbroker.html" class="post-title-link" itemprop="url">emqtt_bench安装与压测MQTTbroker</a>
+          <a href="/Echo/posts/38672.html" class="post-title-link" itemprop="url">emqtt_bench安装与压测MQTTbroker</a>
         </h2>
 
         <div class="post-meta-container">
@@ -395,7 +395,7 @@
 
 <h6 id="2-安装Erlang-22-3"><a href="#2-安装Erlang-22-3" class="headerlink" title="2.安装Erlang 22.3"></a>2.安装Erlang 22.3</h6><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 切换到安装目录此处建议用opt文件夹</span></span><br><span class="line"><span class="built_in">cd</span> /opt</span><br><span class="line"><span class="comment"># 下载Erlang</span></span><br><span class="line">wget http://erlang.org/download/otp_src_22.3.tar.gz</span><br><span class="line"><span class="comment"># 解压</span></span><br><span class="line">tar -zxvf otp_src_22.3</span><br><span class="line">.tar.gz</span><br><span class="line"><span class="comment"># 切换到解压后的erlang安装包</span></span><br><span class="line"><span class="built_in">cd</span> otp_src_22.3</span><br><span class="line"><span class="comment"># 开始安装</span></span><br><span class="line">./configure &amp; make &amp; make install</span><br><span class="line"><span class="comment"># 查看版本</span></span><br><span class="line">erl</span><br></pre></td></tr></table></figure>
 
-<p><img src="/Echo/emqtt-bench%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8E%8B%E6%B5%8BMQTTbroker/image-20211216170648216.png" alt="image-20211216170648216"></p>
+<p><img src="/Echo/posts/38672/image-20211216170648216.png" alt="image-20211216170648216"></p>
 <h6 id="3-安装新版git（因后续在emqtt-bench-make时centos7自带git版本较低导致问题）"><a href="#3-安装新版git（因后续在emqtt-bench-make时centos7自带git版本较低导致问题）" class="headerlink" title="3.安装新版git（因后续在emqtt_bench make时centos7自带git版本较低导致问题）"></a>3.安装新版git（因后续在emqtt_bench make时centos7自带git版本较低导致问题）</h6><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 更新系统资源包</span></span><br><span class="line">yum install http://opensource.wandisco.com/centos/7/git/x86_64/wandisco-git-release-7-2.noarch.rpm</span><br><span class="line"><span class="comment"># 安装git</span></span><br><span class="line">yum install -y git</span><br><span class="line"><span class="comment"># 查看git版本</span></span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
 
 <p>4.安装emqtt_bench</p>
@@ -404,7 +404,7 @@
 <p>输出Usage: emqtt_bench pub | sub | conn [–help]即为安装成功</p>
 <h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>安装中遇到的问题有以下两个</p>
 <h6 id="1-make失败（报错GUN版本）"><a href="#1-make失败（报错GUN版本）" class="headerlink" title="1.make失败（报错GUN版本）"></a>1.make失败（报错GUN版本）</h6><p>经排查此问题为QUIC功能不能使用导致，使用禁用模式make即可</p>
-<h6 id="2-有部分git资源下载失败"><a href="#2-有部分git资源下载失败" class="headerlink" title="2.有部分git资源下载失败"></a>2.有部分git资源下载失败</h6><p><img src="/Echo/emqtt-bench%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8E%8B%E6%B5%8BMQTTbroker/image-20211216171321403.png" alt="image-20211216171321403"></p>
+<h6 id="2-有部分git资源下载失败"><a href="#2-有部分git资源下载失败" class="headerlink" title="2.有部分git资源下载失败"></a>2.有部分git资源下载失败</h6><p><img src="/Echo/posts/38672/image-20211216171321403.png" alt="image-20211216171321403"></p>
 <p><strong>cd &#x2F;opt&#x2F;emqtt-bench&#x2F;_build&#x2F;default&#x2F;lib&#x2F;quicer&#x2F;msquic&#x2F;submodules</strong></p>
 <p><strong>git clone git:&#x2F;&#x2F;github.com&#x2F;google&#x2F;googletest</strong></p>
 <h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p><code>emqtt_bench</code> 共三个子命令：</p>
@@ -599,7 +599,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/JMeter%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D.html">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/posts/23855.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/Echo/images/avatar.gif">
@@ -612,7 +612,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/Echo/JMeter%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D.html" class="post-title-link" itemprop="url">JMeter组件介绍</a>
+          <a href="/Echo/posts/23855.html" class="post-title-link" itemprop="url">JMeter组件介绍</a>
         </h2>
 
         <div class="post-meta-container">
@@ -647,7 +647,7 @@
     <div class="post-body" itemprop="articleBody">
           <p>在本文中，将熟悉<strong>JMeter 的所有组件，以及如何在测试计划中使用它们</strong>来覆盖所有可能的性能测试场景来测试 AUT（被测应用程序）。</p>
 <h4 id="JMeter的组件"><a href="#JMeter的组件" class="headerlink" title="JMeter的组件"></a>JMeter的组件</h4><p>请参考以下的流程图来了解每个组件及其与JMeter特定模块的关系。</p>
-<p><img src="/Echo/JMeter%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D/JmeterFlowDiagram.jpg" alt="Jmeter流程图"></p>
+<p><img src="/Echo/posts/23855/JmeterFlowDiagram.jpg" alt="Jmeter流程图"></p>
 <h5 id="测试计划–TEST-PLAN"><a href="#测试计划–TEST-PLAN" class="headerlink" title="测试计划–TEST PLAN"></a>测试计划–TEST PLAN</h5><p>测试计划中包含的所有内容都是按从上到下的顺序或者测试计划中定义的顺序执行。测试计划可以尽可能简单，担忧线程组、采样器、监听器，可以添加更多的元素如配置元素、预处理器、控制器或前置&#x2F;后置处理器。</p>
 <p>JMeter是通过虚拟用户或线程来衡量性能，这些虚拟用户或者线程会连接被测服务器，就像真实用户向服务器发送请求一样。因此，每个测试计划都应该有我们JMeter中所称的虚拟用户或者线程组–THREAD GROUP。</p>
 <p>测试计划的要点：</p>
@@ -657,7 +657,7 @@
 <li>还可以将测试计划保存为不同方式，可以在其他测试场景中使用</li>
 </ul>
 <h5 id="线程组–THREAD-GROUP"><a href="#线程组–THREAD-GROUP" class="headerlink" title="线程组–THREAD GROUP"></a>线程组–THREAD GROUP</h5><p>线程组是一组用户，他们将同时以定义好的顺序访问被测服务器。可以通过右键单击测试计划将线程组添加到测试计划中。</p>
-<p><img src="/Echo/JMeter%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D/image-20211213103617620.png" alt="线程组"></p>
+<p><img src="/Echo/posts/23855/image-20211213103617620.png" alt="线程组"></p>
 <p>1、你可以重命名线程组名称</p>
 <ul>
 <li><strong>Number of Thread(Users)</strong> ：它定义了虚拟用户的数量。出于测试目的，我们应该只生成有限的负载，因为一次生成大量负载意味着消耗大量线程，最终会导致 CPU 使用率高。</li>
@@ -668,7 +668,7 @@
 <p>JMeter如何知道发送到服务器的请求类型是什么？</p>
 <p>是通过取样器。取样器是必须要添加到测试计划中的，因为只有它可以让JMeter知道需要发送那种类型的请求到那个服务器上以及需要携带什么样的参数。请求是HTTP、websocket、FTP、TCP、SMTP等。</p>
 <p>采样器只能添加到线程组，而不是直接在测试计划下，因为线程组需要使用采样器向被测服务器 URL 发送请求。采样器可以通过路径Thread Group -&gt; Sampler -&gt; HTTP Request 添加。</p>
-<h6 id="HTTP请求示例"><a href="#HTTP请求示例" class="headerlink" title="HTTP请求示例"></a>HTTP请求示例</h6><p><img src="/Echo/JMeter%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D/image-20211213111816981.png" alt="HTTP示例"></p>
+<h6 id="HTTP请求示例"><a href="#HTTP请求示例" class="headerlink" title="HTTP请求示例"></a>HTTP请求示例</h6><p><img src="/Echo/posts/23855/image-20211213111816981.png" alt="HTTP示例"></p>
 <ul>
 <li>server name or ip ：输入服务的IP或者域名</li>
 <li>path： 请求的路径</li>
@@ -679,7 +679,7 @@
 <h5 id="监听器-Listener"><a href="#监听器-Listener" class="headerlink" title="监听器-Listener"></a>监听器-Listener</h5><p>截止到这里，我们已经看到了取样器向服务器发送请求，但是还没有分析响应。性能测试就是分析各种形式的服务器响应，然后将呈现给客户端。监听器用于显示测试执行的结果，以便测试人员了解统计信息。在JMeter中大约有15种监听器，但是常用的是table、tree和graph。</p>
 <p>监听器可以直接在测试计划下或取样器下添加。不同之处在于，当您在取样器下添加侦听器时，它只会显示该取样器的结果。如果我们直接在测试计划下添加取样器，它会显示层次结构中所有取样器的结果。</p>
 <p>会看到如下结果：</p>
-<p><img src="/Echo/JMeter%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D/image-20211214162144747.png" alt="image-20211214162144747"></p>
+<p><img src="/Echo/posts/23855/image-20211214162144747.png" alt="image-20211214162144747"></p>
 <ul>
 <li>Label：一般展示为采样器名称</li>
 <li>samples：请求的总数量</li>
@@ -703,9 +703,9 @@
 <li>HTML断言</li>
 </ul>
 <h6 id="响应时间断言"><a href="#响应时间断言" class="headerlink" title="响应时间断言"></a>响应时间断言</h6><p>在响应断言中，我们可以添加自己的模式字符串，然后将它们与从服务器收到的响应进行比较。<em>例如，</em>当任何请求成功返回某些响应时，您都知道响应代码为 200。因此，如果我们添加模式字符串”响应代码 &#x3D; 202”，则测试用例应该失败。</p>
-<p><img src="/Echo/JMeter%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D/image-20211214195434442.png" alt="image-20211214195434442"></p>
+<p><img src="/Echo/posts/23855/image-20211214195434442.png" alt="image-20211214195434442"></p>
 <h6 id="持续时间断言"><a href="#持续时间断言" class="headerlink" title="持续时间断言"></a>持续时间断言</h6><p>持续时间断言非常重要，可验证服务器是否在给定的时间内进行了响应。这可用于我们需要对 100 个请求进行采样并确保每次收到响应都在基准限制范围内的情况。</p>
-<p><img src="/Echo/JMeter%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D/image-20211214202706648.png" alt="image-20211214202706648"></p>
+<p><img src="/Echo/posts/23855/image-20211214202706648.png" alt="image-20211214202706648"></p>
 <p>XML 断言验证响应数据中是否包含正确的 XML 文档，HTML 断言验证从服务器收到的响应的 HTML 语法。</p>
 <h5 id="元素配置–config-ELements"><a href="#元素配置–config-ELements" class="headerlink" title="元素配置–config ELements"></a>元素配置–config ELements</h5><p>发送到服务器的请求可以使用一些在实际请求之前执行的配置元素进一步参数化。一个简单的示例可能是从使用 CSV 数据集配置的 CSV 文件中读取变量的值。常用的配置元素有如下这些：</p>
 <ul>
@@ -716,17 +716,17 @@
 <li>HTTPS COOKIE MANAGER</li>
 </ul>
 <h6 id="csv数据集配置"><a href="#csv数据集配置" class="headerlink" title="csv数据集配置"></a>csv数据集配置</h6><p>CSV数据集配置可帮助Jmeter从CSV文件中选取某些参数的值，而不是在每个单独的请求中传递不同的参数。<em>例如，</em>如果我们需要使用一组不同的用户和密码来测试登录功能，那么我们可以在CSV文件中创建两列并在那里输入值，以便JMeter可以为发送到服务器的每个请求选择一个。</p>
-<p><img src="/Echo/JMeter%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D/image-20211216160753990.png" alt="image-20211216160753990"></p>
+<p><img src="/Echo/posts/23855/image-20211216160753990.png" alt="image-20211216160753990"></p>
 <h6 id="用户定义的变量-User-Defined-Variables"><a href="#用户定义的变量-User-Defined-Variables" class="headerlink" title="用户定义的变量-User Defined Variables"></a>用户定义的变量-User Defined Variables</h6><p>它可以帮助Jmeter从预定义的变量中选取值。<em>例如，</em>支持您需要创建一个测试计划，您需要在同一URL上添加许多HTTP请求，并且可能存在客户端计划稍后将其迁移到某些不同 URL.So 的情况，以避免在每个请求中更新URL，我们可以告诉JMeter从UDV（用户定义的变量）中选取URL，该UDV可以在以后更新以处理对更新的URL的所有请求。</p>
 <p>因此，为了避免在每个请求中更新URL，我们可以告诉JMeter从UDV（用户定义的变量）中选择URL，该UDV可以在以后更新以处理对更新URL的所有请求。</p>
-<p><img src="/Echo/JMeter%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D/image-20211216161303245.png" alt="image-20211216161303245"></p>
+<p><img src="/Echo/posts/23855/image-20211216161303245.png" alt="image-20211216161303245"></p>
 <h6 id="HTTP-请求默认值"><a href="#HTTP-请求默认值" class="headerlink" title="HTTP 请求默认值"></a>HTTP 请求默认值</h6><p>此配置元素对于指定 https 请求的默认值非常有用。为了指导您更多，请举个例子，我们需要在Google服务器上命中50个不同的请求。在这种情况下，如果我们添加HTTP请求默认值，则无需指定服务器名称，路径或任何其他属性，如端口号，连接超时属性。在 HTTP 请求默认配置元素中指定的任何内容都将由所有 HTTP 请求继承。</p>
 <p>在这种情况下，如果我们添加HTTP请求默认值，则无需指定服务器名称，路径或任何其他属性，如端口号，连接超时属性。在 HTTP 请求默认配置元素中指定的任何内容都将由所有 HTTP 请求继承。</p>
-<p><img src="/Echo/JMeter%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D/image-20211216161420935.png" alt="image-20211216161420935"></p>
+<p><img src="/Echo/posts/23855/image-20211216161420935.png" alt="image-20211216161420935"></p>
 <p><strong>HTTP Cache Manager</strong>和<strong>HTTP Cookie Manager</strong>用于使 JMeter 充当实时浏览器。HTTP缓存管理器可以在每个请求后清除缓存，而另一个可以管理cookie设置。</p>
 <h5 id="逻辑控制器和定时器"><a href="#逻辑控制器和定时器" class="headerlink" title="逻辑控制器和定时器"></a>逻辑控制器和定时器</h5><p>逻辑控制器和定时器帮助Jmeter控制交易流。如果需要测试任何服务器，计时器可确保每个线程中的延迟。<em>例如，</em>如果我们需要FTP请求在HTTP请求完成后等待5秒，我们可以在那里添加计时器。</p>
 <p>逻辑控制器用于定义发送到服务器的请求流。它还可以让您分别存储每个模块的请求，例如登录和注销。</p>
-<p><img src="/Echo/JMeter%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D/image-20211216161518560.png" alt="image-20211216161518560"></p>
+<p><img src="/Echo/posts/23855/image-20211216161518560.png" alt="image-20211216161518560"></p>
 <h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><p>到目前为止，一定都熟悉了JMeter的组件，并尝试过使用它，并且一定面临一些问题。在下一篇文章中，将介绍一些涵盖移动领域的实时性能测试场景，以便大家获得更多关于JMeter的实践知识。</p>
 <p><strong>敬请期待！下一篇文章将帮助管理请求，分析结果并与性能测试的基准进行比较。</strong></p>
 
@@ -755,7 +755,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%BB%84%E4%BB%B6kafka%E6%B5%8B%E8%AF%95.html">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/posts/12976.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/Echo/images/avatar.gif">
@@ -768,7 +768,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/Echo/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%BB%84%E4%BB%B6kafka%E6%B5%8B%E8%AF%95.html" class="post-title-link" itemprop="url">kafka测试</a>
+          <a href="/Echo/posts/12976.html" class="post-title-link" itemprop="url">kafka测试</a>
         </h2>
 
         <div class="post-meta-container">
@@ -867,7 +867,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/JMeter%E4%BB%8B%E7%BB%8D.html">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/posts/20349.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/Echo/images/avatar.gif">
@@ -880,7 +880,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/Echo/JMeter%E4%BB%8B%E7%BB%8D.html" class="post-title-link" itemprop="url">JMeter介绍</a>
+          <a href="/Echo/posts/20349.html" class="post-title-link" itemprop="url">JMeter介绍</a>
         </h2>
 
         <div class="post-meta-container">
@@ -922,7 +922,7 @@
 <li>因此，在不同的工作负载（用户数量）下性能会发生变化。  这种类型的测试非常重要，因为无论您的应用程序有多么好的设计和功能，但如果它的性能很差，那么很有可能失去所有潜在的目标受众 。</li>
 </ul>
 <p>通过下图我们可以清晰看到比较</p>
-<p><img src="/Echo/JMeter%E4%BB%8B%E7%BB%8D/FlowDiagram.jpg" alt="FlowDiagram"></p>
+<p><img src="/Echo/posts/20349/FlowDiagram.jpg" alt="FlowDiagram"></p>
 <h6 id="性能测试主要考虑以下参数："><a href="#性能测试主要考虑以下参数：" class="headerlink" title="性能测试主要考虑以下参数："></a>性能测试主要考虑以下参数：</h6><ul>
 <li><strong>吞吐量</strong> - 它被定义为每秒的事务数。 例：假设银行客户服务一次只能处理 30 个呼叫，因此其余呼叫者需要排队。 这意味着吞吐量是 30</li>
 <li><strong>响应时间</strong> ——这个时间是用户从服务器收到响应所用的时间 </li>
@@ -1023,7 +1023,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/Flume%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0.html">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/posts/52981.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/Echo/images/avatar.gif">
@@ -1036,7 +1036,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/Echo/Flume%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0.html" class="post-title-link" itemprop="url">Flume日志采集框架学习</a>
+          <a href="/Echo/posts/52981.html" class="post-title-link" itemprop="url">Flume日志采集框架学习</a>
         </h2>
 
         <div class="post-meta-container">
@@ -1076,15 +1076,15 @@
 <li>Flume 针对特殊场景也具备良好的自定义扩展能力，因此，Flume 适用于大部分的日常数据采集场景；</li>
 </ul>
 <h4 id="2-运行机制"><a href="#2-运行机制" class="headerlink" title="2. 运行机制"></a>2. 运行机制</h4><p>Flume 分布式系统中最<code>核心的角色是 agent</code>，Flume 采集系统就是由一个个 agent 所连接起来形成的；</p>
-<p><img src="/Echo/Flume%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/image-20211114152336278.png" alt="image-20211114152336278"></p>
+<p><img src="/Echo/posts/52981/image-20211114152336278.png" alt="image-20211114152336278"></p>
 <p> 每一个 agent 相当于一个数据传递员，内部有三个组件：</p>
 <ul>
 <li>Source：&#96; 采集组件，用于与众多数据源对接，以获取数据；</li>
 <li>Channel：&#96; 传输通道组件，用于从 Source 将数据传递到 Sink；</li>
 <li>Sink：&#96; 下沉组件，用于往下一级 agent 传递数据 或者 往最终存储系统传递数据；</li>
 </ul>
-<h4 id="3-单个agent采集数据"><a href="#3-单个agent采集数据" class="headerlink" title="3.单个agent采集数据"></a>3.单个agent采集数据</h4><p><img src="/Echo/Flume%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/image-20211114152023931.png" alt="image-20211114152023931"></p>
-<h4 id="4-多个agent采集数据"><a href="#4-多个agent采集数据" class="headerlink" title="4.多个agent采集数据"></a>4.多个agent采集数据</h4><p><img src="/Echo/Flume%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/image-20211114152057458.png" alt="image-20211114152057458"></p>
+<h4 id="3-单个agent采集数据"><a href="#3-单个agent采集数据" class="headerlink" title="3.单个agent采集数据"></a>3.单个agent采集数据</h4><p><img src="/Echo/posts/52981/image-20211114152023931.png" alt="image-20211114152023931"></p>
+<h4 id="4-多个agent采集数据"><a href="#4-多个agent采集数据" class="headerlink" title="4.多个agent采集数据"></a>4.多个agent采集数据</h4><p><img src="/Echo/posts/52981/image-20211114152057458.png" alt="image-20211114152057458"></p>
 
       
     </div>
@@ -1111,7 +1111,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/Yarn-ResourceManager-REST-API-%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.html">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/posts/57294.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/Echo/images/avatar.gif">
@@ -1124,7 +1124,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/Echo/Yarn-ResourceManager-REST-API-%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.html" class="post-title-link" itemprop="url">Yarn REST API 使用指南</a>
+          <a href="/Echo/posts/57294.html" class="post-title-link" itemprop="url">Yarn REST API 使用指南</a>
         </h2>
 
         <div class="post-meta-container">
@@ -1921,7 +1921,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/springboot%E6%95%B4%E5%90%88shiro%E5%92%8CJWT%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8C%97.html">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/posts/23697.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/Echo/images/avatar.gif">
@@ -1934,7 +1934,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/Echo/springboot%E6%95%B4%E5%90%88shiro%E5%92%8CJWT%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8C%97.html" class="post-title-link" itemprop="url">springboot整合shiro和JWT使用指北</a>
+          <a href="/Echo/posts/23697.html" class="post-title-link" itemprop="url">springboot整合shiro和JWT使用指北</a>
         </h2>
 
         <div class="post-meta-container">
@@ -2040,7 +2040,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/%E8%87%AA%E5%AD%A6.html">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/posts/18745.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/Echo/images/avatar.gif">
@@ -2053,7 +2053,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/Echo/%E8%87%AA%E5%AD%A6.html" class="post-title-link" itemprop="url">拥有未来的能力——“自学”</a>
+          <a href="/Echo/posts/18745.html" class="post-title-link" itemprop="url">拥有未来的能力——“自学”</a>
         </h2>
 
         <div class="post-meta-container">
@@ -2183,7 +2183,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.html">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/posts/46098.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/Echo/images/avatar.gif">
@@ -2196,7 +2196,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/Echo/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.html" class="post-title-link" itemprop="url">jekins环境搭建</a>
+          <a href="/Echo/posts/46098.html" class="post-title-link" itemprop="url">jekins环境搭建</a>
         </h2>
 
         <div class="post-meta-container">
@@ -2277,26 +2277,26 @@
 <h2 id="5-1-访问jekins"><a href="#5-1-访问jekins" class="headerlink" title="5.1 访问jekins"></a>5.1 访问jekins</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://yellow.bigdata:8088</span><br></pre></td></tr></table></figure>
 
 <h2 id="5-2-解锁Jenkins"><a href="#5-2-解锁Jenkins" class="headerlink" title="5.2 解锁Jenkins"></a>5.2 解锁Jenkins</h2><p>依据提示，查看&#x2F;root&#x2F;.jenkins&#x2F;secrets&#x2F;initialAdminPassword文件中内容，填入文本框，这里填写的密码，也是admin账号的密码</p>
-<p><img src="/Echo/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113151335779.png" alt="image-20211113151335779"></p>
+<p><img src="/Echo/posts/46098/image-20211113151335779.png" alt="image-20211113151335779"></p>
 <h2 id="5-3-选择插件安装模式"><a href="#5-3-选择插件安装模式" class="headerlink" title="5.3 选择插件安装模式"></a>5.3 选择插件安装模式</h2><p>选择哪种插件的安装方式都可以，对后续操作没有太大影响，若后面有需要可以有针对性的安装插件，本次选择 “<strong>安装推荐的插件</strong>”，此时安装插件节点必须能够联网。</p>
-<p><img src="/Echo/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153312956.png" alt="image-20211113153312956"></p>
-<p><img src="/Echo/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153332209.png" alt="image-20211113153332209"></p>
+<p><img src="/Echo/posts/46098/image-20211113153312956.png" alt="image-20211113153312956"></p>
+<p><img src="/Echo/posts/46098/image-20211113153332209.png" alt="image-20211113153332209"></p>
 <p>打×的插件是由于网络传输导致的安装失败，后面再重新安装即可</p>
 <h2 id="5-4-新建账号或以管理员身份继续"><a href="#5-4-新建账号或以管理员身份继续" class="headerlink" title="5.4 新建账号或以管理员身份继续"></a>5.4 新建账号或以管理员身份继续</h2><p>可以选择使用admin账户继续，后面仍然有机会注册新账户</p>
-<p><img src="/Echo/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153358671.png" alt="image-20211113153358671"></p>
-<h2 id="5-5-实例配置"><a href="#5-5-实例配置" class="headerlink" title="5.5 实例配置"></a>5.5 实例配置</h2><p><img src="/Echo/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153424306.png" alt="image-20211113153424306"></p>
-<h2 id="5-6-开始使用Jenkins"><a href="#5-6-开始使用Jenkins" class="headerlink" title="5.6 开始使用Jenkins"></a>5.6 开始使用Jenkins</h2><p><img src="/Echo/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153454866.png" alt="image-20211113153454866"></p>
-<p><img src="/Echo/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153524832.png" alt="image-20211113153524832"></p>
+<p><img src="/Echo/posts/46098/image-20211113153358671.png" alt="image-20211113153358671"></p>
+<h2 id="5-5-实例配置"><a href="#5-5-实例配置" class="headerlink" title="5.5 实例配置"></a>5.5 实例配置</h2><p><img src="/Echo/posts/46098/image-20211113153424306.png" alt="image-20211113153424306"></p>
+<h2 id="5-6-开始使用Jenkins"><a href="#5-6-开始使用Jenkins" class="headerlink" title="5.6 开始使用Jenkins"></a>5.6 开始使用Jenkins</h2><p><img src="/Echo/posts/46098/image-20211113153454866.png" alt="image-20211113153454866"></p>
+<p><img src="/Echo/posts/46098/image-20211113153524832.png" alt="image-20211113153524832"></p>
 <h2 id="5-7-Jenkins设置中文"><a href="#5-7-Jenkins设置中文" class="headerlink" title="5.7 Jenkins设置中文"></a>5.7 Jenkins设置中文</h2><p>安装插件 Locale plugin , Localization: Chinese (Simplified) , Localization Support Plugin，如果失败就再安装一次</p>
-<p><img src="/Echo/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153552830.png" alt="image-20211113153552830"></p>
+<p><img src="/Echo/posts/46098/image-20211113153552830.png" alt="image-20211113153552830"></p>
 <p>重启：<a target="_blank" rel="noopener" href="http://yellow.bigdata:8088/restart">http://yellow.bigdata:8088/restart</a><br> 如果出现部分汉化，部分没有汉化，则卸载插件，重新安装插件<br> 如果还是存在部分汉化，部分没有汉化的现象，则如下操作：<br> 1.先设置Default Language：zh_US（含义：英文）<br> 2.重启Jenkins<br> 3.再设置Default Language：zh_CN（含义：中文）<br> 4.刷新即可</p>
-<h1 id="6-Jenkins系统管理初始化设置"><a href="#6-Jenkins系统管理初始化设置" class="headerlink" title="6.Jenkins系统管理初始化设置"></a>6.Jenkins系统管理初始化设置</h1><h2 id="6-1-全局工具配置"><a href="#6-1-全局工具配置" class="headerlink" title="6.1 全局工具配置"></a>6.1 全局工具配置</h2><p><img src="/Echo/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153642733.png" alt="image-20211113153642733"></p>
+<h1 id="6-Jenkins系统管理初始化设置"><a href="#6-Jenkins系统管理初始化设置" class="headerlink" title="6.Jenkins系统管理初始化设置"></a>6.Jenkins系统管理初始化设置</h1><h2 id="6-1-全局工具配置"><a href="#6-1-全局工具配置" class="headerlink" title="6.1 全局工具配置"></a>6.1 全局工具配置</h2><p><img src="/Echo/posts/46098/image-20211113153642733.png" alt="image-20211113153642733"></p>
 <p>JDK</p>
-<p><img src="/Echo/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153701355.png" alt="image-20211113153701355"></p>
+<p><img src="/Echo/posts/46098/image-20211113153701355.png" alt="image-20211113153701355"></p>
 <p>Git</p>
-<p><img src="/Echo/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153722363.png" alt="image-20211113153722363"></p>
+<p><img src="/Echo/posts/46098/image-20211113153722363.png" alt="image-20211113153722363"></p>
 <p>Maven</p>
-<p><img src="/Echo/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153742157.png" alt="image-20211113153742157"></p>
+<p><img src="/Echo/posts/46098/image-20211113153742157.png" alt="image-20211113153742157"></p>
 
       
     </div>

@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/Echo/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Echo/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Echo/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/Echo/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="5ZQ9pmEjPOsQmbBYQoUK41fLaMMyEK5pDRa34TE8fW4">
+  <meta name="msvalidate.01" content="58AE2D56435A76DA1BF1341C2E6930C1">
+
+<link rel="stylesheet" href="/Echo/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"hugfeature.github.io","root":"/Echo/","images":"/Echo/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/Echo/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Echo/js/config.js"></script>
+<meta name="description" content="随着信息技术的发展，人们越来越习惯与在网上搜索信息来做出决定，因此网站已经是各类企业的必备之选。但是仅仅拥有一个网站还不够，还需要提供一个信息丰富、可访问和用户友好的网站。为了实现这样的功能，网站要经过良好的测试，这样的测试测试成为B&#x2F;S架构测试即页面测试。 什么是页面测试？页面测试是软件测试中的一种，用于测试网站或者web类应用程序是否存在一些问题。在上线之前要对基于页面的应用程序进行">
+<meta property="og:type" content="article">
+<meta property="og:title" content="B&#x2F;S架构如何测试">
+<meta property="og:url" content="https://hugfeature.github.io/Echo/posts/43079.html">
+<meta property="og:site_name" content="测试的名义">
+<meta property="og:description" content="随着信息技术的发展，人们越来越习惯与在网上搜索信息来做出决定，因此网站已经是各类企业的必备之选。但是仅仅拥有一个网站还不够，还需要提供一个信息丰富、可访问和用户友好的网站。为了实现这样的功能，网站要经过良好的测试，这样的测试测试成为B&#x2F;S架构测试即页面测试。 什么是页面测试？页面测试是软件测试中的一种，用于测试网站或者web类应用程序是否存在一些问题。在上线之前要对基于页面的应用程序进行">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-02-04T01:41:42.000Z">
+<meta property="article:modified_time" content="2022-02-04T01:41:42.000Z">
+<meta property="article:author" content="丑牛">
+<meta property="article:tag" content="测试">
+<meta property="article:tag" content="页面测试">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://hugfeature.github.io/Echo/posts/43079.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://hugfeature.github.io/Echo/posts/43079.html","path":"posts/43079.html","title":"B/S架构如何测试"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>B/S架构如何测试 | 测试的名义</title>
+  
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-SY6RK3NESF","only_pageview":true}</script>
+  <script src="/Echo/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+  <script async src="https://www.clarity.ms/tag/myblog"></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/Echo/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/Echo/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">测试的名义</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Stay hungry, Stay foolish</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/Echo/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/Echo/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-categories"><a href="/Echo/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-commonweal"><a href="/Echo/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E9%A1%B5%E9%9D%A2%E6%B5%8B%E8%AF%95%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">什么是页面测试？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E9%A1%B5%E9%9D%A2%E6%B5%8B%E8%AF%95%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.</span> <span class="nav-text">常见的页面测试类型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95"><span class="nav-number">2.1.</span> <span class="nav-text">功能测试</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E9%93%BE%E6%8E%A5%E6%B5%8B%E8%AF%95"><span class="nav-number">2.1.1.</span> <span class="nav-text">链接测试</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%A1%A8%E5%8D%95%E6%B5%8B%E8%AF%95"><span class="nav-number">2.1.2.</span> <span class="nav-text">表单测试</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#cookie%E6%B5%8B%E8%AF%95"><span class="nav-number">2.1.3.</span> <span class="nav-text">cookie测试</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#HTML-x2F-CSS%E6%B5%8B%E8%AF%95"><span class="nav-number">2.1.4.</span> <span class="nav-text">HTML&#x2F;CSS测试</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B5%8B%E8%AF%95"><span class="nav-number">2.1.5.</span> <span class="nav-text">数据库连接测试</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E9%93%BE%E6%8E%A5"><span class="nav-number">2.1.6.</span> <span class="nav-text">链接</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%A1%A8%E6%A0%BC"><span class="nav-number">2.1.7.</span> <span class="nav-text">表格</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">2.1.8.</span> <span class="nav-text">数据库</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8F%AF%E7%94%A8%E6%80%A7%E6%B5%8B%E8%AF%95"><span class="nav-number">2.2.</span> <span class="nav-text">可用性测试</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AF%BC%E8%88%AA%E6%B5%8B%E8%AF%95"><span class="nav-number">2.3.</span> <span class="nav-text">导航测试</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%8F%AF%E7%94%A8%E6%80%A7%E6%B5%8B%E8%AF%95%E5%BA%94%E5%8C%85%E6%8B%AC%E4%BB%A5%E4%B8%8B%E5%86%85%E5%AE%B9"><span class="nav-number">2.3.1.</span> <span class="nav-text">可用性测试应包括以下内容</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%86%85%E5%AE%B9%E6%A3%80%E6%9F%A5"><span class="nav-number">2.3.2.</span> <span class="nav-text">内容检查</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%94%A8%E4%BA%8E%E5%B8%AE%E5%8A%A9%E7%94%A8%E6%88%B7%E6%90%9C%E7%B4%A2%E4%BF%A1%E6%81%AF"><span class="nav-number">2.3.3.</span> <span class="nav-text">用于帮助用户搜索信息</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95"><span class="nav-number">2.4.</span> <span class="nav-text">接口测试</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%85%BC%E5%AE%B9%E6%80%A7%E6%B5%8B%E8%AF%95"><span class="nav-number">2.5.</span> <span class="nav-text">兼容性测试</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9%E6%80%A7%EF%BC%9A"><span class="nav-number">2.5.1.</span> <span class="nav-text">浏览器兼容性：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%85%BC%E5%AE%B9%E6%80%A7%EF%BC%9A"><span class="nav-number">2.5.2.</span> <span class="nav-text">操作系统兼容性：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%A7%BB%E5%8A%A8%E6%B5%8F%E8%A7%88%EF%BC%9A"><span class="nav-number">2.5.3.</span> <span class="nav-text">移动浏览：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%89%93%E5%8D%B0%E9%80%89%E9%A1%B9%EF%BC%9A"><span class="nav-number">2.5.4.</span> <span class="nav-text">打印选项：</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95"><span class="nav-number">2.6.</span> <span class="nav-text">性能测试</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E9%80%9F%E5%BA%A6"><span class="nav-number">2.6.1.</span> <span class="nav-text">连接速度</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E9%A1%B5%E9%9D%A2%E5%8A%A0%E8%BD%BD"><span class="nav-number">2.6.2.</span> <span class="nav-text">页面加载</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95"><span class="nav-number">2.6.3.</span> <span class="nav-text">压力测试</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%89%E5%85%A8%E6%B5%8B%E8%AF%95"><span class="nav-number">2.7.</span> <span class="nav-text">安全测试</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">丑牛</p>
+  <div class="site-description" itemprop="description">曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-categories">
+          <a href="/Echo/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/Echo/tags/">
+        <span class="site-state-item-count">51</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hugfeature/" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hugfeature&#x2F;" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/hugfeature" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/posts/43079.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Echo/images/avatar.gif">
+      <meta itemprop="name" content="丑牛">
+      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="测试的名义">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          B/S架构如何测试
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-02-04 09:41:42" itemprop="dateCreated datePublished" datetime="2022-02-04T09:41:42+08:00">2022-02-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Echo/categories/%E6%B5%8B%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">测试</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>随着信息技术的发展，人们越来越习惯与在网上搜索信息来做出决定，因此网站已经是各类企业的必备之选。但是仅仅拥有一个网站还不够，还需要提供一个信息丰富、可访问和用户友好的网站。为了实现这样的功能，网站要经过良好的测试，这样的测试测试成为B&#x2F;S架构测试即页面测试。</p>
+<h4 id="什么是页面测试？"><a href="#什么是页面测试？" class="headerlink" title="什么是页面测试？"></a>什么是页面测试？</h4><p>页面测试是软件测试中的一种，用于测试网站或者web类应用程序是否存在一些问题。在上线之前要对基于页面的应用程序进行完整测试。</p>
+<p>基于页面的系统在面向最终用户上线之前，需要进行端到端的全面的测试。</p>
+<p>通过页面测试，可以确保基于页面的系统正常运行，且可以被用户接受，UI测试和功能测试是页面测试的首选。</p>
+<h4 id="常见的页面测试类型"><a href="#常见的页面测试类型" class="headerlink" title="常见的页面测试类型"></a>常见的页面测试类型</h4><ul>
+<li>功能测试</li>
+<li>可用性测试</li>
+<li>接口测试</li>
+<li>兼容性测试</li>
+<li>性能测试</li>
+<li>安全测试</li>
+</ul>
+<h5 id="功能测试"><a href="#功能测试" class="headerlink" title="功能测试"></a>功能测试</h5><p>测试页面中所有的链接，数据库连接，页面中用于提交或获取用户信息的表单，Cookie测试等</p>
+<h6 id="链接测试"><a href="#链接测试" class="headerlink" title="链接测试"></a>链接测试</h6><ul>
+<li>测试从所有页面到受测特定域的传出链接。</li>
+<li>测试所有内部链接。</li>
+<li>测试链接跳转到同一页面。</li>
+<li>测试链接用于从网页向管理员或其他用户发送电子邮件。</li>
+<li>测试以查看是否存在任何孤立页面。</li>
+<li>最后，链接检查包括，检查上述所有链接中的断开链接。</li>
+</ul>
+<h6 id="表单测试"><a href="#表单测试" class="headerlink" title="表单测试"></a>表单测试</h6><p>表单在任何网站都是不可或缺的，一般用于接收来自用户信息。如何进行表单测试呢？</p>
+<ul>
+<li>首先，检查每个字段的所有验证。</li>
+<li>检查字段中的默认值。</li>
+<li>表单中对表单中字段的错误输入。</li>
+<li>用于创建表单的选项（如果有）、表单删除、查看或修改表单。</li>
+</ul>
+<h6 id="cookie测试"><a href="#cookie测试" class="headerlink" title="cookie测试"></a>cookie测试</h6><p>Cookie 是存储在用户计算机上的小文件。这些基本上用于维护会话 - 主要是登录会话。通过在浏览器选项中启用或禁用 Cookie 来测试应用程序。</p>
+<p>在写入用户计算机之前，测试 Cookie 是否已加密。如果您正在测试会话 Cookie（即在会话结束后过期的 Cookie），请在会话结束后检查登录会话和用户统计信息。通过删除 Cookie 来检查对应用程序安全的影响。</p>
+<h6 id="HTML-x2F-CSS测试"><a href="#HTML-x2F-CSS测试" class="headerlink" title="HTML&#x2F;CSS测试"></a>HTML&#x2F;CSS测试</h6><p>如果您正在为搜索引擎优化您的网站，那么HTML &#x2F; CSS验证是最重要的。主要验证网站的HTML语法错误。检查该网站是否可被不同的搜索引擎抓取。</p>
+<h6 id="数据库连接测试"><a href="#数据库连接测试" class="headerlink" title="数据库连接测试"></a>数据库连接测试</h6><p>数据一致性在 Web 应用程序中也非常重要。在编辑、删除、修改表单或执行任何与数据库相关的功能时检查数据完整性和错误。</p>
+<p>检查是否正确执行了所有数据库查询，检索了数据并正确更新了数据。有关数据库测试的更多信息可能是数据库上的负载，我们将在下面的Web负载或性能测试中解决此问题。</p>
+<p>在测试网站功能时，还应该测试以下内容：</p>
+<h6 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h6><p>i. 内部链接<br>ii.外部链接<br>iii.邮件链接<br>iv.断开的链接</p>
+<h6 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h6><ol>
+<li>字段验证</li>
+<li>错误输入的错误消息</li>
+<li>可选和必填字段</li>
+</ol>
+<h6 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h6><p>测试将针对数据库完整性进行。</p>
+<h5 id="可用性测试"><a href="#可用性测试" class="headerlink" title="可用性测试"></a>可用性测试</h5><p>可用性测试是测量系统的人机交互特性，并确定不足以进行纠正。</p>
+<h5 id="导航测试"><a href="#导航测试" class="headerlink" title="导航测试"></a>导航测试</h5><p>导航是指用户如何浏览网页、不同的控件（如按钮、框）或用户如何使用页面上的链接浏览不同的页面。</p>
+<h6 id="可用性测试应包括以下内容"><a href="#可用性测试应包括以下内容" class="headerlink" title="可用性测试应包括以下内容"></a>可用性测试应包括以下内容</h6><ul>
+<li>该网站应易于使用。</li>
+<li>所提供的说明应非常清楚。</li>
+<li>检查提供的说明是否完全符合其目的。</li>
+<li>每个页面上都应提供主菜单。</li>
+<li>它应该足够一致。</li>
+</ul>
+<h6 id="内容检查"><a href="#内容检查" class="headerlink" title="内容检查"></a>内容检查</h6><p>内容应符合逻辑且易于理解。检查拼写错误。深色背景使用会让用户不喜欢，不应在网站主题中使用。应该遵循一些用于网页和内容构建的标准颜色。这些是普遍接受的标准。内容应该是有意义的。所有锚文本链接都应正常工作。图像应以适当的尺寸正确放置。这些是页面开发中应遵循的一些基本重要标准。你的任务是验证所有内容以进行 UI 测试。</p>
+<h6 id="用于帮助用户搜索信息"><a href="#用于帮助用户搜索信息" class="headerlink" title="用于帮助用户搜索信息"></a>用于帮助用户搜索信息</h6><p>与搜索选项一样，站点地图也有助于处理文件等。站点地图应与网站上的所有链接一起提供，并具有正确的导航树视图。检查站点地图上的所有链接。</p>
+<p>“在网站中搜索”选项将帮助用户轻松快速地找到他们正在寻找的内容页面。这些都是可选项目，如果存在，则应对其进行验证。</p>
+<h5 id="接口测试"><a href="#接口测试" class="headerlink" title="接口测试"></a>接口测试</h5><p>在页面测试中，应测试服务器端接口。这可以通过验证通信是否正确完成。应测试服务器与软件、硬件、网络和数据库的兼容性。</p>
+<p>主要接口有：</p>
+<ul>
+<li>页面服务器和应用程序服务器接口</li>
+<li>应用程序服务器和数据库服务器接口。</li>
+</ul>
+<p>检查这些服务器之间的所有交互是否都已执行，错误是否得到正确处理。如果数据库或 Web 服务器为应用程序服务器的任何查询返回错误消息，那么应用程序服务器应捕获这些错误消息并将其适当地显示给用户。</p>
+<p>检查如果用户中断其中的任何事务会发生什么情况？检查如果与Web服务器的连接在两者之间重置会发生什么？</p>
+<h5 id="兼容性测试"><a href="#兼容性测试" class="headerlink" title="兼容性测试"></a>兼容性测试</h5><p>网站的兼容性是一个非常重要的测试方面。查看要执行的兼容性测试：</p>
+<ul>
+<li>浏览器兼容性</li>
+<li>操作系统兼容性</li>
+<li>移动浏览</li>
+<li>打印选项</li>
+</ul>
+<h6 id="浏览器兼容性："><a href="#浏览器兼容性：" class="headerlink" title="浏览器兼容性："></a>浏览器兼容性：</h6><p>在我的网络测试生涯中，我经历过这是网站测试中最具影响力的部分。<br>某些应用程序非常依赖于浏览器。不同的浏览器具有不同的配置和设置，您的网页应与之兼容。</p>
+<p>您的网站编码应该是跨浏览器平台兼容的。如果您正在使用 Java 脚本或 AJAX 调用 UI 功能，则执行安全检查或验证会给页面应用程序的浏览器兼容性测试带来更多压力。</p>
+<p>在不同的浏览器上测试页面应用程序，如Edge，Firefox，Chrome，Netscape Navigator，AOL，Safari，Opera浏览器和不同版本。</p>
+<h6 id="操作系统兼容性："><a href="#操作系统兼容性：" class="headerlink" title="操作系统兼容性："></a>操作系统兼容性：</h6><p>Web 应用程序中的某些功能是它可能不与所有操作系统兼容。Web开发中使用的所有新技术，如图形设计和界面调用（如不同的API）可能并非在所有操作系统中都可用。</p>
+<p>因此，在具有不同操作系统风格的Windows，Unix，MAC，Linux，Solaris等不同操作系统上测试您的Web应用程序。</p>
+<h6 id="移动浏览："><a href="#移动浏览：" class="headerlink" title="移动浏览："></a>移动浏览：</h6><p>在移动浏览器上测试网页。移动设备上也可能存在兼容性问题。</p>
+<h6 id="打印选项："><a href="#打印选项：" class="headerlink" title="打印选项："></a>打印选项：</h6><p>如果要提供页面打印选项，请确保字体，页面对齐方式，页面图形等正确打印。页面应适合纸张大小或根据打印选项中提到的大小。</p>
+<h5 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h5><p>页面 应用程序应承受重负载。页面性能测试应包括：</p>
+<ul>
+<li>网络负载测试</li>
+<li>网络压力测试</li>
+</ul>
+<p>在不同的互联网连接速度下测试应用程序性能。</p>
+<p>页面负载测试：需要测试是否有多个用户正在访问或请求同一页面。系统能否维持峰值负载时间？站点应处理许多并发用户请求、来自用户的大量输入数据、同时连接到数据库、特定页面上的重负载等。</p>
+<p>网络压力测试：通常，应力意味着将系统拉伸到其指定的限值之外。执行页面压力测试以通过施加压力来破坏站点，并检查系统如何对压力做出反应以及如何从崩溃中恢复。压力通常放在输入字段，登录和注册区域。</p>
+<p>在页面性能中，在不同操作系统和不同硬件平台上测试网站功能时，会检查软件和硬件内存泄漏错误。</p>
+<p>性能测试可用于了解网站的可伸缩性，或对第三方产品（如服务器和中间件）环境中的性能进行基准测试，以便进行潜在购买。</p>
+<h6 id="连接速度"><a href="#连接速度" class="headerlink" title="连接速度"></a>连接速度</h6><p>在各种网络上经过测试，如拨号，ISDN等。</p>
+<h6 id="页面加载"><a href="#页面加载" class="headerlink" title="页面加载"></a>页面加载</h6><p>页面加载性能可以用Lighthouse进行测试。</p>
+<p>i.每次最多承受用户数？<br>ii. 检查峰值负载和系统的行为方式</p>
+<p>iii.用户访问的大量数据</p>
+<h6 id="压力测试"><a href="#压力测试" class="headerlink" title="压力测试"></a>压力测试</h6><p>i. 连续载荷<br>ii.内存、CPU、文件处理等性能</p>
+<h5 id="安全测试"><a href="#安全测试" class="headerlink" title="安全测试"></a>安全测试</h5><p>以下是页面安全测试的一些测试用例：</p>
+<ul>
+<li>通过将内部 URL 直接粘贴到浏览器地址栏中而不登录来进行测试。不应打开内部页面。</li>
+<li>如果您使用用户名和密码登录并浏览内部页面，请尝试直接更改URL选项。即，如果您正在检查一些发布者站点统计信息，则发布者站点 ID &#x3D; 123。尝试直接将 URL 站点 ID 参数更改为与登录用户无关的其他站点 ID。应拒绝此用户查看其他人的统计信息的访问权限。</li>
+<li>尝试在输入字段中输入一些无效的输入，例如登录用户名，密码，输入文本框等。检查系统对所有无效输入的反应。</li>
+<li>页面目录和文件不应直接访问，除非为它们提供了下载选项。</li>
+<li>测试验证码以自动执行脚本登录。</li>
+<li>测试 SSL 是否用于安全措施。如果使用，当用户从不安全的页面HTTP:&#x2F;&#x2F;切换到安全 HTTPS:&#x2F;&#x2F; 页面时，应显示正确的消息，反之亦然。</li>
+<li>所有事务、错误消息和安全漏洞尝试都应记录在服务器上某个位置的日志文件中。</li>
+</ul>
+<p>测试页面安全性的主要原因是识别潜在的漏洞并随后修复它们。</p>
+<ul>
+<li>网络扫描</li>
+<li>漏洞扫描</li>
+<li>密码破解</li>
+<li>日志审查</li>
+<li>完整性检查器</li>
+<li>病毒检测</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>丑牛
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://hugfeature.github.io/Echo/posts/43079.html" title="B&#x2F;S架构如何测试">https://hugfeature.github.io/Echo/posts/43079.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/Echo/tags/%E6%B5%8B%E8%AF%95/" rel="tag"># 测试</a>
+              <a href="/Echo/tags/%E9%A1%B5%E9%9D%A2%E6%B5%8B%E8%AF%95/" rel="tag"># 页面测试</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Echo/posts/12213.html" rel="prev" title="测试方法">
+                  <i class="fa fa-chevron-left"></i> 测试方法
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Echo/posts/39691.html" rel="next" title="不同类型的页面应该如何测试">
+                  不同类型的页面应该如何测试 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">丑牛</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/Echo/js/comments.js"></script><script src="/Echo/js/utils.js"></script><script src="/Echo/js/motion.js"></script><script src="/Echo/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/Echo/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"hugfeature","repo":"myBlogTalk","client_id":"f4b1fae431a4943a75f3","client_secret":"2b6995c484ff0a0a920d65ac7fd5bb1bf13fb2f2","admin_user":null,"distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"f1061f338b5c92902e2bf80cb966030a"}</script>
+<script src="/Echo/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

@@ -1,8 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>2022年软件测试趋势</title>
+    <url>/Echo/posts/59445.html</url>
+    <content><![CDATA[<p>技术呈指数级和前所未有的变化影响了组织开发、验证、交付和操作软件的方式。</p>
+<p>因此，这些组织必须通过寻找解决方案来不断创新和改造自己，以优化实践和工具，以快速开发和交付高质量的软件。</p>
+<p>软件测试约占项目总工作量的30%，是更改和改进的重要焦点。测试实践和工具需要不断发展，以应对在系统、环境和数据日益复杂的情况下实现**”快速测试”**的挑战。</p>
+<p>在下面介绍了软件测试的主要趋势，其中许多趋势在过去几年中已经出现。我们观察到，敏捷和DevOps、测试自动化、用于测试的人工智能和API测试自动化是2022年和未来几年最引人注目的趋势。</p>
+<h4 id="1、敏捷和Devops"><a href="#1、敏捷和Devops" class="headerlink" title="1、敏捷和Devops"></a>1、敏捷和Devops</h4><p>敏捷已经视为对快速变化的需求的回应，并将DevOps视为对速度需求的响应。</p>
+<p>DevOps 涉及实践、规则、流程和工具，有助于集成开发和运营活动，从而缩短从开发到运营的时间。DevOps已成为组织广泛接受的解决方案，这些组织正在寻找缩短从开发到交付和运营的软件生命周期的方法。</p>
+<p>敏捷和DevOps的采用有助于团队更快地开发和交付高质量的软件，这反过来又被称为”速度的测试”。这种采用在过去五年中引起了很大的兴趣，并且在未来几年也将继续加强。</p>
+<h4 id="2、测试自动化"><a href="#2、测试自动化" class="headerlink" title="2、测试自动化"></a>2、测试自动化</h4><p>为了有效地实施 DevOps 实践，软件团队不能忽视测试自动化，因为它是 DevOps 流程的基本要素。</p>
+<p>需要找到机会，用自动化测试取代手动测试。由于测试自动化被认为是DevOps的重要瓶颈，因此至少大多数回归测试都应该是自动化的。</p>
+<p>鉴于DevOps的普及以及测试自动化未得到充分利用的事实，只有不到20%的测试是自动化的，因此在组织中增加测试自动化的采用空间很大。应该出现更先进的方法和工具，以便在项目中更好地利用测试自动化。</p>
+<h4 id="3、-API和服务自动化测试"><a href="#3、-API和服务自动化测试" class="headerlink" title="3、 API和服务自动化测试"></a>3、 API和服务自动化测试</h4><p>将客户端和服务器分离是设计 Web 和移动应用程序的当前趋势。</p>
+<p>API 和服务在多个应用程序或组件中重用。反过来，这些更改要求团队独立于使用它们的应用程序测试 API 和服务。</p>
+<p>当跨客户端应用程序和组件使用 API 和服务时，测试它们比测试客户端更有效和高效。趋势是对API和服务测试自动化的需求继续增加，可能超过最终用户在用户界面上使用的功能。</p>
+<p>为 API 自动化测试提供正确的流程、工具和解决方案比以往任何时候都更加重要。</p>
+<h4 id="4、用于测试AI和ML"><a href="#4、用于测试AI和ML" class="headerlink" title="4、用于测试AI和ML"></a>4、用于测试AI和ML</h4><p>尽管应用人工智能和机器学习（AI &#x2F; ML）方法来解决软件测试中的挑战在软件研究社区中并不新鲜，但AI &#x2F; ML的最新进展以及大量可用的数据为在测试中应用AI &#x2F; ML提供了新的机会。</p>
+<p>然而，AI&#x2F;ML在测试中的应用仍处于早期阶段。扔在寻找在AI &#x2F; ML中优化其测试实践的方法。</p>
+<p>AI&#x2F;ML 算法旨在生成更好的测试用例、测试脚本、测试数据和报告。预测模型将有助于决定在何处、做什么以及何时进行测试。智能分析和可视化支持团队检测故障，了解测试覆盖范围，高风险区域等。</p>
+<p>希望在未来几年看到AI &#x2F; ML在解决质量预测，测试用例优先级，故障分类和分配等问题中的更多应用。</p>
+<h4 id="5、移动测试自动化"><a href="#5、移动测试自动化" class="headerlink" title="5、移动测试自动化"></a>5、移动测试自动化</h4><p>随着移动设备的功能越来越强大，移动应用程序开发的趋势继续增长。</p>
+<p>要完全支持 DevOps，移动测试自动化必须是 DevOps 工具链的一部分。然而，目前移动测试自动化的利用率非常低，部分原因是缺乏方法和工具。</p>
+<p>移动应用的自动化测试趋势持续增加。这种趋势是由缩短上市时间的需求以及用于移动测试自动化的更高级方法和工具所驱动的。</p>
+<h4 id="6、测试环境和测试数据"><a href="#6、测试环境和测试数据" class="headerlink" title="6、测试环境和测试数据"></a>6、测试环境和测试数据</h4><p>物联网（IoT）的快速增长）意味着更多的软件系统在众多不同的环境中运行。这给测试团队带来了确保正确级别的测试覆盖率的挑战。事实上，在敏捷项目中申请测试时，缺乏测试环境和数据是最大的挑战。</p>
+<p>将看到在提供和使用基于云的容器化测试环境方面的增长。AI&#x2F;ML在生成测试数据方面的应用和数据项目的增长，是解决测试数据不足的一些解决方案。</p>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+        <tag>软件测试</tag>
+        <tag>自动化测试</tag>
+        <tag>devops</tag>
+        <tag>敏捷测试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>20个实用软件测试技巧</title>
-    <url>/Echo/20%E4%B8%AA%E5%AE%9E%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%8A%80%E5%B7%A7.html</url>
+    <url>/Echo/posts/51061.html</url>
     <content><![CDATA[<p>以下是个人总结的20个软件测试过程中的技巧</p>
 <p>1、学会彻底分析测试结果。不要忽略任何测试结果。最终测试结果可能是”pass”或”fail”，但如果对”fail”的根本原因进行故障分析并提供问题的解决方案。如果测试人员不仅记录错误，而且还提供解决方案，那么待遇可想而知。</p>
 <p>2、了解如何在每次测试应用程序时最大限度地提高测试覆盖率。100%的测试覆盖率可能是不可能的，但是，总是可以尝试接近它。</p>
@@ -39,7 +77,7 @@
   </entry>
   <entry>
     <title>Azkaban REST API使用指南</title>
-    <url>/Echo/Azkaban-REST-API%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.html</url>
+    <url>/Echo/posts/61742.html</url>
     <content><![CDATA[<h2 id="API文档"><a href="#API文档" class="headerlink" title="API文档"></a>API文档</h2><p>通常，人们又一种无需使用Web UI即可与Azkaban进行交互的愿望。Azkaban有一些公开的ajax调用，可以通过curl或其他一些HTTP请求客户端进行访问。所有API调用都首先需要正确的身份验证。</p>
 <h3 id="授权"><a href="#授权" class="headerlink" title="授权"></a>授权</h3><ul>
 <li><strong>Method:</strong> POST</li>
@@ -751,46 +789,178 @@
       </tags>
   </entry>
   <entry>
-    <title>2022年软件测试趋势</title>
-    <url>/Echo/2022%E5%B9%B4%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E8%B6%8B%E5%8A%BF.html</url>
-    <content><![CDATA[<p>技术呈指数级和前所未有的变化影响了组织开发、验证、交付和操作软件的方式。</p>
-<p>因此，这些组织必须通过寻找解决方案来不断创新和改造自己，以优化实践和工具，以快速开发和交付高质量的软件。</p>
-<p>软件测试约占项目总工作量的30%，是更改和改进的重要焦点。测试实践和工具需要不断发展，以应对在系统、环境和数据日益复杂的情况下实现**”快速测试”**的挑战。</p>
-<p>在下面介绍了软件测试的主要趋势，其中许多趋势在过去几年中已经出现。我们观察到，敏捷和DevOps、测试自动化、用于测试的人工智能和API测试自动化是2022年和未来几年最引人注目的趋势。</p>
-<h4 id="1、敏捷和Devops"><a href="#1、敏捷和Devops" class="headerlink" title="1、敏捷和Devops"></a>1、敏捷和Devops</h4><p>敏捷已经视为对快速变化的需求的回应，并将DevOps视为对速度需求的响应。</p>
-<p>DevOps 涉及实践、规则、流程和工具，有助于集成开发和运营活动，从而缩短从开发到运营的时间。DevOps已成为组织广泛接受的解决方案，这些组织正在寻找缩短从开发到交付和运营的软件生命周期的方法。</p>
-<p>敏捷和DevOps的采用有助于团队更快地开发和交付高质量的软件，这反过来又被称为”速度的测试”。这种采用在过去五年中引起了很大的兴趣，并且在未来几年也将继续加强。</p>
-<h4 id="2、测试自动化"><a href="#2、测试自动化" class="headerlink" title="2、测试自动化"></a>2、测试自动化</h4><p>为了有效地实施 DevOps 实践，软件团队不能忽视测试自动化，因为它是 DevOps 流程的基本要素。</p>
-<p>需要找到机会，用自动化测试取代手动测试。由于测试自动化被认为是DevOps的重要瓶颈，因此至少大多数回归测试都应该是自动化的。</p>
-<p>鉴于DevOps的普及以及测试自动化未得到充分利用的事实，只有不到20%的测试是自动化的，因此在组织中增加测试自动化的采用空间很大。应该出现更先进的方法和工具，以便在项目中更好地利用测试自动化。</p>
-<h4 id="3、-API和服务自动化测试"><a href="#3、-API和服务自动化测试" class="headerlink" title="3、 API和服务自动化测试"></a>3、 API和服务自动化测试</h4><p>将客户端和服务器分离是设计 Web 和移动应用程序的当前趋势。</p>
-<p>API 和服务在多个应用程序或组件中重用。反过来，这些更改要求团队独立于使用它们的应用程序测试 API 和服务。</p>
-<p>当跨客户端应用程序和组件使用 API 和服务时，测试它们比测试客户端更有效和高效。趋势是对API和服务测试自动化的需求继续增加，可能超过最终用户在用户界面上使用的功能。</p>
-<p>为 API 自动化测试提供正确的流程、工具和解决方案比以往任何时候都更加重要。</p>
-<h4 id="4、用于测试AI和ML"><a href="#4、用于测试AI和ML" class="headerlink" title="4、用于测试AI和ML"></a>4、用于测试AI和ML</h4><p>尽管应用人工智能和机器学习（AI &#x2F; ML）方法来解决软件测试中的挑战在软件研究社区中并不新鲜，但AI &#x2F; ML的最新进展以及大量可用的数据为在测试中应用AI &#x2F; ML提供了新的机会。</p>
-<p>然而，AI&#x2F;ML在测试中的应用仍处于早期阶段。扔在寻找在AI &#x2F; ML中优化其测试实践的方法。</p>
-<p>AI&#x2F;ML 算法旨在生成更好的测试用例、测试脚本、测试数据和报告。预测模型将有助于决定在何处、做什么以及何时进行测试。智能分析和可视化支持团队检测故障，了解测试覆盖范围，高风险区域等。</p>
-<p>希望在未来几年看到AI &#x2F; ML在解决质量预测，测试用例优先级，故障分类和分配等问题中的更多应用。</p>
-<h4 id="5、移动测试自动化"><a href="#5、移动测试自动化" class="headerlink" title="5、移动测试自动化"></a>5、移动测试自动化</h4><p>随着移动设备的功能越来越强大，移动应用程序开发的趋势继续增长。</p>
-<p>要完全支持 DevOps，移动测试自动化必须是 DevOps 工具链的一部分。然而，目前移动测试自动化的利用率非常低，部分原因是缺乏方法和工具。</p>
-<p>移动应用的自动化测试趋势持续增加。这种趋势是由缩短上市时间的需求以及用于移动测试自动化的更高级方法和工具所驱动的。</p>
-<h4 id="6、测试环境和测试数据"><a href="#6、测试环境和测试数据" class="headerlink" title="6、测试环境和测试数据"></a>6、测试环境和测试数据</h4><p>物联网（IoT）的快速增长）意味着更多的软件系统在众多不同的环境中运行。这给测试团队带来了确保正确级别的测试覆盖率的挑战。事实上，在敏捷项目中申请测试时，缺乏测试环境和数据是最大的挑战。</p>
-<p>将看到在提供和使用基于云的容器化测试环境方面的增长。AI&#x2F;ML在生成测试数据方面的应用和数据项目的增长，是解决测试数据不足的一些解决方案。</p>
+    <title>BMCweb解释</title>
+    <url>/Echo/posts/31633.html</url>
+    <content><![CDATA[<p><strong>UID****：</strong>定位作用，控制定位灯是否亮起，便于寻找机器</p>
+<p><strong>循环开机</strong>：服务器先关机再开机</p>
+<p><strong>重启</strong>：不关闭电源（热开机）的情况下重新启动系统</p>
+<p>**软关机:**先执行操作系统的关机再关闭系统</p>
+<p><strong>CPU****速率</strong>：cup主频，即CPU<a href="https://baike.baidu.com/item/%E5%86%85%E6%A0%B8">内核</a>工作的<a href="https://baike.baidu.com/item/%E6%97%B6%E9%92%9F%E9%A2%91%E7%8E%87/103708">时钟频率</a>。CPU的主频表示在CPU内数字<a href="https://baike.baidu.com/item/%E8%84%89%E5%86%B2">脉冲</a>信号震荡的速度，主频和实际的<a href="https://baike.baidu.com/item/%E8%BF%90%E7%AE%97%E9%80%9F%E5%BA%A6">运算速度</a>存在一定的关系，但没有一个定量，因为CPU的运算速度还要看CPU的流水线的各方面的性能指标（<a href="https://baike.baidu.com/item/%E7%BC%93%E5%AD%98">缓存</a>、<a href="https://baike.baidu.com/item/%E6%8C%87%E4%BB%A4%E9%9B%86">指令集</a>，CPU的<a href="https://baike.baidu.com/item/%E4%BD%8D%E6%95%B0">位数</a>等等）。</p>
+<p><strong>核心</strong>（Die）又称为内核，是CPU最重要的组成部分。CPU中心那块隆起的芯片就是核心， CPU所有的计算、接受&#x2F;存储命令、处理数据都由核心执行。各种CPU核心都具有固定的逻辑结构，一级缓存、二级缓存、执行单元、指令级单元和总线接口等逻辑单元都会有科学的布局。</p>
+<p><strong>CPU****的核心数</strong>是指物理上，也就是硬件上存在着几个核心。比如，双核就是包括2个相对独立的CPU核心单元组，四核就包含4个相对独立的CPU核心单元组。</p>
+<p><strong>TDP</strong>： Thermal Design Power——散热设计功耗</p>
+<p>大小：一级缓存&lt;二级缓存&lt;三级缓存</p>
+<p>速度：一级缓存&gt;二级缓存&gt;三级缓存</p>
+<p>当CPU需要写入内存的时候通常只更新<a href="http://www.baidu.com/s?wd=%E4%B8%89%E7%BA%A7%E7%BC%93%E5%AD%98&tn=SE_PcZhidaonwhc_ngpagmjz&rsv_dl=gh_pc_zhidao">三级缓存</a>，如果数据写入频繁将会更新到二级乃至一级缓存</p>
+<p><strong>网络控制器</strong>:网卡，又称<a href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E9%80%82%E9%85%8D%E5%99%A8/214428">网络适配器</a>或网络接口卡（NIC），英文名为Network Interface Card。</p>
+<p><strong>带宽</strong>：单位时间内能传输的数据量</p>
+<p><strong>硬盘：</strong>硬盘是集精密机械、微电子电路、电磁转换为一体的电脑存储设备，它存储着电脑系统资源和重要的信息及数据</p>
+<p><strong>额定功率</strong>：正常工作下的功率</p>
+<p><strong>错峰上电</strong>：设定一个时间让服务器随机开机</p>
+<p><strong>PIN</strong>：输入功率</p>
+<p><strong>POUT</strong>:输出功率</p>
+<p><strong>Iin</strong>：电源输入电流</p>
+<p><strong>Iout</strong>:电源电流输出</p>
+<p><strong>Vin</strong>:电源输入电压</p>
+<p><strong>Vout</strong>:电源输出电压</p>
+<p><strong>传感器</strong>（<a href="https://baike.baidu.com/item/%E8%8B%B1%E6%96%87">英文</a>名称：transducer&#x2F;sensor）是一种检测装置，能感受到被测量的信息，并能将感受到的信息，按一定规律变换成为电信号或其他所需形式的信息输出，以满足信息的传输、处理、存储、显示、记录和控制等要求。</p>
+<p><strong>KVM</strong>：就是Keyboard Video Mouse的缩写。KVM <a href="https://baike.baidu.com/item/%E4%BA%A4%E6%8D%A2%E6%9C%BA/103532">交换机</a>通过直接连接键盘、视频和鼠标 (KVM) 端口，让您能够访问和控制计算机。</p>
+<p>**VLAN(**Virtual LAN)， “虚拟局域网”，LAN是网络，VLAN所指的LAN特指使用路由器分割的网络——也就是广播域。</p>
+<p><strong>广播域</strong>，指的是广播帧(目标MAC地址全部为1)所能传递到的范围，亦即能够直接通信的范围。</p>
+<p><strong>域名</strong>：（Domain Name）网域，是由一串用点分隔的名字组成的<a href="https://baike.baidu.com/item/Internet">Internet</a>上某一台<a href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA/140338">计算机</a>或计算机组的名称，用于在数据传输时标识计算机的电子方位（有时也指地理位置）。</p>
+<p><strong>双工模式</strong>：1、全双工： 指可以同时（瞬时）进行信号的双向传输（A→B且B→A）。</p>
+<p>2、半双工：指一个时间内只有一个方向的信号传输（A→B或B→A）。</p>
+<p><strong>端口：</strong>分为逻辑端口和物理端口。物理端口指的是物理存在的端口，如ADSL Modem、<a href="https://baike.baidu.com/item/%E9%9B%86%E7%BA%BF%E5%99%A8">集线器</a>、<a href="https://baike.baidu.com/item/%E4%BA%A4%E6%8D%A2%E6%9C%BA">交换机</a>、<a href="https://baike.baidu.com/item/%E8%B7%AF%E7%94%B1%E5%99%A8">路由器</a>上用 于连接其他<a href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87">网络设备</a>的接口，如<a href="https://baike.baidu.com/item/RJ-45%E7%AB%AF%E5%8F%A3">RJ-45端口</a>、SC端口等等。逻辑端口是指逻辑意义上用于区分服务的端口，如<a href="https://baike.baidu.com/item/TCP%2FIP%E5%8D%8F%E8%AE%AE">TCP&#x2F;IP协议</a>中的服务端口，端口号的范围从0到65535，比如用于浏览网页服务的80端口，用于FTP服务的21端口等。端口号就是端口的编号。</p>
+<p><strong>NTP****服务器：</strong>【Network Time Protocol（NTP）】是用来使计算机<a href="https://baike.baidu.com/item/%E6%97%B6%E9%97%B4%E5%90%8C%E6%AD%A5">时间同步</a>化的一种协议，它可以使计算机对其服务器或时钟源（如石英钟，GPS等等)做同步化，它可以提供高精准度的时间校正，且可介由加密确认的方式来防止恶毒的协议攻击。</p>
+<p><strong>SMTP****：</strong>（Simple Mail Transfer Protocol）即<a href="https://baike.baidu.com/item/%E7%AE%80%E5%8D%95%E9%82%AE%E4%BB%B6%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE">简单邮件传输协议</a>,它是一组用于由源地址到目的地址传送<a href="https://baike.baidu.com/item/%E9%82%AE%E4%BB%B6">邮件</a>的规则，由它来控制信件的中转方式。<a href="https://baike.baidu.com/item/SMTP%E5%8D%8F%E8%AE%AE">SMTP协议</a>属于<a href="https://baike.baidu.com/item/TCP%2FIP%E5%8D%8F%E8%AE%AE%E7%B0%87">TCP&#x2F;IP协议簇</a>，它帮助每台<a href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA/140338">计算机</a>在发送或中转信件时找到下一个目的地。通过SMTP协议所指定的<a href="https://baike.baidu.com/item/%E6%9C%8D%E5%8A%A1%E5%99%A8">服务器</a>,就可以把E-mail寄到收信人的服务器上了，整个过程只要几分钟。SMTP<a href="https://baike.baidu.com/item/%E6%9C%8D%E5%8A%A1%E5%99%A8/100571">服务器</a>则是遵循SMTP协议的发送<a href="https://baike.baidu.com/item/%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8">邮件服务器</a>，用来发送或中转发出的<a href="https://baike.baidu.com/item/%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6/111106">电子邮件</a>。</p>
+<p><strong>网卡：</strong>是工作在链路层的网络组件，是局域网中连接计算机和传输介质的接口，不仅能实现与局域网传输介质之间的物理连接和电信号匹配，还涉及帧的发送与接收、帧的封装与拆封、介质访问控制、数据的编码与解码以及数据缓存的功能等。</p>
+<p><strong>LDAP****：</strong>是轻量<a href="https://baike.baidu.com/item/%E7%9B%AE%E5%BD%95%E8%AE%BF%E9%97%AE%E5%8D%8F%E8%AE%AE">目录访问协议</a>，以树状的层次结构来存储数据。</p>
+<p><strong>SSL</strong>(Secure Sockets Layer <a href="https://baike.baidu.com/item/%E5%AE%89%E5%85%A8%E5%A5%97%E6%8E%A5%E5%B1%82">安全套接层</a>),及其继任者<a href="https://baike.baidu.com/item/%E4%BC%A0%E8%BE%93%E5%B1%82%E5%AE%89%E5%85%A8">传输层安全</a>（Transport Layer Security，TLS）是为<a href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/9636548">网络通信</a>提供安全及<a href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7/110071">数据完整性</a>的一种安全协议。SSL通过互相认证、使用数字签名确保完整性、使用加密确保私密性，以实现客户端和服务器之间的安全通讯。该协议由两层组成：SSL记录协议和SSL握手协议。</p>
+<p><strong>TLS</strong>：(Transport Layer Security，传输层安全协议)，用于两个应用程序之间提供保密性和数据完整性。该协议由两层组成：TLS记录协议和TLS握手协议。</p>
+<p><strong>TLS****与SSL</strong>在<a href="https://baike.baidu.com/item/%E4%BC%A0%E8%BE%93%E5%B1%82/4329536">传输层</a>对网络连接进行加密。　位于可靠的面向连接的网络层协议和应用层协议之间的一种协议层。</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>BMC</tag>
+        <tag>服务器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>B/S架构如何测试</title>
+    <url>/Echo/posts/43079.html</url>
+    <content><![CDATA[<p>随着信息技术的发展，人们越来越习惯与在网上搜索信息来做出决定，因此网站已经是各类企业的必备之选。但是仅仅拥有一个网站还不够，还需要提供一个信息丰富、可访问和用户友好的网站。为了实现这样的功能，网站要经过良好的测试，这样的测试测试成为B&#x2F;S架构测试即页面测试。</p>
+<h4 id="什么是页面测试？"><a href="#什么是页面测试？" class="headerlink" title="什么是页面测试？"></a>什么是页面测试？</h4><p>页面测试是软件测试中的一种，用于测试网站或者web类应用程序是否存在一些问题。在上线之前要对基于页面的应用程序进行完整测试。</p>
+<p>基于页面的系统在面向最终用户上线之前，需要进行端到端的全面的测试。</p>
+<p>通过页面测试，可以确保基于页面的系统正常运行，且可以被用户接受，UI测试和功能测试是页面测试的首选。</p>
+<h4 id="常见的页面测试类型"><a href="#常见的页面测试类型" class="headerlink" title="常见的页面测试类型"></a>常见的页面测试类型</h4><ul>
+<li>功能测试</li>
+<li>可用性测试</li>
+<li>接口测试</li>
+<li>兼容性测试</li>
+<li>性能测试</li>
+<li>安全测试</li>
+</ul>
+<h5 id="功能测试"><a href="#功能测试" class="headerlink" title="功能测试"></a>功能测试</h5><p>测试页面中所有的链接，数据库连接，页面中用于提交或获取用户信息的表单，Cookie测试等</p>
+<h6 id="链接测试"><a href="#链接测试" class="headerlink" title="链接测试"></a>链接测试</h6><ul>
+<li>测试从所有页面到受测特定域的传出链接。</li>
+<li>测试所有内部链接。</li>
+<li>测试链接跳转到同一页面。</li>
+<li>测试链接用于从网页向管理员或其他用户发送电子邮件。</li>
+<li>测试以查看是否存在任何孤立页面。</li>
+<li>最后，链接检查包括，检查上述所有链接中的断开链接。</li>
+</ul>
+<h6 id="表单测试"><a href="#表单测试" class="headerlink" title="表单测试"></a>表单测试</h6><p>表单在任何网站都是不可或缺的，一般用于接收来自用户信息。如何进行表单测试呢？</p>
+<ul>
+<li>首先，检查每个字段的所有验证。</li>
+<li>检查字段中的默认值。</li>
+<li>表单中对表单中字段的错误输入。</li>
+<li>用于创建表单的选项（如果有）、表单删除、查看或修改表单。</li>
+</ul>
+<h6 id="cookie测试"><a href="#cookie测试" class="headerlink" title="cookie测试"></a>cookie测试</h6><p>Cookie 是存储在用户计算机上的小文件。这些基本上用于维护会话 - 主要是登录会话。通过在浏览器选项中启用或禁用 Cookie 来测试应用程序。</p>
+<p>在写入用户计算机之前，测试 Cookie 是否已加密。如果您正在测试会话 Cookie（即在会话结束后过期的 Cookie），请在会话结束后检查登录会话和用户统计信息。通过删除 Cookie 来检查对应用程序安全的影响。</p>
+<h6 id="HTML-x2F-CSS测试"><a href="#HTML-x2F-CSS测试" class="headerlink" title="HTML&#x2F;CSS测试"></a>HTML&#x2F;CSS测试</h6><p>如果您正在为搜索引擎优化您的网站，那么HTML &#x2F; CSS验证是最重要的。主要验证网站的HTML语法错误。检查该网站是否可被不同的搜索引擎抓取。</p>
+<h6 id="数据库连接测试"><a href="#数据库连接测试" class="headerlink" title="数据库连接测试"></a>数据库连接测试</h6><p>数据一致性在 Web 应用程序中也非常重要。在编辑、删除、修改表单或执行任何与数据库相关的功能时检查数据完整性和错误。</p>
+<p>检查是否正确执行了所有数据库查询，检索了数据并正确更新了数据。有关数据库测试的更多信息可能是数据库上的负载，我们将在下面的Web负载或性能测试中解决此问题。</p>
+<p>在测试网站功能时，还应该测试以下内容：</p>
+<h6 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h6><p>i. 内部链接<br>ii.外部链接<br>iii.邮件链接<br>iv.断开的链接</p>
+<h6 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h6><ol>
+<li>字段验证</li>
+<li>错误输入的错误消息</li>
+<li>可选和必填字段</li>
+</ol>
+<h6 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h6><p>测试将针对数据库完整性进行。</p>
+<h5 id="可用性测试"><a href="#可用性测试" class="headerlink" title="可用性测试"></a>可用性测试</h5><p>可用性测试是测量系统的人机交互特性，并确定不足以进行纠正。</p>
+<h5 id="导航测试"><a href="#导航测试" class="headerlink" title="导航测试"></a>导航测试</h5><p>导航是指用户如何浏览网页、不同的控件（如按钮、框）或用户如何使用页面上的链接浏览不同的页面。</p>
+<h6 id="可用性测试应包括以下内容"><a href="#可用性测试应包括以下内容" class="headerlink" title="可用性测试应包括以下内容"></a>可用性测试应包括以下内容</h6><ul>
+<li>该网站应易于使用。</li>
+<li>所提供的说明应非常清楚。</li>
+<li>检查提供的说明是否完全符合其目的。</li>
+<li>每个页面上都应提供主菜单。</li>
+<li>它应该足够一致。</li>
+</ul>
+<h6 id="内容检查"><a href="#内容检查" class="headerlink" title="内容检查"></a>内容检查</h6><p>内容应符合逻辑且易于理解。检查拼写错误。深色背景使用会让用户不喜欢，不应在网站主题中使用。应该遵循一些用于网页和内容构建的标准颜色。这些是普遍接受的标准。内容应该是有意义的。所有锚文本链接都应正常工作。图像应以适当的尺寸正确放置。这些是页面开发中应遵循的一些基本重要标准。你的任务是验证所有内容以进行 UI 测试。</p>
+<h6 id="用于帮助用户搜索信息"><a href="#用于帮助用户搜索信息" class="headerlink" title="用于帮助用户搜索信息"></a>用于帮助用户搜索信息</h6><p>与搜索选项一样，站点地图也有助于处理文件等。站点地图应与网站上的所有链接一起提供，并具有正确的导航树视图。检查站点地图上的所有链接。</p>
+<p>“在网站中搜索”选项将帮助用户轻松快速地找到他们正在寻找的内容页面。这些都是可选项目，如果存在，则应对其进行验证。</p>
+<h5 id="接口测试"><a href="#接口测试" class="headerlink" title="接口测试"></a>接口测试</h5><p>在页面测试中，应测试服务器端接口。这可以通过验证通信是否正确完成。应测试服务器与软件、硬件、网络和数据库的兼容性。</p>
+<p>主要接口有：</p>
+<ul>
+<li>页面服务器和应用程序服务器接口</li>
+<li>应用程序服务器和数据库服务器接口。</li>
+</ul>
+<p>检查这些服务器之间的所有交互是否都已执行，错误是否得到正确处理。如果数据库或 Web 服务器为应用程序服务器的任何查询返回错误消息，那么应用程序服务器应捕获这些错误消息并将其适当地显示给用户。</p>
+<p>检查如果用户中断其中的任何事务会发生什么情况？检查如果与Web服务器的连接在两者之间重置会发生什么？</p>
+<h5 id="兼容性测试"><a href="#兼容性测试" class="headerlink" title="兼容性测试"></a>兼容性测试</h5><p>网站的兼容性是一个非常重要的测试方面。查看要执行的兼容性测试：</p>
+<ul>
+<li>浏览器兼容性</li>
+<li>操作系统兼容性</li>
+<li>移动浏览</li>
+<li>打印选项</li>
+</ul>
+<h6 id="浏览器兼容性："><a href="#浏览器兼容性：" class="headerlink" title="浏览器兼容性："></a>浏览器兼容性：</h6><p>在我的网络测试生涯中，我经历过这是网站测试中最具影响力的部分。<br>某些应用程序非常依赖于浏览器。不同的浏览器具有不同的配置和设置，您的网页应与之兼容。</p>
+<p>您的网站编码应该是跨浏览器平台兼容的。如果您正在使用 Java 脚本或 AJAX 调用 UI 功能，则执行安全检查或验证会给页面应用程序的浏览器兼容性测试带来更多压力。</p>
+<p>在不同的浏览器上测试页面应用程序，如Edge，Firefox，Chrome，Netscape Navigator，AOL，Safari，Opera浏览器和不同版本。</p>
+<h6 id="操作系统兼容性："><a href="#操作系统兼容性：" class="headerlink" title="操作系统兼容性："></a>操作系统兼容性：</h6><p>Web 应用程序中的某些功能是它可能不与所有操作系统兼容。Web开发中使用的所有新技术，如图形设计和界面调用（如不同的API）可能并非在所有操作系统中都可用。</p>
+<p>因此，在具有不同操作系统风格的Windows，Unix，MAC，Linux，Solaris等不同操作系统上测试您的Web应用程序。</p>
+<h6 id="移动浏览："><a href="#移动浏览：" class="headerlink" title="移动浏览："></a>移动浏览：</h6><p>在移动浏览器上测试网页。移动设备上也可能存在兼容性问题。</p>
+<h6 id="打印选项："><a href="#打印选项：" class="headerlink" title="打印选项："></a>打印选项：</h6><p>如果要提供页面打印选项，请确保字体，页面对齐方式，页面图形等正确打印。页面应适合纸张大小或根据打印选项中提到的大小。</p>
+<h5 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h5><p>页面 应用程序应承受重负载。页面性能测试应包括：</p>
+<ul>
+<li>网络负载测试</li>
+<li>网络压力测试</li>
+</ul>
+<p>在不同的互联网连接速度下测试应用程序性能。</p>
+<p>页面负载测试：需要测试是否有多个用户正在访问或请求同一页面。系统能否维持峰值负载时间？站点应处理许多并发用户请求、来自用户的大量输入数据、同时连接到数据库、特定页面上的重负载等。</p>
+<p>网络压力测试：通常，应力意味着将系统拉伸到其指定的限值之外。执行页面压力测试以通过施加压力来破坏站点，并检查系统如何对压力做出反应以及如何从崩溃中恢复。压力通常放在输入字段，登录和注册区域。</p>
+<p>在页面性能中，在不同操作系统和不同硬件平台上测试网站功能时，会检查软件和硬件内存泄漏错误。</p>
+<p>性能测试可用于了解网站的可伸缩性，或对第三方产品（如服务器和中间件）环境中的性能进行基准测试，以便进行潜在购买。</p>
+<h6 id="连接速度"><a href="#连接速度" class="headerlink" title="连接速度"></a>连接速度</h6><p>在各种网络上经过测试，如拨号，ISDN等。</p>
+<h6 id="页面加载"><a href="#页面加载" class="headerlink" title="页面加载"></a>页面加载</h6><p>页面加载性能可以用Lighthouse进行测试。</p>
+<p>i.每次最多承受用户数？<br>ii. 检查峰值负载和系统的行为方式</p>
+<p>iii.用户访问的大量数据</p>
+<h6 id="压力测试"><a href="#压力测试" class="headerlink" title="压力测试"></a>压力测试</h6><p>i. 连续载荷<br>ii.内存、CPU、文件处理等性能</p>
+<h5 id="安全测试"><a href="#安全测试" class="headerlink" title="安全测试"></a>安全测试</h5><p>以下是页面安全测试的一些测试用例：</p>
+<ul>
+<li>通过将内部 URL 直接粘贴到浏览器地址栏中而不登录来进行测试。不应打开内部页面。</li>
+<li>如果您使用用户名和密码登录并浏览内部页面，请尝试直接更改URL选项。即，如果您正在检查一些发布者站点统计信息，则发布者站点 ID &#x3D; 123。尝试直接将 URL 站点 ID 参数更改为与登录用户无关的其他站点 ID。应拒绝此用户查看其他人的统计信息的访问权限。</li>
+<li>尝试在输入字段中输入一些无效的输入，例如登录用户名，密码，输入文本框等。检查系统对所有无效输入的反应。</li>
+<li>页面目录和文件不应直接访问，除非为它们提供了下载选项。</li>
+<li>测试验证码以自动执行脚本登录。</li>
+<li>测试 SSL 是否用于安全措施。如果使用，当用户从不安全的页面HTTP:&#x2F;&#x2F;切换到安全 HTTPS:&#x2F;&#x2F; 页面时，应显示正确的消息，反之亦然。</li>
+<li>所有事务、错误消息和安全漏洞尝试都应记录在服务器上某个位置的日志文件中。</li>
+</ul>
+<p>测试页面安全性的主要原因是识别潜在的漏洞并随后修复它们。</p>
+<ul>
+<li>网络扫描</li>
+<li>漏洞扫描</li>
+<li>密码破解</li>
+<li>日志审查</li>
+<li>完整性检查器</li>
+<li>病毒检测</li>
+</ul>
 ]]></content>
       <categories>
         <category>测试</category>
       </categories>
       <tags>
         <tag>测试</tag>
-        <tag>软件测试</tag>
-        <tag>自动化测试</tag>
-        <tag>devops</tag>
-        <tag>敏捷测试</tag>
+        <tag>页面测试</tag>
       </tags>
   </entry>
   <entry>
     <title>Cookie测试</title>
-    <url>/Echo/Cookie%E6%B5%8B%E8%AF%95.html</url>
+    <url>/Echo/posts/17757.html</url>
     <content><![CDATA[<h4 id="什么是Cookie？"><a href="#什么是Cookie？" class="headerlink" title="什么是Cookie？"></a>什么是Cookie？</h4><p> Cookie 是由网络服务器存储在用户硬盘上的文本文件中的一小段信息。Web 浏览器稍后将使用此信息从该计算机检索信息。</p>
 <p>通常，Cookie包含用于在不同网页之间进行通信的个性化用户数据或信息。</p>
 <h4 id="为什么使用cookie？"><a href="#为什么使用cookie？" class="headerlink" title="为什么使用cookie？"></a>为什么使用cookie？</h4><p>Cookies只不过是记录用户的身份，用于跟踪用户在整个网站页面中的导航位置。但是Web 浏览器和 Web 服务器之间的通信是无状态的。</p>
@@ -861,7 +1031,7 @@
   </entry>
   <entry>
     <title>Flume日志采集框架学习</title>
-    <url>/Echo/Flume%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0.html</url>
+    <url>/Echo/posts/52981.html</url>
     <content><![CDATA[<h4 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h4><ul>
 <li>Flume 是一个<code>分布式</code>、<code>可靠</code>、<code>高可用</code>的海量<code>日志采集</code>、<code>聚合</code>和<code>传输</code>的系统；</li>
 <li>Flume 可以采集文件、socket数据包、文件、目录、Kafka等<code>各种形式数据源</code>，又可以将采集到的数据（下沉 sink）输出到 HDFS、HBase、Hive、Kafka等<code>众多外部存储系统</code>中；</li>
@@ -869,15 +1039,15 @@
 <li>Flume 针对特殊场景也具备良好的自定义扩展能力，因此，Flume 适用于大部分的日常数据采集场景；</li>
 </ul>
 <h4 id="2-运行机制"><a href="#2-运行机制" class="headerlink" title="2. 运行机制"></a>2. 运行机制</h4><p>Flume 分布式系统中最<code>核心的角色是 agent</code>，Flume 采集系统就是由一个个 agent 所连接起来形成的；</p>
-<p><img src="/Echo/Flume%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/image-20211114152336278.png" alt="image-20211114152336278"></p>
+<p><img src="/Echo/posts/52981/image-20211114152336278.png" alt="image-20211114152336278"></p>
 <p> 每一个 agent 相当于一个数据传递员，内部有三个组件：</p>
 <ul>
 <li>Source：&#96; 采集组件，用于与众多数据源对接，以获取数据；</li>
 <li>Channel：&#96; 传输通道组件，用于从 Source 将数据传递到 Sink；</li>
 <li>Sink：&#96; 下沉组件，用于往下一级 agent 传递数据 或者 往最终存储系统传递数据；</li>
 </ul>
-<h4 id="3-单个agent采集数据"><a href="#3-单个agent采集数据" class="headerlink" title="3.单个agent采集数据"></a>3.单个agent采集数据</h4><p><img src="/Echo/Flume%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/image-20211114152023931.png" alt="image-20211114152023931"></p>
-<h4 id="4-多个agent采集数据"><a href="#4-多个agent采集数据" class="headerlink" title="4.多个agent采集数据"></a>4.多个agent采集数据</h4><p><img src="/Echo/Flume%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/image-20211114152057458.png" alt="image-20211114152057458"></p>
+<h4 id="3-单个agent采集数据"><a href="#3-单个agent采集数据" class="headerlink" title="3.单个agent采集数据"></a>3.单个agent采集数据</h4><p><img src="/Echo/posts/52981/image-20211114152023931.png" alt="image-20211114152023931"></p>
+<h4 id="4-多个agent采集数据"><a href="#4-多个agent采集数据" class="headerlink" title="4.多个agent采集数据"></a>4.多个agent采集数据</h4><p><img src="/Echo/posts/52981/image-20211114152057458.png" alt="image-20211114152057458"></p>
 ]]></content>
       <categories>
         <category>学习</category>
@@ -889,38 +1059,38 @@
   </entry>
   <entry>
     <title>GitHub搜索技巧</title>
-    <url>/Echo/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7.html</url>
+    <url>/Echo/posts/145.html</url>
     <content><![CDATA[<p>github是世界知名的代码托管平台，千万程序员的圣地。作为一个常逛github的程序员，你在github上搜索代码时，是怎样操作的呢？</p>
 <p>大家是不是也会像我一样搜索框直接输入关键字</p>
-<p><img src="/Echo/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117104623233.png" alt="image-20211117104623233"></p>
+<p><img src="/Echo/posts/145/image-20211117104623233.png" alt="image-20211117104623233"></p>
 <p>然后改变 一下列表oder排序方式</p>
-<p><img src="/Echo/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117104649103.png" alt="image-20211117104649103"></p>
+<p><img src="/Echo/posts/145/image-20211117104649103.png" alt="image-20211117104649103"></p>
 <p>但是找到了接近21万相关的开源项目，这时候的你是不是一脸懵呢！</p>
 <p>接下来我们一块掌握几个精确查找项目的方式（均以springboot为例）</p>
 <h6 id="1-项目名搜索"><a href="#1-项目名搜索" class="headerlink" title="1.项目名搜索"></a>1.项目名搜索</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:name 项目关键字</span><br></pre></td></tr></table></figure>
 
-<p><img src="/Echo/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117104831270.png" alt="image-20211117104831270"></p>
+<p><img src="/Echo/posts/145/image-20211117104831270.png" alt="image-20211117104831270"></p>
 <p>这时发现项目数据量已经少了一些，搜索到了16.5万个项目</p>
 <h6 id="2-项目描述搜索"><a href="#2-项目描述搜索" class="headerlink" title="2.项目描述搜索"></a>2.项目描述搜索</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:description 关键字</span><br></pre></td></tr></table></figure>
 
-<p><img src="/Echo/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117105101855.png" alt="image-20211117105101855"></p>
+<p><img src="/Echo/posts/145/image-20211117105101855.png" alt="image-20211117105101855"></p>
 <p>此时项目数量已经下降到了6.9万个</p>
 <h6 id="3-项目readMe搜索"><a href="#3-项目readMe搜索" class="headerlink" title="3.项目readMe搜索"></a>3.项目readMe搜索</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:readme 关键字</span><br></pre></td></tr></table></figure>
 
-<p><img src="/Echo/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117105323314.png" alt="image-20211117105323314"></p>
+<p><img src="/Echo/posts/145/image-20211117105323314.png" alt="image-20211117105323314"></p>
 <p>此时项目数量为12.6万个</p>
 <h6 id="4-关键字搜索，然后限制stars或者forks-数"><a href="#4-关键字搜索，然后限制stars或者forks-数" class="headerlink" title="4.关键字搜索，然后限制stars或者forks 数"></a>4.关键字搜索，然后限制stars或者forks 数</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:name 或者 description 或者 readme 关键字 stars:&gt;数字 forks:&gt;数字</span><br></pre></td></tr></table></figure>
 
 <p>stars 和 forks既可以单独使用，也可以组合使用</p>
-<p><img src="/Echo/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117113707201.png" alt="image-20211117113707201"></p>
+<p><img src="/Echo/posts/145/image-20211117113707201.png" alt="image-20211117113707201"></p>
 <p>当增加上stars 数量大于10000时，项目数为23个</p>
 <h6 id="5-限制项目更新时间"><a href="#5-限制项目更新时间" class="headerlink" title="5.限制项目更新时间"></a>5.限制项目更新时间</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:name或description或readme 关键字  pushed:&gt;2021-02-01</span><br></pre></td></tr></table></figure>
 
-<p><img src="/Echo/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117113931148.png" alt="image-20211117113931148"></p>
+<p><img src="/Echo/posts/145/image-20211117113931148.png" alt="image-20211117113931148"></p>
 <p>此时项目数为4.4万个。这里还可以和stars或者forks组合使用</p>
 <h6 id="6-限制项目的语言"><a href="#6-限制项目的语言" class="headerlink" title="6.限制项目的语言"></a>6.限制项目的语言</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">in:name或description或readme 关键字  language:javascript</span><br></pre></td></tr></table></figure>
 
-<p><img src="/Echo/GitHub%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/image-20211117114146576.png" alt="image-20211117114146576"></p>
+<p><img src="/Echo/posts/145/image-20211117114146576.png" alt="image-20211117114146576"></p>
 <p>项目数为8.5万个。</p>
 <h6 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h6><p>如何高效的从GitHub上搜索开源项目，有下面的小技巧：</p>
 <ul>
@@ -941,261 +1111,24 @@
       </tags>
   </entry>
   <entry>
-    <title>HDFS简介</title>
-    <url>/Echo/HDFS%E7%AE%80%E4%BB%8B.html</url>
-    <content><![CDATA[<h4 id="Hadoop-分布式文件系统"><a href="#Hadoop-分布式文件系统" class="headerlink" title="Hadoop 分布式文件系统"></a>Hadoop 分布式文件系统</h4><p><strong>HDFS</strong>解决了大数据的存储问题，<strong>Map Reduce</strong>解决了与处理部分大数据相关的问题。</p>
-<h4 id="Hadoop的组件"><a href="#Hadoop的组件" class="headerlink" title="Hadoop的组件"></a>Hadoop的组件</h4><p>HDFS有两个主要组件来解决大数据问题：</p>
-<ul>
-<li>用于存储大数据的HDFS</li>
-<li>用于处理大数据的MapReduce</li>
-</ul>
-<p><img src="/Echo/HDFS%E7%AE%80%E4%BB%8B/Hadoop-Component-1.jpg" alt="Hadoop-Component-1"></p>
-<p>如图所示，Hadoop的架构，一个是HDFS，Hadoop的文件存储系统，一个是YARN和MapReduce，大数据处理部分。</p>
-<p>使用HDFS，Hadoop使我们能够存储大数据，使用YARN和Map Reduce，Hadoop使我们能够处理存储在HDFS中的相同大数据。</p>
-<p><img src="/Echo/HDFS%E7%AE%80%E4%BB%8B/Hadoop-Core-Components.jpg" alt="Hadoop-Core-Components"></p>
-<p>正如您在上图中看到的，HDFS有两个主要的守护进程，或者您可以将它们称为进程或线程，它们只不过是JAVA进程，即在JVM中运行 - NameNode和DataNode。</p>
-<p>NameNode是一个在Master Machine上运行的主守护程序，即本质上是高端机器，DataNode是在商用硬件上运行的从机。可以有更多的DataNode，因为从机不仅仅是主机。</p>
-<p>因此，我们总是在从属机器上运行一个NameNode和多个DataNode。</p>
-<p>同样，我们在另一端有YARN，它又有两个守护进程，一个是运行在主计算机上的资源管理器，另一个是运行在从机上的节点管理器，就像DataNode一样。因此，每台从属机器都有两个守护进程 - 一个是DataNode，另一个是Node Manager。</p>
-<p>主计算机正在运行 NameNode 并运行资源管理器。NameNode 负责管理 Hadoop 分布式文件系统上的数据，资源管理器负责对此存储的数据执行处理任务。</p>
-<h4 id="name-node-和data-node"><a href="#name-node-和data-node" class="headerlink" title="name node 和data node"></a>name node 和data node</h4><h5 id="name-node"><a href="#name-node" class="headerlink" title="name node"></a>name node</h5><ul>
-<li>主守护进程。</li>
-<li>管理和维护数据节点。</li>
-<li>记录元数据。</li>
-<li>接收来自所有 DataNode 的检测信号和阻止报告。</li>
-</ul>
-<p>data node</p>
-<ul>
-<li>守护进程。</li>
-<li>实际数据存储在此处。</li>
-<li>为来自客户端的读取和写入请求提供服务。</li>
-</ul>
-<p><img src="/Echo/HDFS%E7%AE%80%E4%BB%8B/NameNode-DataNode.jpg" alt="NameNode-DataNode"></p>
-<p>有一个集中式机器名称节点，它控制着各种DataNode，即商用硬件。因此，Name Node只不过是维护所有DataNode的主守护进程。</p>
-<p>这些名称节点具有有关存储在 DataNode 中的数据的所有信息。DataNode顾名思义，用于存储Hadoop集群中存在的数据。</p>
-<p>NameNode仅包含有关哪些数据存储在哪个DataNode上的信息。因此，我们可以说的是NameNode存储存储在DataNodes上的数据的元数据。</p>
-<p>DataNode还执行另一项任务，即它定期将检测信号发送回NameNode。心跳实际上告诉NameNode这个DataNode仍然活着。</p>
-<p>DataNodes将检测信号发送回NameNode，这样NameNode就可以知道这些数据节点是活跃的，因此NameNode可以使用这些数据节点来存储更多数据或从这些数据节点读取数据。</p>
-<p>现在我们来看看DataNode，DataNode只不过是从属守护进程，它实际上存储着发送到Hadoop集群的数据。这些数据节点是实际为客户端发出的读取和写入请求提供服务的节点。</p>
-<p>如果有人想从Hadoop集群中读取数据，那么这些请求实际上由数据所在的DataNodes处理。</p>
-<h4 id="Hadoop-集群架构"><a href="#Hadoop-集群架构" class="headerlink" title="Hadoop 集群架构"></a>Hadoop 集群架构</h4><p><img src="/Echo/HDFS%E7%AE%80%E4%BB%8B/Hadoop-Cluster.jpg" alt="Hadoop-Cluster"></p>
-<p>如图所示，Hadoop 集群r只不过是一个主从拓扑，其中有一个主机器，正如你在顶部看到的那样，即Hadoop 集群。在此主计算机中，有一个 NameNode 和正在运行的资源管理器，即主守护程序。</p>
-<p>主机使用核心交换机连接到所有从机，这是因为这些数据节点实际上存储在各种机架中，因此您可以看到计算机1，计算机2，计算机3直到计算机N。这只不过是从属机器或DataNodes，它们都存在于一个机架中。</p>
-<h5 id="HDFS将如何存取数据？"><a href="#HDFS将如何存取数据？" class="headerlink" title="HDFS将如何存取数据？"></a>HDFS将如何存取数据？</h5><p>将文件存储在HDFS中时，数据被存储为HDFS中的块。整个文件不存储在HDFS中，这是因为如您所知，Hadoop是一个分布式文件系统。</p>
-<p>因此，如果您的文件大小可能为1 PB（Peta Byte），那么这种存储就不会存在于单台计算机中，因为Hadoop集群是使用商用硬件制作的。一台计算机中的硬件大约为 1 TB 或 2 TB。</p>
-<p>因此，整个文件需要分解为称为HDFS块的数据块。</p>
-<ul>
-<li>每个文件都作为块存储在HDFS上。</li>
-<li>在Apache Hadoop 2.x中，每个块的默认大小约为128 MB（在以前的版本，即Apache Hadoop 1.x中为64mb）。</li>
-<li>有一个工具可以使用Hadoop软件包附带的配置文件（即hdfssite.xml）来增加或减少块的文件大小。</li>
-</ul>
-<p>让我们在这里考虑一个248 MB的文件，现在如果我们打破这个文件，或者如果我们把这个文件移动到Hadoop Cluster（即2.x）中，那么这个文件将被分解成一个块，即128 MB的块A和另一个120 MB的块B。</p>
-<p>如您所见，第一个块为128 MB，即第一个板块在那里削减，这就是为什么另一个块为120 MB而不是128 MB，即如果剩余的文件大小小于默认块大小，则不会浪费任何空间。</p>
-<p><img src="/Echo/HDFS%E7%AE%80%E4%BB%8B/Example-Diagram.jpg" alt="Example-Diagram"></p>
-<p>现在我们面前还有另一个问题，即每个块的单个副本是否安全？</p>
-<p>答案是否定的，因为系统可能会失败，而它只是商品硬件，因此我们可能会遇到大麻烦。为了克服这个问题，Hadoop HDFS有一个很好的解决方案，即**”块的复制”。**</p>
-<h5 id="Hadoop-架构块复制"><a href="#Hadoop-架构块复制" class="headerlink" title="Hadoop 架构块复制"></a>Hadoop 架构块复制</h5><p>Hadoop创建存储到Hadoop分布式文件系统中的每个块的副本，这就是Hadoop作为容错系统的方式，即即使您的系统出现故障或DataNode失败或副本丢失，您也会在其他DataNode或其他服务器中存在多个其他副本，以便您始终可以从那里选择这些副本。</p>
-<p><img src="/Echo/HDFS%E7%AE%80%E4%BB%8B/Block-Replication.jpg" alt="Block-Replication"></p>
-<p>如图所表示块复制，文件有五个不同的块，即块 1、2、3、4、5。让我们先检查一下块 1，您将在节点 1、节点 2 和节点 4 中找到块 1 的副本。</p>
-<p>同样，块 2 也有三个副本，即节点 2、节点 3 和节点 4，因此在各自的节点中，块 3、4 和 5 也是如此。</p>
-<p>因此，除了创建的副本之外，每个块都被复制了三次，即Hadoop遵循默认的复制因子为3，这意味着您复制到Hadoop分发文件系统中的任何文件都会被复制三次。</p>
-<p>换句话说，如果您将1 GB的文件复制到Hadoop分发文件系统中，它实际上将3 GB的文件存储在HDFS中。好的部分是，通过更改Hadoop的配置文件，默认复制因子是可以更改的。</p>
-<p>*<strong>Hadoop 如何决定存储副本的位置？*</strong></p>
-<p>Hadoop实际上遵循Rack Awareness的概念来决定在哪里存储Block的副本。如图所示机架感知算法图表。</p>
-<p><img src="/Echo/HDFS%E7%AE%80%E4%BB%8B/Rack-Awareness-Algorithm.jpg" alt="Rack-Awareness-Algorithm"></p>
-<p>Rack-1有四个DataNodes，Rack-2和Rack-3也是如此，因此整个Hadoop集群总共将由所有三个机架组成，并且将有12个DataNode。</p>
-<p>假设块 A 在 Rack-1 的 DataNode 1 上复制，根据 Rack Aware 的概念，块 A 的副本不能在同一机架中创建，并且需要在 Rack-1 之外的任何其他机架中创建，因为主文件已经存在于 Rack-1 中。</p>
-<p>如果我们在同一机架-1中创建块A的副本，并且如果整个Rack-1发生故障，那么我们肯定会丢失数据，因此副本必须存储在任何其他机架中，而不是存储在Rack-1中。</p>
-<p>因此，将在 Rack-2 的 DataNode 6 和 8 中创建副本。同样，对于块 B 和块 C，副本将在不同的机架中创建，如上图所示。</p>
-<h4 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h4><ul>
-<li>Hadoop HDFS解决了大数据的存储问题。</li>
-<li>Hadoop Map Reduce解决了与大数据处理相关的问题。</li>
-<li>NameNode 是一个主守护进程，用于管理和维护 DataNode。</li>
-<li>DataNode是一个从属守护进程，实际数据存储在这里。它用于读取和写入来自客户端的请求。</li>
-<li>在Hadoop Cluster中，机架实际上是一组物理上存在于一个特定位置并相互连接的机器。</li>
-<li>每个文件都作为块存储在HDFS上。</li>
-<li>在Apache Hadoop 2.x中，每个块的默认大小约为128 MB（在以前的版本，即Apache Hadoop 1.x中为64 MB）。</li>
-<li>有一个工具可以使用Hadoop软件包附带的配置文件（即hdfssite.xml）来增加或减少块的文件大小。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>大数据</category>
-      </categories>
-      <tags>
-        <tag>HDFS</tag>
-        <tag>大数据</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JMeter介绍</title>
-    <url>/Echo/JMeter%E4%BB%8B%E7%BB%8D.html</url>
-    <content><![CDATA[<p>在本文中我们将了解什么是性能测试、为什么选择 JMeter、JMeter 与 HP LoadRunner。</p>
-<h5 id="什么是性能测试？"><a href="#什么是性能测试？" class="headerlink" title="什么是性能测试？"></a>什么是性能测试？</h5><p>在我们继续探索 Jmeter 及其安装过程之前，我们需要了解什么是性能测试以及 JMeter 作为工具如何支持性能测试。 </p>
-<p>就像学生需要表现良好才能提升自己的水平一样。 同样，应用程序（移动或 Web 或桌面）需要表现良好，才能在竞争激烈的市场中更上一层楼。 </p>
-<p>性能测试衡量 <strong>您的应用程序在不同工作负载下的性能。</strong> 有许多参数可用于确定负载测试中的服务器是否运行良好，本文稍后将讨论这些参数。 </p>
-<ul>
-<li>举一个简单的例子。  在浏览器中输入“<a href="http://www.facebook.com”,它显示了/">www.facebook.com”，它显示了</a> Facebook 的主页使用时间10秒。 现在假设 1000 人同时输入“<a href="http://www.facebook.com”并点击/">www.facebook.com”并点击</a> Google 主页显示可能超过 10 秒 。</li>
-<li>因此，在不同的工作负载（用户数量）下性能会发生变化。  这种类型的测试非常重要，因为无论您的应用程序有多么好的设计和功能，但如果它的性能很差，那么很有可能失去所有潜在的目标受众 。</li>
-</ul>
-<p>通过下图我们可以清晰看到比较</p>
-<p><img src="/Echo/JMeter%E4%BB%8B%E7%BB%8D/FlowDiagram.jpg" alt="FlowDiagram"></p>
-<h6 id="性能测试主要考虑以下参数："><a href="#性能测试主要考虑以下参数：" class="headerlink" title="性能测试主要考虑以下参数："></a>性能测试主要考虑以下参数：</h6><ul>
-<li><strong>吞吐量</strong> - 它被定义为每秒的事务数。 例：假设银行客户服务一次只能处理 30 个呼叫，因此其余呼叫者需要排队。 这意味着吞吐量是 30</li>
-<li><strong>响应时间</strong> ——这个时间是用户从服务器收到响应所用的时间 </li>
-<li><strong>延迟</strong> 是信息的第一个字节到达用户端的时间。例：假设用户点击 HTTP 请求以检索网页。 因此，接收该网页的第一个字节的时间就是该请求的延迟时间 </li>
-<li><strong>可扩展性</strong>  - 它是指应用程序可以承受的最大负载 </li>
-<li>CPU 负载、内存使用和资源使用</li>
-</ul>
-<h5 id="为什么是JMeter？"><a href="#为什么是JMeter？" class="headerlink" title="为什么是JMeter？"></a>为什么是JMeter？</h5><p>JMeter 最初是由 Apache Software 的  Stefano Mazzocchi 开发的。  基本上，JMeter 是一个基于 Java 的桌面应用程序。  JMeter 使用 Swing  图形 API，不是由特定于平台的编码实现的，只要有JAVA即可。JMeter的安装自己行搜索。</p>
-<p> Jmeter支持以下协议：</p>
-<ul>
-<li>HTTP、HTTPS</li>
-<li>FTP</li>
-<li>JDBC</li>
-<li>SMTP、IMAP</li>
-<li>LDAP</li>
-<li>TCP</li>
-<li>SOAP</li>
-</ul>
-<p>JMeter的优点：</p>
-<ul>
-<li>免费–JMeter是免费的，Apache官网下载即可；</li>
-<li>友好的界面–测试人员可以很容易地熟悉它的大部分组件，工具内提供每个组件的帮助文档</li>
-<li>高度可扩展–用户可以使用 JSR223 创建自己的采样器，并且有许多采样器插件可用，测试人员增加测试能力</li>
-<li>协议支持–JMeter 不仅可用于应用程序性能测试，还支持多种协议</li>
-<li>记录– JMeter 内置了 HTTP(S) 测试脚本记录器，可用于记录来自网站或移动应用程序的所有操作，然后可以模拟负载以测试各种负载条件下的性能。 此外，还有一个 chrome 扩展可用于记录操作，然后可以在 JMeter 中使用相同的脚本来扩展负载</li>
-<li>集成selenium–可以与selenium进行集成测试</li>
-<li>安装简单</li>
-<li>图形化的报告</li>
-</ul>
-<h5 id="HP-LoadRunner-VS-JMeter"><a href="#HP-LoadRunner-VS-JMeter" class="headerlink" title="HP LoadRunner VS JMeter"></a>HP LoadRunner VS JMeter</h5><table>
-<thead>
-<tr>
-<th>JMeter</th>
-<th>Loadrunner</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>开源，免费</td>
-<td>惠普产品，许可证还是很贵的</td>
-</tr>
-<tr>
-<td>协议支持有限</td>
-<td>更多的协议支持</td>
-</tr>
-<tr>
-<td>Jmeter 是一个基于 Java 的产品，使用基于 sprint 的 API，这使得它独立于平台，可以在任何环境下运行，无论是 win、mac、Linux。</td>
-<td>它使用基于 C 的语言、Java、Java Script 和 VB。</td>
-</tr>
-<tr>
-<td>负载生成能力有限。  在具有高 RAM 和处理器的机器上，Jmeter 只能产生 1-2k 用户的负载。  增加负载可能会导致内存不足异常。</td>
-<td>负载生成能力更高。</td>
-</tr>
-<tr>
-<td>Jmeter的技术熟练程度较低。</td>
-<td>LoadRunner 技术精湛。</td>
-</tr>
-<tr>
-<td>Jmeter 在云中运行有很多复杂性。</td>
-<td>Load Runner 也很容易在云环境中运行。</td>
-</tr>
-<tr>
-<td>Jmeter 中的录制功能非常简单，并且也支持可扩展性。  有一些 chrome 插件，可以直接在 Jmeter 中导入脚本。</td>
-<td>与 Jmeter 相比，Load Runner 中的记录功能也不复杂。</td>
-</tr>
-<tr>
-<td>Jmeter 的结果不是实时的。</td>
-<td>LoadRunner 提供相对更实时的结果</td>
-</tr>
-<tr>
-<td>Jmeter 在用于 SAP 等企业产品时效率不高。</td>
-<td>即使使用 SAP、Siebel 等，Load Runner 也能提供高效的结果。</td>
-</tr>
-</tbody></table>
-<h5 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h5><p>JMeter 是市场上用于测试 Web 和移动应用程序的强大工具。  它非常易于使用并且不需要太多编程技能，除非在 JMeter 中编写自己的采样器。 将在接下来的系列文章中详细介绍每个组件，敬请期待！ </p>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>性能测试，JMeter</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JMeter处理器和控制器</title>
-    <url>/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8.html</url>
-    <content><![CDATA[<h5 id="预处理器–pre-processor"><a href="#预处理器–pre-processor" class="headerlink" title="预处理器–pre processor"></a>预处理器–pre processor</h5><p>执行采样器之前执行的元素。您可以将预处理器与要在请求中进行一些更改的采样器连接在一起。</p>
-<p>最简单的情况可能是在 HTTP 请求中添加”示例超时”预处理器，以便此请求仅运行定义的时间量。它还确保仅对父采样器执行此修改,以下是JMeter中的预处理器：</p>
-<p><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217094257136.png" alt="image-20211217094257136"></p>
-<h6 id="用户参数–-user-parameters"><a href="#用户参数–-user-parameters" class="headerlink" title="用户参数– user parameters"></a>用户参数– user parameters</h6><p>用户参数用于在取样器中使用变量之前定义变量的值。当JMeter执行此预处理器元素时，会将值存储在变量中，这些变量可由同一线程组中的任何取样器使用。</p>
-<p><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217100245301.png" alt="image-20211217100245301"></p>
-<p>示例超时–sample timeout</p>
-<p>用于定义请求的超时持续时间。例：如果将取样时间设置为 400 毫秒，则所有需要时间的请求&gt;400 都将具有失败的响应。请看下面的截图</p>
-<p><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217134259470.png" alt="image-20211217134259470"></p>
-<p><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217134313658.png" alt="image-20211217134313658"></p>
-<h5 id="控制器"><a href="#控制器" class="headerlink" title="控制器"></a>控制器</h5><p>控制器在构建实时JMeter测试计划方面十分重要，用于定义请求发送到服务器的顺序。JMeter中的控制器有以下：</p>
-<p><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217150511568.png" alt="image-20211217150511568"></p>
-<h6 id="简单控制器–simple-controller"><a href="#简单控制器–simple-controller" class="headerlink" title="简单控制器–simple controller"></a>简单控制器–simple controller</h6><p>简单的控制器不执行任何特定功能。它只是一种容器，您可以在其中保留类似的请求，以使测试计划易于理解。</p>
-<p><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217154100877.png" alt="image-20211217154100877"></p>
-<h6 id="循环控制器–Loop-Controller"><a href="#循环控制器–Loop-Controller" class="headerlink" title="循环控制器–Loop Controller"></a>循环控制器–Loop Controller</h6><p>如果希望某些特定请求运行的迭代次数多于”线程组”中指定的迭代次数，则可以将它们放在”循环控制器”下，然后在控制器设置中输入循环计数。</p>
-<p><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217154238730.png" alt="image-20211217154238730"></p>
-<p>图中的每个取样器将执行6次。</p>
-<h6 id="仅一次控制器–once-ONLY-controller"><a href="#仅一次控制器–once-ONLY-controller" class="headerlink" title="仅一次控制器–once ONLY controller"></a>仅一次控制器–once ONLY controller</h6><p>当您只想运行某个特定请求一次时，即使线程组中有多个线程，也会使用此控制器。可以考虑的最简单的例子是”获取网站主页”或”登录到Web应用程序”。实时方案希望它只发生一次，其他请求（如搜索或编辑&#x2F;删除某些内容）将多次发生。</p>
-<p>仅执行一次的请求可以放在”仅一次控制器”下。截图以供参考。一次 只有控制器设置绕过父线程组设置。</p>
-<p><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217160551520.png" alt="image-20211217160551520"></p>
-<h6 id="录制控制器–HTTP（S）-TEST-Script-Recorder"><a href="#录制控制器–HTTP（S）-TEST-Script-Recorder" class="headerlink" title="录制控制器–HTTP（S） TEST Script Recorder"></a>录制控制器–HTTP（S） TEST Script Recorder</h6><p>就像简单控制器一样，录制控制器不会修改发送到服务器的任何请求序列。它与HTTP（S）脚本记录器一起使用。使用此非测试元素记录的所有请求都保存在记录控制器下。需要指定目标控制器以保存对服务器发出的记录请求。</p>
-<p><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217160800045.png" alt="image-20211217160800045"></p>
-<h6 id="吞吐量控制器–Throughput-controller"><a href="#吞吐量控制器–Throughput-controller" class="headerlink" title="吞吐量控制器–Throughput controller"></a>吞吐量控制器–Throughput controller</h6><p>此控制器还用于控制执行流。如下图所示，该控制器进一步分为两部分：</p>
-<p><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217160905035.png" alt="image-20211217160905035"></p>
-<p>执行百分比–Percent Executions ： 选中后 Jmeter 将仅执行此控制器下采样器总迭代的一定百分比。也可以选中”每用户”复选框以在用户级别进行控制。</p>
-<p>执行总数– total Executions: 将允许用户直接为此控制器下包含的采样器指定迭代次数。</p>
-<h6 id="交错控制器–-interleave-controller"><a href="#交错控制器–-interleave-controller" class="headerlink" title="交错控制器– interleave controller"></a>交错控制器– interleave controller</h6><p>此控制器允许您通过以 n 种方式修改序列来增加性能测试的范围，以便在应用程序以不同的顺序命中请求时测试服务器上的负载。交错控制器在其下方的采样器进行替代选择。</p>
-<p>如果此块下有其他控制器（如 Simple Controller），则交错控制器授予从容器中为每个迭代选择一个采样器的权限。为了进一步解释它，见图</p>
-<p><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217162333245.png" alt="image-20211217162333245"></p>
-<p>Jmeter 将在每次迭代的控制器之间交替迭代。执行顺序为：<em>请求1 -&gt; 请求3 -&gt; 请求 5 – 请求2 -&gt; 请求4 -&gt; 请求6</em></p>
-<h6 id="随机控制器–random-controller"><a href="#随机控制器–random-controller" class="headerlink" title="随机控制器–random controller"></a>随机控制器–random controller</h6><p>顾名思义随机选择子控制器和其中的采样器。工作方式几乎与交错控制器类似，但不按顺序选取采样器。</p>
-<p>条件控制器–If controller</p>
-<p>if 控制器 以类似的方式工作，则以任何编程语言处理 IF 表达式。首先验证条件，然后执行此容器下的组件（如果条件为 TRUE），否则将执行 IF 控制器外部的元素。</p>
-<p><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217165030335.png" alt="image-20211217165030335"></p>
-<p>测试计划设计如下：如果 IF 条件被评估为<strong>False，</strong>则只有 Request3、Request4 和 Request5 将执行。</p>
-<h6 id="while-控制器"><a href="#while-控制器" class="headerlink" title="while 控制器"></a>while 控制器</h6><p>此控制器执行其下的组件，直到条件变为 false。</p>
-<h5 id="JMeter的记录模板"><a href="#JMeter的记录模板" class="headerlink" title="JMeter的记录模板"></a>JMeter的记录模板</h5><p>Jmeter的File目录选择template ，然后切换recording</p>
-<p><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217165849700.png" alt="image-20211217165849700"></p>
-<p>选择此录制模板后，会看到一些组件已添加到测试计划中。</p>
-<ul>
-<li>工作台下的 HTTP 脚本记录器</li>
-<li>HTTP 请求默认值和 HTTP Cookie 管理器</li>
-<li>“线程组”下的记录控制器。</li>
-<li><img src="/Echo/JMeter%E5%A4%84%E7%90%86%E5%99%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%99%A8/image-20211217170049709.png" alt="image-20211217170049709"></li>
-</ul>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>性能测试</tag>
-        <tag>JMeter</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>HDFS架构及命令</title>
-    <url>/Echo/HDFS%E6%9E%B6%E6%9E%84%E5%8F%8A%E5%91%BD%E4%BB%A4.html</url>
-    <content><![CDATA[<h4 id="HDFS架构"><a href="#HDFS架构" class="headerlink" title="HDFS架构"></a>HDFS架构</h4><p><img src="/Echo/HDFS%E6%9E%B6%E6%9E%84%E5%8F%8A%E5%91%BD%E4%BB%A4/HDFS-Architecture.jpg" alt="HDFS-Architecture"></p>
+    <url>/Echo/posts/46383.html</url>
+    <content><![CDATA[<h4 id="HDFS架构"><a href="#HDFS架构" class="headerlink" title="HDFS架构"></a>HDFS架构</h4><p><img src="/Echo/posts/46383/HDFS-Architecture.jpg" alt="HDFS-Architecture"></p>
 <p>如图所示，有NameNode，因为已经知道哪个是HDFS架构中的主守护进程，它存储集群中存在的所有DataNode的元数据以及每个DataNode中存在的所有块的信息。</p>
 <p>有像Rack-1这样的机架，它有三个DataNodes，Rack-2有两个DataNodes，如图所示。</p>
 <p>还有一个应用于所有节点的复制因子。现在有一个客户端可以从DataNode读取数据，还有另一个客户端可以将数据写入这些数据节点。</p>
 <p>因此，本质上两种机制是并行的，即读取机制，它是客户端为读取数据而生成的请求，而写入机制是为客户端写入数据而生成的。这就是客户端将数据移动到DataNode或Hadoop 集群中的方式。</p>
-<h4 id="HDFS读写机制"><a href="#HDFS读写机制" class="headerlink" title="HDFS读写机制"></a>HDFS读写机制</h4><h5 id="写"><a href="#写" class="headerlink" title="写"></a>写</h5><p><img src="/Echo/HDFS%E6%9E%B6%E6%9E%84%E5%8F%8A%E5%91%BD%E4%BB%A4/Write-Mechanism-in-HDFS.jpg" alt="Write-Mechanism-in-HDFS"></p>
+<h4 id="HDFS读写机制"><a href="#HDFS读写机制" class="headerlink" title="HDFS读写机制"></a>HDFS读写机制</h4><h5 id="写"><a href="#写" class="headerlink" title="写"></a>写</h5><p><img src="/Echo/posts/46383/Write-Mechanism-in-HDFS.jpg" alt="Write-Mechanism-in-HDFS"></p>
 <p>如图所示HDFS写入机制，客户端可以提出写入文件或读取文件的请求。步骤1表示客户端为块A生成的写入请求NameNode，NameNode的作用是它感知客户端可以写入块的IP地址列表，即块A。</p>
 <p>现在，此客户端连接到交换机，然后最终向 DataNode 1、DataNode 4 和 DataNode 6 发送通知，为什么此 DataNode 本身，是因为这些是由 NameNode、NameNode 指定的 DataNode 发送的数据节点，数据必须写入 DataNode 1、4 和 6 中，这就是为什么客户端同时连接到所有这三个 DataNode 的原因。</p>
-<p><img src="/Echo/HDFS%E6%9E%B6%E6%9E%84%E5%8F%8A%E5%91%BD%E4%BB%A4/HDFS-Write-PipeLine.jpg" alt="HDFS-Write-PipeLine"></p>
+<p><img src="/Echo/posts/46383/HDFS-Write-PipeLine.jpg" alt="HDFS-Write-PipeLine"></p>
 <p>在第一步中，客户端从所有这些 DataNode 中获取确认，无论它们是否准备好对它们执行写入操作。它可能就像DataNode正在执行任务一样，目前还不可用。因此，第一步是接受他们的承认。</p>
 <p>一旦他们说他们准备好了，写入管道就会创建。现在，客户端在 DataNode 1、4 和 6 上感知到写入请求，并且第一个副本是在 DataNode 1 中创建的，即在 DataNode 1 中创建&#x2F;存储或写入的块 A。</p>
 <p>然后，下一个副本由 DataNode 1 本身在 DataNode 4 中创建，正如您可以看到核心交换机的箭头所示，首先副本是在 DataNode 1 中创建的，DataNode 1 在 DataNode 4 中创建第二个副本。</p>
 <p>现在不是客户端在做这项工作，而是DataNode实际在DataNode 4中创建副本，最后，DataNode 4在DataNode 6上创建副本，即块A的第三个副本。</p>
 <p>在 DataNode 6 上创建第三个副本后，它会向 DataNode 4 发送回确认，DataNode 4 会将确认发回 DataNode 1，同样，DataNode 1 会将确认发送回客户端，最后客户端会将成功写回 NameNode 的消息作为确认。</p>
 <p>一旦您通过NameNode获得成功消息，它就会在其末端更新元数据，即它将存储块A已存储在DataNode 1，4和6中的信息。因此，当我们谈论块A时，这是整个写入机制，这是按顺序发生的，即按顺序创建副本的副本。</p>
-<p><img src="/Echo/HDFS%E6%9E%B6%E6%9E%84%E5%8F%8A%E5%91%BD%E4%BB%A4/HDFS-Multi-Block-Write-Pipeline.jpg" alt="HDFS-Multi-Block-Write-Pipeline"></p>
+<p><img src="/Echo/posts/46383/HDFS-Multi-Block-Write-Pipeline.jpg" alt="HDFS-Multi-Block-Write-Pipeline"></p>
 <p>当有多个块时，它会变得有点复杂。上图显示，当有多个块（即块 A 和块 B）时，它将遵循相同的过程，就像客户端向 NameNode 发送请求一样。</p>
 <p>NameNode 会将 DataNode 的列表返回给客户端，然后客户端将连接到核心交换机。当客户端连接到核心交换机时，它将并行写入两个块的第一个副本。</p>
 <p>只需尝试理解这一点，您就可以看到1A和1B，即复制块A和块B的第一步，现在看到2A和2B向机架1的交换机发送请求，并将其他交换机发送到机架5的交换机，现在此交换机（机架1）连接到DataNode 1并创建块A的副本。</p>
@@ -1204,7 +1137,7 @@
 <p>创建此副本后，将在同一机架 4 的 DataNode 6 中创建块 A 的另一个副本。同样，块 B 是在 DataNode 9 中创建的，并且将根据发送到交换机的请求，在机架 1 的数据节点 3 中按顺序创建下一个副本。</p>
 <p>如果您看到并行创建或写入HDFS的每个块的第一个副本，而这些块的副本由其后续DataNodes本身按顺序创建。</p>
 <h5 id="读"><a href="#读" class="headerlink" title="读"></a>读</h5><p>阅读机制更容易理解，因为它非常简单。因此，客户端是发出所有请求的人，就像编写一样，它将从NameNode请求特定块。NameNode将通过存储这些特定块的数据节点发送。</p>
-<p><img src="/Echo/HDFS%E6%9E%B6%E6%9E%84%E5%8F%8A%E5%91%BD%E4%BB%A4/HDFS-Read-Mechanism.jpg" alt="HDFS-Read-Mechanism"></p>
+<p><img src="/Echo/posts/46383/HDFS-Read-Mechanism.jpg" alt="HDFS-Read-Mechanism"></p>
 <p>如图所示，客户端已从NameNode请求块A和B，NameNode将DN1（即DataNode 1和DN3，即DataNode 3）的地址发送回客户端计算机。</p>
 <p>现在，此客户端计算机将与核心交换机建立连接，它将从 DataNode 1 读取块 A，从 DataNode 3 读取块 B，并将核心交换机设置的此数据发送回客户端计算机。客户端可以将这些数据用于所需的任何目的。</p>
 <p>NameNode将确保客户端没有分配用于获取数据或读取数据的工作。</p>
@@ -1308,8 +1241,340 @@
       </tags>
   </entry>
   <entry>
+    <title>HDFS简介</title>
+    <url>/Echo/posts/19906.html</url>
+    <content><![CDATA[<h4 id="Hadoop-分布式文件系统"><a href="#Hadoop-分布式文件系统" class="headerlink" title="Hadoop 分布式文件系统"></a>Hadoop 分布式文件系统</h4><p><strong>HDFS</strong>解决了大数据的存储问题，<strong>Map Reduce</strong>解决了与处理部分大数据相关的问题。</p>
+<h4 id="Hadoop的组件"><a href="#Hadoop的组件" class="headerlink" title="Hadoop的组件"></a>Hadoop的组件</h4><p>HDFS有两个主要组件来解决大数据问题：</p>
+<ul>
+<li>用于存储大数据的HDFS</li>
+<li>用于处理大数据的MapReduce</li>
+</ul>
+<p><img src="/Echo/posts/19906/Hadoop-Component-1.jpg" alt="Hadoop-Component-1"></p>
+<p>如图所示，Hadoop的架构，一个是HDFS，Hadoop的文件存储系统，一个是YARN和MapReduce，大数据处理部分。</p>
+<p>使用HDFS，Hadoop使我们能够存储大数据，使用YARN和Map Reduce，Hadoop使我们能够处理存储在HDFS中的相同大数据。</p>
+<p><img src="/Echo/posts/19906/Hadoop-Core-Components.jpg" alt="Hadoop-Core-Components"></p>
+<p>正如您在上图中看到的，HDFS有两个主要的守护进程，或者您可以将它们称为进程或线程，它们只不过是JAVA进程，即在JVM中运行 - NameNode和DataNode。</p>
+<p>NameNode是一个在Master Machine上运行的主守护程序，即本质上是高端机器，DataNode是在商用硬件上运行的从机。可以有更多的DataNode，因为从机不仅仅是主机。</p>
+<p>因此，我们总是在从属机器上运行一个NameNode和多个DataNode。</p>
+<p>同样，我们在另一端有YARN，它又有两个守护进程，一个是运行在主计算机上的资源管理器，另一个是运行在从机上的节点管理器，就像DataNode一样。因此，每台从属机器都有两个守护进程 - 一个是DataNode，另一个是Node Manager。</p>
+<p>主计算机正在运行 NameNode 并运行资源管理器。NameNode 负责管理 Hadoop 分布式文件系统上的数据，资源管理器负责对此存储的数据执行处理任务。</p>
+<h4 id="name-node-和data-node"><a href="#name-node-和data-node" class="headerlink" title="name node 和data node"></a>name node 和data node</h4><h5 id="name-node"><a href="#name-node" class="headerlink" title="name node"></a>name node</h5><ul>
+<li>主守护进程。</li>
+<li>管理和维护数据节点。</li>
+<li>记录元数据。</li>
+<li>接收来自所有 DataNode 的检测信号和阻止报告。</li>
+</ul>
+<p>data node</p>
+<ul>
+<li>守护进程。</li>
+<li>实际数据存储在此处。</li>
+<li>为来自客户端的读取和写入请求提供服务。</li>
+</ul>
+<p><img src="/Echo/posts/19906/NameNode-DataNode.jpg" alt="NameNode-DataNode"></p>
+<p>有一个集中式机器名称节点，它控制着各种DataNode，即商用硬件。因此，Name Node只不过是维护所有DataNode的主守护进程。</p>
+<p>这些名称节点具有有关存储在 DataNode 中的数据的所有信息。DataNode顾名思义，用于存储Hadoop集群中存在的数据。</p>
+<p>NameNode仅包含有关哪些数据存储在哪个DataNode上的信息。因此，我们可以说的是NameNode存储存储在DataNodes上的数据的元数据。</p>
+<p>DataNode还执行另一项任务，即它定期将检测信号发送回NameNode。心跳实际上告诉NameNode这个DataNode仍然活着。</p>
+<p>DataNodes将检测信号发送回NameNode，这样NameNode就可以知道这些数据节点是活跃的，因此NameNode可以使用这些数据节点来存储更多数据或从这些数据节点读取数据。</p>
+<p>现在我们来看看DataNode，DataNode只不过是从属守护进程，它实际上存储着发送到Hadoop集群的数据。这些数据节点是实际为客户端发出的读取和写入请求提供服务的节点。</p>
+<p>如果有人想从Hadoop集群中读取数据，那么这些请求实际上由数据所在的DataNodes处理。</p>
+<h4 id="Hadoop-集群架构"><a href="#Hadoop-集群架构" class="headerlink" title="Hadoop 集群架构"></a>Hadoop 集群架构</h4><p><img src="/Echo/posts/19906/Hadoop-Cluster.jpg" alt="Hadoop-Cluster"></p>
+<p>如图所示，Hadoop 集群r只不过是一个主从拓扑，其中有一个主机器，正如你在顶部看到的那样，即Hadoop 集群。在此主计算机中，有一个 NameNode 和正在运行的资源管理器，即主守护程序。</p>
+<p>主机使用核心交换机连接到所有从机，这是因为这些数据节点实际上存储在各种机架中，因此您可以看到计算机1，计算机2，计算机3直到计算机N。这只不过是从属机器或DataNodes，它们都存在于一个机架中。</p>
+<h5 id="HDFS将如何存取数据？"><a href="#HDFS将如何存取数据？" class="headerlink" title="HDFS将如何存取数据？"></a>HDFS将如何存取数据？</h5><p>将文件存储在HDFS中时，数据被存储为HDFS中的块。整个文件不存储在HDFS中，这是因为如您所知，Hadoop是一个分布式文件系统。</p>
+<p>因此，如果您的文件大小可能为1 PB（Peta Byte），那么这种存储就不会存在于单台计算机中，因为Hadoop集群是使用商用硬件制作的。一台计算机中的硬件大约为 1 TB 或 2 TB。</p>
+<p>因此，整个文件需要分解为称为HDFS块的数据块。</p>
+<ul>
+<li>每个文件都作为块存储在HDFS上。</li>
+<li>在Apache Hadoop 2.x中，每个块的默认大小约为128 MB（在以前的版本，即Apache Hadoop 1.x中为64mb）。</li>
+<li>有一个工具可以使用Hadoop软件包附带的配置文件（即hdfssite.xml）来增加或减少块的文件大小。</li>
+</ul>
+<p>让我们在这里考虑一个248 MB的文件，现在如果我们打破这个文件，或者如果我们把这个文件移动到Hadoop Cluster（即2.x）中，那么这个文件将被分解成一个块，即128 MB的块A和另一个120 MB的块B。</p>
+<p>如您所见，第一个块为128 MB，即第一个板块在那里削减，这就是为什么另一个块为120 MB而不是128 MB，即如果剩余的文件大小小于默认块大小，则不会浪费任何空间。</p>
+<p><img src="/Echo/posts/19906/Example-Diagram.jpg" alt="Example-Diagram"></p>
+<p>现在我们面前还有另一个问题，即每个块的单个副本是否安全？</p>
+<p>答案是否定的，因为系统可能会失败，而它只是商品硬件，因此我们可能会遇到大麻烦。为了克服这个问题，Hadoop HDFS有一个很好的解决方案，即**”块的复制”。**</p>
+<h5 id="Hadoop-架构块复制"><a href="#Hadoop-架构块复制" class="headerlink" title="Hadoop 架构块复制"></a>Hadoop 架构块复制</h5><p>Hadoop创建存储到Hadoop分布式文件系统中的每个块的副本，这就是Hadoop作为容错系统的方式，即即使您的系统出现故障或DataNode失败或副本丢失，您也会在其他DataNode或其他服务器中存在多个其他副本，以便您始终可以从那里选择这些副本。</p>
+<p><img src="/Echo/posts/19906/Block-Replication.jpg" alt="Block-Replication"></p>
+<p>如图所表示块复制，文件有五个不同的块，即块 1、2、3、4、5。让我们先检查一下块 1，您将在节点 1、节点 2 和节点 4 中找到块 1 的副本。</p>
+<p>同样，块 2 也有三个副本，即节点 2、节点 3 和节点 4，因此在各自的节点中，块 3、4 和 5 也是如此。</p>
+<p>因此，除了创建的副本之外，每个块都被复制了三次，即Hadoop遵循默认的复制因子为3，这意味着您复制到Hadoop分发文件系统中的任何文件都会被复制三次。</p>
+<p>换句话说，如果您将1 GB的文件复制到Hadoop分发文件系统中，它实际上将3 GB的文件存储在HDFS中。好的部分是，通过更改Hadoop的配置文件，默认复制因子是可以更改的。</p>
+<p>*<strong>Hadoop 如何决定存储副本的位置？*</strong></p>
+<p>Hadoop实际上遵循Rack Awareness的概念来决定在哪里存储Block的副本。如图所示机架感知算法图表。</p>
+<p><img src="/Echo/posts/19906/Rack-Awareness-Algorithm.jpg" alt="Rack-Awareness-Algorithm"></p>
+<p>Rack-1有四个DataNodes，Rack-2和Rack-3也是如此，因此整个Hadoop集群总共将由所有三个机架组成，并且将有12个DataNode。</p>
+<p>假设块 A 在 Rack-1 的 DataNode 1 上复制，根据 Rack Aware 的概念，块 A 的副本不能在同一机架中创建，并且需要在 Rack-1 之外的任何其他机架中创建，因为主文件已经存在于 Rack-1 中。</p>
+<p>如果我们在同一机架-1中创建块A的副本，并且如果整个Rack-1发生故障，那么我们肯定会丢失数据，因此副本必须存储在任何其他机架中，而不是存储在Rack-1中。</p>
+<p>因此，将在 Rack-2 的 DataNode 6 和 8 中创建副本。同样，对于块 B 和块 C，副本将在不同的机架中创建，如上图所示。</p>
+<h4 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h4><ul>
+<li>Hadoop HDFS解决了大数据的存储问题。</li>
+<li>Hadoop Map Reduce解决了与大数据处理相关的问题。</li>
+<li>NameNode 是一个主守护进程，用于管理和维护 DataNode。</li>
+<li>DataNode是一个从属守护进程，实际数据存储在这里。它用于读取和写入来自客户端的请求。</li>
+<li>在Hadoop Cluster中，机架实际上是一组物理上存在于一个特定位置并相互连接的机器。</li>
+<li>每个文件都作为块存储在HDFS上。</li>
+<li>在Apache Hadoop 2.x中，每个块的默认大小约为128 MB（在以前的版本，即Apache Hadoop 1.x中为64 MB）。</li>
+<li>有一个工具可以使用Hadoop软件包附带的配置文件（即hdfssite.xml）来增加或减少块的文件大小。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>HDFS</tag>
+        <tag>大数据</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JMeter介绍</title>
+    <url>/Echo/posts/20349.html</url>
+    <content><![CDATA[<p>在本文中我们将了解什么是性能测试、为什么选择 JMeter、JMeter 与 HP LoadRunner。</p>
+<h5 id="什么是性能测试？"><a href="#什么是性能测试？" class="headerlink" title="什么是性能测试？"></a>什么是性能测试？</h5><p>在我们继续探索 Jmeter 及其安装过程之前，我们需要了解什么是性能测试以及 JMeter 作为工具如何支持性能测试。 </p>
+<p>就像学生需要表现良好才能提升自己的水平一样。 同样，应用程序（移动或 Web 或桌面）需要表现良好，才能在竞争激烈的市场中更上一层楼。 </p>
+<p>性能测试衡量 <strong>您的应用程序在不同工作负载下的性能。</strong> 有许多参数可用于确定负载测试中的服务器是否运行良好，本文稍后将讨论这些参数。 </p>
+<ul>
+<li>举一个简单的例子。  在浏览器中输入“<a href="http://www.facebook.com”,它显示了/">www.facebook.com”，它显示了</a> Facebook 的主页使用时间10秒。 现在假设 1000 人同时输入“<a href="http://www.facebook.com”并点击/">www.facebook.com”并点击</a> Google 主页显示可能超过 10 秒 。</li>
+<li>因此，在不同的工作负载（用户数量）下性能会发生变化。  这种类型的测试非常重要，因为无论您的应用程序有多么好的设计和功能，但如果它的性能很差，那么很有可能失去所有潜在的目标受众 。</li>
+</ul>
+<p>通过下图我们可以清晰看到比较</p>
+<p><img src="/Echo/posts/20349/FlowDiagram.jpg" alt="FlowDiagram"></p>
+<h6 id="性能测试主要考虑以下参数："><a href="#性能测试主要考虑以下参数：" class="headerlink" title="性能测试主要考虑以下参数："></a>性能测试主要考虑以下参数：</h6><ul>
+<li><strong>吞吐量</strong> - 它被定义为每秒的事务数。 例：假设银行客户服务一次只能处理 30 个呼叫，因此其余呼叫者需要排队。 这意味着吞吐量是 30</li>
+<li><strong>响应时间</strong> ——这个时间是用户从服务器收到响应所用的时间 </li>
+<li><strong>延迟</strong> 是信息的第一个字节到达用户端的时间。例：假设用户点击 HTTP 请求以检索网页。 因此，接收该网页的第一个字节的时间就是该请求的延迟时间 </li>
+<li><strong>可扩展性</strong>  - 它是指应用程序可以承受的最大负载 </li>
+<li>CPU 负载、内存使用和资源使用</li>
+</ul>
+<h5 id="为什么是JMeter？"><a href="#为什么是JMeter？" class="headerlink" title="为什么是JMeter？"></a>为什么是JMeter？</h5><p>JMeter 最初是由 Apache Software 的  Stefano Mazzocchi 开发的。  基本上，JMeter 是一个基于 Java 的桌面应用程序。  JMeter 使用 Swing  图形 API，不是由特定于平台的编码实现的，只要有JAVA即可。JMeter的安装自己行搜索。</p>
+<p> Jmeter支持以下协议：</p>
+<ul>
+<li>HTTP、HTTPS</li>
+<li>FTP</li>
+<li>JDBC</li>
+<li>SMTP、IMAP</li>
+<li>LDAP</li>
+<li>TCP</li>
+<li>SOAP</li>
+</ul>
+<p>JMeter的优点：</p>
+<ul>
+<li>免费–JMeter是免费的，Apache官网下载即可；</li>
+<li>友好的界面–测试人员可以很容易地熟悉它的大部分组件，工具内提供每个组件的帮助文档</li>
+<li>高度可扩展–用户可以使用 JSR223 创建自己的采样器，并且有许多采样器插件可用，测试人员增加测试能力</li>
+<li>协议支持–JMeter 不仅可用于应用程序性能测试，还支持多种协议</li>
+<li>记录– JMeter 内置了 HTTP(S) 测试脚本记录器，可用于记录来自网站或移动应用程序的所有操作，然后可以模拟负载以测试各种负载条件下的性能。 此外，还有一个 chrome 扩展可用于记录操作，然后可以在 JMeter 中使用相同的脚本来扩展负载</li>
+<li>集成selenium–可以与selenium进行集成测试</li>
+<li>安装简单</li>
+<li>图形化的报告</li>
+</ul>
+<h5 id="HP-LoadRunner-VS-JMeter"><a href="#HP-LoadRunner-VS-JMeter" class="headerlink" title="HP LoadRunner VS JMeter"></a>HP LoadRunner VS JMeter</h5><table>
+<thead>
+<tr>
+<th>JMeter</th>
+<th>Loadrunner</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>开源，免费</td>
+<td>惠普产品，许可证还是很贵的</td>
+</tr>
+<tr>
+<td>协议支持有限</td>
+<td>更多的协议支持</td>
+</tr>
+<tr>
+<td>Jmeter 是一个基于 Java 的产品，使用基于 sprint 的 API，这使得它独立于平台，可以在任何环境下运行，无论是 win、mac、Linux。</td>
+<td>它使用基于 C 的语言、Java、Java Script 和 VB。</td>
+</tr>
+<tr>
+<td>负载生成能力有限。  在具有高 RAM 和处理器的机器上，Jmeter 只能产生 1-2k 用户的负载。  增加负载可能会导致内存不足异常。</td>
+<td>负载生成能力更高。</td>
+</tr>
+<tr>
+<td>Jmeter的技术熟练程度较低。</td>
+<td>LoadRunner 技术精湛。</td>
+</tr>
+<tr>
+<td>Jmeter 在云中运行有很多复杂性。</td>
+<td>Load Runner 也很容易在云环境中运行。</td>
+</tr>
+<tr>
+<td>Jmeter 中的录制功能非常简单，并且也支持可扩展性。  有一些 chrome 插件，可以直接在 Jmeter 中导入脚本。</td>
+<td>与 Jmeter 相比，Load Runner 中的记录功能也不复杂。</td>
+</tr>
+<tr>
+<td>Jmeter 的结果不是实时的。</td>
+<td>LoadRunner 提供相对更实时的结果</td>
+</tr>
+<tr>
+<td>Jmeter 在用于 SAP 等企业产品时效率不高。</td>
+<td>即使使用 SAP、Siebel 等，Load Runner 也能提供高效的结果。</td>
+</tr>
+</tbody></table>
+<h5 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h5><p>JMeter 是市场上用于测试 Web 和移动应用程序的强大工具。  它非常易于使用并且不需要太多编程技能，除非在 JMeter 中编写自己的采样器。 将在接下来的系列文章中详细介绍每个组件，敬请期待！ </p>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>性能测试，JMeter</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JMeter处理器和控制器</title>
+    <url>/Echo/posts/21888.html</url>
+    <content><![CDATA[<h5 id="预处理器–pre-processor"><a href="#预处理器–pre-processor" class="headerlink" title="预处理器–pre processor"></a>预处理器–pre processor</h5><p>执行采样器之前执行的元素。您可以将预处理器与要在请求中进行一些更改的采样器连接在一起。</p>
+<p>最简单的情况可能是在 HTTP 请求中添加”示例超时”预处理器，以便此请求仅运行定义的时间量。它还确保仅对父采样器执行此修改,以下是JMeter中的预处理器：</p>
+<p><img src="/Echo/posts/21888/image-20211217094257136.png" alt="image-20211217094257136"></p>
+<h6 id="用户参数–-user-parameters"><a href="#用户参数–-user-parameters" class="headerlink" title="用户参数– user parameters"></a>用户参数– user parameters</h6><p>用户参数用于在取样器中使用变量之前定义变量的值。当JMeter执行此预处理器元素时，会将值存储在变量中，这些变量可由同一线程组中的任何取样器使用。</p>
+<p><img src="/Echo/posts/21888/image-20211217100245301.png" alt="image-20211217100245301"></p>
+<p>示例超时–sample timeout</p>
+<p>用于定义请求的超时持续时间。例：如果将取样时间设置为 400 毫秒，则所有需要时间的请求&gt;400 都将具有失败的响应。请看下面的截图</p>
+<p><img src="/Echo/posts/21888/image-20211217134259470.png" alt="image-20211217134259470"></p>
+<p><img src="/Echo/posts/21888/image-20211217134313658.png" alt="image-20211217134313658"></p>
+<h5 id="控制器"><a href="#控制器" class="headerlink" title="控制器"></a>控制器</h5><p>控制器在构建实时JMeter测试计划方面十分重要，用于定义请求发送到服务器的顺序。JMeter中的控制器有以下：</p>
+<p><img src="/Echo/posts/21888/image-20211217150511568.png" alt="image-20211217150511568"></p>
+<h6 id="简单控制器–simple-controller"><a href="#简单控制器–simple-controller" class="headerlink" title="简单控制器–simple controller"></a>简单控制器–simple controller</h6><p>简单的控制器不执行任何特定功能。它只是一种容器，您可以在其中保留类似的请求，以使测试计划易于理解。</p>
+<p><img src="/Echo/posts/21888/image-20211217154100877.png" alt="image-20211217154100877"></p>
+<h6 id="循环控制器–Loop-Controller"><a href="#循环控制器–Loop-Controller" class="headerlink" title="循环控制器–Loop Controller"></a>循环控制器–Loop Controller</h6><p>如果希望某些特定请求运行的迭代次数多于”线程组”中指定的迭代次数，则可以将它们放在”循环控制器”下，然后在控制器设置中输入循环计数。</p>
+<p><img src="/Echo/posts/21888/image-20211217154238730.png" alt="image-20211217154238730"></p>
+<p>图中的每个取样器将执行6次。</p>
+<h6 id="仅一次控制器–once-ONLY-controller"><a href="#仅一次控制器–once-ONLY-controller" class="headerlink" title="仅一次控制器–once ONLY controller"></a>仅一次控制器–once ONLY controller</h6><p>当您只想运行某个特定请求一次时，即使线程组中有多个线程，也会使用此控制器。可以考虑的最简单的例子是”获取网站主页”或”登录到Web应用程序”。实时方案希望它只发生一次，其他请求（如搜索或编辑&#x2F;删除某些内容）将多次发生。</p>
+<p>仅执行一次的请求可以放在”仅一次控制器”下。截图以供参考。一次 只有控制器设置绕过父线程组设置。</p>
+<p><img src="/Echo/posts/21888/image-20211217160551520.png" alt="image-20211217160551520"></p>
+<h6 id="录制控制器–HTTP（S）-TEST-Script-Recorder"><a href="#录制控制器–HTTP（S）-TEST-Script-Recorder" class="headerlink" title="录制控制器–HTTP（S） TEST Script Recorder"></a>录制控制器–HTTP（S） TEST Script Recorder</h6><p>就像简单控制器一样，录制控制器不会修改发送到服务器的任何请求序列。它与HTTP（S）脚本记录器一起使用。使用此非测试元素记录的所有请求都保存在记录控制器下。需要指定目标控制器以保存对服务器发出的记录请求。</p>
+<p><img src="/Echo/posts/21888/image-20211217160800045.png" alt="image-20211217160800045"></p>
+<h6 id="吞吐量控制器–Throughput-controller"><a href="#吞吐量控制器–Throughput-controller" class="headerlink" title="吞吐量控制器–Throughput controller"></a>吞吐量控制器–Throughput controller</h6><p>此控制器还用于控制执行流。如下图所示，该控制器进一步分为两部分：</p>
+<p><img src="/Echo/posts/21888/image-20211217160905035.png" alt="image-20211217160905035"></p>
+<p>执行百分比–Percent Executions ： 选中后 Jmeter 将仅执行此控制器下采样器总迭代的一定百分比。也可以选中”每用户”复选框以在用户级别进行控制。</p>
+<p>执行总数– total Executions: 将允许用户直接为此控制器下包含的采样器指定迭代次数。</p>
+<h6 id="交错控制器–-interleave-controller"><a href="#交错控制器–-interleave-controller" class="headerlink" title="交错控制器– interleave controller"></a>交错控制器– interleave controller</h6><p>此控制器允许您通过以 n 种方式修改序列来增加性能测试的范围，以便在应用程序以不同的顺序命中请求时测试服务器上的负载。交错控制器在其下方的采样器进行替代选择。</p>
+<p>如果此块下有其他控制器（如 Simple Controller），则交错控制器授予从容器中为每个迭代选择一个采样器的权限。为了进一步解释它，见图</p>
+<p><img src="/Echo/posts/21888/image-20211217162333245.png" alt="image-20211217162333245"></p>
+<p>Jmeter 将在每次迭代的控制器之间交替迭代。执行顺序为：<em>请求1 -&gt; 请求3 -&gt; 请求 5 – 请求2 -&gt; 请求4 -&gt; 请求6</em></p>
+<h6 id="随机控制器–random-controller"><a href="#随机控制器–random-controller" class="headerlink" title="随机控制器–random controller"></a>随机控制器–random controller</h6><p>顾名思义随机选择子控制器和其中的采样器。工作方式几乎与交错控制器类似，但不按顺序选取采样器。</p>
+<p>条件控制器–If controller</p>
+<p>if 控制器 以类似的方式工作，则以任何编程语言处理 IF 表达式。首先验证条件，然后执行此容器下的组件（如果条件为 TRUE），否则将执行 IF 控制器外部的元素。</p>
+<p><img src="/Echo/posts/21888/image-20211217165030335.png" alt="image-20211217165030335"></p>
+<p>测试计划设计如下：如果 IF 条件被评估为<strong>False，</strong>则只有 Request3、Request4 和 Request5 将执行。</p>
+<h6 id="while-控制器"><a href="#while-控制器" class="headerlink" title="while 控制器"></a>while 控制器</h6><p>此控制器执行其下的组件，直到条件变为 false。</p>
+<h5 id="JMeter的记录模板"><a href="#JMeter的记录模板" class="headerlink" title="JMeter的记录模板"></a>JMeter的记录模板</h5><p>Jmeter的File目录选择template ，然后切换recording</p>
+<p><img src="/Echo/posts/21888/image-20211217165849700.png" alt="image-20211217165849700"></p>
+<p>选择此录制模板后，会看到一些组件已添加到测试计划中。</p>
+<ul>
+<li>工作台下的 HTTP 脚本记录器</li>
+<li>HTTP 请求默认值和 HTTP Cookie 管理器</li>
+<li>“线程组”下的记录控制器。</li>
+<li><img src="/Echo/posts/21888/image-20211217170049709.png" alt="image-20211217170049709"></li>
+</ul>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>性能测试</tag>
+        <tag>JMeter</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JMeter组件介绍</title>
+    <url>/Echo/posts/23855.html</url>
+    <content><![CDATA[<p>在本文中，将熟悉<strong>JMeter 的所有组件，以及如何在测试计划中使用它们</strong>来覆盖所有可能的性能测试场景来测试 AUT（被测应用程序）。</p>
+<h4 id="JMeter的组件"><a href="#JMeter的组件" class="headerlink" title="JMeter的组件"></a>JMeter的组件</h4><p>请参考以下的流程图来了解每个组件及其与JMeter特定模块的关系。</p>
+<p><img src="/Echo/posts/23855/JmeterFlowDiagram.jpg" alt="Jmeter流程图"></p>
+<h5 id="测试计划–TEST-PLAN"><a href="#测试计划–TEST-PLAN" class="headerlink" title="测试计划–TEST PLAN"></a>测试计划–TEST PLAN</h5><p>测试计划中包含的所有内容都是按从上到下的顺序或者测试计划中定义的顺序执行。测试计划可以尽可能简单，担忧线程组、采样器、监听器，可以添加更多的元素如配置元素、预处理器、控制器或前置&#x2F;后置处理器。</p>
+<p>JMeter是通过虚拟用户或线程来衡量性能，这些虚拟用户或者线程会连接被测服务器，就像真实用户向服务器发送请求一样。因此，每个测试计划都应该有我们JMeter中所称的虚拟用户或者线程组–THREAD GROUP。</p>
+<p>测试计划的要点：</p>
+<ul>
+<li>运行前应保存测试计划</li>
+<li>JMeter文件或者测试计划以JMX文件的格式保存</li>
+<li>还可以将测试计划保存为不同方式，可以在其他测试场景中使用</li>
+</ul>
+<h5 id="线程组–THREAD-GROUP"><a href="#线程组–THREAD-GROUP" class="headerlink" title="线程组–THREAD GROUP"></a>线程组–THREAD GROUP</h5><p>线程组是一组用户，他们将同时以定义好的顺序访问被测服务器。可以通过右键单击测试计划将线程组添加到测试计划中。</p>
+<p><img src="/Echo/posts/23855/image-20211213103617620.png" alt="线程组"></p>
+<p>1、你可以重命名线程组名称</p>
+<ul>
+<li><strong>Number of Thread(Users)</strong> ：它定义了虚拟用户的数量。出于测试目的，我们应该只生成有限的负载，因为一次生成大量负载意味着消耗大量线程，最终会导致 CPU 使用率高。</li>
+<li><strong>Ramp Up Period</strong> ：该字段在控制负载生成方面非常重要。加速周期定义了产生总负载的时间量。</li>
+<li><strong>Loop COUNT</strong>：定义了线程组将执行的次数。如果您选中 Forever 复选框，您的测试将永远运行，除非您手动停止它。这可用于测试诸如“如果您的服务器在持续加载几分钟内没有崩溃”之类的内容。</li>
+</ul>
+<p>取样器–Sample</p>
+<p>JMeter如何知道发送到服务器的请求类型是什么？</p>
+<p>是通过取样器。取样器是必须要添加到测试计划中的，因为只有它可以让JMeter知道需要发送那种类型的请求到那个服务器上以及需要携带什么样的参数。请求是HTTP、websocket、FTP、TCP、SMTP等。</p>
+<p>采样器只能添加到线程组，而不是直接在测试计划下，因为线程组需要使用采样器向被测服务器 URL 发送请求。采样器可以通过路径Thread Group -&gt; Sampler -&gt; HTTP Request 添加。</p>
+<h6 id="HTTP请求示例"><a href="#HTTP请求示例" class="headerlink" title="HTTP请求示例"></a>HTTP请求示例</h6><p><img src="/Echo/posts/23855/image-20211213111816981.png" alt="HTTP示例"></p>
+<ul>
+<li>server name or ip ：输入服务的IP或者域名</li>
+<li>path： 请求的路径</li>
+<li>method：请求方式，常见的有post、get、put、delete等</li>
+<li>parameter：请求参数，如需要可以添加，还可以在config Element中添加httpcookie、请求头配置等</li>
+<li>body data：请求体</li>
+</ul>
+<h5 id="监听器-Listener"><a href="#监听器-Listener" class="headerlink" title="监听器-Listener"></a>监听器-Listener</h5><p>截止到这里，我们已经看到了取样器向服务器发送请求，但是还没有分析响应。性能测试就是分析各种形式的服务器响应，然后将呈现给客户端。监听器用于显示测试执行的结果，以便测试人员了解统计信息。在JMeter中大约有15种监听器，但是常用的是table、tree和graph。</p>
+<p>监听器可以直接在测试计划下或取样器下添加。不同之处在于，当您在取样器下添加侦听器时，它只会显示该取样器的结果。如果我们直接在测试计划下添加取样器，它会显示层次结构中所有取样器的结果。</p>
+<p>会看到如下结果：</p>
+<p><img src="/Echo/posts/23855/image-20211214162144747.png" alt="image-20211214162144747"></p>
+<ul>
+<li>Label：一般展示为采样器名称</li>
+<li>samples：请求的总数量</li>
+<li>average：总请求平均耗时</li>
+<li>median:总请求耗时中位数</li>
+<li>90%Line：总请求中90%请求耗时</li>
+<li>95%Line：总请求中95%请求耗时</li>
+<li>99%Line：总请求中99%请求耗时</li>
+<li>min：所有请求中最小耗时</li>
+<li>max：所有请求中最大耗时</li>
+<li>Error：所有请求发生的错误率（一般有错误产生可以认为已经到达瓶颈）</li>
+<li>throughput:即QPS</li>
+<li>rec&#x2F;sent:发送和接受的网速</li>
+</ul>
+<h5 id="断言–Assertions"><a href="#断言–Assertions" class="headerlink" title="断言–Assertions"></a>断言–Assertions</h5><p>我们已经介绍了JMeter如何击中服务器以及如何通过侦听器显示响应。为了确保收到的响应是正确的，并且符合预期，我们需要添加断言。断言只是我们需要放在响应上以比较结果的验证。有以下断言类型</p>
+<ul>
+<li>响应断言</li>
+<li>持续时间断言</li>
+<li>大小断言</li>
+<li>XML断言</li>
+<li>HTML断言</li>
+</ul>
+<h6 id="响应时间断言"><a href="#响应时间断言" class="headerlink" title="响应时间断言"></a>响应时间断言</h6><p>在响应断言中，我们可以添加自己的模式字符串，然后将它们与从服务器收到的响应进行比较。<em>例如，</em>当任何请求成功返回某些响应时，您都知道响应代码为 200。因此，如果我们添加模式字符串”响应代码 &#x3D; 202”，则测试用例应该失败。</p>
+<p><img src="/Echo/posts/23855/image-20211214195434442.png" alt="image-20211214195434442"></p>
+<h6 id="持续时间断言"><a href="#持续时间断言" class="headerlink" title="持续时间断言"></a>持续时间断言</h6><p>持续时间断言非常重要，可验证服务器是否在给定的时间内进行了响应。这可用于我们需要对 100 个请求进行采样并确保每次收到响应都在基准限制范围内的情况。</p>
+<p><img src="/Echo/posts/23855/image-20211214202706648.png" alt="image-20211214202706648"></p>
+<p>XML 断言验证响应数据中是否包含正确的 XML 文档，HTML 断言验证从服务器收到的响应的 HTML 语法。</p>
+<h5 id="元素配置–config-ELements"><a href="#元素配置–config-ELements" class="headerlink" title="元素配置–config ELements"></a>元素配置–config ELements</h5><p>发送到服务器的请求可以使用一些在实际请求之前执行的配置元素进一步参数化。一个简单的示例可能是从使用 CSV 数据集配置的 CSV 文件中读取变量的值。常用的配置元素有如下这些：</p>
+<ul>
+<li>CSV数据集配置</li>
+<li>用户定义的参数</li>
+<li>HTTPS请求默认</li>
+<li>HTTPS缓存管理器</li>
+<li>HTTPS COOKIE MANAGER</li>
+</ul>
+<h6 id="csv数据集配置"><a href="#csv数据集配置" class="headerlink" title="csv数据集配置"></a>csv数据集配置</h6><p>CSV数据集配置可帮助Jmeter从CSV文件中选取某些参数的值，而不是在每个单独的请求中传递不同的参数。<em>例如，</em>如果我们需要使用一组不同的用户和密码来测试登录功能，那么我们可以在CSV文件中创建两列并在那里输入值，以便JMeter可以为发送到服务器的每个请求选择一个。</p>
+<p><img src="/Echo/posts/23855/image-20211216160753990.png" alt="image-20211216160753990"></p>
+<h6 id="用户定义的变量-User-Defined-Variables"><a href="#用户定义的变量-User-Defined-Variables" class="headerlink" title="用户定义的变量-User Defined Variables"></a>用户定义的变量-User Defined Variables</h6><p>它可以帮助Jmeter从预定义的变量中选取值。<em>例如，</em>支持您需要创建一个测试计划，您需要在同一URL上添加许多HTTP请求，并且可能存在客户端计划稍后将其迁移到某些不同 URL.So 的情况，以避免在每个请求中更新URL，我们可以告诉JMeter从UDV（用户定义的变量）中选取URL，该UDV可以在以后更新以处理对更新的URL的所有请求。</p>
+<p>因此，为了避免在每个请求中更新URL，我们可以告诉JMeter从UDV（用户定义的变量）中选择URL，该UDV可以在以后更新以处理对更新URL的所有请求。</p>
+<p><img src="/Echo/posts/23855/image-20211216161303245.png" alt="image-20211216161303245"></p>
+<h6 id="HTTP-请求默认值"><a href="#HTTP-请求默认值" class="headerlink" title="HTTP 请求默认值"></a>HTTP 请求默认值</h6><p>此配置元素对于指定 https 请求的默认值非常有用。为了指导您更多，请举个例子，我们需要在Google服务器上命中50个不同的请求。在这种情况下，如果我们添加HTTP请求默认值，则无需指定服务器名称，路径或任何其他属性，如端口号，连接超时属性。在 HTTP 请求默认配置元素中指定的任何内容都将由所有 HTTP 请求继承。</p>
+<p>在这种情况下，如果我们添加HTTP请求默认值，则无需指定服务器名称，路径或任何其他属性，如端口号，连接超时属性。在 HTTP 请求默认配置元素中指定的任何内容都将由所有 HTTP 请求继承。</p>
+<p><img src="/Echo/posts/23855/image-20211216161420935.png" alt="image-20211216161420935"></p>
+<p><strong>HTTP Cache Manager</strong>和<strong>HTTP Cookie Manager</strong>用于使 JMeter 充当实时浏览器。HTTP缓存管理器可以在每个请求后清除缓存，而另一个可以管理cookie设置。</p>
+<h5 id="逻辑控制器和定时器"><a href="#逻辑控制器和定时器" class="headerlink" title="逻辑控制器和定时器"></a>逻辑控制器和定时器</h5><p>逻辑控制器和定时器帮助Jmeter控制交易流。如果需要测试任何服务器，计时器可确保每个线程中的延迟。<em>例如，</em>如果我们需要FTP请求在HTTP请求完成后等待5秒，我们可以在那里添加计时器。</p>
+<p>逻辑控制器用于定义发送到服务器的请求流。它还可以让您分别存储每个模块的请求，例如登录和注销。</p>
+<p><img src="/Echo/posts/23855/image-20211216161518560.png" alt="image-20211216161518560"></p>
+<h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><p>到目前为止，一定都熟悉了JMeter的组件，并尝试过使用它，并且一定面临一些问题。在下一篇文章中，将介绍一些涵盖移动领域的实时性能测试场景，以便大家获得更多关于JMeter的实践知识。</p>
+<p><strong>敬请期待！下一篇文章将帮助管理请求，分析结果并与性能测试的基准进行比较。</strong></p>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>性能测试，JMeter</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Kafka常见命令</title>
-    <url>/Echo/Kafka%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4.html</url>
+    <url>/Echo/posts/14684.html</url>
     <content><![CDATA[<h4 id="kafka-启动命令"><a href="#kafka-启动命令" class="headerlink" title="kafka 启动命令"></a>kafka 启动命令</h4><p>dir：kafka 安装位置</p>
 <p>指定对应的配置文件启动</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kafka-server-start.sh  [dir]config/server.properties</span><br></pre></td></tr></table></figure>
@@ -1344,7 +1609,7 @@
   </entry>
   <entry>
     <title>cetnos 7.7单节点安装部署k8s（v1.18.2）</title>
-    <url>/Echo/cetnos-7-7%E5%8D%95%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2k8s%EF%BC%88v1-18-2%EF%BC%89.html</url>
+    <url>/Echo/posts/36589.html</url>
     <content><![CDATA[<h4 id="1-配置hosts文件"><a href="#1-配置hosts文件" class="headerlink" title="1.配置hosts文件"></a>1.配置hosts文件</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/hosts</span><br></pre></td></tr></table></figure>
 
 <p>本机ip  本机hostname 本机hostname</p>
@@ -1396,69 +1661,8 @@
       </tags>
   </entry>
   <entry>
-    <title>cetnos 8.2单节点安装部署k8s（v1.18.2）</title>
-    <url>/Echo/cetnos-8-2%E5%8D%95%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2k8s%EF%BC%88v1-18-2%EF%BC%89.html</url>
-    <content><![CDATA[<h4 id="1-配置hosts文件"><a href="#1-配置hosts文件" class="headerlink" title="1.配置hosts文件"></a>1.配置hosts文件</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/hosts</span><br></pre></td></tr></table></figure>
-
-<p>本机ip  本机hostname 本机hostname</p>
-<h4 id="2-关闭防火墙-sawp等"><a href="#2-关闭防火墙-sawp等" class="headerlink" title="2.关闭防火墙, sawp等"></a>2.关闭防火墙, sawp等</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl <span class="built_in">disable</span> firewalld</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-关闭swap"><a href="#3-关闭swap" class="headerlink" title="3.关闭swap"></a>3.关闭swap</h4><h4 id="4-禁用selinux"><a href="#4-禁用selinux" class="headerlink" title="4.禁用selinux"></a>4.禁用selinux</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br><span class="line">SELINUX=disabled</span><br><span class="line">/usr/sbin/sestatus -v  <span class="comment"># 查看selinux状态</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="5-安装docker"><a href="#5-安装docker" class="headerlink" title="5.安装docker"></a>5.安装docker</h4><h5 id="step-1-安装必要的一些系统工具"><a href="#step-1-安装必要的一些系统工具" class="headerlink" title="step 1: 安装必要的一些系统工具"></a>step 1: 安装必要的一些系统工具</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-2-添加软件源信息"><a href="#Step-2-添加软件源信息" class="headerlink" title="Step 2: 添加软件源信息"></a>Step 2: 添加软件源信息</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-3-更新并安装Docker-CE"><a href="#Step-3-更新并安装Docker-CE" class="headerlink" title="Step 3: 更新并安装Docker-CE"></a>Step 3: 更新并安装Docker-CE</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum makecache --refresh</span><br><span class="line">sudo yum -y install docker-ce</span><br><span class="line"><span class="comment"># 发现报错：Problem: package docker-ce-3:19.03.12-3.el7.x86_64 requires containerd.io &gt;= 1.2.2-3, but none of the providers can be installed</span></span><br><span class="line"><span class="comment"># 因为containerd 版本过低</span></span><br><span class="line">dnf install container-selinux</span><br><span class="line">通过yum -y install https://download.docker.com/linux/centos/7/x86_64/edge/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm 升级即可</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-4-docker-修改Cgroup-Driver以及docker镜像拉取地址"><a href="#Step-4-docker-修改Cgroup-Driver以及docker镜像拉取地址" class="headerlink" title="Step 4: docker 修改Cgroup Driver以及docker镜像拉取地址"></a>Step 4: docker 修改Cgroup Driver以及docker镜像拉取地址</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"> cat /etc/docker/daemon.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://e7l8pkuq.mirror.aliyuncs.com&quot;</span>],</span><br><span class="line">  <span class="string">&quot;exec-opts&quot;</span>: [<span class="string">&quot;native.cgroupdriver=systemd&quot;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="Step-5-开启Docker服务"><a href="#Step-5-开启Docker服务" class="headerlink" title="Step 5: 开启Docker服务"></a>Step 5: 开启Docker服务</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
-
-<h4 id="6-安装kubectl"><a href="#6-安装kubectl" class="headerlink" title="6.安装kubectl"></a>6.安装kubectl</h4><h5 id="step-1：下载最新kubectl最新资源"><a href="#step-1：下载最新kubectl最新资源" class="headerlink" title="step 1：下载最新kubectl最新资源"></a>step 1：下载最新kubectl最新资源</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">curl -LO <span class="string">&quot;https://storage.googleapis.com/kubernetes-release/release/<span class="subst">$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)</span>/bin/linux/amd64/kubectl&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="step-2：添加执行权限"><a href="#step-2：添加执行权限" class="headerlink" title="step 2：添加执行权限"></a>step 2：添加执行权限</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">chmod +x ./kubectl</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-3：移动kubectl至bin路径"><a href="#step-3：移动kubectl至bin路径" class="headerlink" title="step 3：移动kubectl至bin路径"></a>step 3：移动kubectl至bin路径</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo mv ./kubectl /usr/<span class="built_in">local</span>/bin/kubectl</span><br></pre></td></tr></table></figure>
-
-<h5 id="step-4：确认安装的版本"><a href="#step-4：确认安装的版本" class="headerlink" title="step 4：确认安装的版本"></a>step 4：确认安装的版本</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl version --client</span><br></pre></td></tr></table></figure>
-
-<h4 id="7-安装minikube"><a href="#7-安装minikube" class="headerlink" title="7.安装minikube"></a>7.安装minikube</h4><h5 id="step-1：确认是否支持虚拟化"><a href="#step-1：确认是否支持虚拟化" class="headerlink" title="step 1：确认是否支持虚拟化"></a>step 1：确认是否支持虚拟化</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">grep -E --color <span class="string">&#x27;vmx|svm&#x27;</span> /proc/cpuinfo</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="step-2：下载minikube资源"><a href="#step-2：下载minikube资源" class="headerlink" title="step 2：下载minikube资源"></a>step 2：下载minikube资源</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \</span><br><span class="line">  &amp;&amp; chmod +x minikube</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="step-3：添加minikube进入系统命令"><a href="#step-3：添加minikube进入系统命令" class="headerlink" title="step 3：添加minikube进入系统命令"></a>step 3：添加minikube进入系统命令</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo mkdir -p /usr/<span class="built_in">local</span>/bin/</span><br><span class="line">sudo install minikube /usr/<span class="built_in">local</span>/bin/</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="step-4：启动-minikube（使用的VM安装的centos-8因此设置driver-x3D-none）"><a href="#step-4：启动-minikube（使用的VM安装的centos-8因此设置driver-x3D-none）" class="headerlink" title="step 4：启动 minikube（使用的VM安装的centos 8因此设置driver&#x3D;none）"></a>step 4：启动 minikube（使用的VM安装的centos 8因此设置driver&#x3D;none）</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">minikube start --driver=none --image-repository=registry.cn-hangzhou.aliyuncs.com/google_containers</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="step-5：确认minikube状态"><a href="#step-5：确认minikube状态" class="headerlink" title="step 5：确认minikube状态"></a>step 5：确认minikube状态</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">minikube status</span><br></pre></td></tr></table></figure>
-
-<p>8.istio安装</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">istioctl manifest apply --<span class="built_in">set</span> profile=demo</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Kubernetes</category>
-      </categories>
-      <tags>
-        <tag>环境安装</tag>
-        <tag>K8S</tag>
-        <tag>Kubernetes</tag>
-        <tag>centos</tag>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Yarn REST API 使用指南</title>
-    <url>/Echo/Yarn-ResourceManager-REST-API-%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.html</url>
+    <url>/Echo/posts/57294.html</url>
     <content><![CDATA[<p>Yarn作为一款优秀的开源集群管理工具，可以用它来运行Hadoop，Spark，Flink等大数据处理任务。所有的分布式计算框架，都是主从模式，ResourceManager作为集群的管理员，是任务提交的入口。一般企业的大数据处理平台会在Yarn的基础中做进一步的封装，以web应用的形式提供更高级的大数据处理平台。如果web应用通过shell的方式提交任务将显得太重，而且不利于任务状态的监控。幸好Yarn提供了ResourceManager的REST API，可以很方便的向集群提交、杀死任务或者监控任务的状态，本文将简要介绍ResourceManager REST API的使用方法。</p>
 <h2 id="向集群提交任务"><a href="#向集群提交任务" class="headerlink" title="向集群提交任务"></a>向集群提交任务</h2><p>先通过POST请求生成application_id再通过这个id来提交任务。</p>
 <h3 id="生成application-id"><a href="#生成application-id" class="headerlink" title="生成application-id"></a>生成application-id</h3><p>通过POST请求rm-http-address:port&#x2F;ws&#x2F;v1&#x2F;cluster&#x2F;apps&#x2F;new-application，不需要参数，ResourceManager将返回application_id与集群可用资源配额，如下：</p>
@@ -2206,8 +2410,69 @@
       </tags>
   </entry>
   <entry>
+    <title>cetnos 8.2单节点安装部署k8s（v1.18.2）</title>
+    <url>/Echo/posts/34073.html</url>
+    <content><![CDATA[<h4 id="1-配置hosts文件"><a href="#1-配置hosts文件" class="headerlink" title="1.配置hosts文件"></a>1.配置hosts文件</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/hosts</span><br></pre></td></tr></table></figure>
+
+<p>本机ip  本机hostname 本机hostname</p>
+<h4 id="2-关闭防火墙-sawp等"><a href="#2-关闭防火墙-sawp等" class="headerlink" title="2.关闭防火墙, sawp等"></a>2.关闭防火墙, sawp等</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl <span class="built_in">disable</span> firewalld</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-关闭swap"><a href="#3-关闭swap" class="headerlink" title="3.关闭swap"></a>3.关闭swap</h4><h4 id="4-禁用selinux"><a href="#4-禁用selinux" class="headerlink" title="4.禁用selinux"></a>4.禁用selinux</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br><span class="line">SELINUX=disabled</span><br><span class="line">/usr/sbin/sestatus -v  <span class="comment"># 查看selinux状态</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="5-安装docker"><a href="#5-安装docker" class="headerlink" title="5.安装docker"></a>5.安装docker</h4><h5 id="step-1-安装必要的一些系统工具"><a href="#step-1-安装必要的一些系统工具" class="headerlink" title="step 1: 安装必要的一些系统工具"></a>step 1: 安装必要的一些系统工具</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-2-添加软件源信息"><a href="#Step-2-添加软件源信息" class="headerlink" title="Step 2: 添加软件源信息"></a>Step 2: 添加软件源信息</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-3-更新并安装Docker-CE"><a href="#Step-3-更新并安装Docker-CE" class="headerlink" title="Step 3: 更新并安装Docker-CE"></a>Step 3: 更新并安装Docker-CE</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum makecache --refresh</span><br><span class="line">sudo yum -y install docker-ce</span><br><span class="line"><span class="comment"># 发现报错：Problem: package docker-ce-3:19.03.12-3.el7.x86_64 requires containerd.io &gt;= 1.2.2-3, but none of the providers can be installed</span></span><br><span class="line"><span class="comment"># 因为containerd 版本过低</span></span><br><span class="line">dnf install container-selinux</span><br><span class="line">通过yum -y install https://download.docker.com/linux/centos/7/x86_64/edge/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm 升级即可</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-4-docker-修改Cgroup-Driver以及docker镜像拉取地址"><a href="#Step-4-docker-修改Cgroup-Driver以及docker镜像拉取地址" class="headerlink" title="Step 4: docker 修改Cgroup Driver以及docker镜像拉取地址"></a>Step 4: docker 修改Cgroup Driver以及docker镜像拉取地址</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"> cat /etc/docker/daemon.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://e7l8pkuq.mirror.aliyuncs.com&quot;</span>],</span><br><span class="line">  <span class="string">&quot;exec-opts&quot;</span>: [<span class="string">&quot;native.cgroupdriver=systemd&quot;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="Step-5-开启Docker服务"><a href="#Step-5-开启Docker服务" class="headerlink" title="Step 5: 开启Docker服务"></a>Step 5: 开启Docker服务</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-安装kubectl"><a href="#6-安装kubectl" class="headerlink" title="6.安装kubectl"></a>6.安装kubectl</h4><h5 id="step-1：下载最新kubectl最新资源"><a href="#step-1：下载最新kubectl最新资源" class="headerlink" title="step 1：下载最新kubectl最新资源"></a>step 1：下载最新kubectl最新资源</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">curl -LO <span class="string">&quot;https://storage.googleapis.com/kubernetes-release/release/<span class="subst">$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)</span>/bin/linux/amd64/kubectl&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="step-2：添加执行权限"><a href="#step-2：添加执行权限" class="headerlink" title="step 2：添加执行权限"></a>step 2：添加执行权限</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">chmod +x ./kubectl</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-3：移动kubectl至bin路径"><a href="#step-3：移动kubectl至bin路径" class="headerlink" title="step 3：移动kubectl至bin路径"></a>step 3：移动kubectl至bin路径</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo mv ./kubectl /usr/<span class="built_in">local</span>/bin/kubectl</span><br></pre></td></tr></table></figure>
+
+<h5 id="step-4：确认安装的版本"><a href="#step-4：确认安装的版本" class="headerlink" title="step 4：确认安装的版本"></a>step 4：确认安装的版本</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">kubectl version --client</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-安装minikube"><a href="#7-安装minikube" class="headerlink" title="7.安装minikube"></a>7.安装minikube</h4><h5 id="step-1：确认是否支持虚拟化"><a href="#step-1：确认是否支持虚拟化" class="headerlink" title="step 1：确认是否支持虚拟化"></a>step 1：确认是否支持虚拟化</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">grep -E --color <span class="string">&#x27;vmx|svm&#x27;</span> /proc/cpuinfo</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="step-2：下载minikube资源"><a href="#step-2：下载minikube资源" class="headerlink" title="step 2：下载minikube资源"></a>step 2：下载minikube资源</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \</span><br><span class="line">  &amp;&amp; chmod +x minikube</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="step-3：添加minikube进入系统命令"><a href="#step-3：添加minikube进入系统命令" class="headerlink" title="step 3：添加minikube进入系统命令"></a>step 3：添加minikube进入系统命令</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo mkdir -p /usr/<span class="built_in">local</span>/bin/</span><br><span class="line">sudo install minikube /usr/<span class="built_in">local</span>/bin/</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="step-4：启动-minikube（使用的VM安装的centos-8因此设置driver-x3D-none）"><a href="#step-4：启动-minikube（使用的VM安装的centos-8因此设置driver-x3D-none）" class="headerlink" title="step 4：启动 minikube（使用的VM安装的centos 8因此设置driver&#x3D;none）"></a>step 4：启动 minikube（使用的VM安装的centos 8因此设置driver&#x3D;none）</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">minikube start --driver=none --image-repository=registry.cn-hangzhou.aliyuncs.com/google_containers</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="step-5：确认minikube状态"><a href="#step-5：确认minikube状态" class="headerlink" title="step 5：确认minikube状态"></a>step 5：确认minikube状态</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">minikube status</span><br></pre></td></tr></table></figure>
+
+<p>8.istio安装</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">istioctl manifest apply --<span class="built_in">set</span> profile=demo</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Kubernetes</category>
+      </categories>
+      <tags>
+        <tag>环境安装</tag>
+        <tag>K8S</tag>
+        <tag>Kubernetes</tag>
+        <tag>centos</tag>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>emqtt_bench安装与压测MQTTbroker</title>
-    <url>/Echo/emqtt-bench%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8E%8B%E6%B5%8BMQTTbroker.html</url>
+    <url>/Echo/posts/38672.html</url>
     <content><![CDATA[<h4 id="EMQX"><a href="#EMQX" class="headerlink" title="EMQX"></a>EMQX</h4><p><em>EMQ X</em> (Erlang&#x2F;Enterprise&#x2F;Elastic MQTT Broker) 是基于 Erlang&#x2F;OTP 平台开发的开源物联网 MQTT 消息服务器。</p>
 <p>Erlang&#x2F;OTP是出色的软实时 (Soft-Realtime)、低延时 (Low-Latency)、分布式 (Distributed)的语言平台。</p>
 <p>MQTT 是轻量的 (Lightweight)、发布订阅模式 (PubSub) 的物联网消息协议。</p>
@@ -2225,7 +2490,7 @@
 
 <h6 id="2-安装Erlang-22-3"><a href="#2-安装Erlang-22-3" class="headerlink" title="2.安装Erlang 22.3"></a>2.安装Erlang 22.3</h6><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 切换到安装目录此处建议用opt文件夹</span></span><br><span class="line"><span class="built_in">cd</span> /opt</span><br><span class="line"><span class="comment"># 下载Erlang</span></span><br><span class="line">wget http://erlang.org/download/otp_src_22.3.tar.gz</span><br><span class="line"><span class="comment"># 解压</span></span><br><span class="line">tar -zxvf otp_src_22.3</span><br><span class="line">.tar.gz</span><br><span class="line"><span class="comment"># 切换到解压后的erlang安装包</span></span><br><span class="line"><span class="built_in">cd</span> otp_src_22.3</span><br><span class="line"><span class="comment"># 开始安装</span></span><br><span class="line">./configure &amp; make &amp; make install</span><br><span class="line"><span class="comment"># 查看版本</span></span><br><span class="line">erl</span><br></pre></td></tr></table></figure>
 
-<p><img src="/Echo/emqtt-bench%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8E%8B%E6%B5%8BMQTTbroker/image-20211216170648216.png" alt="image-20211216170648216"></p>
+<p><img src="/Echo/posts/38672/image-20211216170648216.png" alt="image-20211216170648216"></p>
 <h6 id="3-安装新版git（因后续在emqtt-bench-make时centos7自带git版本较低导致问题）"><a href="#3-安装新版git（因后续在emqtt-bench-make时centos7自带git版本较低导致问题）" class="headerlink" title="3.安装新版git（因后续在emqtt_bench make时centos7自带git版本较低导致问题）"></a>3.安装新版git（因后续在emqtt_bench make时centos7自带git版本较低导致问题）</h6><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 更新系统资源包</span></span><br><span class="line">yum install http://opensource.wandisco.com/centos/7/git/x86_64/wandisco-git-release-7-2.noarch.rpm</span><br><span class="line"><span class="comment"># 安装git</span></span><br><span class="line">yum install -y git</span><br><span class="line"><span class="comment"># 查看git版本</span></span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
 
 <p>4.安装emqtt_bench</p>
@@ -2234,7 +2499,7 @@
 <p>输出Usage: emqtt_bench pub | sub | conn [–help]即为安装成功</p>
 <h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>安装中遇到的问题有以下两个</p>
 <h6 id="1-make失败（报错GUN版本）"><a href="#1-make失败（报错GUN版本）" class="headerlink" title="1.make失败（报错GUN版本）"></a>1.make失败（报错GUN版本）</h6><p>经排查此问题为QUIC功能不能使用导致，使用禁用模式make即可</p>
-<h6 id="2-有部分git资源下载失败"><a href="#2-有部分git资源下载失败" class="headerlink" title="2.有部分git资源下载失败"></a>2.有部分git资源下载失败</h6><p><img src="/Echo/emqtt-bench%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8E%8B%E6%B5%8BMQTTbroker/image-20211216171321403.png" alt="image-20211216171321403"></p>
+<h6 id="2-有部分git资源下载失败"><a href="#2-有部分git资源下载失败" class="headerlink" title="2.有部分git资源下载失败"></a>2.有部分git资源下载失败</h6><p><img src="/Echo/posts/38672/image-20211216171321403.png" alt="image-20211216171321403"></p>
 <p><strong>cd &#x2F;opt&#x2F;emqtt-bench&#x2F;_build&#x2F;default&#x2F;lib&#x2F;quicer&#x2F;msquic&#x2F;submodules</strong></p>
 <p><strong>git clone git:&#x2F;&#x2F;github.com&#x2F;google&#x2F;googletest</strong></p>
 <h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p><code>emqtt_bench</code> 共三个子命令：</p>
@@ -2413,57 +2678,41 @@
       </tags>
   </entry>
   <entry>
-    <title>BMCweb解释</title>
-    <url>/Echo/BMCweb%E8%A7%A3%E9%87%8A.html</url>
-    <content><![CDATA[<p><strong>UID****：</strong>定位作用，控制定位灯是否亮起，便于寻找机器</p>
-<p><strong>循环开机</strong>：服务器先关机再开机</p>
-<p><strong>重启</strong>：不关闭电源（热开机）的情况下重新启动系统</p>
-<p>**软关机:**先执行操作系统的关机再关闭系统</p>
-<p><strong>CPU****速率</strong>：cup主频，即CPU<a href="https://baike.baidu.com/item/%E5%86%85%E6%A0%B8">内核</a>工作的<a href="https://baike.baidu.com/item/%E6%97%B6%E9%92%9F%E9%A2%91%E7%8E%87/103708">时钟频率</a>。CPU的主频表示在CPU内数字<a href="https://baike.baidu.com/item/%E8%84%89%E5%86%B2">脉冲</a>信号震荡的速度，主频和实际的<a href="https://baike.baidu.com/item/%E8%BF%90%E7%AE%97%E9%80%9F%E5%BA%A6">运算速度</a>存在一定的关系，但没有一个定量，因为CPU的运算速度还要看CPU的流水线的各方面的性能指标（<a href="https://baike.baidu.com/item/%E7%BC%93%E5%AD%98">缓存</a>、<a href="https://baike.baidu.com/item/%E6%8C%87%E4%BB%A4%E9%9B%86">指令集</a>，CPU的<a href="https://baike.baidu.com/item/%E4%BD%8D%E6%95%B0">位数</a>等等）。</p>
-<p><strong>核心</strong>（Die）又称为内核，是CPU最重要的组成部分。CPU中心那块隆起的芯片就是核心， CPU所有的计算、接受&#x2F;存储命令、处理数据都由核心执行。各种CPU核心都具有固定的逻辑结构，一级缓存、二级缓存、执行单元、指令级单元和总线接口等逻辑单元都会有科学的布局。</p>
-<p><strong>CPU****的核心数</strong>是指物理上，也就是硬件上存在着几个核心。比如，双核就是包括2个相对独立的CPU核心单元组，四核就包含4个相对独立的CPU核心单元组。</p>
-<p><strong>TDP</strong>： Thermal Design Power——散热设计功耗</p>
-<p>大小：一级缓存&lt;二级缓存&lt;三级缓存</p>
-<p>速度：一级缓存&gt;二级缓存&gt;三级缓存</p>
-<p>当CPU需要写入内存的时候通常只更新<a href="http://www.baidu.com/s?wd=%E4%B8%89%E7%BA%A7%E7%BC%93%E5%AD%98&tn=SE_PcZhidaonwhc_ngpagmjz&rsv_dl=gh_pc_zhidao">三级缓存</a>，如果数据写入频繁将会更新到二级乃至一级缓存</p>
-<p><strong>网络控制器</strong>:网卡，又称<a href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E9%80%82%E9%85%8D%E5%99%A8/214428">网络适配器</a>或网络接口卡（NIC），英文名为Network Interface Card。</p>
-<p><strong>带宽</strong>：单位时间内能传输的数据量</p>
-<p><strong>硬盘：</strong>硬盘是集精密机械、微电子电路、电磁转换为一体的电脑存储设备，它存储着电脑系统资源和重要的信息及数据</p>
-<p><strong>额定功率</strong>：正常工作下的功率</p>
-<p><strong>错峰上电</strong>：设定一个时间让服务器随机开机</p>
-<p><strong>PIN</strong>：输入功率</p>
-<p><strong>POUT</strong>:输出功率</p>
-<p><strong>Iin</strong>：电源输入电流</p>
-<p><strong>Iout</strong>:电源电流输出</p>
-<p><strong>Vin</strong>:电源输入电压</p>
-<p><strong>Vout</strong>:电源输出电压</p>
-<p><strong>传感器</strong>（<a href="https://baike.baidu.com/item/%E8%8B%B1%E6%96%87">英文</a>名称：transducer&#x2F;sensor）是一种检测装置，能感受到被测量的信息，并能将感受到的信息，按一定规律变换成为电信号或其他所需形式的信息输出，以满足信息的传输、处理、存储、显示、记录和控制等要求。</p>
-<p><strong>KVM</strong>：就是Keyboard Video Mouse的缩写。KVM <a href="https://baike.baidu.com/item/%E4%BA%A4%E6%8D%A2%E6%9C%BA/103532">交换机</a>通过直接连接键盘、视频和鼠标 (KVM) 端口，让您能够访问和控制计算机。</p>
-<p>**VLAN(**Virtual LAN)， “虚拟局域网”，LAN是网络，VLAN所指的LAN特指使用路由器分割的网络——也就是广播域。</p>
-<p><strong>广播域</strong>，指的是广播帧(目标MAC地址全部为1)所能传递到的范围，亦即能够直接通信的范围。</p>
-<p><strong>域名</strong>：（Domain Name）网域，是由一串用点分隔的名字组成的<a href="https://baike.baidu.com/item/Internet">Internet</a>上某一台<a href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA/140338">计算机</a>或计算机组的名称，用于在数据传输时标识计算机的电子方位（有时也指地理位置）。</p>
-<p><strong>双工模式</strong>：1、全双工： 指可以同时（瞬时）进行信号的双向传输（A→B且B→A）。</p>
-<p>2、半双工：指一个时间内只有一个方向的信号传输（A→B或B→A）。</p>
-<p><strong>端口：</strong>分为逻辑端口和物理端口。物理端口指的是物理存在的端口，如ADSL Modem、<a href="https://baike.baidu.com/item/%E9%9B%86%E7%BA%BF%E5%99%A8">集线器</a>、<a href="https://baike.baidu.com/item/%E4%BA%A4%E6%8D%A2%E6%9C%BA">交换机</a>、<a href="https://baike.baidu.com/item/%E8%B7%AF%E7%94%B1%E5%99%A8">路由器</a>上用 于连接其他<a href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87">网络设备</a>的接口，如<a href="https://baike.baidu.com/item/RJ-45%E7%AB%AF%E5%8F%A3">RJ-45端口</a>、SC端口等等。逻辑端口是指逻辑意义上用于区分服务的端口，如<a href="https://baike.baidu.com/item/TCP%2FIP%E5%8D%8F%E8%AE%AE">TCP&#x2F;IP协议</a>中的服务端口，端口号的范围从0到65535，比如用于浏览网页服务的80端口，用于FTP服务的21端口等。端口号就是端口的编号。</p>
-<p><strong>NTP****服务器：</strong>【Network Time Protocol（NTP）】是用来使计算机<a href="https://baike.baidu.com/item/%E6%97%B6%E9%97%B4%E5%90%8C%E6%AD%A5">时间同步</a>化的一种协议，它可以使计算机对其服务器或时钟源（如石英钟，GPS等等)做同步化，它可以提供高精准度的时间校正，且可介由加密确认的方式来防止恶毒的协议攻击。</p>
-<p><strong>SMTP****：</strong>（Simple Mail Transfer Protocol）即<a href="https://baike.baidu.com/item/%E7%AE%80%E5%8D%95%E9%82%AE%E4%BB%B6%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE">简单邮件传输协议</a>,它是一组用于由源地址到目的地址传送<a href="https://baike.baidu.com/item/%E9%82%AE%E4%BB%B6">邮件</a>的规则，由它来控制信件的中转方式。<a href="https://baike.baidu.com/item/SMTP%E5%8D%8F%E8%AE%AE">SMTP协议</a>属于<a href="https://baike.baidu.com/item/TCP%2FIP%E5%8D%8F%E8%AE%AE%E7%B0%87">TCP&#x2F;IP协议簇</a>，它帮助每台<a href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA/140338">计算机</a>在发送或中转信件时找到下一个目的地。通过SMTP协议所指定的<a href="https://baike.baidu.com/item/%E6%9C%8D%E5%8A%A1%E5%99%A8">服务器</a>,就可以把E-mail寄到收信人的服务器上了，整个过程只要几分钟。SMTP<a href="https://baike.baidu.com/item/%E6%9C%8D%E5%8A%A1%E5%99%A8/100571">服务器</a>则是遵循SMTP协议的发送<a href="https://baike.baidu.com/item/%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8">邮件服务器</a>，用来发送或中转发出的<a href="https://baike.baidu.com/item/%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6/111106">电子邮件</a>。</p>
-<p><strong>网卡：</strong>是工作在链路层的网络组件，是局域网中连接计算机和传输介质的接口，不仅能实现与局域网传输介质之间的物理连接和电信号匹配，还涉及帧的发送与接收、帧的封装与拆封、介质访问控制、数据的编码与解码以及数据缓存的功能等。</p>
-<p><strong>LDAP****：</strong>是轻量<a href="https://baike.baidu.com/item/%E7%9B%AE%E5%BD%95%E8%AE%BF%E9%97%AE%E5%8D%8F%E8%AE%AE">目录访问协议</a>，以树状的层次结构来存储数据。</p>
-<p><strong>SSL</strong>(Secure Sockets Layer <a href="https://baike.baidu.com/item/%E5%AE%89%E5%85%A8%E5%A5%97%E6%8E%A5%E5%B1%82">安全套接层</a>),及其继任者<a href="https://baike.baidu.com/item/%E4%BC%A0%E8%BE%93%E5%B1%82%E5%AE%89%E5%85%A8">传输层安全</a>（Transport Layer Security，TLS）是为<a href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/9636548">网络通信</a>提供安全及<a href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7/110071">数据完整性</a>的一种安全协议。SSL通过互相认证、使用数字签名确保完整性、使用加密确保私密性，以实现客户端和服务器之间的安全通讯。该协议由两层组成：SSL记录协议和SSL握手协议。</p>
-<p><strong>TLS</strong>：(Transport Layer Security，传输层安全协议)，用于两个应用程序之间提供保密性和数据完整性。该协议由两层组成：TLS记录协议和TLS握手协议。</p>
-<p><strong>TLS****与SSL</strong>在<a href="https://baike.baidu.com/item/%E4%BC%A0%E8%BE%93%E5%B1%82/4329536">传输层</a>对网络连接进行加密。　位于可靠的面向连接的网络层协议和应用层协议之间的一种协议层。</p>
+    <title>HBase shell命令</title>
+    <url>/Echo/posts/1599.html</url>
+    <content><![CDATA[<h4 id="HBase简介"><a href="#HBase简介" class="headerlink" title="HBase简介"></a>HBase简介</h4><p>HBase 命名的起源是 Hadoop database，Hadoop数据库，是NoSQL数据库，基于列式存储而非行式存储。</p>
+<p>HBase是一个分布式的、面向列的、基于Google Bigtable的开源实现。</p>
+<ul>
+<li>利用Hadoop HDFS作为其文件存储系统</li>
+<li>利用Hadoop MapReduce来处理HBase中的海量数据</li>
+<li>利用Zookeeper作为协同服务</li>
+</ul>
+<h4 id="HBase数据模型"><a href="#HBase数据模型" class="headerlink" title="HBase数据模型"></a>HBase数据模型</h4><p>HBase是一个稀疏、多维度、有序的映射表。表有行和列组成，列划分为若干个列族&#x2F;列簇(column family)，每个列族&#x2F;列簇下面可以有多个普通列。</p>
+<p><img src="/Echo/posts/1599/5-1Z5091305564M.gif" alt="5-1Z5091305564M"></p>
+<h4 id="HBase-shell-命令"><a href="#HBase-shell-命令" class="headerlink" title="HBase shell 命令"></a>HBase shell 命令</h4><h5 id="进入-HBase-shell"><a href="#进入-HBase-shell" class="headerlink" title="进入 HBase shell"></a>进入 HBase shell</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hbase shell</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="HBase版本状态查看"><a href="#HBase版本状态查看" class="headerlink" title="HBase版本状态查看"></a>HBase版本状态查看</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查询状态</span></span><br><span class="line">status</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查询版本</span></span><br><span class="line">version</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看当前操作用户</span></span><br><span class="line">whoami</span><br><span class="line"><span class="meta">#</span><span class="bash"> 帮助命令</span></span><br><span class="line">help</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看hbase支持的工具</span></span><br><span class="line">tools</span><br></pre></td></tr></table></figure>
+
+<h5 id="DDL操作"><a href="#DDL操作" class="headerlink" title="DDL操作"></a>DDL操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建一个表</span></span><br><span class="line">create<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;column_famaly&#x27;</span>,<span class="string">&#x27;column_famaly1&#x27;</span>,<span class="string">&#x27;column_famaly2&#x27;</span></span><br><span class="line"><span class="comment"># 列出所有表</span></span><br><span class="line">list</span><br><span class="line"><span class="comment"># 获取表的描述</span></span><br><span class="line">describe<span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 删除一个列族</span></span><br><span class="line">alter<span class="string">&#x27;table&#x27;</span>,&#123;NAME=&gt;<span class="string">&#x27;column_famaly&#x27;</span>,METHOD=&gt;<span class="string">&#x27;delete&#x27;</span>&#125;</span><br><span class="line"><span class="comment"># 删除一个表</span></span><br><span class="line"><span class="comment"># ① 要删除的表设置为disable</span></span><br><span class="line"><span class="built_in">disable</span><span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># ② 删除表</span></span><br><span class="line">drop <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 查询表是否存在</span></span><br><span class="line">exists<span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 查看表是否可用</span></span><br><span class="line">is_enabled<span class="string">&#x27;table&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="DML操作"><a href="#DML操作" class="headerlink" title="DML操作"></a>DML操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 插入数据</span></span><br><span class="line">put<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span>,<span class="string">&#x27;name&#x27;</span></span><br><span class="line"><span class="comment"># 获取row1所有数据</span></span><br><span class="line">get <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span></span><br><span class="line"><span class="comment"># 获取表row1，col1所有数据</span></span><br><span class="line">get<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1&#x27;</span></span><br><span class="line"><span class="comment"># 更新一条数据</span></span><br><span class="line">put <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span>,<span class="string">&#x27;name1&#x27;</span></span><br><span class="line"><span class="comment"># 通过时间戳获取数据</span></span><br><span class="line">get <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,&#123;COLUMN=&gt;<span class="string">&#x27;col1:name&#x27;</span>,TIMESTAMP=&gt;1463055736277&#125;</span><br><span class="line"><span class="comment"># 扫描整张表（数据量大时不建议此操作）</span></span><br><span class="line">scan <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 删除一列</span></span><br><span class="line">delete <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span></span><br><span class="line"><span class="comment"># 删除行所有的数据</span></span><br><span class="line">deleteall <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span></span><br><span class="line"><span class="comment"># 统计表中的行数</span></span><br><span class="line">count <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 清空整张表（清空表后，表的分区设置会默认为1不建议）</span></span><br><span class="line">truncate <span class="string">&#x27;table&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="退出操作"><a href="#退出操作" class="headerlink" title="退出操作"></a>退出操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 退出</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment"># 关闭hbase集群（危险操作！！！）</span></span><br><span class="line">shutdown</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
-        <category>学习</category>
+        <category>大数据</category>
       </categories>
       <tags>
-        <tag>BMC</tag>
-        <tag>服务器</tag>
+        <tag>大数据</tag>
+        <tag>HBase</tag>
       </tags>
   </entry>
   <entry>
     <title>jekins环境搭建</title>
-    <url>/Echo/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.html</url>
+    <url>/Echo/posts/46098.html</url>
     <content><![CDATA[<table>
 <thead>
 <tr>
@@ -2512,26 +2761,26 @@
 <h2 id="5-1-访问jekins"><a href="#5-1-访问jekins" class="headerlink" title="5.1 访问jekins"></a>5.1 访问jekins</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://yellow.bigdata:8088</span><br></pre></td></tr></table></figure>
 
 <h2 id="5-2-解锁Jenkins"><a href="#5-2-解锁Jenkins" class="headerlink" title="5.2 解锁Jenkins"></a>5.2 解锁Jenkins</h2><p>依据提示，查看&#x2F;root&#x2F;.jenkins&#x2F;secrets&#x2F;initialAdminPassword文件中内容，填入文本框，这里填写的密码，也是admin账号的密码</p>
-<p><img src="/Echo/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113151335779.png" alt="image-20211113151335779"></p>
+<p><img src="/Echo/posts/46098/image-20211113151335779.png" alt="image-20211113151335779"></p>
 <h2 id="5-3-选择插件安装模式"><a href="#5-3-选择插件安装模式" class="headerlink" title="5.3 选择插件安装模式"></a>5.3 选择插件安装模式</h2><p>选择哪种插件的安装方式都可以，对后续操作没有太大影响，若后面有需要可以有针对性的安装插件，本次选择 “<strong>安装推荐的插件</strong>”，此时安装插件节点必须能够联网。</p>
-<p><img src="/Echo/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153312956.png" alt="image-20211113153312956"></p>
-<p><img src="/Echo/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153332209.png" alt="image-20211113153332209"></p>
+<p><img src="/Echo/posts/46098/image-20211113153312956.png" alt="image-20211113153312956"></p>
+<p><img src="/Echo/posts/46098/image-20211113153332209.png" alt="image-20211113153332209"></p>
 <p>打×的插件是由于网络传输导致的安装失败，后面再重新安装即可</p>
 <h2 id="5-4-新建账号或以管理员身份继续"><a href="#5-4-新建账号或以管理员身份继续" class="headerlink" title="5.4 新建账号或以管理员身份继续"></a>5.4 新建账号或以管理员身份继续</h2><p>可以选择使用admin账户继续，后面仍然有机会注册新账户</p>
-<p><img src="/Echo/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153358671.png" alt="image-20211113153358671"></p>
-<h2 id="5-5-实例配置"><a href="#5-5-实例配置" class="headerlink" title="5.5 实例配置"></a>5.5 实例配置</h2><p><img src="/Echo/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153424306.png" alt="image-20211113153424306"></p>
-<h2 id="5-6-开始使用Jenkins"><a href="#5-6-开始使用Jenkins" class="headerlink" title="5.6 开始使用Jenkins"></a>5.6 开始使用Jenkins</h2><p><img src="/Echo/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153454866.png" alt="image-20211113153454866"></p>
-<p><img src="/Echo/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153524832.png" alt="image-20211113153524832"></p>
+<p><img src="/Echo/posts/46098/image-20211113153358671.png" alt="image-20211113153358671"></p>
+<h2 id="5-5-实例配置"><a href="#5-5-实例配置" class="headerlink" title="5.5 实例配置"></a>5.5 实例配置</h2><p><img src="/Echo/posts/46098/image-20211113153424306.png" alt="image-20211113153424306"></p>
+<h2 id="5-6-开始使用Jenkins"><a href="#5-6-开始使用Jenkins" class="headerlink" title="5.6 开始使用Jenkins"></a>5.6 开始使用Jenkins</h2><p><img src="/Echo/posts/46098/image-20211113153454866.png" alt="image-20211113153454866"></p>
+<p><img src="/Echo/posts/46098/image-20211113153524832.png" alt="image-20211113153524832"></p>
 <h2 id="5-7-Jenkins设置中文"><a href="#5-7-Jenkins设置中文" class="headerlink" title="5.7 Jenkins设置中文"></a>5.7 Jenkins设置中文</h2><p>安装插件 Locale plugin , Localization: Chinese (Simplified) , Localization Support Plugin，如果失败就再安装一次</p>
-<p><img src="/Echo/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153552830.png" alt="image-20211113153552830"></p>
+<p><img src="/Echo/posts/46098/image-20211113153552830.png" alt="image-20211113153552830"></p>
 <p>重启：<a href="http://yellow.bigdata:8088/restart">http://yellow.bigdata:8088/restart</a><br> 如果出现部分汉化，部分没有汉化，则卸载插件，重新安装插件<br> 如果还是存在部分汉化，部分没有汉化的现象，则如下操作：<br> 1.先设置Default Language：zh_US（含义：英文）<br> 2.重启Jenkins<br> 3.再设置Default Language：zh_CN（含义：中文）<br> 4.刷新即可</p>
-<h1 id="6-Jenkins系统管理初始化设置"><a href="#6-Jenkins系统管理初始化设置" class="headerlink" title="6.Jenkins系统管理初始化设置"></a>6.Jenkins系统管理初始化设置</h1><h2 id="6-1-全局工具配置"><a href="#6-1-全局工具配置" class="headerlink" title="6.1 全局工具配置"></a>6.1 全局工具配置</h2><p><img src="/Echo/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153642733.png" alt="image-20211113153642733"></p>
+<h1 id="6-Jenkins系统管理初始化设置"><a href="#6-Jenkins系统管理初始化设置" class="headerlink" title="6.Jenkins系统管理初始化设置"></a>6.Jenkins系统管理初始化设置</h1><h2 id="6-1-全局工具配置"><a href="#6-1-全局工具配置" class="headerlink" title="6.1 全局工具配置"></a>6.1 全局工具配置</h2><p><img src="/Echo/posts/46098/image-20211113153642733.png" alt="image-20211113153642733"></p>
 <p>JDK</p>
-<p><img src="/Echo/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153701355.png" alt="image-20211113153701355"></p>
+<p><img src="/Echo/posts/46098/image-20211113153701355.png" alt="image-20211113153701355"></p>
 <p>Git</p>
-<p><img src="/Echo/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153722363.png" alt="image-20211113153722363"></p>
+<p><img src="/Echo/posts/46098/image-20211113153722363.png" alt="image-20211113153722363"></p>
 <p>Maven</p>
-<p><img src="/Echo/jekins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/image-20211113153742157.png" alt="image-20211113153742157"></p>
+<p><img src="/Echo/posts/46098/image-20211113153742157.png" alt="image-20211113153742157"></p>
 ]]></content>
       <categories>
         <category>环境安装</category>
@@ -2543,7 +2792,7 @@
   </entry>
   <entry>
     <title>kubeadm安装K8S（V1.22）</title>
-    <url>/Echo/kubeadm%E5%AE%89%E8%A3%85K8S%EF%BC%88V1-22%EF%BC%89.html</url>
+    <url>/Echo/posts/61079.html</url>
     <content><![CDATA[<h2 id="一-K8S1-20-x的重要更新"><a href="#一-K8S1-20-x的重要更新" class="headerlink" title="一.K8S1.20.x的重要更新"></a>一.K8S1.20.x的重要更新</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">1、Kubectl debug 设置一个临时容器</span><br><span class="line">2、Sidecar </span><br><span class="line">3、Volume：更改目录权限，fsGroup</span><br><span class="line">4、ConfigMap和Secret</span><br><span class="line"></span><br><span class="line">K8S官网：https://kubernetes.io/docs/setup/</span><br><span class="line">最新版高可用安装：https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/high-availability/</span><br></pre></td></tr></table></figure>
 
 <h2 id="二-K8S1-20-x的安装"><a href="#二-K8S1-20-x的安装" class="headerlink" title="二.K8S1.20.x的安装"></a>二.K8S1.20.x的安装</h2><h2 id="2-1-集群规划"><a href="#2-1-集群规划" class="headerlink" title="2.1 集群规划"></a>2.1 集群规划</h2><table>
@@ -2693,7 +2942,7 @@
   </entry>
   <entry>
     <title>kubekey安装K8S集群</title>
-    <url>/Echo/kubekey%E5%AE%89%E8%A3%85K8S%E9%9B%86%E7%BE%A4.html</url>
+    <url>/Echo/posts/780.html</url>
     <content><![CDATA[<h2 id="一-K8S1-20-x的重要更新"><a href="#一-K8S1-20-x的重要更新" class="headerlink" title="一.K8S1.20.x的重要更新"></a>一.K8S1.20.x的重要更新</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">1、Kubectl debug 设置一个临时容器</span><br><span class="line">2、Sidecar </span><br><span class="line">3、Volume：更改目录权限，fsGroup</span><br><span class="line">4、ConfigMap和Secret</span><br><span class="line"></span><br><span class="line">K8S官网：https://kubernetes.io/docs/setup/</span><br><span class="line">最新版高可用安装：https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/high-availability/</span><br></pre></td></tr></table></figure>
 
 <h2 id="二-K8S1-20-x的安装"><a href="#二-K8S1-20-x的安装" class="headerlink" title="二.K8S1.20.x的安装"></a>二.K8S1.20.x的安装</h2><h2 id="2-1-集群规划"><a href="#2-1-集群规划" class="headerlink" title="2.1 集群规划"></a>2.1 集群规划</h2><table>
@@ -2823,209 +3072,8 @@
       </tags>
   </entry>
   <entry>
-    <title>B/S架构如何测试</title>
-    <url>/Echo/B-S%E6%9E%B6%E6%9E%84%E5%A6%82%E4%BD%95%E6%B5%8B%E8%AF%95.html</url>
-    <content><![CDATA[<p>随着信息技术的发展，人们越来越习惯与在网上搜索信息来做出决定，因此网站已经是各类企业的必备之选。但是仅仅拥有一个网站还不够，还需要提供一个信息丰富、可访问和用户友好的网站。为了实现这样的功能，网站要经过良好的测试，这样的测试测试成为B&#x2F;S架构测试即页面测试。</p>
-<h4 id="什么是页面测试？"><a href="#什么是页面测试？" class="headerlink" title="什么是页面测试？"></a>什么是页面测试？</h4><p>页面测试是软件测试中的一种，用于测试网站或者web类应用程序是否存在一些问题。在上线之前要对基于页面的应用程序进行完整测试。</p>
-<p>基于页面的系统在面向最终用户上线之前，需要进行端到端的全面的测试。</p>
-<p>通过页面测试，可以确保基于页面的系统正常运行，且可以被用户接受，UI测试和功能测试是页面测试的首选。</p>
-<h4 id="常见的页面测试类型"><a href="#常见的页面测试类型" class="headerlink" title="常见的页面测试类型"></a>常见的页面测试类型</h4><ul>
-<li>功能测试</li>
-<li>可用性测试</li>
-<li>接口测试</li>
-<li>兼容性测试</li>
-<li>性能测试</li>
-<li>安全测试</li>
-</ul>
-<h5 id="功能测试"><a href="#功能测试" class="headerlink" title="功能测试"></a>功能测试</h5><p>测试页面中所有的链接，数据库连接，页面中用于提交或获取用户信息的表单，Cookie测试等</p>
-<h6 id="链接测试"><a href="#链接测试" class="headerlink" title="链接测试"></a>链接测试</h6><ul>
-<li>测试从所有页面到受测特定域的传出链接。</li>
-<li>测试所有内部链接。</li>
-<li>测试链接跳转到同一页面。</li>
-<li>测试链接用于从网页向管理员或其他用户发送电子邮件。</li>
-<li>测试以查看是否存在任何孤立页面。</li>
-<li>最后，链接检查包括，检查上述所有链接中的断开链接。</li>
-</ul>
-<h6 id="表单测试"><a href="#表单测试" class="headerlink" title="表单测试"></a>表单测试</h6><p>表单在任何网站都是不可或缺的，一般用于接收来自用户信息。如何进行表单测试呢？</p>
-<ul>
-<li>首先，检查每个字段的所有验证。</li>
-<li>检查字段中的默认值。</li>
-<li>表单中对表单中字段的错误输入。</li>
-<li>用于创建表单的选项（如果有）、表单删除、查看或修改表单。</li>
-</ul>
-<h6 id="cookie测试"><a href="#cookie测试" class="headerlink" title="cookie测试"></a>cookie测试</h6><p>Cookie 是存储在用户计算机上的小文件。这些基本上用于维护会话 - 主要是登录会话。通过在浏览器选项中启用或禁用 Cookie 来测试应用程序。</p>
-<p>在写入用户计算机之前，测试 Cookie 是否已加密。如果您正在测试会话 Cookie（即在会话结束后过期的 Cookie），请在会话结束后检查登录会话和用户统计信息。通过删除 Cookie 来检查对应用程序安全的影响。</p>
-<h6 id="HTML-x2F-CSS测试"><a href="#HTML-x2F-CSS测试" class="headerlink" title="HTML&#x2F;CSS测试"></a>HTML&#x2F;CSS测试</h6><p>如果您正在为搜索引擎优化您的网站，那么HTML &#x2F; CSS验证是最重要的。主要验证网站的HTML语法错误。检查该网站是否可被不同的搜索引擎抓取。</p>
-<h6 id="数据库连接测试"><a href="#数据库连接测试" class="headerlink" title="数据库连接测试"></a>数据库连接测试</h6><p>数据一致性在 Web 应用程序中也非常重要。在编辑、删除、修改表单或执行任何与数据库相关的功能时检查数据完整性和错误。</p>
-<p>检查是否正确执行了所有数据库查询，检索了数据并正确更新了数据。有关数据库测试的更多信息可能是数据库上的负载，我们将在下面的Web负载或性能测试中解决此问题。</p>
-<p>在测试网站功能时，还应该测试以下内容：</p>
-<h6 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h6><p>i. 内部链接<br>ii.外部链接<br>iii.邮件链接<br>iv.断开的链接</p>
-<h6 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h6><ol>
-<li>字段验证</li>
-<li>错误输入的错误消息</li>
-<li>可选和必填字段</li>
-</ol>
-<h6 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h6><p>测试将针对数据库完整性进行。</p>
-<h5 id="可用性测试"><a href="#可用性测试" class="headerlink" title="可用性测试"></a>可用性测试</h5><p>可用性测试是测量系统的人机交互特性，并确定不足以进行纠正。</p>
-<h5 id="导航测试"><a href="#导航测试" class="headerlink" title="导航测试"></a>导航测试</h5><p>导航是指用户如何浏览网页、不同的控件（如按钮、框）或用户如何使用页面上的链接浏览不同的页面。</p>
-<h6 id="可用性测试应包括以下内容"><a href="#可用性测试应包括以下内容" class="headerlink" title="可用性测试应包括以下内容"></a>可用性测试应包括以下内容</h6><ul>
-<li>该网站应易于使用。</li>
-<li>所提供的说明应非常清楚。</li>
-<li>检查提供的说明是否完全符合其目的。</li>
-<li>每个页面上都应提供主菜单。</li>
-<li>它应该足够一致。</li>
-</ul>
-<h6 id="内容检查"><a href="#内容检查" class="headerlink" title="内容检查"></a>内容检查</h6><p>内容应符合逻辑且易于理解。检查拼写错误。深色背景使用会让用户不喜欢，不应在网站主题中使用。应该遵循一些用于网页和内容构建的标准颜色。这些是普遍接受的标准。内容应该是有意义的。所有锚文本链接都应正常工作。图像应以适当的尺寸正确放置。这些是页面开发中应遵循的一些基本重要标准。你的任务是验证所有内容以进行 UI 测试。</p>
-<h6 id="用于帮助用户搜索信息"><a href="#用于帮助用户搜索信息" class="headerlink" title="用于帮助用户搜索信息"></a>用于帮助用户搜索信息</h6><p>与搜索选项一样，站点地图也有助于处理文件等。站点地图应与网站上的所有链接一起提供，并具有正确的导航树视图。检查站点地图上的所有链接。</p>
-<p>“在网站中搜索”选项将帮助用户轻松快速地找到他们正在寻找的内容页面。这些都是可选项目，如果存在，则应对其进行验证。</p>
-<h5 id="接口测试"><a href="#接口测试" class="headerlink" title="接口测试"></a>接口测试</h5><p>在页面测试中，应测试服务器端接口。这可以通过验证通信是否正确完成。应测试服务器与软件、硬件、网络和数据库的兼容性。</p>
-<p>主要接口有：</p>
-<ul>
-<li>页面服务器和应用程序服务器接口</li>
-<li>应用程序服务器和数据库服务器接口。</li>
-</ul>
-<p>检查这些服务器之间的所有交互是否都已执行，错误是否得到正确处理。如果数据库或 Web 服务器为应用程序服务器的任何查询返回错误消息，那么应用程序服务器应捕获这些错误消息并将其适当地显示给用户。</p>
-<p>检查如果用户中断其中的任何事务会发生什么情况？检查如果与Web服务器的连接在两者之间重置会发生什么？</p>
-<h5 id="兼容性测试"><a href="#兼容性测试" class="headerlink" title="兼容性测试"></a>兼容性测试</h5><p>网站的兼容性是一个非常重要的测试方面。查看要执行的兼容性测试：</p>
-<ul>
-<li>浏览器兼容性</li>
-<li>操作系统兼容性</li>
-<li>移动浏览</li>
-<li>打印选项</li>
-</ul>
-<h6 id="浏览器兼容性："><a href="#浏览器兼容性：" class="headerlink" title="浏览器兼容性："></a>浏览器兼容性：</h6><p>在我的网络测试生涯中，我经历过这是网站测试中最具影响力的部分。<br>某些应用程序非常依赖于浏览器。不同的浏览器具有不同的配置和设置，您的网页应与之兼容。</p>
-<p>您的网站编码应该是跨浏览器平台兼容的。如果您正在使用 Java 脚本或 AJAX 调用 UI 功能，则执行安全检查或验证会给页面应用程序的浏览器兼容性测试带来更多压力。</p>
-<p>在不同的浏览器上测试页面应用程序，如Edge，Firefox，Chrome，Netscape Navigator，AOL，Safari，Opera浏览器和不同版本。</p>
-<h6 id="操作系统兼容性："><a href="#操作系统兼容性：" class="headerlink" title="操作系统兼容性："></a>操作系统兼容性：</h6><p>Web 应用程序中的某些功能是它可能不与所有操作系统兼容。Web开发中使用的所有新技术，如图形设计和界面调用（如不同的API）可能并非在所有操作系统中都可用。</p>
-<p>因此，在具有不同操作系统风格的Windows，Unix，MAC，Linux，Solaris等不同操作系统上测试您的Web应用程序。</p>
-<h6 id="移动浏览："><a href="#移动浏览：" class="headerlink" title="移动浏览："></a>移动浏览：</h6><p>在移动浏览器上测试网页。移动设备上也可能存在兼容性问题。</p>
-<h6 id="打印选项："><a href="#打印选项：" class="headerlink" title="打印选项："></a>打印选项：</h6><p>如果要提供页面打印选项，请确保字体，页面对齐方式，页面图形等正确打印。页面应适合纸张大小或根据打印选项中提到的大小。</p>
-<h5 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h5><p>页面 应用程序应承受重负载。页面性能测试应包括：</p>
-<ul>
-<li>网络负载测试</li>
-<li>网络压力测试</li>
-</ul>
-<p>在不同的互联网连接速度下测试应用程序性能。</p>
-<p>页面负载测试：需要测试是否有多个用户正在访问或请求同一页面。系统能否维持峰值负载时间？站点应处理许多并发用户请求、来自用户的大量输入数据、同时连接到数据库、特定页面上的重负载等。</p>
-<p>网络压力测试：通常，应力意味着将系统拉伸到其指定的限值之外。执行页面压力测试以通过施加压力来破坏站点，并检查系统如何对压力做出反应以及如何从崩溃中恢复。压力通常放在输入字段，登录和注册区域。</p>
-<p>在页面性能中，在不同操作系统和不同硬件平台上测试网站功能时，会检查软件和硬件内存泄漏错误。</p>
-<p>性能测试可用于了解网站的可伸缩性，或对第三方产品（如服务器和中间件）环境中的性能进行基准测试，以便进行潜在购买。</p>
-<h6 id="连接速度"><a href="#连接速度" class="headerlink" title="连接速度"></a>连接速度</h6><p>在各种网络上经过测试，如拨号，ISDN等。</p>
-<h6 id="页面加载"><a href="#页面加载" class="headerlink" title="页面加载"></a>页面加载</h6><p>页面加载性能可以用Lighthouse进行测试。</p>
-<p>i.每次最多承受用户数？<br>ii. 检查峰值负载和系统的行为方式</p>
-<p>iii.用户访问的大量数据</p>
-<h6 id="压力测试"><a href="#压力测试" class="headerlink" title="压力测试"></a>压力测试</h6><p>i. 连续载荷<br>ii.内存、CPU、文件处理等性能</p>
-<h5 id="安全测试"><a href="#安全测试" class="headerlink" title="安全测试"></a>安全测试</h5><p>以下是页面安全测试的一些测试用例：</p>
-<ul>
-<li>通过将内部 URL 直接粘贴到浏览器地址栏中而不登录来进行测试。不应打开内部页面。</li>
-<li>如果您使用用户名和密码登录并浏览内部页面，请尝试直接更改URL选项。即，如果您正在检查一些发布者站点统计信息，则发布者站点 ID &#x3D; 123。尝试直接将 URL 站点 ID 参数更改为与登录用户无关的其他站点 ID。应拒绝此用户查看其他人的统计信息的访问权限。</li>
-<li>尝试在输入字段中输入一些无效的输入，例如登录用户名，密码，输入文本框等。检查系统对所有无效输入的反应。</li>
-<li>页面目录和文件不应直接访问，除非为它们提供了下载选项。</li>
-<li>测试验证码以自动执行脚本登录。</li>
-<li>测试 SSL 是否用于安全措施。如果使用，当用户从不安全的页面HTTP:&#x2F;&#x2F;切换到安全 HTTPS:&#x2F;&#x2F; 页面时，应显示正确的消息，反之亦然。</li>
-<li>所有事务、错误消息和安全漏洞尝试都应记录在服务器上某个位置的日志文件中。</li>
-</ul>
-<p>测试页面安全性的主要原因是识别潜在的漏洞并随后修复它们。</p>
-<ul>
-<li>网络扫描</li>
-<li>漏洞扫描</li>
-<li>密码破解</li>
-<li>日志审查</li>
-<li>完整性检查器</li>
-<li>病毒检测</li>
-</ul>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>测试</tag>
-        <tag>页面测试</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>web应用程序安全测试</title>
-    <url>/Echo/web%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%AE%89%E5%85%A8%E6%B5%8B%E8%AF%95.html</url>
-    <content><![CDATA[<h4 id="什么是安全测试？"><a href="#什么是安全测试？" class="headerlink" title="什么是安全测试？"></a>什么是安全测试？</h4><p>安全测试是一个检查机密数据是否保密的过程（即，它不会暴露给不适合它的个人&#x2F;实体），并且用户只能执行他们有权执行的任务。</p>
-<p><strong>例</strong>用户不应能够拒绝其他用户使用网站的功能，或者用户不应能够以意外的方式更改Web应用程序的功能等。</p>
-<h4 id="安全测试中的术语"><a href="#安全测试中的术语" class="headerlink" title="安全测试中的术语"></a>安全测试中的术语</h4><p><strong>“漏洞”</strong></p>
-<p>这是 Web 应用程序中的一个弱点。”漏洞”的原因可能是由于应用程序中的错误，注入（SQL &#x2F;脚本代码）或病毒的存在。</p>
-<p><strong>“网址操作”</strong></p>
-<p>某些 Web 应用程序在 URL 中的客户端（浏览器）和服务器之间传递其他信息。更改 URL 中的某些信息有时可能会导致服务器出现意外行为，这称为 URL 操作。</p>
-<p><strong>“SQL注入”</strong></p>
-<p>这是通过 Web 应用程序用户界面将 SQL 语句插入到某个查询中，然后由服务器执行的过程。</p>
-<p><strong>“XSS（跨站点脚本）”</strong></p>
-<p>当用户在 Web 应用程序的用户界面中插入 HTML&#x2F;客户端脚本时，此插入对其他用户可见，称为 <em>XSS</em>。</p>
-<p><strong>“欺骗”</strong></p>
-<p>欺骗是创建类似恶作剧的网站和电子邮件。</p>
-<h4 id="web安全测试的方法"><a href="#web安全测试的方法" class="headerlink" title="web安全测试的方法"></a>web安全测试的方法</h4><h5 id="密码破解"><a href="#密码破解" class="headerlink" title="密码破解"></a>密码破解</h5><p>Web应用程序的安全测试可以通过”密码破解”开始。为了登录到应用程序的私人区域，人们可以猜测用户名&#x2F;密码或使用一些密码破解工具。常见的用户名和密码列表以及开源密码破解程序一起可用。</p>
-<p>如果 Web 应用程序不强制实施复杂密码（<strong>例</strong>使用字母、数字和特殊字符或至少具有所需数量的字符），则破解用户名和密码可能不会花费很长时间。</p>
-<p>如果用户名或密码存储在 Cookie 中而未经过加密，则攻击者可以使用不同的方法来窃取 Cookie 以及存储在 Cookie 中的信息（如用户名和密码）。</p>
-<h5 id="通过HTTP-GET方法进行URL操作"><a href="#通过HTTP-GET方法进行URL操作" class="headerlink" title="通过HTTP GET方法进行URL操作"></a>通过HTTP GET方法进行URL操作</h5><p>测试人员应检查应用程序是否传递查询字符串中的重要信息。当应用程序使用 HTTP GET 方法在客户端和服务器之间传递信息时，会发生这种情况。</p>
-<p>信息通过查询字符串中的参数传递。测试人员可以修改查询字符串中的参数值，以检查服务器是否接受它。</p>
-<p>通过HTTP GET请求将用户信息传递到服务器进行身份验证或获取数据。攻击者可以操纵从此 GET 请求传递到服务器的每个输入变量，以获取所需信息或损坏数据。在这种情况下，应用程序或 Web 服务器的任何异常行为都是攻击者进入应用程序的入口。</p>
-<h5 id="SQL-注入"><a href="#SQL-注入" class="headerlink" title="SQL 注入"></a>SQL 注入</h5><p>应该检查的下一个因素是SQL注入。在任何文本框中输入单引号 （’） 应被应用程序拒绝。相反，如果测试人员遇到数据库错误，则意味着用户输入入到某个查询中，然后由应用程序执行。在这种情况下，应用程序容易受到 SQL 注入的影响。</p>
-<p>SQL注入攻击非常关键，因为攻击者可以从服务器数据库中获取重要信息。若要检查 Web 应用程序中的 SQL 注入入口点，请从代码库中找出代码，其中通过接受某些用户输入在数据库上执行直接 MySQL 查询。</p>
-<p>如果在 SQL 查询中精心编制用户输入数据以查询数据库，则攻击者可以将 SQL 语句或部分 SQL 语句作为用户输入注入，以从数据库中提取重要信息。</p>
-<p>即使攻击者成功使应用程序崩溃，攻击者也可以从浏览器上显示的 SQL 查询错误中获取他们要查找的信息。在这种情况下，应正确处理&#x2F;转义用户输入中的特殊字符。</p>
-<h5 id="跨站点脚本-（XSS）"><a href="#跨站点脚本-（XSS）" class="headerlink" title="跨站点脚本 （XSS）"></a>跨站点脚本 （XSS）</h5><p>测试人员还应检查 Web 应用程序中是否有 XSS（跨站点脚本）。任何 HTML <strong>如</strong><HTML> 或任何脚本 <strong>如</strong><SCRIPT>不应被应用程序接受。如果是，则应用程序可能容易受到跨站点脚本的攻击。</p>
-<p>攻击者可以使用此方法在受害者的浏览器上执行恶意脚本或URL。使用跨站点脚本，攻击者可以使用 JavaScript 等脚本来窃取用户 Cookie 和存储在 Cookie 中的信息。</p>
-<p>许多Web应用程序获取一些有用的信息，并将此信息传递给来自不同页面的某些变量。</p>
-<p><strong>例</strong> <a href="http://www.examplesite.com/index.php?userid=123&amp;query=xyz">http://www.examplesite.com/index.php?userid=123&amp;query=xyz</a></p>
-<p>攻击者可以很容易地将一些恶意输入或<script>作为"&query"参数传递，该参数可以探索浏览器上的重要用户/服务器数据。</p>
-<p>在安全测试期间，测试人员应非常小心，不应修改以下任何内容：</p>
-<ul>
-<li>应用程序或服务器的配置。</li>
-<li>服务器上运行的服务。</li>
-<li>应用程序托管的现有用户或客户数据。</li>
-</ul>
-<p>此外，应避免在生产系统中进行安全测试。</p>
-</SCRIPT></HTML></p>]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>测试</tag>
-        <tag>页面测试</tag>
-        <tag>安全测试</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>HBase shell命令</title>
-    <url>/Echo/hbase%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4.html</url>
-    <content><![CDATA[<h4 id="HBase简介"><a href="#HBase简介" class="headerlink" title="HBase简介"></a>HBase简介</h4><p>HBase 命名的起源是 Hadoop database，Hadoop数据库，是NoSQL数据库，基于列式存储而非行式存储。</p>
-<p>HBase是一个分布式的、面向列的、基于Google Bigtable的开源实现。</p>
-<ul>
-<li>利用Hadoop HDFS作为其文件存储系统</li>
-<li>利用Hadoop MapReduce来处理HBase中的海量数据</li>
-<li>利用Zookeeper作为协同服务</li>
-</ul>
-<h4 id="HBase数据模型"><a href="#HBase数据模型" class="headerlink" title="HBase数据模型"></a>HBase数据模型</h4><p>HBase是一个稀疏、多维度、有序的映射表。表有行和列组成，列划分为若干个列族&#x2F;列簇(column family)，每个列族&#x2F;列簇下面可以有多个普通列。</p>
-<p><img src="/Echo/hbase%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/5-1Z5091305564M.gif" alt="5-1Z5091305564M"></p>
-<h4 id="HBase-shell-命令"><a href="#HBase-shell-命令" class="headerlink" title="HBase shell 命令"></a>HBase shell 命令</h4><h5 id="进入-HBase-shell"><a href="#进入-HBase-shell" class="headerlink" title="进入 HBase shell"></a>进入 HBase shell</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hbase shell</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="HBase版本状态查看"><a href="#HBase版本状态查看" class="headerlink" title="HBase版本状态查看"></a>HBase版本状态查看</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查询状态</span></span><br><span class="line">status</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查询版本</span></span><br><span class="line">version</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看当前操作用户</span></span><br><span class="line">whoami</span><br><span class="line"><span class="meta">#</span><span class="bash"> 帮助命令</span></span><br><span class="line">help</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看hbase支持的工具</span></span><br><span class="line">tools</span><br></pre></td></tr></table></figure>
-
-<h5 id="DDL操作"><a href="#DDL操作" class="headerlink" title="DDL操作"></a>DDL操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建一个表</span></span><br><span class="line">create<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;column_famaly&#x27;</span>,<span class="string">&#x27;column_famaly1&#x27;</span>,<span class="string">&#x27;column_famaly2&#x27;</span></span><br><span class="line"><span class="comment"># 列出所有表</span></span><br><span class="line">list</span><br><span class="line"><span class="comment"># 获取表的描述</span></span><br><span class="line">describe<span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 删除一个列族</span></span><br><span class="line">alter<span class="string">&#x27;table&#x27;</span>,&#123;NAME=&gt;<span class="string">&#x27;column_famaly&#x27;</span>,METHOD=&gt;<span class="string">&#x27;delete&#x27;</span>&#125;</span><br><span class="line"><span class="comment"># 删除一个表</span></span><br><span class="line"><span class="comment"># ① 要删除的表设置为disable</span></span><br><span class="line"><span class="built_in">disable</span><span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># ② 删除表</span></span><br><span class="line">drop <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 查询表是否存在</span></span><br><span class="line">exists<span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 查看表是否可用</span></span><br><span class="line">is_enabled<span class="string">&#x27;table&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="DML操作"><a href="#DML操作" class="headerlink" title="DML操作"></a>DML操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 插入数据</span></span><br><span class="line">put<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span>,<span class="string">&#x27;name&#x27;</span></span><br><span class="line"><span class="comment"># 获取row1所有数据</span></span><br><span class="line">get <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span></span><br><span class="line"><span class="comment"># 获取表row1，col1所有数据</span></span><br><span class="line">get<span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1&#x27;</span></span><br><span class="line"><span class="comment"># 更新一条数据</span></span><br><span class="line">put <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span>,<span class="string">&#x27;name1&#x27;</span></span><br><span class="line"><span class="comment"># 通过时间戳获取数据</span></span><br><span class="line">get <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,&#123;COLUMN=&gt;<span class="string">&#x27;col1:name&#x27;</span>,TIMESTAMP=&gt;1463055736277&#125;</span><br><span class="line"><span class="comment"># 扫描整张表（数据量大时不建议此操作）</span></span><br><span class="line">scan <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 删除一列</span></span><br><span class="line">delete <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span>,<span class="string">&#x27;col1:name&#x27;</span></span><br><span class="line"><span class="comment"># 删除行所有的数据</span></span><br><span class="line">deleteall <span class="string">&#x27;table&#x27;</span>,<span class="string">&#x27;rw1&#x27;</span></span><br><span class="line"><span class="comment"># 统计表中的行数</span></span><br><span class="line">count <span class="string">&#x27;table&#x27;</span></span><br><span class="line"><span class="comment"># 清空整张表（清空表后，表的分区设置会默认为1不建议）</span></span><br><span class="line">truncate <span class="string">&#x27;table&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="退出操作"><a href="#退出操作" class="headerlink" title="退出操作"></a>退出操作</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 退出</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="comment"># 关闭hbase集群（危险操作！！！）</span></span><br><span class="line">shutdown</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>大数据</category>
-      </categories>
-      <tags>
-        <tag>大数据</tag>
-        <tag>HBase</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>springboot整合shiro和JWT使用指北</title>
-    <url>/Echo/springboot%E6%95%B4%E5%90%88shiro%E5%92%8CJWT%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8C%97.html</url>
+    <url>/Echo/posts/23697.html</url>
     <content><![CDATA[<h3 id="shiro是什么？"><a href="#shiro是什么？" class="headerlink" title="shiro是什么？"></a>shiro是什么？</h3><p><code>Shiro</code> 是一个强大的简单易用的 <code>Java</code> 安全框架，主要用来更便捷的 <code>认证，授权，加密，会话管理</code>。<code>Shiro</code> 首要的和最重要的目标就是容易使用并且容易理解，通过 <code>Shiro</code> 易于理解的<code>API</code>，您可以快速、轻松地获得任何应用程序——从最小的移动应用程序最大的网络和企业应用程序。</p>
 <h3 id="shiro的功能"><a href="#shiro的功能" class="headerlink" title="shiro的功能"></a>shiro的功能</h3><ol>
 <li>Authentication:身份认证、登录，验证用户是不是拥有相应的身份;\</li>
@@ -3083,8 +3131,140 @@
       </tags>
   </entry>
   <entry>
+    <title>web应用程序安全测试</title>
+    <url>/Echo/posts/35320.html</url>
+    <content><![CDATA[<h4 id="什么是安全测试？"><a href="#什么是安全测试？" class="headerlink" title="什么是安全测试？"></a>什么是安全测试？</h4><p>安全测试是一个检查机密数据是否保密的过程（即，它不会暴露给不适合它的个人&#x2F;实体），并且用户只能执行他们有权执行的任务。</p>
+<p><strong>例</strong>用户不应能够拒绝其他用户使用网站的功能，或者用户不应能够以意外的方式更改Web应用程序的功能等。</p>
+<h4 id="安全测试中的术语"><a href="#安全测试中的术语" class="headerlink" title="安全测试中的术语"></a>安全测试中的术语</h4><p><strong>“漏洞”</strong></p>
+<p>这是 Web 应用程序中的一个弱点。”漏洞”的原因可能是由于应用程序中的错误，注入（SQL &#x2F;脚本代码）或病毒的存在。</p>
+<p><strong>“网址操作”</strong></p>
+<p>某些 Web 应用程序在 URL 中的客户端（浏览器）和服务器之间传递其他信息。更改 URL 中的某些信息有时可能会导致服务器出现意外行为，这称为 URL 操作。</p>
+<p><strong>“SQL注入”</strong></p>
+<p>这是通过 Web 应用程序用户界面将 SQL 语句插入到某个查询中，然后由服务器执行的过程。</p>
+<p><strong>“XSS（跨站点脚本）”</strong></p>
+<p>当用户在 Web 应用程序的用户界面中插入 HTML&#x2F;客户端脚本时，此插入对其他用户可见，称为 <em>XSS</em>。</p>
+<p><strong>“欺骗”</strong></p>
+<p>欺骗是创建类似恶作剧的网站和电子邮件。</p>
+<h4 id="web安全测试的方法"><a href="#web安全测试的方法" class="headerlink" title="web安全测试的方法"></a>web安全测试的方法</h4><h5 id="密码破解"><a href="#密码破解" class="headerlink" title="密码破解"></a>密码破解</h5><p>Web应用程序的安全测试可以通过”密码破解”开始。为了登录到应用程序的私人区域，人们可以猜测用户名&#x2F;密码或使用一些密码破解工具。常见的用户名和密码列表以及开源密码破解程序一起可用。</p>
+<p>如果 Web 应用程序不强制实施复杂密码（<strong>例</strong>使用字母、数字和特殊字符或至少具有所需数量的字符），则破解用户名和密码可能不会花费很长时间。</p>
+<p>如果用户名或密码存储在 Cookie 中而未经过加密，则攻击者可以使用不同的方法来窃取 Cookie 以及存储在 Cookie 中的信息（如用户名和密码）。</p>
+<h5 id="通过HTTP-GET方法进行URL操作"><a href="#通过HTTP-GET方法进行URL操作" class="headerlink" title="通过HTTP GET方法进行URL操作"></a>通过HTTP GET方法进行URL操作</h5><p>测试人员应检查应用程序是否传递查询字符串中的重要信息。当应用程序使用 HTTP GET 方法在客户端和服务器之间传递信息时，会发生这种情况。</p>
+<p>信息通过查询字符串中的参数传递。测试人员可以修改查询字符串中的参数值，以检查服务器是否接受它。</p>
+<p>通过HTTP GET请求将用户信息传递到服务器进行身份验证或获取数据。攻击者可以操纵从此 GET 请求传递到服务器的每个输入变量，以获取所需信息或损坏数据。在这种情况下，应用程序或 Web 服务器的任何异常行为都是攻击者进入应用程序的入口。</p>
+<h5 id="SQL-注入"><a href="#SQL-注入" class="headerlink" title="SQL 注入"></a>SQL 注入</h5><p>应该检查的下一个因素是SQL注入。在任何文本框中输入单引号 （’） 应被应用程序拒绝。相反，如果测试人员遇到数据库错误，则意味着用户输入入到某个查询中，然后由应用程序执行。在这种情况下，应用程序容易受到 SQL 注入的影响。</p>
+<p>SQL注入攻击非常关键，因为攻击者可以从服务器数据库中获取重要信息。若要检查 Web 应用程序中的 SQL 注入入口点，请从代码库中找出代码，其中通过接受某些用户输入在数据库上执行直接 MySQL 查询。</p>
+<p>如果在 SQL 查询中精心编制用户输入数据以查询数据库，则攻击者可以将 SQL 语句或部分 SQL 语句作为用户输入注入，以从数据库中提取重要信息。</p>
+<p>即使攻击者成功使应用程序崩溃，攻击者也可以从浏览器上显示的 SQL 查询错误中获取他们要查找的信息。在这种情况下，应正确处理&#x2F;转义用户输入中的特殊字符。</p>
+<h5 id="跨站点脚本-（XSS）"><a href="#跨站点脚本-（XSS）" class="headerlink" title="跨站点脚本 （XSS）"></a>跨站点脚本 （XSS）</h5><p>测试人员还应检查 Web 应用程序中是否有 XSS（跨站点脚本）。任何 HTML <strong>如</strong><HTML> 或任何脚本 <strong>如</strong><SCRIPT>不应被应用程序接受。如果是，则应用程序可能容易受到跨站点脚本的攻击。</p>
+<p>攻击者可以使用此方法在受害者的浏览器上执行恶意脚本或URL。使用跨站点脚本，攻击者可以使用 JavaScript 等脚本来窃取用户 Cookie 和存储在 Cookie 中的信息。</p>
+<p>许多Web应用程序获取一些有用的信息，并将此信息传递给来自不同页面的某些变量。</p>
+<p><strong>例</strong> <a href="http://www.examplesite.com/index.php?userid=123&amp;query=xyz">http://www.examplesite.com/index.php?userid=123&amp;query=xyz</a></p>
+<p>攻击者可以很容易地将一些恶意输入或<script>作为"&query"参数传递，该参数可以探索浏览器上的重要用户/服务器数据。</p>
+<p>在安全测试期间，测试人员应非常小心，不应修改以下任何内容：</p>
+<ul>
+<li>应用程序或服务器的配置。</li>
+<li>服务器上运行的服务。</li>
+<li>应用程序托管的现有用户或客户数据。</li>
+</ul>
+<p>此外，应避免在生产系统中进行安全测试。</p>
+</SCRIPT></HTML></p>]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+        <tag>页面测试</tag>
+        <tag>安全测试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>不同类型的页面应该如何测试</title>
+    <url>/Echo/posts/39691.html</url>
+    <content><![CDATA[<p>网站可以分为许多类型，所有这些都可以缩小在静态和动态类型下。爱这里详细讨论4种类型及其测试方法。在此之前，对这些类型进行归类处理。</p>
+<ul>
+<li>静态网站测试</li>
+<li>动态 Web 应用程序测试</li>
+<li>电子商务网站测试</li>
+<li>移动网站测试</li>
+</ul>
+<h4 id="静态网站测试"><a href="#静态网站测试" class="headerlink" title="静态网站测试"></a>静态网站测试</h4><p>一个静态网站将为在不同时间访问该网站的所有访问者显示相同的内容。它也被称为信息网站。在静态网站上，只有开发人员才能在代码中进行更改。这种类型的网站将没有任何主要功能，它完全取决于UI设计。</p>
+<p>测试一个简单的静态网站非常容易，在测试时只需考虑几件事。将在下面提到：</p>
+<h5 id="测试点"><a href="#测试点" class="headerlink" title="测试点"></a>测试点</h5><p><strong>#1）</strong>测试GUI设计是必须的，因为静态网站完全依赖于它。您需要将待测试的PSD文件与开发的网页进行比较。检查设计中的所有元素是否应显示在开发的页面上。</p>
+<p><strong>#2）</strong> GUI设计的另一部分是检查字体大小，字体样式，间距和颜色是否都已重现。</p>
+<p><strong>#3）</strong>其次，需要检查链接（页面链接）以查看它是否正常工作。另外，找出是否有不可以正常访问的链接？</p>
+<p><strong>#4）</strong>通过比较客户端提供的内容来验证所有网页中的拼写和内容。</p>
+<p><strong>#5）</strong> 在某些情况下，图像将无法正确显示，可能会损坏或有时图像被掩盖，可能会显示错误的图像。必须严格检查。因为对于一个静态的网站，只有内容和图像才会赋予生命。</p>
+<p><strong>#6）</strong>仔细检查滚动条，将面临的问题是出现不需要的滚动或滚动被隐藏（它可能会隐藏内容），问题一般出现于水平和垂直滚动轴。</p>
+<p><strong>#7）</strong>如果联系表单检查，则通过发送一些虚拟消息来正常工作。</p>
+<p>在联系表格上要检查的事项是：</p>
+<ul>
+<li>邮件是否正确发送，是否显示成功邮件？</li>
+<li>检查收到的电子邮件是否按照设计的正确格式发送给相关人员？</li>
+<li>检查电子邮件不应该作为垃圾邮件落入垃圾邮件吗？</li>
+<li>如果有回复电子邮件触发器被激活，那么检查发件人是否收到了邮件？</li>
+</ul>
+<p><strong>#8）</strong>检查它是否是无差错的网页，并使用W3验证器或其他相关软件对其进行验证。</p>
+<p><strong>#9）</strong>在静态网站中要检查的一些常量内容，</p>
+<ul>
+<li>检查标签栏上是否存在图标</li>
+<li>网址应包含正确的网页标题</li>
+<li>如果存在版权信息，则应显示</li>
+<li>如果有联系表格，验证码是必须的。[它可以防止垃圾邮件]</li>
+<li>检查网站的加载速度。[静态网站不应花费太多时间进行加载]。如果在加载时使用了gif图像，则跟踪其功能</li>
+</ul>
+<p>除此之外，还有大量的东西必须在每个网站的后端进行测试，包括系统测试，安全测试，接口测试，兼容性测试和性能测试等。为此，您要具备技术知识。在静态网站中，如果还需要进行功能测试，找不到更多功能。</p>
+<h4 id="动态Web应用程序-CMS网站"><a href="#动态Web应用程序-CMS网站" class="headerlink" title="动态Web应用程序[CMS网站]"></a>动态Web应用程序[CMS网站]</h4><p>用户可以定期更新和更改其网站内容的类型。从这里开始，我将使用”页面测试”这个词，而不是动态网站测试。页面程序是<em>前端和后端编程的组合</em>。</p>
+<p>前端将是HTML和CSS，vue，而后端使用PHP，Javascript和ASP等编程语言。使用此后端，用户&#x2F;客户端可以添加或更改网站上的内容。</p>
+<p>测试页面比测试静态网站简单，但比测试电子商务网站的困难成都差不了多少。功能测试是测试 页面时要执行的最重要的事情。Web应用程序可能包含非常复杂的功能，因此测试人员在测试时需要非常小心。</p>
+<p>有两种不同类型的Web应用程序，一种是用户在前端不会执行任何操作（即只有后端更改才会反映在前端），另一种是最终用户将在前端本身工作（例如登录，注册，新闻通讯订阅和其他类似操作）。因此，应根据它进行测试。</p>
+<h5 id="测试点-1"><a href="#测试点-1" class="headerlink" title="测试点"></a>测试点</h5><p>我在静态网站测试中提到的要点也将包括在测试Web应用程序时。除此之外，还需要注意以下事项。</p>
+<p><strong>#1）</strong>在GUI部分中，所有字段和按钮都必须使用提示工具，应正确完成字段对齐（间距），禁用的字段&#x2F;按钮应灰显，字段&#x2F;按钮应采用SRS中的标准格式，如果出现问题应显示错误消息，弹出消息应仅显示在网页的中心， 下拉菜单不应被截断。Tab 快捷键应该适用于所有字段等。</p>
+<p><strong>#2）</strong>在功能部分中，如果您的Web应用程序具有登录或注册功能，请检查必填字段验证，表单验证（即数字字段应仅接受数字，而不接受字母表），字段的字符限制（即只能输入这些字符）。</p>
+<p>字段的特殊字符和负数限制，测试电子邮件功能，测试文档上传（即只能上传指定的文档类型），超时功能，排序功能，javascript在兼容浏览器上工作等应该进行测试。</p>
+<p><strong>#3）</strong>当进入后端功能部分时，测试图像上传是否有损坏的图像，在字段中输入的文本是否有效。后端更新应该反映在前端，数据库测试（即是否可以添加新字段或删除不需要的字段）所有这些操作都要执行。</p>
+<p>对于页面（动态网站）来说，性能不是必需的，因为它的内容非常少。如果需要，可以使用您熟悉的工具。如果想做简单的性能测试，选择一些标准的在线性能工具</p>
+<h4 id="电子商务网站"><a href="#电子商务网站" class="headerlink" title="电子商务网站"></a>电子商务网站</h4><p>与上述两个相比，电子商务网站有些复杂。测试人员在测试电子商务网站时需要非常谨慎。电子商务网站中有很多东西需要检查，只是涵盖了我在电子商务网站测试方面的一些经验问题。</p>
+<p>在 GUI 部分中，需要检查 SRS 中的所有功能以及功能是否相同。对于所有商业网站，功能几乎相同。</p>
+<p>功能方面，需要检查所有页面，例如主页（包括特色产品，特别优惠显示，登录详细信息，搜索功能），产品详细信息页面，类别页面，下订单，支付网关，一切都必须进行测试。</p>
+<h5 id="测试点-2"><a href="#测试点-2" class="headerlink" title="测试点"></a>测试点</h5><p><strong>#1）</strong> 检查购买或增加数量时购物车是否正在更新。在所有页面和情况下检查此功能。</p>
+<p><strong>#2）</strong>检查特殊优惠券和<em>优惠是否应用于正确的订单</em>，并且看到折扣价格是否显示。</p>
+<p><strong>#3）</strong> 有时，在更新单个产品时，通过考虑产品中的变体数量，它会成倍增加。因此，请检查是否显示单个产品及其变体是否正确显示。（遇到过这个问题）</p>
+<p><strong>#4）</strong> 检查过滤器选项是否正常工作。如果根据所选的类别和定价进行过滤？</p>
+<p><strong>#5）</strong>注册时，应进行用户验证。只有新用户可以注册。</p>
+<p><strong>#6）</strong> 如果现有用户将产品添加到购物篮，则在下次登录期间，愿望清单部分也应保存并显示。</p>
+<p><strong>#7）</strong>比较产品应通过根据后端分配的某些规格比较产品来工作。</p>
+<p><strong>#8）</strong>检查货币转换器是否正常工作。根据所选的国家&#x2F;地区，货币转换器应显示相关的价格和税率。</p>
+<p><strong>#9）</strong>通常许多插件都用于电子商务（WordPress和类似）网站，需要非常小心。插件安装可能会发生冲突或影响任何其他主要功能。因此，请跟进插件安装及其使用情况。</p>
+<p><strong>#10）</strong>检查社交共享选项是否适用于单个产品。</p>
+<p><strong>#11）</strong> 运费应根据所选区域生成。并检查税率生成。（在最终用户购买期间，可能会导致一些法律问题）。</p>
+<p><strong>#12）</strong>只有在提供有效的卡详细信息时，支付网关才应有效。验证应适用于卡号和CCV代码号。[最好在卡号字段本身上进行验证]。</p>
+<p><strong>#13）</strong>在购买过程中的每个过程中都应生成电子邮件（注册，产品订购，付款成功，订单取消，订单收到和其他电子邮件触发器（如果有）。</p>
+<p><strong>#14）</strong>检查实时聊天与一些垃圾电子邮件。</p>
+<p><strong>注意：</strong>通常，电子商务网站不会为移动兼容性而开发，并且在进入移动版本时将生成应用程序。在某些情况下，他们不会创建应用程序，而是创建一个移动兼容的网站。在这种情况下，需要仔细检查是否有任何缺少的功能和UI偏差。</p>
+<p>这些是我在测试电子商务网站时面临和注意到的一些问题。除此之外，还需要检查与电子商务网站相关的所有一般事项。</p>
+<h4 id="手机网站"><a href="#手机网站" class="headerlink" title="手机网站"></a>手机网站</h4><p>首先，要明确什么是一个移动网站，通常人们认为移动网站和移动应用程序是相同的，但实际上，移动网站是使用HTML页面开发的，并且只能通过互联网连接进行查看。</p>
+<p>但是移动应用程序只不过是一个应用程序，可以在没有互联网连接的情况下下载和使用。在这里，我们中的许多人感到困惑并提出一个问题 移动网站和响应式网站有什么区别？</p>
+<p>响应式网站意味着使内容适合移动设备大小，而不是创建版本，而移动网站正在创建一个不是反射桌面版本的新版本。在移动网站中，将只有有限的页面，并且不需要的功能将在此处删除。</p>
+<p>测试移动网站比其他类型的网站有些乏味。它将具有单独的设计，在测试功能时需要小心。</p>
+<h5 id="测试点-3"><a href="#测试点-3" class="headerlink" title="测试点"></a>测试点</h5><ul>
+<li>通常，将使用模拟器来测试移动网站，可以获得理想的结果，但是希望您在真实设备上进行测试。我在真实设备（尤其是苹果设备）中进行测试时，遇到了许多问题。实际设备规格可能与开发的网页冲突。</li>
+<li>GUI和可用性测试更重要，因为它不是桌面版本的反映。</li>
+<li>性能是移动网站测试需要考虑的另一个重要因素。在实际设备中进行测试时，可以跟踪与性能相关的问题。</li>
+<li>检查从移动设备浏览正常网页链接是否被移动链接触发。</li>
+<li>检查移动网站上的页面滚动，页面导航，文本截断等。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+        <tag>页面测试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>什么是Kubernetes</title>
-    <url>/Echo/%E4%BB%80%E4%B9%88%E6%98%AFKubernetes.html</url>
+    <url>/Echo/posts/48610.html</url>
     <content><![CDATA[<p>近期开始学习Kubernetes，后续会将学习中整理的一些知识通过QA的方式记录在个人博客中。后续文章中Kubernetes简称为K8S。</p>
 <h5 id="Q1、K8S是什么？"><a href="#Q1、K8S是什么？" class="headerlink" title="Q1、K8S是什么？"></a>Q1、K8S是什么？</h5><p>K8S是基于容器技术的分布式架构领先方案。它是谷歌十几年以来大规模应用容器化技术的经验积累和升华的重要成果。K8S是站Brog系统的肩膀上，汲取了brog过去的经验与教训，所以K8S现世时，让一众架构师为之疯狂。</p>
 <h5 id="Q2、系统设计遵循了K8S的设计思想会带来什么？"><a href="#Q2、系统设计遵循了K8S的设计思想会带来什么？" class="headerlink" title="Q2、系统设计遵循了K8S的设计思想会带来什么？"></a>Q2、系统设计遵循了K8S的设计思想会带来什么？</h5><p>传统系统架构中和业务没有多大关系的底层代码或功能模块，都将消失在眼前，也不需要花费时间在负载均衡器的选型和部署实施问题，不需要考虑服务治理框架，不必在为服务监控和故障处理模块的开发而头疼。业内认为使用K8S可以减少30%，可以将精力更集中于业务本身，同时K8S提供了强大的自动化机制，后期的运维难度和运维成本大大降低。</p>
@@ -3109,7 +3289,7 @@
   </entry>
   <entry>
     <title>2015-2020工作日志</title>
-    <url>/Echo/%E4%BA%94%E5%B9%B4%E5%B7%A5%E4%BD%9C%E6%84%9F%E6%82%9F.html</url>
+    <url>/Echo/posts/44476.html</url>
     <content><![CDATA[<h5 id="学校生涯"><a href="#学校生涯" class="headerlink" title="学校生涯"></a>学校生涯</h5><p>​       我自身是河南人，不过有一颗不安分的心。高考志愿填报了大连交通大学，选了软件工程与信息管理与信息系统的双专业学位，学制五年。大三期间参与学校老师ERP沙盘模拟软件的编写工作。在这期间开始真正的接触项目，这时才知道学习与实战的差距。当时主要用的J2EE和java struct。项目做到大四完成。完成第一版之后在学校的校内ERP沙盘大赛和校内实践课程上已经开始运用了。听说现在还在使用中。</p>
 <h5 id="北京"><a href="#北京" class="headerlink" title="北京"></a>北京</h5><h6 id="培训"><a href="#培训" class="headerlink" title="培训"></a>培训</h6><p>​     因为一心想去一线城市看看，在择业期毫不犹豫的就选择了去北京。因为大学有项目而且大学主修课程有日语，很顺利的面上了北京利达智通。14年11月开始进入公司实习。在实习前三个月是在济南培训。培训这段时间感觉是最充实的。当时公司主要业务是野村证券。使用的大机语言（COBOL，在校也有相关的选修课还有证书可拿），主要是linux系统上进行开发。三个月的培训每天有作业每月有考核，压力大收获也大。在此期间学的linux和养成的编程习惯让我至今仍有受益。</p>
 <h6 id="第一个项目-野村证券MRF"><a href="#第一个项目-野村证券MRF" class="headerlink" title="第一个项目-野村证券MRF"></a>第一个项目-野村证券MRF</h6><p>这个项目主要是为日本野村证券新增一个青少年可以参与基金交易的功能。前一个月由师傅的带领开始正式的面向对象编程，不得不说日本人的式样书真详细。主要负责是功能模块各种数据连接层的处理以及数据库维护等工作。在这工作期间培养了自己的时间观念（某办法日本人特别在意这个）在dead line 前必须完成，好的一点是式样书（详设）写的真详细，不好的一点是没有自己发展的空间。还有个教训让我记忆深刻。在转正后，开始自己独立编写，结对测试的工作模式。由于当时对全角和半角的空格不敏感，这编程过程这个错误反复的犯，差点耽误项目进度。后来就给自己贴了便签，同样的错误绝不能犯第二次。</p>
@@ -3131,21 +3311,21 @@
   </entry>
   <entry>
     <title>MapReduce是什么？</title>
-    <url>/Echo/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce.html</url>
-    <content><![CDATA[<h4 id="为什么需要MapReduce？"><a href="#为什么需要MapReduce？" class="headerlink" title="为什么需要MapReduce？"></a>为什么需要MapReduce？</h4><p><img src="/Echo/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/Map-Reduce.jpg" alt="Map-Reduce"></p>
+    <url>/Echo/posts/26749.html</url>
+    <content><![CDATA[<h4 id="为什么需要MapReduce？"><a href="#为什么需要MapReduce？" class="headerlink" title="为什么需要MapReduce？"></a>为什么需要MapReduce？</h4><p><img src="/Echo/posts/26749/Map-Reduce.jpg" alt="Map-Reduce"></p>
 <p>MapReduce是**”处理单元”，**使用此组件，我们可以处理存储在Hadoop HDFS上的大数据。</p>
 <p>但确切的要求是为什么我们需要Hadoop的这个组件？</p>
 <p>存储在Hadoop HDFS上的大数据和传统存储不一样。数据被划分为存储在各个DataNodes中的数据块。因此，整个数据不会存储在一个集中的位置。</p>
 <p>因此，像Java这样的本机客户端应用程序或任何此类应用程序无法以当前格式处理数据，我们需要一个特殊的框架来处理存储在各个DataNodes中的碎片化数据块。</p>
 <p>处理是使用Hadoop MapReduce处理完成的。</p>
-<h4 id="MapReduce简述"><a href="#MapReduce简述" class="headerlink" title="MapReduce简述"></a>MapReduce简述</h4><p><img src="/Echo/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/NutShell-MapReduce.jpg" alt="NutShell-MapReduce"></p>
+<h4 id="MapReduce简述"><a href="#MapReduce简述" class="headerlink" title="MapReduce简述"></a>MapReduce简述</h4><p><img src="/Echo/posts/26749/NutShell-MapReduce.jpg" alt="NutShell-MapReduce"></p>
 <p>如图所示显示了MapReduce的功能和用途。</p>
 <p>让我们从MapReduce的应用程序开始及如何应用。它用于分类器，索引和搜索，以及在电子商务网站（Flipkart，Amazon等）上创建推荐引擎。它也被几家公司用作分析。</p>
 <p>当我们从功能的角度来看，它是一个编程模型，可以用于像Hadoop HDFS这样的大规模分布式模型，并且具有并行编程的功能，使其非常有用。</p>
 <p>当我们在Map Reduce中看到函数时，会执行两个函数，即Map Function和Reduce函数。</p>
 <p>这项技术已经由谷歌，雅虎，Facebook等主要组织实施，也被Apache Hadoop采用，如HDFS，PIG，HIVE，并使用HBase存储数据或执行和处理大数据，也称为No-SQL。</p>
 <h5 id="MapReduce的优点"><a href="#MapReduce的优点" class="headerlink" title="MapReduce的优点"></a>MapReduce的优点</h5><p>1、并行处理</p>
-<p><img src="/Echo/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/Advantage.jpg" alt="Advantage"></p>
+<p><img src="/Echo/posts/26749/Advantage.jpg" alt="Advantage"></p>
 <p>整个数据块被Hadoop HDFS分成HDFS块，MapReduce并行处理这些数据块，因此处理变得很快。</p>
 <p>2、数据局部性</p>
 <p>这是Hadoop MapReduce给出的一个多功能的东西，即我们可以在它所在的位置处理数据。</p>
@@ -3164,13 +3344,13 @@
 <p>传统为了上解决这个问题，所有申请将被转移到保险公司总部，然后申请过程将开始。</p>
 <p>在这种情况下，我们需要将所有申请转移到保险公司总部，这是一件代价高昂的事情，即必须从保险公司分支机构收集所有申请并将其带到保险公司总部。</p>
 <p>这就是成本以及进行此活动的巨大努力的方式。</p>
-<p><img src="/Echo/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/Traditional-way-1.jpg" alt="Traditional-way-1"></p>
-<p><img src="/Echo/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/Traditional-way-2.jpg" alt="Traditional-way-2"></p>
+<p><img src="/Echo/posts/26749/Traditional-way-1.jpg" alt="Traditional-way-1"></p>
+<p><img src="/Echo/posts/26749/Traditional-way-2.jpg" alt="Traditional-way-2"></p>
 <p>另一个方面是保险公司总部负担过重，因为它必须处理人民在各自分支机构申请保单的所有申请。</p>
 <p>由于保险公司正在处理所有分支机构都适用的申请，因此需要很长时间。最后，这个过程效果不是很好。</p>
 <p>2、MapReduce方式</p>
 <p>MapReduce遵循Data Locality，即它不会将所有应用程序带到保险公司总部，而是并行处理各个分支机构本身的应用程序。</p>
-<p><img src="/Echo/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/MapReduce-Way.jpg" alt="MapReduce-Way"></p>
+<p><img src="/Echo/posts/26749/MapReduce-Way.jpg" alt="MapReduce-Way"></p>
 <p>一旦应用于每个分支机构的申请得到处理，他们就会将处理后的详细信息发回保险公司总部。</p>
 <p>现在，保险公司总部只需要汇总从各自分支机构发送的已处理申请的数量，并将详细信息保存在各自的数据库或存储中心。</p>
 <p>通过这种方式，处理将非常容易和快速，保单持有人可以立即获得福利。</p>
@@ -3178,11 +3358,11 @@
 <p>我们知道MapReduce有两个函数，即Map Function和Reduce Function。</p>
 <p>在各个分支上完成的处理部分由 Map 函数完成。因此，每个分支机构中的每个输入（应用程序）都使用Map函数进行处理，之后处理后的详细信息被发送到保险公司总部，聚合部分由Reduce功能完成。</p>
 <p>聚合的已处理应用程序详细信息作为输出提供。</p>
-<p><img src="/Echo/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/MapReduce-in-Detail.jpg" alt="MapReduce-in-Detail"></p>
+<p><img src="/Echo/posts/26749/MapReduce-in-Detail.jpg" alt="MapReduce-in-Detail"></p>
 <p>这就是我们前面的例子中发生的事情。整个过程分为map任务和reduce任务。</p>
 <p>映射任务获取输入，映射任务的输出作为输入提供给 Reduce 任务，此 Reduce 任务最终将输出提供给客户端。</p>
 <p>为了更好地理解它，让我们来了解一下MapReduce的解剖结构。</p>
-<p><img src="/Echo/%E4%BB%80%E4%B9%88%E6%98%AFMapReduce/Anatomy-of-MapReduce.jpg" alt="Anatomy-of-MapReduce"></p>
+<p><img src="/Echo/posts/26749/Anatomy-of-MapReduce.jpg" alt="Anatomy-of-MapReduce"></p>
 <p>MapReduce任务在键值对上工作，因此当我们谈论Map时，Map将输入作为键值，并将输出作为键值列表给出。此键值列表将经历随机播放阶段，键的输入和值列表将转到化简器。</p>
 <p>最后，Reducer 为我们提供了键值对的列表。</p>
 <h4 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h4><ul>
@@ -3205,8 +3385,54 @@
       </tags>
   </entry>
   <entry>
+    <title>YARN原理及工作流？</title>
+    <url>/Echo/posts/26104.html</url>
+    <content><![CDATA[<h4 id="YRAN是什么？"><a href="#YRAN是什么？" class="headerlink" title="YRAN是什么？"></a>YRAN是什么？</h4><p>YARN是hadoop集群中另一个资源管理者，为需要在Hadoop集群上执行的各种作业分配资源。在Hadoop 2.0中引入的。在Hadoop 2.0中引入了YARN，使用它能够超越MapReduce。</p>
+<p><img src="/Echo/posts/26104/Framework-Supported-by-YARN.jpg" alt="Framework-Supported-by-YARN"></p>
+<p>正如你在图中看到的，我们在两者之间的底部有HDFS，我们有YARN并使用YARN，很多框架都能够连接和利用HDFS。因此，即使MapReduce也用于使用YARN进行连接以请求资源，并且只有这样它才能通过HDFS（即Hadoop Cluster）执行作业。</p>
+<p>同样;SPARK，STORM和其他搜索引擎可以连接到HDFS。HBase是一个No SQL数据库也可以连接它。因此，HDFS的应用变得庞大，因为YARN能够为其他框架和其他大数据分析工具更好的分配资源。</p>
+<h4 id="Hadoop-2-x-守护进程"><a href="#Hadoop-2-x-守护进程" class="headerlink" title="Hadoop 2.x 守护进程"></a>Hadoop 2.x 守护进程</h4><p>让我们快速看一下Hadoop 2.0中新引入的守护进程，它们运行组件，即存储和处理。</p>
+<p>在HDFS一文中，我们详细理解了守护进程，即NameNode和DataNode。在此，我们将了解资源管理器和节点管理器如何在 Hadoop 2.x 群集中工作，以管理需要在 Hadoop 群集中执行的处理和作业。</p>
+<p><img src="/Echo/posts/26104/Hadoop-2-Daemons.jpg" alt="Hadoop-2-Daemons"></p>
+<p>什么是资源管理器？资源管理器是在主计算机或 NameNode（高端计算机）上运行的主守护程序。另一方面，节点管理器是在从属机器或DataNodes上运行的守护进程，或者与DataNode进程一起运行。</p>
+<h4 id="Hadoop-2-x-MapReduce-YARN-组件"><a href="#Hadoop-2-x-MapReduce-YARN-组件" class="headerlink" title="Hadoop 2.x MapReduce YARN 组件"></a>Hadoop 2.x MapReduce YARN 组件</h4><p>首先我们探讨下YARN的其他组件：</p>
+<ul>
+<li><strong>客户端：</strong>它是一个提交类似作业的命令行界面 （CLI） 的单元，客户端可以是 JAVA 应用程序。</li>
+<li><strong>资源管理器：</strong>它是一个主守护程序，所有作业都从客户端提交到该守护程序，并且是分配所有群集级别资源以执行特定作业的主守护程序。它运行在具有高质量硬件和良好配置的高端计算机上，因为它是必须管理群集上所有内容的主计算机。</li>
+<li><strong>节点管理器</strong>：它是一个在从属机器或DataNode上运行的从属守护进程，因此每个从属机器都有一个运行的节点管理器。它监视特定 DataNode 的资源，资源管理器管理群集资源，节点管理器管理 DataNode 资源。</li>
+<li><strong>作业历史记录服务器：</strong>它是跟踪已在群集上执行或已提交到群集的所有作业的单元。它还跟踪状态，并保留在Hadoop集群上发生的每次执行的日志文件。</li>
+<li><strong>应用程序主</strong>设备：它是一个通过节点计算机（从属计算机）执行的组件，由资源管理器创建以执行和管理作业。它是从资源管理器协商资源并最终与节点管理器协调以执行任务的那个。</li>
+<li><strong>容器：</strong>它由节点管理器本身创建，该节点管理器已由资源管理器分配，所有作业最终在容器中执行。</li>
+</ul>
+<h4 id="YARN工作流程"><a href="#YARN工作流程" class="headerlink" title="YARN工作流程"></a>YARN工作流程</h4><p><img src="/Echo/posts/26104/YARN-Work-Flow.jpg" alt="YARN-Work-Flow"></p>
+<p>如上图所示，有一个资源管理器，所有作业都已提交到该管理器，并且有一个群集，其中有从属计算机，并且在每台从属计算机上，都有一个节点管理器正在运行。</p>
+<p>资源管理器有两个组件，即计划程序和应用程序管理器。</p>
+<p>应用程序主服务器和应用程序管理器之间有什么区别？</p>
+<p>应用程序管理器是资源管理器的一个组件，可确保执行每个任务并为其创建应用程序主节点。另一方面，应用程序主服务器是执行任务并请求需要执行的所有资源的人员。</p>
+<p>假设作业已提交到资源管理器，一旦作业提交，计划程序就会计划该作业。一旦计划程序计划要执行的作业，应用程序管理器将在其中一个DataNode 中创建一个容器，并且在此容器中，将启动应用程序主节点。</p>
+<p>然后，此应用程序主机将向资源管理器注册，并请求容器来执行任务。分配容器后，应用程序主节点现在将与节点管理器连接，并请求启动容器。</p>
+<p>正如我们所看到的，应用程序主节点被分配给DataNodes D和E，现在这个应用程序主节点请求节点管理器启动DataNode D和DataNode E的容器。</p>
+<p>一旦容器启动，应用程序主服务器将在容器内执行任务，结果将发送回客户端。</p>
+<h4 id="作业执行流程"><a href="#作业执行流程" class="headerlink" title="作业执行流程"></a>作业执行流程</h4><p>我们以一种顺序的方式理解资源申请流程。</p>
+<p><img src="/Echo/posts/26104/Sequence-of-Execution.jpg" alt="Sequence-of-Execution"></p>
+<p>图中有四个组件，一个是客户端（client），一个是资源管理器（resource manager），一个是节点管理器（node manager），一个是程序主节点（application master）</p>
+<p>第一步是将作业提交给资源管理器的客户端，在第二步中，资源管理器分配一个容器以启动从属计算机上的应用程序主站;第三步是应用程序主机向资源管理器注册。</p>
+<p>一旦它注册，它就会请求容器执行任务，即第四步。在步骤 5 中，应用程序主机通知需要在其上启动容器的节点管理器。</p>
+<p>在第六步中，节点管理器启动容器后，应用程序主机将在这些容器中执行代码。</p>
+<p>最后，在第七步中，客户端联系资源管理器或应用程序主机以监视应用程序状态。</p>
+<p>最后，应用程序主机将从资源管理器中注销自身，并将结果返回给客户端。因此，这是一个简单的顺序流，说明如何使用YARN框架执行MapReduce程序。</p>
+]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>大数据</tag>
+        <tag>yarn</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hadoop是什么？</title>
-    <url>/Echo/%E4%BB%80%E4%B9%88%E6%98%AFhadoop%EF%BC%9F.html</url>
+    <url>/Echo/posts/34251.html</url>
     <content><![CDATA[<p>Apache Hadoop是一个开源框架，用于管理所有类型的数据（结构化，非结构化和半结构化）。</p>
 <p>众所周知，如果我们想处理，存储和管理我们的数据，那么RDBMS是最好的解决方案。但是，数据应采用结构化格式，以便使用 RDBMS 进行处理。此外，如果数据大小增加，则RDBMS无法处理它，我们需要定期执行数据库清理。</p>
 <p>这可能会导致历史数据丢失，并且无法在某些行业（如天气预报，银行，保险，销售等）中生成准确可靠的结果。RDBMS的另一个问题是，如果主服务器出现故障，那么我们可能会丢失重要数据并遭受很多损失。</p>
@@ -3265,7 +3491,7 @@
 </tr>
 </tbody></table>
 <h4 id="hadoop-功能"><a href="#hadoop-功能" class="headerlink" title="hadoop 功能"></a>hadoop 功能</h4><p>Hadoop框架</p>
-<p><img src="/Echo/%E4%BB%80%E4%B9%88%E6%98%AFhadoop%EF%BC%9F/Hadoop-Features.webp" alt="Hadoop-Features"></p>
+<p><img src="/Echo/posts/34251/Hadoop-Features.webp" alt="Hadoop-Features"></p>
 <ul>
 <li>Hadoop yarn</li>
 <li>Hadoop common</li>
@@ -3282,7 +3508,7 @@
 <li>MapReduce</li>
 <li>YARN</li>
 </ul>
-<p><img src="/Echo/%E4%BB%80%E4%B9%88%E6%98%AFhadoop%EF%BC%9F/Hadoop-framework.png" alt="Hadoop-framework"></p>
+<p><img src="/Echo/posts/34251/Hadoop-framework.png" alt="Hadoop-framework"></p>
 <p>这些是Hadoop架构的三个重要组成部分。我们还应该了解架构的一些术语或概念，并了解它们是如何工作的。</p>
 <ol>
 <li>管理节点–manager node</li>
@@ -3304,7 +3530,7 @@
 <p>在一段时间后，它将复制命名空间映像，并从管理节点更新编辑日志。因此，在管理节点失败的情况下，辅助管理节点进入图片并表现得与主名称节点类似。由于此过程，它可以防止完全失败。</p>
 <p>4）blocks–块</p>
 <p>块是HDFS中最小的单位。Hadoop可以处理大量的文件，因为它将其分成小块。我们可以说，块只不过是一个大文件的数据。每个块的大小为128MB。这些块保存在数据节点中并处理数据。</p>
-<p><img src="/Echo/%E4%BB%80%E4%B9%88%E6%98%AFhadoop%EF%BC%9F/Components-used-in-Hadoop.png" alt="Components-used-in-Hadoop"></p>
+<p><img src="/Echo/posts/34251/Components-used-in-Hadoop.png" alt="Components-used-in-Hadoop"></p>
 <p>Hadoop 分布式文件系统 （HDFS） 是 Hadoop 集群中使用的文件系统。HDFS主要用于在集群中存储Hadoop数据。HDFS通常致力于顺序数据处理。正如我们已经知道的那样，它基于主从架构。</p>
 <p>集群的所有元数据都保存在 JobTracker 的 Name 节点上，实际数据存储在 TaskTracker 的 HDFS 的数据节点中。</p>
 <p>MapReduce负责数据的处理。每当任何文件进入集群进行处理时，第一个数据节点都会将其划分为块，每个块包含64MB的数据，它可以存储128MB。然后，每个块将复制两次，并存储在群集中任何位置的不同数据节点中。</p>
@@ -3323,7 +3549,7 @@
   </entry>
   <entry>
     <title>大数据是什么？</title>
-    <url>/Echo/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%A7%E6%95%B0%E6%8D%AE.html</url>
+    <url>/Echo/posts/56198.html</url>
     <content><![CDATA[<h3 id="什么是大数据？"><a href="#什么是大数据？" class="headerlink" title="什么是大数据？"></a>什么是大数据？</h3><p>“巨大”这个词不足以解释大数据，某些特征将数据分类为大数据。</p>
 <p>我们有大数据的三个主要特征，如果任何数据满足这些特征，那么它将被视为大数据。它是下面提到的三个 V 的组合：</p>
 <ul>
@@ -3331,7 +3557,7 @@
 <li>velocity：速度</li>
 <li>variety：多样性</li>
 </ul>
-<p><img src="/Echo/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%A7%E6%95%B0%E6%8D%AE/Three-Vs.png"></p>
+<p><img src="/Echo/posts/56198/Three-Vs.png"></p>
 <p>volume：应该是巨大体积的数据。大数据具有维护大量数据的解决方案，这些数据以TB或PB为单位。我们可以轻松有效地对大数据执行CRUD（创建，读取，更新和删除）操作。</p>
 <p>volecity：更快地访问数据。如今的社交媒体需要在很短的时间内快速交换数据，而大数据是它的最佳解决方案。因此，速度是另一个特征，它是数据的处理速度。</p>
 <p>variety：在社交媒体上，我们正在处理非结构化数据，如音频或视频记录，图像等。此外，银行领域等各个行业都需要结构化和半结构化数据。大数据是在一个地方维护两种类型的数据的解决方案。</p>
@@ -3342,7 +3568,7 @@
 <p><strong>半结构化数据：</strong>半结构化数据是未完全格式化的数据。它不存储在数据表或任何数据库中。但是，我们仍然可以轻松准备和处理它，因为此数据包含标记或逗号分隔值等。半结构化数据的示例：XML文件，CSV文件等。</p>
 <p><strong>非结构化数据：</strong>非结构化数据是没有任何结构的数据。它可以是任何形式，没有预定义的数据模型。我们无法将其存储在传统数据库中。搜索和处理它很复杂。</p>
 <p>此外，非结构化数据的数量也非常高。非结构化数据的示例：电子邮件正文、音频、视频、图像、实现的文档等。</p>
-<h4 id="传统数据库的挑战"><a href="#传统数据库的挑战" class="headerlink" title="传统数据库的挑战"></a>传统数据库的挑战</h4><p><img src="/Echo/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%A7%E6%95%B0%E6%8D%AE/Challenges-of-Traditional-Databases.png" alt="Challenges-of-Traditional-Databases"></p>
+<h4 id="传统数据库的挑战"><a href="#传统数据库的挑战" class="headerlink" title="传统数据库的挑战"></a>传统数据库的挑战</h4><p><img src="/Echo/posts/56198/Challenges-of-Traditional-Databases.png" alt="Challenges-of-Traditional-Databases"></p>
 <ul>
 <li>传统数据库不支持各种数据，即它无法处理非结构化和半结构化数据。</li>
 <li>传统数据库在处理大量数据时速度很慢。</li>
@@ -3353,7 +3579,7 @@
 <li>使用传统数据库，维护大量数据的成本非常高。</li>
 <li>传统数据库中的数据准确性较低，因为其中未维护完整的历史数据。</li>
 </ul>
-<h4 id="与传统数据库相比，大数据的优势"><a href="#与传统数据库相比，大数据的优势" class="headerlink" title="与传统数据库相比，大数据的优势"></a>与传统数据库相比，大数据的优势</h4><p><img src="/Echo/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%A7%E6%95%B0%E6%8D%AE/Advantages-of-BigData-over-Traditional-database.png" alt="Advantages-of-BigData-over-Traditional-database"></p>
+<h4 id="与传统数据库相比，大数据的优势"><a href="#与传统数据库相比，大数据的优势" class="headerlink" title="与传统数据库相比，大数据的优势"></a>与传统数据库相比，大数据的优势</h4><p><img src="/Echo/posts/56198/Advantages-of-BigData-over-Traditional-database.png" alt="Advantages-of-BigData-over-Traditional-database"></p>
 <ul>
 <li>大数据负责处理、管理和处理不同类型的数据，如结构化、半结构化和非结构化数据。</li>
 <li>它在维护大量数据方面具有成本效益。它适用于分布式数据库系统。</li>
@@ -3392,7 +3618,7 @@
 <p>数据仓库是一种数据库，它包含通过**”ETL”（<strong>即 E xtract、T ransform 和</strong>L**oad）过程从多个源或多个数据库类型中提取的所有数据。数据在数据仓库中准备就绪后，我们可以将其用于分析目的。</p>
 <p>因此，为了进行分析，我们可以根据数据仓库中的可用数据生成报告。可以使用商业智能工具生成多个图表和报告。</p>
 <p>我们需要数据仓库用于分析目的，以发展业务并为组织做出适当的决策。</p>
-<p><img src="/Echo/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%A7%E6%95%B0%E6%8D%AE/Organization-Data-WareHouse.jpg" alt="Organization-Data-WareHouse"></p>
+<p><img src="/Echo/posts/56198/Organization-Data-WareHouse.jpg" alt="Organization-Data-WareHouse"></p>
 <p>在此过程中发生了三件事，首先是我们从多个源中提取数据，并将其放在数据仓库的单个位置。</p>
 <p>在这里，我们使用”ETL”过程，因此在将数据从多个源加载到一个地方时，我们将在转换根中应用它，然后我们可以在这里使用各种ETL工具。</p>
 <p>一旦数据准备好进入数据仓库，我们就可以生成各种报告，以使用商业智能（BI）工具分析业务数据，或者我们称之为报告工具。Tableau 或 Cognos 等工具可用于生成报告和 DashBoard，用于分析业务数据。</p>
@@ -3416,7 +3642,7 @@
   </entry>
   <entry>
     <title>卸载centos自带的openjdk和MySQL</title>
-    <url>/Echo/%E5%8D%B8%E8%BD%BDcentos%E8%87%AA%E5%B8%A6%E7%9A%84openjdk%E5%92%8CMySQL.html</url>
+    <url>/Echo/posts/1106.html</url>
     <content><![CDATA[<h2 id="卸载openjdk"><a href="#卸载openjdk" class="headerlink" title="卸载openjdk"></a>卸载openjdk</h2><p>1.查看已经安装的jdk</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">rpm –qa|grep jdk</span><br><span class="line"></span><br><span class="line">java-1.7.0-openjdk-1.7.0.141-2.6.10.5.el7.x86_64</span><br><span class="line"></span><br><span class="line">java-1.8.0-openjdk-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">java-1.8.0-openjdk-headless-1.8.0.131-11.b12.el7.x86_64</span><br><span class="line"></span><br><span class="line">java-1.7.0-openjdk-headless-1.7.0.141-2.6.10.5.el7.x86_64</span><br><span class="line"></span><br><span class="line">ldap-4.19-1.el7.noarch</span><br><span class="line"></span><br><span class="line">copy-jdk-configs-2.2-3.el7.noarch</span><br></pre></td></tr></table></figure>
 
@@ -3443,7 +3669,7 @@
   </entry>
   <entry>
     <title>大数据测试-测试类型</title>
-    <url>/Echo/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%B5%8B%E8%AF%95-%E6%B5%8B%E8%AF%95%E7%B1%BB%E5%9E%8B.html</url>
+    <url>/Echo/posts/19970.html</url>
     <content><![CDATA[<p>之前的文章写了大数据的存储或处理的一些程序，对于后续的这篇大数据如何测试，却迟迟无法落笔。因为每个公司都是根据自己的业务来使用大数据平台的一个或者多个功能的。这里随便聊下大数据测试！（就是想到哪里写到哪里）</p>
 <h4 id="大数据测试与传统测试的区别"><a href="#大数据测试与传统测试的区别" class="headerlink" title="大数据测试与传统测试的区别"></a>大数据测试与传统测试的区别</h4><p>传统测试：特定条件下运行的结果进行观察或者验证，构建上下文验证输出</p>
 <p>大数据测试：数据正确，系统正确仅仅是第一步，后边还有诸多额外工作，如数据计算后结果，系统性能等。</p>
@@ -3474,54 +3700,59 @@
       </tags>
   </entry>
   <entry>
-    <title>YARN原理及工作流？</title>
-    <url>/Echo/%E4%BB%80%E4%B9%88%E6%98%AFYARN.html</url>
-    <content><![CDATA[<h4 id="YRAN是什么？"><a href="#YRAN是什么？" class="headerlink" title="YRAN是什么？"></a>YRAN是什么？</h4><p>YARN是hadoop集群中另一个资源管理者，为需要在Hadoop集群上执行的各种作业分配资源。在Hadoop 2.0中引入的。在Hadoop 2.0中引入了YARN，使用它能够超越MapReduce。</p>
-<p><img src="/Echo/%E4%BB%80%E4%B9%88%E6%98%AFYARN/Framework-Supported-by-YARN.jpg" alt="Framework-Supported-by-YARN"></p>
-<p>正如你在图中看到的，我们在两者之间的底部有HDFS，我们有YARN并使用YARN，很多框架都能够连接和利用HDFS。因此，即使MapReduce也用于使用YARN进行连接以请求资源，并且只有这样它才能通过HDFS（即Hadoop Cluster）执行作业。</p>
-<p>同样;SPARK，STORM和其他搜索引擎可以连接到HDFS。HBase是一个No SQL数据库也可以连接它。因此，HDFS的应用变得庞大，因为YARN能够为其他框架和其他大数据分析工具更好的分配资源。</p>
-<h4 id="Hadoop-2-x-守护进程"><a href="#Hadoop-2-x-守护进程" class="headerlink" title="Hadoop 2.x 守护进程"></a>Hadoop 2.x 守护进程</h4><p>让我们快速看一下Hadoop 2.0中新引入的守护进程，它们运行组件，即存储和处理。</p>
-<p>在HDFS一文中，我们详细理解了守护进程，即NameNode和DataNode。在此，我们将了解资源管理器和节点管理器如何在 Hadoop 2.x 群集中工作，以管理需要在 Hadoop 群集中执行的处理和作业。</p>
-<p><img src="/Echo/%E4%BB%80%E4%B9%88%E6%98%AFYARN/Hadoop-2-Daemons.jpg" alt="Hadoop-2-Daemons"></p>
-<p>什么是资源管理器？资源管理器是在主计算机或 NameNode（高端计算机）上运行的主守护程序。另一方面，节点管理器是在从属机器或DataNodes上运行的守护进程，或者与DataNode进程一起运行。</p>
-<h4 id="Hadoop-2-x-MapReduce-YARN-组件"><a href="#Hadoop-2-x-MapReduce-YARN-组件" class="headerlink" title="Hadoop 2.x MapReduce YARN 组件"></a>Hadoop 2.x MapReduce YARN 组件</h4><p>首先我们探讨下YARN的其他组件：</p>
-<ul>
-<li><strong>客户端：</strong>它是一个提交类似作业的命令行界面 （CLI） 的单元，客户端可以是 JAVA 应用程序。</li>
-<li><strong>资源管理器：</strong>它是一个主守护程序，所有作业都从客户端提交到该守护程序，并且是分配所有群集级别资源以执行特定作业的主守护程序。它运行在具有高质量硬件和良好配置的高端计算机上，因为它是必须管理群集上所有内容的主计算机。</li>
-<li><strong>节点管理器</strong>：它是一个在从属机器或DataNode上运行的从属守护进程，因此每个从属机器都有一个运行的节点管理器。它监视特定 DataNode 的资源，资源管理器管理群集资源，节点管理器管理 DataNode 资源。</li>
-<li><strong>作业历史记录服务器：</strong>它是跟踪已在群集上执行或已提交到群集的所有作业的单元。它还跟踪状态，并保留在Hadoop集群上发生的每次执行的日志文件。</li>
-<li><strong>应用程序主</strong>设备：它是一个通过节点计算机（从属计算机）执行的组件，由资源管理器创建以执行和管理作业。它是从资源管理器协商资源并最终与节点管理器协调以执行任务的那个。</li>
-<li><strong>容器：</strong>它由节点管理器本身创建，该节点管理器已由资源管理器分配，所有作业最终在容器中执行。</li>
+    <title>kafka测试</title>
+    <url>/Echo/posts/12976.html</url>
+    <content><![CDATA[<h5 id="kafka是一个事件流平台"><a href="#kafka是一个事件流平台" class="headerlink" title="kafka是一个事件流平台"></a>kafka是一个事件流平台</h5><ul>
+<li><p>什么事件流？，事件流是从事件源实时捕获数据的做法 如数据库、传感器、移动设备、云服务和流形式的软件应用程序 事件； 持久地存储这些事件流以供以后检索； 操作、处理和反应 实时和可追溯​​的事件流； 并将事件流路由到不同的 根据需要使用目标技术。 事件流因此确保了连续的流和解释 数据，以便正确的信息在正确的时间出现在正确的位置。</p>
+</li>
+<li><p>kafka的功能？</p>
+<ol>
+<li><p>要 发布 （写）和 订阅 （读取）的事件流，包括连续的导入&#x2F;导出 您来自其他系统的数据。</p>
+</li>
+<li><p>持久并可靠存储你想要的事件流</p>
+</li>
+<li><p><strong>处理</strong> 事件发生时或追溯性 事件流。</p>
+</li>
+</ol>
+<h5 id="kafka基本概念了解"><a href="#kafka基本概念了解" class="headerlink" title="kafka基本概念了解"></a>kafka基本概念了解</h5></li>
+<li><p>生产者：<strong>生产者</strong> 是那些向 Kafka 发布（写入）事件的客户端应用程序</p>
+</li>
+<li><p>消费者：订阅（读取和处理）这些事件的</p>
+</li>
+<li><p>主题：主题类似于文件系统中的文件夹，事件就是该文件夹中的文件</p>
+</li>
+<li><p>分区：主题是 <strong>分区的</strong> ，一个主题可以分布在位于不同 Kafka 代理的多个“桶”上。</p>
+</li>
+<li><p>broker：一个 Kafka 服务器也称为 Broker，它接受生产者发送的消息并存入磁盘；Broker 同时服务消费者拉取分区消息的请求，返回目前已经提交的消息一个 Kafka 服务器也称为 Broker，它接受生产者发送的消息并存入磁盘；Broker 同时服务消费者拉取分区消息的请求，返回目前已经提交的消息</p>
+</li>
 </ul>
-<h4 id="YARN工作流程"><a href="#YARN工作流程" class="headerlink" title="YARN工作流程"></a>YARN工作流程</h4><p><img src="/Echo/%E4%BB%80%E4%B9%88%E6%98%AFYARN/YARN-Work-Flow.jpg" alt="YARN-Work-Flow"></p>
-<p>如上图所示，有一个资源管理器，所有作业都已提交到该管理器，并且有一个群集，其中有从属计算机，并且在每台从属计算机上，都有一个节点管理器正在运行。</p>
-<p>资源管理器有两个组件，即计划程序和应用程序管理器。</p>
-<p>应用程序主服务器和应用程序管理器之间有什么区别？</p>
-<p>应用程序管理器是资源管理器的一个组件，可确保执行每个任务并为其创建应用程序主节点。另一方面，应用程序主服务器是执行任务并请求需要执行的所有资源的人员。</p>
-<p>假设作业已提交到资源管理器，一旦作业提交，计划程序就会计划该作业。一旦计划程序计划要执行的作业，应用程序管理器将在其中一个DataNode 中创建一个容器，并且在此容器中，将启动应用程序主节点。</p>
-<p>然后，此应用程序主机将向资源管理器注册，并请求容器来执行任务。分配容器后，应用程序主节点现在将与节点管理器连接，并请求启动容器。</p>
-<p>正如我们所看到的，应用程序主节点被分配给DataNodes D和E，现在这个应用程序主节点请求节点管理器启动DataNode D和DataNode E的容器。</p>
-<p>一旦容器启动，应用程序主服务器将在容器内执行任务，结果将发送回客户端。</p>
-<h4 id="作业执行流程"><a href="#作业执行流程" class="headerlink" title="作业执行流程"></a>作业执行流程</h4><p>我们以一种顺序的方式理解资源申请流程。</p>
-<p><img src="/Echo/%E4%BB%80%E4%B9%88%E6%98%AFYARN/Sequence-of-Execution.jpg" alt="Sequence-of-Execution"></p>
-<p>图中有四个组件，一个是客户端（client），一个是资源管理器（resource manager），一个是节点管理器（node manager），一个是程序主节点（application master）</p>
-<p>第一步是将作业提交给资源管理器的客户端，在第二步中，资源管理器分配一个容器以启动从属计算机上的应用程序主站;第三步是应用程序主机向资源管理器注册。</p>
-<p>一旦它注册，它就会请求容器执行任务，即第四步。在步骤 5 中，应用程序主机通知需要在其上启动容器的节点管理器。</p>
-<p>在第六步中，节点管理器启动容器后，应用程序主机将在这些容器中执行代码。</p>
-<p>最后，在第七步中，客户端联系资源管理器或应用程序主机以监视应用程序状态。</p>
-<p>最后，应用程序主机将从资源管理器中注销自身，并将结果返回给客户端。因此，这是一个简单的顺序流，说明如何使用YARN框架执行MapReduce程序。</p>
+<h5 id="kafka功能测试-如何验证数据的一致性和有序性"><a href="#kafka功能测试-如何验证数据的一致性和有序性" class="headerlink" title="kafka功能测试-如何验证数据的一致性和有序性"></a>kafka功能测试-如何验证数据的一致性和有序性</h5><p>可以创建一个单分区的Topic，然后自己写一个生产者程序，程序发送的事件流可以从设定值从1到N自增长；写一个消费者程序，单线程消费，将消费到的数据写进文件中，观测有序性；还可以对kafka服务进程直接杀死，进行故障模拟。</p>
+<h5 id="kafka性能测试"><a href="#kafka性能测试" class="headerlink" title="kafka性能测试"></a>kafka性能测试</h5><p>性能压测是系统性问题，需要考量对整体业务的掌握程序，以及对kafka的熟悉程度。压测过程中涉及压测工具选取，监测kafka，压测结果分析。</p>
+<ul>
+<li><p>明确压测场景：明确要压测的场景</p>
+</li>
+<li><p>测试环境准备：在服务器选择，kafka版本，kafka架构以及相关配置参数、业务数据等尽可能与线上环境保持一致</p>
+</li>
+<li><p>压测工具选取：生产者压测使用kafka自带的测试工具kafka-producer-perf-test.sh来进行测试，发送数据推荐使用线上数据导出到本地文件，随机读取进行</p>
+</li>
+<li><p>压测过程观测：首先开启kafka的JMX端口，①可以使用滴滴的Logikm(但是需要自己搭建部署)；②自己通过JMX端口以及官方原生API获取相关指标，CPU、内存、网络等监测可以使用nomn或者top命令来监测</p>
+</li>
+<li><p>压测结果分析：理想状态是系统资源使用达到瓶颈，如未达到则寻找软件资源瓶颈，配合堆栈分析，发现线程阻塞点。</p>
+</li>
+<li><p>压测报告呈现：一般有测试环境说明、测试场景说明、测试过程说明、测试结论（在当前场景下的最佳资源使用以及配置）。</p>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>大数据</category>
       </categories>
       <tags>
-        <tag>大数据</tag>
-        <tag>yarn</tag>
+        <tag>kafka，大数据</tag>
       </tags>
   </entry>
   <entry>
     <title>如何编写有效的测试用例</title>
-    <url>/Echo/%E5%A6%82%E4%BD%95%E7%BC%96%E5%86%99%E6%9C%89%E6%95%88%E7%9A%84%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B.html</url>
+    <url>/Echo/posts/39562.html</url>
     <content><![CDATA[<h4 id="什么是测试用例？"><a href="#什么是测试用例？" class="headerlink" title="什么是测试用例？"></a>什么是测试用例？</h4><p>测试用例包含描述输入、动作或事件以及预期响应的组件，以确定应用程序的功能是否正常工作。</p>
 <h4 id="测试用例的级别："><a href="#测试用例的级别：" class="headerlink" title="测试用例的级别："></a>测试用例的级别：</h4><ul>
 <li>级别 1: 您将根据可用的规范和用户文档编写基本的测试用例。</li>
@@ -3576,8 +3807,8 @@
   </entry>
   <entry>
     <title>手工测试如何过渡到自动化测试</title>
-    <url>/Echo/%E6%89%8B%E5%B7%A5%E6%B5%8B%E8%AF%95%E5%A6%82%E4%BD%95%E8%BF%87%E6%B8%A1%E5%88%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95.html</url>
-    <content><![CDATA[<p><img src="/Echo/%E6%89%8B%E5%B7%A5%E6%B5%8B%E8%AF%95%E5%A6%82%E4%BD%95%E8%BF%87%E6%B8%A1%E5%88%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/Transition-from-Manual-to-Automated-Testing-Banner.png" alt="Transition-from-Manual-to-Automated-Testing-Banner"></p>
+    <url>/Echo/posts/42873.html</url>
+    <content><![CDATA[<p><img src="/Echo/posts/42873/Transition-from-Manual-to-Automated-Testing-Banner.png" alt="Transition-from-Manual-to-Automated-Testing-Banner"></p>
 <h4 id="手工测试与自动化测试的区别"><a href="#手工测试与自动化测试的区别" class="headerlink" title="手工测试与自动化测试的区别"></a>手工测试与自动化测试的区别</h4><p>手工测试：顾名思义就是测试人员自己手动执行所有测试步骤，以便在应用程序发布之前查找错误。</p>
 <p>自动化测试：测试人员编写自动化脚本以自动化工具自动执行测试步骤。测试人员将测试脚本存储起来作为资产来进行重用，从而为重复执行节省大量时间和精力。</p>
 <h4 id="为什么要从手工测试转到自动化测试"><a href="#为什么要从手工测试转到自动化测试" class="headerlink" title="为什么要从手工测试转到自动化测试"></a>为什么要从手工测试转到自动化测试</h4><p>自动化测试可以克服许多手工测试中遇到的挑战，在敏捷项目中尤为重要。</p>
@@ -3638,10 +3869,10 @@
   </entry>
   <entry>
     <title>技术人如何申请专利</title>
-    <url>/Echo/%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%A6%82%E4%BD%95%E7%94%B3%E8%AF%B7%E4%B8%93%E5%88%A9.html</url>
+    <url>/Echo/posts/36352.html</url>
     <content><![CDATA[<h4 id="什么是专利？"><a href="#什么是专利？" class="headerlink" title="什么是专利？"></a>什么是专利？</h4><p>专利一般是由政府机关或者代表若干国家的区域性组织根据申请而颁发的一种文件，这种文件记载了发明创造的内容，并且在一定时期内产生这样一种法律状态，即获得专利的发明创造在一般情况下他人只有经专利权人许可才能予以实施。在我国，专利分为发明、实用新型和外观设计三种类型。</p>
 <h4 id="有什么好处？"><a href="#有什么好处？" class="headerlink" title="有什么好处？"></a>有什么好处？</h4><p>专利权人可以提高自身资质、获得收益、提高竞争力； 发明人可以获得收益、提高个人竞争力、获得成就感。</p>
-<h4 id="专利说明书长啥样？"><a href="#专利说明书长啥样？" class="headerlink" title="专利说明书长啥样？"></a>专利说明书长啥样？</h4><p><img src="/Echo/%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%A6%82%E4%BD%95%E7%94%B3%E8%AF%B7%E4%B8%93%E5%88%A9/%E5%8F%91%E6%98%8E%E4%B8%93%E5%88%A9%E8%AF%B4%E6%98%8E%E4%B9%A6.png" alt="发明专利说明书"></p>
+<h4 id="专利说明书长啥样？"><a href="#专利说明书长啥样？" class="headerlink" title="专利说明书长啥样？"></a>专利说明书长啥样？</h4><p><img src="/Echo/posts/36352/%E5%8F%91%E6%98%8E%E4%B8%93%E5%88%A9%E8%AF%B4%E6%98%8E%E4%B9%A6.png" alt="发明专利说明书"></p>
 <h5 id="扉页"><a href="#扉页" class="headerlink" title="扉页"></a>扉页</h5><p>专利说明书中的扉页是揭示每件专利的基本信息的文件部分。扉页揭示的基本专利信息包括：专利申请的时间、申请的号码、申请人或专利权人、发明人、发明创造名称、发明创造简要介绍及主图（机械图、电路图、化学结构式等）、发明所属技术领域分类号、公布或授权的时间、文献号、出版专利文件的国家机构等。</p>
 <h5 id="权利要求书"><a href="#权利要求书" class="headerlink" title="权利要求书"></a>权利要求书</h5><p>权利要求书是专利文件中限定专利保护范围的文件部分。权利要求书中至少有一项独立权利要求，还可以有从属权利要求。</p>
 <h5 id="说明书"><a href="#说明书" class="headerlink" title="说明书"></a>说明书</h5><p>说明书是清楚完整地描述发明创造的技术内容的文件部分，附图则用于对说明书文字部分的补充。各国对说明书中发明描述的规定大体相同，以中国专利说明书为例，说明书部分包括：技术领域，背景技术，发明内容，附图说明，实施条例等。</p>
@@ -3670,10 +3901,10 @@
   </entry>
   <entry>
     <title>接口测试</title>
-    <url>/Echo/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95.html</url>
+    <url>/Echo/posts/25505.html</url>
     <content><![CDATA[<h4 id="什么是接口？"><a href="#什么是接口？" class="headerlink" title="什么是接口？"></a>什么是接口？</h4><p>当开发应用程序或者网站时，会有不同组件进行集成，集成并促进这些组件之间通信的连接成为接口。简而言之，接口是由一组命令，消息等组成的软件。这些不同组件之间的通信会影响整体性能，因此需要进行测试和验证。</p>
 <h4 id="什么是接口测试？"><a href="#什么是接口测试？" class="headerlink" title="什么是接口测试？"></a>什么是接口测试？</h4><p>为验证接口功能而进行的测试称为接口测试</p>
-<p><img src="/Echo/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/Interface-Testing-Flow.jpg" alt="Interface-Testing-Flow"></p>
+<p><img src="/Echo/posts/25505/Interface-Testing-Flow.jpg" alt="Interface-Testing-Flow"></p>
 <p>接口测试中常见的组件：</p>
 <ul>
 <li>web服务和应用程序之间的接口</li>
@@ -3730,59 +3961,54 @@
       </tags>
   </entry>
   <entry>
-    <title>kafka测试</title>
-    <url>/Echo/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%BB%84%E4%BB%B6kafka%E6%B5%8B%E8%AF%95.html</url>
-    <content><![CDATA[<h5 id="kafka是一个事件流平台"><a href="#kafka是一个事件流平台" class="headerlink" title="kafka是一个事件流平台"></a>kafka是一个事件流平台</h5><ul>
-<li><p>什么事件流？，事件流是从事件源实时捕获数据的做法 如数据库、传感器、移动设备、云服务和流形式的软件应用程序 事件； 持久地存储这些事件流以供以后检索； 操作、处理和反应 实时和可追溯​​的事件流； 并将事件流路由到不同的 根据需要使用目标技术。 事件流因此确保了连续的流和解释 数据，以便正确的信息在正确的时间出现在正确的位置。</p>
-</li>
-<li><p>kafka的功能？</p>
-<ol>
-<li><p>要 发布 （写）和 订阅 （读取）的事件流，包括连续的导入&#x2F;导出 您来自其他系统的数据。</p>
-</li>
-<li><p>持久并可靠存储你想要的事件流</p>
-</li>
-<li><p><strong>处理</strong> 事件发生时或追溯性 事件流。</p>
-</li>
-</ol>
-<h5 id="kafka基本概念了解"><a href="#kafka基本概念了解" class="headerlink" title="kafka基本概念了解"></a>kafka基本概念了解</h5></li>
-<li><p>生产者：<strong>生产者</strong> 是那些向 Kafka 发布（写入）事件的客户端应用程序</p>
-</li>
-<li><p>消费者：订阅（读取和处理）这些事件的</p>
-</li>
-<li><p>主题：主题类似于文件系统中的文件夹，事件就是该文件夹中的文件</p>
-</li>
-<li><p>分区：主题是 <strong>分区的</strong> ，一个主题可以分布在位于不同 Kafka 代理的多个“桶”上。</p>
-</li>
-<li><p>broker：一个 Kafka 服务器也称为 Broker，它接受生产者发送的消息并存入磁盘；Broker 同时服务消费者拉取分区消息的请求，返回目前已经提交的消息一个 Kafka 服务器也称为 Broker，它接受生产者发送的消息并存入磁盘；Broker 同时服务消费者拉取分区消息的请求，返回目前已经提交的消息</p>
-</li>
-</ul>
-<h5 id="kafka功能测试-如何验证数据的一致性和有序性"><a href="#kafka功能测试-如何验证数据的一致性和有序性" class="headerlink" title="kafka功能测试-如何验证数据的一致性和有序性"></a>kafka功能测试-如何验证数据的一致性和有序性</h5><p>可以创建一个单分区的Topic，然后自己写一个生产者程序，程序发送的事件流可以从设定值从1到N自增长；写一个消费者程序，单线程消费，将消费到的数据写进文件中，观测有序性；还可以对kafka服务进程直接杀死，进行故障模拟。</p>
-<h5 id="kafka性能测试"><a href="#kafka性能测试" class="headerlink" title="kafka性能测试"></a>kafka性能测试</h5><p>性能压测是系统性问题，需要考量对整体业务的掌握程序，以及对kafka的熟悉程度。压测过程中涉及压测工具选取，监测kafka，压测结果分析。</p>
+    <title>测试方法</title>
+    <url>/Echo/posts/12213.html</url>
+    <content><![CDATA[<p>图片是网上找的。测试方法对于所有类型的测试都很常见，不仅因为它是大数据或Hadoop测试，当我们进入正常的手动测试或自动化测试或安全测试，性能测试时也是如此，因此任何类型的测试都遵循相同的方法。<img src="/Echo/posts/12213/Testing-Approach.webp" alt="Testing-Approach"></p>
+<h5 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h5><p>作为测试方法的一部分，我们需要从<strong>需求</strong>开始，需求是一个基本的东西，现在在敏捷过程中，我们称之为故事和史诗。史诗只是一个更大的要求，而故事是较小的要求。</p>
+<p>需求基本上包含所有的数据模型，目标，源以及我们需要应用哪种转换，我们必须使用哪种工具？所有这些类型的详细信息都将在要求中提供。</p>
+<p>这基本上是客户要求或客户要求。基于此要求，我们将开始测试过程。</p>
+<h5 id="时间预估"><a href="#时间预估" class="headerlink" title="时间预估"></a>时间预估</h5><p>方法的另一部分是时间预估，作为测试的一部分，我们需要花费多少时间来完成整个活动。我们做测试计划，准备测试场景，准备测试用例和执行，我们将发现缺陷并报告它们并准备测试报告。</p>
+<p>所有这些活动都需要一些时间，因此需要多少时间来完成所有这些活动，这基本上称为时间预估。我们需要给管理层一些粗略的估计。</p>
+<h5 id="测试计划"><a href="#测试计划" class="headerlink" title="测试计划"></a>测试计划</h5><p>测试计划只不过是关于流程的描述，要测试什么，不要测试什么，测试的范围是什么，时间表是什么，需要多少资源，硬件和软件要求以及将使用的时间表和测试周期是什么，我们需要的测试级别是什么等。</p>
+<p>在测试计划期间，他们将对项目进行某些资源分配，我们拥有哪些不同的模型，需要多少资源以及需要什么样的技能集等，所有这些内容和方面都将包含在测试计划阶段中。大多数情况下，领导级别或管理层人员将执行测试计划。</p>
+<h5 id="测试方案和测试用例"><a href="#测试方案和测试用例" class="headerlink" title="测试方案和测试用例"></a>测试方案和测试用例</h5><p>完成测试规划后，我们需要准备测试方案和测试用例，特别是对于大数据测试，我们需要一些文档以及需求文档。除了这个要求文件，我们还需要什么？</p>
+<p>我们需要包含客户需求的需求文档，同时我们需要输入文档，即数据模型。数据模型在某种意义上什么是数据库架构，什么是表以及什么是关系所有这些数据将在数据模型中可用。</p>
+<p>此外，我们有映射文档，例如在关系数据库中，我们有一些表，在HDFS的数据仓库中通过ETL加载数据后，我们需要做什么？即映射数据类型。</p>
+<p>我们怎么知道，我们需要验证的所有映射是什么？因此，这些映射将出现在映射文档中。在映射文档中，客户将提供各种映射。</p>
+<p>此外，我们还需要一个<strong>设计文档</strong>，开发团队和QA团队都需要的设计文档，因为在设计文档中，客户将提供，他们将实现哪种类型的Map Reduce作业，什么类型的MapReduce作业需要输入以及什么类型的MapReduce作业提供输出。</p>
+<p>同样，如果我们有HIVE或PIG，客户创建的所有UDF是什么，以及他们将采取的所有输入以及他们将产生什么样的输出等。</p>
+<p>要准备测试方案和测试用例，我们需要手动准备所有这些文档：</p>
 <ul>
-<li><p>明确压测场景：明确要压测的场景</p>
-</li>
-<li><p>测试环境准备：在服务器选择，kafka版本，kafka架构以及相关配置参数、业务数据等尽可能与线上环境保持一致</p>
-</li>
-<li><p>压测工具选取：生产者压测使用kafka自带的测试工具kafka-producer-perf-test.sh来进行测试，发送数据推荐使用线上数据导出到本地文件，随机读取进行</p>
-</li>
-<li><p>压测过程观测：首先开启kafka的JMX端口，①可以使用滴滴的Logikm(但是需要自己搭建部署)；②自己通过JMX端口以及官方原生API获取相关指标，CPU、内存、网络等监测可以使用nomn或者top命令来监测</p>
-</li>
-<li><p>压测结果分析：理想状态是系统资源使用达到瓶颈，如未达到则寻找软件资源瓶颈，配合堆栈分析，发现线程阻塞点。</p>
-</li>
-<li><p>压测报告呈现：一般有测试环境说明、测试场景说明、测试过程说明、测试结论（在当前场景下的最佳资源使用以及配置）。</p>
-</li>
+<li>需求文档</li>
+<li>数据模型</li>
+<li>映射文档</li>
+<li>设计文档</li>
 </ul>
+<p>这些文件可能因组织而异，并且没有强制性规则规定我们必须拥有所有这些文件。有时我们拥有所有文档，有时我们只有两到三个文档，或者有时我们还需要依赖一个文档，这取决于项目复杂性，公司时间表和所有内容。</p>
+<h5 id="评审测试方案和测试用例"><a href="#评审测试方案和测试用例" class="headerlink" title="评审测试方案和测试用例"></a>评审测试方案和测试用例</h5><p>我们需要对测试方案和测试用例进行审查，因为不知何故或在某些情况下，我们忘记或错过了一些测试用例，因为每个人都无法想到可以使用需求完成的所有可能的事情，在这种情况下，我们需要从第三方工具或其他人那里获得帮助。</p>
+<p>因此，每当我们准备一些文档或执行某些操作时，我们都需要有人来审查来自同一团队的内容，例如开发人员，测试人员。他们会给出适当的建议，以包含更多内容，或者还建议更新或修改测试方案和测试用例。</p>
+<p>他们提供所有注释，在此基础上，我们将更新我们的测试方案和测试用例以及我们需要在整个团队中发布的文档的多个版本，直到文档按照要求完全更新为止。</p>
+<h5 id="测试执行"><a href="#测试执行" class="headerlink" title="测试执行"></a>测试执行</h5><p>文档准备就绪后，我们将从上级团队获得签核，以开始基本上称为测试用例执行的执行过程。</p>
+<p>如果我们想在执行期间执行测试用例，我们需要检查开发人员是否必须发送信息，如果是正常的功能测试或其他一些测试或自动化测试，我们需要构建。但是，从Hadoop或BigData Testing的角度来看，开发人员将提供MapReduce Jobs。</p>
+<p>HDFS文件 - 在HDFS中复制的任何文件，这些文件信息都需要检查权限，由开发人员创建的HIVE脚本以验证HIVE表中的数据，并且我们还需要由开发人员开发的HIVE UDF，PIG脚本和PIG UDF。</p>
+<p>这些都是我们需要从开发人员那里得到的东西。在执行之前，我们应该拥有所有这些东西。</p>
+<p>对于MapReduce Jobs，他们将提供一些JAR文件，并且作为HDFS的一部分，他们已经在HDFS中加载了数据，并且文件应该准备就绪，并且HIVE脚本可以验证HIVE表中的数据。无论他们实施了什么UDF，都将在HIVE UDF中提供。对于 PIG 脚本和 UDF，我们也需要同样的东西。</p>
+<h5 id="缺陷报告和跟踪"><a href="#缺陷报告和跟踪" class="headerlink" title="缺陷报告和跟踪"></a>缺陷报告和跟踪</h5><p>一旦我们执行了测试用例，我们就会发现一些缺陷，一些预期的和一些实际的不等于预期的结果，所以我们需要列出相同的缺陷，并将它们提供给开发团队解决，这基本上称为缺陷报告。</p>
+<p>假设如果我们在MapReduce作业中发现一些缺陷，那么我们将将其报告给开发人员，他们将再次重新创建MapReduce作业，并进行一些代码级修改，然后他们将再次提供最新的MapReduce作业，我们需要对其进行测试。</p>
+<p>这是一个持续的过程，一旦作业经过测试并通过，我们再次需要重新测试它并将其报告给开发人员，然后获取下一个用于测试的工作。这就是缺陷报告和跟踪活动的完成方式。</p>
+<h5 id="测试报告"><a href="#测试报告" class="headerlink" title="测试报告"></a>测试报告</h5><p>一旦我们完成了所有的测试过程并且缺陷已经关闭，那么我们需要创建我们的测试报告。测试报告是我们迄今为止为完成测试过程所做的一切。所有的规划，测试用例的编写和执行，我们得到的输出等等，一切都以测试报告的形式记录在一起。</p>
+<p>我们需要每天或每周或根据客户的需求发送这些报告。如今，组织正在使用敏捷模型，因此每个状态报告都需要在每日Scrums期间更新。</p>
 ]]></content>
       <categories>
-        <category>大数据</category>
+        <category>测试</category>
       </categories>
       <tags>
-        <tag>kafka，大数据</tag>
+        <tag>测试，测试基本</tag>
       </tags>
   </entry>
   <entry>
     <title>网站测试要考虑的点</title>
-    <url>/Echo/%E7%BD%91%E7%AB%99%E6%B5%8B%E8%AF%95%E8%A6%81%E8%80%83%E8%99%91%E7%9A%84%E7%82%B9.html</url>
+    <url>/Echo/posts/54005.html</url>
     <content><![CDATA[<p>网站本质上都是B&#x2F;S架构的应用程序-具有service和browser。</p>
 <p>测试时应考虑 HTML 页、TCP&#x2F;IP 通信、Internet 连接、防火墙、在网页中运行的应用程序（如小程序、javascript、插件应用程序）和在服务器端运行的应用程序（如 CGI 脚本、数据库接口、日志记录应用程序、动态页面生成器、asp 等）之间的交互。</p>
 <p>此外，还有各种各样的服务器和浏览器，每种服务器和浏览器都有不同的版本。它们包括它们之间在连接速度变化，快速变化的技术以及多个标准和协议方面的小但有时显着的差异。对网站的测试的最终结果可以成为一项重大的持续工作。</p>
@@ -3926,7 +4152,7 @@
   </entry>
   <entry>
     <title>拥有未来的能力——“自学”</title>
-    <url>/Echo/%E8%87%AA%E5%AD%A6.html</url>
+    <url>/Echo/posts/18745.html</url>
     <content><![CDATA[<h2 id="为什么一定要掌握自学能力？"><a href="#为什么一定要掌握自学能力？" class="headerlink" title="为什么一定要掌握自学能力？"></a>为什么一定要掌握自学能力？</h2><p>最近一直在讨论延长退休年龄，我们的父辈在五十岁就退休了。再过去的几十年里，人类的平均寿命预期增长的十分惊人！拿中国地区做例子，1949年，中国人均预期寿命不足35岁。 2021年，这个数字达到77.3岁。  72年，人均预期寿命长一倍还多。所以，各位，我们的未来还有很长。曾经有一家机构做过这样一个调查，人们的职业与自己大学所学专业的相符的比例不足20%。因为这世界变化太快了，因为大多数教育机构与世界发展脱钩的程度越来越严重。你的未来日子还有很长，这世界进步的这么快，你有让自己有在未来安身立命的一技之长吗？自学能力是唯一值得被不断磨练的长技，没有自学能力的人是没有未来的，这样我们才能在很长的未来中不被世界所抛弃。</p>
 <h2 id="自学需要的元素"><a href="#自学需要的元素" class="headerlink" title="自学需要的元素"></a>自学需要的元素</h2><p>自学过程我们要经历以下四个阶段：学、练、用、造。</p>
 <ul>
@@ -4004,232 +4230,6 @@
       </categories>
       <tags>
         <tag>成长</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>不同类型的页面应该如何测试</title>
-    <url>/Echo/%E4%B8%8D%E5%90%8C%E7%B1%BB%E5%9E%8B%E7%9A%84%E9%A1%B5%E9%9D%A2%E5%BA%94%E8%AF%A5%E5%A6%82%E4%BD%95%E6%B5%8B%E8%AF%95.html</url>
-    <content><![CDATA[<p>网站可以分为许多类型，所有这些都可以缩小在静态和动态类型下。爱这里详细讨论4种类型及其测试方法。在此之前，对这些类型进行归类处理。</p>
-<ul>
-<li>静态网站测试</li>
-<li>动态 Web 应用程序测试</li>
-<li>电子商务网站测试</li>
-<li>移动网站测试</li>
-</ul>
-<h4 id="静态网站测试"><a href="#静态网站测试" class="headerlink" title="静态网站测试"></a>静态网站测试</h4><p>一个静态网站将为在不同时间访问该网站的所有访问者显示相同的内容。它也被称为信息网站。在静态网站上，只有开发人员才能在代码中进行更改。这种类型的网站将没有任何主要功能，它完全取决于UI设计。</p>
-<p>测试一个简单的静态网站非常容易，在测试时只需考虑几件事。将在下面提到：</p>
-<h5 id="测试点"><a href="#测试点" class="headerlink" title="测试点"></a>测试点</h5><p><strong>#1）</strong>测试GUI设计是必须的，因为静态网站完全依赖于它。您需要将待测试的PSD文件与开发的网页进行比较。检查设计中的所有元素是否应显示在开发的页面上。</p>
-<p><strong>#2）</strong> GUI设计的另一部分是检查字体大小，字体样式，间距和颜色是否都已重现。</p>
-<p><strong>#3）</strong>其次，需要检查链接（页面链接）以查看它是否正常工作。另外，找出是否有不可以正常访问的链接？</p>
-<p><strong>#4）</strong>通过比较客户端提供的内容来验证所有网页中的拼写和内容。</p>
-<p><strong>#5）</strong> 在某些情况下，图像将无法正确显示，可能会损坏或有时图像被掩盖，可能会显示错误的图像。必须严格检查。因为对于一个静态的网站，只有内容和图像才会赋予生命。</p>
-<p><strong>#6）</strong>仔细检查滚动条，将面临的问题是出现不需要的滚动或滚动被隐藏（它可能会隐藏内容），问题一般出现于水平和垂直滚动轴。</p>
-<p><strong>#7）</strong>如果联系表单检查，则通过发送一些虚拟消息来正常工作。</p>
-<p>在联系表格上要检查的事项是：</p>
-<ul>
-<li>邮件是否正确发送，是否显示成功邮件？</li>
-<li>检查收到的电子邮件是否按照设计的正确格式发送给相关人员？</li>
-<li>检查电子邮件不应该作为垃圾邮件落入垃圾邮件吗？</li>
-<li>如果有回复电子邮件触发器被激活，那么检查发件人是否收到了邮件？</li>
-</ul>
-<p><strong>#8）</strong>检查它是否是无差错的网页，并使用W3验证器或其他相关软件对其进行验证。</p>
-<p><strong>#9）</strong>在静态网站中要检查的一些常量内容，</p>
-<ul>
-<li>检查标签栏上是否存在图标</li>
-<li>网址应包含正确的网页标题</li>
-<li>如果存在版权信息，则应显示</li>
-<li>如果有联系表格，验证码是必须的。[它可以防止垃圾邮件]</li>
-<li>检查网站的加载速度。[静态网站不应花费太多时间进行加载]。如果在加载时使用了gif图像，则跟踪其功能</li>
-</ul>
-<p>除此之外，还有大量的东西必须在每个网站的后端进行测试，包括系统测试，安全测试，接口测试，兼容性测试和性能测试等。为此，您要具备技术知识。在静态网站中，如果还需要进行功能测试，找不到更多功能。</p>
-<h4 id="动态Web应用程序-CMS网站"><a href="#动态Web应用程序-CMS网站" class="headerlink" title="动态Web应用程序[CMS网站]"></a>动态Web应用程序[CMS网站]</h4><p>用户可以定期更新和更改其网站内容的类型。从这里开始，我将使用”页面测试”这个词，而不是动态网站测试。页面程序是<em>前端和后端编程的组合</em>。</p>
-<p>前端将是HTML和CSS，vue，而后端使用PHP，Javascript和ASP等编程语言。使用此后端，用户&#x2F;客户端可以添加或更改网站上的内容。</p>
-<p>测试页面比测试静态网站简单，但比测试电子商务网站的困难成都差不了多少。功能测试是测试 页面时要执行的最重要的事情。Web应用程序可能包含非常复杂的功能，因此测试人员在测试时需要非常小心。</p>
-<p>有两种不同类型的Web应用程序，一种是用户在前端不会执行任何操作（即只有后端更改才会反映在前端），另一种是最终用户将在前端本身工作（例如登录，注册，新闻通讯订阅和其他类似操作）。因此，应根据它进行测试。</p>
-<h5 id="测试点-1"><a href="#测试点-1" class="headerlink" title="测试点"></a>测试点</h5><p>我在静态网站测试中提到的要点也将包括在测试Web应用程序时。除此之外，还需要注意以下事项。</p>
-<p><strong>#1）</strong>在GUI部分中，所有字段和按钮都必须使用提示工具，应正确完成字段对齐（间距），禁用的字段&#x2F;按钮应灰显，字段&#x2F;按钮应采用SRS中的标准格式，如果出现问题应显示错误消息，弹出消息应仅显示在网页的中心， 下拉菜单不应被截断。Tab 快捷键应该适用于所有字段等。</p>
-<p><strong>#2）</strong>在功能部分中，如果您的Web应用程序具有登录或注册功能，请检查必填字段验证，表单验证（即数字字段应仅接受数字，而不接受字母表），字段的字符限制（即只能输入这些字符）。</p>
-<p>字段的特殊字符和负数限制，测试电子邮件功能，测试文档上传（即只能上传指定的文档类型），超时功能，排序功能，javascript在兼容浏览器上工作等应该进行测试。</p>
-<p><strong>#3）</strong>当进入后端功能部分时，测试图像上传是否有损坏的图像，在字段中输入的文本是否有效。后端更新应该反映在前端，数据库测试（即是否可以添加新字段或删除不需要的字段）所有这些操作都要执行。</p>
-<p>对于页面（动态网站）来说，性能不是必需的，因为它的内容非常少。如果需要，可以使用您熟悉的工具。如果想做简单的性能测试，选择一些标准的在线性能工具</p>
-<h4 id="电子商务网站"><a href="#电子商务网站" class="headerlink" title="电子商务网站"></a>电子商务网站</h4><p>与上述两个相比，电子商务网站有些复杂。测试人员在测试电子商务网站时需要非常谨慎。电子商务网站中有很多东西需要检查，只是涵盖了我在电子商务网站测试方面的一些经验问题。</p>
-<p>在 GUI 部分中，需要检查 SRS 中的所有功能以及功能是否相同。对于所有商业网站，功能几乎相同。</p>
-<p>功能方面，需要检查所有页面，例如主页（包括特色产品，特别优惠显示，登录详细信息，搜索功能），产品详细信息页面，类别页面，下订单，支付网关，一切都必须进行测试。</p>
-<h5 id="测试点-2"><a href="#测试点-2" class="headerlink" title="测试点"></a>测试点</h5><p><strong>#1）</strong> 检查购买或增加数量时购物车是否正在更新。在所有页面和情况下检查此功能。</p>
-<p><strong>#2）</strong>检查特殊优惠券和<em>优惠是否应用于正确的订单</em>，并且看到折扣价格是否显示。</p>
-<p><strong>#3）</strong> 有时，在更新单个产品时，通过考虑产品中的变体数量，它会成倍增加。因此，请检查是否显示单个产品及其变体是否正确显示。（遇到过这个问题）</p>
-<p><strong>#4）</strong> 检查过滤器选项是否正常工作。如果根据所选的类别和定价进行过滤？</p>
-<p><strong>#5）</strong>注册时，应进行用户验证。只有新用户可以注册。</p>
-<p><strong>#6）</strong> 如果现有用户将产品添加到购物篮，则在下次登录期间，愿望清单部分也应保存并显示。</p>
-<p><strong>#7）</strong>比较产品应通过根据后端分配的某些规格比较产品来工作。</p>
-<p><strong>#8）</strong>检查货币转换器是否正常工作。根据所选的国家&#x2F;地区，货币转换器应显示相关的价格和税率。</p>
-<p><strong>#9）</strong>通常许多插件都用于电子商务（WordPress和类似）网站，需要非常小心。插件安装可能会发生冲突或影响任何其他主要功能。因此，请跟进插件安装及其使用情况。</p>
-<p><strong>#10）</strong>检查社交共享选项是否适用于单个产品。</p>
-<p><strong>#11）</strong> 运费应根据所选区域生成。并检查税率生成。（在最终用户购买期间，可能会导致一些法律问题）。</p>
-<p><strong>#12）</strong>只有在提供有效的卡详细信息时，支付网关才应有效。验证应适用于卡号和CCV代码号。[最好在卡号字段本身上进行验证]。</p>
-<p><strong>#13）</strong>在购买过程中的每个过程中都应生成电子邮件（注册，产品订购，付款成功，订单取消，订单收到和其他电子邮件触发器（如果有）。</p>
-<p><strong>#14）</strong>检查实时聊天与一些垃圾电子邮件。</p>
-<p><strong>注意：</strong>通常，电子商务网站不会为移动兼容性而开发，并且在进入移动版本时将生成应用程序。在某些情况下，他们不会创建应用程序，而是创建一个移动兼容的网站。在这种情况下，需要仔细检查是否有任何缺少的功能和UI偏差。</p>
-<p>这些是我在测试电子商务网站时面临和注意到的一些问题。除此之外，还需要检查与电子商务网站相关的所有一般事项。</p>
-<h4 id="手机网站"><a href="#手机网站" class="headerlink" title="手机网站"></a>手机网站</h4><p>首先，要明确什么是一个移动网站，通常人们认为移动网站和移动应用程序是相同的，但实际上，移动网站是使用HTML页面开发的，并且只能通过互联网连接进行查看。</p>
-<p>但是移动应用程序只不过是一个应用程序，可以在没有互联网连接的情况下下载和使用。在这里，我们中的许多人感到困惑并提出一个问题 移动网站和响应式网站有什么区别？</p>
-<p>响应式网站意味着使内容适合移动设备大小，而不是创建版本，而移动网站正在创建一个不是反射桌面版本的新版本。在移动网站中，将只有有限的页面，并且不需要的功能将在此处删除。</p>
-<p>测试移动网站比其他类型的网站有些乏味。它将具有单独的设计，在测试功能时需要小心。</p>
-<h5 id="测试点-3"><a href="#测试点-3" class="headerlink" title="测试点"></a>测试点</h5><ul>
-<li>通常，将使用模拟器来测试移动网站，可以获得理想的结果，但是希望您在真实设备上进行测试。我在真实设备（尤其是苹果设备）中进行测试时，遇到了许多问题。实际设备规格可能与开发的网页冲突。</li>
-<li>GUI和可用性测试更重要，因为它不是桌面版本的反映。</li>
-<li>性能是移动网站测试需要考虑的另一个重要因素。在实际设备中进行测试时，可以跟踪与性能相关的问题。</li>
-<li>检查从移动设备浏览正常网页链接是否被移动链接触发。</li>
-<li>检查移动网站上的页面滚动，页面导航，文本截断等。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>测试</tag>
-        <tag>页面测试</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>测试方法</title>
-    <url>/Echo/%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95.html</url>
-    <content><![CDATA[<p>图片是网上找的。测试方法对于所有类型的测试都很常见，不仅因为它是大数据或Hadoop测试，当我们进入正常的手动测试或自动化测试或安全测试，性能测试时也是如此，因此任何类型的测试都遵循相同的方法。<img src="/Echo/%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95/Testing-Approach.webp" alt="Testing-Approach"></p>
-<h5 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h5><p>作为测试方法的一部分，我们需要从<strong>需求</strong>开始，需求是一个基本的东西，现在在敏捷过程中，我们称之为故事和史诗。史诗只是一个更大的要求，而故事是较小的要求。</p>
-<p>需求基本上包含所有的数据模型，目标，源以及我们需要应用哪种转换，我们必须使用哪种工具？所有这些类型的详细信息都将在要求中提供。</p>
-<p>这基本上是客户要求或客户要求。基于此要求，我们将开始测试过程。</p>
-<h5 id="时间预估"><a href="#时间预估" class="headerlink" title="时间预估"></a>时间预估</h5><p>方法的另一部分是时间预估，作为测试的一部分，我们需要花费多少时间来完成整个活动。我们做测试计划，准备测试场景，准备测试用例和执行，我们将发现缺陷并报告它们并准备测试报告。</p>
-<p>所有这些活动都需要一些时间，因此需要多少时间来完成所有这些活动，这基本上称为时间预估。我们需要给管理层一些粗略的估计。</p>
-<h5 id="测试计划"><a href="#测试计划" class="headerlink" title="测试计划"></a>测试计划</h5><p>测试计划只不过是关于流程的描述，要测试什么，不要测试什么，测试的范围是什么，时间表是什么，需要多少资源，硬件和软件要求以及将使用的时间表和测试周期是什么，我们需要的测试级别是什么等。</p>
-<p>在测试计划期间，他们将对项目进行某些资源分配，我们拥有哪些不同的模型，需要多少资源以及需要什么样的技能集等，所有这些内容和方面都将包含在测试计划阶段中。大多数情况下，领导级别或管理层人员将执行测试计划。</p>
-<h5 id="测试方案和测试用例"><a href="#测试方案和测试用例" class="headerlink" title="测试方案和测试用例"></a>测试方案和测试用例</h5><p>完成测试规划后，我们需要准备测试方案和测试用例，特别是对于大数据测试，我们需要一些文档以及需求文档。除了这个要求文件，我们还需要什么？</p>
-<p>我们需要包含客户需求的需求文档，同时我们需要输入文档，即数据模型。数据模型在某种意义上什么是数据库架构，什么是表以及什么是关系所有这些数据将在数据模型中可用。</p>
-<p>此外，我们有映射文档，例如在关系数据库中，我们有一些表，在HDFS的数据仓库中通过ETL加载数据后，我们需要做什么？即映射数据类型。</p>
-<p>我们怎么知道，我们需要验证的所有映射是什么？因此，这些映射将出现在映射文档中。在映射文档中，客户将提供各种映射。</p>
-<p>此外，我们还需要一个<strong>设计文档</strong>，开发团队和QA团队都需要的设计文档，因为在设计文档中，客户将提供，他们将实现哪种类型的Map Reduce作业，什么类型的MapReduce作业需要输入以及什么类型的MapReduce作业提供输出。</p>
-<p>同样，如果我们有HIVE或PIG，客户创建的所有UDF是什么，以及他们将采取的所有输入以及他们将产生什么样的输出等。</p>
-<p>要准备测试方案和测试用例，我们需要手动准备所有这些文档：</p>
-<ul>
-<li>需求文档</li>
-<li>数据模型</li>
-<li>映射文档</li>
-<li>设计文档</li>
-</ul>
-<p>这些文件可能因组织而异，并且没有强制性规则规定我们必须拥有所有这些文件。有时我们拥有所有文档，有时我们只有两到三个文档，或者有时我们还需要依赖一个文档，这取决于项目复杂性，公司时间表和所有内容。</p>
-<h5 id="评审测试方案和测试用例"><a href="#评审测试方案和测试用例" class="headerlink" title="评审测试方案和测试用例"></a>评审测试方案和测试用例</h5><p>我们需要对测试方案和测试用例进行审查，因为不知何故或在某些情况下，我们忘记或错过了一些测试用例，因为每个人都无法想到可以使用需求完成的所有可能的事情，在这种情况下，我们需要从第三方工具或其他人那里获得帮助。</p>
-<p>因此，每当我们准备一些文档或执行某些操作时，我们都需要有人来审查来自同一团队的内容，例如开发人员，测试人员。他们会给出适当的建议，以包含更多内容，或者还建议更新或修改测试方案和测试用例。</p>
-<p>他们提供所有注释，在此基础上，我们将更新我们的测试方案和测试用例以及我们需要在整个团队中发布的文档的多个版本，直到文档按照要求完全更新为止。</p>
-<h5 id="测试执行"><a href="#测试执行" class="headerlink" title="测试执行"></a>测试执行</h5><p>文档准备就绪后，我们将从上级团队获得签核，以开始基本上称为测试用例执行的执行过程。</p>
-<p>如果我们想在执行期间执行测试用例，我们需要检查开发人员是否必须发送信息，如果是正常的功能测试或其他一些测试或自动化测试，我们需要构建。但是，从Hadoop或BigData Testing的角度来看，开发人员将提供MapReduce Jobs。</p>
-<p>HDFS文件 - 在HDFS中复制的任何文件，这些文件信息都需要检查权限，由开发人员创建的HIVE脚本以验证HIVE表中的数据，并且我们还需要由开发人员开发的HIVE UDF，PIG脚本和PIG UDF。</p>
-<p>这些都是我们需要从开发人员那里得到的东西。在执行之前，我们应该拥有所有这些东西。</p>
-<p>对于MapReduce Jobs，他们将提供一些JAR文件，并且作为HDFS的一部分，他们已经在HDFS中加载了数据，并且文件应该准备就绪，并且HIVE脚本可以验证HIVE表中的数据。无论他们实施了什么UDF，都将在HIVE UDF中提供。对于 PIG 脚本和 UDF，我们也需要同样的东西。</p>
-<h5 id="缺陷报告和跟踪"><a href="#缺陷报告和跟踪" class="headerlink" title="缺陷报告和跟踪"></a>缺陷报告和跟踪</h5><p>一旦我们执行了测试用例，我们就会发现一些缺陷，一些预期的和一些实际的不等于预期的结果，所以我们需要列出相同的缺陷，并将它们提供给开发团队解决，这基本上称为缺陷报告。</p>
-<p>假设如果我们在MapReduce作业中发现一些缺陷，那么我们将将其报告给开发人员，他们将再次重新创建MapReduce作业，并进行一些代码级修改，然后他们将再次提供最新的MapReduce作业，我们需要对其进行测试。</p>
-<p>这是一个持续的过程，一旦作业经过测试并通过，我们再次需要重新测试它并将其报告给开发人员，然后获取下一个用于测试的工作。这就是缺陷报告和跟踪活动的完成方式。</p>
-<h5 id="测试报告"><a href="#测试报告" class="headerlink" title="测试报告"></a>测试报告</h5><p>一旦我们完成了所有的测试过程并且缺陷已经关闭，那么我们需要创建我们的测试报告。测试报告是我们迄今为止为完成测试过程所做的一切。所有的规划，测试用例的编写和执行，我们得到的输出等等，一切都以测试报告的形式记录在一起。</p>
-<p>我们需要每天或每周或根据客户的需求发送这些报告。如今，组织正在使用敏捷模型，因此每个状态报告都需要在每日Scrums期间更新。</p>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>测试，测试基本</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JMeter组件介绍</title>
-    <url>/Echo/JMeter%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D.html</url>
-    <content><![CDATA[<p>在本文中，将熟悉<strong>JMeter 的所有组件，以及如何在测试计划中使用它们</strong>来覆盖所有可能的性能测试场景来测试 AUT（被测应用程序）。</p>
-<h4 id="JMeter的组件"><a href="#JMeter的组件" class="headerlink" title="JMeter的组件"></a>JMeter的组件</h4><p>请参考以下的流程图来了解每个组件及其与JMeter特定模块的关系。</p>
-<p><img src="/Echo/JMeter%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D/JmeterFlowDiagram.jpg" alt="Jmeter流程图"></p>
-<h5 id="测试计划–TEST-PLAN"><a href="#测试计划–TEST-PLAN" class="headerlink" title="测试计划–TEST PLAN"></a>测试计划–TEST PLAN</h5><p>测试计划中包含的所有内容都是按从上到下的顺序或者测试计划中定义的顺序执行。测试计划可以尽可能简单，担忧线程组、采样器、监听器，可以添加更多的元素如配置元素、预处理器、控制器或前置&#x2F;后置处理器。</p>
-<p>JMeter是通过虚拟用户或线程来衡量性能，这些虚拟用户或者线程会连接被测服务器，就像真实用户向服务器发送请求一样。因此，每个测试计划都应该有我们JMeter中所称的虚拟用户或者线程组–THREAD GROUP。</p>
-<p>测试计划的要点：</p>
-<ul>
-<li>运行前应保存测试计划</li>
-<li>JMeter文件或者测试计划以JMX文件的格式保存</li>
-<li>还可以将测试计划保存为不同方式，可以在其他测试场景中使用</li>
-</ul>
-<h5 id="线程组–THREAD-GROUP"><a href="#线程组–THREAD-GROUP" class="headerlink" title="线程组–THREAD GROUP"></a>线程组–THREAD GROUP</h5><p>线程组是一组用户，他们将同时以定义好的顺序访问被测服务器。可以通过右键单击测试计划将线程组添加到测试计划中。</p>
-<p><img src="/Echo/JMeter%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D/image-20211213103617620.png" alt="线程组"></p>
-<p>1、你可以重命名线程组名称</p>
-<ul>
-<li><strong>Number of Thread(Users)</strong> ：它定义了虚拟用户的数量。出于测试目的，我们应该只生成有限的负载，因为一次生成大量负载意味着消耗大量线程，最终会导致 CPU 使用率高。</li>
-<li><strong>Ramp Up Period</strong> ：该字段在控制负载生成方面非常重要。加速周期定义了产生总负载的时间量。</li>
-<li><strong>Loop COUNT</strong>：定义了线程组将执行的次数。如果您选中 Forever 复选框，您的测试将永远运行，除非您手动停止它。这可用于测试诸如“如果您的服务器在持续加载几分钟内没有崩溃”之类的内容。</li>
-</ul>
-<p>取样器–Sample</p>
-<p>JMeter如何知道发送到服务器的请求类型是什么？</p>
-<p>是通过取样器。取样器是必须要添加到测试计划中的，因为只有它可以让JMeter知道需要发送那种类型的请求到那个服务器上以及需要携带什么样的参数。请求是HTTP、websocket、FTP、TCP、SMTP等。</p>
-<p>采样器只能添加到线程组，而不是直接在测试计划下，因为线程组需要使用采样器向被测服务器 URL 发送请求。采样器可以通过路径Thread Group -&gt; Sampler -&gt; HTTP Request 添加。</p>
-<h6 id="HTTP请求示例"><a href="#HTTP请求示例" class="headerlink" title="HTTP请求示例"></a>HTTP请求示例</h6><p><img src="/Echo/JMeter%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D/image-20211213111816981.png" alt="HTTP示例"></p>
-<ul>
-<li>server name or ip ：输入服务的IP或者域名</li>
-<li>path： 请求的路径</li>
-<li>method：请求方式，常见的有post、get、put、delete等</li>
-<li>parameter：请求参数，如需要可以添加，还可以在config Element中添加httpcookie、请求头配置等</li>
-<li>body data：请求体</li>
-</ul>
-<h5 id="监听器-Listener"><a href="#监听器-Listener" class="headerlink" title="监听器-Listener"></a>监听器-Listener</h5><p>截止到这里，我们已经看到了取样器向服务器发送请求，但是还没有分析响应。性能测试就是分析各种形式的服务器响应，然后将呈现给客户端。监听器用于显示测试执行的结果，以便测试人员了解统计信息。在JMeter中大约有15种监听器，但是常用的是table、tree和graph。</p>
-<p>监听器可以直接在测试计划下或取样器下添加。不同之处在于，当您在取样器下添加侦听器时，它只会显示该取样器的结果。如果我们直接在测试计划下添加取样器，它会显示层次结构中所有取样器的结果。</p>
-<p>会看到如下结果：</p>
-<p><img src="/Echo/JMeter%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D/image-20211214162144747.png" alt="image-20211214162144747"></p>
-<ul>
-<li>Label：一般展示为采样器名称</li>
-<li>samples：请求的总数量</li>
-<li>average：总请求平均耗时</li>
-<li>median:总请求耗时中位数</li>
-<li>90%Line：总请求中90%请求耗时</li>
-<li>95%Line：总请求中95%请求耗时</li>
-<li>99%Line：总请求中99%请求耗时</li>
-<li>min：所有请求中最小耗时</li>
-<li>max：所有请求中最大耗时</li>
-<li>Error：所有请求发生的错误率（一般有错误产生可以认为已经到达瓶颈）</li>
-<li>throughput:即QPS</li>
-<li>rec&#x2F;sent:发送和接受的网速</li>
-</ul>
-<h5 id="断言–Assertions"><a href="#断言–Assertions" class="headerlink" title="断言–Assertions"></a>断言–Assertions</h5><p>我们已经介绍了JMeter如何击中服务器以及如何通过侦听器显示响应。为了确保收到的响应是正确的，并且符合预期，我们需要添加断言。断言只是我们需要放在响应上以比较结果的验证。有以下断言类型</p>
-<ul>
-<li>响应断言</li>
-<li>持续时间断言</li>
-<li>大小断言</li>
-<li>XML断言</li>
-<li>HTML断言</li>
-</ul>
-<h6 id="响应时间断言"><a href="#响应时间断言" class="headerlink" title="响应时间断言"></a>响应时间断言</h6><p>在响应断言中，我们可以添加自己的模式字符串，然后将它们与从服务器收到的响应进行比较。<em>例如，</em>当任何请求成功返回某些响应时，您都知道响应代码为 200。因此，如果我们添加模式字符串”响应代码 &#x3D; 202”，则测试用例应该失败。</p>
-<p><img src="/Echo/JMeter%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D/image-20211214195434442.png" alt="image-20211214195434442"></p>
-<h6 id="持续时间断言"><a href="#持续时间断言" class="headerlink" title="持续时间断言"></a>持续时间断言</h6><p>持续时间断言非常重要，可验证服务器是否在给定的时间内进行了响应。这可用于我们需要对 100 个请求进行采样并确保每次收到响应都在基准限制范围内的情况。</p>
-<p><img src="/Echo/JMeter%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D/image-20211214202706648.png" alt="image-20211214202706648"></p>
-<p>XML 断言验证响应数据中是否包含正确的 XML 文档，HTML 断言验证从服务器收到的响应的 HTML 语法。</p>
-<h5 id="元素配置–config-ELements"><a href="#元素配置–config-ELements" class="headerlink" title="元素配置–config ELements"></a>元素配置–config ELements</h5><p>发送到服务器的请求可以使用一些在实际请求之前执行的配置元素进一步参数化。一个简单的示例可能是从使用 CSV 数据集配置的 CSV 文件中读取变量的值。常用的配置元素有如下这些：</p>
-<ul>
-<li>CSV数据集配置</li>
-<li>用户定义的参数</li>
-<li>HTTPS请求默认</li>
-<li>HTTPS缓存管理器</li>
-<li>HTTPS COOKIE MANAGER</li>
-</ul>
-<h6 id="csv数据集配置"><a href="#csv数据集配置" class="headerlink" title="csv数据集配置"></a>csv数据集配置</h6><p>CSV数据集配置可帮助Jmeter从CSV文件中选取某些参数的值，而不是在每个单独的请求中传递不同的参数。<em>例如，</em>如果我们需要使用一组不同的用户和密码来测试登录功能，那么我们可以在CSV文件中创建两列并在那里输入值，以便JMeter可以为发送到服务器的每个请求选择一个。</p>
-<p><img src="/Echo/JMeter%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D/image-20211216160753990.png" alt="image-20211216160753990"></p>
-<h6 id="用户定义的变量-User-Defined-Variables"><a href="#用户定义的变量-User-Defined-Variables" class="headerlink" title="用户定义的变量-User Defined Variables"></a>用户定义的变量-User Defined Variables</h6><p>它可以帮助Jmeter从预定义的变量中选取值。<em>例如，</em>支持您需要创建一个测试计划，您需要在同一URL上添加许多HTTP请求，并且可能存在客户端计划稍后将其迁移到某些不同 URL.So 的情况，以避免在每个请求中更新URL，我们可以告诉JMeter从UDV（用户定义的变量）中选取URL，该UDV可以在以后更新以处理对更新的URL的所有请求。</p>
-<p>因此，为了避免在每个请求中更新URL，我们可以告诉JMeter从UDV（用户定义的变量）中选择URL，该UDV可以在以后更新以处理对更新URL的所有请求。</p>
-<p><img src="/Echo/JMeter%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D/image-20211216161303245.png" alt="image-20211216161303245"></p>
-<h6 id="HTTP-请求默认值"><a href="#HTTP-请求默认值" class="headerlink" title="HTTP 请求默认值"></a>HTTP 请求默认值</h6><p>此配置元素对于指定 https 请求的默认值非常有用。为了指导您更多，请举个例子，我们需要在Google服务器上命中50个不同的请求。在这种情况下，如果我们添加HTTP请求默认值，则无需指定服务器名称，路径或任何其他属性，如端口号，连接超时属性。在 HTTP 请求默认配置元素中指定的任何内容都将由所有 HTTP 请求继承。</p>
-<p>在这种情况下，如果我们添加HTTP请求默认值，则无需指定服务器名称，路径或任何其他属性，如端口号，连接超时属性。在 HTTP 请求默认配置元素中指定的任何内容都将由所有 HTTP 请求继承。</p>
-<p><img src="/Echo/JMeter%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D/image-20211216161420935.png" alt="image-20211216161420935"></p>
-<p><strong>HTTP Cache Manager</strong>和<strong>HTTP Cookie Manager</strong>用于使 JMeter 充当实时浏览器。HTTP缓存管理器可以在每个请求后清除缓存，而另一个可以管理cookie设置。</p>
-<h5 id="逻辑控制器和定时器"><a href="#逻辑控制器和定时器" class="headerlink" title="逻辑控制器和定时器"></a>逻辑控制器和定时器</h5><p>逻辑控制器和定时器帮助Jmeter控制交易流。如果需要测试任何服务器，计时器可确保每个线程中的延迟。<em>例如，</em>如果我们需要FTP请求在HTTP请求完成后等待5秒，我们可以在那里添加计时器。</p>
-<p>逻辑控制器用于定义发送到服务器的请求流。它还可以让您分别存储每个模块的请求，例如登录和注销。</p>
-<p><img src="/Echo/JMeter%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D/image-20211216161518560.png" alt="image-20211216161518560"></p>
-<h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><p>到目前为止，一定都熟悉了JMeter的组件，并尝试过使用它，并且一定面临一些问题。在下一篇文章中，将介绍一些涵盖移动领域的实时性能测试场景，以便大家获得更多关于JMeter的实践知识。</p>
-<p><strong>敬请期待！下一篇文章将帮助管理请求，分析结果并与性能测试的基准进行比较。</strong></p>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>性能测试，JMeter</tag>
       </tags>
   </entry>
 </search>

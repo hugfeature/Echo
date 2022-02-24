@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/Echo/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Echo/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Echo/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/Echo/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="5ZQ9pmEjPOsQmbBYQoUK41fLaMMyEK5pDRa34TE8fW4">
+  <meta name="msvalidate.01" content="58AE2D56435A76DA1BF1341C2E6930C1">
+
+<link rel="stylesheet" href="/Echo/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"hugfeature.github.io","root":"/Echo/","images":"/Echo/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/Echo/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Echo/js/config.js"></script>
+<meta name="description" content="网站可以分为许多类型，所有这些都可以缩小在静态和动态类型下。爱这里详细讨论4种类型及其测试方法。在此之前，对这些类型进行归类处理。  静态网站测试 动态 Web 应用程序测试 电子商务网站测试 移动网站测试  静态网站测试一个静态网站将为在不同时间访问该网站的所有访问者显示相同的内容。它也被称为信息网站。在静态网站上，只有开发人员才能在代码中进行更改。这种类型的网站将没有任何主要功能，它完全取决于">
+<meta property="og:type" content="article">
+<meta property="og:title" content="不同类型的页面应该如何测试">
+<meta property="og:url" content="https://hugfeature.github.io/Echo/posts/39691.html">
+<meta property="og:site_name" content="测试的名义">
+<meta property="og:description" content="网站可以分为许多类型，所有这些都可以缩小在静态和动态类型下。爱这里详细讨论4种类型及其测试方法。在此之前，对这些类型进行归类处理。  静态网站测试 动态 Web 应用程序测试 电子商务网站测试 移动网站测试  静态网站测试一个静态网站将为在不同时间访问该网站的所有访问者显示相同的内容。它也被称为信息网站。在静态网站上，只有开发人员才能在代码中进行更改。这种类型的网站将没有任何主要功能，它完全取决于">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-02-04T06:35:41.000Z">
+<meta property="article:modified_time" content="2022-02-04T06:35:41.000Z">
+<meta property="article:author" content="丑牛">
+<meta property="article:tag" content="测试">
+<meta property="article:tag" content="页面测试">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://hugfeature.github.io/Echo/posts/39691.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://hugfeature.github.io/Echo/posts/39691.html","path":"posts/39691.html","title":"不同类型的页面应该如何测试"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>不同类型的页面应该如何测试 | 测试的名义</title>
+  
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-SY6RK3NESF","only_pageview":true}</script>
+  <script src="/Echo/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+  <script async src="https://www.clarity.ms/tag/myblog"></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/Echo/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/Echo/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">测试的名义</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Stay hungry, Stay foolish</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/Echo/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/Echo/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-categories"><a href="/Echo/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-commonweal"><a href="/Echo/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E6%B5%8B%E8%AF%95"><span class="nav-number">1.</span> <span class="nav-text">静态网站测试</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E7%82%B9"><span class="nav-number">1.1.</span> <span class="nav-text">测试点</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A8%E6%80%81Web%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F-CMS%E7%BD%91%E7%AB%99"><span class="nav-number">2.</span> <span class="nav-text">动态Web应用程序[CMS网站]</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E7%82%B9-1"><span class="nav-number">2.1.</span> <span class="nav-text">测试点</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%B5%E5%AD%90%E5%95%86%E5%8A%A1%E7%BD%91%E7%AB%99"><span class="nav-number">3.</span> <span class="nav-text">电子商务网站</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E7%82%B9-2"><span class="nav-number">3.1.</span> <span class="nav-text">测试点</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%8B%E6%9C%BA%E7%BD%91%E7%AB%99"><span class="nav-number">4.</span> <span class="nav-text">手机网站</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E7%82%B9-3"><span class="nav-number">4.1.</span> <span class="nav-text">测试点</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">丑牛</p>
+  <div class="site-description" itemprop="description">曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-categories">
+          <a href="/Echo/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/Echo/tags/">
+        <span class="site-state-item-count">51</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hugfeature/" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hugfeature&#x2F;" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/hugfeature" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/posts/39691.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Echo/images/avatar.gif">
+      <meta itemprop="name" content="丑牛">
+      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="测试的名义">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          不同类型的页面应该如何测试
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-02-04 14:35:41" itemprop="dateCreated datePublished" datetime="2022-02-04T14:35:41+08:00">2022-02-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Echo/categories/%E6%B5%8B%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">测试</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>网站可以分为许多类型，所有这些都可以缩小在静态和动态类型下。爱这里详细讨论4种类型及其测试方法。在此之前，对这些类型进行归类处理。</p>
+<ul>
+<li>静态网站测试</li>
+<li>动态 Web 应用程序测试</li>
+<li>电子商务网站测试</li>
+<li>移动网站测试</li>
+</ul>
+<h4 id="静态网站测试"><a href="#静态网站测试" class="headerlink" title="静态网站测试"></a>静态网站测试</h4><p>一个静态网站将为在不同时间访问该网站的所有访问者显示相同的内容。它也被称为信息网站。在静态网站上，只有开发人员才能在代码中进行更改。这种类型的网站将没有任何主要功能，它完全取决于UI设计。</p>
+<p>测试一个简单的静态网站非常容易，在测试时只需考虑几件事。将在下面提到：</p>
+<h5 id="测试点"><a href="#测试点" class="headerlink" title="测试点"></a>测试点</h5><p><strong>#1）</strong>测试GUI设计是必须的，因为静态网站完全依赖于它。您需要将待测试的PSD文件与开发的网页进行比较。检查设计中的所有元素是否应显示在开发的页面上。</p>
+<p><strong>#2）</strong> GUI设计的另一部分是检查字体大小，字体样式，间距和颜色是否都已重现。</p>
+<p><strong>#3）</strong>其次，需要检查链接（页面链接）以查看它是否正常工作。另外，找出是否有不可以正常访问的链接？</p>
+<p><strong>#4）</strong>通过比较客户端提供的内容来验证所有网页中的拼写和内容。</p>
+<p><strong>#5）</strong> 在某些情况下，图像将无法正确显示，可能会损坏或有时图像被掩盖，可能会显示错误的图像。必须严格检查。因为对于一个静态的网站，只有内容和图像才会赋予生命。</p>
+<p><strong>#6）</strong>仔细检查滚动条，将面临的问题是出现不需要的滚动或滚动被隐藏（它可能会隐藏内容），问题一般出现于水平和垂直滚动轴。</p>
+<p><strong>#7）</strong>如果联系表单检查，则通过发送一些虚拟消息来正常工作。</p>
+<p>在联系表格上要检查的事项是：</p>
+<ul>
+<li>邮件是否正确发送，是否显示成功邮件？</li>
+<li>检查收到的电子邮件是否按照设计的正确格式发送给相关人员？</li>
+<li>检查电子邮件不应该作为垃圾邮件落入垃圾邮件吗？</li>
+<li>如果有回复电子邮件触发器被激活，那么检查发件人是否收到了邮件？</li>
+</ul>
+<p><strong>#8）</strong>检查它是否是无差错的网页，并使用W3验证器或其他相关软件对其进行验证。</p>
+<p><strong>#9）</strong>在静态网站中要检查的一些常量内容，</p>
+<ul>
+<li>检查标签栏上是否存在图标</li>
+<li>网址应包含正确的网页标题</li>
+<li>如果存在版权信息，则应显示</li>
+<li>如果有联系表格，验证码是必须的。[它可以防止垃圾邮件]</li>
+<li>检查网站的加载速度。[静态网站不应花费太多时间进行加载]。如果在加载时使用了gif图像，则跟踪其功能</li>
+</ul>
+<p>除此之外，还有大量的东西必须在每个网站的后端进行测试，包括系统测试，安全测试，接口测试，兼容性测试和性能测试等。为此，您要具备技术知识。在静态网站中，如果还需要进行功能测试，找不到更多功能。</p>
+<h4 id="动态Web应用程序-CMS网站"><a href="#动态Web应用程序-CMS网站" class="headerlink" title="动态Web应用程序[CMS网站]"></a>动态Web应用程序[CMS网站]</h4><p>用户可以定期更新和更改其网站内容的类型。从这里开始，我将使用”页面测试”这个词，而不是动态网站测试。页面程序是<em>前端和后端编程的组合</em>。</p>
+<p>前端将是HTML和CSS，vue，而后端使用PHP，Javascript和ASP等编程语言。使用此后端，用户&#x2F;客户端可以添加或更改网站上的内容。</p>
+<p>测试页面比测试静态网站简单，但比测试电子商务网站的困难成都差不了多少。功能测试是测试 页面时要执行的最重要的事情。Web应用程序可能包含非常复杂的功能，因此测试人员在测试时需要非常小心。</p>
+<p>有两种不同类型的Web应用程序，一种是用户在前端不会执行任何操作（即只有后端更改才会反映在前端），另一种是最终用户将在前端本身工作（例如登录，注册，新闻通讯订阅和其他类似操作）。因此，应根据它进行测试。</p>
+<h5 id="测试点-1"><a href="#测试点-1" class="headerlink" title="测试点"></a>测试点</h5><p>我在静态网站测试中提到的要点也将包括在测试Web应用程序时。除此之外，还需要注意以下事项。</p>
+<p><strong>#1）</strong>在GUI部分中，所有字段和按钮都必须使用提示工具，应正确完成字段对齐（间距），禁用的字段&#x2F;按钮应灰显，字段&#x2F;按钮应采用SRS中的标准格式，如果出现问题应显示错误消息，弹出消息应仅显示在网页的中心， 下拉菜单不应被截断。Tab 快捷键应该适用于所有字段等。</p>
+<p><strong>#2）</strong>在功能部分中，如果您的Web应用程序具有登录或注册功能，请检查必填字段验证，表单验证（即数字字段应仅接受数字，而不接受字母表），字段的字符限制（即只能输入这些字符）。</p>
+<p>字段的特殊字符和负数限制，测试电子邮件功能，测试文档上传（即只能上传指定的文档类型），超时功能，排序功能，javascript在兼容浏览器上工作等应该进行测试。</p>
+<p><strong>#3）</strong>当进入后端功能部分时，测试图像上传是否有损坏的图像，在字段中输入的文本是否有效。后端更新应该反映在前端，数据库测试（即是否可以添加新字段或删除不需要的字段）所有这些操作都要执行。</p>
+<p>对于页面（动态网站）来说，性能不是必需的，因为它的内容非常少。如果需要，可以使用您熟悉的工具。如果想做简单的性能测试，选择一些标准的在线性能工具</p>
+<h4 id="电子商务网站"><a href="#电子商务网站" class="headerlink" title="电子商务网站"></a>电子商务网站</h4><p>与上述两个相比，电子商务网站有些复杂。测试人员在测试电子商务网站时需要非常谨慎。电子商务网站中有很多东西需要检查，只是涵盖了我在电子商务网站测试方面的一些经验问题。</p>
+<p>在 GUI 部分中，需要检查 SRS 中的所有功能以及功能是否相同。对于所有商业网站，功能几乎相同。</p>
+<p>功能方面，需要检查所有页面，例如主页（包括特色产品，特别优惠显示，登录详细信息，搜索功能），产品详细信息页面，类别页面，下订单，支付网关，一切都必须进行测试。</p>
+<h5 id="测试点-2"><a href="#测试点-2" class="headerlink" title="测试点"></a>测试点</h5><p><strong>#1）</strong> 检查购买或增加数量时购物车是否正在更新。在所有页面和情况下检查此功能。</p>
+<p><strong>#2）</strong>检查特殊优惠券和<em>优惠是否应用于正确的订单</em>，并且看到折扣价格是否显示。</p>
+<p><strong>#3）</strong> 有时，在更新单个产品时，通过考虑产品中的变体数量，它会成倍增加。因此，请检查是否显示单个产品及其变体是否正确显示。（遇到过这个问题）</p>
+<p><strong>#4）</strong> 检查过滤器选项是否正常工作。如果根据所选的类别和定价进行过滤？</p>
+<p><strong>#5）</strong>注册时，应进行用户验证。只有新用户可以注册。</p>
+<p><strong>#6）</strong> 如果现有用户将产品添加到购物篮，则在下次登录期间，愿望清单部分也应保存并显示。</p>
+<p><strong>#7）</strong>比较产品应通过根据后端分配的某些规格比较产品来工作。</p>
+<p><strong>#8）</strong>检查货币转换器是否正常工作。根据所选的国家&#x2F;地区，货币转换器应显示相关的价格和税率。</p>
+<p><strong>#9）</strong>通常许多插件都用于电子商务（WordPress和类似）网站，需要非常小心。插件安装可能会发生冲突或影响任何其他主要功能。因此，请跟进插件安装及其使用情况。</p>
+<p><strong>#10）</strong>检查社交共享选项是否适用于单个产品。</p>
+<p><strong>#11）</strong> 运费应根据所选区域生成。并检查税率生成。（在最终用户购买期间，可能会导致一些法律问题）。</p>
+<p><strong>#12）</strong>只有在提供有效的卡详细信息时，支付网关才应有效。验证应适用于卡号和CCV代码号。[最好在卡号字段本身上进行验证]。</p>
+<p><strong>#13）</strong>在购买过程中的每个过程中都应生成电子邮件（注册，产品订购，付款成功，订单取消，订单收到和其他电子邮件触发器（如果有）。</p>
+<p><strong>#14）</strong>检查实时聊天与一些垃圾电子邮件。</p>
+<p><strong>注意：</strong>通常，电子商务网站不会为移动兼容性而开发，并且在进入移动版本时将生成应用程序。在某些情况下，他们不会创建应用程序，而是创建一个移动兼容的网站。在这种情况下，需要仔细检查是否有任何缺少的功能和UI偏差。</p>
+<p>这些是我在测试电子商务网站时面临和注意到的一些问题。除此之外，还需要检查与电子商务网站相关的所有一般事项。</p>
+<h4 id="手机网站"><a href="#手机网站" class="headerlink" title="手机网站"></a>手机网站</h4><p>首先，要明确什么是一个移动网站，通常人们认为移动网站和移动应用程序是相同的，但实际上，移动网站是使用HTML页面开发的，并且只能通过互联网连接进行查看。</p>
+<p>但是移动应用程序只不过是一个应用程序，可以在没有互联网连接的情况下下载和使用。在这里，我们中的许多人感到困惑并提出一个问题 移动网站和响应式网站有什么区别？</p>
+<p>响应式网站意味着使内容适合移动设备大小，而不是创建版本，而移动网站正在创建一个不是反射桌面版本的新版本。在移动网站中，将只有有限的页面，并且不需要的功能将在此处删除。</p>
+<p>测试移动网站比其他类型的网站有些乏味。它将具有单独的设计，在测试功能时需要小心。</p>
+<h5 id="测试点-3"><a href="#测试点-3" class="headerlink" title="测试点"></a>测试点</h5><ul>
+<li>通常，将使用模拟器来测试移动网站，可以获得理想的结果，但是希望您在真实设备上进行测试。我在真实设备（尤其是苹果设备）中进行测试时，遇到了许多问题。实际设备规格可能与开发的网页冲突。</li>
+<li>GUI和可用性测试更重要，因为它不是桌面版本的反映。</li>
+<li>性能是移动网站测试需要考虑的另一个重要因素。在实际设备中进行测试时，可以跟踪与性能相关的问题。</li>
+<li>检查从移动设备浏览正常网页链接是否被移动链接触发。</li>
+<li>检查移动网站上的页面滚动，页面导航，文本截断等。</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>丑牛
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://hugfeature.github.io/Echo/posts/39691.html" title="不同类型的页面应该如何测试">https://hugfeature.github.io/Echo/posts/39691.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/Echo/tags/%E6%B5%8B%E8%AF%95/" rel="tag"># 测试</a>
+              <a href="/Echo/tags/%E9%A1%B5%E9%9D%A2%E6%B5%8B%E8%AF%95/" rel="tag"># 页面测试</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Echo/posts/43079.html" rel="prev" title="B/S架构如何测试">
+                  <i class="fa fa-chevron-left"></i> B/S架构如何测试
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Echo/posts/54005.html" rel="next" title="网站测试要考虑的点">
+                  网站测试要考虑的点 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">丑牛</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/Echo/js/comments.js"></script><script src="/Echo/js/utils.js"></script><script src="/Echo/js/motion.js"></script><script src="/Echo/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/Echo/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"hugfeature","repo":"myBlogTalk","client_id":"f4b1fae431a4943a75f3","client_secret":"2b6995c484ff0a0a920d65ac7fd5bb1bf13fb2f2","admin_user":null,"distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"f7415218cac2bb4c26d143b034181417"}</script>
+<script src="/Echo/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
