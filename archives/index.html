@@ -168,7 +168,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/Echo/tags/">
-        <span class="site-state-item-count">51</span>
+        <span class="site-state-item-count">53</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -208,6 +208,178 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/posts/4b7f751c.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Echo/images/avatar.gif">
+      <meta itemprop="name" content="丑牛">
+      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="测试的名义">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Echo/posts/4b7f751c.html" class="post-title-link" itemprop="url">数据库测试指北</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-02-25 08:11:30" itemprop="dateCreated datePublished" datetime="2022-02-25T08:11:30+08:00">2022-02-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Echo/categories/%E6%B5%8B%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">测试</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>数据库在软件应用程序中是无法避免的部分之一。</p>
+<p>不管是web，桌面应用，移动端，B2B，B2C等，数据库在后端都是必需的。随着应用程序复杂程度的增加，对更强大更安全的数据库需求也随之增加。对于具有高交易频率的应用来说功能齐全的数据库的必要性是耦合的。</p>
+<h4 id="为什么是数据库？"><a href="#为什么是数据库？" class="headerlink" title="为什么是数据库？"></a>为什么是数据库？</h4><p>下面会看到为什么要验证数据库的以下方面：</p>
+<h5 id="①数据映射"><a href="#①数据映射" class="headerlink" title="①数据映射"></a>①数据映射</h5><p>在软件系统中，数据一般是在UI和后端数据库中来回传输，因为需要注意一下方面：</p>
+<ul>
+<li>检查UI、前端表单中的字段是否与数据表中的字段一直映射。通常映射信息在需求文档中定义；</li>
+<li>当应用程序在前段执行某个操作时，都会在后端调用相应的CURD操作。作为测试人员必须检查是否正确的调用以及调用操作本身是否成功。</li>
+</ul>
+<h5 id="②ACID属性验证"><a href="#②ACID属性验证" class="headerlink" title="②ACID属性验证"></a>②ACID属性验证</h5><p>原子性、一致性、隔离性和持久性。数据库执行的每个事务都必须遵守这四个属性。</p>
+<p><img src="/Echo/posts/undefined/DB-Testing.jpg" alt="DB-Testing"></p>
+<ul>
+<li>原子性：事务包含的所有操作要么全部成功，要么全部失败回滚，因此事务的操作如果成功就必须要完全应用到数据库，如果操作失败则不能对数据库有任何影响。</li>
+<li>一致性：一致性是指事务必须使数据库从一个一致性状态变换到另一个一致性状态，也就是说一个事务执行之前和执行之后都必须处于一致性状态。</li>
+<li>隔离性：当多个用户并发访问数据库时，比如操作同一张表时，数据库为每一个用户开启的事务，不能被其他事务的操作所干扰，多个并发事务之间要相互隔离。</li>
+<li>持久性：事务一旦提交完成，任何外部因素（断电&#x2F;崩溃）都不能改变它。</li>
+</ul>
+<h5 id="③数据完整性"><a href="#③数据完整性" class="headerlink" title="③数据完整性"></a>③数据完整性</h5><p>对于任何CURD操作，共享数据更新的最新值&#x2F;状态都应显示在所有窗体和屏幕上。不应一个显示最新值一个显示比较旧的值。</p>
+<p>C：创建–用户保存任何新的事务时，执行创建操作</p>
+<p>R：检索–用户搜索或者查看任何已经保存的交易时，执行检索操作</p>
+<p>U：更新–用户编辑或者修改现有记录时，执行更新操作</p>
+<p>D：删除–用户从系统中删除任何记录时，执行删除操作</p>
+<p>用户执行的任何数据库操作始终是以上四个操作之一。在设计数据库测试用例的方式包括检查数据在所有看起来的位置，以查看它是否始终相同。</p>
+<h5 id="④业务规则一致性"><a href="#④业务规则一致性" class="headerlink" title="④业务规则一致性"></a>④业务规则一致性</h5><p>数据库中更复杂的组件意味着更复杂的组件，如关系约束、触发器、存储过程等。因此，测试人员必须提出适当的SQL查询才能验证这些复杂的对象。</p>
+<h4 id="数据库测试清单"><a href="#数据库测试清单" class="headerlink" title="数据库测试清单"></a>数据库测试清单</h4><h5 id="1、事务"><a href="#1、事务" class="headerlink" title="1、事务"></a>1、事务</h5><p>测试事务时，确保满足ACID属性。</p>
+<h5 id="2、数据库架构"><a href="#2、数据库架构" class="headerlink" title="2、数据库架构"></a>2、数据库架构</h5><ul>
+<li>确定数据库运行所依据的要求。样品要求：<ul>
+<li>在创建任何其他字段之前要创建的主键。</li>
+<li>外键应完全索引，以便于检索和搜索。</li>
+<li>字段名称以某些字符开头或结尾。</li>
+<li>具有某些值可以或不能插入的约束的字段。</li>
+</ul>
+</li>
+<li>根据相关性使用下列方法之一：<ul>
+<li>SQL 查询 *DESC&lt;表名称&gt;*以验证架构。</li>
+<li>用于验证各个字段的名称及其值的正则表达式</li>
+<li>SchemaCrawler 等工具</li>
+</ul>
+</li>
+</ul>
+<h5 id="3、-触发器"><a href="#3、-触发器" class="headerlink" title="3、 触发器"></a>3、 触发器</h5><p>当某个事件发生在某个表上时，可以自动指示执行一段代码（触发器）。</p>
+<p><strong>例如，</strong>一名新学生加入了一所学校。学生正在上2节课：数学和科学。学生将被添加到”学生表”中。一旦学生被添加到学生表中，触发器就可以将他添加到相应的主题表中。</p>
+<p>测试的常用方法是首先独立执行触发器中嵌入的 SQL 查询并记录结果。接下来，将触发器作为一个整体执行。比较结果。</p>
+<p>这些测试在黑盒和白盒测试阶段进行。</p>
+<ul>
+<li><strong>白盒测试</strong>：存根和驱动程序用于插入、更新或删除会导致触发器被调用的数据。基本思想是，即使在与前端（UI）集成之前，也只需单独测试数据库。</li>
+<li><strong>黑盒测试</strong>:</li>
+</ul>
+<p><strong>a）</strong> 由于 UI 和 DB，集成现在可用;我们可以以调用触发器的方式从前端插入&#x2F;删除&#x2F;更新数据。之后，Select 语句可用于检索数据库数据，以查看触发器是否成功执行了预期的操作。</p>
+<p><strong>b）</strong> 测试这一点的第二种方法是直接加载将调用触发器的数据，并查看它是否按预期工作。</p>
+<h5 id="4、-存储过程"><a href="#4、-存储过程" class="headerlink" title="4、 存储过程"></a>4、 存储过程</h5><p>存储过程或多或少类似于用户定义的函数。这些语句可以通过调用过程&#x2F;执行过程语句调用，并且输出通常采用结果集的形式。</p>
+<p>它们存储在 RDBMS 中，可用于应用程序。</p>
+<p><strong>这些也在以下时间进行测试：</strong></p>
+<ul>
+<li><strong>白盒测试：</strong>存根用于调用存储过程，然后根据预期值验证结果。</li>
+<li><strong>黑盒测试：</strong>从应用程序的前端 （UI） 执行操作，并检查存储过程的执行及其结果。</li>
+</ul>
+<h5 id="5、字段约束"><a href="#5、字段约束" class="headerlink" title="5、字段约束"></a>5、字段约束</h5><p><strong>默认值、唯一值和外键：</strong></p>
+<ul>
+<li>执行执行数据库对象条件的前端操作</li>
+<li>使用 SQL 查询验证结果。</li>
+</ul>
+<p>检查某个字段的默认值非常简单。它是业务规则验证的一部分。您可以手动执行此操作，也可以使用QTP等工具。您可以手动执行一项操作，该操作将从前端添加字段默认值以外的值，并查看它是否会导致错误。</p>
+<h4 id="数据库测试活动"><a href="#数据库测试活动" class="headerlink" title="数据库测试活动"></a>数据库测试活动</h4><h5 id="1）-确保数据映射："><a href="#1）-确保数据映射：" class="headerlink" title="#1） 确保数据映射："></a><strong>#1） 确保数据映射：</strong></h5><p>数据映射是数据库中的关键方面之一，每个软件测试人员都应该对其进行严格的测试。</p>
+<p>确保AUT与其数据库的不同表单或屏幕之间的映射不仅准确，而且符合设计文档（SRS &#x2F; BRS）或代码。基本上，您需要验证每个前端字段与其相应的后端数据库字段之间的映射。</p>
+<p>对于所有 CRUD 操作，请验证当用户从应用程序的 GUI 中单击”保存”、”更新”、”搜索”或”删除”时，是否更新了相应的表和记录。</p>
+<p><strong>您需要验证的内容：</strong></p>
+<ul>
+<li>表映射、列映射和数据类型映射。</li>
+<li>查找数据映射。</li>
+<li>在 UI 上为每个用户操作调用正确的 CRUD 操作。</li>
+<li>CRUD 操作成功。</li>
+</ul>
+<h5 id="2）确保事务的ACID属性："><a href="#2）确保事务的ACID属性：" class="headerlink" title="#2）确保事务的ACID属性："></a><strong>#2）确保事务的ACID属性：</strong></h5><p>DB Transactions的ACID属性<strong>是指”原子</strong>性”，”Consistency”，”<strong>Isolation</strong>“和”<strong>Durability</strong>“。在数据库测试活动期间，必须对这四个属性进行适当的测试。您需要验证每个事务是否都满足数据库的 ACID 属性。</p>
+<p><img src="/Echo/posts/undefined/ACID-Properties.jpg" alt="ACID-Properties"></p>
+<p><strong>让我们通过下面的SQL代码举一个简单的例子：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE acidtest (A INTEGER, B INTEGER, CHECK (A + B = 100));</span><br></pre></td></tr></table></figure>
+
+<p>ACID测试表将有两列 - A和B。存在一个完整性约束，即 A 和 B 中的值之和应始终为 100。</p>
+<p><strong>原子性测试</strong>将确保在此表上执行的任何事务都是全部或无，即如果事务的任何步骤失败，则不会更新任何记录。</p>
+<p><strong>一致性测试</strong>将确保每当更新列 A 或 B 中的值时，总和始终保持为 100。如果总和不是 100，则不允许在 A 或 B 中插入&#x2F;删除&#x2F;更新。</p>
+<p><strong>隔离测试</strong>将确保如果两个事务同时发生并尝试修改ACID测试表的数据，则这些牵引力是孤立执行的。</p>
+<p><strong>耐久性测试</strong>将确保一旦提交了此表上的事务，即使发生断电、崩溃或错误，它仍将保持这种状态。</p>
+<p>如果您的应用程序正在使用分布式数据库，则需要进行更严格、彻底和敏锐的测试。</p>
+<p><strong>#3） 确保数据完整性</strong></p>
+<p>考虑应用程序的不同模块（即屏幕或表单）以不同的方式使用相同的数据，并对数据执行所有CRUD操作。</p>
+<p>在这种情况下，请确保在各处都反映最新的数据状态。系统必须在所有表单和屏幕上显示更新和最新的值或此类共享数据的状态。这称为数据完整性。</p>
+<p><img src="/Echo/posts/undefined/di.jpg" alt="di"></p>
+<p><strong>验证数据库数据完整性的测试用例：</strong></p>
+<ul>
+<li>检查是否所有触发器都已就位以更新引用表记录。</li>
+<li>检查每个表的主要列中是否存在任何不正确&#x2F;无效的数据。</li>
+<li>尝试在表中插入错误的数据，并观察是否发生任何故障。</li>
+<li>检查在插入父级之前尝试插入子项会发生什么情况（尝试使用主键和外键）。</li>
+<li>测试在删除仍由任何其他表中的数据引用的记录时是否发生任何故障。</li>
+<li>检查复制的服务器和数据库是否同步。</li>
+</ul>
+<p><strong>#4）确保已实现的业务规则的准确性：</strong></p>
+<p>如今，数据库不仅仅用于存储记录。事实上，数据库已经发展成为非常强大的工具，为开发人员在数据库级别实现业务逻辑提供了充分的支持。</p>
+<p>强大功能的一些简单示例包括”参照完整性”、关系约束、触发器和存储过程。</p>
+<p>因此，使用 DB 提供的这些功能和许多其他功能，开发人员可以在 DB 级别实现业务逻辑。测试人员必须确保实现的业务逻辑正确且工作准确。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1375,113 +1547,6 @@
 <li>完整性检查器</li>
 <li>病毒检测</li>
 </ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/posts/12213.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Echo/images/avatar.gif">
-      <meta itemprop="name" content="丑牛">
-      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="测试的名义">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Echo/posts/12213.html" class="post-title-link" itemprop="url">测试方法</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-01-29 22:56:39" itemprop="dateCreated datePublished" datetime="2022-01-29T22:56:39+08:00">2022-01-29</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Echo/categories/%E6%B5%8B%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">测试</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>图片是网上找的。测试方法对于所有类型的测试都很常见，不仅因为它是大数据或Hadoop测试，当我们进入正常的手动测试或自动化测试或安全测试，性能测试时也是如此，因此任何类型的测试都遵循相同的方法。<img src="/Echo/posts/12213/Testing-Approach.webp" alt="Testing-Approach"></p>
-<h5 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h5><p>作为测试方法的一部分，我们需要从<strong>需求</strong>开始，需求是一个基本的东西，现在在敏捷过程中，我们称之为故事和史诗。史诗只是一个更大的要求，而故事是较小的要求。</p>
-<p>需求基本上包含所有的数据模型，目标，源以及我们需要应用哪种转换，我们必须使用哪种工具？所有这些类型的详细信息都将在要求中提供。</p>
-<p>这基本上是客户要求或客户要求。基于此要求，我们将开始测试过程。</p>
-<h5 id="时间预估"><a href="#时间预估" class="headerlink" title="时间预估"></a>时间预估</h5><p>方法的另一部分是时间预估，作为测试的一部分，我们需要花费多少时间来完成整个活动。我们做测试计划，准备测试场景，准备测试用例和执行，我们将发现缺陷并报告它们并准备测试报告。</p>
-<p>所有这些活动都需要一些时间，因此需要多少时间来完成所有这些活动，这基本上称为时间预估。我们需要给管理层一些粗略的估计。</p>
-<h5 id="测试计划"><a href="#测试计划" class="headerlink" title="测试计划"></a>测试计划</h5><p>测试计划只不过是关于流程的描述，要测试什么，不要测试什么，测试的范围是什么，时间表是什么，需要多少资源，硬件和软件要求以及将使用的时间表和测试周期是什么，我们需要的测试级别是什么等。</p>
-<p>在测试计划期间，他们将对项目进行某些资源分配，我们拥有哪些不同的模型，需要多少资源以及需要什么样的技能集等，所有这些内容和方面都将包含在测试计划阶段中。大多数情况下，领导级别或管理层人员将执行测试计划。</p>
-<h5 id="测试方案和测试用例"><a href="#测试方案和测试用例" class="headerlink" title="测试方案和测试用例"></a>测试方案和测试用例</h5><p>完成测试规划后，我们需要准备测试方案和测试用例，特别是对于大数据测试，我们需要一些文档以及需求文档。除了这个要求文件，我们还需要什么？</p>
-<p>我们需要包含客户需求的需求文档，同时我们需要输入文档，即数据模型。数据模型在某种意义上什么是数据库架构，什么是表以及什么是关系所有这些数据将在数据模型中可用。</p>
-<p>此外，我们有映射文档，例如在关系数据库中，我们有一些表，在HDFS的数据仓库中通过ETL加载数据后，我们需要做什么？即映射数据类型。</p>
-<p>我们怎么知道，我们需要验证的所有映射是什么？因此，这些映射将出现在映射文档中。在映射文档中，客户将提供各种映射。</p>
-<p>此外，我们还需要一个<strong>设计文档</strong>，开发团队和QA团队都需要的设计文档，因为在设计文档中，客户将提供，他们将实现哪种类型的Map Reduce作业，什么类型的MapReduce作业需要输入以及什么类型的MapReduce作业提供输出。</p>
-<p>同样，如果我们有HIVE或PIG，客户创建的所有UDF是什么，以及他们将采取的所有输入以及他们将产生什么样的输出等。</p>
-<p>要准备测试方案和测试用例，我们需要手动准备所有这些文档：</p>
-<ul>
-<li>需求文档</li>
-<li>数据模型</li>
-<li>映射文档</li>
-<li>设计文档</li>
-</ul>
-<p>这些文件可能因组织而异，并且没有强制性规则规定我们必须拥有所有这些文件。有时我们拥有所有文档，有时我们只有两到三个文档，或者有时我们还需要依赖一个文档，这取决于项目复杂性，公司时间表和所有内容。</p>
-<h5 id="评审测试方案和测试用例"><a href="#评审测试方案和测试用例" class="headerlink" title="评审测试方案和测试用例"></a>评审测试方案和测试用例</h5><p>我们需要对测试方案和测试用例进行审查，因为不知何故或在某些情况下，我们忘记或错过了一些测试用例，因为每个人都无法想到可以使用需求完成的所有可能的事情，在这种情况下，我们需要从第三方工具或其他人那里获得帮助。</p>
-<p>因此，每当我们准备一些文档或执行某些操作时，我们都需要有人来审查来自同一团队的内容，例如开发人员，测试人员。他们会给出适当的建议，以包含更多内容，或者还建议更新或修改测试方案和测试用例。</p>
-<p>他们提供所有注释，在此基础上，我们将更新我们的测试方案和测试用例以及我们需要在整个团队中发布的文档的多个版本，直到文档按照要求完全更新为止。</p>
-<h5 id="测试执行"><a href="#测试执行" class="headerlink" title="测试执行"></a>测试执行</h5><p>文档准备就绪后，我们将从上级团队获得签核，以开始基本上称为测试用例执行的执行过程。</p>
-<p>如果我们想在执行期间执行测试用例，我们需要检查开发人员是否必须发送信息，如果是正常的功能测试或其他一些测试或自动化测试，我们需要构建。但是，从Hadoop或BigData Testing的角度来看，开发人员将提供MapReduce Jobs。</p>
-<p>HDFS文件 - 在HDFS中复制的任何文件，这些文件信息都需要检查权限，由开发人员创建的HIVE脚本以验证HIVE表中的数据，并且我们还需要由开发人员开发的HIVE UDF，PIG脚本和PIG UDF。</p>
-<p>这些都是我们需要从开发人员那里得到的东西。在执行之前，我们应该拥有所有这些东西。</p>
-<p>对于MapReduce Jobs，他们将提供一些JAR文件，并且作为HDFS的一部分，他们已经在HDFS中加载了数据，并且文件应该准备就绪，并且HIVE脚本可以验证HIVE表中的数据。无论他们实施了什么UDF，都将在HIVE UDF中提供。对于 PIG 脚本和 UDF，我们也需要同样的东西。</p>
-<h5 id="缺陷报告和跟踪"><a href="#缺陷报告和跟踪" class="headerlink" title="缺陷报告和跟踪"></a>缺陷报告和跟踪</h5><p>一旦我们执行了测试用例，我们就会发现一些缺陷，一些预期的和一些实际的不等于预期的结果，所以我们需要列出相同的缺陷，并将它们提供给开发团队解决，这基本上称为缺陷报告。</p>
-<p>假设如果我们在MapReduce作业中发现一些缺陷，那么我们将将其报告给开发人员，他们将再次重新创建MapReduce作业，并进行一些代码级修改，然后他们将再次提供最新的MapReduce作业，我们需要对其进行测试。</p>
-<p>这是一个持续的过程，一旦作业经过测试并通过，我们再次需要重新测试它并将其报告给开发人员，然后获取下一个用于测试的工作。这就是缺陷报告和跟踪活动的完成方式。</p>
-<h5 id="测试报告"><a href="#测试报告" class="headerlink" title="测试报告"></a>测试报告</h5><p>一旦我们完成了所有的测试过程并且缺陷已经关闭，那么我们需要创建我们的测试报告。测试报告是我们迄今为止为完成测试过程所做的一切。所有的规划，测试用例的编写和执行，我们得到的输出等等，一切都以测试报告的形式记录在一起。</p>
-<p>我们需要每天或每周或根据客户的需求发送这些报告。如今，组织正在使用敏捷模型，因此每个状态报告都需要在每日Scrums期间更新。</p>
 
       
     </div>

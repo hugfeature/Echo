@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/Echo/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Echo/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Echo/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/Echo/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="5ZQ9pmEjPOsQmbBYQoUK41fLaMMyEK5pDRa34TE8fW4">
+  <meta name="msvalidate.01" content="58AE2D56435A76DA1BF1341C2E6930C1">
+
+<link rel="stylesheet" href="/Echo/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"hugfeature.github.io","root":"/Echo/","images":"/Echo/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/Echo/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Echo/js/config.js"></script>
+<meta name="description" content="数据库在软件应用程序中是无法避免的部分之一。 不管是web，桌面应用，移动端，B2B，B2C等，数据库在后端都是必需的。随着应用程序复杂程度的增加，对更强大更安全的数据库需求也随之增加。对于具有高交易频率的应用来说功能齐全的数据库的必要性是耦合的。 为什么是数据库？下面会看到为什么要验证数据库的以下方面： ①数据映射在软件系统中，数据一般是在UI和后端数据库中来回传输，因为需要注意一下方面：  检">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库测试指北">
+<meta property="og:url" content="https://hugfeature.github.io/Echo/posts/4b7f751c.html">
+<meta property="og:site_name" content="测试的名义">
+<meta property="og:description" content="数据库在软件应用程序中是无法避免的部分之一。 不管是web，桌面应用，移动端，B2B，B2C等，数据库在后端都是必需的。随着应用程序复杂程度的增加，对更强大更安全的数据库需求也随之增加。对于具有高交易频率的应用来说功能齐全的数据库的必要性是耦合的。 为什么是数据库？下面会看到为什么要验证数据库的以下方面： ①数据映射在软件系统中，数据一般是在UI和后端数据库中来回传输，因为需要注意一下方面：  检">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/posts/undefined/DB-Testing.jpg">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/posts/undefined/ACID-Properties.jpg">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/posts/undefined/di.jpg">
+<meta property="article:published_time" content="2022-02-25T00:11:30.000Z">
+<meta property="article:modified_time" content="2022-02-25T00:11:30.000Z">
+<meta property="article:author" content="丑牛">
+<meta property="article:tag" content="测试">
+<meta property="article:tag" content="软件测试">
+<meta property="article:tag" content="数据库测试">
+<meta property="article:tag" content="mysql测试">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hugfeature.github.io/Echo/posts/undefined/DB-Testing.jpg">
+
+
+<link rel="canonical" href="https://hugfeature.github.io/Echo/posts/4b7f751c.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://hugfeature.github.io/Echo/posts/4b7f751c.html","path":"posts/4b7f751c.html","title":"数据库测试指北"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>数据库测试指北 | 测试的名义</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SY6RK3NESF"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-SY6RK3NESF","only_pageview":false}</script>
+  <script src="/Echo/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+  <script async src="https://www.clarity.ms/tag/myblog"></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/Echo/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/Echo/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">测试的名义</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Stay hungry, Stay foolish</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/Echo/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/Echo/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-categories"><a href="/Echo/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-commonweal"><a href="/Echo/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">为什么是数据库？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E2%91%A0%E6%95%B0%E6%8D%AE%E6%98%A0%E5%B0%84"><span class="nav-number">1.1.</span> <span class="nav-text">①数据映射</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E2%91%A1ACID%E5%B1%9E%E6%80%A7%E9%AA%8C%E8%AF%81"><span class="nav-number">1.2.</span> <span class="nav-text">②ACID属性验证</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E2%91%A2%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7"><span class="nav-number">1.3.</span> <span class="nav-text">③数据完整性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E2%91%A3%E4%B8%9A%E5%8A%A1%E8%A7%84%E5%88%99%E4%B8%80%E8%87%B4%E6%80%A7"><span class="nav-number">1.4.</span> <span class="nav-text">④业务规则一致性</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%B5%8B%E8%AF%95%E6%B8%85%E5%8D%95"><span class="nav-number">2.</span> <span class="nav-text">数据库测试清单</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1%E3%80%81%E4%BA%8B%E5%8A%A1"><span class="nav-number">2.1.</span> <span class="nav-text">1、事务</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2%E3%80%81%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9E%B6%E6%9E%84"><span class="nav-number">2.2.</span> <span class="nav-text">2、数据库架构</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3%E3%80%81-%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="nav-number">2.3.</span> <span class="nav-text">3、 触发器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4%E3%80%81-%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B"><span class="nav-number">2.4.</span> <span class="nav-text">4、 存储过程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5%E3%80%81%E5%AD%97%E6%AE%B5%E7%BA%A6%E6%9D%9F"><span class="nav-number">2.5.</span> <span class="nav-text">5、字段约束</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%B5%8B%E8%AF%95%E6%B4%BB%E5%8A%A8"><span class="nav-number">3.</span> <span class="nav-text">数据库测试活动</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1%EF%BC%89-%E7%A1%AE%E4%BF%9D%E6%95%B0%E6%8D%AE%E6%98%A0%E5%B0%84%EF%BC%9A"><span class="nav-number">3.1.</span> <span class="nav-text">#1） 确保数据映射：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2%EF%BC%89%E7%A1%AE%E4%BF%9D%E4%BA%8B%E5%8A%A1%E7%9A%84ACID%E5%B1%9E%E6%80%A7%EF%BC%9A"><span class="nav-number">3.2.</span> <span class="nav-text">#2）确保事务的ACID属性：</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">丑牛</p>
+  <div class="site-description" itemprop="description">曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-categories">
+          <a href="/Echo/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/Echo/tags/">
+        <span class="site-state-item-count">53</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hugfeature/" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hugfeature&#x2F;" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/hugfeature" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/posts/4b7f751c.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Echo/images/avatar.gif">
+      <meta itemprop="name" content="丑牛">
+      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="测试的名义">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          数据库测试指北
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-02-25 08:11:30" itemprop="dateCreated datePublished" datetime="2022-02-25T08:11:30+08:00">2022-02-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Echo/categories/%E6%B5%8B%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">测试</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>数据库在软件应用程序中是无法避免的部分之一。</p>
+<p>不管是web，桌面应用，移动端，B2B，B2C等，数据库在后端都是必需的。随着应用程序复杂程度的增加，对更强大更安全的数据库需求也随之增加。对于具有高交易频率的应用来说功能齐全的数据库的必要性是耦合的。</p>
+<h4 id="为什么是数据库？"><a href="#为什么是数据库？" class="headerlink" title="为什么是数据库？"></a>为什么是数据库？</h4><p>下面会看到为什么要验证数据库的以下方面：</p>
+<h5 id="①数据映射"><a href="#①数据映射" class="headerlink" title="①数据映射"></a>①数据映射</h5><p>在软件系统中，数据一般是在UI和后端数据库中来回传输，因为需要注意一下方面：</p>
+<ul>
+<li>检查UI、前端表单中的字段是否与数据表中的字段一直映射。通常映射信息在需求文档中定义；</li>
+<li>当应用程序在前段执行某个操作时，都会在后端调用相应的CURD操作。作为测试人员必须检查是否正确的调用以及调用操作本身是否成功。</li>
+</ul>
+<h5 id="②ACID属性验证"><a href="#②ACID属性验证" class="headerlink" title="②ACID属性验证"></a>②ACID属性验证</h5><p>原子性、一致性、隔离性和持久性。数据库执行的每个事务都必须遵守这四个属性。</p>
+<p><img src="/Echo/posts/undefined/DB-Testing.jpg" alt="DB-Testing"></p>
+<ul>
+<li>原子性：事务包含的所有操作要么全部成功，要么全部失败回滚，因此事务的操作如果成功就必须要完全应用到数据库，如果操作失败则不能对数据库有任何影响。</li>
+<li>一致性：一致性是指事务必须使数据库从一个一致性状态变换到另一个一致性状态，也就是说一个事务执行之前和执行之后都必须处于一致性状态。</li>
+<li>隔离性：当多个用户并发访问数据库时，比如操作同一张表时，数据库为每一个用户开启的事务，不能被其他事务的操作所干扰，多个并发事务之间要相互隔离。</li>
+<li>持久性：事务一旦提交完成，任何外部因素（断电&#x2F;崩溃）都不能改变它。</li>
+</ul>
+<h5 id="③数据完整性"><a href="#③数据完整性" class="headerlink" title="③数据完整性"></a>③数据完整性</h5><p>对于任何CURD操作，共享数据更新的最新值&#x2F;状态都应显示在所有窗体和屏幕上。不应一个显示最新值一个显示比较旧的值。</p>
+<p>C：创建–用户保存任何新的事务时，执行创建操作</p>
+<p>R：检索–用户搜索或者查看任何已经保存的交易时，执行检索操作</p>
+<p>U：更新–用户编辑或者修改现有记录时，执行更新操作</p>
+<p>D：删除–用户从系统中删除任何记录时，执行删除操作</p>
+<p>用户执行的任何数据库操作始终是以上四个操作之一。在设计数据库测试用例的方式包括检查数据在所有看起来的位置，以查看它是否始终相同。</p>
+<h5 id="④业务规则一致性"><a href="#④业务规则一致性" class="headerlink" title="④业务规则一致性"></a>④业务规则一致性</h5><p>数据库中更复杂的组件意味着更复杂的组件，如关系约束、触发器、存储过程等。因此，测试人员必须提出适当的SQL查询才能验证这些复杂的对象。</p>
+<h4 id="数据库测试清单"><a href="#数据库测试清单" class="headerlink" title="数据库测试清单"></a>数据库测试清单</h4><h5 id="1、事务"><a href="#1、事务" class="headerlink" title="1、事务"></a>1、事务</h5><p>测试事务时，确保满足ACID属性。</p>
+<h5 id="2、数据库架构"><a href="#2、数据库架构" class="headerlink" title="2、数据库架构"></a>2、数据库架构</h5><ul>
+<li>确定数据库运行所依据的要求。样品要求：<ul>
+<li>在创建任何其他字段之前要创建的主键。</li>
+<li>外键应完全索引，以便于检索和搜索。</li>
+<li>字段名称以某些字符开头或结尾。</li>
+<li>具有某些值可以或不能插入的约束的字段。</li>
+</ul>
+</li>
+<li>根据相关性使用下列方法之一：<ul>
+<li>SQL 查询 *DESC&lt;表名称&gt;*以验证架构。</li>
+<li>用于验证各个字段的名称及其值的正则表达式</li>
+<li>SchemaCrawler 等工具</li>
+</ul>
+</li>
+</ul>
+<h5 id="3、-触发器"><a href="#3、-触发器" class="headerlink" title="3、 触发器"></a>3、 触发器</h5><p>当某个事件发生在某个表上时，可以自动指示执行一段代码（触发器）。</p>
+<p><strong>例如，</strong>一名新学生加入了一所学校。学生正在上2节课：数学和科学。学生将被添加到”学生表”中。一旦学生被添加到学生表中，触发器就可以将他添加到相应的主题表中。</p>
+<p>测试的常用方法是首先独立执行触发器中嵌入的 SQL 查询并记录结果。接下来，将触发器作为一个整体执行。比较结果。</p>
+<p>这些测试在黑盒和白盒测试阶段进行。</p>
+<ul>
+<li><strong>白盒测试</strong>：存根和驱动程序用于插入、更新或删除会导致触发器被调用的数据。基本思想是，即使在与前端（UI）集成之前，也只需单独测试数据库。</li>
+<li><strong>黑盒测试</strong>:</li>
+</ul>
+<p><strong>a）</strong> 由于 UI 和 DB，集成现在可用;我们可以以调用触发器的方式从前端插入&#x2F;删除&#x2F;更新数据。之后，Select 语句可用于检索数据库数据，以查看触发器是否成功执行了预期的操作。</p>
+<p><strong>b）</strong> 测试这一点的第二种方法是直接加载将调用触发器的数据，并查看它是否按预期工作。</p>
+<h5 id="4、-存储过程"><a href="#4、-存储过程" class="headerlink" title="4、 存储过程"></a>4、 存储过程</h5><p>存储过程或多或少类似于用户定义的函数。这些语句可以通过调用过程&#x2F;执行过程语句调用，并且输出通常采用结果集的形式。</p>
+<p>它们存储在 RDBMS 中，可用于应用程序。</p>
+<p><strong>这些也在以下时间进行测试：</strong></p>
+<ul>
+<li><strong>白盒测试：</strong>存根用于调用存储过程，然后根据预期值验证结果。</li>
+<li><strong>黑盒测试：</strong>从应用程序的前端 （UI） 执行操作，并检查存储过程的执行及其结果。</li>
+</ul>
+<h5 id="5、字段约束"><a href="#5、字段约束" class="headerlink" title="5、字段约束"></a>5、字段约束</h5><p><strong>默认值、唯一值和外键：</strong></p>
+<ul>
+<li>执行执行数据库对象条件的前端操作</li>
+<li>使用 SQL 查询验证结果。</li>
+</ul>
+<p>检查某个字段的默认值非常简单。它是业务规则验证的一部分。您可以手动执行此操作，也可以使用QTP等工具。您可以手动执行一项操作，该操作将从前端添加字段默认值以外的值，并查看它是否会导致错误。</p>
+<h4 id="数据库测试活动"><a href="#数据库测试活动" class="headerlink" title="数据库测试活动"></a>数据库测试活动</h4><h5 id="1）-确保数据映射："><a href="#1）-确保数据映射：" class="headerlink" title="#1） 确保数据映射："></a><strong>#1） 确保数据映射：</strong></h5><p>数据映射是数据库中的关键方面之一，每个软件测试人员都应该对其进行严格的测试。</p>
+<p>确保AUT与其数据库的不同表单或屏幕之间的映射不仅准确，而且符合设计文档（SRS &#x2F; BRS）或代码。基本上，您需要验证每个前端字段与其相应的后端数据库字段之间的映射。</p>
+<p>对于所有 CRUD 操作，请验证当用户从应用程序的 GUI 中单击”保存”、”更新”、”搜索”或”删除”时，是否更新了相应的表和记录。</p>
+<p><strong>您需要验证的内容：</strong></p>
+<ul>
+<li>表映射、列映射和数据类型映射。</li>
+<li>查找数据映射。</li>
+<li>在 UI 上为每个用户操作调用正确的 CRUD 操作。</li>
+<li>CRUD 操作成功。</li>
+</ul>
+<h5 id="2）确保事务的ACID属性："><a href="#2）确保事务的ACID属性：" class="headerlink" title="#2）确保事务的ACID属性："></a><strong>#2）确保事务的ACID属性：</strong></h5><p>DB Transactions的ACID属性<strong>是指”原子</strong>性”，”Consistency”，”<strong>Isolation</strong>“和”<strong>Durability</strong>“。在数据库测试活动期间，必须对这四个属性进行适当的测试。您需要验证每个事务是否都满足数据库的 ACID 属性。</p>
+<p><img src="/Echo/posts/undefined/ACID-Properties.jpg" alt="ACID-Properties"></p>
+<p><strong>让我们通过下面的SQL代码举一个简单的例子：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE acidtest (A INTEGER, B INTEGER, CHECK (A + B = 100));</span><br></pre></td></tr></table></figure>
+
+<p>ACID测试表将有两列 - A和B。存在一个完整性约束，即 A 和 B 中的值之和应始终为 100。</p>
+<p><strong>原子性测试</strong>将确保在此表上执行的任何事务都是全部或无，即如果事务的任何步骤失败，则不会更新任何记录。</p>
+<p><strong>一致性测试</strong>将确保每当更新列 A 或 B 中的值时，总和始终保持为 100。如果总和不是 100，则不允许在 A 或 B 中插入&#x2F;删除&#x2F;更新。</p>
+<p><strong>隔离测试</strong>将确保如果两个事务同时发生并尝试修改ACID测试表的数据，则这些牵引力是孤立执行的。</p>
+<p><strong>耐久性测试</strong>将确保一旦提交了此表上的事务，即使发生断电、崩溃或错误，它仍将保持这种状态。</p>
+<p>如果您的应用程序正在使用分布式数据库，则需要进行更严格、彻底和敏锐的测试。</p>
+<p><strong>#3） 确保数据完整性</strong></p>
+<p>考虑应用程序的不同模块（即屏幕或表单）以不同的方式使用相同的数据，并对数据执行所有CRUD操作。</p>
+<p>在这种情况下，请确保在各处都反映最新的数据状态。系统必须在所有表单和屏幕上显示更新和最新的值或此类共享数据的状态。这称为数据完整性。</p>
+<p><img src="/Echo/posts/undefined/di.jpg" alt="di"></p>
+<p><strong>验证数据库数据完整性的测试用例：</strong></p>
+<ul>
+<li>检查是否所有触发器都已就位以更新引用表记录。</li>
+<li>检查每个表的主要列中是否存在任何不正确&#x2F;无效的数据。</li>
+<li>尝试在表中插入错误的数据，并观察是否发生任何故障。</li>
+<li>检查在插入父级之前尝试插入子项会发生什么情况（尝试使用主键和外键）。</li>
+<li>测试在删除仍由任何其他表中的数据引用的记录时是否发生任何故障。</li>
+<li>检查复制的服务器和数据库是否同步。</li>
+</ul>
+<p><strong>#4）确保已实现的业务规则的准确性：</strong></p>
+<p>如今，数据库不仅仅用于存储记录。事实上，数据库已经发展成为非常强大的工具，为开发人员在数据库级别实现业务逻辑提供了充分的支持。</p>
+<p>强大功能的一些简单示例包括”参照完整性”、关系约束、触发器和存储过程。</p>
+<p>因此，使用 DB 提供的这些功能和许多其他功能，开发人员可以在 DB 级别实现业务逻辑。测试人员必须确保实现的业务逻辑正确且工作准确。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>丑牛
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://hugfeature.github.io/Echo/posts/4b7f751c.html" title="数据库测试指北">https://hugfeature.github.io/Echo/posts/4b7f751c.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/Echo/tags/%E6%B5%8B%E8%AF%95/" rel="tag"># 测试</a>
+              <a href="/Echo/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/" rel="tag"># 软件测试</a>
+              <a href="/Echo/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%B5%8B%E8%AF%95/" rel="tag"># 数据库测试</a>
+              <a href="/Echo/tags/mysql%E6%B5%8B%E8%AF%95/" rel="tag"># mysql测试</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Echo/posts/48610.html" rel="prev" title="什么是Kubernetes">
+                  <i class="fa fa-chevron-left"></i> 什么是Kubernetes
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">丑牛</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/Echo/js/comments.js"></script><script src="/Echo/js/utils.js"></script><script src="/Echo/js/motion.js"></script><script src="/Echo/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/Echo/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"hugfeature","repo":"myBlogTalk","client_id":"f4b1fae431a4943a75f3","client_secret":"2b6995c484ff0a0a920d65ac7fd5bb1bf13fb2f2","admin_user":null,"distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"781441784972d07de12819a8b30ae0a2"}</script>
+<script src="/Echo/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
