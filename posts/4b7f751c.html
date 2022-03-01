@@ -28,9 +28,9 @@
 <meta property="og:site_name" content="测试的名义">
 <meta property="og:description" content="数据库在软件应用程序中是无法避免的部分之一。 不管是web，桌面应用，移动端，B2B，B2C等，数据库在后端都是必需的。随着应用程序复杂程度的增加，对更强大更安全的数据库需求也随之增加。对于具有高交易频率的应用来说功能齐全的数据库的必要性是耦合的。 为什么是数据库？下面会看到为什么要验证数据库的以下方面： ①数据映射在软件系统中，数据一般是在UI和后端数据库中来回传输，因为需要注意一下方面：  检">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://hugfeature.github.io/Echo/posts/undefined/DB-Testing.jpg">
-<meta property="og:image" content="https://hugfeature.github.io/Echo/posts/undefined/ACID-Properties.jpg">
-<meta property="og:image" content="https://hugfeature.github.io/Echo/posts/undefined/di.jpg">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/posts/4b7f751c/DB-Testing.jpg">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/posts/4b7f751c/ACID-Properties.jpg">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/posts/4b7f751c/di.jpg">
 <meta property="article:published_time" content="2022-02-25T00:11:30.000Z">
 <meta property="article:modified_time" content="2022-02-25T00:11:30.000Z">
 <meta property="article:author" content="丑牛">
@@ -39,7 +39,7 @@
 <meta property="article:tag" content="数据库测试">
 <meta property="article:tag" content="mysql测试">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://hugfeature.github.io/Echo/posts/undefined/DB-Testing.jpg">
+<meta name="twitter:image" content="https://hugfeature.github.io/Echo/posts/4b7f751c/DB-Testing.jpg">
 
 
 <link rel="canonical" href="https://hugfeature.github.io/Echo/posts/4b7f751c.html">
@@ -178,7 +178,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/Echo/tags/">
-        <span class="site-state-item-count">53</span>
+        <span class="site-state-item-count">56</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -290,7 +290,7 @@
 <li>当应用程序在前段执行某个操作时，都会在后端调用相应的CURD操作。作为测试人员必须检查是否正确的调用以及调用操作本身是否成功。</li>
 </ul>
 <h5 id="②ACID属性验证"><a href="#②ACID属性验证" class="headerlink" title="②ACID属性验证"></a>②ACID属性验证</h5><p>原子性、一致性、隔离性和持久性。数据库执行的每个事务都必须遵守这四个属性。</p>
-<p><img src="/Echo/posts/undefined/DB-Testing.jpg" alt="DB-Testing"></p>
+<p><img src="/Echo/posts/4b7f751c/DB-Testing.jpg" alt="DB-Testing"></p>
 <ul>
 <li>原子性：事务包含的所有操作要么全部成功，要么全部失败回滚，因此事务的操作如果成功就必须要完全应用到数据库，如果操作失败则不能对数据库有任何影响。</li>
 <li>一致性：一致性是指事务必须使数据库从一个一致性状态变换到另一个一致性状态，也就是说一个事务执行之前和执行之后都必须处于一致性状态。</li>
@@ -354,7 +354,7 @@
 <li>CRUD 操作成功。</li>
 </ul>
 <h5 id="2）确保事务的ACID属性："><a href="#2）确保事务的ACID属性：" class="headerlink" title="#2）确保事务的ACID属性："></a><strong>#2）确保事务的ACID属性：</strong></h5><p>DB Transactions的ACID属性<strong>是指”原子</strong>性”，”Consistency”，”<strong>Isolation</strong>“和”<strong>Durability</strong>“。在数据库测试活动期间，必须对这四个属性进行适当的测试。您需要验证每个事务是否都满足数据库的 ACID 属性。</p>
-<p><img src="/Echo/posts/undefined/ACID-Properties.jpg" alt="ACID-Properties"></p>
+<p><img src="/Echo/posts/4b7f751c/ACID-Properties.jpg" alt="ACID-Properties"></p>
 <p><strong>让我们通过下面的SQL代码举一个简单的例子：</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE acidtest (A INTEGER, B INTEGER, CHECK (A + B = 100));</span><br></pre></td></tr></table></figure>
 
@@ -367,7 +367,7 @@
 <p><strong>#3） 确保数据完整性</strong></p>
 <p>考虑应用程序的不同模块（即屏幕或表单）以不同的方式使用相同的数据，并对数据执行所有CRUD操作。</p>
 <p>在这种情况下，请确保在各处都反映最新的数据状态。系统必须在所有表单和屏幕上显示更新和最新的值或此类共享数据的状态。这称为数据完整性。</p>
-<p><img src="/Echo/posts/undefined/di.jpg" alt="di"></p>
+<p><img src="/Echo/posts/4b7f751c/di.jpg" alt="di"></p>
 <p><strong>验证数据库数据完整性的测试用例：</strong></p>
 <ul>
 <li>检查是否所有触发器都已就位以更新引用表记录。</li>
@@ -422,6 +422,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/Echo/posts/e907959e.html" rel="next" title="测试领导职责及如何有效管理测试团队">
+                  测试领导职责及如何有效管理测试团队 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>

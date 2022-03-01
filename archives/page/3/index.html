@@ -168,7 +168,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/Echo/tags/">
-        <span class="site-state-item-count">53</span>
+        <span class="site-state-item-count">56</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -208,6 +208,330 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/posts/19906.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Echo/images/avatar.gif">
+      <meta itemprop="name" content="丑牛">
+      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="测试的名义">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Echo/posts/19906.html" class="post-title-link" itemprop="url">HDFS简介</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-01-02 08:45:39" itemprop="dateCreated datePublished" datetime="2022-01-02T08:45:39+08:00">2022-01-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Echo/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h4 id="Hadoop-分布式文件系统"><a href="#Hadoop-分布式文件系统" class="headerlink" title="Hadoop 分布式文件系统"></a>Hadoop 分布式文件系统</h4><p><strong>HDFS</strong>解决了大数据的存储问题，<strong>Map Reduce</strong>解决了与处理部分大数据相关的问题。</p>
+<h4 id="Hadoop的组件"><a href="#Hadoop的组件" class="headerlink" title="Hadoop的组件"></a>Hadoop的组件</h4><p>HDFS有两个主要组件来解决大数据问题：</p>
+<ul>
+<li>用于存储大数据的HDFS</li>
+<li>用于处理大数据的MapReduce</li>
+</ul>
+<p><img src="/Echo/posts/19906/Hadoop-Component-1.jpg" alt="Hadoop-Component-1"></p>
+<p>如图所示，Hadoop的架构，一个是HDFS，Hadoop的文件存储系统，一个是YARN和MapReduce，大数据处理部分。</p>
+<p>使用HDFS，Hadoop使我们能够存储大数据，使用YARN和Map Reduce，Hadoop使我们能够处理存储在HDFS中的相同大数据。</p>
+<p><img src="/Echo/posts/19906/Hadoop-Core-Components.jpg" alt="Hadoop-Core-Components"></p>
+<p>正如您在上图中看到的，HDFS有两个主要的守护进程，或者您可以将它们称为进程或线程，它们只不过是JAVA进程，即在JVM中运行 - NameNode和DataNode。</p>
+<p>NameNode是一个在Master Machine上运行的主守护程序，即本质上是高端机器，DataNode是在商用硬件上运行的从机。可以有更多的DataNode，因为从机不仅仅是主机。</p>
+<p>因此，我们总是在从属机器上运行一个NameNode和多个DataNode。</p>
+<p>同样，我们在另一端有YARN，它又有两个守护进程，一个是运行在主计算机上的资源管理器，另一个是运行在从机上的节点管理器，就像DataNode一样。因此，每台从属机器都有两个守护进程 - 一个是DataNode，另一个是Node Manager。</p>
+<p>主计算机正在运行 NameNode 并运行资源管理器。NameNode 负责管理 Hadoop 分布式文件系统上的数据，资源管理器负责对此存储的数据执行处理任务。</p>
+<h4 id="name-node-和data-node"><a href="#name-node-和data-node" class="headerlink" title="name node 和data node"></a>name node 和data node</h4><h5 id="name-node"><a href="#name-node" class="headerlink" title="name node"></a>name node</h5><ul>
+<li>主守护进程。</li>
+<li>管理和维护数据节点。</li>
+<li>记录元数据。</li>
+<li>接收来自所有 DataNode 的检测信号和阻止报告。</li>
+</ul>
+<p>data node</p>
+<ul>
+<li>守护进程。</li>
+<li>实际数据存储在此处。</li>
+<li>为来自客户端的读取和写入请求提供服务。</li>
+</ul>
+<p><img src="/Echo/posts/19906/NameNode-DataNode.jpg" alt="NameNode-DataNode"></p>
+<p>有一个集中式机器名称节点，它控制着各种DataNode，即商用硬件。因此，Name Node只不过是维护所有DataNode的主守护进程。</p>
+<p>这些名称节点具有有关存储在 DataNode 中的数据的所有信息。DataNode顾名思义，用于存储Hadoop集群中存在的数据。</p>
+<p>NameNode仅包含有关哪些数据存储在哪个DataNode上的信息。因此，我们可以说的是NameNode存储存储在DataNodes上的数据的元数据。</p>
+<p>DataNode还执行另一项任务，即它定期将检测信号发送回NameNode。心跳实际上告诉NameNode这个DataNode仍然活着。</p>
+<p>DataNodes将检测信号发送回NameNode，这样NameNode就可以知道这些数据节点是活跃的，因此NameNode可以使用这些数据节点来存储更多数据或从这些数据节点读取数据。</p>
+<p>现在我们来看看DataNode，DataNode只不过是从属守护进程，它实际上存储着发送到Hadoop集群的数据。这些数据节点是实际为客户端发出的读取和写入请求提供服务的节点。</p>
+<p>如果有人想从Hadoop集群中读取数据，那么这些请求实际上由数据所在的DataNodes处理。</p>
+<h4 id="Hadoop-集群架构"><a href="#Hadoop-集群架构" class="headerlink" title="Hadoop 集群架构"></a>Hadoop 集群架构</h4><p><img src="/Echo/posts/19906/Hadoop-Cluster.jpg" alt="Hadoop-Cluster"></p>
+<p>如图所示，Hadoop 集群r只不过是一个主从拓扑，其中有一个主机器，正如你在顶部看到的那样，即Hadoop 集群。在此主计算机中，有一个 NameNode 和正在运行的资源管理器，即主守护程序。</p>
+<p>主机使用核心交换机连接到所有从机，这是因为这些数据节点实际上存储在各种机架中，因此您可以看到计算机1，计算机2，计算机3直到计算机N。这只不过是从属机器或DataNodes，它们都存在于一个机架中。</p>
+<h5 id="HDFS将如何存取数据？"><a href="#HDFS将如何存取数据？" class="headerlink" title="HDFS将如何存取数据？"></a>HDFS将如何存取数据？</h5><p>将文件存储在HDFS中时，数据被存储为HDFS中的块。整个文件不存储在HDFS中，这是因为如您所知，Hadoop是一个分布式文件系统。</p>
+<p>因此，如果您的文件大小可能为1 PB（Peta Byte），那么这种存储就不会存在于单台计算机中，因为Hadoop集群是使用商用硬件制作的。一台计算机中的硬件大约为 1 TB 或 2 TB。</p>
+<p>因此，整个文件需要分解为称为HDFS块的数据块。</p>
+<ul>
+<li>每个文件都作为块存储在HDFS上。</li>
+<li>在Apache Hadoop 2.x中，每个块的默认大小约为128 MB（在以前的版本，即Apache Hadoop 1.x中为64mb）。</li>
+<li>有一个工具可以使用Hadoop软件包附带的配置文件（即hdfssite.xml）来增加或减少块的文件大小。</li>
+</ul>
+<p>让我们在这里考虑一个248 MB的文件，现在如果我们打破这个文件，或者如果我们把这个文件移动到Hadoop Cluster（即2.x）中，那么这个文件将被分解成一个块，即128 MB的块A和另一个120 MB的块B。</p>
+<p>如您所见，第一个块为128 MB，即第一个板块在那里削减，这就是为什么另一个块为120 MB而不是128 MB，即如果剩余的文件大小小于默认块大小，则不会浪费任何空间。</p>
+<p><img src="/Echo/posts/19906/Example-Diagram.jpg" alt="Example-Diagram"></p>
+<p>现在我们面前还有另一个问题，即每个块的单个副本是否安全？</p>
+<p>答案是否定的，因为系统可能会失败，而它只是商品硬件，因此我们可能会遇到大麻烦。为了克服这个问题，Hadoop HDFS有一个很好的解决方案，即**”块的复制”。**</p>
+<h5 id="Hadoop-架构块复制"><a href="#Hadoop-架构块复制" class="headerlink" title="Hadoop 架构块复制"></a>Hadoop 架构块复制</h5><p>Hadoop创建存储到Hadoop分布式文件系统中的每个块的副本，这就是Hadoop作为容错系统的方式，即即使您的系统出现故障或DataNode失败或副本丢失，您也会在其他DataNode或其他服务器中存在多个其他副本，以便您始终可以从那里选择这些副本。</p>
+<p><img src="/Echo/posts/19906/Block-Replication.jpg" alt="Block-Replication"></p>
+<p>如图所表示块复制，文件有五个不同的块，即块 1、2、3、4、5。让我们先检查一下块 1，您将在节点 1、节点 2 和节点 4 中找到块 1 的副本。</p>
+<p>同样，块 2 也有三个副本，即节点 2、节点 3 和节点 4，因此在各自的节点中，块 3、4 和 5 也是如此。</p>
+<p>因此，除了创建的副本之外，每个块都被复制了三次，即Hadoop遵循默认的复制因子为3，这意味着您复制到Hadoop分发文件系统中的任何文件都会被复制三次。</p>
+<p>换句话说，如果您将1 GB的文件复制到Hadoop分发文件系统中，它实际上将3 GB的文件存储在HDFS中。好的部分是，通过更改Hadoop的配置文件，默认复制因子是可以更改的。</p>
+<p>*<strong>Hadoop 如何决定存储副本的位置？*</strong></p>
+<p>Hadoop实际上遵循Rack Awareness的概念来决定在哪里存储Block的副本。如图所示机架感知算法图表。</p>
+<p><img src="/Echo/posts/19906/Rack-Awareness-Algorithm.jpg" alt="Rack-Awareness-Algorithm"></p>
+<p>Rack-1有四个DataNodes，Rack-2和Rack-3也是如此，因此整个Hadoop集群总共将由所有三个机架组成，并且将有12个DataNode。</p>
+<p>假设块 A 在 Rack-1 的 DataNode 1 上复制，根据 Rack Aware 的概念，块 A 的副本不能在同一机架中创建，并且需要在 Rack-1 之外的任何其他机架中创建，因为主文件已经存在于 Rack-1 中。</p>
+<p>如果我们在同一机架-1中创建块A的副本，并且如果整个Rack-1发生故障，那么我们肯定会丢失数据，因此副本必须存储在任何其他机架中，而不是存储在Rack-1中。</p>
+<p>因此，将在 Rack-2 的 DataNode 6 和 8 中创建副本。同样，对于块 B 和块 C，副本将在不同的机架中创建，如上图所示。</p>
+<h4 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h4><ul>
+<li>Hadoop HDFS解决了大数据的存储问题。</li>
+<li>Hadoop Map Reduce解决了与大数据处理相关的问题。</li>
+<li>NameNode 是一个主守护进程，用于管理和维护 DataNode。</li>
+<li>DataNode是一个从属守护进程，实际数据存储在这里。它用于读取和写入来自客户端的请求。</li>
+<li>在Hadoop Cluster中，机架实际上是一组物理上存在于一个特定位置并相互连接的机器。</li>
+<li>每个文件都作为块存储在HDFS上。</li>
+<li>在Apache Hadoop 2.x中，每个块的默认大小约为128 MB（在以前的版本，即Apache Hadoop 1.x中为64 MB）。</li>
+<li>有一个工具可以使用Hadoop软件包附带的配置文件（即hdfssite.xml）来增加或减少块的文件大小。</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/posts/34251.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Echo/images/avatar.gif">
+      <meta itemprop="name" content="丑牛">
+      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="测试的名义">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Echo/posts/34251.html" class="post-title-link" itemprop="url">hadoop是什么？</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-12-27 19:43:27" itemprop="dateCreated datePublished" datetime="2021-12-27T19:43:27+08:00">2021-12-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Echo/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Apache Hadoop是一个开源框架，用于管理所有类型的数据（结构化，非结构化和半结构化）。</p>
+<p>众所周知，如果我们想处理，存储和管理我们的数据，那么RDBMS是最好的解决方案。但是，数据应采用结构化格式，以便使用 RDBMS 进行处理。此外，如果数据大小增加，则RDBMS无法处理它，我们需要定期执行数据库清理。</p>
+<p>这可能会导致历史数据丢失，并且无法在某些行业（如天气预报，银行，保险，销售等）中生成准确可靠的结果。RDBMS的另一个问题是，如果主服务器出现故障，那么我们可能会丢失重要数据并遭受很多损失。</p>
+<p>在本教程中，我们将看到如何使用Apache Hadoop克服这些问题。</p>
+<p>Hadoop是一个分布式文件系统，可以存储大量数据（PB级和TB级数据）。数据处理速度也非常快，并且具有非常高的容错系统，因此可提供可靠的结果。</p>
+<p>Hadoop是一个基于Java的开源编程框架，支持在分布式计算环境中存储和处理大型数据集。</p>
+<p>Hadoop基于使用商用硬件的集群概念。它不需要任何复杂的配置，我们可以用更便宜，简单和轻量级的配置硬件建立Hadoop环境。</p>
+<p>简而言之，群集概念是以复制格式存储在多台计算机上的数据，因此，当数据所在的某个位置发生任何问题或灾难时，必须在另一个位置上安全地提供该数据的重复副本。</p>
+<h4 id="hadoop-VS-RDMBS"><a href="#hadoop-VS-RDMBS" class="headerlink" title="hadoop VS RDMBS"></a>hadoop VS RDMBS</h4><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Hadoop</th>
+<th>RDBMS</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>体系结构</strong></td>
+<td>Hadoop基于HDFS，MapReduce和YARN。</td>
+<td>RDBMS 基于 ACID 属性。</td>
+</tr>
+<tr>
+<td><strong>规模</strong></td>
+<td>可以处理大量数据。</td>
+<td>RDBMS 无法处理大量数据。</td>
+</tr>
+<tr>
+<td><strong>数据的种类&#x2F;类型</strong></td>
+<td>可以处理结构化，半结构化和非结构化数据，如视频，图像，CSV文件，xml等。</td>
+<td>仅处理结构化数据。</td>
+</tr>
+<tr>
+<td><strong>速度</strong></td>
+<td>快速处理大量数据。</td>
+<td>处理大量数据时非常慢。</td>
+</tr>
+<tr>
+<td><strong>吞吐量</strong></td>
+<td>高吞吐量。</td>
+<td>吞吐量低。</td>
+</tr>
+<tr>
+<td><strong>容错</strong></td>
+<td>非常好</td>
+<td>如果主服务器出现故障，则无法恢复丢失的数据。</td>
+</tr>
+<tr>
+<td><strong>存储</strong></td>
+<td>非常高的存储容量。</td>
+<td>无法存储大数据。</td>
+</tr>
+<tr>
+<td><strong>可靠性</strong></td>
+<td>非常可靠，可生成准确的历史和当前报告。</td>
+<td>在大数据方面不可靠。</td>
+</tr>
+</tbody></table>
+<h4 id="hadoop-功能"><a href="#hadoop-功能" class="headerlink" title="hadoop 功能"></a>hadoop 功能</h4><p>Hadoop框架</p>
+<p><img src="/Echo/posts/34251/Hadoop-Features.webp" alt="Hadoop-Features"></p>
+<ul>
+<li>Hadoop yarn</li>
+<li>Hadoop common</li>
+<li>Hadoop HDFS(Hadoop Distributed File System)</li>
+<li>Hadoop Mapreduce</li>
+</ul>
+<p><strong>#1）Hadoop YARN：YARN</strong>代表**”Y**et <strong>A</strong>nother <strong>R</strong>esource <strong>N</strong>egotiator”，用于管理云的集群技术。它用于作业计划。</p>
+<p><strong>#2）Hadoop Common：</strong>这是用于与Hadoop的其他功能（如YARN，MapReduce和HDFS）进行通信的详细库或实用程序。</p>
+<p><strong>#3）Hadoop HDFS：</strong>分布式文件系统在Hadoop中用于存储和处理大量数据。此外，它还用于访问群集中的数据。</p>
+<p><strong>#4） Hadoop MapReduce：</strong> MapReduce是Hadoop的主要功能，负责处理集群中的数据。它用于作业调度和数据处理监控。</p>
+<h4 id="Hadoop-架构"><a href="#Hadoop-架构" class="headerlink" title="Hadoop 架构"></a>Hadoop 架构</h4><p>Hadoop组件：</p>
+<ul>
+<li>HDFS</li>
+<li>MapReduce</li>
+<li>YARN</li>
+</ul>
+<p><img src="/Echo/posts/34251/Hadoop-framework.png" alt="Hadoop-framework"></p>
+<p>这些是Hadoop架构的三个重要组成部分。我们还应该了解架构的一些术语或概念，并了解它们是如何工作的。</p>
+<ol>
+<li>管理节点–manager node</li>
+<li>数据节点–data node</li>
+<li>辅助管理节点–secondary manager node </li>
+<li>块–blocks</li>
+</ol>
+<p>1）name node–管理节点</p>
+<p>管理节点是 HDFS 中的主节点。它包含HDFS的元数据，如文件信息，目录结构，块信息以及数据节点的所有信息等。管理节点仅负责从客户端访问的数据或文件。它跟踪文件中的所有事务或所做的更改。</p>
+<p>它主要适用于两个文件，即FsImage和EditLogs。Name Node有一个JobTracker，其中包含数据节点的所有详细信息，例如哪个数据节点具有什么任务，每个数据节点有多少块，每个数据节点的检测信号，群集中的作业计划详细信息等。</p>
+<p>简而言之，我们可以说 JobTracker 包含每个数据节点的 TaskTracker。</p>
+<p>2） data node – 数据节点</p>
+<p>数据节点是HDFS中的从节点。数据节点负责数据的实际存储和处理。它的主要任务是将作业划分为三个块，并将其存储在不同的数据节点中。之后开始处理数据。</p>
+<p>此外，它还具有TaskTracker，它具有每个块的完整信息，以及哪个块负责哪个任务，哪些块完成了任务等，并且在处理数据后，它将信息发送到manager Node。每次数据节点启动时，它都会再次将所有信息发送到管理节点。</p>
+<p>3）辅助管理节点–secondary manager node </p>
+<p>辅助管理节点用于容错情况。在两种情况下，管理节点已关闭，并且整个 Hadoop 结构将失败，因为管理节点是单点故障。</p>
+<p>（i）如果管理节点由于任何问题而重新启动，那么由于它具有大量数据而再次出现，那么恢复它需要时间。</p>
+<p>（ii）在管理节点崩溃的情况下，所有HDFS数据都将丢失并且无法再次恢复，因为管理节点是单点故障。因此，为了克服这些问题，辅助管理节点就在那里。它还包含与管理节点相同的命名空间映像和编辑日志。</p>
+<p>在一段时间后，它将复制命名空间映像，并从管理节点更新编辑日志。因此，在管理节点失败的情况下，辅助管理节点进入图片并表现得与主名称节点类似。由于此过程，它可以防止完全失败。</p>
+<p>4）blocks–块</p>
+<p>块是HDFS中最小的单位。Hadoop可以处理大量的文件，因为它将其分成小块。我们可以说，块只不过是一个大文件的数据。每个块的大小为128MB。这些块保存在数据节点中并处理数据。</p>
+<p><img src="/Echo/posts/34251/Components-used-in-Hadoop.png" alt="Components-used-in-Hadoop"></p>
+<p>Hadoop 分布式文件系统 （HDFS） 是 Hadoop 集群中使用的文件系统。HDFS主要用于在集群中存储Hadoop数据。HDFS通常致力于顺序数据处理。正如我们已经知道的那样，它基于主从架构。</p>
+<p>集群的所有元数据都保存在 JobTracker 的 Name 节点上，实际数据存储在 TaskTracker 的 HDFS 的数据节点中。</p>
+<p>MapReduce负责数据的处理。每当任何文件进入集群进行处理时，第一个数据节点都会将其划分为块，每个块包含64MB的数据，它可以存储128MB。然后，每个块将复制两次，并存储在群集中任何位置的不同数据节点中。</p>
+<p>所有这些信息都将发送到名称节点，名称节点将以元数据的形式存储此信息。然后，数据的实际处理将启动数据节点，并将每三秒向名称节点发送一次检测信号，以便名称节点具有此数据节点正在处理的信息。</p>
+<p>如果数据节点中的任何人发送检测信号失败，则名称节点将再次在另一个数据节点上创建该块的副本并开始处理。</p>
+<p>所有这些信息或快照将存储在FsImage中，如果完成任何事务，则编辑日志合并新信息并始终保留日志的新副本。</p>
+<p>将采用首先完成任务的块，数据节点将向名称节点发送信息，名称节点将采取相应的操作。</p>
+<p>在整个过程中，YARN将支持并向系统提供所需的资源，因此不会影响数据处理和速度。处理数据后，结果将保存在HDFS中以供进一步分析。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -2049,268 +2373,6 @@
 <td align="left">尝试的开始时间（自纪元以来以毫秒为单位）</td>
 </tr>
 </tbody></table>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/posts/23697.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Echo/images/avatar.gif">
-      <meta itemprop="name" content="丑牛">
-      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="测试的名义">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Echo/posts/23697.html" class="post-title-link" itemprop="url">springboot整合shiro和JWT使用指北</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-11-09 17:22:56" itemprop="dateCreated datePublished" datetime="2021-11-09T17:22:56+08:00">2021-11-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Echo/categories/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/" itemprop="url" rel="index"><span itemprop="name">测试开发</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="shiro是什么？"><a href="#shiro是什么？" class="headerlink" title="shiro是什么？"></a>shiro是什么？</h3><p><code>Shiro</code> 是一个强大的简单易用的 <code>Java</code> 安全框架，主要用来更便捷的 <code>认证，授权，加密，会话管理</code>。<code>Shiro</code> 首要的和最重要的目标就是容易使用并且容易理解，通过 <code>Shiro</code> 易于理解的<code>API</code>，您可以快速、轻松地获得任何应用程序——从最小的移动应用程序最大的网络和企业应用程序。</p>
-<h3 id="shiro的功能"><a href="#shiro的功能" class="headerlink" title="shiro的功能"></a>shiro的功能</h3><ol>
-<li>Authentication:身份认证、登录，验证用户是不是拥有相应的身份;\</li>
-<li>Authorization:授权，即权限验证，验证某个已认证的用户是否拥有某个权限，即判断用户能否进行什么操作，如:验证某个用户是否拥有某个角色，或者细粒度的验证某个用户对某个资源是否具有某个权限!\</li>
-<li>Session Manager:会话管理，即用户登录后就是第一次会话，在没有退出之前，它的所有信息都在会话中;会话可以是普通的JavaSE环境，也可以是Web环境;\</li>
-<li>Cryptography:加密，保护数据的安全性，如密码加密存储到数据库中，而不是明文存储;\</li>
-<li>Web Support: Web支持，可以非常容易的集成到Web环境;\</li>
-<li>Caching:缓存，比如用户登录后，其用户信息，拥有的角色、权限不必每次去查，这样可以提高效率\</li>
-<li>Concurrency: Shiro支持多线程应用的并发验证，即，如在一个线程中开启另一个线程，能把权限自动的传播过去Testing:提供测试支持;\</li>
-<li>Run As:允许一个用户假装为另一个用户（如果他们允许）的身份进行访问;\</li>
-<li>Remember Me:记住我，这个是非常常见的功能，即一次登录后，下次再来的话不用登录了\</li>
-</ol>
-<h3 id="JWT是什么？"><a href="#JWT是什么？" class="headerlink" title="JWT是什么？"></a>JWT是什么？</h3><p>JWT ：JWT（JSON Web Token）是一种身份认证的方式，JWT 本质上就一段签名的 JSON 格式的数据。由于它是带有签名的，因此接收者便可以验证它的真实性。可以理解为对 token 这一技术提出一套规范，是在 <a href="https://link.juejin.cn/?target=https://tools.ietf.org/html/rfc7519">RFC 7519</a> 中提出的。</p>
-<h3 id="JWT的组成和优缺点"><a href="#JWT的组成和优缺点" class="headerlink" title="JWT的组成和优缺点"></a>JWT的组成和优缺点</h3><p>本文在这里仅简单介绍JWT的组成和优缺点。详细分析可以在相关搜索引擎中搜索。</p>
-<h4 id="JWT的组成"><a href="#JWT的组成" class="headerlink" title="JWT的组成"></a>JWT的组成</h4><p>一个JWT token是一个字符串，它由头部、载荷、与签名中间有.分割组成；</p>
-<p>头部（header）：由令牌的类型和正在使用的签名算法组成；</p>
-<p>载荷（playload）：放置了token的一些基本信息，以帮助接收服务器理解，同时还有用户自定义信息，支持用户信息交换；</p>
-<p>签名（Signature）：主要是将前面的头部和载荷进行加密。</p>
-<h4 id="JWT的优缺点"><a href="#JWT的优缺点" class="headerlink" title="JWT的优缺点"></a>JWT的优缺点</h4><p>JWT的优点：</p>
-<ul>
-<li>防CSRF：CSRF（Cross Site Request Forgery）跨站伪造请求。使用JWT登录成功后，会存放在本地local storage中；\</li>
-<li>适合移动端：使用session需要服务端保存一份信息，使用token不需要只要请求携带token，还可跨语言使用；\</li>
-<li>无状态：token中有身份验证的所有信息，增加了系统的可用性和伸缩性也带了同样的问题（在缺点中会介绍）；\</li>
-<li>单点登录友好：使用session需要我们把所有session信息存在一台电脑上，使用token的话token保存在客户端。\</li>
-</ul>
-<p>JWT的缺点：</p>
-<ul>
-<li>无状态导致在注销、退出登录、修改密码、修改角色||权限等场景下token依旧有效；\</li>
-<li>token续签问题：即token过期后如何动态刷新token。\</li>
-</ul>
-<h4 id="shiro-JWT-使用"><a href="#shiro-JWT-使用" class="headerlink" title="shiro + JWT 使用"></a>shiro + JWT 使用</h4><h5 id="JWTtoken-令牌"><a href="#JWTtoken-令牌" class="headerlink" title="JWTtoken 令牌"></a>JWTtoken 令牌</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.apache.shiro.authc.AuthenticationToken;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JwtToken</span> <span class="keyword">implements</span> <span class="title">AuthenticationToken</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> String token;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">JwtToken</span><span class="params">(String jwt)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">this</span>.token = jwt;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> Object <span class="title">getCredentials</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> token;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> Object <span class="title">getPrincipal</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> token;</span><br><span class="line"></span><br><span class="line"> &#125;  </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="jwtutils-JWT工具类主要是生成token设置过期时间"><a href="#jwtutils-JWT工具类主要是生成token设置过期时间" class="headerlink" title="jwtutils JWT工具类主要是生成token设置过期时间"></a>jwtutils JWT工具类主要是生成token设置过期时间</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.context.properties.ConfigurationProperties;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> io.jsonwebtoken.Claims;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> io.jsonwebtoken.Jwts;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> io.jsonwebtoken.SignatureAlgorithm;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> lombok.Data;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> lombok.extern.slf4j.Slf4j;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@ConfigurationProperties(prefix = &quot;blogspringback.jwt&quot;)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JwtUtils</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String secret;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">long</span> expire;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> String header;</span><br><span class="line"></span><br><span class="line">\</span><br><span class="line"></span><br><span class="line">/</span><br><span class="line"></span><br><span class="line"> <span class="meta">@description</span>: 生成token</span><br><span class="line"></span><br><span class="line">  <span class="meta">@param</span> &#123;<span class="keyword">long</span>&#125; userId</span><br><span class="line"></span><br><span class="line">  <span class="meta">@return</span> &#123;JWT token&#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Author</span>: 丑牛</span><br><span class="line"></span><br><span class="line">/</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">generateToken</span><span class="params">(<span class="keyword">long</span> userId)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 过期时间</span></span><br><span class="line"></span><br><span class="line">  Date dateNow = <span class="keyword">new</span> Date();</span><br><span class="line"></span><br><span class="line">  Date dateExpire =  <span class="keyword">new</span> Date(dateNow.getTime() + expire  <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> Jwts.builder()</span><br><span class="line"></span><br><span class="line">    .setHeaderParam(<span class="string">&quot;type&quot;</span>, <span class="string">&quot;JWT&quot;</span>)</span><br><span class="line"></span><br><span class="line">     .setSubject(userId + <span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line">     .setIssuedAt(dateNow)</span><br><span class="line"></span><br><span class="line">     .setExpiration(dateExpire)</span><br><span class="line"></span><br><span class="line">     .signWith(SignatureAlgorithm.HS512, secret)</span><br><span class="line"></span><br><span class="line">     .compact();</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Claims <span class="title">getClaimsByToken</span><span class="params">(String token)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> Jwts.parser()</span><br><span class="line"></span><br><span class="line">  .setSigningKey(secret)</span><br><span class="line"></span><br><span class="line"> .parseClaimsJws(token)</span><br><span class="line"></span><br><span class="line">.getBody();</span><br><span class="line"></span><br><span class="line">  &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line"></span><br><span class="line">   log.debug(<span class="string">&quot;token error&quot;</span>, e);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">/</span><br><span class="line"></span><br><span class="line"> <span class="meta">@description</span>: 判断token是否过期</span><br><span class="line"></span><br><span class="line">  <span class="meta">@param</span> &#123;Date&#125; expeiration</span><br><span class="line"></span><br><span class="line">  <span class="meta">@return</span> <span class="keyword">true</span>:过期；<span class="keyword">false</span>：未过期</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Author</span>: 丑牛</span><br><span class="line"></span><br><span class="line">/</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isTokenExpired</span><span class="params">(Date expeiration)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> expeiration.before(<span class="keyword">new</span> Date());</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">&#125;`</span><br><span class="line"></span><br><span class="line">##### JWTFilter 拦截请求</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Jwtfilter</span> <span class="keyword">extends</span> <span class="title">AuthenticatingFilter</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Autowired</span></span><br><span class="line"></span><br><span class="line"> JwtUtils jwtUtils;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">protected</span> AuthenticationToken <span class="title">createToken</span><span class="params">(ServletRequest servletRequest, ServletResponse serverResponse)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"></span><br><span class="line">  HttpServletRequest request = (HttpServletRequest) servletRequest;</span><br><span class="line"></span><br><span class="line">  String jwt = request.getHeader(<span class="string">&quot;Authorization&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (ObjectUtils.isEmpty(jwt))&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> JwtToken(jwt);</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">boolean</span> <span class="title">onAccessDenied</span><span class="params">(ServletRequest servletRequest, ServletResponse serverResponse)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"></span><br><span class="line">  HttpServletRequest request = (HttpServletRequest) servletRequest;</span><br><span class="line"></span><br><span class="line">  String jwt = request.getHeader(<span class="string">&quot;Authorization&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (ObjectUtils.isEmpty(jwt)) &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">   Claims claim = JwtUtils.getClaimsByToken(jwt);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (claim == <span class="keyword">null</span> || jwtUtils.isTokenExpired(claim.getExpiration())) &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">throw</span> <span class="keyword">new</span> ExpiredCredentialsException(<span class="string">&quot;token失效，请重新登录&quot;</span>);</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> executeLogin(servletRequest, serverResponse);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">boolean</span> <span class="title">onLoginFailure</span><span class="params">(AuthenticationToken token, AuthenticationException e, ServletRequest request, ServletResponse response)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">  HttpServletResponse httpServletResponse = (HttpServletResponse) response;</span><br><span class="line"></span><br><span class="line">  Throwable throwable = e.getCause() == <span class="keyword">null</span> ? e : e.getCause();</span><br><span class="line"></span><br><span class="line">  Result result = Result.fail(throwable.getMessage());</span><br><span class="line"></span><br><span class="line">  String json = JSONUtil.toJsonStr(result);</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line"></span><br><span class="line">   httpServletResponse.getWriter().print(json);</span><br><span class="line"></span><br><span class="line">  &#125; <span class="keyword">catch</span> (IOException ioException) &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">\</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">boolean</span> <span class="title">preHandle</span><span class="params">(ServletRequest request, ServletResponse response)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"></span><br><span class="line">  HttpServletRequest httpServletRequest = WebUtils.toHttp(request);</span><br><span class="line"></span><br><span class="line">  HttpServletResponse httpServletResponse = WebUtils.toHttp(response);</span><br><span class="line"></span><br><span class="line">  httpServletResponse.setHeader(<span class="string">&quot;Access-control-Allow-Origin&quot;</span>, httpServletRequest.getHeader(<span class="string">&quot;Origin&quot;</span>));</span><br><span class="line"></span><br><span class="line">  httpServletResponse.setHeader(<span class="string">&quot;Access-Control-Allow-Methods&quot;</span>, <span class="string">&quot;GET,POST,OPTIONS,PUT,DELETE&quot;</span>);</span><br><span class="line"></span><br><span class="line">  httpServletResponse.setHeader(<span class="string">&quot;Access-Control-Allow-Headers&quot;</span>,  httpServletRequest.getHeader(<span class="string">&quot;Access-Control-Request-Headers&quot;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 跨域时会首先发送一个OPTIONS请求，这里我们给OPTIONS请求直接返回正常状态</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (httpServletRequest.getMethod().equals(RequestMethod.OPTIONS.name())) &#123;</span><br><span class="line"></span><br><span class="line">   httpServletResponse.setStatus(org.springframework.http.HttpStatus.OK.value());</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">super</span>.preHandle(request, response);</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="shiro-config-设置自定义的filter"><a href="#shiro-config-设置自定义的filter" class="headerlink" title="shiro config 设置自定义的filter"></a>shiro config 设置自定义的filter</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ShiroConfig</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Autowired</span></span><br><span class="line"></span><br><span class="line"> Jwtfilter jwtFilter;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Bean</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> SessionManager <span class="title">sessionManager</span><span class="params">(RedisSessionDAO redisSessionDAO)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  DefaultSessionManager sessionManager = <span class="keyword">new</span> DefaultSessionManager();</span><br><span class="line"></span><br><span class="line">  sessionManager.setSessionDAO(redisSessionDAO);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> sessionManager;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Bean</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> DefaultWebSecurityManager <span class="title">securityManager</span><span class="params">(AccountRealm accountRealm, SessionManager sessionManager,</span></span></span><br><span class="line"><span class="params"><span class="function"></span></span></span><br><span class="line"><span class="params"><span class="function">   RedisCacheManager redisCacheManager)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  DefaultWebSecurityManager securityManager = <span class="keyword">new</span> DefaultWebSecurityManager(accountRealm);</span><br><span class="line"></span><br><span class="line"><span class="comment">// inject sessionManager</span></span><br><span class="line"></span><br><span class="line">  securityManager.setSessionManager(sessionManager);</span><br><span class="line"></span><br><span class="line"><span class="comment">// inject redisCacheManager</span></span><br><span class="line"></span><br><span class="line">  securityManager.setCacheManager(redisCacheManager);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> securityManager;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Bean</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> ShiroFilterChainDefinition <span class="title">shiroFilterChainDefinition</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  DefaultShiroFilterChainDefinition chainDefinition = <span class="keyword">new</span> DefaultShiroFilterChainDefinition();</span><br><span class="line"></span><br><span class="line">  Map &lt; String, String &gt; filterMap = <span class="keyword">new</span> LinkedHashMap &lt;&gt; ();</span><br><span class="line"></span><br><span class="line">  filterMap.put(<span class="string">&quot;/&quot;</span>, <span class="string">&quot;jwt&quot;</span>);</span><br><span class="line"></span><br><span class="line">  chainDefinition.addPathDefinitions(filterMap);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> chainDefinition;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Bean(&quot;shiroFilterFactoryBean&quot;)</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> ShiroFilterFactoryBean <span class="title">shiroFilterFactoryBean</span><span class="params">(org.apache.shiro.mgt.SecurityManager securityManager,</span></span></span><br><span class="line"><span class="params"><span class="function"></span></span></span><br><span class="line"><span class="params"><span class="function">              ShiroFilterChainDefinition shiroFilterChainDefinition)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  ShiroFilterFactoryBean shiroFilter = <span class="keyword">new</span> ShiroFilterFactoryBean();</span><br><span class="line"></span><br><span class="line">  shiroFilter.setSecurityManager(securityManager);</span><br><span class="line"></span><br><span class="line">  Map &lt; String, Filter &gt; filters = <span class="keyword">new</span> HashMap &lt;&gt; ();</span><br><span class="line"></span><br><span class="line">  filters.put(<span class="string">&quot;jwt&quot;</span>, jwtFilter);</span><br><span class="line"></span><br><span class="line">  shiroFilter.setFilters(filters);</span><br><span class="line"></span><br><span class="line">  Map &lt; String, String &gt; filterMap = shiroFilterChainDefinition.getFilterChainMap();</span><br><span class="line"></span><br><span class="line">  shiroFilter.setFilterChainDefinitionMap(filterMap);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> shiroFilter;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="shiro工具类-获取当前用户登录信息"><a href="#shiro工具类-获取当前用户登录信息" class="headerlink" title="shiro工具类 获取当前用户登录信息"></a>shiro工具类 获取当前用户登录信息</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ShiroUtil</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> AccountProfile <span class="title">getProfile</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> (AccountProfile) SecurityUtils.getSubject().getPrincipal();</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="realm类-实现认证与授权"><a href="#realm类-实现认证与授权" class="headerlink" title="realm类 实现认证与授权"></a>realm类 实现认证与授权</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AccountRealm</span> <span class="keyword">extends</span> <span class="title">AuthorizingRealm</span></span>&#123;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Autowired</span></span><br><span class="line"></span><br><span class="line"> JwtUtils jwtUtils;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Autowired</span></span><br><span class="line"></span><br><span class="line"> UserService userService;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">supports</span><span class="params">(AuthenticationToken token)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> token <span class="keyword">instanceof</span> JwtToken;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">protected</span> AuthorizationInfo <span class="title">doGetAuthorizationInfo</span><span class="params">(PrincipalCollection principals)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">protected</span> AuthenticationInfo <span class="title">doGetAuthenticationInfo</span><span class="params">(AuthenticationToken token)</span> <span class="keyword">throws</span> AuthenticationException </span>&#123;</span><br><span class="line"></span><br><span class="line">  JwtToken jwtToken = (JwtToken) token;</span><br><span class="line"></span><br><span class="line">  String userId = JwtUtils.getClaimsByToken((String) jwtToken.getPrincipal()).getSubject();</span><br><span class="line"></span><br><span class="line">  User user = userService.getById(Long.valueOf(userId));</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (user == <span class="keyword">null</span>) &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">throw</span> <span class="keyword">new</span> UnknownAccountException(<span class="string">&quot;账户不存在&quot;</span>);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (user.getStatus() == -<span class="number">1</span>) &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">throw</span> <span class="keyword">new</span> LockedAccountException(<span class="string">&quot;账户已被锁定&quot;</span>);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  AccountProfile profile = <span class="keyword">new</span> AccountProfile();</span><br><span class="line"></span><br><span class="line">  BeanUtil.copyProperties(user, profile);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> SimpleAuthenticationInfo(profile, jwtToken.getCredentials(), getName());</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>PS <a target="_blank" rel="noopener" href="https://github.com/hugfeature/spring-example/tree/main/blog-spring-back">demo地址</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/posts/18745.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Echo/images/avatar.gif">
-      <meta itemprop="name" content="丑牛">
-      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="测试的名义">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Echo/posts/18745.html" class="post-title-link" itemprop="url">拥有未来的能力——“自学”</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-11-09 16:39:58" itemprop="dateCreated datePublished" datetime="2021-11-09T16:39:58+08:00">2021-11-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Echo/categories/%E4%B8%AA%E4%BA%BA/" itemprop="url" rel="index"><span itemprop="name">个人</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="为什么一定要掌握自学能力？"><a href="#为什么一定要掌握自学能力？" class="headerlink" title="为什么一定要掌握自学能力？"></a>为什么一定要掌握自学能力？</h2><p>最近一直在讨论延长退休年龄，我们的父辈在五十岁就退休了。再过去的几十年里，人类的平均寿命预期增长的十分惊人！拿中国地区做例子，1949年，中国人均预期寿命不足35岁。 2021年，这个数字达到77.3岁。  72年，人均预期寿命长一倍还多。所以，各位，我们的未来还有很长。曾经有一家机构做过这样一个调查，人们的职业与自己大学所学专业的相符的比例不足20%。因为这世界变化太快了，因为大多数教育机构与世界发展脱钩的程度越来越严重。你的未来日子还有很长，这世界进步的这么快，你有让自己有在未来安身立命的一技之长吗？自学能力是唯一值得被不断磨练的长技，没有自学能力的人是没有未来的，这样我们才能在很长的未来中不被世界所抛弃。</p>
-<h2 id="自学需要的元素"><a href="#自学需要的元素" class="headerlink" title="自学需要的元素"></a>自学需要的元素</h2><p>自学过程我们要经历以下四个阶段：学、练、用、造。</p>
-<ul>
-<li>学：重复学，多次重复学，特别是面对“过早引用”的知识结构时；反复学，锻炼我们归纳总结的能力。</li>
-<li>练：在接触用的过程中，我们就开始接触练。无论你之前学了多少遍，一旦开始练，我们就会遇到各种各样的问题。每次自学时，我们都要放空自己，保持空杯的心态。</li>
-<li>用：只要有时间或者只要有需求我们就要用我们自学的知识，重复反复大量的用，在用的过程中练习；</li>
-<li>造：这个阶段我目前还没达到</li>
-</ul>
-<h3 id="耐心"><a href="#耐心" class="headerlink" title="耐心"></a>耐心</h3><p>在开始一门新知识的自学之前，我们要有足够的心理预期建设。我们要明白两点：</p>
-<p>1、这个时间要比你想象的长的多</p>
-<p>2、自学过程中，什么都要重复很多遍，学，练，用都需要大量的重复过程</p>
-<p>大多数人缺乏耐心的根源是“没有准备这么多的时间和精力”。这就需要我们有预算观念。</p>
-<p>预算观念——这个观念存在与否，成熟与否，基本决定了一个人未来的盈利能力。</p>
-<p>我们恪守一个原则，未来就很有可能超过大多数人：绝对不做预算不够的事。</p>
-<p>在自学的过程中，我们学的时候比别人重复的多，练的时候比别人重复的多，到最后用得比别人多。再开始自学的过程中，我总是觉得时间不够用，后来我越来越淡定了，因为早已习惯投入大量时间换取新的技能。</p>
-<h3 id="刻意练习"><a href="#刻意练习" class="headerlink" title="刻意练习"></a>刻意练习</h3><p>在自学的过程中，有一些部分是要刻意练习的。好比小时候我们学写字，老师为什么总是让我们写很多遍？还有卖油翁的故事大家还记得吗？手艺这个是需要刻意反复练习，主要是靠时间。在这过程中也需要我们刻意练习，如果卖油翁总是很随意，油撒的很多，想必他很快干不下去了。需要刻意练习的地方，是因人而异的，那就是对于自己来说很难比较容易出错的地方。经过大量的重复的联系，最终我们达到无他，唯手熟尔！</p>
-<h3 id="琢磨"><a href="#琢磨" class="headerlink" title="琢磨"></a>琢磨</h3><p>论语中有这样一句话“学而不思则罔”在学习的过程中我们要多思考。琢磨就是刻意的去思考!在我们的学习过程中最有价值的琢磨就是“这个东西刻意用在哪里？”</p>
-<h2 id="自学过程要打破的几个幻觉"><a href="#自学过程要打破的几个幻觉" class="headerlink" title="自学过程要打破的几个幻觉"></a>自学过程要打破的几个幻觉</h2><p>感觉总是我们人生中最大的坑。每次考试完是不是总感觉自己考的不错，学习过程也总感觉自己学会了，其实带最后发现自己啥也不会。很多人的自学能力都是被“自己的感觉”给耽误了。</p>
-<h3 id="刚需幻觉"><a href="#刚需幻觉" class="headerlink" title="刚需幻觉"></a>刚需幻觉</h3><p>“刚需幻觉”的根本原因就是感觉，你不会的东西对你来说感觉很难。18岁时你感觉英语很难，22岁有个外企机会，你没把握住；16岁时你感觉游泳很难，18岁时，心中的女神约你去游泳你只能说自己没时间！一项技能在你没有学会它的时候，你不可能觉得那是个刚需（就像房子，你不结婚，永远不会觉得这是刚需）。所以我们在开始学习一个新技能时，这么告诉自己不要问学它有什么用，学就是了。如何客服刚需幻觉？这要我们学习一个策略，让自己成为一个自驱动的人！自驱动说起来很简单就是“找活干”。</p>
-<h3 id="时间幻觉"><a href="#时间幻觉" class="headerlink" title="时间幻觉"></a>时间幻觉</h3><p>我们很多时候都受时间幻觉的拖累。玩游戏时你总是觉得时间很短，然后一整天就过去了；我在写这篇文章时总感觉时间还有很多，然后这周就过到周五了。时间从来都是匀速的，每个人的时间都是24小时的。在学习一个技能时，最大幻觉就是总是以为“时间不够了”。回头看看，回头想一想，五年前，十年前的自己在做什么？有没有一转眼时间就过去了。每年的毕业季是否总是有人很多人感叹，自己怎么就毕业了辣么久了！如何客服时间幻觉呢？只管坚持着做，坚持着学。时间会给你答案的。</p>
-<h3 id="困难幻觉"><a href="#困难幻觉" class="headerlink" title="困难幻觉"></a>困难幻觉</h3><p>无论做什么都是有难点的，有瓶颈期。当我们客服难点后，发现原来不过如此–这就是困难幻觉。古人早就有总结：“世上无难事，只怕有心人”。把一件事当成手艺看，就像开车一样，你开的多就会了，这样带来的好处之一就是心态平和。因为我们知道这事和天分智商关系不大，它靠的是不混时间（你如何对待时间的，时间也将如何对待你）、琢磨（刻意思考）、刻意练习。阅读难点在于起初的时候它是非常枯燥的。刚识字、刚上学的时候，由于理解能力有限，又由于年龄的关系于是耐心有限，所以，那时需要老师耐心陪伴、悉心引导。这就好像小朋友刚出生的时候，没有牙齿，所以只能喝奶差不多…… 然而，到了一定程度之后一定要断奶，是不是？可绝大多数人的实际情况却是，小学的时候爱上了  “奶嘴”（有人带着阅读），而后一生没有奶嘴就吃不下任何东西。</p>
-<p>他们必须去 “上课”，需要有人给他们讲书。不仅如此，讲得 “不生动”、“不幽默”  还不行；就算那职业提供奶嘴的人（这是非常令人遗憾的真相：很多的时候，所谓的 “老师” 本质上只不过就是奶妈而已）帅气漂亮、生动幽默、尽职尽力…… 最终还是一样的结果 —— 绝大多数人依然没有完整掌握所有应该掌握的细节。</p>
-<h2 id="自学过程需要的几项技能"><a href="#自学过程需要的几项技能" class="headerlink" title="自学过程需要的几项技能"></a>自学过程需要的几项技能</h2><h3 id="拆解"><a href="#拆解" class="headerlink" title="拆解"></a>拆解</h3><p>在自学的过程中遇到难点，复杂的。我们不妨拆解他们，拆解成一个一个的小问题予以突破。把那些很难的任务无限拆分——直到每个子任务都很小，小到我们可以唾手可得为止。当我们习惯了这么做之后，就会发现一切任务（不仅有自学还有别的）其实都是不难的，只是复杂繁琐而已。很多人失败的原因是什么，就是不懂拆分任务，要么就是怕麻烦！有句话不知道大家听过没——人活着，其实就挺麻烦的。。。。</p>
-<h3 id="专注"><a href="#专注" class="headerlink" title="专注"></a>专注</h3><p>现在这个网络时代，大家有没有发现自己的注意力经常莫名的就被转移了。比如，你本来只不过就想着去 Google  一个编程错误信息的解读，结果不知道怎么就 “注意到” 了另外一个东西，比如，“某编辑器的皮肤”，然后你就 “顺手” 把它下载下来，然后  “很自然地顺手把它装上”，而后又看了看，觉得有点必要于是 “顺手做了点定制”…… 然后欣赏了一会儿，并自我得意一番之后 “突然发现”  自己还没有解决两小时之前要解决的问题！好奇心越重的人，越是容易被注意力漂移所拖累。</p>
-<p>好奇心是好东西，而且是必须认真呵护的东西 —— 几乎最重要、最强劲的自学动力，都混合着好奇心出现并持续。</p>
-<p>如何专注，我们列一个清单。把我们首要做的事情放在第一位，并牢牢地记住它。一旦发现自己的注意力没有集中在这上面的关键之时，一旦发现自己的注意力已经漂移到其它当前并不重要的事项上，就马上纠正。</p>
-<h3 id="沟通"><a href="#沟通" class="headerlink" title="沟通"></a>沟通</h3><p>普遍认为，手艺人的特征是缺乏沟通能力，或者沟通能力差 —— 也许是因为平时把所有的时间精力都投入到磨练手艺上去了罢。</p>
-<p><strong>教是最好的学习方法</strong></p>
-<p>讲课、写教程，甚至写书 —— 这是最高效的提升沟通能力的刻意练习手段。</p>
-<p>沟通要注意以下几点</p>
-<h4 id="内容第一"><a href="#内容第一" class="headerlink" title="内容第一"></a>内容第一</h4><p>无论是平日里讲话、还是台上讲课，抑或是写篇文章、写本书，永远都是内容第一，至于形式，并非不重要，但绝对不能喧宾夺主。</p>
-<p>通常，我们用 “干货” 来描述内容的重要性。第一步就是准备干货，至于修辞啊、笑点啊、酷炫幻灯片啊等等等等，都必须是次要的，否则就是喧宾夺主。干货不够好，其它的做得越多、越好，最终越是容易露怯 —— 这很可怕。</p>
-<h4 id="内容质量"><a href="#内容质量" class="headerlink" title="内容质量"></a>内容质量</h4><h5 id="重点突出"><a href="#重点突出" class="headerlink" title="重点突出"></a>重点突出</h5><p>“重点突出”，是最简单朴素、成本最低的 “优秀结构”。</p>
-<p>既然是沟通，就要了解对方。在绝大多数情况下，对方想要的才是重点。</p>
-<p>可问题在于，我们平日里面对单个人的时候都觉得 “了解对方很困难”，我们又如何判断 “一个群体”  呢？与很多人想象得相反，判断群体远比判断个体容易得多…… 因为你可以用粗暴分类，比如，你把听众或读者划分为 “小白” 和  “专家”，那你就知道了，你面对的群体中，更可能  “大部分是小白，小部分是专家”。于是，你就可以思考，“小白们最想知道的是什么？”，“专家们最重视的是什么？”，于是，你就可以在脑子里对所谓的  “重点” 有应对策略。</p>
-<h5 id="例证生动"><a href="#例证生动" class="headerlink" title="例证生动"></a>例证生动</h5><p>寻找好例子，是需要很多时间精力的事情 —— 从来就没有任何 “信手拈来” 的生动例子。信手拈来，是读者或者听众的感觉而已，对你来说，肯定是举重若轻的 —— 你明明是在举重，却被认为 “如若举轻”。在第一部分，<a href="https://link.juejin.cn/?target=https://render.githubusercontent.com/view/Part.1.E.7.files.ipynb">讲文件的那一章</a>里，我举了个 “我自己费尽心机找好例子” 的例子，相信你读过之后，一定有所感触。</p>
-<h5 id="消除歧义"><a href="#消除歧义" class="headerlink" title="消除歧义"></a>消除歧义</h5><p>消除<strong>一切</strong>歧义。这是真功夫，因为这东西很难把自己关在屋子里自顾自练成。并且，每个人有自己的 “容易引发误解” 的特殊属性，大家各不相同 —— 于是，只能靠自己探索。</p>
-<h2 id="自学者的终点"><a href="#自学者的终点" class="headerlink" title="自学者的终点"></a>自学者的终点</h2><p>必须学会一个没人教、没人带、甚至没有书可以参考技能！尽量只靠阅读获得一项新技能！</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
-<li>你一定要想办法启动自学，否则你没有未来；</li>
-<li>你把自学当作一门手艺，长期反复磨练它；</li>
-<li>你懂得学、练、用、造各个阶段之间的不同，以及针对每个阶段的对应策略；</li>
-<li>面对 “过早引用” 过多的世界，你有你的应对方式；</li>
-<li>你会 “囫囵吞枣”，你会 “重复重复再重复”，你深刻理解 “读书百遍其义自见”；</li>
-<li>以后你最擅长的技能之一就是拆解拆解再拆解；</li>
-<li>你用你的拆解手艺把所有遇到的难点都拆解成能搞定的小任务；</li>
-<li>自学任何一门手艺之前你都不会去问 “有什么用”，而是清楚地知道，无论是什么只要学会了就只能也必然天天去用；</li>
-<li>你没有刚需幻觉，你也没有时间幻觉，你更没有困难幻觉，反正你就是相对更清醒；</li>
-<li>不管你新学什么手艺，你都知道只要假以时日你就肯定能做好，因为所有的手艺精湛，靠的只不过是充足的预算；</li>
-<li>你知道如何不浪费生命，因为只要不是在刻意练习、不是在刻意思考，那就是在 “混时间”；</li>
-<li>你总是在琢磨你能做个什么新作品；</li>
-<li>你刻意地使用你的作品作为有效社交工具，也用作品去过滤无效社交；</li>
-<li>你乐于分享，乐于阅读也更乐于写作 —— 因为这世界怎么帮助你的，你就想着要怎样回报；</li>
-<li>你把全面和完整当作最高衡量标准，也用这个标准去克制、应对自己的注意力漂移；</li>
-<li>你会不断自学新的手艺，因为你越来越理解单一技能的脆弱，越来越理解多项技能的综合威力；</li>
-<li>你越来越依赖互联网，它是你最喜欢的 “书”，而 Google 是你最好的朋友 —— 他总是能帮你找到更好的老师；</li>
-<li>偶尔，你会学会没人教、没人带、甚至没书可参考的手艺，别人都说你 “悟性” 高，可你自己清楚地知道那其实是怎么回事；</li>
-<li>你越来越明白，其实没什么 “秘密”，越简单、越朴素的道理越值得重视；</li>
-<li>你发现你用来思考的时间越来越多 —— 准确地讲，是 “琢磨”…… 只不过是因为你真会琢磨了 —— 你很清楚你应该花时间琢磨的是什么。</li>
-</ul>
-<p><strong>没什么不能自学的，反正都只不过是手艺</strong> —— 只不过，我们每个人都受限于自己的时间精力而已。</p>
-<p>自学不过是一门手艺，而且还是谁都能掌握的。不要 “试试” 而已，而是 “直接开干” —— 这样才好。</p>
-<h3 id="自学过程还需要"><a href="#自学过程还需要" class="headerlink" title="自学过程还需要"></a>自学过程还需要</h3><ul>
-<li><strong>心理建设——没什么可怕的！</strong></li>
-<li><strong>不懂也要硬着头皮读完，然后重复读很多遍</strong></li>
-<li><strong>磨练 “只字不差地阅读” 的能力</strong></li>
-<li><strong>就算不明白也要先记住——“好记性不如烂笔头”，不是记在笔记本上是要记在脑子里</strong></li>
-<li><strong>尽早开始归纳总结</strong></li>
-<li><strong>先用起来，在研究怎么用的</strong></li>
-<li><strong>多听老人言——多听前辈的经验和总结，但不要盲从</strong></li>
-</ul>
 
       
     </div>
