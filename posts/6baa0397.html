@@ -21,30 +21,30 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"hugfeature.github.io","root":"/Echo/","images":"/Echo/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/Echo/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Echo/js/config.js"></script>
-<meta name="description" content="图片是网上找的。测试方法对于所有类型的测试都很常见，不仅因为它是大数据或Hadoop测试，当我们进入正常的手动测试或自动化测试或安全测试，性能测试时也是如此，因此任何类型的测试都遵循相同的方法。 需求作为测试方法的一部分，我们需要从需求开始，需求是一个基本的东西，现在在敏捷过程中，我们称之为故事和史诗。史诗只是一个更大的要求，而故事是较小的要求。 需求基本上包含所有的数据模型，目标，源以及我们需要">
+<meta name="description" content="Master Kubernetes里的Master指的是集群控制节点，在每个Kubernetes集群里都需要有一个Master来负责整个集群的管理和控制，基本上Kubernetes的所有控制命令都发给它，它负责具体的执行过程，我们后面执行的所有命令基本都是在Master上运行的。Master通常会占据一个独立的服务器（高可用部署建议用3台服务器），主要原因是它太重要了，是整个集群的“首脑”，如果它">
 <meta property="og:type" content="article">
-<meta property="og:title" content="测试方法">
-<meta property="og:url" content="https://hugfeature.github.io/Echo/posts/12213.html">
+<meta property="og:title" content="Kubernetes--master、node">
+<meta property="og:url" content="https://hugfeature.github.io/Echo/posts/6baa0397.html">
 <meta property="og:site_name" content="测试的名义">
-<meta property="og:description" content="图片是网上找的。测试方法对于所有类型的测试都很常见，不仅因为它是大数据或Hadoop测试，当我们进入正常的手动测试或自动化测试或安全测试，性能测试时也是如此，因此任何类型的测试都遵循相同的方法。 需求作为测试方法的一部分，我们需要从需求开始，需求是一个基本的东西，现在在敏捷过程中，我们称之为故事和史诗。史诗只是一个更大的要求，而故事是较小的要求。 需求基本上包含所有的数据模型，目标，源以及我们需要">
+<meta property="og:description" content="Master Kubernetes里的Master指的是集群控制节点，在每个Kubernetes集群里都需要有一个Master来负责整个集群的管理和控制，基本上Kubernetes的所有控制命令都发给它，它负责具体的执行过程，我们后面执行的所有命令基本都是在Master上运行的。Master通常会占据一个独立的服务器（高可用部署建议用3台服务器），主要原因是它太重要了，是整个集群的“首脑”，如果它">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://hugfeature.github.io/Echo/posts/12213/Testing-Approach.webp">
-<meta property="article:published_time" content="2022-01-29T14:56:39.000Z">
-<meta property="article:modified_time" content="2022-01-29T14:56:39.000Z">
+<meta property="article:published_time" content="2022-03-15T08:02:30.000Z">
+<meta property="article:modified_time" content="2022-03-15T08:02:30.000Z">
 <meta property="article:author" content="丑牛">
-<meta property="article:tag" content="测试，测试基本">
+<meta property="article:tag" content="容器化">
+<meta property="article:tag" content="Kubernetes">
+<meta property="article:tag" content="K8S">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://hugfeature.github.io/Echo/posts/12213/Testing-Approach.webp">
 
 
-<link rel="canonical" href="https://hugfeature.github.io/Echo/posts/12213.html">
+<link rel="canonical" href="https://hugfeature.github.io/Echo/posts/6baa0397.html">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://hugfeature.github.io/Echo/posts/12213.html","path":"posts/12213.html","title":"测试方法"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://hugfeature.github.io/Echo/posts/6baa0397.html","path":"posts/6baa0397.html","title":"Kubernetes--master、node"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>测试方法 | 测试的名义</title>
+<title>Kubernetes--master、node | 测试的名义</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SY6RK3NESF"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-SY6RK3NESF","only_pageview":false}</script>
@@ -155,7 +155,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%9C%80%E6%B1%82"><span class="nav-number">1.</span> <span class="nav-text">需求</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E9%A2%84%E4%BC%B0"><span class="nav-number">2.</span> <span class="nav-text">时间预估</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E8%AE%A1%E5%88%92"><span class="nav-number">3.</span> <span class="nav-text">测试计划</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88%E5%92%8C%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B"><span class="nav-number">4.</span> <span class="nav-text">测试方案和测试用例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%AF%84%E5%AE%A1%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88%E5%92%8C%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B"><span class="nav-number">5.</span> <span class="nav-text">评审测试方案和测试用例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E6%89%A7%E8%A1%8C"><span class="nav-number">6.</span> <span class="nav-text">测试执行</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BC%BA%E9%99%B7%E6%8A%A5%E5%91%8A%E5%92%8C%E8%B7%9F%E8%B8%AA"><span class="nav-number">7.</span> <span class="nav-text">缺陷报告和跟踪</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A"><span class="nav-number">8.</span> <span class="nav-text">测试报告</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Master"><span class="nav-number">1.</span> <span class="nav-text">Master</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Node"><span class="nav-number">2.</span> <span class="nav-text">Node</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -223,7 +223,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/posts/12213.html">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/posts/6baa0397.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/Echo/images/avatar.gif">
@@ -236,7 +236,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          测试方法
+          Kubernetes--master、node
         </h1>
 
         <div class="post-meta-container">
@@ -247,7 +247,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-01-29 22:56:39" itemprop="dateCreated datePublished" datetime="2022-01-29T22:56:39+08:00">2022-01-29</time>
+      <time title="创建时间：2022-03-15 16:02:30" itemprop="dateCreated datePublished" datetime="2022-03-15T16:02:30+08:00">2022-03-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -255,7 +255,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Echo/categories/%E6%B5%8B%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">测试</span></a>
+          <a href="/Echo/categories/kubernetes/" itemprop="url" rel="index"><span itemprop="name">kubernetes</span></a>
         </span>
     </span>
 
@@ -276,41 +276,31 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>图片是网上找的。测试方法对于所有类型的测试都很常见，不仅因为它是大数据或Hadoop测试，当我们进入正常的手动测试或自动化测试或安全测试，性能测试时也是如此，因此任何类型的测试都遵循相同的方法。<img src="/Echo/posts/12213/Testing-Approach.webp" alt="Testing-Approach"></p>
-<h5 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h5><p>作为测试方法的一部分，我们需要从<strong>需求</strong>开始，需求是一个基本的东西，现在在敏捷过程中，我们称之为故事和史诗。史诗只是一个更大的要求，而故事是较小的要求。</p>
-<p>需求基本上包含所有的数据模型，目标，源以及我们需要应用哪种转换，我们必须使用哪种工具？所有这些类型的详细信息都将在要求中提供。</p>
-<p>这基本上是客户要求或客户要求。基于此要求，我们将开始测试过程。</p>
-<h5 id="时间预估"><a href="#时间预估" class="headerlink" title="时间预估"></a>时间预估</h5><p>方法的另一部分是时间预估，作为测试的一部分，我们需要花费多少时间来完成整个活动。我们做测试计划，准备测试场景，准备测试用例和执行，我们将发现缺陷并报告它们并准备测试报告。</p>
-<p>所有这些活动都需要一些时间，因此需要多少时间来完成所有这些活动，这基本上称为时间预估。我们需要给管理层一些粗略的估计。</p>
-<h5 id="测试计划"><a href="#测试计划" class="headerlink" title="测试计划"></a>测试计划</h5><p>测试计划只不过是关于流程的描述，要测试什么，不要测试什么，测试的范围是什么，时间表是什么，需要多少资源，硬件和软件要求以及将使用的时间表和测试周期是什么，我们需要的测试级别是什么等。</p>
-<p>在测试计划期间，他们将对项目进行某些资源分配，我们拥有哪些不同的模型，需要多少资源以及需要什么样的技能集等，所有这些内容和方面都将包含在测试计划阶段中。大多数情况下，领导级别或管理层人员将执行测试计划。</p>
-<h5 id="测试方案和测试用例"><a href="#测试方案和测试用例" class="headerlink" title="测试方案和测试用例"></a>测试方案和测试用例</h5><p>完成测试规划后，我们需要准备测试方案和测试用例，特别是对于大数据测试，我们需要一些文档以及需求文档。除了这个要求文件，我们还需要什么？</p>
-<p>我们需要包含客户需求的需求文档，同时我们需要输入文档，即数据模型。数据模型在某种意义上什么是数据库架构，什么是表以及什么是关系所有这些数据将在数据模型中可用。</p>
-<p>此外，我们有映射文档，例如在关系数据库中，我们有一些表，在HDFS的数据仓库中通过ETL加载数据后，我们需要做什么？即映射数据类型。</p>
-<p>我们怎么知道，我们需要验证的所有映射是什么？因此，这些映射将出现在映射文档中。在映射文档中，客户将提供各种映射。</p>
-<p>此外，我们还需要一个<strong>设计文档</strong>，开发团队和QA团队都需要的设计文档，因为在设计文档中，客户将提供，他们将实现哪种类型的Map Reduce作业，什么类型的MapReduce作业需要输入以及什么类型的MapReduce作业提供输出。</p>
-<p>同样，如果我们有HIVE或PIG，客户创建的所有UDF是什么，以及他们将采取的所有输入以及他们将产生什么样的输出等。</p>
-<p>要准备测试方案和测试用例，我们需要手动准备所有这些文档：</p>
+        <h4 id="Master"><a href="#Master" class="headerlink" title="Master"></a>Master</h4><p> Kubernetes里的Master指的是集群控制节点，在每个Kubernetes集群里都需要有一个Master来负责整个集群的管理和控制，基本上Kubernetes的所有控制命令都发给它，它负责具体的执行过程，我们后面执行的所有命令基本都是在Master上运行的。Master通常会占据一个独立的服务器（高可用部署建议用3台服务器），主要原因是它太重要了，是整个集群的“首脑”，如果它宕机或者不可用，那么对集群内容器应用的管理都将失效。<br>在Master上运行着以下关键进程。</p>
 <ul>
-<li>需求文档</li>
-<li>数据模型</li>
-<li>映射文档</li>
-<li>设计文档</li>
+<li>Kubernetes API Server（kube-apiserver）：提供了HTTP Rest接口的关键服务进程，是Kubernetes里所有资源的增、删、改、查等操作的唯一入口，也是集群控制的入口进程。</li>
+<li>Kubernetes Controller Manager（kube-controller-manager）：Kubernetes里所有资源对象的自动化控制中心，可以将其理解为资源对象的“大总管”。</li>
+<li>Kubernetes Scheduler（kube-scheduler）：负责资源调度（Pod调度）的进程，相当于公交公司的“调度室”。另外，在Master上通常还需要部署etcd服务，因为Kubernetes里的所有资源对象的数据都被保存在etcd中。</li>
 </ul>
-<p>这些文件可能因组织而异，并且没有强制性规则规定我们必须拥有所有这些文件。有时我们拥有所有文档，有时我们只有两到三个文档，或者有时我们还需要依赖一个文档，这取决于项目复杂性，公司时间表和所有内容。</p>
-<h5 id="评审测试方案和测试用例"><a href="#评审测试方案和测试用例" class="headerlink" title="评审测试方案和测试用例"></a>评审测试方案和测试用例</h5><p>我们需要对测试方案和测试用例进行审查，因为不知何故或在某些情况下，我们忘记或错过了一些测试用例，因为每个人都无法想到可以使用需求完成的所有可能的事情，在这种情况下，我们需要从第三方工具或其他人那里获得帮助。</p>
-<p>因此，每当我们准备一些文档或执行某些操作时，我们都需要有人来审查来自同一团队的内容，例如开发人员，测试人员。他们会给出适当的建议，以包含更多内容，或者还建议更新或修改测试方案和测试用例。</p>
-<p>他们提供所有注释，在此基础上，我们将更新我们的测试方案和测试用例以及我们需要在整个团队中发布的文档的多个版本，直到文档按照要求完全更新为止。</p>
-<h5 id="测试执行"><a href="#测试执行" class="headerlink" title="测试执行"></a>测试执行</h5><p>文档准备就绪后，我们将从上级团队获得签核，以开始基本上称为测试用例执行的执行过程。</p>
-<p>如果我们想在执行期间执行测试用例，我们需要检查开发人员是否必须发送信息，如果是正常的功能测试或其他一些测试或自动化测试，我们需要构建。但是，从Hadoop或BigData Testing的角度来看，开发人员将提供MapReduce Jobs。</p>
-<p>HDFS文件 - 在HDFS中复制的任何文件，这些文件信息都需要检查权限，由开发人员创建的HIVE脚本以验证HIVE表中的数据，并且我们还需要由开发人员开发的HIVE UDF，PIG脚本和PIG UDF。</p>
-<p>这些都是我们需要从开发人员那里得到的东西。在执行之前，我们应该拥有所有这些东西。</p>
-<p>对于MapReduce Jobs，他们将提供一些JAR文件，并且作为HDFS的一部分，他们已经在HDFS中加载了数据，并且文件应该准备就绪，并且HIVE脚本可以验证HIVE表中的数据。无论他们实施了什么UDF，都将在HIVE UDF中提供。对于 PIG 脚本和 UDF，我们也需要同样的东西。</p>
-<h5 id="缺陷报告和跟踪"><a href="#缺陷报告和跟踪" class="headerlink" title="缺陷报告和跟踪"></a>缺陷报告和跟踪</h5><p>一旦我们执行了测试用例，我们就会发现一些缺陷，一些预期的和一些实际的不等于预期的结果，所以我们需要列出相同的缺陷，并将它们提供给开发团队解决，这基本上称为缺陷报告。</p>
-<p>假设如果我们在MapReduce作业中发现一些缺陷，那么我们将将其报告给开发人员，他们将再次重新创建MapReduce作业，并进行一些代码级修改，然后他们将再次提供最新的MapReduce作业，我们需要对其进行测试。</p>
-<p>这是一个持续的过程，一旦作业经过测试并通过，我们再次需要重新测试它并将其报告给开发人员，然后获取下一个用于测试的工作。这就是缺陷报告和跟踪活动的完成方式。</p>
-<h5 id="测试报告"><a href="#测试报告" class="headerlink" title="测试报告"></a>测试报告</h5><p>一旦我们完成了所有的测试过程并且缺陷已经关闭，那么我们需要创建我们的测试报告。测试报告是我们迄今为止为完成测试过程所做的一切。所有的规划，测试用例的编写和执行，我们得到的输出等等，一切都以测试报告的形式记录在一起。</p>
-<p>我们需要每天或每周或根据客户的需求发送这些报告。如今，组织正在使用敏捷模型，因此每个状态报告都需要在每日Scrums期间更新。</p>
+<h4 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h4><p>除了Master，Kubernetes集群中的其他机器被称为Node，在较早的版本中也被称为Minion。与Master一样，Node可以是一台物理主机，也可以是一台虚拟机。Node是Kubernetes集群中的工作负载节点，每个Node都会被Master分配一些工作负载（Docker容器），当某个Node宕机时，其上的工作负载会被Master自动转移到其他节点上。<br>在每个Node上都运行着以下关键进程。</p>
+<ul>
+<li>kubelet：负责Pod对应的容器的创建、启停等任务，同时与Master密切协作，实现集群管理的基本功能</li>
+<li>kube-proxy：实现Kubernetes Service的通信与负载均衡机制的重要组件。</li>
+<li>Docker Engine（docker）：Docker引擎，负责本机的容器创建和管理工作。</li>
+</ul>
+<p>Node可以在运行期间动态增加到Kubernetes集群中，前提是在这个节点上已经正确安装、配置和启动了上述关键进程，在默认情况下kubelet会向Master注册自己，这也是Kubernetes推荐的Node管理方式。一旦Node被纳入集群管理范围，kubelet进程就会定时向Master汇报自身的情报，例如操作系统、Docker版本、机器的CPU和内存情况，以及当前有哪些Pod在运行等，这样Master就可以获知每个Node的资源使用情况，并实现高效均衡的资源调度策略。而某个Node在超过指定时间不上报信息时，会被Master判定为“失联”，Node的状态被标记为不可用<br>（Not Ready），随后Master会触发“工作负载大转移”的自动流程。</p>
+<p>可以通过kubectl get nodes查看集群中有多少个node，然后可以通过kubectl describe node <node_ name>来查看某个node的具体信息。describe展示node的关键信息如下：</node_></p>
+<ul>
+<li>Node的基本信息：名称、标签、创建时间等。</li>
+<li>Node当前的运行状态：Node启动后会做一系列的自检工作，比如磁盘空间是否不足（DiskPressure）、内存是否不足（MemoryPressure）、网络是否正常（NetworkUnavailable）、PID资源是否充（PIDPressure）。在一切正常时设置Node为Ready状态（Ready&#x3D;True），该状态表示Node处于健康状态，Master将可以在其上调度新的任务了（如启动Pod）。</li>
+<li>Node的主机地址与主机名。</li>
+<li>Node上的资源数量：描述Node可用的系统资源，包括CPU、内存数量、最大可调度Pod数量等。</li>
+<li>Node可分配的资源量：描述Node当前可用于分配的资源量。</li>
+<li>主机系统信息：包括主机ID、系统UUID、Linux  kernel版本号、操作系统类型与版本、Docker版本号、kubelet与kube-proxy的版本号等。</li>
+<li>当前运行的Pod列表概要信息。</li>
+<li>已分配的资源使用概要信息，例如资源申请的最低、最大允许使用量占系统总量的百分比。</li>
+<li>Node相关的Event信息。</li>
+</ul>
 
     </div>
 
@@ -328,7 +318,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://hugfeature.github.io/Echo/posts/12213.html" title="测试方法">https://hugfeature.github.io/Echo/posts/12213.html</a>
+      <a href="https://hugfeature.github.io/Echo/posts/6baa0397.html" title="Kubernetes--master、node">https://hugfeature.github.io/Echo/posts/6baa0397.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -337,21 +327,20 @@
 </div>
 
           <div class="post-tags">
-              <a href="/Echo/tags/%E6%B5%8B%E8%AF%95%EF%BC%8C%E6%B5%8B%E8%AF%95%E5%9F%BA%E6%9C%AC/" rel="tag"># 测试，测试基本</a>
+              <a href="/Echo/tags/%E5%AE%B9%E5%99%A8%E5%8C%96/" rel="tag"># 容器化</a>
+              <a href="/Echo/tags/Kubernetes/" rel="tag"># Kubernetes</a>
+              <a href="/Echo/tags/K8S/" rel="tag"># K8S</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/Echo/posts/19970.html" rel="prev" title="大数据测试-测试类型">
-                  <i class="fa fa-chevron-left"></i> 大数据测试-测试类型
+                <a href="/Echo/posts/82ff0530.html" rel="prev" title="成为高效的测试主管">
+                  <i class="fa fa-chevron-left"></i> 成为高效的测试主管
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/Echo/posts/43079.html" rel="next" title="B/S架构如何测试">
-                  B/S架构如何测试 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -421,7 +410,7 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"hugfeature","repo":"myBlogTalk","client_id":"f4b1fae431a4943a75f3","client_secret":"2b6995c484ff0a0a920d65ac7fd5bb1bf13fb2f2","admin_user":null,"distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"d7a65d005cb765e019d8186e256b1e2e"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"hugfeature","repo":"myBlogTalk","client_id":"f4b1fae431a4943a75f3","client_secret":"2b6995c484ff0a0a920d65ac7fd5bb1bf13fb2f2","admin_user":null,"distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"fbfba0888812b9d66308289bde0068d8"}</script>
 <script src="/Echo/js/third-party/comments/gitalk.js"></script>
 
 </body>

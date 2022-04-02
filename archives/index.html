@@ -163,7 +163,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-categories">
           <a href="/Echo/categories/">
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -208,6 +208,103 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/posts/6baa0397.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Echo/images/avatar.gif">
+      <meta itemprop="name" content="丑牛">
+      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="测试的名义">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Echo/posts/6baa0397.html" class="post-title-link" itemprop="url">Kubernetes--master、node</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-03-15 16:02:30" itemprop="dateCreated datePublished" datetime="2022-03-15T16:02:30+08:00">2022-03-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Echo/categories/kubernetes/" itemprop="url" rel="index"><span itemprop="name">kubernetes</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h4 id="Master"><a href="#Master" class="headerlink" title="Master"></a>Master</h4><p> Kubernetes里的Master指的是集群控制节点，在每个Kubernetes集群里都需要有一个Master来负责整个集群的管理和控制，基本上Kubernetes的所有控制命令都发给它，它负责具体的执行过程，我们后面执行的所有命令基本都是在Master上运行的。Master通常会占据一个独立的服务器（高可用部署建议用3台服务器），主要原因是它太重要了，是整个集群的“首脑”，如果它宕机或者不可用，那么对集群内容器应用的管理都将失效。<br>在Master上运行着以下关键进程。</p>
+<ul>
+<li>Kubernetes API Server（kube-apiserver）：提供了HTTP Rest接口的关键服务进程，是Kubernetes里所有资源的增、删、改、查等操作的唯一入口，也是集群控制的入口进程。</li>
+<li>Kubernetes Controller Manager（kube-controller-manager）：Kubernetes里所有资源对象的自动化控制中心，可以将其理解为资源对象的“大总管”。</li>
+<li>Kubernetes Scheduler（kube-scheduler）：负责资源调度（Pod调度）的进程，相当于公交公司的“调度室”。另外，在Master上通常还需要部署etcd服务，因为Kubernetes里的所有资源对象的数据都被保存在etcd中。</li>
+</ul>
+<h4 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h4><p>除了Master，Kubernetes集群中的其他机器被称为Node，在较早的版本中也被称为Minion。与Master一样，Node可以是一台物理主机，也可以是一台虚拟机。Node是Kubernetes集群中的工作负载节点，每个Node都会被Master分配一些工作负载（Docker容器），当某个Node宕机时，其上的工作负载会被Master自动转移到其他节点上。<br>在每个Node上都运行着以下关键进程。</p>
+<ul>
+<li>kubelet：负责Pod对应的容器的创建、启停等任务，同时与Master密切协作，实现集群管理的基本功能</li>
+<li>kube-proxy：实现Kubernetes Service的通信与负载均衡机制的重要组件。</li>
+<li>Docker Engine（docker）：Docker引擎，负责本机的容器创建和管理工作。</li>
+</ul>
+<p>Node可以在运行期间动态增加到Kubernetes集群中，前提是在这个节点上已经正确安装、配置和启动了上述关键进程，在默认情况下kubelet会向Master注册自己，这也是Kubernetes推荐的Node管理方式。一旦Node被纳入集群管理范围，kubelet进程就会定时向Master汇报自身的情报，例如操作系统、Docker版本、机器的CPU和内存情况，以及当前有哪些Pod在运行等，这样Master就可以获知每个Node的资源使用情况，并实现高效均衡的资源调度策略。而某个Node在超过指定时间不上报信息时，会被Master判定为“失联”，Node的状态被标记为不可用<br>（Not Ready），随后Master会触发“工作负载大转移”的自动流程。</p>
+<p>可以通过kubectl get nodes查看集群中有多少个node，然后可以通过kubectl describe node <node_ name>来查看某个node的具体信息。describe展示node的关键信息如下：</node_></p>
+<ul>
+<li>Node的基本信息：名称、标签、创建时间等。</li>
+<li>Node当前的运行状态：Node启动后会做一系列的自检工作，比如磁盘空间是否不足（DiskPressure）、内存是否不足（MemoryPressure）、网络是否正常（NetworkUnavailable）、PID资源是否充（PIDPressure）。在一切正常时设置Node为Ready状态（Ready&#x3D;True），该状态表示Node处于健康状态，Master将可以在其上调度新的任务了（如启动Pod）。</li>
+<li>Node的主机地址与主机名。</li>
+<li>Node上的资源数量：描述Node可用的系统资源，包括CPU、内存数量、最大可调度Pod数量等。</li>
+<li>Node可分配的资源量：描述Node当前可用于分配的资源量。</li>
+<li>主机系统信息：包括主机ID、系统UUID、Linux  kernel版本号、操作系统类型与版本、Docker版本号、kubelet与kube-proxy的版本号等。</li>
+<li>当前运行的Pod列表概要信息。</li>
+<li>已分配的资源使用概要信息，例如资源申请的最低、最大允许使用量占系统总量的百分比。</li>
+<li>Node相关的Event信息。</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1275,210 +1372,6 @@
 </ul>
 <p>此外，应避免在生产系统中进行安全测试。</p>
 </SCRIPT></HTML></p>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/posts/54005.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Echo/images/avatar.gif">
-      <meta itemprop="name" content="丑牛">
-      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="测试的名义">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Echo/posts/54005.html" class="post-title-link" itemprop="url">网站测试要考虑的点</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-02-05 08:35:52" itemprop="dateCreated datePublished" datetime="2022-02-05T08:35:52+08:00">2022-02-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Echo/categories/%E6%B5%8B%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">测试</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>网站本质上都是B&#x2F;S架构的应用程序-具有service和browser。</p>
-<p>测试时应考虑 HTML 页、TCP&#x2F;IP 通信、Internet 连接、防火墙、在网页中运行的应用程序（如小程序、javascript、插件应用程序）和在服务器端运行的应用程序（如 CGI 脚本、数据库接口、日志记录应用程序、动态页面生成器、asp 等）之间的交互。</p>
-<p>此外，还有各种各样的服务器和浏览器，每种服务器和浏览器都有不同的版本。它们包括它们之间在连接速度变化，快速变化的技术以及多个标准和协议方面的小但有时显着的差异。对网站的测试的最终结果可以成为一项重大的持续工作。</p>
-<h4 id="测试网站需考虑的因素"><a href="#测试网站需考虑的因素" class="headerlink" title="测试网站需考虑的因素"></a>测试网站需考虑的因素</h4><ul>
-<li>服务器上的预期负载是多少（例如，单位时间内的命中数）？</li>
-<li>在每种负载条件下（如 Web 服务器响应时间、数据库查询响应时间）下需要什么样的性能？</li>
-<li>性能测试需要什么样的工具（例如Web负载测试工具，其他可以适应的内部工具，Web机器人下载工具等）？</li>
-<li>谁是目标受众？他们将使用哪种浏览器？他们将使用哪种连接速度？它们是组织内部的（因此可能具有高连接速度和类似的浏览器）还是Internet范围的（因此具有各种连接速度和浏览器类型）？</li>
-<li>客户端期望获得什么样的性能（例如，页面应该以多快的速度显示，动画、小程序等的加载和运行速度应该有多快）？</li>
-<li>是否允许服务器和内容维护&#x2F;升级的停机时间？如果是这样，那么多少钱？</li>
-<li>需要什么样的安全性（防火墙，加密，密码等），以及它应该做什么？如何对其进行测试？</li>
-<li>网站的互联网连接要求有多可靠？这对备份系统或冗余连接要求和测试有何影响？</li>
-<li>管理网站内容更新需要什么过程？</li>
-<li>维护、跟踪和控制页面内容、图形、链接等有哪些要求？</li>
-<li>将遵循哪种 HTML 规范？严格程度如何？目标浏览器允许哪些变体？</li>
-<li>整个网站或网站的某些部分对页面外观和&#x2F;或图形是否有任何标准要求？</li>
-<li>如何验证和更新内部和外部链接？多久一次？它会发生吗？</li>
-<li>是否可以在生产系统上进行测试，还是需要单独的测试系统？</li>
-<li>如何考虑浏览器缓存、浏览器选项设置的变化、拨号连接的可变性以及实际的互联网”流量拥塞”问题进行测试？</li>
-<li>服务器日志记录和报告要求的范围或定制程度;它们是否被视为系统的一个组成部分，是否需要测试？</li>
-<li>如何维护、跟踪、控制和测试 CGI 程序、小程序、javascript、ActiveX 组件等？</li>
-<li>页面应最多为3-5个屏幕，除非内容高度集中在单个主题上。如果较大，请在页面中提供内部链接。</li>
-<li>页面布局和设计元素应在整个网站中保持一致，以便用户清楚地知道他们仍在网站上。</li>
-<li>页面应尽可能独立于浏览器，或者应根据浏览器类型提供或生成页面。</li>
-<li>所有页面都应具有指向该页面外部的链接;不应该有死胡同的页面。</li>
-<li>每个页面上都应包含页面所有者、修订日期以及指向联系人或组织的链接。</li>
-</ul>
-<h4 id="网站测试常见问题"><a href="#网站测试常见问题" class="headerlink" title="网站测试常见问题"></a>网站测试常见问题</h4><ul>
-<li>网站是否按预期运行？</li>
-<li>网站易于浏览吗？</li>
-<li>网站是否可以在不同设备上访问？</li>
-<li>网站是否足够安全？</li>
-<li>网站性能是否达到标准？</li>
-<li>在网站上输入的数据是否准确存储并跨会话保留？</li>
-<li>网站是否与工作流程中的其他界面很好地集成在一起？</li>
-<li>上线后，网站的性能是否仍能达到预期？</li>
-</ul>
-<p>将详细介绍上述问题，以了解测试范围，并了解如何执行网站测试。</p>
-<h5 id="网站是否按预期运行？"><a href="#网站是否按预期运行？" class="headerlink" title="网站是否按预期运行？"></a>网站是否按预期运行？</h5><p>要考虑的点</p>
-<ul>
-<li>用户导航到网站的不同页面并完成端到端工作流程</li>
-<li>如果用户可以选中&#x2F;取消选中复选框</li>
-<li>如果用户可以从下拉字段中选择值</li>
-<li>如果用户可以选择&#x2F;取消选择单选按钮</li>
-<li>不同的导航按钮，如提交，下一步，上传等按钮运行良好</li>
-<li>日历正确加载并允许用户选择日期</li>
-<li>计算正在按照实施方式进行</li>
-<li>搜索功能正在工作（如果有）</li>
-<li>正确的信息显示</li>
-<li>指向其他页面的各种内部和外部链接</li>
-<li>网页上字段的正确 Tab 键顺序</li>
-<li>应验证正输入和负输入的必填字段和可选字段</li>
-<li>应验证每个 Web 字段的默认值</li>
-<li>电子邮件功能是为网站上的某些操作而实现的</li>
-</ul>
-<p>网站与搜索引擎兼容非常重要。因此，我们应该审查网站的HTML语法正确性，格式和合规性标准，如WS-I，ISO和ECMA。</p>
-<p>考虑到用于维护登录会话的 Cookie，应通过启用&#x2F;禁用 Cookie 或使用不匹配的域来测试网站。还可以通过重置 Cookie 将浏览器恢复到原始状态来跨会话执行测试。</p>
-<p>QA还应验证网站cookie是否始终以加密格式存储在本地。</p>
-<p>考虑到我们的电子商务网站，如果用户导航到预期的页面，则应单击并验证网页上可用的各种链接，例如男士时尚，女性时尚，儿童时尚，家居饰品，电子电器，书籍，电影和音乐等。</p>
-<p>同样，不同的功能，如登录，注册，搜索选项，过滤器，排序订单，添加到购物车等，应该在不同的网页上进行验证，如登录页面，注册页面，产品详细信息页面，购物车，订单审查，付款等。应检查网站的会话&#x2F;Cookie管理，如会话过期和会话存储等。</p>
-<h5 id="网站易于浏览吗？"><a href="#网站易于浏览吗？" class="headerlink" title="网站易于浏览吗？"></a>网站易于浏览吗？</h5><p>要考虑的点</p>
-<ul>
-<li>网站内容应信息丰富，结构化和逻辑链接，以便用户可以轻松理解</li>
-<li>网页控件应易于用户导航</li>
-<li>网站应上传帮助和说明文档</li>
-<li>网站应具有搜索功能，以方便最终用户</li>
-<li>访问&#x2F;从主菜单到所有页面都应该在那里</li>
-<li>应验证网站内容是否存在任何拼写错误</li>
-<li>网站应遵循背景颜色，图案，样式，字体，图像位置，框架，边框等上下文中定义的准则。</li>
-<li>考虑到来自不同国家&#x2F;地区具有不同语言，货币等的用户可以访问该网站，因此该网站应习惯于翻译功能。</li>
-</ul>
-<p><a target="_blank" rel="noopener" href="https://www.userzoom.com/">用户缩放</a>和<a target="_blank" rel="noopener" href="https://reflector.en.softonic.com/">反射器</a>是少数可用于执行可用性测试的工具。</p>
-<p>电子商务网站应该是客户友好的，易于浏览和引人注目的。所有网页都应验证其可访问性、字体、样式、图像、拼写错误和产品相关信息。网站应配备相关的帮助文档和客户支持设施。</p>
-<p>考虑到基于触摸屏的界面的增加，需要验证关键输入和触摸屏输入的可访问性。同样，应验证图像和网站内容在不同屏幕尺寸（手机、笔记本电脑和标签等）上的可用性。</p>
-<h5 id="网站是否可以在不同设备上访问？"><a href="#网站是否可以在不同设备上访问？" class="headerlink" title="网站是否可以在不同设备上访问？"></a>网站是否可以在不同设备上访问？</h5><p>假设网站可以被使用不同设备组的一系列用户访问，需要确保网站在所有这些设备上都能正常运行，而不会出现任何故障。</p>
-<p>为了确保相同，应执行兼容性检查，这是兼容性测试附带的。在网站的兼容性测试期间，确保网站在不同的浏览器，操作系统和设备（如笔记本电脑，手机，平板电脑，打印机等）上运行良好。</p>
-<h6 id="浏览器兼容性（跨浏览器测试）"><a href="#浏览器兼容性（跨浏览器测试）" class="headerlink" title="浏览器兼容性（跨浏览器测试）"></a><strong>浏览器兼容性（跨浏览器测试）</strong></h6><p>该网站应该可以很好地与不同的浏览器配合使用，如Microsoft Internet Explorer，Microsoft Edge，Firefox，Google Chrome，Safari和Opera。这些浏览器的所有活动版本都应使用打开&#x2F;关闭的不同浏览器功能进行验证。</p>
-<p>此外，在执行跨浏览器测试时，QA还应检查跨浏览器的最佳网站性能。</p>
-<h6 id="操作系统兼容性（跨平台测试）"><a href="#操作系统兼容性（跨平台测试）" class="headerlink" title="操作系统兼容性（跨平台测试）"></a><strong>操作系统兼容性（跨平台测试）</strong></h6><p>为了识别潜在的用户体验问题，应该在Windows，Linux，Unix.MAC，Solaris等各种平台上测试网站，以确保操作系统的兼容性。</p>
-<h6 id="设备兼容性（跨设备测试）"><a href="#设备兼容性（跨设备测试）" class="headerlink" title="设备兼容性（跨设备测试）"></a><strong>设备兼容性（跨设备测试）</strong></h6><p>网站可以通过不同的设备（如笔记本电脑，手机，平板电脑等）浏览，并提供不同的操作系统，如iOS，Android，Windows等。因此，测试也应该在设备上执行，涵盖以下方案。</p>
-<ul>
-<li>网站屏幕尺寸应根据设备进行调整</li>
-<li>设备应具有屏幕旋转功能</li>
-<li>网站不应在具有不同网络速度的不同设备上显示任何加载问题</li>
-<li>验证设备进入&#x2F;退出网络范围时的网站行为</li>
-<li>验证网站在 CPU 和内存不足时的行为，以支持不同的外形规格</li>
-</ul>
-<p>对于电子商务网站，兼容性检查是最重要的测试类型之一。客户群将很大，并将从不同的浏览器，操作系统和设备访问我们的网站。</p>
-<p>考虑到移动平台越来越受欢迎，应该确保在可接受的加载时间内以小尺寸加载网站。验证不同网络速度的使用以确保它对所有客户都可用也很重要。</p>
-<h4 id="网站是否足够安全？"><a href="#网站是否足够安全？" class="headerlink" title="网站是否足够安全？"></a>网站是否足够安全？</h4><p>测试的点</p>
-<ul>
-<li>只有经过身份验证的用户才能访问网站</li>
-<li>网站用户应只能执行他们有权执行的任务</li>
-<li>应验证网站的 CAPTCHA 字段，以便用户识别</li>
-<li>在从安全页面移动到不安全页面时，应验证浏览器安全设置</li>
-<li>Web 服务器保护应适用于无法访问的 Web 目录或文件</li>
-<li>确保在没有适当访问权限的情况下不应下载受限制的文件</li>
-<li>处于非活动状态的会话应在一段时间后自动终止</li>
-<li>应记录最终用户的所有无效和未经授权的尝试或间歇性的系统错误&#x2F;故障，以便进行分析</li>
-</ul>
-<p><a target="_blank" rel="noopener" href="https://www.beyondtrust.com/vulnerability-management">漏洞管理</a>，Veracode和<a target="_blank" rel="noopener" href="http://sqlmap.org/">SQL Map</a>等工具可用于对网站执行安全测试。</p>
-<h4 id="网站性能是否达到标准？"><a href="#网站性能是否达到标准？" class="headerlink" title="网站性能是否达到标准？"></a>网站性能是否达到标准？</h4><p>要检查网站的性能，可以进行性能测试。它将评估应用程序在各种工作负载条件下的行为，这可能是一个现实的场景。如果系统在没有进行性能测试的情况下上线，则最终可能会出现系统运行缓慢或可用性差等问题，这可能会影响品牌形象和市场销售。</p>
-<p>测试的点</p>
-<ul>
-<li>在正常和峰值负载条件下应观察网站</li>
-<li>应通过测量响应时间、速度、可扩展性和资源利用率来检查网站的性能</li>
-<li>如果系统在任何时间点发生故障或不稳定，则应使用解决方案进行适当的RCA（根本原因分析）</li>
-<li>应确定网络延迟问题（如果有）</li>
-</ul>
-<h4 id="在网站上输入的数据是否准确存储并跨会话保留？"><a href="#在网站上输入的数据是否准确存储并跨会话保留？" class="headerlink" title="在网站上输入的数据是否准确存储并跨会话保留？"></a>在网站上输入的数据是否准确存储并跨会话保留？</h4><p>数据库是 Web 应用程序的关键组件之一，它保存通过网站输入的完整信息。因此，应确保在没有任何操作的情况下将正确的用户数据保存在数据库表中，并在验证下保持数据完整性。</p>
-<ul>
-<li>验证跨用户界面（即网站 UI 和数据库）的数据一致性</li>
-<li>验证每当网站应用程序执行插入&#x2F;更新&#x2F;删除操作时，数据库表是否正确更新</li>
-<li>验证技术查询的响应时间，并根据需要对其进行微调</li>
-<li>检查数据库连接和访问权限</li>
-</ul>
-<p>作为测试电子商务网站的QA团队成员，可以执行以下活动，并每次在相应的数据库表中验证更改。这将确保网站UI和DB都是一致的。</p>
-<p><strong>1）</strong>下订单购买产品。</p>
-<p><strong>2）</strong> 取消产品。</p>
-<p><strong>3）</strong>选择交换产品。</p>
-<p><strong>4）</strong> 选择退货。</p>
-<h4 id="网站是否与工作流程中的其他界面很好地集成在一起？"><a href="#网站是否与工作流程中的其他界面很好地集成在一起？" class="headerlink" title="网站是否与工作流程中的其他界面很好地集成在一起？"></a>网站是否与工作流程中的其他界面很好地集成在一起？</h4><p>执行接口级测试以检查网站与不同接口（如Web服务器和数据库服务器）的平滑交互。</p>
-<p>在接口测试期间，测试人员需要确保应用程序请求是否正确发送到数据库，并且正确的信息作为输出显示给客户端。Web 服务器不应在任何时间点引发任何拒绝异常，数据库应始终与应用程序保持同步。</p>
-<h4 id="上线后，网站的性能是否仍能达到预期？"><a href="#上线后，网站的性能是否仍能达到预期？" class="headerlink" title="上线后，网站的性能是否仍能达到预期？"></a>上线后，网站的性能是否仍能达到预期？</h4><p>一旦产品进入生产环境，应进行定期检查，以保持对质量控制的检查。</p>
-<p>在生产中验证产品时，可以考虑以下情况</p>
-<ul>
-<li>应定期执行 Web 应用程序测试，并应将测试日志保存为符合服务级别协议 （SLA） 的证明</li>
-<li>应检查自动扩展系统和负载均衡器是否就位且正常运行</li>
-<li>检查最终用户体验，并尝试发现在 QA 测试期间通常未被注意到的缺陷或恶意攻击</li>
-<li>监控峰值负载期间的产品响应时间</li>
-<li>实时执行边缘级测试用例，以识别网络故障、连接故障或意外呼叫中断</li>
-</ul>
-
       
     </div>
 
