@@ -168,7 +168,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/Echo/tags/">
-        <span class="site-state-item-count">56</span>
+        <span class="site-state-item-count">57</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -208,6 +208,89 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/posts/c066093e.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Echo/images/avatar.gif">
+      <meta itemprop="name" content="丑牛">
+      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="测试的名义">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Echo/posts/c066093e.html" class="post-title-link" itemprop="url">大数据面试-HDFS</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-04-06 13:24:06" itemprop="dateCreated datePublished" datetime="2022-04-06T13:24:06+08:00">2022-04-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Echo/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h4 id="一、HDFS读写流程"><a href="#一、HDFS读写流程" class="headerlink" title="一、HDFS读写流程"></a>一、HDFS读写流程</h4><h5 id="①HDFS写流程"><a href="#①HDFS写流程" class="headerlink" title="①HDFS写流程"></a>①HDFS写流程</h5><p>1）client 客户端发送上传请求，通过 RPC 与 namenode 建立通信，namenode 检查该用户是否有上传权限，以及上传的文件是否在 hdfs 对应的目录下重名，如果这两者有任意一个不满足，则直接报错，如果两者都满足，则返回给客户端一个可以上传的信息。</p>
+<p>2）client 根据文件的大小进行切分，默认 128M 一块，切分完成之后给namenode 发送请求第一个 block 块上传到哪些服务器上。</p>
+<p>3）namenode 收到请求之后，根据网络拓扑和机架感知以及副本机制进行文件分配，返回可用的 DataNode 的地址</p>
+<p>4）客户端收到地址之后与服务器地址列表中的一个节点如 A 进行通信，本质上就是 RPC 调用，建立 pipeline，A 收到请求后会继续调用 B，B 在调用 C，将整个 pipeline 建立完成，逐级返回 client。</p>
+<p>5）client 开始向 A 上发送第一个 block（先从磁盘读取数据然后放到本地内存缓存），以 packet（数据包，64kb）为单位，A 收到一个 packet 就会发送给B，然后 B 发送给 C，A 每传完一个 packet 就会放入一个应答队列等待应答</p>
+<p>6）数据被分割成一个个的 packet 数据包在 pipeline 上依次传输，在pipeline 反向传输中，逐个发送 ack（命令正确应答），最终由 pipeline 中第一个 DataNode 节点 A 将 pipelineack 发送给 Client。</p>
+<p>7）当一个 block 传输完成之后, Client 再次请求 NameNode 上传第二个block ，namenode 重新选择三台 DataNode 给 client</p>
+<h5 id="②HDFS读流程"><a href="#②HDFS读流程" class="headerlink" title="②HDFS读流程"></a>②HDFS读流程</h5><p>1）client 向 namenode 发送 RPC 请求。请求文件 block 的位置<br>2）namenode 收到请求之后会检查用户权限以及是否有这个文件，如果都符合，则会视情况返回部分或全部的 block 列表，对于每个 block，NameNode都会返回含有该 block 副本的 DataNode 地址； 这些返回的 DN 地址，会按照集群拓扑结构得出 DataNode 与客户端的距离，然后进行排序，排序两个规则：网络拓扑结构中距离 Client近的排靠前；心跳机制中超时汇报的 DN 状态为 STALE，这样的排靠后<br>3）Client 选取排序靠前的 DataNode 来读取 block，如果客户端本身就是DataNode,那么将从本地直接获取数据(短路读取特性)<br>4）底层上本质是建立 Socket Stream（FSDataInputStream），重复的调用父类 DataInputStream 的 read 方法，直到这个块上的数据读取完毕<br>5）当读完列表的 block 后，若文件读取还没有结束，客户端会继续向NameNode 获取下一批的 block 列表<br>6）读取完一个 block 都会进行 checksum 验证，如果读取 DataNode 时出现错误，客户端会通知 NameNode，然后再从下一个拥有该 block 副本的DataNode 继续读<br>7）read 方法是并行的读取 block 信息，不是一块一块的读取；NameNode只是返回 Client 请求包含块的 DataNode 地址，并不是返回请求块的数据<br>8） 最终读取来所有的 block 会合并成一个完整的最终文件</p>
+<h4 id="二、HDFS-在读取文件的时候-如果其中一个块突然损坏了怎么办"><a href="#二、HDFS-在读取文件的时候-如果其中一个块突然损坏了怎么办" class="headerlink" title="二、HDFS 在读取文件的时候,如果其中一个块突然损坏了怎么办"></a>二、HDFS 在读取文件的时候,如果其中一个块突然损坏了怎么办</h4><p>客户端读取完 DataNode 上的块之后会进行 checksum 验证，也就是把客户端读取到本地的块与 HDFS 上的原始块进行校验，如果发现校验结果不一致，客户端会通知NameNode，然后再从下一个拥有该 block 副本的 DataNode 继续读。</p>
+<h4 id="三、HDFS-在上传文件的时候-如果其中一个-DataNode-突然挂掉了怎么办"><a href="#三、HDFS-在上传文件的时候-如果其中一个-DataNode-突然挂掉了怎么办" class="headerlink" title="三、HDFS 在上传文件的时候,如果其中一个 DataNode 突然挂掉了怎么办"></a>三、HDFS 在上传文件的时候,如果其中一个 DataNode 突然挂掉了怎么办</h4><p>客户端上传文件时与 DataNode 建立 pipeline 管道，管道正向是客户端向DataNode 发送的数据包，管道反向是 DataNode 向客户端发送 ack 确认，也就是正确接收到数据包之后发送一个已确认接收到的应答，当 DataNode 突然挂掉了，客户端接收不到这个 DataNode 发送的 ack 确认，客户端会通知 NameNode，NameNode 检查该块的副本与规定的不符，NameNode 会通知 DataNode 去复制副本，并将挂掉的 DataNode 作下线处理，不再让它参与文件上传与下载。</p>
+<h4 id="四、HDFS-的组织架构"><a href="#四、HDFS-的组织架构" class="headerlink" title="四、HDFS 的组织架构"></a>四、HDFS 的组织架构</h4><p>1）Client：客户端<br>（1）切分文件。文件上传 HDFS 的时候，Client 将文件切分成一个一个的 Block，然后进行存储<br>（2）与 NameNode 交互，获取文件的位置信息<br>（3）与 DataNode 交互，读取或者写入数据<br>（4）Client 提供一些命令来管理 HDFS，比如启动关闭 HDFS、访问 HDFS 目录及内容等<br>2）NameNode：名称节点，也称主节点，存储数据的元数据信息，不存储具体的数据<br>（1）管理 HDFS 的名称空间<br>（2）管理数据块（Block）映射信息<br>（3）配置副本策略<br>（4）处理客户端读写请求<br>3）DataNode：数据节点，也称从节点。NameNode 下达命令，DataNode 执行实际的操作<br>（1）存储实际的数据块<br>（2）执行数据块的读&#x2F;写操作<br>4）Secondary NameNode：并非 NameNode 的热备。当 NameNode 挂掉的时候，它并不能马上替换NameNode 并提供服务<br>（1）辅助 NameNode，分担其工作量<br>（2）定期合并 Fsimage 和 Edits，并推送给 NameNode<br>（3）在紧急情况下，可辅助恢复 NameNode</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1266,112 +1349,6 @@
 <p><strong>#14）针对多环境站点的特定测试：</strong>检查是否在所有环境中都可接受相同的 Cookie。问题可能是由 Cookie 路径中使用通配符（所谓的超级 cookie）引起的。如果这是允许它的要求，则由于使用了不同的加密密钥（例如，对于 .Net，除非另有指定，否则它通常是唯一的计算机密钥），因此可能会导致一些访问问题。</p>
 <p>这些是测试网站 Cookie 时要考虑的一些主要测试用例。可以通过执行各种组合从这些测试用例编写多个测试用例。</p>
 
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/posts/35320.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Echo/images/avatar.gif">
-      <meta itemprop="name" content="丑牛">
-      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="测试的名义">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Echo/posts/35320.html" class="post-title-link" itemprop="url">web应用程序安全测试</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-02-05 11:04:11" itemprop="dateCreated datePublished" datetime="2022-02-05T11:04:11+08:00">2022-02-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Echo/categories/%E6%B5%8B%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">测试</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h4 id="什么是安全测试？"><a href="#什么是安全测试？" class="headerlink" title="什么是安全测试？"></a>什么是安全测试？</h4><p>安全测试是一个检查机密数据是否保密的过程（即，它不会暴露给不适合它的个人&#x2F;实体），并且用户只能执行他们有权执行的任务。</p>
-<p><strong>例</strong>用户不应能够拒绝其他用户使用网站的功能，或者用户不应能够以意外的方式更改Web应用程序的功能等。</p>
-<h4 id="安全测试中的术语"><a href="#安全测试中的术语" class="headerlink" title="安全测试中的术语"></a>安全测试中的术语</h4><p><strong>“漏洞”</strong></p>
-<p>这是 Web 应用程序中的一个弱点。”漏洞”的原因可能是由于应用程序中的错误，注入（SQL &#x2F;脚本代码）或病毒的存在。</p>
-<p><strong>“网址操作”</strong></p>
-<p>某些 Web 应用程序在 URL 中的客户端（浏览器）和服务器之间传递其他信息。更改 URL 中的某些信息有时可能会导致服务器出现意外行为，这称为 URL 操作。</p>
-<p><strong>“SQL注入”</strong></p>
-<p>这是通过 Web 应用程序用户界面将 SQL 语句插入到某个查询中，然后由服务器执行的过程。</p>
-<p><strong>“XSS（跨站点脚本）”</strong></p>
-<p>当用户在 Web 应用程序的用户界面中插入 HTML&#x2F;客户端脚本时，此插入对其他用户可见，称为 <em>XSS</em>。</p>
-<p><strong>“欺骗”</strong></p>
-<p>欺骗是创建类似恶作剧的网站和电子邮件。</p>
-<h4 id="web安全测试的方法"><a href="#web安全测试的方法" class="headerlink" title="web安全测试的方法"></a>web安全测试的方法</h4><h5 id="密码破解"><a href="#密码破解" class="headerlink" title="密码破解"></a>密码破解</h5><p>Web应用程序的安全测试可以通过”密码破解”开始。为了登录到应用程序的私人区域，人们可以猜测用户名&#x2F;密码或使用一些密码破解工具。常见的用户名和密码列表以及开源密码破解程序一起可用。</p>
-<p>如果 Web 应用程序不强制实施复杂密码（<strong>例</strong>使用字母、数字和特殊字符或至少具有所需数量的字符），则破解用户名和密码可能不会花费很长时间。</p>
-<p>如果用户名或密码存储在 Cookie 中而未经过加密，则攻击者可以使用不同的方法来窃取 Cookie 以及存储在 Cookie 中的信息（如用户名和密码）。</p>
-<h5 id="通过HTTP-GET方法进行URL操作"><a href="#通过HTTP-GET方法进行URL操作" class="headerlink" title="通过HTTP GET方法进行URL操作"></a>通过HTTP GET方法进行URL操作</h5><p>测试人员应检查应用程序是否传递查询字符串中的重要信息。当应用程序使用 HTTP GET 方法在客户端和服务器之间传递信息时，会发生这种情况。</p>
-<p>信息通过查询字符串中的参数传递。测试人员可以修改查询字符串中的参数值，以检查服务器是否接受它。</p>
-<p>通过HTTP GET请求将用户信息传递到服务器进行身份验证或获取数据。攻击者可以操纵从此 GET 请求传递到服务器的每个输入变量，以获取所需信息或损坏数据。在这种情况下，应用程序或 Web 服务器的任何异常行为都是攻击者进入应用程序的入口。</p>
-<h5 id="SQL-注入"><a href="#SQL-注入" class="headerlink" title="SQL 注入"></a>SQL 注入</h5><p>应该检查的下一个因素是SQL注入。在任何文本框中输入单引号 （’） 应被应用程序拒绝。相反，如果测试人员遇到数据库错误，则意味着用户输入入到某个查询中，然后由应用程序执行。在这种情况下，应用程序容易受到 SQL 注入的影响。</p>
-<p>SQL注入攻击非常关键，因为攻击者可以从服务器数据库中获取重要信息。若要检查 Web 应用程序中的 SQL 注入入口点，请从代码库中找出代码，其中通过接受某些用户输入在数据库上执行直接 MySQL 查询。</p>
-<p>如果在 SQL 查询中精心编制用户输入数据以查询数据库，则攻击者可以将 SQL 语句或部分 SQL 语句作为用户输入注入，以从数据库中提取重要信息。</p>
-<p>即使攻击者成功使应用程序崩溃，攻击者也可以从浏览器上显示的 SQL 查询错误中获取他们要查找的信息。在这种情况下，应正确处理&#x2F;转义用户输入中的特殊字符。</p>
-<h5 id="跨站点脚本-（XSS）"><a href="#跨站点脚本-（XSS）" class="headerlink" title="跨站点脚本 （XSS）"></a>跨站点脚本 （XSS）</h5><p>测试人员还应检查 Web 应用程序中是否有 XSS（跨站点脚本）。任何 HTML <strong>如</strong><HTML> 或任何脚本 <strong>如</strong><SCRIPT>不应被应用程序接受。如果是，则应用程序可能容易受到跨站点脚本的攻击。</p>
-<p>攻击者可以使用此方法在受害者的浏览器上执行恶意脚本或URL。使用跨站点脚本，攻击者可以使用 JavaScript 等脚本来窃取用户 Cookie 和存储在 Cookie 中的信息。</p>
-<p>许多Web应用程序获取一些有用的信息，并将此信息传递给来自不同页面的某些变量。</p>
-<p><strong>例</strong> <a target="_blank" rel="noopener" href="http://www.examplesite.com/index.php?userid=123&amp;query=xyz">http://www.examplesite.com/index.php?userid=123&amp;query=xyz</a></p>
-<p>攻击者可以很容易地将一些恶意输入或<script>作为"&query"参数传递，该参数可以探索浏览器上的重要用户/服务器数据。</p>
-<p>在安全测试期间，测试人员应非常小心，不应修改以下任何内容：</p>
-<ul>
-<li>应用程序或服务器的配置。</li>
-<li>服务器上运行的服务。</li>
-<li>应用程序托管的现有用户或客户数据。</li>
-</ul>
-<p>此外，应避免在生产系统中进行安全测试。</p>
-</SCRIPT></HTML></p>
       
     </div>
 
