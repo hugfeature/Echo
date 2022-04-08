@@ -21,30 +21,33 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"hugfeature.github.io","root":"/Echo/","images":"/Echo/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/Echo/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Echo/js/config.js"></script>
-<meta name="description" content="什么是专利？专利一般是由政府机关或者代表若干国家的区域性组织根据申请而颁发的一种文件，这种文件记载了发明创造的内容，并且在一定时期内产生这样一种法律状态，即获得专利的发明创造在一般情况下他人只有经专利权人许可才能予以实施。在我国，专利分为发明、实用新型和外观设计三种类型。 有什么好处？专利权人可以提高自身资质、获得收益、提高竞争力； 发明人可以获得收益、提高个人竞争力、获得成就感。 专利说明书长啥">
+<meta name="description" content="一、Flume使用场景线上数据一般主要是落地（存储到磁盘）或者通过 socket 传输给另外一个系统，这种情况下，你很难推动线上应用或服务去修改接口，实现直接向 kafka里写数据，这时候你可能就需要 flume 这样的系统帮你去做传输。 二、Flume丢包问题单机 upd 的 flume source 的配置，100+M&#x2F;s 数据量，10w qps flume 就开始大量丢包，因此很多">
 <meta property="og:type" content="article">
-<meta property="og:title" content="技术人如何申请专利">
-<meta property="og:url" content="https://hugfeature.github.io/Echo/posts/36352.html">
+<meta property="og:title" content="大数据面试-Flume">
+<meta property="og:url" content="https://hugfeature.github.io/Echo/posts/932578fc.html">
 <meta property="og:site_name" content="测试的名义">
-<meta property="og:description" content="什么是专利？专利一般是由政府机关或者代表若干国家的区域性组织根据申请而颁发的一种文件，这种文件记载了发明创造的内容，并且在一定时期内产生这样一种法律状态，即获得专利的发明创造在一般情况下他人只有经专利权人许可才能予以实施。在我国，专利分为发明、实用新型和外观设计三种类型。 有什么好处？专利权人可以提高自身资质、获得收益、提高竞争力； 发明人可以获得收益、提高个人竞争力、获得成就感。 专利说明书长啥">
+<meta property="og:description" content="一、Flume使用场景线上数据一般主要是落地（存储到磁盘）或者通过 socket 传输给另外一个系统，这种情况下，你很难推动线上应用或服务去修改接口，实现直接向 kafka里写数据，这时候你可能就需要 flume 这样的系统帮你去做传输。 二、Flume丢包问题单机 upd 的 flume source 的配置，100+M&#x2F;s 数据量，10w qps flume 就开始大量丢包，因此很多">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://hugfeature.github.io/Echo/posts/36352/%E5%8F%91%E6%98%8E%E4%B8%93%E5%88%A9%E8%AF%B4%E6%98%8E%E4%B9%A6.png">
-<meta property="article:published_time" content="2020-03-01T14:08:28.000Z">
-<meta property="article:modified_time" content="2020-03-01T14:08:28.000Z">
+<meta property="og:image" content="https://hugfeature.github.io/Echo/posts/undefined/image-20220408151914983.png">
+<meta property="article:published_time" content="2022-04-07T14:12:00.000Z">
+<meta property="article:modified_time" content="2022-04-07T14:12:00.000Z">
 <meta property="article:author" content="丑牛">
-<meta property="article:tag" content="个人">
+<meta property="article:tag" content="大数据">
+<meta property="article:tag" content="大数据面试">
+<meta property="article:tag" content="面试">
+<meta property="article:tag" content="Flume">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://hugfeature.github.io/Echo/posts/36352/%E5%8F%91%E6%98%8E%E4%B8%93%E5%88%A9%E8%AF%B4%E6%98%8E%E4%B9%A6.png">
+<meta name="twitter:image" content="https://hugfeature.github.io/Echo/posts/undefined/image-20220408151914983.png">
 
 
-<link rel="canonical" href="https://hugfeature.github.io/Echo/posts/36352.html">
+<link rel="canonical" href="https://hugfeature.github.io/Echo/posts/932578fc.html">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://hugfeature.github.io/Echo/posts/36352.html","path":"posts/36352.html","title":"技术人如何申请专利"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://hugfeature.github.io/Echo/posts/932578fc.html","path":"posts/932578fc.html","title":"大数据面试-Flume"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>技术人如何申请专利 | 测试的名义</title>
+<title>大数据面试-Flume | 测试的名义</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SY6RK3NESF"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-SY6RK3NESF","only_pageview":false}</script>
@@ -155,7 +158,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E4%B8%93%E5%88%A9%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">什么是专利？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%89%E4%BB%80%E4%B9%88%E5%A5%BD%E5%A4%84%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">有什么好处？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%93%E5%88%A9%E8%AF%B4%E6%98%8E%E4%B9%A6%E9%95%BF%E5%95%A5%E6%A0%B7%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">专利说明书长啥样？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%89%89%E9%A1%B5"><span class="nav-number">3.1.</span> <span class="nav-text">扉页</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9D%83%E5%88%A9%E8%A6%81%E6%B1%82%E4%B9%A6"><span class="nav-number">3.2.</span> <span class="nav-text">权利要求书</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%AF%B4%E6%98%8E%E4%B9%A6"><span class="nav-number">3.3.</span> <span class="nav-text">说明书</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%A3%80%E7%B4%A2%E6%8A%A5%E5%91%8A"><span class="nav-number">3.4.</span> <span class="nav-text">检索报告</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%93%E5%88%A9%E7%94%B3%E8%AF%B7%E7%9A%84%E8%A6%81%E6%B1%82%EF%BC%9F"><span class="nav-number">4.</span> <span class="nav-text">专利申请的要求？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%86%99%E4%B8%93%E5%88%A9%E5%89%8D%E8%A6%81%E6%83%B3%E6%B8%85%E6%A5%9A%E7%9A%84%EF%BC%9F"><span class="nav-number">5.</span> <span class="nav-text">写专利前要想清楚的？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E5%92%8C%E7%8E%B0%E6%9C%89%E6%8A%80%E6%9C%AF%E6%80%8E%E4%B9%88%E5%86%99%EF%BC%9F"><span class="nav-number">6.</span> <span class="nav-text">背景和现有技术怎么写？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8A%80%E6%9C%AF%E5%85%B3%E9%94%AE%E7%82%B9%E5%92%8C%E4%BF%9D%E6%8A%A4%E7%82%B9"><span class="nav-number">7.</span> <span class="nav-text">技术关键点和保护点</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E3%80%81Flume%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">1.</span> <span class="nav-text">一、Flume使用场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E3%80%81Flume%E4%B8%A2%E5%8C%85%E9%97%AE%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">二、Flume丢包问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%89%E3%80%81Flume%E4%B8%8EKAFKA%E7%9A%84%E9%80%89%E5%8F%96"><span class="nav-number">3.</span> <span class="nav-text">三、Flume与KAFKA的选取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E6%95%B0%E6%8D%AE%E6%80%8E%E4%B9%88%E9%87%87%E9%9B%86%E5%88%B0KAFKA%EF%BC%8C%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F%EF%BC%9F"><span class="nav-number">4.</span> <span class="nav-text">四、数据怎么采集到KAFKA，实现方式？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%94%E3%80%81Flume%E7%AE%A1%E9%81%93%E5%86%85%E5%AD%98%EF%BC%8Cflume%E5%AE%95%E6%9C%BA%E4%BA%86%E6%95%B0%E6%8D%AE%E4%B8%A2%E5%A4%B1%E6%80%8E%E4%B9%88%E8%A7%A3%E5%86%B3%EF%BC%9F"><span class="nav-number">5.</span> <span class="nav-text">五、Flume管道内存，flume宕机了数据丢失怎么解决？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%AD%E3%80%81flume%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F%EF%BC%8Cflume%E9%9B%86%E7%BE%A4"><span class="nav-number">6.</span> <span class="nav-text">六、flume配置方式，flume集群</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%83%E3%80%81flume%E4%B8%8D%E9%87%87%E9%9B%86nginx%E6%97%A5%E5%BF%97%EF%BC%8C%E9%80%9A%E8%BF%87log4j%E9%87%87%E9%9B%86%E6%97%A5%E5%BF%97%EF%BC%8C%E4%BC%98%E7%BC%BA%E7%82%B9%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">7.</span> <span class="nav-text">七、flume不采集nginx日志，通过log4j采集日志，优缺点是什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%AB%E3%80%81flume-%E5%92%8C-kafka-%E9%87%87%E9%9B%86%E6%97%A5%E5%BF%97%E5%8C%BA%E5%88%AB%EF%BC%8C%E9%87%87%E9%9B%86%E6%97%A5%E5%BF%97%E6%97%B6%E4%B8%AD%E9%97%B4%E5%81%9C%E4%BA%86%EF%BC%8C%E6%80%8E%E4%B9%88%E8%AE%B0%E5%BD%95%E4%B9%8B%E5%89%8D%E7%9A%84%E6%97%A5%E5%BF%97%EF%BC%9F"><span class="nav-number">8.</span> <span class="nav-text">八、flume 和 kafka 采集日志区别，采集日志时中间停了，怎么记录之前的日志？</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -223,7 +226,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/posts/36352.html">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/posts/932578fc.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/Echo/images/avatar.gif">
@@ -236,7 +239,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          技术人如何申请专利
+          大数据面试-Flume
         </h1>
 
         <div class="post-meta-container">
@@ -247,7 +250,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2020-03-01 22:08:28" itemprop="dateCreated datePublished" datetime="2020-03-01T22:08:28+08:00">2020-03-01</time>
+      <time title="创建时间：2022-04-07 22:12:00" itemprop="dateCreated datePublished" datetime="2022-04-07T22:12:00+08:00">2022-04-07</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -255,7 +258,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Echo/categories/%E4%B8%AA%E4%BA%BA/" itemprop="url" rel="index"><span itemprop="name">个人</span></a>
+          <a href="/Echo/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a>
         </span>
     </span>
 
@@ -276,27 +279,19 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h4 id="什么是专利？"><a href="#什么是专利？" class="headerlink" title="什么是专利？"></a>什么是专利？</h4><p>专利一般是由政府机关或者代表若干国家的区域性组织根据申请而颁发的一种文件，这种文件记载了发明创造的内容，并且在一定时期内产生这样一种法律状态，即获得专利的发明创造在一般情况下他人只有经专利权人许可才能予以实施。在我国，专利分为发明、实用新型和外观设计三种类型。</p>
-<h4 id="有什么好处？"><a href="#有什么好处？" class="headerlink" title="有什么好处？"></a>有什么好处？</h4><p>专利权人可以提高自身资质、获得收益、提高竞争力； 发明人可以获得收益、提高个人竞争力、获得成就感。</p>
-<h4 id="专利说明书长啥样？"><a href="#专利说明书长啥样？" class="headerlink" title="专利说明书长啥样？"></a>专利说明书长啥样？</h4><p><img src="/Echo/posts/36352/%E5%8F%91%E6%98%8E%E4%B8%93%E5%88%A9%E8%AF%B4%E6%98%8E%E4%B9%A6.png" alt="发明专利说明书"></p>
-<h5 id="扉页"><a href="#扉页" class="headerlink" title="扉页"></a>扉页</h5><p>专利说明书中的扉页是揭示每件专利的基本信息的文件部分。扉页揭示的基本专利信息包括：专利申请的时间、申请的号码、申请人或专利权人、发明人、发明创造名称、发明创造简要介绍及主图（机械图、电路图、化学结构式等）、发明所属技术领域分类号、公布或授权的时间、文献号、出版专利文件的国家机构等。</p>
-<h5 id="权利要求书"><a href="#权利要求书" class="headerlink" title="权利要求书"></a>权利要求书</h5><p>权利要求书是专利文件中限定专利保护范围的文件部分。权利要求书中至少有一项独立权利要求，还可以有从属权利要求。</p>
-<h5 id="说明书"><a href="#说明书" class="headerlink" title="说明书"></a>说明书</h5><p>说明书是清楚完整地描述发明创造的技术内容的文件部分，附图则用于对说明书文字部分的补充。各国对说明书中发明描述的规定大体相同，以中国专利说明书为例，说明书部分包括：技术领域，背景技术，发明内容，附图说明，实施条例等。</p>
-<h5 id="检索报告"><a href="#检索报告" class="headerlink" title="检索报告"></a>检索报告</h5><p>有些机构出版的专利说明书还附有检索报告。检索报告是专利审查员通过对专利申请所涉及的发明创造进行现有技术检索，找到可进行专利性对比的文件，向专利申请人及公众展示检索结果的一种文件。附有检索报告的专利文件均为申请公布说明书，即未经审查尚未授予专利权的专利文件。检索报告以表格式报告书的形式出版。</p>
-<h4 id="专利申请的要求？"><a href="#专利申请的要求？" class="headerlink" title="专利申请的要求？"></a>专利申请的要求？</h4><p>1、新颖性：是指在申请日以前没有同样的发明或者实用新型在国内外出版物上公开发表过，没有在国内公开使用过或者以其他方式为公众所知，也没有同样的发明或者实用新型由他人向国家专利行政部门提出过申请并且记载在申请日以后公布的专利申请文件中。</p>
-<p>2、创造性：是指同申请日以前已有的技术相比，该实用新型有实质性特点和进步。</p>
-<p>3、实用性：是指该实用新型能够制造或者使用，并且能够产生积极效果。</p>
-<p>4、非智力活动或者规则</p>
-<h4 id="写专利前要想清楚的？"><a href="#写专利前要想清楚的？" class="headerlink" title="写专利前要想清楚的？"></a>写专利前要想清楚的？</h4><p>专利的背景：当前市场上有什么技术，当前技术存在的难点与痛点。（非常重要） 核心创新与收益：你的创新点在哪里，就是牛在哪里？创造的收益如何的。（最好能与专利背景中的难点与痛点互相匹配起来）； 流程：文字+流程图描述最为合适（专利接口人可能并无此方面专业知识</p>
-<h4 id="背景和现有技术怎么写？"><a href="#背景和现有技术怎么写？" class="headerlink" title="背景和现有技术怎么写？"></a>背景和现有技术怎么写？</h4><p>目的 — 说明此专利存在的意义</p>
-<ol>
-<li>关键术语定义：公知术语（如 Java 反射）的定义，多列一些，每个给链接；</li>
-<li>背景技术：泛泛介绍大背景和大前提（实践场景），以助理解为宜，不用过多着墨；</li>
-<li>现有技术：找出最具代表的进行客观的简述，说清缺陷。可提供链接；</li>
-<li>发明目的：针对上述缺陷，可用什么手段来解决它。简述；</li>
-<li>收益：实施本发明（解决问题）后能带来什么收益（指标、效果等）。</li>
-</ol>
-<h4 id="技术关键点和保护点"><a href="#技术关键点和保护点" class="headerlink" title="技术关键点和保护点"></a>技术关键点和保护点</h4><p>1.关键技术点罗列； 2.具体实施过程–说清楚“技术关键点”的具体实现 ① 实现步骤&amp;流程：总流程→细化→再细化 ② 总分结构：类、接口、方法及关系→各方法的描述、总结构→细化 （尽量用图来展示）</p>
+        <h4 id="一、Flume使用场景"><a href="#一、Flume使用场景" class="headerlink" title="一、Flume使用场景"></a>一、Flume使用场景</h4><p>线上数据一般主要是落地（存储到磁盘）或者通过 socket 传输给另外一个系统，这种情况下，你很难推动线上应用或服务去修改接口，实现直接向 kafka里写数据，这时候你可能就需要 flume 这样的系统帮你去做传输。</p>
+<h4 id="二、Flume丢包问题"><a href="#二、Flume丢包问题" class="headerlink" title="二、Flume丢包问题"></a>二、Flume丢包问题</h4><p>单机 upd 的 flume source 的配置，100+M&#x2F;s 数据量，10w qps flume 就开始大量丢包，因此很多公司在搭建系统时，抛弃了 Flume，自己研发传输系统，但是往往会参考 Flume 的 Source-Channel-Sink 模式。一些公司在 Flume 工作过程中，会对业务日志进行监控，例如 Flume agent中有多少条日志，Flume 到 Kafka 后有多少条日志等等，如果数据丢失保持在1%左右是没有问题的，当数据丢失达到 5%左右时就必须采取相应措施。</p>
+<h4 id="三、Flume与KAFKA的选取"><a href="#三、Flume与KAFKA的选取" class="headerlink" title="三、Flume与KAFKA的选取"></a>三、Flume与KAFKA的选取</h4><p>采集层主要可以使用 Flume、Kafka 两种技术。</p>
+<p>Flume：Flume 是管道流方式，提供了很多的默认实现，让用户通过参数部署，及扩展 API。<br>Kafka：Kafka 是一个可持久化的分布式的消息队列。<br>Kafka 是一个非常通用的系统。你可以有许多生产者和很多的消费者共享多个主题 Topics。相比之下，Flume 是一个专用工具被设计为旨在往 HDFS，HBase 发送数据。它对 HDFS 有特殊的优化，并且集成了 Hadoop 的安全特性。所以，Cloudera 建议如果数据被多个系统消费的话，使用 kafka；如果数据被设计给 Hadoop 使用，使用 Flume。<br>正如你们所知 Flume 内置很多的 source 和 sink 组件。然而，Kafka 明显有一个更小的生产消费者生态系统，并且 Kafka 的社区支持不好。希望将来这种情况会得到改善，但是目前：使用 Kafka 意味着你准备好了编写你自己的生产者和消费者代码。如果已经存在的 Flume Sources 和 Sinks 满足你的需求，并且你更喜欢不需要任何开发的系统，请使用 Flume。<br>Flume 可以使用拦截器实时处理数据。这些对数据屏蔽或者过量是很有用的。<br>Kafka 需要外部的流处理系统才能做到。<br>Kafka 和 Flume 都是可靠的系统，通过适当的配置能保证零数据丢失。然而，Flume 不支持副本事件。于是，如果 Flume 代理的一个节点奔溃了，即使使用了可靠的文件管道方式，你也将丢失这些事件直到你恢复这些磁盘。如果你需要一个高可靠性的管道，那么使用 Kafka 是个更好的选择。<br>Flume 和 Kafka 可以很好地结合起来使用。如果你的设计需要从 Kafka 到Hadoop 的流数据，使用 Flume 代理并配置 Kafka 的 Source 读取数据也是可行的：你没有必要实现自己的消费者。你可以直接利用 Flume 与 HDFS 及HBase 的结合的所有好处。你可以使用 Cloudera Manager 对消费者的监控，并且你甚至可以添加拦截器进行一些流处理。</p>
+<h4 id="四、数据怎么采集到KAFKA，实现方式？"><a href="#四、数据怎么采集到KAFKA，实现方式？" class="headerlink" title="四、数据怎么采集到KAFKA，实现方式？"></a>四、数据怎么采集到KAFKA，实现方式？</h4><p>使用官方提供的 flumeKafka 插件，插件的实现方式是自定义了 flume 的sink，将数据从 channle 中取出，通过 kafka 的 producer 写入到 kafka 中，可以自定义分区等。</p>
+<h4 id="五、Flume管道内存，flume宕机了数据丢失怎么解决？"><a href="#五、Flume管道内存，flume宕机了数据丢失怎么解决？" class="headerlink" title="五、Flume管道内存，flume宕机了数据丢失怎么解决？"></a>五、Flume管道内存，flume宕机了数据丢失怎么解决？</h4><p>1）Flume 的 channel 分为很多种，可以将数据写入到文件。<br>2）防止非首个 agent 宕机的方法数可以做集群或者主备。</p>
+<h4 id="六、flume配置方式，flume集群"><a href="#六、flume配置方式，flume集群" class="headerlink" title="六、flume配置方式，flume集群"></a>六、flume配置方式，flume集群</h4><p>Flume 的配置围绕着 source、channel、sink 叙述，flume 的集群是做在agent 上的，而非机器上。</p>
+<h4 id="七、flume不采集nginx日志，通过log4j采集日志，优缺点是什么？"><a href="#七、flume不采集nginx日志，通过log4j采集日志，优缺点是什么？" class="headerlink" title="七、flume不采集nginx日志，通过log4j采集日志，优缺点是什么？"></a>七、flume不采集nginx日志，通过log4j采集日志，优缺点是什么？</h4><p>优点：Nginx 的日志格式是固定的，但是缺少 sessionid，通过 logger4j 采集的日志是带有 sessionid 的，而 session 可以通过 redis 共享，保证了集群日志中的同一 session 落到不同的 tomcat 时，sessionId 还是一样的，而且logger4j 的方式比较稳定，不会宕机。</p>
+<p>缺点：不够灵活，logger4j 的方式和项目结合过于紧密，而 flume 的方式比较灵活，拔插式比较好，不会影响项目性能。</p>
+<h4 id="八、flume-和-kafka-采集日志区别，采集日志时中间停了，怎么记录之前的日志？"><a href="#八、flume-和-kafka-采集日志区别，采集日志时中间停了，怎么记录之前的日志？" class="headerlink" title="八、flume 和 kafka 采集日志区别，采集日志时中间停了，怎么记录之前的日志？"></a>八、flume 和 kafka 采集日志区别，采集日志时中间停了，怎么记录之前的日志？</h4><p>Flume 采集日志是通过流的方式直接将日志收集到存储层，而 kafka 是将缓存在 kafka 集群，待后期可以采集到存储层。<br>Flume 采集中间停了，可以采用文件的方式记录之前的日志，而 kafka 是采用 offset 的方式记录之前的日志。</p>
+<p>九、flume有哪些组件，具体是做什么的？</p>
+<p><img src="/Echo/posts/undefined/image-20220408151914983.png" alt="image-20220408151914983"></p>
+<p>1）source：用于采集数据，Source 是产生数据流的地方，同时 Source 会将产生的数据流传输到 Channel，这个有点类似于 Java IO 部分的 Channel。<br>2）channel：用于桥接 Sources 和 Sinks，类似于一个队列。<br>3）sink：从 Channel 收集数据，将数据写到目标源(可以是下一个 Source，也可以是 HDFS 或者 HBase)。<br>PS：要熟悉 source、channel、sink 的类型</p>
 
     </div>
 
@@ -314,7 +309,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://hugfeature.github.io/Echo/posts/36352.html" title="技术人如何申请专利">https://hugfeature.github.io/Echo/posts/36352.html</a>
+      <a href="https://hugfeature.github.io/Echo/posts/932578fc.html" title="大数据面试-Flume">https://hugfeature.github.io/Echo/posts/932578fc.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -323,21 +318,21 @@
 </div>
 
           <div class="post-tags">
-              <a href="/Echo/tags/%E4%B8%AA%E4%BA%BA/" rel="tag"># 个人</a>
+              <a href="/Echo/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" rel="tag"># 大数据</a>
+              <a href="/Echo/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%9D%A2%E8%AF%95/" rel="tag"># 大数据面试</a>
+              <a href="/Echo/tags/%E9%9D%A2%E8%AF%95/" rel="tag"># 面试</a>
+              <a href="/Echo/tags/Flume/" rel="tag"># Flume</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/Echo/posts/31633.html" rel="prev" title="BMCweb解释">
-                  <i class="fa fa-chevron-left"></i> BMCweb解释
+                <a href="/Echo/posts/e01df792.html" rel="prev" title="大数据面试-KAFKA">
+                  <i class="fa fa-chevron-left"></i> 大数据面试-KAFKA
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/Echo/posts/1599.html" rel="next" title="HBase shell命令">
-                  HBase shell命令 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -407,7 +402,7 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"hugfeature","repo":"myBlogTalk","client_id":"f4b1fae431a4943a75f3","client_secret":"2b6995c484ff0a0a920d65ac7fd5bb1bf13fb2f2","admin_user":null,"distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"5abf5db70c7313940968de2fcf1adebb"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"hugfeature","repo":"myBlogTalk","client_id":"f4b1fae431a4943a75f3","client_secret":"2b6995c484ff0a0a920d65ac7fd5bb1bf13fb2f2","admin_user":null,"distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"30ac7c97bb908b19675eec382df70da5"}</script>
 <script src="/Echo/js/third-party/comments/gitalk.js"></script>
 
 </body>

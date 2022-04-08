@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/Echo/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Echo/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Echo/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/Echo/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="5ZQ9pmEjPOsQmbBYQoUK41fLaMMyEK5pDRa34TE8fW4">
+  <meta name="msvalidate.01" content="58AE2D56435A76DA1BF1341C2E6930C1">
+
+<link rel="stylesheet" href="/Echo/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"hugfeature.github.io","root":"/Echo/","images":"/Echo/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/Echo/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Echo/js/config.js"></script>
+<meta name="description" content="一、为什么使用KAFKA？ 缓冲和削峰：上游数据时有突发流量，下游可能扛不住，或者下游没有足够多的机器来保证冗余，kafka 在中间可以起到一个缓冲的作用，把消息暂存在 kafka 中，下游服务就可以按照自己的节奏进行慢慢处理。 解耦和扩展性：项目开始的时候，并不能确定具体需求。消息队列可以作为一个接口层，解耦重要的业务流程。只需要遵守约定，针对数据编程即可获取扩展能力。 冗余：可以采用一对多的方">
+<meta property="og:type" content="article">
+<meta property="og:title" content="大数据面试-KAFKA">
+<meta property="og:url" content="https://hugfeature.github.io/Echo/posts/e01df792.html">
+<meta property="og:site_name" content="测试的名义">
+<meta property="og:description" content="一、为什么使用KAFKA？ 缓冲和削峰：上游数据时有突发流量，下游可能扛不住，或者下游没有足够多的机器来保证冗余，kafka 在中间可以起到一个缓冲的作用，把消息暂存在 kafka 中，下游服务就可以按照自己的节奏进行慢慢处理。 解耦和扩展性：项目开始的时候，并不能确定具体需求。消息队列可以作为一个接口层，解耦重要的业务流程。只需要遵守约定，针对数据编程即可获取扩展能力。 冗余：可以采用一对多的方">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-04-07T11:34:53.000Z">
+<meta property="article:modified_time" content="2022-04-07T11:34:53.000Z">
+<meta property="article:author" content="丑牛">
+<meta property="article:tag" content="大数据">
+<meta property="article:tag" content="大数据面试">
+<meta property="article:tag" content="面试">
+<meta property="article:tag" content="KAFKA">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://hugfeature.github.io/Echo/posts/e01df792.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://hugfeature.github.io/Echo/posts/e01df792.html","path":"posts/e01df792.html","title":"大数据面试-KAFKA"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>大数据面试-KAFKA | 测试的名义</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SY6RK3NESF"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-SY6RK3NESF","only_pageview":false}</script>
+  <script src="/Echo/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+  <script async src="https://www.clarity.ms/tag/myblog"></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/Echo/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/Echo/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">测试的名义</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Stay hungry, Stay foolish</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/Echo/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/Echo/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-categories"><a href="/Echo/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-commonweal"><a href="/Echo/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8KAFKA%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">一、为什么使用KAFKA？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E3%80%81KAKFA%E6%B6%88%E8%B4%B9%E8%BF%87%E7%9A%84%E6%B6%88%E6%81%AF%E5%A6%82%E4%BD%95%E5%86%8D%E6%B6%88%E8%B4%B9%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">二、KAKFA消费过的消息如何再消费？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%89%E3%80%81KAFKA%E7%9A%84%E6%95%B0%E6%8D%AE%E6%98%AF%E5%AD%98%E6%94%BE%E5%9C%A8%E7%A3%81%E7%9B%98%E4%B8%8A%E8%BF%98%E6%98%AF%E5%86%85%E5%AD%98%E4%B8%8A%EF%BC%8C%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%9F%E5%BA%A6%E4%BC%9A%E5%BF%AB%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">三、KAFKA的数据是存放在磁盘上还是内存上，为什么速度会快？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%9B%E3%80%81KAFKA%E6%95%B0%E6%8D%AE%E6%80%8E%E4%B9%88%E4%BF%9D%E9%9A%9C%E4%B8%8D%E4%B8%A2%E5%A4%B1%EF%BC%9F"><span class="nav-number">4.</span> <span class="nav-text">四、KAFKA数据怎么保障不丢失？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%94%9F%E4%BA%A7%E8%80%85%E6%95%B0%E6%8D%AE%E7%9A%84%E4%B8%8D%E4%B8%A2%E5%A4%B1"><span class="nav-number">4.1.</span> <span class="nav-text">生产者数据的不丢失</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B6%88%E8%B4%B9%E8%80%85%E6%95%B0%E6%8D%AE%E7%9A%84%E4%B8%8D%E4%B8%A2%E5%A4%B1"><span class="nav-number">4.2.</span> <span class="nav-text">消费者数据的不丢失</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#kafka-%E9%9B%86%E7%BE%A4%E4%B8%AD%E7%9A%84-broker-%E7%9A%84%E6%95%B0%E6%8D%AE%E4%B8%8D%E4%B8%A2%E5%A4%B1"><span class="nav-number">4.3.</span> <span class="nav-text">kafka 集群中的 broker 的数据不丢失</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E9%87%87%E9%9B%86%E6%95%B0%E6%8D%AE%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9-kafka%EF%BC%9F"><span class="nav-number">5.</span> <span class="nav-text">五、采集数据为什么选择 kafka？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#kafka-%E9%87%8D%E5%90%AF%E6%98%AF%E5%90%A6%E4%BC%9A%E5%AF%BC%E8%87%B4%E6%95%B0%E6%8D%AE%E4%B8%A2%E5%A4%B1%EF%BC%9F"><span class="nav-number">6.</span> <span class="nav-text">kafka 重启是否会导致数据丢失？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#kafka-%E5%AE%95%E6%9C%BA%E4%BA%86%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%EF%BC%9F"><span class="nav-number">7.</span> <span class="nav-text">kafka 宕机了如何解决？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E4%B8%BA%E4%BB%80%E4%B9%88-Kafka-%E4%B8%8D%E6%94%AF%E6%8C%81%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB%EF%BC%9F"><span class="nav-number">8.</span> <span class="nav-text">六、为什么 Kafka 不支持读写分离？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%83%E3%80%81kafka-%E6%95%B0%E6%8D%AE%E5%88%86%E5%8C%BA%E5%92%8C%E6%B6%88%E8%B4%B9%E8%80%85%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%9F"><span class="nav-number">9.</span> <span class="nav-text">七、kafka 数据分区和消费者的关系？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%AB%E3%80%81kafka-%E7%9A%84%E6%95%B0%E6%8D%AE-offset-%E8%AF%BB%E5%8F%96%E6%B5%81%E7%A8%8B"><span class="nav-number">10.</span> <span class="nav-text">八、kafka 的数据 offset 读取流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B9%9D%E3%80%81kafka-%E5%86%85%E9%83%A8%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E9%A1%BA%E5%BA%8F%EF%BC%8C%E7%BB%93%E5%90%88%E5%A4%96%E9%83%A8%E7%BB%84%E4%BB%B6%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E8%B4%B9%E8%80%85%E7%9A%84%E9%A1%BA%E5%BA%8F%EF%BC%9F"><span class="nav-number">11.</span> <span class="nav-text">九、kafka 内部如何保证顺序，结合外部组件如何保证消费者的顺序？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%81%E3%80%81Kafka-%E6%B6%88%E6%81%AF%E6%95%B0%E6%8D%AE%E7%A7%AF%E5%8E%8B%EF%BC%8CKafka-%E6%B6%88%E8%B4%B9%E8%83%BD%E5%8A%9B%E4%B8%8D%E8%B6%B3%E6%80%8E%E4%B9%88%E5%A4%84%E7%90%86%EF%BC%9F"><span class="nav-number">12.</span> <span class="nav-text">十、Kafka 消息数据积压，Kafka 消费能力不足怎么处理？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%81%E4%B8%80%E3%80%81Kafka-%E5%8D%95%E6%9D%A1%E6%97%A5%E5%BF%97%E4%BC%A0%E8%BE%93%E5%A4%A7%E5%B0%8F"><span class="nav-number">13.</span> <span class="nav-text">十一、Kafka 单条日志传输大小</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">丑牛</p>
+  <div class="site-description" itemprop="description">曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-categories">
+          <a href="/Echo/categories/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/Echo/tags/">
+        <span class="site-state-item-count">60</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hugfeature/" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hugfeature&#x2F;" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/hugfeature" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/posts/e01df792.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Echo/images/avatar.gif">
+      <meta itemprop="name" content="丑牛">
+      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="测试的名义">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          大数据面试-KAFKA
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-04-07 19:34:53" itemprop="dateCreated datePublished" datetime="2022-04-07T19:34:53+08:00">2022-04-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Echo/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h4 id="一、为什么使用KAFKA？"><a href="#一、为什么使用KAFKA？" class="headerlink" title="一、为什么使用KAFKA？"></a>一、为什么使用KAFKA？</h4><ul>
+<li>缓冲和削峰：上游数据时有突发流量，下游可能扛不住，或者下游没有足够多的机器来保证冗余，kafka 在中间可以起到一个缓冲的作用，把消息暂存在 kafka 中，下游服务就可以按照自己的节奏进行慢慢处理。</li>
+<li>解耦和扩展性：项目开始的时候，并不能确定具体需求。消息队列可以作为一个接口层，解耦重要的业务流程。只需要遵守约定，针对数据编程即可获取扩展能力。</li>
+<li>冗余：可以采用一对多的方式，一个生产者发布消息，可以被多个订阅 topic 的服务消费到，供多个毫无关联的业务使用。</li>
+<li>健壮性：消息队列可以堆积请求，所以消费端业务即使短时间死掉，也不会影响主要业务的正常进行。</li>
+<li>异步通信：很多时候，用户不想也不需要立即处理消息。消息队列提供了异步处理机制，允许用户把一个消息放入队列，但并不立即处理它。想向队列中放入多少消息就放多少，然后在需要的时候再去处理它们。</li>
+</ul>
+<h4 id="二、KAKFA消费过的消息如何再消费？"><a href="#二、KAKFA消费过的消息如何再消费？" class="headerlink" title="二、KAKFA消费过的消息如何再消费？"></a>二、KAKFA消费过的消息如何再消费？</h4><p>kafka 消费消息的 offset 是定义在 zookeeper 中的， 如果想重复消费 kafka 的消息，可以在 redis 中自己记录 offset 的 checkpoint 点（n 个），当想重复消费消息时，通过读取 redis 中的 checkpoint 点进行 zookeeper 的 offset 重设，这样就可以达到重复消费消息的目的。</p>
+<h4 id="三、KAFKA的数据是存放在磁盘上还是内存上，为什么速度会快？"><a href="#三、KAFKA的数据是存放在磁盘上还是内存上，为什么速度会快？" class="headerlink" title="三、KAFKA的数据是存放在磁盘上还是内存上，为什么速度会快？"></a>三、KAFKA的数据是存放在磁盘上还是内存上，为什么速度会快？</h4><p>kafka 使用的是磁盘存储。<br>速度快的原因是：</p>
+<ul>
+<li>顺序写入：因为硬盘是机械结构，每次读写都会寻址-&gt;写入，其中寻址是一个“机械动作”，它是耗时的。所以硬盘 “讨厌”随机 I&#x2F;O， 喜欢顺序 I&#x2F;O。为了提高读写硬盘的速度，Kafka 就是使用顺序 I&#x2F;O。</li>
+<li>Memory Mapped Files（内存映射文件）：64位操作系统中一般可以表示 20G 的数据文件，它的工作原理是直接利用操作系统的Page 来实现文件到物理内存的直接映射。完成映射之后你对物理内存的操作会被同步到硬盘上。</li>
+<li>Kafka 高效文件存储设计： Kafka 把 topic 中一个 parition 大文件分成多个小文件段，通过多个小文件段，就容易定期清除或删除已经消费完文件，减少磁盘占用。通过索引信息可以快速定位message 和确定 response 的 大 小。通过 index 元数据全部映射到 memory（内存映射文件），可以避免 segment file 的 IO 磁盘操作。通过索引文件稀疏存储，可以大幅降低index 文件元数据占用空间大小。</li>
+</ul>
+<h4 id="四、KAFKA数据怎么保障不丢失？"><a href="#四、KAFKA数据怎么保障不丢失？" class="headerlink" title="四、KAFKA数据怎么保障不丢失？"></a>四、KAFKA数据怎么保障不丢失？</h4><p>分三个点说，一个是生产者端，一个消费者端，一个 broker 端。</p>
+<h5 id="生产者数据的不丢失"><a href="#生产者数据的不丢失" class="headerlink" title="生产者数据的不丢失"></a>生产者数据的不丢失</h5><p>kafka 的 ack 机制：在 kafka 发送数据的时候，每次发送消息都会有一个确认反馈机制，确保消息正常的能够被收到，其中状态有 0，1，-1。<br>如果是同步模式：<br>ack 设置为 0，风险很大，一般不建议设置为 0。即使设置为 1，也会随着 leader 宕机丢失数据。所以如果要严格保证生产端数据不丢失，可设置为-1。<br>如果是异步模式：<br>也会考虑 ack 的状态，除此之外，异步模式下的有个 buffer，通过 buffer 来进行控制数据的发送，有两个值来进行控制，时间阈值与消息的数量阈值，如果 buffer 满了数据还没有发送出去，有个选项是配置是否立即清空 buffer。可以设置为-1，永久阻塞，也就数据不再生产。异步模式下，即使设置为-1。也可能因为程序员的不科学操作，操作数据丢失，比如 kill -9，但这是特别的例外情况。</p>
+<p>ack&#x3D;0：producer 不等待 broker 同步完成的确认，继续发送下一条(批)信息。<br>ack&#x3D;1（默认）：producer 要等待 leader 成功收到数据并得到确认，才发送下一条message。<br>ack&#x3D;-1：producer 得到 follwer 确认，才发送下一条数据。</p>
+<h5 id="消费者数据的不丢失"><a href="#消费者数据的不丢失" class="headerlink" title="消费者数据的不丢失"></a>消费者数据的不丢失</h5><p>通过 offset commit 来保证数据的不丢失，kafka 自己记录了每次消费的 offset 数值，下次继续消费的时候，会接着上次的 offset 进行消费。而 offset 的信息在 kafka0.8 版本之前保存在 zookeeper 中，在 0.8 版本之后保存到topic 中，即使消费者在运行过程中挂掉了，再次启动的时候会找到 offset 的值，找到之前消费消息的位置，接着消费，由于 offset 的信息写入的时候并不是每条消息消费完成后都写入的，所以这种情况有可能会造成重复消费，但是不会丢失消息。<br>唯一例外的情况是，我们在程序中给原本做不同功能的两个 consumer 组设KafkaSpoutConfig.bulider.setGroupid 的时候设置成了一样的 groupid，这种情况会导致这两个组共享同一份数据，就会产生组 A 消费 partition1，partition2 中的消息，组 B 消费 partition3 的消息，这样每个组消费的消息都会丢失，都是不完整的。为了保证每个组都独享一份消息数据，groupid 一定不要重复才行。</p>
+<h5 id="kafka-集群中的-broker-的数据不丢失"><a href="#kafka-集群中的-broker-的数据不丢失" class="headerlink" title="kafka 集群中的 broker 的数据不丢失"></a>kafka 集群中的 broker 的数据不丢失</h5><p>每个 broker 中的 partition 我们一般都会设置有 replication（副本）的个数，生产者写入的时候首先根据分发策略（有 partition 按 partition，有 key 按 key，都没有轮询）写入到 leader 中，follower（副本）再跟 leader 同步数据，这样有了备份，也可以保证消息数据的不丢失。</p>
+<h4 id="五、采集数据为什么选择-kafka？"><a href="#五、采集数据为什么选择-kafka？" class="headerlink" title="五、采集数据为什么选择 kafka？"></a>五、采集数据为什么选择 kafka？</h4><p>采集层 主要可以使用 Flume, Kafka 等技术。<br>Flume：Flume 是管道流方式，提供了很多的默认实现，让用户通过参数部署，及扩展 API.<br>Kafka：Kafka 是一个可持久化的分布式的消息队列。 Kafka 是一个非常通用的系统。可以有许多生产者和很多的消费者共享多个主题 Topics。相比之下,Flume 是一个专用工具被设计为旨在往 HDFS，HBase 发送数据。它对<br>HDFS 有特殊的优化，并且集成了 Hadoop 的安全特性。所以，Cloudera 建议如果数据被多个系统消费的话，使用 kafka；如果数据被设计给Hadoop 使用，使用 Flume。</p>
+<h4 id="kafka-重启是否会导致数据丢失？"><a href="#kafka-重启是否会导致数据丢失？" class="headerlink" title="kafka 重启是否会导致数据丢失？"></a>kafka 重启是否会导致数据丢失？</h4><p>kafka 是将数据写到磁盘的，一般数据不会丢失。但是在重启 kafka 过程中，如果有消费者消费消息，那么 kafka 如果来不及提交 offset，可能会造成数据的不准确（丢失或者重复消费）。</p>
+<h4 id="kafka-宕机了如何解决？"><a href="#kafka-宕机了如何解决？" class="headerlink" title="kafka 宕机了如何解决？"></a>kafka 宕机了如何解决？</h4><p>先考虑业务是否受到影响</p>
+<p>kafka 宕机了，首先我们考虑的问题应该是所提供的服务是否因为宕机的机器而受到影响，如果服务提供没问题，如果实现做好了集群的容灾机制，那么这块就不用担心了。<br>节点排错与恢复<br>想要恢复集群的节点，主要的步骤就是通过日志分析来查看节点宕机的原因，从而解决，重新恢复节点。</p>
+<h4 id="六、为什么-Kafka-不支持读写分离？"><a href="#六、为什么-Kafka-不支持读写分离？" class="headerlink" title="六、为什么 Kafka 不支持读写分离？"></a>六、为什么 Kafka 不支持读写分离？</h4><p>在 Kafka 中，生产者写入消息、消费者读取消息的操作都是与 leader 副本进行交互的，从 而实现的是一种主写主读的生产消费模型。<br>Kafka 并不支持主写从读，因为主写从读有 2 个很明显的缺点:</p>
+<ul>
+<li><p>数据一致性问题：数据从主节点转到从节点必然会有一个延时的时间窗口，这个时间窗口会导致主从节点之间的数据不一致。某一时刻，在主节点和从节点中 A 数据的值都为 X， 之后将主节点中 A 的值修改为 Y，那么在这个变更通知到从节点之前，应用读取从节点中的 A 数据的值并不为最新的 Y，由此便产生了数据不一致的问题。</p>
+</li>
+<li><p>延时问题：类似 Redis 这种组件，数据从写入主节点到同步至从节点中的过程需要经历 网络→主节点内存→网络→从节点内存 这几个阶段，整个过程会耗费一定的时间。而在Kafka 中，主从同步会比 Redis 更加耗时，它需要经历 网络→主节点内存→主节点磁盘→网络→从节 点内存→从节点磁盘 这几个阶段。对延时敏感的应用而言，主写从读的功能并不太适用。</p>
+</li>
+</ul>
+<p>而 kafka 的主写主读的优点就很多了：<br>可以简化代码的实现逻辑，减少出错的可能; 将负载粒度细化均摊，与主写从读相比，不仅负载效能更好，而且对用户可控;没有延时的影响;在副本稳定的情况下，不会出现数据不一致的情况。</p>
+<h4 id="七、kafka-数据分区和消费者的关系？"><a href="#七、kafka-数据分区和消费者的关系？" class="headerlink" title="七、kafka 数据分区和消费者的关系？"></a>七、kafka 数据分区和消费者的关系？</h4><p>每个分区只能由同一个消费组内的一个消费者(consumer)来消费，可以由不同的消费组的消费者来消费，同组的消费者则起到并发的效果。</p>
+<h4 id="八、kafka-的数据-offset-读取流程"><a href="#八、kafka-的数据-offset-读取流程" class="headerlink" title="八、kafka 的数据 offset 读取流程"></a>八、kafka 的数据 offset 读取流程</h4><p>连接 ZK 集群，从 ZK 中拿到对应 topic 的 partition 信息和 partition 的 Leader 的相关信息连接到对应 Leader 对应的 brokerconsumer 将⾃自自⼰己己保存的 offset 发送给LeaderLeader 根据 offset 等信息定位到 segment（索引⽂文文件和⽇日日志⽂文文件）根据索引⽂文文件中的内容，定位到⽇日日志⽂文文件中该偏移量量对应的开始位置读取相应长长度的数据并返回给 consumer。</p>
+<h4 id="九、kafka-内部如何保证顺序，结合外部组件如何保证消费者的顺序？"><a href="#九、kafka-内部如何保证顺序，结合外部组件如何保证消费者的顺序？" class="headerlink" title="九、kafka 内部如何保证顺序，结合外部组件如何保证消费者的顺序？"></a>九、kafka 内部如何保证顺序，结合外部组件如何保证消费者的顺序？</h4><p>kafka 只能保证 partition 内是有序的，但是 partition 间的有序是没办法的。爱奇艺的搜索架构，是从业务上把需要有序的打到同⼀一个 partition。</p>
+<h4 id="十、Kafka-消息数据积压，Kafka-消费能力不足怎么处理？"><a href="#十、Kafka-消息数据积压，Kafka-消费能力不足怎么处理？" class="headerlink" title="十、Kafka 消息数据积压，Kafka 消费能力不足怎么处理？"></a>十、Kafka 消息数据积压，Kafka 消费能力不足怎么处理？</h4><p>如果是 Kafka 消费能力不足，则可以考虑增加 Topic 的分区数，并且同时提升消费组的消费者数量，消费者数&#x3D;分区数。（两者缺一不可）如果是下游的数据处理不及时：提高每批次拉取的数量。批次拉取数据过少（拉取数据&#x2F;处理时间&lt;生产速度），使处理的数据小于生产的数据，也会造成数据积压。</p>
+<h4 id="十一、Kafka-单条日志传输大小"><a href="#十一、Kafka-单条日志传输大小" class="headerlink" title="十一、Kafka 单条日志传输大小"></a>十一、Kafka 单条日志传输大小</h4><p>kafka 对于消息体的大小默认为单条最大值是 1M 但是在我们应用场景中, 常常会出现一条消息大于 1M，如果不对 kafka 进行配置。则会出现生产者无法将消息推送到kafka 或消费者无法去消费 kafka 里面的数据, 这时我们就要对 kafka 进行以下配置：<br>server.properties<br>1replica.fetch.max.bytes: 1048576 broker 可复制的消息的最大字节数, 默认为 1M<br>2message.max.bytes: 1000012 kafka 会接收单个消息 size 的最大限制， 默认为1M 左右<br>注意：message.max.bytes 必须小于等于 replica.fetch.max.bytes，否则就会导致 replica 之间数据同步失败。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>丑牛
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://hugfeature.github.io/Echo/posts/e01df792.html" title="大数据面试-KAFKA">https://hugfeature.github.io/Echo/posts/e01df792.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/Echo/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" rel="tag"># 大数据</a>
+              <a href="/Echo/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%9D%A2%E8%AF%95/" rel="tag"># 大数据面试</a>
+              <a href="/Echo/tags/%E9%9D%A2%E8%AF%95/" rel="tag"># 面试</a>
+              <a href="/Echo/tags/KAFKA/" rel="tag"># KAFKA</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Echo/posts/c066093e.html" rel="prev" title="大数据面试-HDFS">
+                  <i class="fa fa-chevron-left"></i> 大数据面试-HDFS
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Echo/posts/932578fc.html" rel="next" title="大数据面试-Flume">
+                  大数据面试-Flume <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">丑牛</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/Echo/js/comments.js"></script><script src="/Echo/js/utils.js"></script><script src="/Echo/js/motion.js"></script><script src="/Echo/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/Echo/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"hugfeature","repo":"myBlogTalk","client_id":"f4b1fae431a4943a75f3","client_secret":"2b6995c484ff0a0a920d65ac7fd5bb1bf13fb2f2","admin_user":null,"distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"69180364c836e0fb8c15d13f3f7aa55f"}</script>
+<script src="/Echo/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
