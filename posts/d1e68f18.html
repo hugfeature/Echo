@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/Echo/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Echo/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Echo/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/Echo/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="5ZQ9pmEjPOsQmbBYQoUK41fLaMMyEK5pDRa34TE8fW4">
+  <meta name="msvalidate.01" content="58AE2D56435A76DA1BF1341C2E6930C1">
+
+<link rel="stylesheet" href="/Echo/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"hugfeature.github.io","root":"/Echo/","images":"/Echo/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/Echo/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Echo/js/config.js"></script>
+<meta name="description" content="一、spark如何保证宕机迅速恢复？适当增加 spark standby master编写 shell 脚本，定期检测 master 状态，出现宕机后对 master 进行重启操作。 二、spark streaming以及基本工作原理？Spark streaming 是 spark core API 的一种扩展，可以用于进行大规模、高吞吐量、容错的实时数据流的处理。它支持从多种数据源读取数据，比如">
+<meta property="og:type" content="article">
+<meta property="og:title" content="大数据面试-spark">
+<meta property="og:url" content="https://hugfeature.github.io/Echo/posts/d1e68f18.html">
+<meta property="og:site_name" content="测试的名义">
+<meta property="og:description" content="一、spark如何保证宕机迅速恢复？适当增加 spark standby master编写 shell 脚本，定期检测 master 状态，出现宕机后对 master 进行重启操作。 二、spark streaming以及基本工作原理？Spark streaming 是 spark core API 的一种扩展，可以用于进行大规模、高吞吐量、容错的实时数据流的处理。它支持从多种数据源读取数据，比如">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-04-10T06:57:03.000Z">
+<meta property="article:modified_time" content="2022-04-10T06:57:03.000Z">
+<meta property="article:author" content="丑牛">
+<meta property="article:tag" content="大数据">
+<meta property="article:tag" content="面试">
+<meta property="article:tag" content="数据处理">
+<meta property="article:tag" content="spark">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://hugfeature.github.io/Echo/posts/d1e68f18.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://hugfeature.github.io/Echo/posts/d1e68f18.html","path":"posts/d1e68f18.html","title":"大数据面试-spark"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>大数据面试-spark | 测试的名义</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SY6RK3NESF"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-SY6RK3NESF","only_pageview":false}</script>
+  <script src="/Echo/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+  <script async src="https://www.clarity.ms/tag/myblog"></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/Echo/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/Echo/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">测试的名义</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Stay hungry, Stay foolish</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/Echo/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/Echo/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-categories"><a href="/Echo/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-commonweal"><a href="/Echo/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E3%80%81spark%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E5%AE%95%E6%9C%BA%E8%BF%85%E9%80%9F%E6%81%A2%E5%A4%8D%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">一、spark如何保证宕机迅速恢复？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E3%80%81spark-streaming%E4%BB%A5%E5%8F%8A%E5%9F%BA%E6%9C%AC%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">二、spark streaming以及基本工作原理？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%89%E3%80%81spark%E6%9C%89%E5%93%AA%E4%BA%9B%E7%BB%84%E4%BB%B6%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">三、spark有哪些组件？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%9B%E3%80%81spark%E5%B7%A5%E4%BD%9C%E6%9C%BA%E5%88%B6%EF%BC%9F"><span class="nav-number">4.</span> <span class="nav-text">四、spark工作机制？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%94%E3%80%81spark%E4%B8%BB%E5%A4%87%E5%88%87%E6%8D%A2%E6%9C%BA%E5%88%B6%E5%8E%9F%E7%90%86%EF%BC%9F"><span class="nav-number">5.</span> <span class="nav-text">五、spark主备切换机制原理？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%AD%E3%80%81spark%E6%9C%89%E5%87%A0%E7%A7%8D%E9%83%A8%E7%BD%B2%E6%A8%A1%E5%BC%8F%EF%BC%8C%E6%AF%8F%E7%A7%8D%E6%A8%A1%E5%BC%8F%E7%89%B9%E7%82%B9%EF%BC%9F"><span class="nav-number">6.</span> <span class="nav-text">六、spark有几种部署模式，每种模式特点？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%83%E3%80%81Spark-%E4%B8%BA%E4%BB%80%E4%B9%88%E6%AF%94-mapreduce-%E5%BF%AB%EF%BC%9F"><span class="nav-number">7.</span> <span class="nav-text">七、Spark 为什么比 mapreduce 快？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%AB%E3%80%81%E7%AE%80%E5%8D%95%E8%AF%B4%E4%B8%80%E4%B8%8B-hadoop-%E5%92%8C-spark-%E7%9A%84-shuffle-%E7%9B%B8%E5%90%8C%E5%92%8C%E5%B7%AE%E5%BC%82%EF%BC%9F"><span class="nav-number">8.</span> <span class="nav-text">八、简单说一下 hadoop 和 spark 的 shuffle 相同和差异？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B9%9D%E3%80%81spark-%E5%B7%A5%E4%BD%9C%E6%9C%BA%E5%88%B6"><span class="nav-number">9.</span> <span class="nav-text">九、spark 工作机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%81%E3%80%81spark-%E7%9A%84%E4%BC%98%E5%8C%96%E6%80%8E%E4%B9%88%E5%81%9A%EF%BC%9F"><span class="nav-number">10.</span> <span class="nav-text">十、spark 的优化怎么做？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%81%E4%B8%80%E3%80%81%E6%95%B0%E6%8D%AE%E6%9C%AC%E5%9C%B0%E6%80%A7%E6%98%AF%E5%9C%A8%E5%93%AA%E4%B8%AA%E7%8E%AF%E8%8A%82%E7%A1%AE%E5%AE%9A%E7%9A%84%EF%BC%9F"><span class="nav-number">11.</span> <span class="nav-text">十一、数据本地性是在哪个环节确定的？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%81%E4%BA%8C%E3%80%81RDD-%E7%9A%84%E5%BC%B9%E6%80%A7%E8%A1%A8%E7%8E%B0%E5%9C%A8%E5%93%AA%E5%87%A0%E7%82%B9%EF%BC%9F"><span class="nav-number">12.</span> <span class="nav-text">十二、RDD 的弹性表现在哪几点？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%81%E4%B8%89%E3%80%81RDD-%E6%9C%89%E5%93%AA%E4%BA%9B%E7%BC%BA%E9%99%B7%EF%BC%9F"><span class="nav-number">13.</span> <span class="nav-text">十三、RDD 有哪些缺陷？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%81%E5%9B%9B%E3%80%81Spark-%E7%9A%84-shuffle-%E8%BF%87%E7%A8%8B%EF%BC%9F"><span class="nav-number">14.</span> <span class="nav-text">十四、Spark 的 shuffle 过程？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%81%E4%BA%94%E3%80%81Spark-%E7%9A%84%E6%95%B0%E6%8D%AE%E6%9C%AC%E5%9C%B0%E6%80%A7%E6%9C%89%E5%93%AA%E5%87%A0%E7%A7%8D%EF%BC%9F"><span class="nav-number">15.</span> <span class="nav-text">十五、Spark 的数据本地性有哪几种？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%81%E5%85%AD%E3%80%81Spark-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%8C%81%E4%B9%85%E5%8C%96%EF%BC%8C%E4%B8%80%E8%88%AC%E4%BB%80%E4%B9%88%E5%9C%BA%E6%99%AF%E4%B8%8B%E8%A6%81%E8%BF%9B%E8%A1%8C-persist-%E6%93%8D%E4%BD%9C%EF%BC%9F"><span class="nav-number">16.</span> <span class="nav-text">十六、Spark 为什么要持久化，一般什么场景下要进行 persist 操作？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%81%E4%B8%83%E3%80%81join%E6%93%8D%E4%BD%9C%E4%BC%98%E5%8C%96%E7%BB%8F%E9%AA%8C%EF%BC%9F"><span class="nav-number">17.</span> <span class="nav-text">十七、join操作优化经验？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%81%E5%85%AB%E3%80%81YARN%E6%89%A7%E8%A1%8C%E4%B8%80%E4%B8%AA%E4%BB%BB%E5%8A%A1%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="nav-number">18.</span> <span class="nav-text">十八、YARN执行一个任务的过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%81%E4%B9%9D%E3%80%81spark-on-yarn-%E6%A8%A1%E5%BC%8F%E6%9C%89%E5%93%AA%E4%BA%9B%E4%BC%98%E7%82%B9"><span class="nav-number">19.</span> <span class="nav-text">十九、spark on yarn 模式有哪些优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E5%8D%81%E3%80%81%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3container%EF%BC%9F"><span class="nav-number">20.</span> <span class="nav-text">二十、如何理解container？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E5%8D%81%E4%B8%80%E3%80%81spark%E4%BD%BF%E7%94%A8parquet%E6%96%87%E4%BB%B6%E5%AD%98%E5%82%A8%E6%A0%BC%E5%BC%8F%E8%83%BD%E5%B8%A6%E6%9D%A5%E4%BB%80%E4%B9%88%E5%A5%BD%E5%A4%84%EF%BC%9F"><span class="nav-number">21.</span> <span class="nav-text">二十一、spark使用parquet文件存储格式能带来什么好处？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E5%8D%81%E4%BA%8C%E3%80%81-parition%E5%92%8Cblock%E6%9C%89%E4%BB%80%E4%B9%88%E5%85%B3%E8%81%94%E5%85%B3%E7%B3%BB"><span class="nav-number">22.</span> <span class="nav-text">二十二、 parition和block有什么关联关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E5%8D%81%E4%B8%89%E3%80%81spark%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">23.</span> <span class="nav-text">二十三、spark应用程序的执行过程是什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E5%8D%81%E5%9B%9B%E3%80%81%E4%B8%8D%E9%9C%80%E8%A6%81%E6%8E%92%E5%BA%8F%E7%9A%84hash-shuffle%E4%B8%80%E5%AE%9A%E6%AF%94%E9%9C%80%E8%A6%81%E6%8E%92%E5%BA%8F%E7%9A%84sort-shuffle%E5%BF%AB%E5%90%97%EF%BC%9F"><span class="nav-number">24.</span> <span class="nav-text">二十四、不需要排序的hash shuffle一定比需要排序的sort shuffle快吗？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E5%8D%81%E4%BA%94%E3%80%81Sort-based-shuffle-%E7%9A%84%E7%BC%BA%E9%99%B7"><span class="nav-number">25.</span> <span class="nav-text">二十五、Sort-based shuffle 的缺陷?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E5%8D%81%E5%85%AD%E3%80%81spark-storage-memoryFraction%E5%8F%82%E6%95%B0%E7%9A%84%E5%90%AB%E4%B9%89%EF%BC%8C%E5%A6%82%E4%BD%95%E8%B0%83%E4%BC%98%EF%BC%9F"><span class="nav-number">26.</span> <span class="nav-text">二十六、spark.storage.memoryFraction参数的含义，如何调优？</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">丑牛</p>
+  <div class="site-description" itemprop="description">曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-categories">
+          <a href="/Echo/categories/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/Echo/tags/">
+        <span class="site-state-item-count">66</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hugfeature/" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hugfeature&#x2F;" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/hugfeature" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/posts/d1e68f18.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Echo/images/avatar.gif">
+      <meta itemprop="name" content="丑牛">
+      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="测试的名义">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          大数据面试-spark
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-04-10 14:57:03" itemprop="dateCreated datePublished" datetime="2022-04-10T14:57:03+08:00">2022-04-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Echo/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h4 id="一、spark如何保证宕机迅速恢复？"><a href="#一、spark如何保证宕机迅速恢复？" class="headerlink" title="一、spark如何保证宕机迅速恢复？"></a>一、spark如何保证宕机迅速恢复？</h4><p>适当增加 spark standby master编写 shell 脚本，定期检测 master 状态，出现宕机后对 master 进行重启操作。</p>
+<h4 id="二、spark-streaming以及基本工作原理？"><a href="#二、spark-streaming以及基本工作原理？" class="headerlink" title="二、spark streaming以及基本工作原理？"></a>二、spark streaming以及基本工作原理？</h4><p>Spark streaming 是 spark core API 的一种扩展，可以用于进行大规模、高吞吐量、容错的实时数据流的处理。<br>它支持从多种数据源读取数据，比如 Kafka、Flume、Twitter 和 TCP Socket，并且能够使用算子比如 map、reduce、join 和 window 等来处理数据，处理后的数据可以保存到文件系统、数据库等存储中。<br>Spark streaming 内部的基本工作原理是：接受实时输入数据流，然后将数据拆分成batch，比如每收集一秒的数据封装成一个 batch，然后将每个 batch 交给 spark 的计算引擎进行处理，最后会生产处一个结果数据流，其中的数据也是一个一个的batch 组成的。</p>
+<h4 id="三、spark有哪些组件？"><a href="#三、spark有哪些组件？" class="headerlink" title="三、spark有哪些组件？"></a>三、spark有哪些组件？</h4><p>master：管理集群和节点，不参与计算。</p>
+<p>worker：计算节点，进程本身不参与计算，和 master 汇报。</p>
+<p>Driver：运行程序的 main 方法，创建 spark context 对象。</p>
+<p>spark context：控制整个 application 的生命周期，包括 dagsheduler 和 task scheduler等组件。</p>
+<p>client：用户提交程序的入口。</p>
+<h4 id="四、spark工作机制？"><a href="#四、spark工作机制？" class="headerlink" title="四、spark工作机制？"></a>四、spark工作机制？</h4><p>用户在 client 端提交作业后，会由 Driver 运行 main 方法并创建 spark context 上下文。执行 add 算子，形成 dag图输入 dagscheduler，按照 add 之间的依赖关系划分stage 输入 task scheduler。task scheduler 会将 stage 划分为 task set 分发到各个节点的 executor 中执行。</p>
+<h4 id="五、spark主备切换机制原理？"><a href="#五、spark主备切换机制原理？" class="headerlink" title="五、spark主备切换机制原理？"></a>五、spark主备切换机制原理？</h4><p>Master 实际上可以配置两个，Spark 原生的 standalone 模式是支持 Master 主备切换的。当 Active Master 节点挂掉以后，我们可以将 Standby Master 切换为 ActiveMaster。<br>Spark Master 主备切换可以基于两种机制，一种是基于文件系统的，一种是基于ZooKeeper 的。基于文件系统的主备切换机制，需要在 Active Master 挂掉之后手动切换到 StandbyMaster 上；而基于 Zookeeper 的主备切换机制，可以实现自动切换 Master。</p>
+<h4 id="六、spark有几种部署模式，每种模式特点？"><a href="#六、spark有几种部署模式，每种模式特点？" class="headerlink" title="六、spark有几种部署模式，每种模式特点？"></a>六、spark有几种部署模式，每种模式特点？</h4><p>1）本地模式<br>Spark 不一定非要跑在 hadoop 集群，可以在本地，起多个线程的方式来指定。将 Spark 应用以多线程的方式直接运行在本地，一般都是为了方便调试，<br>本地模式分三类<br>local：只启动一个 executor<br>local[k]:启动 k 个 executor<br>local[*]：启动跟 cpu 数目相同的 executor<br>2）standalone 模式<br>分布式部署集群，自带完整的服务，资源管理和任务监控是 Spark 自己监控，这个模式也是其他模式的基础。<br>3）Spark on yarn 模式<br>分布式部署集群，资源和任务监控交给 yarn 管理，但是目前仅支持粗粒度资源分配方式，包含 cluster 和 client 运行模式，cluster 适合生产，driver 运行在集群子节点，具有容错功能，client 适合调试，dirver 运行在客户端。<br>4）Spark On Mesos 模式。<br>官方推荐这种模式（当然，原因之一是血缘关系）。正是由于 Spark 开发之初就考虑到支持 Mesos，因此，目前而言，Spark 运行在 Mesos 上会比运行在 YARN 上更加灵活，更加自然。用户可选择两种调度模式之一运行自己的应用程序：<br>（1）粗粒度模式（Coarse-grained Mode）：每个应用程序的运行环境由一个 Dirver 和若干个 Executor 组成，其中，每个 Executor 占用若干资源，内部可运行多个 Task（对应多少个“slot”）。应用程序的各个任务正式运行之前，需要将运行环境中的资源全部申请好，且运行过程中要一直占用这些资源，即使不用，最后程序运行结束后，回收这些资源。<br>（2）细粒度模式（Fine-grained Mode）：鉴于粗粒度模式会造成大量资源浪费，Spark On Mesos 还提供了另外一种调度模式：细粒度模式，这种模式类似于现在的云计算，思想是按需分配。</p>
+<h4 id="七、Spark-为什么比-mapreduce-快？"><a href="#七、Spark-为什么比-mapreduce-快？" class="headerlink" title="七、Spark 为什么比 mapreduce 快？"></a>七、Spark 为什么比 mapreduce 快？</h4><p>1）基于内存计算，减少低效的磁盘交互；<br>2）高效的调度算法，基于 DAG；<br>3）容错机制 Linage，精华部分就是 DAG 和 Lingae</p>
+<h4 id="八、简单说一下-hadoop-和-spark-的-shuffle-相同和差异？"><a href="#八、简单说一下-hadoop-和-spark-的-shuffle-相同和差异？" class="headerlink" title="八、简单说一下 hadoop 和 spark 的 shuffle 相同和差异？"></a>八、简单说一下 hadoop 和 spark 的 shuffle 相同和差异？</h4><p>1）从 high-level 的角度来看，两者并没有大的差别。 都是将 mapper（Spark 里是 ShuffleMapTask）的输出进行 partition，不同的 partition 送到不同的 reducer（Spark 里 reducer 可能是下一个 stage 里的ShuffleMapTask，也可能是 ResultTask）。Reducer 以内存作缓冲区，边shuffle 边 aggregate 数据，等到数据 aggregate 好以后进行 reduce()（Spark 里可能是后续的一系列操作）。<br>2）从 low-level 的角度来看，两者差别不小。 Hadoop MapReduce 是sort-based，进入 combine() 和 reduce() 的 records 必须先 sort。这样的好处在于 combine&#x2F;reduce() 可以处理大规模的数据，因为其输入数据可以通过外排得到（mapper 对每段数据先做排序，reducer 的 shuffle 对排好序的每段数据做归并）。目前的 Spark 默认选择的是 hash-based，通常使用HashMap 来对 shuffle 来的数据进行 aggregate，不会对数据进行提前排序。<br>如果用户需要经过排序的数据，那么需要自己调用类似 sortByKey() 的操作；<br>如果你是 Spark 1.1 的用户，可以将 spark.shuffle.manager 设置为 sort，则会对数据进行排序。在 Spark 1.2 中，sort 将作为默认的 Shuffle 实现。<br>3）从实现角度来看，两者也有不少差别。 Hadoop MapReduce 将处理流程划分出明显的几个阶段：map(), spill, merge, shuffle, sort, reduce() 等。<br>每个阶段各司其职，可以按照过程式的编程思想来逐一实现每个阶段的功能。在 Spark 中，没有这样功能明确的阶段，只有不同的 stage 和一系列的transformation()，所以 spill, merge, aggregate 等操作需要蕴含在<br>transformation() 中。<br>如果我们将 map 端划分数据、持久化数据的过程称为 shuffle write，而将reducer 读入数据、aggregate 数据的过程称为 shuffle read。那么在 Spark中，问题就变为怎么在 job 的逻辑或者物理执行图中加入 shuffle write 和<br>shuffle read 的处理逻辑？以及两个处理逻辑应该怎么高效实现？Shuffle write 由于不要求数据有序，shuffle write 的任务很简单：将数据partition 好，并持久化。之所以要持久化，一方面是要减少内存存储空间压力，另一方面也是为了 fault-tolerance。</p>
+<h4 id="九、spark-工作机制"><a href="#九、spark-工作机制" class="headerlink" title="九、spark 工作机制"></a>九、spark 工作机制</h4><p>① 构建 Application 的运行环境，Driver 创建一个 SparkContext；</p>
+<p>② SparkContext 向资源管理器（Standalone、Mesos、Yarn）申请Executor 资源，资源管理器启动 StandaloneExecutorbackend（Executor）<br>③ Executor 向 SparkContext 申请 Task</p>
+<p> ④ SparkContext 将应用程序分发给Executor </p>
+<p>⑤ SparkContext 就建成 DAG 图，DAGScheduler 将 DAG 图解析成 Stage，每个 Stage 有多个 task，形成 taskset 发送给 task Scheduler，由task Scheduler 将 Task 发送给 Executor 运行 </p>
+<p>⑥ Task 在 Executor 上运行，运行完释放所有资源</p>
+<h4 id="十、spark-的优化怎么做？"><a href="#十、spark-的优化怎么做？" class="headerlink" title="十、spark 的优化怎么做？"></a>十、spark 的优化怎么做？</h4><p>spark 调优比较复杂，但是大体可以分为三个方面来进行<br>1）平台层面的调优：防止不必要的 jar 包分发，提高数据的本地性，选择高效的存储格式如 parquet<br>2）应用程序层面的调优：过滤操作符的优化降低过多小任务，降低单条记录的资源开销，处理数据倾斜，复用 RDD 进行缓存，作业并行化执行等等<br>3）JVM 层面的调优：设置合适的资源量，设置合理的 JVM，启用高效的序列化方法如 kyro，增大 off head 内存等等</p>
+<h4 id="十一、数据本地性是在哪个环节确定的？"><a href="#十一、数据本地性是在哪个环节确定的？" class="headerlink" title="十一、数据本地性是在哪个环节确定的？"></a>十一、数据本地性是在哪个环节确定的？</h4><p>具体的 task 运行在那他机器上，dag 划分 stage 的时候确定的</p>
+<h4 id="十二、RDD-的弹性表现在哪几点？"><a href="#十二、RDD-的弹性表现在哪几点？" class="headerlink" title="十二、RDD 的弹性表现在哪几点？"></a>十二、RDD 的弹性表现在哪几点？</h4><p>1）自动的进行内存和磁盘的存储切换；</p>
+<p>2）基于 Lineage 的高效容错；<br>3）task 如果失败会自动进行特定次数的重试；<br>4）stage 如果失败会自动进行特定次数的重试，而且只会计算失败的分片；<br>5）checkpoint 和 persist，数据计算之后持久化缓存；<br>6）数据调度弹性，DAG TASK 调度和资源无关；<br>7）数据分片的高度弹性。</p>
+<h4 id="十三、RDD-有哪些缺陷？"><a href="#十三、RDD-有哪些缺陷？" class="headerlink" title="十三、RDD 有哪些缺陷？"></a>十三、RDD 有哪些缺陷？</h4><p>1）不支持细粒度的写和更新操作（如网络爬虫），spark 写数据是粗粒度的。所谓粗粒度，就是批量写入数据，为了提高效率。但是读数据是细粒度的也就是说可以一条条的读。<br>2）不支持增量迭代计算，Flink 支持</p>
+<h4 id="十四、Spark-的-shuffle-过程？"><a href="#十四、Spark-的-shuffle-过程？" class="headerlink" title="十四、Spark 的 shuffle 过程？"></a>十四、Spark 的 shuffle 过程？</h4><p>从下面三点去展开<br>1）shuffle 过程的划分<br>2）shuffle 的中间结果如何存储<br>3）shuffle 的数据如何拉取过来</p>
+<h4 id="十五、Spark-的数据本地性有哪几种？"><a href="#十五、Spark-的数据本地性有哪几种？" class="headerlink" title="十五、Spark 的数据本地性有哪几种？"></a>十五、Spark 的数据本地性有哪几种？</h4><p>Spark 中的数据本地性有三种：<br>1）PROCESS_LOCAL 是指读取缓存在本地节点的数据<br>2）NODE_LOCAL 是指读取本地节点硬盘数据<br>3）ANY 是指读取非本地节点数据<br>通常读取数据 PROCESS_LOCAL&gt;NODE_LOCAL&gt;ANY，尽量使数据以PROCESS_LOCAL 或 NODE_LOCAL 方式读取。其中 PROCESS_LOCAL 还和cache 有关，如果 RDD 经常用的话将该 RDD cache 到内存中，注意，由于cache 是 lazy 的，所以必须通过一个 action 的触发，才能真正的将该 RDD cache 到内存中。</p>
+<h4 id="十六、Spark-为什么要持久化，一般什么场景下要进行-persist-操作？"><a href="#十六、Spark-为什么要持久化，一般什么场景下要进行-persist-操作？" class="headerlink" title="十六、Spark 为什么要持久化，一般什么场景下要进行 persist 操作？"></a>十六、Spark 为什么要持久化，一般什么场景下要进行 persist 操作？</h4><p>为什么要进行持久化？<br>spark 所有复杂一点的算法都会有 persist 身影，spark 默认数据放在内存，<br>spark 很多内容都是放在内存的，非常适合高速迭代，1000 个步骤只有第一个输入数据，中间不产生临时数据，但分布式系统风险很高，所以容易出错，就要容错，rdd 出错或者分片可以根据血统算出来，如果没有对父 rdd 进行persist 或者 cache 的化，就需要重头做。 以下场景会使用 persist<br>1）某个步骤计算非常耗时，需要进行 persist 持久化<br>2）计算链条非常长，重新恢复要算很多步骤，很好使，persist<br>3）checkpoint 所在的 rdd 要持久化 persist。checkpoint 前，要持久化，写个 rdd.cache 或者 rdd.persist，将结果保存起来，再写 checkpoint 操作，这样执行起来会非常快，不需要重新计算 rdd 链条了。checkpoint 之前一定会进行 persist。<br>4）shuffle 之后要 persist，shuffle 要进性网络传输，风险很大，数据丢失重来，恢复代价很大<br>5）shuffle 之前进行 persist，框架默认将数据持久化到磁盘，这个是框架自动做的。</p>
+<h4 id="十七、join操作优化经验？"><a href="#十七、join操作优化经验？" class="headerlink" title="十七、join操作优化经验？"></a>十七、join操作优化经验？</h4><p>join 其实常见的就分为两类： map-side join 和 reduce-side join。当大表和小表 join 时，用 map-side join 能显著提高效率。将多份数据进行关联是数据处理过程中非常普遍的用法，不过在分布式计算系统中，这个问题往往会变的非常麻烦，因为框架提供的 join 操作一般会将所有数据根据 key 发送到所有的 reduce 分区中去，也就是 shuffle 的过程。造成大量的网络以及磁盘 IO消耗，运行效率极其低下，这个过程一般被称为 reduce-side-join。如果其中有张表较小的话，我们则可以自己实现在 map 端实现数据关联，跳过大量数据进行 shuffle 的过程，运行时间得到大量缩短，根据不同数据可能会有几倍到数十倍的性能提升。<br>ps：这个题目面试中非常非常大概率见到，务必搜索相关资料掌握，这里抛砖引玉。</p>
+<h4 id="十八、YARN执行一个任务的过程"><a href="#十八、YARN执行一个任务的过程" class="headerlink" title="十八、YARN执行一个任务的过程"></a>十八、YARN执行一个任务的过程</h4><p>1）客户端 client 向 ResouceManager 提交 Application，ResouceManager 接受 Application 并根据集群资源状况选取一个 node 来启动 Application 的任务调度器 driver（ApplicationMaster）。<br>2）ResouceManager 找到那个 node，命令其该 node 上的 nodeManager来启动一个新的 JVM 进程运行程序的 driver（ApplicationMaster）部分，driver（ApplicationMaster）启动时会首先向 ResourceManager 注册，说明由自己来负责当前程序的运行。<br>3）driver（ApplicationMaster）开始下载相关 jar 包等各种资源，基于下载的 jar 等信息决定向 ResourceManager 申请具体的资源内容。<br>4）ResouceManager 接受到 driver（ApplicationMaster）提出的申请后，会最大化的满足 资源分配请求，并发送资源的元数据信息给 driver（ApplicationMaster）。<br>5）driver（ApplicationMaster）收到发过来的资源元数据信息后会根据元数据信息发指令给具体机器上的 NodeManager，让其启动具体的 container。<br>6）NodeManager 收到 driver 发来的指令，启动 container，container 启动后必须向 driver（ApplicationMaster）注册。<br>7）driver（ApplicationMaster）收到 container 的注册，开始进行任务的调度和计算，直到 任务完成。<br>NODE：如果 ResourceManager 第一次没有能够满足 driver（ApplicationMaster）的资源请求 ，后续发现有空闲的资源，会主动向driver（ApplicationMaster）发送可用资源的元数据信息以提供更多的资源用于当前程序的运行。</p>
+<h4 id="十九、spark-on-yarn-模式有哪些优点"><a href="#十九、spark-on-yarn-模式有哪些优点" class="headerlink" title="十九、spark on yarn 模式有哪些优点"></a>十九、spark on yarn 模式有哪些优点</h4><p>1）与其他计算框架共享集群资源（Spark 框架与 MapReduce 框架同时运行，如果不用 Yarn 进行资源分配，MapReduce 分到的内存资源会很少，效率低下）；资源按需分配，进而提高集群资源利用等。<br>2）相较于 Spark 自带的 Standalone 模式，Yarn 的资源分配更加细致。<br>3）Application 部署简化，例如 Spark，Storm 等多种框架的应用由客户端提交后，由 Yarn 负责资源的管理和调度，利用 Container 作为资源隔离的单位，以它为单位去使用内存,cpu 等。<br>4）Yarn 通过队列的方式，管理同时运行在 Yarn 集群中的多个服务，可根据不同类型的应用程序负载情况，调整对应的资源使用量，实现资源弹性管理。</p>
+<h4 id="二十、如何理解container？"><a href="#二十、如何理解container？" class="headerlink" title="二十、如何理解container？"></a>二十、如何理解container？</h4><p>1）Container 作为资源分配和调度的基本单位，其中封装了的资源如内存，CPU，磁盘，网络带宽等。 目前 yarn 仅仅封装内存和 CPU<br>2）Container 由 ApplicationMaster 向 ResourceManager 申请的，由ResouceManager 中的资源调度器异步分配给 ApplicationMaster<br>3）Container 的运行是由 ApplicationMaster 向资源所在的 NodeManager发起的，Container 运行时需提供内部执行的任务命令</p>
+<h4 id="二十一、spark使用parquet文件存储格式能带来什么好处？"><a href="#二十一、spark使用parquet文件存储格式能带来什么好处？" class="headerlink" title="二十一、spark使用parquet文件存储格式能带来什么好处？"></a>二十一、spark使用parquet文件存储格式能带来什么好处？</h4><p>1）如果说 HDFS 是大数据时代分布式文件系统首选标准，那么 parquet 则是整个大数据时代文件存储格式实时首选标准。<br>2）速度更快：从使用 spark sql 操作普通文件 CSV 和 parquet 文件速度对比上看，绝大多数情况会比使用 csv 等普通文件速度提升 10 倍左右，在一些普通文件系统无法在 spark 上成功运行的情况下，使用 parquet 很多时候可以成功运行。<br>3）parquet 的压缩技术非常稳定出色，在 spark sql 中对压缩技术的处理可能无法正常的完成工作（例如会导致 lost task，lost executor）但是此时如果使用 parquet 就可以正常的完成。<br>4）极大的减少磁盘 I&#x2F;o,通常情况下能够减少 75%的存储空间，由此可以极大的减少 spark sql 处理数据的时候的数据输入内容，尤其是在 spark1.6x 中有个下推过滤器在一些情况下可以极大的减少磁盘的 IO 和内存的占用，（下推过滤器）。<br>5）spark 1.6x parquet 方式极大的提升了扫描的吞吐量，极大提高了数据的查找速度 spark1.6 和 spark1.5x 相比而言，提升了大约 1 倍的速度，在spark1.6X 中，操作 parquet 时候 cpu 也进行了极大的优化，有效的降低了<br>cpu 消耗。<br>6）采用 parquet 可以极大的优化 spark 的调度和执行。我们测试 spark 如果用 parquet 可以有效的减少 stage 的执行消耗，同时可以优化执行路径。</p>
+<h4 id="二十二、-parition和block有什么关联关系"><a href="#二十二、-parition和block有什么关联关系" class="headerlink" title="二十二、 parition和block有什么关联关系"></a>二十二、 parition和block有什么关联关系</h4><p>1）hdfs 中的 block 是分布式存储的最小单元，等分，可设置冗余，这样设计有一部分磁盘空间的浪费，但是整齐的 block 大小，便于快速找到、读取对应的内容；<br>2）Spark 中的 partion 是弹性分布式数据集 RDD 的最小单元，RDD 是由分布在各个节点上的 partion 组成的。partion 是指的 spark 在计算过程中，生成的数据在计算空间内最小单元，同一份数据（RDD）的 partion 大小不一，数量不定，是根据 application 里的算子和最初读入的数据分块数量决定；<br>3）block 位于存储空间、partion 位于计算空间，block 的大小是固定的、partion 大小是不固定的，是从 2 个不同的角度去看数据。</p>
+<h4 id="二十三、spark应用程序的执行过程是什么？"><a href="#二十三、spark应用程序的执行过程是什么？" class="headerlink" title="二十三、spark应用程序的执行过程是什么？"></a>二十三、spark应用程序的执行过程是什么？</h4><p>1）构建 Spark Application 的运行环境（启动 SparkContext），SparkContext 向资源管理器（可以是 Standalone、Mesos 或 YARN）注册并申请运行 Executor 资源；<br>2）资源管理器分配 Executor 资源并启动 StandaloneExecutorBackend，Executor 运行情况将随着心跳发送到资源管理器上；<br>3）SparkContext 构建成 DAG 图，将 DAG 图分解成 Stage，并把 Taskset发送给 Task Scheduler。Executor 向 SparkContext 申请 Task，TaskScheduler 将 Task 发放给 Executor 运行同时 SparkContext 将应用程序代码发放给 Executor；<br>4）Task 在 Executor 上运行，运行完毕释放所有资源。</p>
+<h4 id="二十四、不需要排序的hash-shuffle一定比需要排序的sort-shuffle快吗？"><a href="#二十四、不需要排序的hash-shuffle一定比需要排序的sort-shuffle快吗？" class="headerlink" title="二十四、不需要排序的hash shuffle一定比需要排序的sort shuffle快吗？"></a>二十四、不需要排序的hash shuffle一定比需要排序的sort shuffle快吗？</h4><p>不一定，当数据规模小，Hash shuffle 快于 Sorted Shuffle 数据规模大的时候；当数据量大，sorted Shuffle 会比 Hash shuffle 快很多，因为数量大的有很多小文件，不均匀，甚至出现数据倾斜，消耗内存大，1.x 之前 spark 使用hash，适合处理中小规模，1.x 之后，增加了 Sorted shuffle，Spark 更能胜任大规模处理了。</p>
+<h4 id="二十五、Sort-based-shuffle-的缺陷"><a href="#二十五、Sort-based-shuffle-的缺陷" class="headerlink" title="二十五、Sort-based shuffle 的缺陷?"></a>二十五、Sort-based shuffle 的缺陷?</h4><p>1）如果 mapper 中 task 的数量过大，依旧会产生很多小文件，此时在shuffle 传递数据的过程中 reducer 段，reduce 会需要同时大量的记录进行反序列化，导致大量的内存消耗和 GC 的巨大负担，造成系统缓慢甚至崩溃。<br>2）如果需要在分片内也进行排序，此时需要进行 mapper 段和 reducer 段的两次排序。</p>
+<h4 id="二十六、spark-storage-memoryFraction参数的含义，如何调优？"><a href="#二十六、spark-storage-memoryFraction参数的含义，如何调优？" class="headerlink" title="二十六、spark.storage.memoryFraction参数的含义，如何调优？"></a>二十六、spark.storage.memoryFraction参数的含义，如何调优？</h4><p>1）用于设置 RDD 持久化数据在 Executor 内存中能占的比例，默认是 0.6,，默认 Executor 60%的内存，可以用来保存持久化的 RDD 数据。根据你选择的不同的持久化策略，如果内存不够时，可能数据就不会持久化，或者数据会写入磁盘；<br>2）如果持久化操作比较多，可以提高 spark.storage.memoryFraction 参数，使得更多的持久化数据保存在内存中，提高数据的读取性能，如果 shuffle 的操作比较多，有很多的数据读写操作到 JVM 中，那么应该调小一点，节约出更多的内存给 JVM，避免过多的 JVM gc 发生。在 web ui 中观察如果发现 gc时间很长，可以设置 spark.storage.memoryFraction 更小一点。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>丑牛
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://hugfeature.github.io/Echo/posts/d1e68f18.html" title="大数据面试-spark">https://hugfeature.github.io/Echo/posts/d1e68f18.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/Echo/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" rel="tag"># 大数据</a>
+              <a href="/Echo/tags/%E9%9D%A2%E8%AF%95/" rel="tag"># 面试</a>
+              <a href="/Echo/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" rel="tag"># 数据处理</a>
+              <a href="/Echo/tags/spark/" rel="tag"># spark</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Echo/posts/8b4d7328.html" rel="prev" title="大数据面试-flink">
+                  <i class="fa fa-chevron-left"></i> 大数据面试-flink
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Echo/posts/403dd0d9.html" rel="next" title="大数据面试-hive">
+                  大数据面试-hive <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">丑牛</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/Echo/js/comments.js"></script><script src="/Echo/js/utils.js"></script><script src="/Echo/js/motion.js"></script><script src="/Echo/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/Echo/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"hugfeature","repo":"myBlogTalk","client_id":"f4b1fae431a4943a75f3","client_secret":"2b6995c484ff0a0a920d65ac7fd5bb1bf13fb2f2","admin_user":null,"distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"97ae6d590862d75250430f968db42f10"}</script>
+<script src="/Echo/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/Echo/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Echo/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Echo/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/Echo/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="5ZQ9pmEjPOsQmbBYQoUK41fLaMMyEK5pDRa34TE8fW4">
+  <meta name="msvalidate.01" content="58AE2D56435A76DA1BF1341C2E6930C1">
+
+<link rel="stylesheet" href="/Echo/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"hugfeature.github.io","root":"/Echo/","images":"/Echo/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/Echo/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Echo/js/config.js"></script>
+<meta name="description" content="一、hive表关联查询，如何解决数据倾斜问题？1）倾斜原因：map 输出数据按 key Hash 的分配到 reduce 中，由于 key 分布不均匀、业务数据本身的特、建表时考虑不周、等原因造成的 reduce 上的数据量差异过大。（1）key 分布不均匀;（2）业务数据本身的特性;（3）建表时考虑不周;（4）某些 SQL 语句本身就有数据倾斜;如何避免：对于 key 为空产生的数据倾斜，可以对">
+<meta property="og:type" content="article">
+<meta property="og:title" content="大数据面试-hive">
+<meta property="og:url" content="https://hugfeature.github.io/Echo/posts/403dd0d9.html">
+<meta property="og:site_name" content="测试的名义">
+<meta property="og:description" content="一、hive表关联查询，如何解决数据倾斜问题？1）倾斜原因：map 输出数据按 key Hash 的分配到 reduce 中，由于 key 分布不均匀、业务数据本身的特、建表时考虑不周、等原因造成的 reduce 上的数据量差异过大。（1）key 分布不均匀;（2）业务数据本身的特性;（3）建表时考虑不周;（4）某些 SQL 语句本身就有数据倾斜;如何避免：对于 key 为空产生的数据倾斜，可以对">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-04-11T13:28:49.000Z">
+<meta property="article:modified_time" content="2022-04-11T13:28:49.000Z">
+<meta property="article:author" content="丑牛">
+<meta property="article:tag" content="大数据">
+<meta property="article:tag" content="面试">
+<meta property="article:tag" content="hive">
+<meta property="article:tag" content="数据存储">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://hugfeature.github.io/Echo/posts/403dd0d9.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://hugfeature.github.io/Echo/posts/403dd0d9.html","path":"posts/403dd0d9.html","title":"大数据面试-hive"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>大数据面试-hive | 测试的名义</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SY6RK3NESF"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-SY6RK3NESF","only_pageview":false}</script>
+  <script src="/Echo/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+  <script async src="https://www.clarity.ms/tag/myblog"></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/Echo/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/Echo/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">测试的名义</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Stay hungry, Stay foolish</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/Echo/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/Echo/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-categories"><a href="/Echo/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-commonweal"><a href="/Echo/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E3%80%81hive%E8%A1%A8%E5%85%B3%E8%81%94%E6%9F%A5%E8%AF%A2%EF%BC%8C%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E6%95%B0%E6%8D%AE%E5%80%BE%E6%96%9C%E9%97%AE%E9%A2%98%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">一、hive表关联查询，如何解决数据倾斜问题？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E3%80%81hive%E7%9A%84HSQL%E8%BD%AC%E6%8D%A2%E4%B8%BAMapReduce%E7%9A%84%E8%BF%87%E7%A8%8B%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">二、hive的HSQL转换为MapReduce的过程？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%89%E3%80%81hive%E4%B8%8E%E5%BA%95%E5%B1%82%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BA%A4%E4%BA%92%E5%8E%9F%E7%90%86%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">三、hive与底层数据库交互原理？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%9B%E3%80%81hive%E7%9A%84%E4%B8%A4%E5%BC%A0%E8%A1%A8%E5%85%B3%E8%81%94%EF%BC%8C%E4%BD%BF%E7%94%A8MapReduce%E6%80%8E%E4%B9%88%E5%AE%9E%E7%8E%B0%EF%BC%9F"><span class="nav-number">4.</span> <span class="nav-text">四、hive的两张表关联，使用MapReduce怎么实现？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%94%E3%80%81hive%E7%9A%84%E7%89%B9%E7%82%B9%EF%BC%9F"><span class="nav-number">5.</span> <span class="nav-text">五、hive的特点？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%AD%E3%80%81hive%E4%B8%AD%E7%9A%84Sort-By%EF%BC%8COrder-By%EF%BC%8CCluster-By%EF%BC%8CDistrbute-By%E5%90%84%E4%BB%A3%E8%A1%A8%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">6.</span> <span class="nav-text">六、hive中的Sort By，Order By，Cluster By，Distrbute By各代表什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%83%E3%80%81%E5%86%99%E5%87%BAhive%E4%B8%ADsplit%E3%80%81coalesce%E5%8F%8Acollect-list%E5%87%BD%E6%95%B0%E7%9A%84%E7%94%A8%E6%B3%95%EF%BC%9F"><span class="nav-number">7.</span> <span class="nav-text">七、写出hive中split、coalesce及collect_list函数的用法？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%AB%E3%80%81Hive-%E6%9C%89%E5%93%AA%E4%BA%9B%E6%96%B9%E5%BC%8F%E4%BF%9D%E5%AD%98%E5%85%83%E6%95%B0%E6%8D%AE%EF%BC%8C%E5%90%84%E6%9C%89%E5%93%AA%E4%BA%9B%E7%89%B9%E7%82%B9%EF%BC%9F"><span class="nav-number">8.</span> <span class="nav-text">八、Hive 有哪些方式保存元数据，各有哪些特点？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B9%9D%E3%80%81hive%E5%86%85%E9%83%A8%E8%A1%A8%E5%92%8C%E5%A4%96%E9%83%A8%E8%A1%A8%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-number">9.</span> <span class="nav-text">九、hive内部表和外部表的区别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%81%E3%80%81hive%E4%B8%AD%E7%9A%84%E5%8E%8B%E7%BC%A9%E6%A0%BC%E5%BC%8FTextFile%E3%80%81SequenceFile%E3%80%81RCFile%E3%80%81ORCFile%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-number">10.</span> <span class="nav-text">十、hive中的压缩格式TextFile、SequenceFile、RCFile、ORCFile的区别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%81%E4%B8%80%E3%80%81%E6%89%80%E6%9C%89%E7%9A%84hive%E4%BB%BB%E5%8A%A1%E9%83%BD%E4%BC%9A%E6%9C%89MapReduce%E7%9A%84%E6%89%A7%E8%A1%8C%E5%90%97%EF%BC%9F"><span class="nav-number">11.</span> <span class="nav-text">十一、所有的hive任务都会有MapReduce的执行吗？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%81%E4%BA%8C%E3%80%81Hive-%E7%9A%84%E5%87%BD%E6%95%B0%EF%BC%9AUDF%E3%80%81UDAF%E3%80%81UDTF-%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-number">12.</span> <span class="nav-text">十二、Hive 的函数：UDF、UDAF、UDTF 的区别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%81%E4%B8%89%E3%80%81hive%E7%9A%84%E6%A1%B6%E8%A1%A8%EF%BC%9F"><span class="nav-number">13.</span> <span class="nav-text">十三、hive的桶表？</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">丑牛</p>
+  <div class="site-description" itemprop="description">曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-categories">
+          <a href="/Echo/categories/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/Echo/tags/">
+        <span class="site-state-item-count">66</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hugfeature/" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hugfeature&#x2F;" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/hugfeature" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/posts/403dd0d9.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Echo/images/avatar.gif">
+      <meta itemprop="name" content="丑牛">
+      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="测试的名义">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          大数据面试-hive
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-04-11 21:28:49" itemprop="dateCreated datePublished" datetime="2022-04-11T21:28:49+08:00">2022-04-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Echo/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h4 id="一、hive表关联查询，如何解决数据倾斜问题？"><a href="#一、hive表关联查询，如何解决数据倾斜问题？" class="headerlink" title="一、hive表关联查询，如何解决数据倾斜问题？"></a>一、hive表关联查询，如何解决数据倾斜问题？</h4><p>1）倾斜原因：map 输出数据按 key Hash 的分配到 reduce 中，由于 key 分布不均匀、业务数据本身的特、建表时考虑不周、等原因造成的 reduce 上的数据量差异过大。<br>（1）key 分布不均匀;<br>（2）业务数据本身的特性;<br>（3）建表时考虑不周;<br>（4）某些 SQL 语句本身就有数据倾斜;<br>如何避免：对于 key 为空产生的数据倾斜，可以对其赋予一个随机值。<br>2）解决方案<br>（1）参数调节：<br>hive.map.aggr &#x3D; true<br>hive.groupby.skewindata&#x3D;true<br>有数据倾斜的时候进行负载均衡，当选项设定位 true,生成的查询计划会有两个 MR Job。第一个 MR Job 中，Map 的输出结果集合会随机分布到 Reduce中，每个 Reduce 做部分聚合操作，并输出结果，这样处理的结果是相同的<br>Group By Key 有可能被分发到不同的 Reduce 中，从而达到负载均衡的目的；第二个 MR Job 再根据预处理的数据结果按照 Group By Key 分布到 Reduce中（这个过程可以保证相同的 Group By Key 被分布到同一个 Reduce 中），最后完成最终的聚合操作。<br>（2）SQL 语句调节：<br>① 选用 join key 分布最均匀的表作为驱动表。做好列裁剪和 filter 操作，以达到两表做 join 的时候，数据量相对变小的效果。<br>② 大小表 Join：<br>使用 map join 让小的维度表（1000 条以下的记录条数）先进内存。在map 端完成 reduce。<br>③ 大表 Join 大表：<br>把空值的 key 变成一个字符串加上随机数，把倾斜的数据分到不同的reduce 上，由于 null 值关联不上，处理后并不影响最终结果。<br>④ count distinct 大量相同特殊值:<br>count distinct 时，将值为空的情况单独处理，如果是计算 count distinct，可以不用处理，直接过滤，在最后结果中加 1。如果还有其他计算，需要进行group by，可以先将值为空的记录单独处理，再和其他计算结果进行 union。</p>
+<h4 id="二、hive的HSQL转换为MapReduce的过程？"><a href="#二、hive的HSQL转换为MapReduce的过程？" class="headerlink" title="二、hive的HSQL转换为MapReduce的过程？"></a>二、hive的HSQL转换为MapReduce的过程？</h4><p>HiveSQL -&gt;AST(抽象语法树) -&gt; QB(查询块) -&gt;OperatorTree（操作树）-&gt;优化后的操作树-&gt;mapreduce 任务树-&gt;优化后的 mapreduce 任务树<br>过程描述如下：<br>SQL Parser：Antlr 定义 SQL 的语法规则，完成 SQL 词法，语法解析，将SQL 转化为抽象语法树 AST Tree；<br>Semantic Analyzer：遍历 AST Tree，抽象出查询的基本组成单元<br>QueryBlock；<br>Logical plan：遍历 QueryBlock，翻译为执行操作树 OperatorTree；</p>
+<p>Logical plan optimizer: 逻辑层优化器进行 OperatorTree 变换，合并不必要的 ReduceSinkOperator，减少 shuffle 数据量；<br>Physical plan：遍历 OperatorTree，翻译为 MapReduce 任务；<br>Logical plan optimizer：物理层优化器进行 MapReduce 任务的变换，生成最终的执行计划。</p>
+<h4 id="三、hive与底层数据库交互原理？"><a href="#三、hive与底层数据库交互原理？" class="headerlink" title="三、hive与底层数据库交互原理？"></a>三、hive与底层数据库交互原理？</h4><p>由于 Hive 的元数据可能要面临不断地更新、修改和读取操作，所以它显然不适合使用 Hadoop 文件系统进行存储。目前 Hive 将元数据存储在 RDBMS 中，比如存储在 MySQL、Derby 中。元数据信息包括：存在的表、表的列、权限和更多的其他信息。</p>
+<h4 id="四、hive的两张表关联，使用MapReduce怎么实现？"><a href="#四、hive的两张表关联，使用MapReduce怎么实现？" class="headerlink" title="四、hive的两张表关联，使用MapReduce怎么实现？"></a>四、hive的两张表关联，使用MapReduce怎么实现？</h4><p>如果其中有一张表为小表，直接使用 map 端 join 的方式（map 端加载小表）进行聚合。<br>如果两张都是大表，那么采用联合 key，联合 key 的第一个组成部分是 joinon 中的公共字段，第二部分是一个 flag，0 代表表 A，1 代表表 B，由此让Reduce 区分客户信息和订单信息；在 Mapper 中同时处理两张表的信息，将join on 公共字段相同的数据划分到同一个分区中，进而传递到一个 Reduce中，然后在 Reduce 中实现聚合。</p>
+<h4 id="五、hive的特点？"><a href="#五、hive的特点？" class="headerlink" title="五、hive的特点？"></a>五、hive的特点？</h4><p>hive 是基于 Hadoop 的一个数据仓库工具，可以将结构化的数据文件映射为一张数据库表，并提供完整的 sql 查询功能，可以将 sql 语句转换为MapReduce 任务进行运行。其优点是学习成本低，可以通过类 SQL 语句快速实现简单的 MapReduce 统计，不必开发专门的 MapReduce 应用，十分适合数据仓库的统计分析，但是 Hive 不支持实时查询。</p>
+<h4 id="六、hive中的Sort-By，Order-By，Cluster-By，Distrbute-By各代表什么？"><a href="#六、hive中的Sort-By，Order-By，Cluster-By，Distrbute-By各代表什么？" class="headerlink" title="六、hive中的Sort By，Order By，Cluster By，Distrbute By各代表什么？"></a>六、hive中的Sort By，Order By，Cluster By，Distrbute By各代表什么？</h4><p>order by：会对输入做全局排序，因此只有一个 reducer（多个 reducer 无法保证全局有序）。只有一个 reducer，会导致当输入规模较大时，需要较长的计算时间。<br>sort by：不是全局排序，其在数据进入 reducer 前完成排序。<br>distribute by：按照指定的字段对数据进行划分输出到不同的 reduce 中。<br>cluster by：除了具有 distribute by 的功能外还兼具 sort by 的功能。</p>
+<h4 id="七、写出hive中split、coalesce及collect-list函数的用法？"><a href="#七、写出hive中split、coalesce及collect-list函数的用法？" class="headerlink" title="七、写出hive中split、coalesce及collect_list函数的用法？"></a>七、写出hive中split、coalesce及collect_list函数的用法？</h4><p>split 将字符串转化为数组，即：split(‘a,b,c,d’ , ‘,’) &#x3D;&#x3D;&gt; [“a”,”b”,”c”,”d”]。<br>coalesce(T v1, T v2, …) 返回参数中的第一个非空值；如果所有值都为 NULL，那么返回 NULL。<br>collect_list 列出该字段所有的值，不去重 &#x3D;&gt; select collect_list(id) from table。</p>
+<h4 id="八、Hive-有哪些方式保存元数据，各有哪些特点？"><a href="#八、Hive-有哪些方式保存元数据，各有哪些特点？" class="headerlink" title="八、Hive 有哪些方式保存元数据，各有哪些特点？"></a>八、Hive 有哪些方式保存元数据，各有哪些特点？</h4><p>Hive 支持三种不同的元存储服务器，分别为：内嵌式元存储服务器、本地元存储服务器、远程元存储服务器，每种存储方式使用不同的配置参数。</p>
+<p>内嵌式元存储主要用于单元测试，在该模式下每次只有一个进程可以连接到元存储，Derby 是内嵌式元存储的默认数据库。</p>
+<p>在本地模式下，每个 Hive 客户端都会打开到数据存储的连接并在该连接上请求 SQL 查询。<br>在远程模式下，所有的 Hive 客户端都将打开一个到元数据服务器的连接，该服务器依次查询元数据，元数据服务器和客户端之间使用 Thrift 协议通信。</p>
+<h4 id="九、hive内部表和外部表的区别？"><a href="#九、hive内部表和外部表的区别？" class="headerlink" title="九、hive内部表和外部表的区别？"></a>九、hive内部表和外部表的区别？</h4><p>创建表时：创建内部表时，会将数据移动到数据仓库指向的路径；若创建外部表，仅记录数据所在的路径，不对数据的位置做任何改变。<br>删除表时：在删除表的时候，内部表的元数据和数据会被一起删除， 而外部表只删除元数据，不删除数据。这样外部表相对来说更加安全些，数据组织也更加灵活，方便共享源数据。</p>
+<h4 id="十、hive中的压缩格式TextFile、SequenceFile、RCFile、ORCFile的区别？"><a href="#十、hive中的压缩格式TextFile、SequenceFile、RCFile、ORCFile的区别？" class="headerlink" title="十、hive中的压缩格式TextFile、SequenceFile、RCFile、ORCFile的区别？"></a>十、hive中的压缩格式TextFile、SequenceFile、RCFile、ORCFile的区别？</h4><p>1、TextFile<br>默认格式，存储方式为行存储，数据不做压缩，磁盘开销大，数据解析开销大。可结合 Gzip、Bzip2 使用(系统自动检查，执行查询时自动解压)，但使用这种方式，压缩后的文件不支持 split，Hive 不会对数据进行切分，从而无法对数据进行并行操作。并且在反序列化过程中，必须逐个字符判断是不是分隔符和行结束符，因此反序列化开销会比 SequenceFile 高几十倍。<br>2、SequenceFile<br>SequenceFile 是 Hadoop API 提供的一种二进制文件支持，存储方式为行存储，其具有使用方便、可分割、可压缩的特点。<br>SequenceFile 支持三种压缩选择：NONE，RECORD，BLOCK。Record 压缩率低，一般建议使用 BLOCK 压缩。优势是文件和 hadoop api 中的 MapFile 是相互兼容的<br>3、RCFile<br>存储方式：数据按行分块，每块按列存储。结合了行存储和列存储的优点：<br>首先，RCFile 保证同一行的数据位于同一节点，因此元组重构的开销很低；<br>其次，像列存储一样，RCFile 能够利用列维度的数据压缩，并且能跳过不必要的列读取；<br>4、ORCFile<br>存储方式：数据按行分块 每块按照列存储。<br>压缩快、快速列存取。<br>效率比 rcfile 高，是 rcfile 的改良版本。<br>总结：相比 TEXTFILE 和 SEQUENCEFILE，RCFILE 由于列式存储方式，数据加载时性能消耗较大，但是具有较好的压缩比和查询响应。数据仓库的特点是一次写入、多次读取，因此，整体来看，RCFILE 相比其余两种格式具有较明显的优势。</p>
+<h4 id="十一、所有的hive任务都会有MapReduce的执行吗？"><a href="#十一、所有的hive任务都会有MapReduce的执行吗？" class="headerlink" title="十一、所有的hive任务都会有MapReduce的执行吗？"></a>十一、所有的hive任务都会有MapReduce的执行吗？</h4><p>不是，从 Hive0.10.0 版本开始，对于简单的不需要聚合的类似 SELECT from LIMIT n 语句，不需要起 MapReduce job，直接通过 Fetch task 获取数据。</p>
+<h4 id="十二、Hive-的函数：UDF、UDAF、UDTF-的区别？"><a href="#十二、Hive-的函数：UDF、UDAF、UDTF-的区别？" class="headerlink" title="十二、Hive 的函数：UDF、UDAF、UDTF 的区别？"></a>十二、Hive 的函数：UDF、UDAF、UDTF 的区别？</h4><p>UDF：单行进入，单行输出<br>UDAF：多行进入，单行输出<br>UDTF：单行输入，多行输出</p>
+<h4 id="十三、hive的桶表？"><a href="#十三、hive的桶表？" class="headerlink" title="十三、hive的桶表？"></a>十三、hive的桶表？</h4><p>桶表是对数据进行哈希取值，然后放到不同文件中存储。<br>数据加载到桶表时，会对字段取 hash 值，然后与桶的数量取模。把数据放到对应的文件中。物理上，每个桶就是表(或分区）目录里的一个文件，一个作业产生的桶(输出文件)和 reduce 任务个数相同。<br>桶表专门用于抽样查询，是很专业性的，不是日常用来存储数据的表，需要抽样查询时，才创建和使用桶表。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>丑牛
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://hugfeature.github.io/Echo/posts/403dd0d9.html" title="大数据面试-hive">https://hugfeature.github.io/Echo/posts/403dd0d9.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/Echo/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" rel="tag"># 大数据</a>
+              <a href="/Echo/tags/%E9%9D%A2%E8%AF%95/" rel="tag"># 面试</a>
+              <a href="/Echo/tags/hive/" rel="tag"># hive</a>
+              <a href="/Echo/tags/%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8/" rel="tag"># 数据存储</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Echo/posts/d1e68f18.html" rel="prev" title="大数据面试-spark">
+                  <i class="fa fa-chevron-left"></i> 大数据面试-spark
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Echo/posts/c265aad9.html" rel="next" title="大数据面试-hbase">
+                  大数据面试-hbase <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">丑牛</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/Echo/js/comments.js"></script><script src="/Echo/js/utils.js"></script><script src="/Echo/js/motion.js"></script><script src="/Echo/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/Echo/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"hugfeature","repo":"myBlogTalk","client_id":"f4b1fae431a4943a75f3","client_secret":"2b6995c484ff0a0a920d65ac7fd5bb1bf13fb2f2","admin_user":null,"distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"262f2610f16d9f3cdb54539ecf3bade8"}</script>
+<script src="/Echo/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

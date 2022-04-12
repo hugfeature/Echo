@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/Echo/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Echo/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Echo/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/Echo/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="5ZQ9pmEjPOsQmbBYQoUK41fLaMMyEK5pDRa34TE8fW4">
+  <meta name="msvalidate.01" content="58AE2D56435A76DA1BF1341C2E6930C1">
+
+<link rel="stylesheet" href="/Echo/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"hugfeature.github.io","root":"/Echo/","images":"/Echo/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/Echo/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Echo/js/config.js"></script>
+<meta name="description" content="一、flink checkpoint 与spark Flink 有什么区别或者优势？spark streaming 的 checkpoint 仅仅是针对 driver 的故障恢复做了数据和元数据的checkpoint。而 flink 的 checkpoint 机制 要复杂了很多，它采用的是轻量级的分布式快照，实现了每个算子的快照，及流动中的数据的快照。 二、Flink中的Time有哪几种？在 fl">
+<meta property="og:type" content="article">
+<meta property="og:title" content="大数据面试-flink">
+<meta property="og:url" content="https://hugfeature.github.io/Echo/posts/8b4d7328.html">
+<meta property="og:site_name" content="测试的名义">
+<meta property="og:description" content="一、flink checkpoint 与spark Flink 有什么区别或者优势？spark streaming 的 checkpoint 仅仅是针对 driver 的故障恢复做了数据和元数据的checkpoint。而 flink 的 checkpoint 机制 要复杂了很多，它采用的是轻量级的分布式快照，实现了每个算子的快照，及流动中的数据的快照。 二、Flink中的Time有哪几种？在 fl">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-04-09T13:43:39.000Z">
+<meta property="article:modified_time" content="2022-04-09T13:43:39.000Z">
+<meta property="article:author" content="丑牛">
+<meta property="article:tag" content="大数据">
+<meta property="article:tag" content="面试">
+<meta property="article:tag" content="flink">
+<meta property="article:tag" content="数据处理">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://hugfeature.github.io/Echo/posts/8b4d7328.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://hugfeature.github.io/Echo/posts/8b4d7328.html","path":"posts/8b4d7328.html","title":"大数据面试-flink"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>大数据面试-flink | 测试的名义</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SY6RK3NESF"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-SY6RK3NESF","only_pageview":false}</script>
+  <script src="/Echo/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+  <script async src="https://www.clarity.ms/tag/myblog"></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/Echo/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/Echo/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">测试的名义</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Stay hungry, Stay foolish</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/Echo/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/Echo/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-categories"><a href="/Echo/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-commonweal"><a href="/Echo/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E3%80%81flink-checkpoint-%E4%B8%8Espark-Flink-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%E6%88%96%E8%80%85%E4%BC%98%E5%8A%BF%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">一、flink checkpoint 与spark Flink 有什么区别或者优势？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E3%80%81Flink%E4%B8%AD%E7%9A%84Time%E6%9C%89%E5%93%AA%E5%87%A0%E7%A7%8D%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">二、Flink中的Time有哪几种？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%AF%B9%E4%BA%8E%E8%BF%9F%E5%88%B0%E6%95%B0%E6%8D%AE%E6%98%AF%E6%80%8E%E4%B9%88%E5%A4%84%E7%90%86%E7%9A%84%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">三、对于迟到数据是怎么处理的？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%9B%E3%80%81Flink%E7%9A%84%E8%BF%90%E8%A1%8C%E5%BF%85%E9%A1%BB%E4%BE%9D%E8%B5%96Hadoop%E7%BB%84%E4%BB%B6%E5%90%97%EF%BC%9F"><span class="nav-number">4.</span> <span class="nav-text">四、Flink的运行必须依赖Hadoop组件吗？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%94%E3%80%81flink%E9%9B%86%E7%BE%A4%E6%9C%89%E5%93%AA%E4%BA%9B%E8%A7%92%E8%89%B2%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8%EF%BC%9F"><span class="nav-number">5.</span> <span class="nav-text">五、flink集群有哪些角色什么作用？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%AD%E3%80%81flink%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E4%B8%ADTask-Solt%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-number">6.</span> <span class="nav-text">六、flink资源管理中Task Solt的概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%83%E3%80%81Flink%E7%9A%84%E9%87%8D%E5%90%AF%E7%AD%96%E7%95%A5"><span class="nav-number">7.</span> <span class="nav-text">七、Flink的重启策略</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%9B%BA%E5%AE%9A%E5%BB%B6%E8%BF%9F%E9%87%8D%E5%90%AF%E7%AD%96%E7%95%A5"><span class="nav-number">7.1.</span> <span class="nav-text">固定延迟重启策略</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%A4%B1%E8%B4%A5%E7%8E%87%E9%87%8D%E5%90%AF%E7%AD%96%E7%95%A5"><span class="nav-number">7.2.</span> <span class="nav-text">失败率重启策略</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%97%A0%E9%87%8D%E5%90%AF%E7%AD%96%E7%95%A5"><span class="nav-number">7.3.</span> <span class="nav-text">无重启策略</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%AB%E3%80%81Flink%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81Exactly-once%E8%AF%AD%E4%B9%89%E7%9A%84"><span class="nav-number">8.</span> <span class="nav-text">八、Flink如何保证Exactly-once语义的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B9%9D%E3%80%81%E5%A6%82%E6%9E%9C%E4%B8%8B%E7%BA%A7%E5%AD%98%E5%82%A8%E4%B8%8D%E6%94%AF%E6%8C%81%E4%BA%8B%E5%8A%A1%EF%BC%8Cflink%E6%80%8E%E4%B9%88%E4%BF%9D%E8%AF%81exactly-once"><span class="nav-number">9.</span> <span class="nav-text">九、如果下级存储不支持事务，flink怎么保证exactly-once</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%81%E3%80%81flink%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86%E5%8F%8D%E5%8E%8B"><span class="nav-number">10.</span> <span class="nav-text">十、flink如何处理反压</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%81%E4%B8%80%E3%80%81flink%E4%B8%AD%E7%9A%84%E7%8A%B6%E6%80%81%E5%AD%98%E5%82%A8"><span class="nav-number">11.</span> <span class="nav-text">十一、flink中的状态存储</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%81%E4%BA%8C%E3%80%81flink%E6%98%AF%E5%A6%82%E4%BD%95%E6%94%AF%E6%8C%81%E6%B5%81%E6%89%B9%E4%B8%80%E4%BD%93%E7%9A%84"><span class="nav-number">12.</span> <span class="nav-text">十二、flink是如何支持流批一体的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%81%E4%B8%89%E3%80%81flink%E7%9A%84%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%98%AF%E5%A6%82%E4%BD%95%E5%81%9A%E7%9A%84"><span class="nav-number">13.</span> <span class="nav-text">十三、flink的内存管理是如何做的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%81%E5%9B%9B%E3%80%81flinkCEP%E7%BC%96%E7%A8%8B%E4%B8%AD%E5%BD%93%E7%8A%B6%E6%80%81%E6%B2%A1%E6%9C%89%E5%88%B0%E8%BE%BE%E7%9A%84%E6%97%B6%E5%80%99%E4%BC%9A%E5%B0%86%E6%95%B0%E6%8D%AE%E4%BF%9D%E5%AD%98%E5%9C%A8%E5%93%AA%E9%87%8C"><span class="nav-number">14.</span> <span class="nav-text">十四、flinkCEP编程中当状态没有到达的时候会将数据保存在哪里</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%81%E4%BA%94%E3%80%81flink%E7%9A%84%E8%BF%90%E8%A1%8C%E6%9E%B6%E6%9E%84"><span class="nav-number">15.</span> <span class="nav-text">十五、flink的运行架构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%81%E5%85%AD%E3%80%81flink%E7%9A%84%E4%BD%9C%E4%B8%9A%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B"><span class="nav-number">16.</span> <span class="nav-text">十六、flink的作业执行流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%81%E4%B8%83%E3%80%81flink%E4%B8%ADevent-time%E5%92%8Cprocesstime%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">17.</span> <span class="nav-text">十七、flink中event time和processtime的区别</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">丑牛</p>
+  <div class="site-description" itemprop="description">曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-categories">
+          <a href="/Echo/categories/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/Echo/tags/">
+        <span class="site-state-item-count">66</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hugfeature/" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hugfeature&#x2F;" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/hugfeature" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/posts/8b4d7328.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Echo/images/avatar.gif">
+      <meta itemprop="name" content="丑牛">
+      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="测试的名义">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          大数据面试-flink
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-04-09 21:43:39" itemprop="dateCreated datePublished" datetime="2022-04-09T21:43:39+08:00">2022-04-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Echo/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h4 id="一、flink-checkpoint-与spark-Flink-有什么区别或者优势？"><a href="#一、flink-checkpoint-与spark-Flink-有什么区别或者优势？" class="headerlink" title="一、flink checkpoint 与spark Flink 有什么区别或者优势？"></a>一、flink checkpoint 与spark Flink 有什么区别或者优势？</h4><p>spark streaming 的 checkpoint 仅仅是针对 driver 的故障恢复做了数据和元数据的checkpoint。而 flink 的 checkpoint 机制 要复杂了很多，它采用的是轻量级的分布式快照，实现了每个算子的快照，及流动中的数据的快照。</p>
+<h4 id="二、Flink中的Time有哪几种？"><a href="#二、Flink中的Time有哪几种？" class="headerlink" title="二、Flink中的Time有哪几种？"></a>二、Flink中的Time有哪几种？</h4><p>在 flink 中被划分为事件时间，提取时间，处理时间三种。<br>如果以 EventTime 为基准来定义时间窗口那将形成 EventTimeWindow,要求消息本身就应该携带 EventTime。如果以 IngesingtTime 为基准来定义时间窗口那将形成IngestingTimeWindow,以 source 的 systemTime 为准。如果以 ProcessingTime基准来定义时间窗口那将形成 ProcessingTimeWindow，以 operator 的systemTime 为准。</p>
+<h4 id="三、对于迟到数据是怎么处理的？"><a href="#三、对于迟到数据是怎么处理的？" class="headerlink" title="三、对于迟到数据是怎么处理的？"></a>三、对于迟到数据是怎么处理的？</h4><p>Flink 中 WaterMark 和 Window 机制解决了流式数据的乱序问题，对于因为延迟而顺序有误的数据，可以根据 eventTime 进行业务处理，对于延迟的数据 Flink 也有自己的解决办法，主要的办法是给定一个允许延迟的时间，在该时间范围内仍可以接受处理延迟数据。</p>
+<p>设置允许延迟的时间是通过 allowedLateness(lateness: Time)设置<br>保存延迟数据则是通过 sideOutputLateData(outputTag: OutputTag[T])保存<br>获取延迟数据是通过 DataStream.getSideOutput(tag: OutputTag[X])获取</p>
+<h4 id="四、Flink的运行必须依赖Hadoop组件吗？"><a href="#四、Flink的运行必须依赖Hadoop组件吗？" class="headerlink" title="四、Flink的运行必须依赖Hadoop组件吗？"></a>四、Flink的运行必须依赖Hadoop组件吗？</h4><p>Flink 可以完全独立于 Hadoop，在不依赖 Hadoop 组件下运行。但是做为大数据的基础设施，Hadoop 体系是任何大数据框架都绕不过去的。Flink 可以集成众多Hadooop 组件，例如 Yarn、Hbase、HDFS 等等。例如，Flink 可以和 Yarn 集成做资源调度，也可以读写 HDFS，或者利用 HDFS 做检查点。</p>
+<h4 id="五、flink集群有哪些角色什么作用？"><a href="#五、flink集群有哪些角色什么作用？" class="headerlink" title="五、flink集群有哪些角色什么作用？"></a>五、flink集群有哪些角色什么作用？</h4><p>JobManager 处理器：<br>也称之为 Master，用于协调分布式执行，它们用来调度 task，协调检查点，协调失败时恢复等。Flink 运行时至少存在一个 master 处理器，如果配置高可用模式则会存在多个 master 处理器，它们其中有一个是 leader，而其他的都是 standby。<br>TaskManager 处理器：<br>也称之为 Worker，用于执行一个 dataflow 的 task(或者特殊的 subtask)、数据缓冲和 data stream 的交换，Flink 运行时至少会存在一个 worker 处理器。<br>Clint 客户端：<br>Client 是 Flink 程序提交的客户端，当用户提交一个 Flink 程序时，会首先创建一个Client，该 Client 首先会对用户提交的 Flink 程序进行预处理，并提交到 Flink 集群中处理，所以 Client 需要从用户提交的 Flink 程序配置中获取 JobManager 的地址，并建立到 JobManager 的连接，将 Flink Job 提交给 JobManager。</p>
+<h4 id="六、flink资源管理中Task-Solt的概念"><a href="#六、flink资源管理中Task-Solt的概念" class="headerlink" title="六、flink资源管理中Task Solt的概念"></a>六、flink资源管理中Task Solt的概念</h4><p>在 Flink 中每个 TaskManager 是一个 JVM 的进程, 可以在不同的线程中执行一个或多个子任务。<br>为了控制一个 worker 能接收多少个 task。worker 通过 task slot（任务槽）来进行控制（一个 worker 至少有一个 task slot）。</p>
+<h4 id="七、Flink的重启策略"><a href="#七、Flink的重启策略" class="headerlink" title="七、Flink的重启策略"></a>七、Flink的重启策略</h4><p>Flink 支持不同的重启策略，这些重启策略控制着 job 失败后如何重启：</p>
+<h5 id="固定延迟重启策略"><a href="#固定延迟重启策略" class="headerlink" title="固定延迟重启策略"></a>固定延迟重启策略</h5><p>固定延迟重启策略会尝试一个给定的次数来重启 Job，如果超过了最大的重启次数，Job 最终将失败。在连续的两次重启尝试之间，重启策略会等待一个固定的时间。</p>
+<h5 id="失败率重启策略"><a href="#失败率重启策略" class="headerlink" title="失败率重启策略"></a>失败率重启策略</h5><p>失败率重启策略在 Job 失败后会重启，但是超过失败率后，Job 会最终被认定失败。在两个连续的重启尝试之间，重启策略会等待一个固定的时间。</p>
+<h5 id="无重启策略"><a href="#无重启策略" class="headerlink" title="无重启策略"></a>无重启策略</h5><p>Job 直接失败，不会尝试进行重启。</p>
+<h4 id="八、Flink如何保证Exactly-once语义的"><a href="#八、Flink如何保证Exactly-once语义的" class="headerlink" title="八、Flink如何保证Exactly-once语义的"></a>八、Flink如何保证Exactly-once语义的</h4><p>Flink 通过实现两阶段提交和状态保存来实现端到端的一致性语义。分为以下几个步骤：<br>开始事务（beginTransaction）创建一个临时文件夹，来写把数据写入到这个文件夹里面<br>预提交（preCommit）将内存中缓存的数据写入文件并关闭<br>正式提交（commit）将之前写完的临时文件放入目标目录下。这代表着最终的数据会有一些延迟<br>丢弃（abort）丢弃临时文件<br>若失败发生在预提交成功后，正式提交前。可以根据状态来提交预提交的数据，也可删除预提交的数据。</p>
+<h4 id="九、如果下级存储不支持事务，flink怎么保证exactly-once"><a href="#九、如果下级存储不支持事务，flink怎么保证exactly-once" class="headerlink" title="九、如果下级存储不支持事务，flink怎么保证exactly-once"></a>九、如果下级存储不支持事务，flink怎么保证exactly-once</h4><p>端到端的 exactly-once 对 sink 要求比较高，具体实现主要有幂等写入和事务性写入两种方式。<br>幂等写入的场景依赖于业务逻辑，更常见的是用事务性写入。而事务性写入又有预写日志（WAL）和两阶段提交（2PC）两种方式。<br>如果外部系统不支持事务，那么可以用预写日志的方式，把结果数据先当成状态保存，然后在收到 checkpoint 完成的通知时，一次性写入 sink 系统。</p>
+<h4 id="十、flink如何处理反压"><a href="#十、flink如何处理反压" class="headerlink" title="十、flink如何处理反压"></a>十、flink如何处理反压</h4><p>Flink 内部是基于 producer-consumer 模型来进行消息传递的，Flink 的反压设计也是基于这个模型。Flink 使用了高效有界的分布式阻塞队列，就像 Java 通用的阻塞队列（BlockingQueue）一样。下游消费者消费变慢，上游就会受到阻塞。</p>
+<h4 id="十一、flink中的状态存储"><a href="#十一、flink中的状态存储" class="headerlink" title="十一、flink中的状态存储"></a>十一、flink中的状态存储</h4><p>Flink 在做计算的过程中经常需要存储中间状态，来避免数据丢失和状态恢复。选择的状态存储策略不同，会影响状态持久化如何和 checkpoint 交互。Flink 提供了三种状态存储方式：MemoryStateBackend、FsStateBackend、RocksDBStateBackend。</p>
+<h4 id="十二、flink是如何支持流批一体的"><a href="#十二、flink是如何支持流批一体的" class="headerlink" title="十二、flink是如何支持流批一体的"></a>十二、flink是如何支持流批一体的</h4><p>可以简单说：Flink 的开发者认为批处理是流处理的一种特殊情况。批处理是有限的流处理。Flink 使用一个引擎支持了 DataSet API 和 DataStream API。如果知道flink底层原理，可以展开详细说说。</p>
+<h4 id="十三、flink的内存管理是如何做的"><a href="#十三、flink的内存管理是如何做的" class="headerlink" title="十三、flink的内存管理是如何做的"></a>十三、flink的内存管理是如何做的</h4><p>Flink 并不是将大量对象存在堆上，而是将对象都序列化到一个预分配的内存块上。此外，Flink 大量的使用了堆外内存。如果需要处理的数据超出了内存限制，则会将部分数据存储到硬盘上。Flink 为了直接操作二进制数据实现了自己的序列化框架。</p>
+<h4 id="十四、flinkCEP编程中当状态没有到达的时候会将数据保存在哪里"><a href="#十四、flinkCEP编程中当状态没有到达的时候会将数据保存在哪里" class="headerlink" title="十四、flinkCEP编程中当状态没有到达的时候会将数据保存在哪里"></a>十四、flinkCEP编程中当状态没有到达的时候会将数据保存在哪里</h4><p>在流式处理中，CEP 当然是要支持 EventTime 的，那么相对应的也要支持数据的迟到现象，也就是 watermark 的处理逻辑。CEP 对未匹配成功的事件序列的处理，和迟到数据是类似的。在 Flink CEP 的处理逻辑中，状态没有满足的和迟到的数据，都会存储在一个 Map 数据结构中，也就是说，如果我们限定判断事件序列的时长为 5 分钟，那么内存中就会存储 5 分钟的数据，这在我看来，也是对内存的极大损伤之一。</p>
+<h4 id="十五、flink的运行架构"><a href="#十五、flink的运行架构" class="headerlink" title="十五、flink的运行架构"></a>十五、flink的运行架构</h4><p>当 Flink 集群启动后，首先会启动一个 JobManger 和一个或多个的TaskManager。由 Client 提交任务给JobManager，JobManager 再调度任务到各个 TaskManager 去执行，然后 TaskManager 将心跳和统计信息汇报给 JobManager。TaskManager 之间以流的形式进行数据的传输。上述三者均为独立的 JVM 进程。<br>l  Client 为提交 Job 的客户端，可以是运行在任何机器上（与 JobManager环境连通即可）。提交 Job 后，Client 可以结束进程（Streaming 的任务），也可以不结束并等待结果返回。<br>l  JobManager 主要负责调度 Job 并协调 Task 做 checkpoint，职责上很像 Storm 的 Nimbus。从 Client 处接收到 Job 和 JAR 包等资源后，会生成优化后的执行计划，并以 Task 的单元调度到各个 TaskManager 去执行。<br>l  TaskManager 在启动的时候就设置好了槽位数（Slot），每个 slot 能启动一个 Task，Task 为线程。从 JobManager 处接收需要部署的 Task，部署启动后，与自己的上游建立 Netty 连接，接收数据并处理。</p>
+<h4 id="十六、flink的作业执行流程"><a href="#十六、flink的作业执行流程" class="headerlink" title="十六、flink的作业执行流程"></a>十六、flink的作业执行流程</h4><p>以 yarn 模式 Per-job 方式为例概述作业提交执行流程当执行 executor() 之后,会首先在本地 client 中将代码转化为可以提交的JobGraph</p>
+<ol>
+<li>如果提交为 Per-Job 模式,则首先需要启动 AM, client 会首先向资源系统申请资源, 在 yarn 下即为申请 container 开启 AM, 如果是 Session 模式的话则不需要这个步骤</li>
+<li>Yarn 分配资源, 开启 AM</li>
+<li>Client 将 Job 提交给 Dispatcher</li>
+<li>Dispatcher 会开启一个新的 JobManager 线程</li>
+<li>JM 向 Flink 自己的 Resourcemanager 申请 slot 资源来执行任务</li>
+<li>RM 向 Yarn 申请资源来启动 TaskManger (Session 模式跳过此步)</li>
+<li>Yarn 分配 Container 来启动 taskManger (Session 模式跳过此步)</li>
+<li>Flink 的 RM 向 TM 申请 slot 资源来启动 task</li>
+<li>TM 将待分配的 slot 提供给 JM</li>
+<li>JM 提交 task, TM 会启动新的线程来执行任务,开始启动后就可以通过shuffle 模块进行 task 之间的数据交换</li>
+</ol>
+<h4 id="十七、flink中event-time和processtime的区别"><a href="#十七、flink中event-time和processtime的区别" class="headerlink" title="十七、flink中event time和processtime的区别"></a>十七、flink中event time和processtime的区别</h4><p>Flink 中有三种时间概念,分别是 Processing Time、Event Time 和 Ingestion Time<br>•  Processing Time<br>Processing Time 是指事件被处理时机器的系统时间。<br>当流程序在 Processing Time 上运行时，所有基于时间的操作(如时间窗口)将使用当时机器的系统时间。每小时 Processing Time 窗口将包括在系统时钟指示整个小时之间到达特定操作的所有事件<br>•  Event Time<br>Event Time 是事件发生的时间，一般就是数据本身携带的时间。这个时间通常是在事件到达 Flink 之前就确定的，并且可以从每个事件中获取到事件时间戳。在 EventTime 中，时间取决于数据，而跟其他没什么关系。Event Time 程序必须指定如何生成 Event Time 水印，这是表示 Event Time 进度的机制<br>•  Ingestion Time<br>Ingestion Time 是事件进入 Flink 的时间。 在源操作处，每个事件将源的当前时间作为时间戳，并且基于时间的操作（如时间窗口）会利用这个时间戳。<br>Ingestion Time 在概念上位于 Event Time 和 Processing Time 之间。 与Processing Time 相比，它稍微贵一些，但结果更可预测。因为 Ingestion Time 使用稳定的时间戳（在源处分配一次），所以对事件的不同窗口操作将引用相同的时间戳，而在 Processing Time 中，每个窗口操作符可以将事件分配给不同的窗口（基于机器系统时间和到达延迟）<br>与 Event Time 相比，Ingestion Time 程序无法处理任何无序事件或延迟数据，但程序不必指定如何生成水印。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>丑牛
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://hugfeature.github.io/Echo/posts/8b4d7328.html" title="大数据面试-flink">https://hugfeature.github.io/Echo/posts/8b4d7328.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/Echo/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" rel="tag"># 大数据</a>
+              <a href="/Echo/tags/%E9%9D%A2%E8%AF%95/" rel="tag"># 面试</a>
+              <a href="/Echo/tags/flink/" rel="tag"># flink</a>
+              <a href="/Echo/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" rel="tag"># 数据处理</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Echo/posts/932578fc.html" rel="prev" title="大数据面试-Flume">
+                  <i class="fa fa-chevron-left"></i> 大数据面试-Flume
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Echo/posts/d1e68f18.html" rel="next" title="大数据面试-spark">
+                  大数据面试-spark <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">丑牛</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/Echo/js/comments.js"></script><script src="/Echo/js/utils.js"></script><script src="/Echo/js/motion.js"></script><script src="/Echo/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/Echo/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"hugfeature","repo":"myBlogTalk","client_id":"f4b1fae431a4943a75f3","client_secret":"2b6995c484ff0a0a920d65ac7fd5bb1bf13fb2f2","admin_user":null,"distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"0d28f8c8b00caa58f8a9d7588914b47d"}</script>
+<script src="/Echo/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
