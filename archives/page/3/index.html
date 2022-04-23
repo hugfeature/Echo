@@ -168,7 +168,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/Echo/tags/">
-        <span class="site-state-item-count">66</span>
+        <span class="site-state-item-count">68</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -208,6 +208,187 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/posts/43079.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Echo/images/avatar.gif">
+      <meta itemprop="name" content="丑牛">
+      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="测试的名义">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Echo/posts/43079.html" class="post-title-link" itemprop="url">B/S架构如何测试</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-02-04 09:41:42" itemprop="dateCreated datePublished" datetime="2022-02-04T09:41:42+08:00">2022-02-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Echo/categories/%E6%B5%8B%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">测试</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>随着信息技术的发展，人们越来越习惯与在网上搜索信息来做出决定，因此网站已经是各类企业的必备之选。但是仅仅拥有一个网站还不够，还需要提供一个信息丰富、可访问和用户友好的网站。为了实现这样的功能，网站要经过良好的测试，这样的测试测试成为B&#x2F;S架构测试即页面测试。</p>
+<h4 id="什么是页面测试？"><a href="#什么是页面测试？" class="headerlink" title="什么是页面测试？"></a>什么是页面测试？</h4><p>页面测试是软件测试中的一种，用于测试网站或者web类应用程序是否存在一些问题。在上线之前要对基于页面的应用程序进行完整测试。</p>
+<p>基于页面的系统在面向最终用户上线之前，需要进行端到端的全面的测试。</p>
+<p>通过页面测试，可以确保基于页面的系统正常运行，且可以被用户接受，UI测试和功能测试是页面测试的首选。</p>
+<h4 id="常见的页面测试类型"><a href="#常见的页面测试类型" class="headerlink" title="常见的页面测试类型"></a>常见的页面测试类型</h4><ul>
+<li>功能测试</li>
+<li>可用性测试</li>
+<li>接口测试</li>
+<li>兼容性测试</li>
+<li>性能测试</li>
+<li>安全测试</li>
+</ul>
+<h5 id="功能测试"><a href="#功能测试" class="headerlink" title="功能测试"></a>功能测试</h5><p>测试页面中所有的链接，数据库连接，页面中用于提交或获取用户信息的表单，Cookie测试等</p>
+<h6 id="链接测试"><a href="#链接测试" class="headerlink" title="链接测试"></a>链接测试</h6><ul>
+<li>测试从所有页面到受测特定域的传出链接。</li>
+<li>测试所有内部链接。</li>
+<li>测试链接跳转到同一页面。</li>
+<li>测试链接用于从网页向管理员或其他用户发送电子邮件。</li>
+<li>测试以查看是否存在任何孤立页面。</li>
+<li>最后，链接检查包括，检查上述所有链接中的断开链接。</li>
+</ul>
+<h6 id="表单测试"><a href="#表单测试" class="headerlink" title="表单测试"></a>表单测试</h6><p>表单在任何网站都是不可或缺的，一般用于接收来自用户信息。如何进行表单测试呢？</p>
+<ul>
+<li>首先，检查每个字段的所有验证。</li>
+<li>检查字段中的默认值。</li>
+<li>表单中对表单中字段的错误输入。</li>
+<li>用于创建表单的选项（如果有）、表单删除、查看或修改表单。</li>
+</ul>
+<h6 id="cookie测试"><a href="#cookie测试" class="headerlink" title="cookie测试"></a>cookie测试</h6><p>Cookie 是存储在用户计算机上的小文件。这些基本上用于维护会话 - 主要是登录会话。通过在浏览器选项中启用或禁用 Cookie 来测试应用程序。</p>
+<p>在写入用户计算机之前，测试 Cookie 是否已加密。如果您正在测试会话 Cookie（即在会话结束后过期的 Cookie），请在会话结束后检查登录会话和用户统计信息。通过删除 Cookie 来检查对应用程序安全的影响。</p>
+<h6 id="HTML-x2F-CSS测试"><a href="#HTML-x2F-CSS测试" class="headerlink" title="HTML&#x2F;CSS测试"></a>HTML&#x2F;CSS测试</h6><p>如果您正在为搜索引擎优化您的网站，那么HTML &#x2F; CSS验证是最重要的。主要验证网站的HTML语法错误。检查该网站是否可被不同的搜索引擎抓取。</p>
+<h6 id="数据库连接测试"><a href="#数据库连接测试" class="headerlink" title="数据库连接测试"></a>数据库连接测试</h6><p>数据一致性在 Web 应用程序中也非常重要。在编辑、删除、修改表单或执行任何与数据库相关的功能时检查数据完整性和错误。</p>
+<p>检查是否正确执行了所有数据库查询，检索了数据并正确更新了数据。有关数据库测试的更多信息可能是数据库上的负载，我们将在下面的Web负载或性能测试中解决此问题。</p>
+<p>在测试网站功能时，还应该测试以下内容：</p>
+<h6 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h6><p>i. 内部链接<br>ii.外部链接<br>iii.邮件链接<br>iv.断开的链接</p>
+<h6 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h6><ol>
+<li>字段验证</li>
+<li>错误输入的错误消息</li>
+<li>可选和必填字段</li>
+</ol>
+<h6 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h6><p>测试将针对数据库完整性进行。</p>
+<h5 id="可用性测试"><a href="#可用性测试" class="headerlink" title="可用性测试"></a>可用性测试</h5><p>可用性测试是测量系统的人机交互特性，并确定不足以进行纠正。</p>
+<h5 id="导航测试"><a href="#导航测试" class="headerlink" title="导航测试"></a>导航测试</h5><p>导航是指用户如何浏览网页、不同的控件（如按钮、框）或用户如何使用页面上的链接浏览不同的页面。</p>
+<h6 id="可用性测试应包括以下内容"><a href="#可用性测试应包括以下内容" class="headerlink" title="可用性测试应包括以下内容"></a>可用性测试应包括以下内容</h6><ul>
+<li>该网站应易于使用。</li>
+<li>所提供的说明应非常清楚。</li>
+<li>检查提供的说明是否完全符合其目的。</li>
+<li>每个页面上都应提供主菜单。</li>
+<li>它应该足够一致。</li>
+</ul>
+<h6 id="内容检查"><a href="#内容检查" class="headerlink" title="内容检查"></a>内容检查</h6><p>内容应符合逻辑且易于理解。检查拼写错误。深色背景使用会让用户不喜欢，不应在网站主题中使用。应该遵循一些用于网页和内容构建的标准颜色。这些是普遍接受的标准。内容应该是有意义的。所有锚文本链接都应正常工作。图像应以适当的尺寸正确放置。这些是页面开发中应遵循的一些基本重要标准。你的任务是验证所有内容以进行 UI 测试。</p>
+<h6 id="用于帮助用户搜索信息"><a href="#用于帮助用户搜索信息" class="headerlink" title="用于帮助用户搜索信息"></a>用于帮助用户搜索信息</h6><p>与搜索选项一样，站点地图也有助于处理文件等。站点地图应与网站上的所有链接一起提供，并具有正确的导航树视图。检查站点地图上的所有链接。</p>
+<p>“在网站中搜索”选项将帮助用户轻松快速地找到他们正在寻找的内容页面。这些都是可选项目，如果存在，则应对其进行验证。</p>
+<h5 id="接口测试"><a href="#接口测试" class="headerlink" title="接口测试"></a>接口测试</h5><p>在页面测试中，应测试服务器端接口。这可以通过验证通信是否正确完成。应测试服务器与软件、硬件、网络和数据库的兼容性。</p>
+<p>主要接口有：</p>
+<ul>
+<li>页面服务器和应用程序服务器接口</li>
+<li>应用程序服务器和数据库服务器接口。</li>
+</ul>
+<p>检查这些服务器之间的所有交互是否都已执行，错误是否得到正确处理。如果数据库或 Web 服务器为应用程序服务器的任何查询返回错误消息，那么应用程序服务器应捕获这些错误消息并将其适当地显示给用户。</p>
+<p>检查如果用户中断其中的任何事务会发生什么情况？检查如果与Web服务器的连接在两者之间重置会发生什么？</p>
+<h5 id="兼容性测试"><a href="#兼容性测试" class="headerlink" title="兼容性测试"></a>兼容性测试</h5><p>网站的兼容性是一个非常重要的测试方面。查看要执行的兼容性测试：</p>
+<ul>
+<li>浏览器兼容性</li>
+<li>操作系统兼容性</li>
+<li>移动浏览</li>
+<li>打印选项</li>
+</ul>
+<h6 id="浏览器兼容性："><a href="#浏览器兼容性：" class="headerlink" title="浏览器兼容性："></a>浏览器兼容性：</h6><p>在我的网络测试生涯中，我经历过这是网站测试中最具影响力的部分。<br>某些应用程序非常依赖于浏览器。不同的浏览器具有不同的配置和设置，您的网页应与之兼容。</p>
+<p>您的网站编码应该是跨浏览器平台兼容的。如果您正在使用 Java 脚本或 AJAX 调用 UI 功能，则执行安全检查或验证会给页面应用程序的浏览器兼容性测试带来更多压力。</p>
+<p>在不同的浏览器上测试页面应用程序，如Edge，Firefox，Chrome，Netscape Navigator，AOL，Safari，Opera浏览器和不同版本。</p>
+<h6 id="操作系统兼容性："><a href="#操作系统兼容性：" class="headerlink" title="操作系统兼容性："></a>操作系统兼容性：</h6><p>Web 应用程序中的某些功能是它可能不与所有操作系统兼容。Web开发中使用的所有新技术，如图形设计和界面调用（如不同的API）可能并非在所有操作系统中都可用。</p>
+<p>因此，在具有不同操作系统风格的Windows，Unix，MAC，Linux，Solaris等不同操作系统上测试您的Web应用程序。</p>
+<h6 id="移动浏览："><a href="#移动浏览：" class="headerlink" title="移动浏览："></a>移动浏览：</h6><p>在移动浏览器上测试网页。移动设备上也可能存在兼容性问题。</p>
+<h6 id="打印选项："><a href="#打印选项：" class="headerlink" title="打印选项："></a>打印选项：</h6><p>如果要提供页面打印选项，请确保字体，页面对齐方式，页面图形等正确打印。页面应适合纸张大小或根据打印选项中提到的大小。</p>
+<h5 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h5><p>页面 应用程序应承受重负载。页面性能测试应包括：</p>
+<ul>
+<li>网络负载测试</li>
+<li>网络压力测试</li>
+</ul>
+<p>在不同的互联网连接速度下测试应用程序性能。</p>
+<p>页面负载测试：需要测试是否有多个用户正在访问或请求同一页面。系统能否维持峰值负载时间？站点应处理许多并发用户请求、来自用户的大量输入数据、同时连接到数据库、特定页面上的重负载等。</p>
+<p>网络压力测试：通常，应力意味着将系统拉伸到其指定的限值之外。执行页面压力测试以通过施加压力来破坏站点，并检查系统如何对压力做出反应以及如何从崩溃中恢复。压力通常放在输入字段，登录和注册区域。</p>
+<p>在页面性能中，在不同操作系统和不同硬件平台上测试网站功能时，会检查软件和硬件内存泄漏错误。</p>
+<p>性能测试可用于了解网站的可伸缩性，或对第三方产品（如服务器和中间件）环境中的性能进行基准测试，以便进行潜在购买。</p>
+<h6 id="连接速度"><a href="#连接速度" class="headerlink" title="连接速度"></a>连接速度</h6><p>在各种网络上经过测试，如拨号，ISDN等。</p>
+<h6 id="页面加载"><a href="#页面加载" class="headerlink" title="页面加载"></a>页面加载</h6><p>页面加载性能可以用Lighthouse进行测试。</p>
+<p>i.每次最多承受用户数？<br>ii. 检查峰值负载和系统的行为方式</p>
+<p>iii.用户访问的大量数据</p>
+<h6 id="压力测试"><a href="#压力测试" class="headerlink" title="压力测试"></a>压力测试</h6><p>i. 连续载荷<br>ii.内存、CPU、文件处理等性能</p>
+<h5 id="安全测试"><a href="#安全测试" class="headerlink" title="安全测试"></a>安全测试</h5><p>以下是页面安全测试的一些测试用例：</p>
+<ul>
+<li>通过将内部 URL 直接粘贴到浏览器地址栏中而不登录来进行测试。不应打开内部页面。</li>
+<li>如果您使用用户名和密码登录并浏览内部页面，请尝试直接更改URL选项。即，如果您正在检查一些发布者站点统计信息，则发布者站点 ID &#x3D; 123。尝试直接将 URL 站点 ID 参数更改为与登录用户无关的其他站点 ID。应拒绝此用户查看其他人的统计信息的访问权限。</li>
+<li>尝试在输入字段中输入一些无效的输入，例如登录用户名，密码，输入文本框等。检查系统对所有无效输入的反应。</li>
+<li>页面目录和文件不应直接访问，除非为它们提供了下载选项。</li>
+<li>测试验证码以自动执行脚本登录。</li>
+<li>测试 SSL 是否用于安全措施。如果使用，当用户从不安全的页面HTTP:&#x2F;&#x2F;切换到安全 HTTPS:&#x2F;&#x2F; 页面时，应显示正确的消息，反之亦然。</li>
+<li>所有事务、错误消息和安全漏洞尝试都应记录在服务器上某个位置的日志文件中。</li>
+</ul>
+<p>测试页面安全性的主要原因是识别潜在的漏洞并随后修复它们。</p>
+<ul>
+<li>网络扫描</li>
+<li>漏洞扫描</li>
+<li>密码破解</li>
+<li>日志审查</li>
+<li>完整性检查器</li>
+<li>病毒检测</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1483,184 +1664,6 @@
 <li>在Apache Hadoop 2.x中，每个块的默认大小约为128 MB（在以前的版本，即Apache Hadoop 1.x中为64 MB）。</li>
 <li>有一个工具可以使用Hadoop软件包附带的配置文件（即hdfssite.xml）来增加或减少块的文件大小。</li>
 </ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://hugfeature.github.io/Echo/posts/34251.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Echo/images/avatar.gif">
-      <meta itemprop="name" content="丑牛">
-      <meta itemprop="description" content="曾经梦想仗剑走天涯!<br>因为遇见她，所以回了家！">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="测试的名义">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Echo/posts/34251.html" class="post-title-link" itemprop="url">hadoop是什么？</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-12-27 19:43:27" itemprop="dateCreated datePublished" datetime="2021-12-27T19:43:27+08:00">2021-12-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Echo/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Apache Hadoop是一个开源框架，用于管理所有类型的数据（结构化，非结构化和半结构化）。</p>
-<p>众所周知，如果我们想处理，存储和管理我们的数据，那么RDBMS是最好的解决方案。但是，数据应采用结构化格式，以便使用 RDBMS 进行处理。此外，如果数据大小增加，则RDBMS无法处理它，我们需要定期执行数据库清理。</p>
-<p>这可能会导致历史数据丢失，并且无法在某些行业（如天气预报，银行，保险，销售等）中生成准确可靠的结果。RDBMS的另一个问题是，如果主服务器出现故障，那么我们可能会丢失重要数据并遭受很多损失。</p>
-<p>在本教程中，我们将看到如何使用Apache Hadoop克服这些问题。</p>
-<p>Hadoop是一个分布式文件系统，可以存储大量数据（PB级和TB级数据）。数据处理速度也非常快，并且具有非常高的容错系统，因此可提供可靠的结果。</p>
-<p>Hadoop是一个基于Java的开源编程框架，支持在分布式计算环境中存储和处理大型数据集。</p>
-<p>Hadoop基于使用商用硬件的集群概念。它不需要任何复杂的配置，我们可以用更便宜，简单和轻量级的配置硬件建立Hadoop环境。</p>
-<p>简而言之，群集概念是以复制格式存储在多台计算机上的数据，因此，当数据所在的某个位置发生任何问题或灾难时，必须在另一个位置上安全地提供该数据的重复副本。</p>
-<h4 id="hadoop-VS-RDMBS"><a href="#hadoop-VS-RDMBS" class="headerlink" title="hadoop VS RDMBS"></a>hadoop VS RDMBS</h4><table>
-<thead>
-<tr>
-<th>Feature</th>
-<th>Hadoop</th>
-<th>RDBMS</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>体系结构</strong></td>
-<td>Hadoop基于HDFS，MapReduce和YARN。</td>
-<td>RDBMS 基于 ACID 属性。</td>
-</tr>
-<tr>
-<td><strong>规模</strong></td>
-<td>可以处理大量数据。</td>
-<td>RDBMS 无法处理大量数据。</td>
-</tr>
-<tr>
-<td><strong>数据的种类&#x2F;类型</strong></td>
-<td>可以处理结构化，半结构化和非结构化数据，如视频，图像，CSV文件，xml等。</td>
-<td>仅处理结构化数据。</td>
-</tr>
-<tr>
-<td><strong>速度</strong></td>
-<td>快速处理大量数据。</td>
-<td>处理大量数据时非常慢。</td>
-</tr>
-<tr>
-<td><strong>吞吐量</strong></td>
-<td>高吞吐量。</td>
-<td>吞吐量低。</td>
-</tr>
-<tr>
-<td><strong>容错</strong></td>
-<td>非常好</td>
-<td>如果主服务器出现故障，则无法恢复丢失的数据。</td>
-</tr>
-<tr>
-<td><strong>存储</strong></td>
-<td>非常高的存储容量。</td>
-<td>无法存储大数据。</td>
-</tr>
-<tr>
-<td><strong>可靠性</strong></td>
-<td>非常可靠，可生成准确的历史和当前报告。</td>
-<td>在大数据方面不可靠。</td>
-</tr>
-</tbody></table>
-<h4 id="hadoop-功能"><a href="#hadoop-功能" class="headerlink" title="hadoop 功能"></a>hadoop 功能</h4><p>Hadoop框架</p>
-<p><img src="/Echo/posts/34251/Hadoop-Features.webp" alt="Hadoop-Features"></p>
-<ul>
-<li>Hadoop yarn</li>
-<li>Hadoop common</li>
-<li>Hadoop HDFS(Hadoop Distributed File System)</li>
-<li>Hadoop Mapreduce</li>
-</ul>
-<p><strong>#1）Hadoop YARN：YARN</strong>代表**”Y**et <strong>A</strong>nother <strong>R</strong>esource <strong>N</strong>egotiator”，用于管理云的集群技术。它用于作业计划。</p>
-<p><strong>#2）Hadoop Common：</strong>这是用于与Hadoop的其他功能（如YARN，MapReduce和HDFS）进行通信的详细库或实用程序。</p>
-<p><strong>#3）Hadoop HDFS：</strong>分布式文件系统在Hadoop中用于存储和处理大量数据。此外，它还用于访问群集中的数据。</p>
-<p><strong>#4） Hadoop MapReduce：</strong> MapReduce是Hadoop的主要功能，负责处理集群中的数据。它用于作业调度和数据处理监控。</p>
-<h4 id="Hadoop-架构"><a href="#Hadoop-架构" class="headerlink" title="Hadoop 架构"></a>Hadoop 架构</h4><p>Hadoop组件：</p>
-<ul>
-<li>HDFS</li>
-<li>MapReduce</li>
-<li>YARN</li>
-</ul>
-<p><img src="/Echo/posts/34251/Hadoop-framework.png" alt="Hadoop-framework"></p>
-<p>这些是Hadoop架构的三个重要组成部分。我们还应该了解架构的一些术语或概念，并了解它们是如何工作的。</p>
-<ol>
-<li>管理节点–manager node</li>
-<li>数据节点–data node</li>
-<li>辅助管理节点–secondary manager node </li>
-<li>块–blocks</li>
-</ol>
-<p>1）name node–管理节点</p>
-<p>管理节点是 HDFS 中的主节点。它包含HDFS的元数据，如文件信息，目录结构，块信息以及数据节点的所有信息等。管理节点仅负责从客户端访问的数据或文件。它跟踪文件中的所有事务或所做的更改。</p>
-<p>它主要适用于两个文件，即FsImage和EditLogs。Name Node有一个JobTracker，其中包含数据节点的所有详细信息，例如哪个数据节点具有什么任务，每个数据节点有多少块，每个数据节点的检测信号，群集中的作业计划详细信息等。</p>
-<p>简而言之，我们可以说 JobTracker 包含每个数据节点的 TaskTracker。</p>
-<p>2） data node – 数据节点</p>
-<p>数据节点是HDFS中的从节点。数据节点负责数据的实际存储和处理。它的主要任务是将作业划分为三个块，并将其存储在不同的数据节点中。之后开始处理数据。</p>
-<p>此外，它还具有TaskTracker，它具有每个块的完整信息，以及哪个块负责哪个任务，哪些块完成了任务等，并且在处理数据后，它将信息发送到manager Node。每次数据节点启动时，它都会再次将所有信息发送到管理节点。</p>
-<p>3）辅助管理节点–secondary manager node </p>
-<p>辅助管理节点用于容错情况。在两种情况下，管理节点已关闭，并且整个 Hadoop 结构将失败，因为管理节点是单点故障。</p>
-<p>（i）如果管理节点由于任何问题而重新启动，那么由于它具有大量数据而再次出现，那么恢复它需要时间。</p>
-<p>（ii）在管理节点崩溃的情况下，所有HDFS数据都将丢失并且无法再次恢复，因为管理节点是单点故障。因此，为了克服这些问题，辅助管理节点就在那里。它还包含与管理节点相同的命名空间映像和编辑日志。</p>
-<p>在一段时间后，它将复制命名空间映像，并从管理节点更新编辑日志。因此，在管理节点失败的情况下，辅助管理节点进入图片并表现得与主名称节点类似。由于此过程，它可以防止完全失败。</p>
-<p>4）blocks–块</p>
-<p>块是HDFS中最小的单位。Hadoop可以处理大量的文件，因为它将其分成小块。我们可以说，块只不过是一个大文件的数据。每个块的大小为128MB。这些块保存在数据节点中并处理数据。</p>
-<p><img src="/Echo/posts/34251/Components-used-in-Hadoop.png" alt="Components-used-in-Hadoop"></p>
-<p>Hadoop 分布式文件系统 （HDFS） 是 Hadoop 集群中使用的文件系统。HDFS主要用于在集群中存储Hadoop数据。HDFS通常致力于顺序数据处理。正如我们已经知道的那样，它基于主从架构。</p>
-<p>集群的所有元数据都保存在 JobTracker 的 Name 节点上，实际数据存储在 TaskTracker 的 HDFS 的数据节点中。</p>
-<p>MapReduce负责数据的处理。每当任何文件进入集群进行处理时，第一个数据节点都会将其划分为块，每个块包含64MB的数据，它可以存储128MB。然后，每个块将复制两次，并存储在群集中任何位置的不同数据节点中。</p>
-<p>所有这些信息都将发送到名称节点，名称节点将以元数据的形式存储此信息。然后，数据的实际处理将启动数据节点，并将每三秒向名称节点发送一次检测信号，以便名称节点具有此数据节点正在处理的信息。</p>
-<p>如果数据节点中的任何人发送检测信号失败，则名称节点将再次在另一个数据节点上创建该块的副本并开始处理。</p>
-<p>所有这些信息或快照将存储在FsImage中，如果完成任何事务，则编辑日志合并新信息并始终保留日志的新副本。</p>
-<p>将采用首先完成任务的块，数据节点将向名称节点发送信息，名称节点将采取相应的操作。</p>
-<p>在整个过程中，YARN将支持并向系统提供所需的资源，因此不会影响数据处理和速度。处理数据后，结果将保存在HDFS中以供进一步分析。</p>
 
       
     </div>
